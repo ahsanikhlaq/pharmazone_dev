@@ -574,7 +574,7 @@
 </div>
 
 <script>
-  
+document.addEventListener('DOMContentLoaded', function () {
 $('input.input_yes_change_error').change(function () {
   if ($(this).val() == "Yes") {
     $(this).siblings('.alert-danger').removeClass('hidden');
@@ -865,8 +865,9 @@ document.querySelector('.new--form--ppup').addEventListener('click', function ()
       $button.siblings('.button_block_ctm').removeClass('hidden');
     }
 
-   
+
   });
+});
 </script>
 
 <!-- Custom mandasa code start popup -->
@@ -946,6 +947,7 @@ document.querySelector('.new--form--ppup').addEventListener('click', function ()
 
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
   $(document).ready(function(){
     $("#custom-btn").click(function(){
       $("#popup1").addClass("active");
@@ -956,7 +958,8 @@ document.querySelector('.new--form--ppup').addEventListener('click', function ()
       //alert("The paragraph was clicked.");
     });
 });
-</script>  
+});
+</script>
 
 
 <!-- Custom mandasa code end popup -->

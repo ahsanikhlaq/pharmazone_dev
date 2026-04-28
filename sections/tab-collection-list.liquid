@@ -399,6 +399,7 @@ body .custom--{{ section.id }}--tab-collection .custom--content--bottom .card__h
 
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
   $(document).ready(function () {
     $('.custom--tab--collection .tab-button').click(function () {
       var selectedTab = $(this).attr('data-tab');
@@ -418,4 +419,5 @@ body .custom--{{ section.id }}--tab-collection .custom--content--bottom .card__h
       }
     });
   });
+});
 </script>

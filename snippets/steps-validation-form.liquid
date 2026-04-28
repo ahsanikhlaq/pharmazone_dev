@@ -843,6 +843,7 @@
 </div>
 
 <script>
+document.addEventListener('DOMContentLoaded', function () {
    // Multi step form value end
   $('input.input_yes_change_error').change(function () {
     if ($(this).val() == "Yes") {
@@ -1345,4 +1346,5 @@
   });
 
    showStep(currentStep);
+});
 </script>
