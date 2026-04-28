@@ -1,0 +1,283 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "custom_collection_banner_Fq8TQ4": {
+      "type": "custom-collection-banner",
+      "name": "Overlay collection banner",
+      "settings": {
+        "show_collection_description": false,
+        "show_collection_image": false,
+        "show_overlay_title": false,
+        "show_title_below": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 9,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_breadcrumbs": true,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_g8cBKj": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% if request.path == '/collections/weight-loss-treatment' %}\n\n<!-- PHARMAZON EXPRESS – Two-Column Weight Loss Slider Calculator -->\n<div id=\"px-wrapper\" style=\"padding:5px 0; font-family:system-ui,Arial;\">\n\n<style>\n    #px-container {\n        max-width:1400px;\n        margin:0 auto;\n        display:flex;\n        gap:60px;\n        align-items:center;\n        padding:0 60px;\n    }\n\n    /* Left calculator card */\n    #px-card {\n        background:#fff;\n        border-radius:15px;\n        width:100%;\n        max-width:700px;\n        box-shadow:0 10px 40px rgba(0,0,0,0.12);\n        overflow:hidden;\n    }\n\n    #px-card-top {\n        padding:30px;\n        text-align:center;\n    }\n\n    #px-card-top h4 {\n        margin:0 0 10px;\n        color:#4f3d76;\n        font-size:18px;\n        font-weight:500;\n    }\n\n    #px-weight {\n        font-size:52px;\n        font-weight:700;\n        color:#4f3d76;\n    }\n\n    #px-unit {\n        font-size:30px;\n        margin-left:5px;\n        color:#4f3d76;\n    }\n\n    #px-slider {\n        width:100%;\n        margin:25px 0 10px;\n        -webkit-appearance:none;\n        height:4px;\n        background:#d7e2ea;\n        border-radius:10px;\n        outline:none;\n    }\n\n    #px-slider::-webkit-slider-thumb {\n        -webkit-appearance:none;\n        height:28px;\n        width:28px;\n        background:#4f3d76;\n        border-radius:50%;\n        cursor:pointer;\n    }\n\n    /* Bottom result area */\n    #px-result-box {\n        padding:20px;\n        background:#bcc1c4;\n        text-align:center;\n        color:#4f3d76;\n    }\n\n    #px-loss {\n        font-size:52px;\n        font-weight:700;\n        display:inline-block;\n    }\n\n    #px-switch {\n        margin:15px 0 20px;\n        text-align:left;\n        padding-left:30px;\n    }\n\n    #px-switch a {\n        color:#0d47a1;\n        text-decoration:underline;\n        cursor:pointer;\n        font-size:14px;\n    }\n\n    /* Right text block */\n    #px-text-side {\n        max-width:500px;\n    }\n\n    #px-text-side h2 {\n        font-size:42px;\n        color:#4f3d76;\n        margin-bottom:5px;\n        line-height:1.2;\n    }\n\n    #px-text-side p {\n        font-size:18px;\n        color:#000000;\n        line-height:1.5;\n    }\n\n    /* Responsive */\n    @media(max-width:900px){\n        #px-container {\n            flex-direction:column;\n            text-align:center;\n        }\n        #px-switch { \n            text-align:center;\n            padding-left:6px;\n        }\n        #px-text-side { text-align:center; }\n        #px-text-side h2 { font-size:32px; }\n    }\n</style>\n\n<div id=\"px-container\">\n\n    <!-- LEFT SIDE CALCULATOR -->\n    <div id=\"px-card\">\n        <div id=\"px-card-top\">\n            <h4>Drag the slider to your start weight</h4>\n\n            <div id=\"px-weight-display\">\n                <span id=\"px-weight\">100</span><span id=\"px-unit\">kg</span>\n            </div>\n\n            <input type=\"range\" id=\"px-slider\" min=\"40\" max=\"200\" value=\"100\">\n\n            <div id=\"px-switch\">\n                <a id=\"px-toggle\">Switch to pounds</a>\n            </div>\n        </div>\n\n        <div id=\"px-result-box\">\n            <div style=\"font-size:17px;margin-bottom:4px;\">\n                In one year, you could lose up to:\n            </div>\n            <div>\n                <span id=\"px-loss\">20</span>\n                <span id=\"px-loss-unit\">kg</span>\n            </div>\n        </div>\n    </div>\n\n    <!-- RIGHT SIDE TEXT -->\n    <div id=\"px-text-side\">\n        <h2>How much weight could you lose?</h2>\n        <p>\n            The <strong>weight loss treatment</strong> offered by \n            <strong>Pharmazon Express</strong> typically leads to an average \n            weight loss of <strong>15%–20%</strong> of initial body weight over \n            <strong>1–1.5 years</strong>. This is significantly faster than results \n            reported in most clinical studies.\n        </p>\n    </div>\n\n</div>\n\n<script>\n(function(){\n    let inKG = true;\n\n    const slider = document.getElementById(\"px-slider\");\n    const weightVal = document.getElementById(\"px-weight\");\n    const lossVal = document.getElementById(\"px-loss\");\n    const unit = document.getElementById(\"px-unit\");\n    const lossUnit = document.getElementById(\"px-loss-unit\");\n    const toggle = document.getElementById(\"px-toggle\");\n\n    function calcLoss(w){\n        return Math.round(w * 0.203); // 20.3% annual weight loss\n    }\n\n    function update(){\n        let val = parseInt(slider.value);\n\n        if(!inKG){\n            let kg = val * 0.453592;\n            weightVal.textContent = val;\n            lossVal.textContent = Math.round(calcLoss(kg) * 2.20462);\n        } else {\n            weightVal.textContent = val;\n            lossVal.textContent = calcLoss(val);\n        }\n    }\n\n    slider.addEventListener(\"input\", update);\n\n    toggle.addEventListener(\"click\", function(){\n\n        if(inKG){\n            inKG = false;\n            unit.textContent = \"lbs\";\n            lossUnit.textContent = \"lbs\";\n            toggle.textContent = \"Switch to kilograms\";\n\n            let kgVal = parseInt(weightVal.textContent);\n            slider.min = 90;\n            slider.max = 440;\n            slider.value = Math.round(kgVal * 2.20462);\n\n        } else {\n            inKG = true;\n            unit.textContent = \"kg\";\n            lossUnit.textContent = \"kg\";\n            toggle.textContent = \"Switch to pounds\";\n\n            let lbVal = parseInt(weightVal.textContent);\n            slider.min = 40;\n            slider.max = 200;\n            slider.value = Math.round(lbVal * 0.453592);\n        }\n\n        update();\n    });\n\n    update();\n})();\n</script>\n\n</div>\n\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_JhfjqK": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid Weight loss",
+      "settings": {
+        "custom_liquid": "<script>\n// Run only on specific page\nif (window.location.pathname.includes('/collections/weight-loss-treatment')) {\n  document.write(`\n<section class=\"weightloss-section\">\n  <h1>Trusted Weight Loss Treatments in the UK</h1>\n  <p>Discover proven and pharmacy-approved solutions for effective weight loss — including <strong>Mounjaro</strong>, <strong>Wegovy</strong>, <strong>Saxenda</strong>, and trusted <strong>Weight Loss Tablets</strong>. All available with discreet UK delivery.</p>\n\n  <!-- Product Cards -->\n  <div class=\"weightloss-cards\">\n    <div class=\"card\">\n      <h3>💉 <strong>Mounjaro</strong> (Tirzepatide)</h3>\n      <p>A once-weekly <strong>weight loss injection</strong> that supports strong appetite control and improved insulin balance. Safe, effective, and clinically tested.</p>\n    </div>\n\n    <div class=\"card\">\n      <h3>💉 <strong>Wegovy</strong> (Semaglutide)</h3>\n      <p>Reduces hunger and supports gradual, consistent weight loss. Ideal for individuals looking for a convenient weekly injectable treatment.</p>\n    </div>\n\n    <div class=\"card\">\n      <h3>💉 <strong>Saxenda</strong> (Liraglutide)</h3>\n      <p>A daily injection that helps prevent overeating and promotes steady fat reduction. Perfect for long-term weight management.</p>\n    </div>\n\n    <div class=\"card\">\n      <h3>💊 <strong>Weight Loss Tablets</strong></h3>\n      <p>Easy-to-take <strong>weight control pills</strong> that aid metabolism and appetite suppression — a convenient alternative to injectables.</p>\n    </div>\n  </div>\n\n  <!-- Table Section -->\n  <div class=\"table-section\">\n    <h2><b>Compare Our Most Popular Weight Loss Treatments</h2>\n    <table>\n      <thead>\n        <tr>\n          <th>Treatment</th>\n          <th>Type</th>\n          <th>Benefits</th>\n          <th>Common Side Effects</th>\n          <th>Recommended For</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td data-label=\"Treatment\">Mounjaro</td>\n          <td data-label=\"Type\">Weekly Injection</td>\n          <td data-label=\"Benefits\">Strong appetite control, supports insulin function</td>\n          <td data-label=\"Common Side Effects\">Mild nausea, fatigue, or stomach upset</td>\n          <td data-label=\"Recommended For\">People seeking rapid results under medical supervision</td>\n        </tr>\n        <tr>\n          <td data-label=\"Treatment\">Wegovy</td>\n          <td data-label=\"Type\">Weekly Injection</td>\n          <td data-label=\"Benefits\">Controls appetite, helps consistent fat loss</td>\n          <td data-label=\"Common Side Effects\">Temporary nausea or headaches</td>\n          <td data-label=\"Recommended For\">Those seeking gradual, steady results</td>\n        </tr>\n        <tr>\n          <td data-label=\"Treatment\">Saxenda</td>\n          <td data-label=\"Type\">Daily Injection</td>\n          <td data-label=\"Benefits\">Steady appetite reduction, smooth results</td>\n          <td data-label=\"Common Side Effects\">Digestive discomfort, mild tiredness</td>\n          <td data-label=\"Recommended For\">Users preferring daily control</td>\n        </tr>\n        <tr>\n          <td data-label=\"Treatment\">Weight Loss Tablets</td>\n          <td data-label=\"Type\">Oral Tablets</td>\n          <td data-label=\"Benefits\">Simple daily routine, convenient use</td>\n          <td data-label=\"Common Side Effects\">Possible mild digestive effects</td>\n          <td data-label=\"Recommended For\">Those who prefer non-injectable solutions</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n  <!-- FAQ Section -->\n  <div class=\"faq\">\n    <h2><b>Frequently Asked Questions</h2>\n    <div class=\"faq-item\">\n      <h4>Is Mounjaro safe for weight loss?</h4>\n      <div class=\"faq-answer\">Yes, Mounjaro is clinically tested and considered safe under medical guidance. Side effects like nausea or fatigue are mild and temporary.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>What are Wegovy side effects?</h4>\n      <div class=\"faq-answer\">Wegovy may cause mild nausea or digestive issues initially, but these typically settle as your body adjusts to the medication.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Which weight loss injection is best in the UK?</h4>\n      <div class=\"faq-answer\">Each treatment has unique benefits. Mounjaro offers strong results, Wegovy provides appetite control, and Saxenda ensures steady progress.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Can I buy cheap weight loss injections online?</h4>\n      <div class=\"faq-answer\">Yes, but always buy from regulated UK pharmacies like Pharmazon Express to ensure genuine and safe products.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Do weight loss pills really work?</h4>\n      <div class=\"faq-answer\">Yes, when combined with diet and exercise, weight loss tablets can support metabolism and appetite management effectively.</div>\n    </div>\n  </div>\n\n  <!-- CTA Section -->\n  <div class=\"cta-box\">\n    <h2>Start Your Weight Loss Journey Today</h2>\n    <p>Explore UK-approved treatments including <strong>Mounjaro</strong>, <strong>Wegovy</strong>, and <strong>Saxenda</strong>. 100% genuine, discreetly delivered, and trusted by thousands.</p>\n    <a href=\"/collections/weight-loss-treatment\" class=\"cta-btn\">Explore Weight Loss Treatments</a>\n  </div>\n</section>\n  `);\n\n  // Add CSS dynamically\n  const style = document.createElement('style');\n  style.textContent = `\n  .weightloss-section {\n    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);\n    border-radius: 20px;\n    padding: 40px 20px;\n    font-family: 'Poppins', sans-serif;\n    color: #1e293b;\n    line-height: 1.7;\n    box-shadow: 0 4px 25px rgba(0,0,0,0.05);\n    max-width: 1100px;\n    margin: 40px auto;\n  }\n  .weightloss-section h1 { font-size:32px; text-align:center; font-weight:700; margin-bottom:15px; background: linear-gradient(90deg,#4c3e79,#4c3e79); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }\n  .weightloss-section h2 { font-size:24px; text-align:center; margin:40px 0 15px; }\n  .weightloss-section h3 { font-size:20px; color:#4c3e79; margin-bottom:10px; text-align:center; }\n  .weightloss-section p { font-size:16px; text-align:center; margin-bottom:20px; }\n\n  .weightloss-cards { display:grid; grid-template-columns:repeat(2,1fr); gap:25px; justify-items:center; margin-top:30px; }\n  .card { background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:25px; width:100%; box-sizing:border-box; transition:all 0.3s; }\n  .card:hover { box-shadow:0 6px 18px rgba(37,99,235,0.15); transform:translateY(-3px); }\n  .card p { font-size:16px; color:#475569; }\n  .card p strong { font-weight:bold; }\n\n  .table-section { margin-top:40px; overflow-x:auto; }\n  .table-section table { width:100%; border-collapse:collapse; font-size:14px; border:2px solid #e2e8f0; }\n  .table-section th, .table-section td { border:1px solid #e2e8f0; padding:12px; }\n  .table-section th { background:#f1f5f9; font-weight:600; color:#0f172a; }\n  .table-section tr:nth-child(even) { background:#f9fafb; }\n\n  .faq { margin-top:40px; }\n  .faq-item { background:#f8fafc; border-radius:10px; padding:15px 20px; margin-bottom:10px; border:1px solid #e2e8f0; cursor:pointer; position:relative; transition:0.3s; }\n  .faq-item:hover { background:#f1f5f9; }\n  .faq-item h4 { margin:0; font-size:16px; display:flex; justify-content:space-between; align-items:center; }\n  .faq-item h4::after { content:'+'; font-weight:bold; font-size:18px; transition: transform 0.3s;}\n  .faq-item.active h4::after { content:'−'; transform:rotate(180deg); }\n  .faq-answer { max-height:0; overflow:hidden; font-size:15px; color:#475569; margin-top:10px; line-height:1.6; transition:max-height 0.4s ease, padding 0.3s ease; }\n\n  .cta-box { text-align:center; margin-top:50px; background:linear-gradient(90deg,#705f9d,#e1ceff); color:#fff; padding:40px 20px; border-radius:18px; box-shadow:0 4px 20px rgba(0,0,0,0.1);}\n  .cta-box h2 { font-size:24px; margin-bottom:10px; color:#fff; font-weight:700; }\n  .cta-box p { font-size:16px; color:#ffffff; margin-bottom:25px; }\n  .cta-btn { background:#fff; color:#000000; padding:12px 28px; border-radius:30px; font-weight:600; text-decoration:none; transition:0.3s; }\n  .cta-btn:hover { background:#e0f2fe; }\n\n  @media(max-width:1024px){ .weightloss-cards { grid-template-columns:1fr; gap:20px; } }\n  @media(max-width:768px){\n    .table-section table, .table-section thead, .table-section tbody, .table-section th, .table-section td, .table-section tr { display:block; }\n    .table-section thead tr { display:none; }\n    .table-section tr { margin-bottom:15px; border:1px solid #e2e8f0; border-radius:10px; padding:10px; }\n    .table-section td { border:none; padding:5px 10px; position:relative; text-align:left; }\n    .table-section td::before { content: attr(data-label); font-weight:600; display:inline-block; width:120px; color:#0f172a; }\n  }\n  `;\n  document.head.appendChild(style);\n\n  // FAQ toggle\n  document.addEventListener('click', function(e) {\n    if (e.target.closest('.faq-item')) {\n      const item = e.target.closest('.faq-item');\n      const answer = item.querySelector('.faq-answer');\n      if (item.classList.contains('active')) {\n        answer.style.maxHeight = null;\n        item.classList.remove('active');\n      } else {\n        document.querySelectorAll('.faq-item.active').forEach(activeItem => {\n          activeItem.querySelector('.faq-answer').style.maxHeight = null;\n          activeItem.classList.remove('active');\n        });\n        answer.style.maxHeight = answer.scrollHeight + 'px';\n        item.classList.add('active');\n      }\n    }\n  });\n}\n</script>",
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_JHQGKp": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid Hair care",
+      "settings": {
+        "custom_liquid": "<script>\n// Run only on the specific page\nif (window.location.pathname.includes('/collections/hair-care')) {\n  document.write(`\n<section class=\"haircare-section\">\n  <h1>Trusted Hair Care Treatments in the UK</h1>\n  <p>Explore specialist solutions for healthier hair — including <strong>Finasteride</strong>, <strong>Minoxidil</strong>, <strong>Hair Growth Vitamins</strong>, and advanced <strong>Scalp Therapy</strong> treatments. All sourced from UK-registered pharmacies and delivered discreetly.</p>\n\n  <!-- Product Cards -->\n  <div class=\"haircare-cards\">\n    <div class=\"card\">\n      <h3>🧴 <strong>Finasteride</strong> (1 mg)</h3>\n      <p>A clinically proven oral treatment for male pattern hair loss — helps slow hair fall and stimulate new growth.</p>\n    </div>\n\n    <div class=\"card\">\n      <h3>🧴 <strong>Minoxidil</strong> (Topical Foam/Liquid)</h3>\n      <p>A trusted topical solution that enhances blood flow to the scalp and supports hair regrowth for many users.</p>\n    </div>\n\n    <div class=\"card\">\n      <h3>🧴 <strong>Hair Growth Vitamins</strong></h3>\n      <p>Essential nutrient formula-designed supplements to support hair health, strength and thickness — complementing treatments.</p>\n    </div>\n\n    <div class=\"card\">\n      <h3>🧴 <strong>Scalp Therapy Kits</strong></h3>\n      <p>Advanced multi-step kits including serums, rollers & lasers to care for your scalp and boost treatment effectiveness.</p>\n    </div>\n  </div>\n\n  <!-- Table Section -->\n  <div class=\"table-section\">\n     <h2><b>Compare Our Top Hair Care Treatments</h2>\n    <table>\n      <thead>\n        <tr>\n          <th>Treatment</th>\n          <th>Method</th>\n          <th>Results Timeline</th>\n          <th>Common Side-Effects</th>\n          <th>Recommended For</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td data-label=\"Treatment\">Finasteride</td>\n          <td data-label=\"Method\">Oral daily tablet</td>\n          <td data-label=\"Results Timeline\">3-6 months visible improvement</td>\n          <td data-label=\"Common Side-Effects\">Reduced libido, mild dizziness</td>\n          <td data-label=\"Recommended For\">Men with early-stage hair loss</td>\n        </tr>\n        <tr>\n          <td data-label=\"Treatment\">Minoxidil</td>\n          <td data-label=\"Method\">Topical foam/liquid application</td>\n          <td data-label=\"Results Timeline\">2-4 months to see regrowth</td>\n          <td data-label=\"Common Side-Effects\">Scalp irritation, shedding phase</td>\n          <td data-label=\"Recommended For\">Men & women seeking thicker hair</td>\n        </tr>\n        <tr>\n          <td data-label=\"Treatment\">Hair Growth Vitamins</td>\n          <td data-label=\"Method\">Oral supplement</td>\n          <td data-label=\"Results Timeline\">4-8 weeks improved texture</td>\n          <td data-label=\"Common Side-Effects\">Rare mild digestive upset</td>\n          <td data-label=\"Recommended For\">Those with nutrient-deficient hair</td>\n        </tr>\n        <tr>\n          <td data-label=\"Treatment\">Scalp Therapy Kits</td>\n          <td data-label=\"Method\">Multi-step topical & device kit</td>\n          <td data-label=\"Results Timeline\">6-12 weeks enhanced uptake</td>\n          <td data-label=\"Common Side-Effects\">Initial tingling, device costs</td>\n          <td data-label=\"Recommended For\">Advanced users seeking full regimen</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n  <!-- FAQ Section -->\n  <div class=\"faq\"><b>\n\n    <b><h2><b>Frequently Asked Questions About Hair Loss & Treatment</h2><b>\n\n    <div class=\"faq-item\">\n      <h4>What causes hair loss in men and women?</h4>\n      <div class=\"faq-answer\">Hair loss can be driven by genetics, hormonal changes, nutritional deficiencies, stress, or scalp conditions. Identifying the root cause is key to effective treatment.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>How soon will I see results from hair loss treatments?</h4>\n      <div class=\"faq-answer\">Most users see reduced shedding in 2-3 months, and visible regrowth by 4-6 months. Consistency is vital.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Are hair-loss pills safe?</h4>\n      <div class=\"faq-answer\">When prescribed by a healthcare professional and from a licensed UK pharmacy, they are considered safe. Always review your health status first.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Does Minoxidil or Finasteride work better?</h4>\n      <div class=\"faq-answer\">They work differently. Finasteride addresses hormonal causes; Minoxidil supports circulation. Many users combine them under medical advice.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Can vitamins alone stop hair loss?</h4>\n      <div class=\"faq-answer\">Vitamins support hair health but rarely stop hair loss alone unless deficiency is the main cause. They’re best used alongside treatments.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Is hair-regrowth permanent?</h4>\n      <div class=\"faq-answer\">Results can last as long as treatment continues. Stopping treatments often leads to resumed shedding within months.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Can lifestyle changes help hair loss?</h4>\n      <div class=\"faq-answer\">Yes — improving nutrition, reducing stress, getting better sleep and treating scalp conditions all support stronger hair and better treatment outcomes.</div>\n    </div>\n\n    <!-- FIXED: corrected div class here so theme & JS apply -->\n    <div class=\"faq-item\">\n      <h4>Will hair-loss treatments work for women too?</h4>\n      <div class=\"faq-answer\">Many do. Treatments such as Minoxidil and nutritional support are indicated for women — but always under appropriate supervision.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>What side-effects should I expect?</h4>\n      <div class=\"faq-answer\">Mild scalp irritation (topical), initial shedding phase, hormonal changes (oral). Serious effects are rare but always consult your doctor.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Where can I buy genuine hair-loss treatments online?</h4>\n      <div class=\"faq-answer\">Only buy from regulated UK pharmacies like Pharmazon Express to ensure authenticity, safe delivery and pharmacist support.</div>\n    </div>\n  </div>\n\n  <!-- CTA Section -->\n  <div class=\"cta-box\">\n    <h2>Start Your Hair Renewal Journey Today</h2>\n    <p>Discover our complete range of hair-care treatments — genuine, effective, and discreetly delivered across the UK.</p>\n    <a href=\"/collections/hair-care\" class=\"cta-btn\">Explore Hair Care Treatments</a>\n  </div>\n</section>\n  `);\n\n  // Add CSS dynamically\n  const style = document.createElement('style');\n  style.textContent = `\n  .haircare-section {\n    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);\n    border-radius: 20px;\n    padding: 40px 20px;\n    font-family: 'Poppins', sans-serif;\n    color: #1e293b;\n    line-height: 1.7;\n    box-shadow: 0 4px 25px rgba(0,0,0,0.05);\n    max-width: 1100px;\n    margin: 40px auto;\n  }\n  .haircare-section h1 {\n    font-size: 32px;\n    text-align: center;\n    font-weight: 700;\n    margin-bottom: 15px;\n    background: linear-gradient(90deg,#4c3e79,#4c3e79);\n    -webkit-background-clip:text;\n    -webkit-text-fill-color:transparent;\n  }\n  .haircare-section h2 { font-size:24px; text-align:center; margin:40px 0 15px;}\n  .haircare-section h3 { font-size:20px; color:#4c3e79; margin-bottom:10px; text-align:center;}\n  .haircare-section p { font-size:16px; text-align:center; margin-bottom:20px;}\n\n  .haircare-cards { display:grid; grid-template-columns:repeat(2,1fr); gap:25px; justify-items:center; margin-top:30px;}\n  .card { background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:25px; width:100%; box-sizing:border-box; transition:all 0.3s;}\n  .card:hover { box-shadow:0 6px 18px rgba(37,99,235,0.15); transform:translateY(-3px);}\n  .card p { font-size:16px; color:#475569;}\n  .card p strong { font-weight:bold;}\n\n  .table-section { margin-top:40px; overflow-x:auto;}\n  .table-section table { width:100%; border-collapse:collapse; font-size:14px; border:2px solid #e2e8f0;}\n  .table-section th, .table-section td { border:1px solid #e2e8f0; padding:12px;}\n  .table-section th { background:#f1f5f9; font-weight:600; color:#0f172a;}\n  .table-section tr:nth-child(even){ background:#f9fafb;}\n\n  .faq { margin-top:40px;}\n  .faq-item { background:#f8fafc; border-radius:10px; padding:15px 20px; margin-bottom:10px; border:1px solid #e2e8f0; cursor:pointer; transition:0.3s; position:relative;}\n  .faq-item:hover { background:#f1f5f9;}\n  .faq-item h4 { margin:0; font-size:16px; display:flex; justify-content:space-between; align-items:center;}\n  .faq-item h4::after { content:'+'; font-weight:bold; font-size:18px; transition: transform 0.3s;}\n  .faq-item.active h4::after { content:'−'; transform:rotate(180deg);}\n  .faq-answer { max-height:0; overflow:hidden; font-size:15px; color:#475569; margin-top:10px; line-height:1.6; transition:max-height 0.4s ease, padding 0.3s ease;}\n\n  .cta-box { text-align:center; margin-top:50px; background:linear-gradient(90deg,#705f9d,#e1ceff); color:#fff; padding:40px 20px; border-radius:18px; box-shadow:0 4px 20px rgba(0,0,0,0.1);}\n  .cta-box h2 { font-size:24px; margin-bottom:10px; color:#fff; font-weight:700;}\n  .cta-box p { font-size:16px; color:#ffffff; margin-bottom:25px;}\n  .cta-btn { background:#fff; color:#000000; padding:12px 28px; border-radius:30px; font-weight:600; text-decoration:none; transition:0.3s;}\n  .cta-btn:hover { background:#e0f2fe;}\n\n  @media(max-width:1024px){ .haircare-cards { grid-template-columns:1fr; gap:20px;} }\n  @media(max-width:768px){\n    .haircare-section h1{font-size:28px;}\n    .haircare-section h2{font-size:22px;}\n    .haircare-section h3{font-size:18px;}\n    .haircare-section p{font-size:15px;}\n    .cta-box h2{font-size:20px;}\n    .cta-box p{font-size:14px;}\n    .table-section table, .table-section thead, .table-section tbody, .table-section th, .table-section td, .table-section tr { display:block;}\n    .table-section thead tr { display:none;}\n    .table-section tr { margin-bottom:15px; border:1px solid #e2e8f0; border-radius:10px; padding:10px;}\n    .table-section td { border:none; padding:5px 10px; position:relative; text-align:left;}\n    .table-section td::before { content: attr(data-label); font-weight:600; display:inline-block; width:120px; color:#0f172a;}\n  }\n  `;\n  document.head.appendChild(style);\n  \n  // FAQ toggle\n  document.addEventListener('click', function(e) {\n    if (e.target.closest('.faq-item')) {\n      const item = e.target.closest('.faq-item');\n      const answer = item.querySelector('.faq-answer');\n      if (item.classList.contains('active')) {\n        answer.style.maxHeight = null;\n        item.classList.remove('active');\n      } else {\n        document.querySelectorAll('.faq-item.active').forEach(activeItem => {\n          activeItem.querySelector('.faq-answer').style.maxHeight = null;\n          activeItem.classList.remove('active');\n        });\n        answer.style.maxHeight = answer.scrollHeight + 'px';\n        item.classList.add('active');\n      }\n    }\n  });\n}\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_liquid_B4yDDf": {
+      "type": "custom-liquid",
+      "name": "Custom Liquid ED",
+      "settings": {
+        "custom_liquid": "<script>\n// Run only on specific page\nif (window.location.pathname.includes('/collections/erectile-dysfunction-treatment')) {\n  document.write(`\n<section class=\"ed-section\">\n  <h1>Trusted Erectile Dysfunction Treatments in the UK</h1>\n  <p>Explore clinically proven solutions including <strong>Viagra</strong>, <strong>Cialis</strong>, <strong>Levitra</strong>, and <strong>Spedra</strong>. Genuine UK-supplied medicines with discreet, fast delivery across the UK.</p>\n\n  <!-- Product Cards -->\n  <div class=\"ed-cards\">\n    <div class=\"card\">\n      <h3>💊 <strong>Viagra</strong> (Sildenafil)</h3>\n      <p>The most recognised <strong>ED treatment</strong> worldwide. Helps achieve and maintain a firm erection for up to 4 hours.</p>\n    </div>\n\n    <div class=\"card\">\n      <h3>💊 <strong>Cialis</strong> (Tadalafil)</h3>\n      <p>Known as the “weekend pill,” <strong>Cialis</strong> remains effective for up to 36 hours, allowing greater flexibility and confidence.</p>\n    </div>\n\n    <div class=\"card\">\n      <h3>💊 <strong>Levitra</strong> (Vardenafil)</h3>\n      <p>Offers reliable results and faster onset time — a popular choice for men seeking consistent performance.</p>\n    </div>\n\n    <div class=\"card\">\n      <h3>💊 <strong>Spedra</strong> (Avanafil)</h3>\n      <p>One of the fastest-acting options, <strong>Spedra</strong> can start working in as little as 15 minutes for spontaneous confidence.</p>\n    </div>\n  </div>\n\n  <!-- Table Section -->\n  <div class=\"table-section\">\n    <h2><b>Compare Our Most Popular Erectile Dysfunction Treatments</h2>\n    <table>\n      <thead>\n        <tr>\n          <th>Treatment</th>\n          <th>Active Ingredient</th>\n          <th>Duration</th>\n          <th>Onset Time</th>\n          <th>Recommended For</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td data-label=\"Treatment\">Viagra</td>\n          <td data-label=\"Active Ingredient\">Sildenafil</td>\n          <td data-label=\"Duration\">Up to 4 hours</td>\n          <td data-label=\"Onset Time\">30-60 minutes</td>\n          <td data-label=\"Recommended For\">Men seeking classic and reliable results</td>\n        </tr>\n        <tr>\n          <td data-label=\"Treatment\">Cialis</td>\n          <td data-label=\"Active Ingredient\">Tadalafil</td>\n          <td data-label=\"Duration\">Up to 36 hours</td>\n          <td data-label=\"Onset Time\">30 minutes</td>\n          <td data-label=\"Recommended For\">Men preferring flexibility and longer performance</td>\n        </tr>\n        <tr>\n          <td data-label=\"Treatment\">Levitra</td>\n          <td data-label=\"Active Ingredient\">Vardenafil</td>\n          <td data-label=\"Duration\">Up to 5 hours</td>\n          <td data-label=\"Onset Time\">25-45 minutes</td>\n          <td data-label=\"Recommended For\">Men seeking consistency and reliability</td>\n        </tr>\n        <tr>\n          <td data-label=\"Treatment\">Spedra</td>\n          <td data-label=\"Active Ingredient\">Avanafil</td>\n          <td data-label=\"Duration\">Up to 6 hours</td>\n          <td data-label=\"Onset Time\">15 minutes</td>\n          <td data-label=\"Recommended For\">Men wanting a fast, modern solution</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n\n  <!-- FAQ Section -->\n  <div class=\"faq\">\n    <h2><b>Frequently Asked Questions</h2>\n\n    <div class=\"faq-item\">\n      <h4>What causes erectile dysfunction?</h4>\n      <div class=\"faq-answer\">ED can result from stress, poor circulation, diabetes, smoking, or certain medications. It’s common and treatable.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Which ED treatment works best?</h4>\n      <div class=\"faq-answer\">Effectiveness varies per person. <strong>Viagra</strong> and <strong>Cialis</strong> are most popular, while <strong>Spedra</strong> offers faster action.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Are ED tablets safe?</h4>\n      <div class=\"faq-answer\">Yes, when prescribed and taken correctly from licensed pharmacies like Pharmazon Express.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Can I buy ED medicines online in the UK?</h4>\n      <div class=\"faq-answer\">Yes, as long as it’s a registered UK pharmacy. Pharmazon Express ensures genuine and discreet delivery.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>How quickly does Viagra work?</h4>\n      <div class=\"faq-answer\">Usually within 30–60 minutes after taking. It’s best taken on an empty stomach for faster effect.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Does Cialis really last 36 hours?</h4>\n      <div class=\"faq-answer\">Yes, <strong>Cialis</strong> offers extended duration — ideal for spontaneous intimacy throughout the weekend.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Can ED tablets be taken daily?</h4>\n      <div class=\"faq-answer\">Some low-dose versions like <strong>Cialis Daily</strong> can be taken every day. Always follow medical advice.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Are there side effects?</h4>\n      <div class=\"faq-answer\">Mild headache, flushing, or dizziness can occur but are usually temporary and fade quickly.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>Can I drink alcohol with ED medication?</h4>\n      <div class=\"faq-answer\">Moderate alcohol is fine, but too much can lower performance and reduce medicine effectiveness.</div>\n    </div>\n\n    <div class=\"faq-item\">\n      <h4>What if ED medication doesn’t work?</h4>\n      <div class=\"faq-answer\">Consult your doctor. A different dose or treatment type may be more effective for you.</div>\n    </div>\n  </div>\n\n  <!-- CTA Section -->\n  <div class=\"cta-box\">\n    <h2>Start Your Confidence Journey Today</h2>\n    <p>Regain control with proven <strong>ED treatments</strong> like <strong>Viagra</strong>, <strong>Cialis</strong>, <strong>Levitra</strong>, and <strong>Spedra</strong>. 100% genuine and discreetly delivered across the UK.</p>\n    <a href=\"/collections/erectile-dysfunction-treatment\" class=\"cta-btn\">Explore ED Treatments</a>\n  </div>\n</section>\n  `);\n\n  // Add CSS dynamically\n  const style = document.createElement('style');\n  style.textContent = `\n  .ed-section {\n    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);\n    border-radius: 20px;\n    padding: 40px 20px;\n    font-family: 'Poppins', sans-serif;\n    color: #1e293b;\n    line-height: 1.7;\n    box-shadow: 0 4px 25px rgba(0,0,0,0.05);\n    max-width: 1100px;\n    margin: 40px auto;\n  }\n  .ed-section h1 { font-size:32px; text-align:center; font-weight:700; margin-bottom:15px; background: linear-gradient(90deg,#4c3e79,#4c3e79); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }\n  .ed-section h2 { font-size:24px; text-align:center; margin:40px 0 15px; }\n  .ed-section h3 { font-size:20px; color:#4c3e79; margin-bottom:10px; text-align:center; }\n  .ed-section p { font-size:16px; text-align:center; margin-bottom:20px; }\n\n  .ed-cards { display:grid; grid-template-columns:repeat(2,1fr); gap:25px; justify-items:center; margin-top:30px; }\n  .card { background:#fff; border:1px solid #e5e7eb; border-radius:16px; padding:25px; width:100%; box-sizing:border-box; transition:all 0.3s; }\n  .card:hover { box-shadow:0 6px 18px rgba(37,99,235,0.15); transform:translateY(-3px); }\n  .card p { font-size:16px; color:#475569; }\n\n  .table-section { margin-top:40px; overflow-x:auto; }\n  .table-section table { width:100%; border-collapse:collapse; font-size:14px; border:2px solid #e2e8f0; }\n  .table-section th, .table-section td { border:1px solid #e2e8f0; padding:12px; }\n  .table-section th { background:#f1f5f9; font-weight:600; color:#0f172a; }\n  .table-section tr:nth-child(even) { background:#f9fafb; }\n\n  .faq { margin-top:40px; }\n  .faq-item { background:#f8fafc; border-radius:10px; padding:15px 20px; margin-bottom:10px; border:1px solid #e2e8f0; cursor:pointer; position:relative; transition:0.3s; }\n  .faq-item:hover { background:#f1f5f9; }\n  .faq-item h4 { margin:0; font-size:16px; display:flex; justify-content:space-between; align-items:center; }\n  .faq-item h4::after { content:'+'; font-weight:bold; font-size:18px; transition: transform 0.3s;}\n  .faq-item.active h4::after { content:'−'; transform:rotate(180deg); }\n  .faq-answer { max-height:0; overflow:hidden; font-size:15px; color:#475569; margin-top:10px; line-height:1.6; transition:max-height 0.4s ease, padding 0.3s ease; }\n\n  .cta-box { text-align:center; margin-top:50px; background:linear-gradient(90deg,#705f9d,#e1ceff); color:#fff; padding:40px 20px; border-radius:18px; box-shadow:0 4px 20px rgba(0,0,0,0.1);}\n  .cta-box h2 { font-size:24px; margin-bottom:10px; color:#fff; font-weight:700; }\n  .cta-box p { font-size:16px; color:#ffffff; margin-bottom:25px; }\n  .cta-btn { background:#fff; color:#000000; padding:12px 28px; border-radius:30px; font-weight:600; text-decoration:none; transition:0.3s; }\n  .cta-btn:hover { background:#e0f2fe; }\n\n  @media(max-width:1024px){ .ed-cards { grid-template-columns:1fr; gap:20px; } }\n  @media(max-width:768px){\n    .table-section table, .table-section thead, .table-section tbody, .table-section th, .table-section td, .table-section tr { display:block; }\n    .table-section thead tr { display:none; }\n    .table-section tr { margin-bottom:15px; border:1px solid #e2e8f0; border-radius:10px; padding:10px; }\n    .table-section td { border:none; padding:5px 10px; position:relative; text-align:left; }\n    .table-section td::before { content: attr(data-label); font-weight:600; display:inline-block; width:120px; color:#0f172a; }\n  }\n  `;\n  document.head.appendChild(style);\n\n  // FAQ toggle\n  document.addEventListener('click', function(e) {\n    if (e.target.closest('.faq-item')) {\n      const item = e.target.closest('.faq-item');\n      const answer = item.querySelector('.faq-answer');\n      if (item.classList.contains('active')) {\n        answer.style.maxHeight = null;\n        item.classList.remove('active');\n      } else {\n        document.querySelectorAll('.faq-item.active').forEach(activeItem => {\n          activeItem.querySelector('.faq-answer').style.maxHeight = null;\n          activeItem.classList.remove('active');\n        });\n        answer.style.maxHeight = answer.scrollHeight + 'px';\n        item.classList.add('active');\n      }\n    }\n  });\n}\n</script>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "custom_icon_trust_xQKmEY": {
+      "type": "custom-icon-trust",
+      "blocks": {
+        "column_GHXDme": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/free-delivery.png",
+            "title": "Free delivery when you spend over £30",
+            "text": "",
+            "link": "shopify://pages/shipping-and-delivery"
+          }
+        },
+        "column_bJKGD7": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/discreet-delivery.png",
+            "title": "100% discreet delivery for every item ordered",
+            "text": "",
+            "link": "shopify://pages/privacy-policy"
+          }
+        },
+        "column_UXyhht": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/regulated-pharmacy.png",
+            "title": "Fully regulated UK pharmacy",
+            "text": "",
+            "link": "shopify://policies/privacy-policy"
+          }
+        }
+      },
+      "block_order": [
+        "column_GHXDme",
+        "column_bJKGD7",
+        "column_UXyhht"
+      ],
+      "name": "Custom icon trust",
+      "settings": {
+        "title": "<strong>Why Choose Us</strong>",
+        "heading_size": "h2",
+        "section_subheading": "Quality Meets Trust",
+        "description_style": "body",
+        "btm_spacing": 52,
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2d4498c6-ea66-4f7b-80ad-f55f1ebda9b8",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "inner_padding_top": 72,
+        "inner_padding_bottom": 72
+      }
+    },
+    "custom_support_icon_K34VVa": {
+      "type": "custom-support-icon",
+      "blocks": {
+        "column_cwzDTy": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Icon_4.png",
+            "title": "Ask a pharmacist A question",
+            "text": "",
+            "link": "shopify://pages/faqs"
+          }
+        },
+        "column_kHDMGD": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Icon_5.png",
+            "title": "Read our in- depth guides",
+            "text": "",
+            "link": "shopify://pages/about-us"
+          }
+        },
+        "column_gnDKKh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Icon_6.png",
+            "title": "Contact our customerservice team",
+            "text": "",
+            "link": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "column_cwzDTy",
+        "column_kHDMGD",
+        "column_gnDKKh"
+      ],
+      "name": "Custom support icon",
+      "settings": {
+        "title": "<strong>Reliable Support</strong>",
+        "heading_size": "h2",
+        "section_subheading": "Anytime You Need It",
+        "description_style": "body",
+        "btm_spacing": 52,
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "collection_description_7CkzCy": {
+      "type": "collection-description",
+      "blocks": {
+        "heading_Cq6ntw": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Our Purpose</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "text_hwFqMA": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get to Know Us</p>"
+          }
+        },
+        "collection_description_cgrkrn": {
+          "type": "collection_description",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_Cq6ntw",
+        "text_hwFqMA",
+        "collection_description_cgrkrn"
+      ],
+      "disabled": true,
+      "name": "Collection description",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-55482733-1c34-49af-987c-850be12a5a7b",
+        "full_width": false,
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "btm_spacing": 64
+      }
+    },
+    "custom_faq_TBBMU6": {
+      "type": "custom-faq",
+      "disabled": true,
+      "name": "Custom faq",
+      "settings": {
+        "heading": "<strong>FAQ</strong>",
+        "heading_size": "h2",
+        "caption": "Frequently Asked Questions",
+        "description_style": "body",
+        "btm_spacing": 52,
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "",
+        "container_color_scheme": "scheme-55482733-1c34-49af-987c-850be12a5a7b",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "custom_collection_banner_Fq8TQ4",
+    "product-grid",
+    "custom_liquid_g8cBKj",
+    "custom_liquid_JhfjqK",
+    "custom_liquid_JHQGKp",
+    "custom_liquid_B4yDDf",
+    "custom_icon_trust_xQKmEY",
+    "custom_support_icon_K34VVa",
+    "collection_description_7CkzCy",
+    "custom_faq_TBBMU6"
+  ]
+}

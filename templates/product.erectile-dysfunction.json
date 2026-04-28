@@ -1,0 +1,438 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "trust_and_benefits_XriQMT": {
+      "type": "trust-and-benefits",
+      "blocks": {
+        "column_qGx3zk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/medical-cross.png",
+            "title": "regulted pharmacy"
+          }
+        },
+        "column_tApNbY": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/box.png",
+            "title": "discreet packaging"
+          }
+        },
+        "column_mP9N4H": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/fast-delivery_2.png",
+            "title": "free delivery on over £30"
+          }
+        },
+        "column_izHhqB": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/security.png",
+            "title": "excellent 4.8out of 5",
+            "trust_pilot": "shopify://shop_images/trustpilot-logo_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "column_qGx3zk",
+        "column_tApNbY",
+        "column_mP9N4H",
+        "column_izHhqB"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-8564deaf-c836-47c3-a47e-8e9a2d132504",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_JKhcwC": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "btn_custom_link": ""
+          }
+        },
+        "swishlist_simple_wishlist_wishlist_product_button_YpqN7P": {
+          "type": "shopify://apps/swishlist-simple-wishlist/blocks/wishlist_product_button/bfcb80f2-f00d-42ae-909a-9f00c726327b",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "order_text_MQAaUP": {
+          "type": "order_text",
+          "settings": {
+            "order_bg_box_full": "#e7f7f6",
+            "order_text_color": "#000000",
+            "image_1_order": "shopify://shop_images/tracking_1_2.png",
+            "heading_1_order": "Standard delivery get order in 2-4 working days.",
+            "heading_2_order": "Express delivery get order in 1-3 working days"
+          }
+        },
+        "icon_with_text_qwpcxb": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "bg_box_full": "#f5f5f5",
+            "box_text_color": "#000000",
+            "ctm_changes": true,
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/security_1.png",
+            "heading_1": "Safe Payment",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/fast-delivery_2_1.png",
+            "heading_2": "Standard UK Delivery",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/reduce-cost_1_d061122b-5fa0-442b-b4e0-a248ee490193.png",
+            "heading_3": "Lowest Price"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "judge_me_reviews_preview_badge_JKhcwC",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "swishlist_simple_wishlist_wishlist_product_button_YpqN7P",
+        "order_text_MQAaUP",
+        "icon_with_text_qwpcxb",
+        "description",
+        "share"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-be9c90ba-dd79-41a9-9d5e-aab32db15a21",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "vertical_thumb": true,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 52
+      }
+    },
+    "main_erectile_dysfunction_b6wTgM": {
+      "type": "main-erectile-dysfunction",
+      "blocks": {
+        "text_C6jefH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Text block",
+            "text_style": "body"
+          }
+        },
+        "title_zjwh98": {
+          "type": "title",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_gpT6c4": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        },
+        "price_QqwG9p": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_cmx4Bh": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_RfdUC7": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_R9QPBb": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "btn_custom_link": "shopify://pages/erectile-dysfunction-treatment"
+          }
+        },
+        "swishlist_simple_wishlist_wishlist_product_button_paHTNm": {
+          "type": "shopify://apps/swishlist-simple-wishlist/blocks/wishlist_product_button/bfcb80f2-f00d-42ae-909a-9f00c726327b",
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "order_text_BHJr7A": {
+          "type": "order_text",
+          "settings": {
+            "order_bg_box_full": "#e7f7f6",
+            "order_text_color": "#000000",
+            "image_1_order": "shopify://shop_images/tracking_1_2.png",
+            "heading_1_order": "Standard delivery get order in 2-4 working days.",
+            "heading_2_order": "Express delivery get order in 1-3 working days"
+          }
+        },
+        "icon_with_text_Wtcg4r": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "bg_box_full": "#f5f5f5",
+            "box_text_color": "#000000",
+            "ctm_changes": true,
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/security_1.png",
+            "heading_1": "Safe Payment",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/fast-delivery_2_1.png",
+            "heading_2": "Standard UK Delivery",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/reduce-cost_1_d061122b-5fa0-442b-b4e0-a248ee490193.png",
+            "heading_3": "Lowest Price"
+          }
+        },
+        "step_form_poppup_L4ACbg": {
+          "type": "step_form_poppup",
+          "settings": {
+            "custom_heading_form": "SIGN UP YOUR USER ACCOUNT",
+            "custom_subhead_form": "Fill all form field to go to next step",
+            "details_progress": "Details",
+            "finish_progress": "Finish",
+            "heading1_block": "ABOUT YOU",
+            "question1_block": "Q1: Are you male?",
+            "alert1_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "question2_block": "Q2: Are you under 18 years of age?",
+            "alert2_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "question3_block": "Q3: Are you a smoker and do you consume more than 2 cigarettes a day?",
+            "heading2_block": "INDICATION",
+            "question4_block": "Q1: Are you having difficulty in getting and/or maintaining an erection satisfactory for sexual performance",
+            "alert4_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "question5_block": "Q2: Have you used any medication for erectile dysfunction before?",
+            "quesinner1_block": "Q1: Did it work",
+            "quesinner2_block": "Q2: Did you experience any side effects?",
+            "question6_block": "Q3: Do you have any allergy to Sildenafil, tadalafil and vardenafil or any of its ingredients?",
+            "alert6q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "question7_block": "Q4: Are you allergic to any medicines or other substances, for example peanuts or soya?",
+            "heading3_block": "PATIENT HEALTH",
+            "questpatient1_block": "Q1: Has your doctor advised that you are not fit enough for any physical and/or sexual activity?",
+            "alert7q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient2_block": "Q2: Do you feel very breathless or experience chest pain with light or moderate physical activity, such as walking briskly for 20 minutes or climbing two flights of stairs?",
+            "alert8q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient3_block": "Q3: Have you had a heart attack or stroke within the last 6 months?",
+            "alert9q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient4_block": "Q4: Do you suffer from low blood pressure (i.e. less than 90/50mmHg), and/or are prone to faints or collapses? If you are unsure, check with your GP or local pharmacy.",
+            "alert10q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient5_block": "Q5: Do you have high blood pressure (i.e. above 150/90mmHg)? If you are unsure, check with your GP or local pharmacy?",
+            "alert11q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "paragraph_list_question": "Q6: Do you have any other heart problems or are you under a doctor’s care for any of the following:",
+            "paragraph_list_text": "<p>1. Low blood pressure or uncontrolled high blood pressure<br/>2. Unstable angina (chest pain), irregular heart beat or palpitations (arrhythmia)<br/>3. A problem with one of the valves in your heart (valvular heart disease)<br/>4. A problem where the heart muscle becomes inflamed and does not work as well as it should (cardiomyopathy)<br/>5. Heart problems causing blood flow issues (e.g. left ventricular outflow obstruction, aortic narrowing) or severe cardiac failure<br/><br/></p>",
+            "alert12q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient7_block": "Q7: Do you have Peyronie's disease, angulation or any other deformation of the penis?",
+            "alert13q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient8_block": "Q8: Have ever had loss of vision because of damage to the optic nerve (such as non-arteritic anterior ischaemic optic neuropathy [NAION]) or have an inherited eye disease?",
+            "alert14q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient9_block": "Q9: Do you have galactose intolerance, Lapp lactase deficiency or glucose-galactose malabsorption?",
+            "alert15q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient10_block": "Q10: Do you have previously diagnosed liver, kidney or urinary problems?",
+            "alert16q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient11_block": "Q11: Do you currently suffer from diabetes or abnormal sugar levels?",
+            "alert17q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient12_block": "Q12: Do you have any of the following health conditions:",
+            "paragraph_list2_text": "<p>a) Sickle cell anaemia<br/>                b) Multiple myeloma <br/>                c) Leukaemia<br/>                d) Bleeding issues (e.g. haemophilia)<br/>                e) Active stomach ulcers<br/><br/></p>",
+            "alert18q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "questpatient13_block": "Q13: Are you currently using any other medication, even if you’re not taking it regularly? Select from list below:",
+            "question_1checkbox": "Nicorandil",
+            "question_2checkbox": "Nitrate medication such as Glyceryl Trinitrate (GTN), Isosorbide Mononitrate and Dinitrate.  (including sprays, patches, gels or creams)",
+            "question_3checkbox": "Existing erectile dysfunction treatment",
+            "question_4checkbox": "Alpha-blockers: Alfuzosin, Doxazosin, Indoramin, Prazosin, Tamsulosin, Terazosin",
+            "question_5checkbox": "Antibacterials: Rifampicin, Erythromycin, Clarithromycin, Telithromycin, Gatifloxacin",
+            "question_6checkbox": "Antivirals: Atanzavir, Indinavir, Ritonavir, Saquinavir, Telaprevir, Fosamprenavir, Tipranavir, Nelfinavir, Aprinovir or Etravirine",
+            "question_7checkbox": "Oral Antifungals: Ketoconazole, Itraconazole, Voriconazole, Fluconazole",
+            "question_8checkbox": "Cobicistat",
+            "question_9checkbox": "Disopyramide",
+            "question_10checkbox": "Dapoxetine (Priligy)",
+            "question_11checkbox": "Cimetidine",
+            "question_12checkbox": "Bosentan",
+            "question_13checkbox": "Riociguat",
+            "question_14checkbox": "Please list any other prescription medicines you are taking",
+            "alert22q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "question_15checkbox": "Q14: Do you take any recreational drug such as Amyl Nitrate (poppers) or cocaine?",
+            "alert23q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "heading10_block": "CONSENT AND ACKNOWLEDGEMENT",
+            "questconsent1_block": "Q1: Please confirm that you are aware of the following:",
+            "paragraph_list3_text": "<p>a. You should not take any combination of erectile dysfunction medications on the same day           <br/>b. You should only take the higher strength treatments (sildenafil/Viagra 100mg, tadalafil/Cialis 20mg, vardenafil/Levitra 20mg or Spedra 200mg) if you have used the intermediate strengths before on at least 4 occasions without any side effects.           <br/>c. You should avoid taking grapefruit juice or alcohol whilst using any erectile dysfunction treatment           <br/>d. Being overweight or smoking or drinking alcohol regularly can make erection problems worse. Therefore, it is important to lead a healthy lifestyle by losing weight, only drinking alcohol in moderation and quitting smoking. Please refer to our website for further healthy lifestyle support.           <br/>e. You are recommended to have regular blood tests for high cholesterol, blood sugar (diabetes) and hormone imbalances (such as thyroid, testosterone or prolactin), as these conditions may contribute to erection difficulties           <br/>f. You should seek immediate medical attention if you have a continuous erection for 2 hours or more.</p>",
+            "alert24q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+            "inline_custom_terms": "I agree to the <a href=\"/policies/privacy-policy\" target=\"_blank\" title=\"Privacy Policy\">Terms and Conditions  </a>and confirm that I am over 18.'",
+            "alert25q_text": "You must agree to continue.",
+            "alert26q_text": "Question answer is pending",
+            "next_btn": "Next",
+            "prev_btn": "Previous",
+            "check_my_btn": "Check My Eligibility"
+          }
+        }
+      },
+      "block_order": [
+        "text_C6jefH",
+        "title_zjwh98",
+        "judge_me_reviews_preview_badge_gpT6c4",
+        "price_QqwG9p",
+        "variant_picker_cmx4Bh",
+        "quantity_selector_RfdUC7",
+        "buy_buttons_R9QPBb",
+        "swishlist_simple_wishlist_wishlist_product_button_paHTNm",
+        "order_text_BHJr7A",
+        "icon_with_text_Wtcg4r",
+        "step_form_poppup_L4ACbg"
+      ],
+      "name": "Product Erectile dysfunt",
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-be9c90ba-dd79-41a9-9d5e-aab32db15a21",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "vertical_thumb": true,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "tab_product_GD8UeE": {
+      "type": "tab--product",
+      "settings": {
+        "show_product_description": "Product Details"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "<strong>You may also like...</strong>",
+        "heading_size": "h2",
+        "section_subheading": "You’ll Love These Too",
+        "btm_spacing": 52,
+        "description_style": "body",
+        "products_to_show": 8,
+        "quick_add": "standard",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "1",
+        "padding_top": 52,
+        "padding_bottom": 72
+      }
+    },
+    "slider_related_product_qjUKJA": {
+      "type": "slider-related-product",
+      "settings": {
+        "heading": "<strong>You may also like...</strong>",
+        "heading_size": "h1",
+        "section_subheading": "You’ll Love These Too",
+        "btm_spacing": 52,
+        "description_style": "body",
+        "products_to_show": 8,
+        "quick_add": "none",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 52,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "trust_and_benefits_XriQMT",
+    "main",
+    "main_erectile_dysfunction_b6wTgM",
+    "tab_product_GD8UeE",
+    "related-products",
+    "slider_related_product_qjUKJA"
+  ]
+}

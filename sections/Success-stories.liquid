@@ -1,0 +1,325 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_succ_title p{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 58px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+    max-width: 950px;
+    margin: 0 auto;
+    text-align: center;
+}
+.cs_succ_title p strong{
+    color: var(--Purple, #4C3E79);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_cuss_block_main{
+    margin-top: 40px;
+}
+.cs_cuss_top_text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cs_cuss_num{
+    margin: 0;
+    color: #000;
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0px;
+}
+.cs_cuss_lbs{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.64px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    display: flex;
+    padding: 8px 16px;
+    align-items: center;
+    border-radius: 77px;
+    background: var(--Yellow, #FFD902);
+    gap: 8px;
+}
+.cs_cuss_block_images_main{
+    display: flex;
+    gap: 4px;
+    margin: 16px 0 24px 0;
+}
+.cs_cuss_block_img_befor{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 5.825px;
+    height: 300px;
+}
+.cs_cuss_block_richtext p{
+    margin: 0;
+    color: #000;
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 26px */
+    padding-bottom: 16px;
+    letter-spacing: -0.2px;
+}
+.cs_cuss_block_richtext p strong{
+    color: #000;
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+     letter-spacing: -0.2px;
+}
+.cs_cuss_varif_main{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 19.2px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-direction: row-reverse;
+}
+.cs_cuss_block{
+    border-radius: 12px;
+    background: var(--Warm-color, #FAF8ED);
+    padding: 20px;
+}
+.custom_swiper-pagination{
+    text-align: center;
+        margin-top: 18px;
+}
+.custom_swiper-pagination .swiper-pagination-bullet{
+    width: 63.6px;
+    height: 3.5px;
+    background: #E0E0E0;
+    border-radius: 20px;
+        opacity: 1;
+}
+.custom_swiper-pagination .swiper-pagination-bullet-active{
+    width: 140px;
+    height: 3.5px;
+    background: #4C3E79;
+}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .cs_succ_title p{
+        font-size: 28px;
+        line-height: 36px;
+        max-width: 100%;
+    }
+    .cs_succ_title p strong{
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .cs_cuss_block_main {
+    margin-top: 40px;
+}
+.cs_cuss_num {
+    font-size: 16px;
+    line-height: 19px;
+}
+.cs_cuss_block {
+    padding: 12px 12px 40px 12px;
+}
+.custom_swiper-pagination {
+    margin-top: 12px;
+}
+.custom_swiper-pagination .swiper-pagination-bullet {
+    width: 30px;
+}
+.custom_swiper-pagination .swiper-pagination-bullet-active {
+    width: 80px;
+}
+  }
+  /* ----- */ 
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_succ_title">{{ section.settings.heading }}</div>
+    <div class="cs_cuss_block_main">
+        <div class="swiper cs_succ_swiper">
+      <div class="swiper-wrapper">
+        {% for block in section.blocks %}
+        <div class="swiper-slide">
+        <div class="cs_cuss_block">
+            <div class="cs_cuss_top_text">
+                <h4 class="cs_cuss_num">{{ block.settings.top_text }}</h4>
+                <h4 class="cs_cuss_lbs">{{ block.settings.lbstext }} {% render 'cs_arrow_svg' %}</h4>
+            </div>
+            <div class="cs_cuss_block_images_main">
+                <div class="cs_cuss_block_images_befor">
+                    {{ block.settings.brofr-img | image_url: width: 1440 | image_tag:
+                                class: 'cs_cuss_block_img_befor',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }}
+                </div>
+                <div class="cs_cuss_block_images_after">
+                    {{ block.settings.after-img | image_url: width: 1440 | image_tag:
+                                class: 'cs_cuss_block_img_befor',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }}
+                </div>
+            </div>
+            <div class="cs_cuss_block_richtext">{{ block.settings.rich-text }}</div>
+            <div class="cs_cuss_varif_main">{{ block.settings.verifired }} {% render 'cs_veri_svg' %}</div>
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+</div>
+ <div class="custom_swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+<script>
+  var swiper = new Swiper('.cs_succ_swiper', {
+    slidesPerView: 3,
+    spaceBetween: 12,
+    speed: 1000,
+     pagination: {
+    el: ".custom_swiper-pagination",
+    clickable: true,
+  },
+    breakpoints: {
+      0: { slidesPerView: 1,spaceBetween: 12, },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    }
+  });
+</script>
+{% schema %}
+{
+    "name": "Success stories",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        }
+    ],
+  "blocks": [
+      {
+        "type": "best-sellers",
+        "name": "Add Tab",
+         "settings": [
+             {
+            "type": "text",
+            "id": "top_text",
+            "label": "Ttitle",
+        },
+        {
+            "type": "text",
+            "id": "lbstext",
+            "label": "LBS Text",
+        },
+        {
+            "type": "image_picker",
+            "id": "brofr-img",
+            "label": "Befor Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "after-img",
+            "label": "After Image"
+        },
+        {
+            "type": "richtext",
+            "id": "rich-text",
+            "label": "Rich Text",
+        },
+        {
+            "type": "text",
+            "id": "verifired",
+            "label": "Verified review",
+        },
+      ]
+      },
+    ],
+    "presets": [
+        { "name": "Success stories" }
+    ]
+}
+{% endschema %}

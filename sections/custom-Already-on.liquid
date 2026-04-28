@@ -1,0 +1,455 @@
+{% style %}
+  .pharmazon-hero-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    position: relative;
+  }
+
+  @media screen and (max-width: 749px) {
+    .pharmazon-hero-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  }
+
+  .pharmazon-wrapper {
+    text-align: center;
+  }
+  .pharmazon-heading p  {
+        color: var(--Black, #111);
+        text-align: center;
+        font-family: var(--custom-fonts);
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 74.4px */
+        letter-spacing: -1.24px;
+        text-transform: capitalize;
+        margin:0px;
+  }
+
+  .pharmazon-heading strong  {
+        color: var(--Purple, #4C3E79);
+        font-family: var(--custom-fonts);
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        letter-spacing: -1.24px;
+        text-transform: capitalize;
+  }
+
+  .pharmazon-desc {
+        color: var(--Gray, #545454);
+        font-family: var(--custom-fonts);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 21.6px */
+        letter-spacing: -0.54px;
+        margin:16px 0 24px;
+        text-align:center;
+  }
+
+  .pharmazon-btn {
+        color: var(--Purple, #4C3E79);
+        font-family: var(--custom-fonts);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 21.6px */
+        letter-spacing: 0px;
+        text-transform: capitalize;
+        display: flex;
+        padding: 16px 30px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 75px;
+        background: var(--Yellow, #FFD902);
+        border: 1px solid #FFD902; 
+        max-width:max-content;
+        text-decoration:none;
+        margin: 0 auto;
+            transition: all 0.3s ease;
+            cursor: pointer;
+}
+
+
+.pharmazon-btn {
+  cursor: pointer;
+}
+
+/* Hover effect */
+  
+
+  /* Benefits */
+  .pharmazon-benefits {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 0px;
+    position: absolute;
+    z-index: 2;
+    flex-wrap: wrap;
+    top:-160px;
+    width:100%;
+  }
+  .pharmazon-contents {
+    padding-bottom: 55px;
+}
+
+  .benefit-card {
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 217, 2, 0.03) 0%, rgba(255, 217, 2, 0.15) 53.37%, rgba(255, 217, 2, 0.03) 100%), #FAF8ED;
+    display: flex;
+    max-width: 364px;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex-shrink: 0;
+    text-align: left;
+  }
+
+  .benefit-icon img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .benefit-title {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 38.4px */
+    letter-spacing: -0.64px;
+    text-transform: capitalize;
+    margin:0px;
+    max-width: 220px;
+  }
+
+  .benefit-text {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: -0.64px;
+    margin:0px;
+  }
+
+  /* Bottom Image Container */
+  .pharmazon-image-container {
+    position:relative;
+    border-radius: 20px;
+    background: linear-gradient(185deg, rgba(255, 217, 2, 0.24) -3.38%, rgba(255, 217, 2, 0.32) 11.8%, rgba(255, 217, 2, 0.02) 57.75%, rgba(255, 217, 2, 0.32) 80.56%, rgba(255, 217, 2, 0.32) 98.91%), #FAF8ED;
+    display: flex;
+    padding: 70px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+    overflow: hidden;
+    
+  }
+
+
+.pharmazon-image-container img {
+    max-width: 65%;
+    width: 100%;
+    margin: 0 auto;
+}
+.cs-wrapper {
+    position: relative;
+    margin: 160px 0 0px;
+}
+.first-image {
+    display:block;
+}
+.second-image {
+    display:none;
+}
+  /* Mobile Layout */
+  @media screen and (max-width: 749px) {
+.pharmazon-btn{
+  padding: 14px 30px;
+}
+.pharmazon-contents {
+    padding-bottom: 0px;
+}
+
+    .pharmazon-heading p, .pharmazon-heading strong  {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 590;
+        line-height: 120%; /* 36px */
+        letter-spacing: -0.6px;
+        text-transform: capitalize;
+    }
+    .pharmazon-desc { 
+        color: var(--Gray, #545454);
+        text-align: center;
+
+        /* 16px - body - Regular */
+        font-family: var(--custom-fonts);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 19.2px */
+        letter-spacing: -0.64px;
+        margin:12px 0  24px;
+    }
+    .pharmazon-benefits {
+      flex-direction: column;
+      align-items: center;
+      gap:12px;
+      margin:24px 0 0;
+      top:0px;
+      position:unset;
+    }
+
+    .benefit-card {
+      max-width: 100%;
+      width: 100%;
+      border-radius:10px;
+      padding:16px;
+      gap: 16px;
+    }
+
+
+    .pharmazon-image-container {
+      margin:24px 0 0px;
+      padding:40px 0;
+    }
+    .benefit-title {
+         color: var(--Black, #111);
+        /* 24px - Title - Medium */
+        font-family: var(--custom-fonts);
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 510;
+        line-height: 120%; /* 28.8px */
+        letter-spacing: -0.96px;
+        max-width: unset;
+    }
+    .benefit-text {
+        color: var(--Black, #111);
+        font-family: var(--custom-fonts);
+        font-size: 16px;
+        max-width:330px;
+    }
+    .benefit-icon {
+    width: 32px;
+    height: 32px;
+    }
+    .benefit-icon img {
+        width: 100%;
+        height: 100%;
+    }
+    .pharmazon-image-container img {
+        width: 100%;
+        margin: 0 auto;
+        object-fit: contain;
+        max-height: 200px;
+        max-width: 90%;
+    }
+    .cs-wrapper {
+       margin:24px 0 0;
+    }
+    .first-image {
+    display:none;
+}
+.second-image {
+    display:block;
+}
+  }
+{% endstyle %}
+
+<section class="pharmazon-hero-{{ section.id }}">
+  <div class="page-width">
+  <div class="pharmazon-contents">
+    {% if section.settings.heading != blank %}
+      <div class="pharmazon-heading">
+        {{ section.settings.heading }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.description != blank %}
+      <div class="pharmazon-desc">
+        {{ section.settings.description }}
+      </div>
+    {% endif %}
+
+    {% if section.settings.button_label != blank %}
+      <a href="{{ section.settings.button_link }}" class="pharmazon-btn cs_faq_sec_button_des_hover">
+        {{ section.settings.button_label }}
+      </a>
+    {% endif %}
+</div>
+
+    <!-- Benefits -->
+    <div class="cs-wrapper">
+    <div class="pharmazon-benefits">
+      {% for block in section.blocks %}
+        <div class="benefit-card cs_card_scale_animations" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <div class="benefit-icon">
+              {{ block.settings.icon | image_url: width: 64 | image_tag }}
+            </div>
+          {% endif %}
+
+          <div class="benefit-title">
+            {{ block.settings.title }}
+          </div>
+
+          <div class="benefit-text">
+            {{ block.settings.text }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Image Container -->
+    <div class="pharmazon-image-container">
+     {% if section.settings.main_image != blank %}
+  {{ section.settings.main_image 
+    | image_url: width: 900 
+    | image_tag: class: 'main-image first-image'
+  }}
+{% endif %}
+
+{% if section.settings.mob_image != blank %}
+  {{ section.settings.mob_image 
+    | image_url: width: 400 
+    | image_tag: class: 'main-image second-image'
+  }}
+{% endif %}
+
+    </div>
+</div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Switch to Pharmazon",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mob_image",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Switch To Pharmazon"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+
+    {
+      "type": "header",
+      "content": "Desktop Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Top Padding Desktop",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom Padding Desktop",
+      "default": 60
+    },
+
+    {
+      "type": "header",
+      "content": "Mobile Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Top Padding Mobile",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom Padding Mobile",
+      "default": 40
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Switch to Pharmazon"
+    }
+  ]
+}
+{% endschema %}

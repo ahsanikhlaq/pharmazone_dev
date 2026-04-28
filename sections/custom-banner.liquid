@@ -1,0 +1,502 @@
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    
+}
+.cs_banner-img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 0 16px 16px 0;
+}
+.cs_banner_img_content_main{
+    display: grid;
+    grid-template-columns: 40% auto;
+    align-items: end;
+    justify-content: space-between;
+    background-color: {{ section.settings.back_color }};
+     border-radius: 16px;
+   
+}
+.cs_banner_content_main{
+    padding: 40px 0 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 100px;
+}
+.cs_banner_reviews_main{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.cs_banner_rev-image_des{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-width: 236px;
+    max-height: 23px;
+}
+.cs_banner_rev-image_mbl{
+display: none;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.cs_banner-reivew_richtext p{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+}
+.cs_banner-reivew_richtext p strong{
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px; /* 100% */
+}
+.cs_banner_title{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 101%; /* 67.67px */
+    letter-spacing: -1.4px;
+    padding-top: 17px;
+    min-width: 650px;
+    text-transform: capitalize;
+}
+.cS_banner_weight_number_main{
+    border-radius: 8.541px;
+    border: 1.058px solid rgba(255, 255, 255, 0.10);
+    background: var(--Linear, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, #F4EFFD 0.38%, #FFF5BF 100%));
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+.cs_banner_weight_title p{
+    margin: 0;
+    color: #2A2A2A;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: var(--custom-fonts);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: 0px;
+}
+.cs_banner_weight_title p strong{
+    color: #2A2A2A;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: var(--custom-fonts);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0px;
+}
+.cs_banner_weight_kg_mian{
+    border-radius: 4.838px;
+    background: #FFF;
+    display: flex;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.cs_banner_weight_kg_before{
+    display: flex;
+    align-items: end;
+    gap: 2px;
+}
+.cs_banner_wight_num{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 90%; /* 27px */
+    letter-spacing: -0.9px;
+    
+}
+.cs_banner_wight_num1{
+width: 50px;
+ }
+ .cs_banner_wight_num2{
+width: 37px;
+ }
+.cs_banner_weight_unit{
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 15.237px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.cs_banner_weight-image{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 3.386px; 
+}
+.cs_banner_weight_des p{
+    margin: 0;
+    color: var(--White, #FFF);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: var(--custom-fonts);
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 25.2px */
+}
+.cs_banner_button{
+    border-radius: 65px;
+    background: var(--Yellow, #FFD902);
+    border: 1px solid #FFD902;
+    display: flex;
+    width: fit-content;
+    padding: 16px 35px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: 0px;
+        text-decoration: none;
+            transition: 0.3s ease;
+            cursor: pointer;
+
+}
+.cs_banner_weight_text_butt{
+    max-width: 380px;
+}
+.cs_banner_weight_sub_title{
+    margin: 0;
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 15.6px */
+    letter-spacing: -0.39px;
+}
+.cs_banner_weight_title{
+    padding: 12px 0 8px 0;
+}
+.cs_banner_weight_des{
+    padding: 20px 0 30px 0;
+}
+ @media screen and (max-width:768px){
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.mbl_padding_top }}px;
+    padding-bottom: {{ section.settings.mbl_padding_bottom }}px;
+  }
+  .cs_banner_rev-image_des{
+    display: none;
+}
+.cs_banner_rev-image_mbl{
+   display: block;
+   width: 108px;
+        height: 20px;
+}
+  .cs_banner_img_content_main{
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+.cs_treat_button {
+    padding: 12px 16px;
+}
+.cS_banner_weight_number_main{
+    display: none;
+}
+.cs_banner_content_main {
+    padding: 24px 12px 0px 12px;
+    gap: 0;
+}
+.cs_banner_title{
+    min-width: 339px;
+    max-width: 339px;
+    text-align: center;
+    font-size: 36px;
+    line-height: 120%; /* 43.2px */
+    letter-spacing: -0.72px;
+    padding-top: 17px;
+}
+.cs_banner_weight_des{
+    padding: 12px 0 30px 0;
+}
+.cs_banner_weight_des p{
+    font-size: 17px;
+    line-height: 120%; /* 21.6px */
+    text-align: center;
+}
+.cs_banner_button{
+    margin: 0 auto;
+}
+.cs_banner_reviews_main{
+justify-content: center;
+}
+  }
+</style>
+
+
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_banner_img_content_main">
+  <div class="cs_banner_content_main">
+  <div class="cs_banner_rev_tite_main">
+    <div class="cs_banner_reviews_main">
+        <div class="cs_banner-reivew_img">
+            {{ section.settings.review-image | image_url: width: 1440 | image_tag:
+                class: 'cs_banner_rev-image_des',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "egar"
+              }}
+              {{ section.settings.review-image-mbl | image_url: width: 1440 | image_tag:
+                class: 'cs_banner_rev-image_mbl',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "egar"
+              }}
+        </div>
+        <div class="cs_banner-reivew_richtext">{{ section.settings.review-text }}</div>
+    </div>
+    <h1 class="cs_banner_title">{{ section.settings.title-text }}</h1>
+</div>
+<div class="cs_banner_weight_text_butt">
+    <div class="cS_banner_weight_number_main cs_card_scale_animation">
+        <div class="cs_banner_weight_text">
+            <h3 class="cs_banner_weight_sub_title">{{ section.settings.weight-sub-title }}</h3>
+            <div class="cs_banner_weight_title">{{ section.settings.weight-text }}</div>  
+            <div class="cs_banner_weight_kg_mian">
+                <div class="cs_banner_weight_kg_before">
+                    <span class="cs_banner_wight_num cs_banner_wight_num1">{{ section.settings.weight1 }}</span>
+                    <span class="cs_banner_weight_unit">{{ section.settings.weight-unit1 }}</span>
+                </div>
+                <div class="cs_banner_weight_kg_svg">{% render 'banner_weight_comp_svg' %}</div>
+                <div class="cs_banner_weight_kg_before">
+                    <span class="cs_banner_wight_num cs_banner_wight_num2">{{ section.settings.weight2 }}</span>
+                    <sapn class="cs_banner_weight_unit">{{ section.settings.weight-unit2 }}</sapn>
+                </div>
+            </div>
+        </div>
+        <div class="cs_banner_weight_image">
+            {{ section.settings.weight-image | image_url: width: 1440 | image_tag:
+                class: 'cs_banner_weight-image',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "eager"
+              }}
+        </div>
+    </div>
+    <div class="cs_banner_weight_des">{{ section.settings.weight-des }}</div>
+    <a class="cs_banner_button cs_button_hover" href="{{ section.settings.butt-url }}">{{ section.settings.butt-text }}</a>
+</div>
+  </div>
+  <div class="cs_banner_image_main">
+    {{ section.settings.image | image_url: width: 1440 | image_tag:
+                class: 'cs_banner-img',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "eager"
+              }}
+  </div>
+  </div>
+</div>
+</section>
+<script>
+    document.querySelectorAll(".cs_banner_wight_num").forEach((el) => {
+  let target = parseInt(el.innerText);
+  el.innerText = "0";
+
+  let observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(el, target);
+        observer.unobserve(el);
+      }
+    });
+  });
+
+  observer.observe(el);
+});
+
+function animateCount(element, target) {
+  let current = 0;
+  let speed = target / 100; // animation smoothness
+
+  let interval = setInterval(() => {
+    current += speed;
+    if (current >= target) {
+      element.innerText = target;
+      clearInterval(interval);
+    } else {
+      element.innerText = Math.floor(current);
+    }
+  }, 20);
+}
+
+</script>
+{% schema %}
+{
+  "name": "Custom Banner",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Banner image"
+    },
+    {
+        "type": "image_picker",
+        "id": "review-image",
+        "label": "Desktop Reviews image"
+    },
+    {
+        "type": "image_picker",
+        "id": "review-image-mbl",
+        "label": "Mobile Reviews image"
+    },
+    {
+        "type": "richtext",
+        "id": "review-text",
+        "label": "Review Text"
+    },
+    {
+        "type": "text",
+        "id": "title-text",
+        "label": "Heading"
+    },
+    {
+        "type": "text",
+        "id": "weight-sub-title",
+        "label": "Weight Sub Title"
+    },
+    {
+        "type": "richtext",
+        "id": "weight-text",
+        "label": "Weight Text"
+    },
+    {
+        "type": "text",
+        "id": "weight1",
+        "label": "Before Weight"
+    },
+    {
+        "type": "text",
+        "id": "weight-unit1",
+        "label": "Before Weight Unit"
+    }, 
+    {
+        "type": "text",
+        "id": "weight2",
+        "label": "After Weight"
+    },
+    {
+        "type": "text",
+        "id": "weight-unit2",
+        "label": "After Weight Unit"
+    },  
+    {
+        "type": "image_picker",
+        "id": "weight-image",
+        "label": "Weight image"
+    },
+    {
+        "type": "richtext",
+        "id": "weight-des",
+        "label": "Weight des"
+    },
+    {
+        "type": "text",
+        "id": "butt-text",
+        "label": "Button Text"
+    },
+    {
+        "type": "url",
+        "id": "butt-url",
+        "label": "Button Url"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Top Padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Bottom Padding",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "back_color",
+      "label": "Background Color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

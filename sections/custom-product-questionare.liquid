@@ -1,0 +1,891 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+{% style %}
+.section-{{ section.id }} {
+  padding-top: {{ section.settings.padding_top_desktop }}px;
+  padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  background: {{ section.settings.bg_color }};
+  background: var(--Gradient, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, rgba(244, 239, 253, 0.60) 0.38%, rgba(255, 245, 191, 0.60) 100%), #FFF);
+}
+.section-{{ section.id }} .page-width { max-width: {{ section.settings.page_width }}px; margin: 0 auto; padding: 0 20px; }
+.section-{{ section.id }} .page-width { max-width:560px; margin:0 auto; }
+.product-section { display: none !important; }
+.product-section.active { display: block !important; }
+.weight-title { color: var(--Black, #111); text-align: center; font-family: "SF Pro"; font-size: 42px; font-style: normal; font-weight: 500; line-height: 120%; letter-spacing: -0.42px; margin:0px; }
+.weight-header-img { width: 324px; height: 324px; margin: 0 auto; text-align: center; }
+.weight-header-img img { object-fit: cover; aspect-ratio: 1 / 1; width:100%; height:100%; max-width: 324px; max-height: 324px; margin: 0 auto; }
+.media-sub-heading { color: var(--Purple, #4C3E79); font-family: "SF Pro"; font-size: 12px; font-style: normal; font-weight: 400; line-height: 120%; letter-spacing: -0.12px; text-transform: capitalize; margin:0 0 12px; }
+.media-heading { color: var(--Black, #111); font-family: "SF Pro"; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; letter-spacing: -0.18px; text-transform: capitalize; margin:0 0 20px; }
+.media-part { padding: 20px; border-radius: 10px; background: #FFF; }
+.pg-wrap { max-width: 100%; margin: 0 auto; }
+.pg-main .swiper-slide img { width: 100%; height: 100%; object-fit: contain; max-height: 400px; }
+.pg-thumbs { margin-top: 12px; }
+.pg-thumbs .swiper-slide { width: 80px !important; height: 80px; border-radius: 8px; overflow: hidden; cursor: pointer; border: 2px solid transparent; background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,.07); transition: border-color .2s; }
+.pg-thumbs .swiper-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pg-thumbs .swiper-slide-thumb-active { border-radius: 8px; border: 1px solid var(--Purple, #4C3E79); }
+.step-heading { color: var(--Black, #111); font-family: "SF Pro"; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; letter-spacing: -0.18px; text-transform: capitalize; margin:0 0 12px; }
+.step-des p { color: var(--Gray, #545454); font-family: "SF Pro"; font-size: 14px; font-style: normal; font-weight: 400; line-height: 120%; letter-spacing: -0.14px; margin:0 0; }
+.step-box { display: flex; padding: 12px 16px; align-items: flex-start; gap: 14px; align-self: stretch; border-radius: 12px; background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), linear-gradient(107deg, #F4EFFD 0.38%, #FFF5BF 100%); }
+.box-img { width: 50px; height: 50px; aspect-ratio: 1/1; object-fit:cover; border-radius:8px; }
+.steps-content { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; align-self: stretch; }
+.step-number { line-height:normal; }
+.step-number * { color: var(--Black, #111); font-family: "SF Pro"; font-size: 16px; font-style: normal; font-weight: 500; line-height: 120%; letter-spacing: -0.16px; margin:0px; }
+.step-titled { color: var(--Gray, #545454); font-family: "SF Pro"; font-size: 14px; font-style: normal; font-weight: 400; line-height: 120%; letter-spacing: -0.14px; margin:0px; }
+.step-grid { display: flex; flex-direction: column-reverse; align-items: flex-start; gap: 12px; align-self: stretch; margin:20px 0 0; }
+.usage-steps { padding:20px; border-radius: 10px; background: #FFF; margin:20px 0; }
+.testimonial-subheading * { color: var(--Black, #111); font-family: "SF Pro"; font-size: 12px; font-style: normal; font-weight: 400; line-height: 120%; letter-spacing: -0.12px; text-transform: capitalize; margin:0 0 12px; }
+.testimonial-heading { margin:0 0 24px; }
+.testimonial-heading * { color: var(--Black, #111); font-family: "SF Pro"; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; letter-spacing: -0.18px; text-transform: capitalize; margin:0 0; }
+.testimonial-content { display: flex; padding: 12px 16px; flex-direction: column; align-items: flex-start; gap: 14px; border-radius: 12px; background: linear-gradient(0deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 100%), linear-gradient(107deg, #F4EFFD 0.38%, #FFF5BF 100%); }
+.testimonial-name { margin:0px; color: var(--purple-20, #26295D); font-family: "SF Pro"; font-size: 18px; font-style: normal; font-weight: 700; line-height: 120%; letter-spacing: -0.18px; text-transform: capitalize; }
+.testimonial-headline { color: var(--purple-20, #26295D); font-family: "SF Pro"; font-size: 14px; font-style: normal; font-weight: 500; line-height: 120%; letter-spacing: -0.14px; text-transform: capitalize; margin:0px; }
+.testimonial-info { margin:0px; }
+.testimonial-info * { color: var(--purple-20, #26295D); font-family: "SF Pro"; font-size: 10px; font-style: normal; font-weight: 400; line-height: 120%; letter-spacing: -0.12px; text-transform: capitalize; margin:0px; }
+.testimonial-section { padding: 20px; border-radius: 10px; background: #FFF; margin: 0 0 20px; padding-right:0px; }
+.testimonialSwiper .swiper-wrapper { padding:0 0 36px; display:flex; height:auto; }
+.testimonialSwiper .swiper-slide { display:flex; height:auto; }
+.testimonialSwiper .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal { bottom:0px; }
+.cs-pag .swiper-pagination-bullet { background:white; border:1.5px solid #4C3E79; width:10px; height:10px; opacity:1; }
+.cs-pag .swiper-pagination-bullet-active { background:#4C3E79; }
+.benefits-grid { display: flex; flex-direction: column-reverse; align-items: flex-start; gap: 12px; margin:0 0 24px; }
+.benefit-img { width: 26px; height: 26px; background: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.benefit-img img { width: 12px; height: 12px; aspect-ratio: 1/1; object-fit:cover; }
+.benefit-card { display: flex; align-items: center; gap: 8px; align-self: stretch; }
+.graph_image_img img { width: 100%; height: auto; object-fit: cover; display: block; }
+.faq-section { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; align-self: stretch; padding:0 20px 20px; background:white; margin:0 0 20px; border-radius: 0 0 12px 12px; }
+.faq-section * { cursor:pointer !important; }
+.faq-item { width: 100%; border-bottom: 1px solid rgba(12, 36, 33, 0.30); cursor:pointer; }
+.faq-item:last-child { border:0px; }
+button.faq-question { border: 0px; background: transparent; width: 100%; display: flex; justify-content: space-between; padding: 0 0 12px; }
+button.faq-question span { color: #0C2421; font-family: "SF Pro"; font-size: 16px; font-style: normal; font-weight: 500; line-height: 120%; letter-spacing: -0.64px; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.25s ease, padding 0.2s ease; padding-top: 0; will-change: max-height; }
+.faq-item.active .faq-answer { padding-top: 8px; }
+.faq-answer * { color: var(--Black, #111); font-family: "SF Pro"; font-size: 12px; font-style: normal; font-weight: 400; line-height: 140%; letter-spacing: -0.24px; text-transform: capitalize; padding:0 0 12px; margin:0px; }
+.faq-icon { font-size: 22px; transition: transform 0.3s ease; }
+.faq-item.active .faq-icon { transform: rotate(180deg); }
+.pharmazoon-section { background:white; padding:20px; border-radius: 10px; margin:0 0 20px; }
+.caution-box { display: flex; max-width: 500px; padding: 20px; flex-direction: column; justify-content: center; align-items: flex-start; gap: 20px; border-radius: 12px; background: #FCFCFC; }
+.pharma-checkbox-row label { color: var(--Black, #111); font-family: "SF Pro"; font-size: 14px; font-style: normal; line-height: 120%; letter-spacing: -0.14px; font-weight: 400; }
+.caution-text { color: var(--Black, #111); font-family: "SF Pro"; font-size: 14px; font-style: normal; font-weight: 400; line-height: 120%; letter-spacing: -0.14px; margin:0px; }
+.pharma-checkbox-row label strong { font-weight: 700; }
+.pharma-button { color: #FFF; font-family: "SF Pro"; font-size: 16px; font-style: normal; font-weight: 700; line-height: 120%; text-transform: uppercase; display: flex; padding: 15px 49px; justify-content: center; align-items: center; gap: 15px; flex-shrink: 0; align-self: stretch; border-radius: 45px; background: var(--light-gray-20, #E0E0E0); border:0px; }
+.pharmazoon-description * { margin:0px; }
+.pharmazoon-description ul { padding-left:20px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; align-self: stretch; margin: 16px 0 0; }
+.pharmazoon-description ul li { color: var(--Black, #111); font-family: "SF Pro"; font-size: 12px; font-style: normal; font-weight: 400; line-height: 120%; text-transform: capitalize; }
+.pharmazoon-description strong { color: var(--Black, #111); font-family: "SF Pro"; font-size: 18px; font-style: normal; font-weight: 500; line-height: 120%; letter-spacing: -0.18px; text-transform: capitalize; padding:0 0; }
+.variant-box { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; align-self: stretch; margin:20px 0px; }
+.var-label { color: var(--Black, #111); font-family: "SF Pro"; font-size: 14px; font-style: normal; font-weight: 500; line-height: 120%; letter-spacing: -0.14px; margin:0px; }
+.per-month-box { display: flex; flex-direction: column; align-items: center; justify-content:center; gap: 8px; align-self: stretch; margin:20px 0; }
+.per-month strong { color: var(--Purple, #4C3E79); text-align: center; font-family: "SF Pro"; font-size: 20px; font-style: normal; font-weight: 700; line-height: 120%; text-transform: capitalize; }
+.per-month { color: var(--Black, #111); font-family: "SF Pro"; font-size: 16px; font-style: normal; font-weight: 400; line-height: 120%; text-transform: capitalize; margin:0px; }
+.per-month-subtext { color: var(--Gray, #545454); text-align: center; font-family: "SF Pro"; font-size: 14px; font-style: normal; font-weight: 500; line-height: 120%; }
+.weight-review-box { display: flex; align-items: center; gap: 8.8px; margin-bottom: 15px; }
+.weight-review-box p { color: var(--Black, #111); font-family: "SF Pro"; font-size: 13.2px; font-style: normal; font-weight: 700; line-height: 28.6px; margin:0px; display: flex; align-items: center; gap: 8.8px; }
+.weight-review-box strong { color: var(--Black, #111); font-family: "SF Pro"; font-size: 13.2px; font-style: normal; font-weight: 700; line-height: 28.6px; }
+.weight-review-box span { color: var(--Black, #111); font-family: "SF Pro"; font-size: 13.2px; font-style: normal; font-weight: 400; line-height: 28.6px; }
+.benefit-text { color: var(--Gray, #545454); font-family: "SF Pro"; font-size: 15px; font-style: normal; font-weight: 400; line-height: 120%; letter-spacing: -0.12px !important; text-transform: capitalize; }
+.pharma-checkbox-row { display: flex; align-items: center; gap: 8px; align-self: stretch; margin:0 0 16px; }
+#pgThumbs .swiper-wrapper { align-items: center; }
+
+/* ════════════════════════════════
+   MEDICATION PURCHASED POPUP
+════════════════════════════════ */
+.pharma-popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.50);
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+}
+.pharma-popup-overlay.open { display: flex; }
+.pharma-popup-box {
+  background: #fff;
+  border-radius: 24px;
+  padding: 60px 32px 40px 32px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+ border-radius: 20px;
+background: var(--Gradient, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, rgba(244, 239, 253, 0.60) 0.38%, rgba(255, 245, 191, 0.60) 100%), #FFF);
+  animation: popupFadeIn 0.22s ease;
+}
+@keyframes popupFadeIn {
+  from { opacity:0; transform: translateY(18px) scale(0.97); }
+  to   { opacity:1; transform: translateY(0) scale(1); }
+}
+.pharma-popup-emoji-wrap {
+  width: 100px; height: 100px;
+  background: linear-gradient(107deg, #F4EFFD 0.38%, #FFF5BF 100%);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 38px;
+  margin: 0 auto 20px;
+  border-radius: 138.372px;
+    background: #FFF;
+    box-shadow: 0 4px 34px 0 rgba(0, 0, 0, 0.05);
+}
+.pharma-popup-title {
+ color: var(--Black, #111);
+text-align: center;
+font-family: "SF Pro";
+font-size: 32px;
+font-style: normal;
+font-weight: 590;
+line-height: 120%; /* 38.4px */
+letter-spacing: -0.32px;
+margin: 0px 0px 9px 0px;
+}
+.pharma-popup-list {
+  list-style: none; padding: 18px 20px; margin: 0 0 24px;
+  background: #FFFBE8; border-radius: 14px; text-align: left;
+  display: flex; flex-direction: column; gap: 10px;
+ border-radius: 20px;
+    background: radial-gradient(249.22% 76.26% at 55.56% 49.57%, rgba(250, 248, 237, 0.3) 0.4%, rgba(255, 217, 2, 0.4) 100%);
+    max-width: 405px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 11px 37px;
+    width: 100%;
+}
+.pharma-popup-list li {
+  color: var(--Black, #111);
+font-family: "SF Pro";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 205%; /* 32.8px */
+letter-spacing: 0px;
+
+ 
+}
+.pharma-popup-list li::before {
+  content: "•"; color: #000; font-size: 13px; font-weight: 700;
+  flex-shrink: 0; line-height: 1.2;
+  padding-right: 12px;
+}
+.pharma-popup-list li strong { font-weight: 700; }
+.pharma-popup-continue-btn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 17px;
+  background: #4C3E79; color: #fff;
+  font-family: "SF Pro"; font-size: 16px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  border: none; border-radius: 45px; cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+  max-width: 404px;
+    margin: 0 auto;
+}
+.pharma-popup-continue-btn:hover:not(:disabled) { background: #3a2e5e; }
+.pharma-popup-continue-btn:disabled { opacity: 0.75; cursor: not-allowed; }
+.pharma-popup-spinner {
+  width: 18px; height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: none; flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.pharma-popup-continue-btn.loading .pharma-popup-spinner { display: block; }
+
+@media screen and (max-width: 768px) {
+  .section-{{ section.id }} { padding-top: {{ section.settings.padding_top_mobile }}px; padding-bottom: {{ section.settings.padding_bottom_mobile }}px; }
+  .media-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .media-gallery-heading { font-size: 26px; }
+  .weight-header-img img {
+    max-width: 280px;
+    max-height: 324px;
+  }
+}
+@media screen and (max-width: 468px) {
+  .weight-header-img { width: 100%; height: 280px; margin: 0 auto; }
+  .weight-title { font-size: 28px; }
+  .pharmazoon-section, .media-part, .faq-section, .usage-steps, .testimonial-section { padding-right:0px; padding-left:0px; padding-bottom: 8px; margin: 16px 0; background:transparent; }
+  .section-{{ section.id }} .page-width { padding: 0 14px; }
+  .trust-svg { max-width:80px; }
+  .caution-box { padding:14px; gap:16px; }
+  .benefits-grid { gap:6px; }
+  .faq-icon svg { width: 15px; height: 15px; }
+  .testimonial-content { padding: 12px 12px; gap: 10px; }
+  .step-box { padding: 12px 4px; }
+  .pg-thumbs { margin-top: 0px; display: none; }
+  .pharmazoon-section { margin:0px; }
+  .pharmazoon-description ul li { font-size: 11px; }
+  .pharmazoon-description ul { padding-left: 14px; }
+  .pharma-checkbox-row { gap: 4px; }
+  .per-month strong { font-size: 16px; }
+  .per-month { font-size: 14px; }
+  .pharma-checkbox-row label { font-size: 12px; }
+  .per-month-box { gap: 6px; }
+  .pharma-popup-box { padding: 25px 22px 22px; margin: 0px 10px; }
+  .pharma-popup-title { font-size: 22px; },
+  .pharma-popup-list li{
+    font-size: 14px;
+    letter-spacing: 0px;
+  }
+  .pharma-popup-list {
+    padding: 11px 15px;
+    gap: 5px;
+    margin-bottom: 23px;
+
+  }
+  .pharma-popup-list li{
+    font-size: 14px;
+    gap: 0px;
+  }
+}
+{% endstyle %}
+
+{% style %}
+.variant-wrapper { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; border-radius: 60px; background: linear-gradient(0deg, #FCFCFC 0%, #FCFCFC 100%), #000; padding: 8px; }
+.variant-option { cursor: pointer; }
+.variant-option input[type="radio"] { display: none; }
+.variant-option span { display: inline-block; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,0.6); color: var(--Gray, #545454); font-family: "SF Pro"; font-size: 16px; font-style: normal; font-weight: 510; line-height: normal; cursor: pointer; white-space: nowrap; }
+.variant-option input[type="radio"]:checked + span { color: #4C3E79; border: 1px solid #4C3E79; font-weight: 700; border-radius: 36px; background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, #F4EFFD 0.38%, #FFF5BF 100%); }
+.pharma-button.active { background: #4C3E79 !important; cursor: pointer; }
+{% endstyle %}
+
+<section class="section-{{ section.id }}">
+  <div class="page-width">
+
+{% assign products = section.settings.products %}
+{% for product in products %}
+  {% assign p-name = product.metafields.custom.product_name %}
+  {%- assign section_product_loop_index = forloop.index0 -%}
+
+  <div class="product-section" id="{{ product.selected_or_first_available_variant.id }}" style="display:none;">
+
+    <div class="product-header">
+      <h1 class="weight-title">{{ p-name }} Weight Loss Plan</h1>
+      {% assign meta_image = product.metafields.custom.weight_header_image %}
+      {% if meta_image != blank %}
+        <div class="weight-header-img">
+          <img src="{{ meta_image | image_url: width: 600 }}" alt="{{ product.title }}" loading="lazy" width="600" height="auto">
+        </div>
+      {% endif %}
+    </div>
+
+    {% assign dosage_products = product.metafields.custom.dosage_products.value %}
+    {% assign dosage_labels = product.metafields.custom.dosage_labels.value %}
+
+    <div class="pharmazoon-section">
+      <div class="pharmazoon-description">
+        {{ product.metafields.custom.why_pharmazoon_description | metafield_tag }}
+      </div>
+
+      <div class="variant-box">
+        <h4 class="var-label">Select Dosage:</h4>
+        <div class="variant-wrapper">
+          {% for dp in dosage_products %}
+            {% assign label = dosage_labels[forloop.index0] | default: dp.title %}
+            {% assign first_variant = dp.variants.first %}
+            <label class="variant-option">
+              <input
+                type="radio"
+                name="dosage_tab_{{ product.id }}"
+                value="{{ first_variant.id }}"
+                data-price="{{ dp.price | money }}"
+                data-product-id="{{ dp.id }}"
+                data-dosage-label="{{ label }}"
+                data-product-title="{{ dp.title }}"
+                {% if forloop.first %}checked{% endif %}
+              >
+              <span>{{ label }}</span>
+            </label>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="per-month-box">
+        <p class="per-month">
+          <strong class="dosage-price-display" data-product="{{ product.id }}">
+            {% if dosage_products.first %}{{ dosage_products.first.price | money }}{% else %}{{ product.price | money }}{% endif %}
+          </strong>&nbsp;For The First Month
+        </p>
+        <span class="per-month-subtext">on a 3-month plan</span>
+      </div>
+
+      <div class="caution-box">
+        <div class="main-row">
+          <div class="pharma-checkbox-row">
+            {%- assign checkbox_id = 'confirm_' | append: product.id -%}
+            <input type="checkbox" id="{{ checkbox_id }}" class="pharma-confirm-checkbox" data-product="{{ product.id }}">
+            <label for="{{ checkbox_id }}">
+              <strong>Important:</strong> Consultation required before order fulfilment
+            </label>
+          </div>
+          <p class="caution-text">
+            Please note that your order will only be fulfilled after a consultation with our prescriber.
+            Once your order is placed, we will send you a link to book an appointment with the prescriber.
+            Please complete the consultation to confirm your eligibility for the treatment.
+          </p>
+        </div>
+
+        <button
+          class="pharma-button pharma-add-to-cart"
+          data-product="{{ product.id }}"
+          data-product-name="{{ p-name }}"
+          disabled
+        >
+          CONTINUE WITH {{ p-name }}
+        </button>
+      </div>
+    </div>
+<div class="weight-review-box">
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+<!-- End TrustBox script -->
+
+<!-- TrustBox widget - Horizontal -->
+<div class="trustpilot-widget" data-locale="en-US" data-template-id="5406e65db0d04a09e042d5fc" data-businessunit-id="65e6f92a169181b97521a6f6" data-style-height="28px" data-style-width="100%" data-token="05e956ac-00f6-4a93-a928-81986b07ffdc">
+  <a href="https://www.trustpilot.com/review/pharmazonhomecare.com" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+<!-- End TrustBox widget -->
+</div>
+
+    <div class="media-part">
+      <p class="media-sub-heading">Your Medication</p>
+      <p class="media-heading">{{ p-name }} Injections</p>
+      <div class="media-gallery-grid">
+        <div class="pg-wrap">
+          <div class="swiper pg-main" id="pgMain_{{ product.id }}">
+            <div class="swiper-wrapper">
+              {%- for media in product.media -%}
+                {%- if media.media_type == 'image' -%}
+                  <div class="swiper-slide">
+                    <img src="{{ media | img_url: '800x800', crop: 'center' }}" alt="{{ media.alt | escape | default: product.title }}" loading="{{ forloop.first | iif: 'eager', 'lazy' }}" />
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+          <div class="swiper pg-thumbs" id="pgThumbs_{{ product.id }}">
+            <div class="swiper-wrapper">
+              {%- for media in product.media -%}
+                {%- if media.media_type == 'image' -%}
+                  <div class="swiper-slide">
+                    <img src="{{ media | img_url: '160x160', crop: 'center' }}" alt="{{ media.alt | escape | default: product.title }}" loading="lazy" />
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+          <script>
+            (function() {
+              var thumbsEl = document.getElementById('pgThumbs_{{ product.id }}');
+              var mainEl   = document.getElementById('pgMain_{{ product.id }}');
+              if (!thumbsEl || !mainEl) return;
+              var thumbs = new Swiper(thumbsEl, { spaceBetween: 12, slidesPerView: 4, freeMode: false, watchSlidesProgress: true, watchSlidesVisibility: true, slideToClickedSlide: true, centeredSlides: false, speed: 1000, loop: false });
+              var main = new Swiper(mainEl, { spaceBetween: 0, speed: 1000, loop: false, thumbs: { swiper: thumbs } });
+            })();
+          </script>
+        </div>
+      </div>
+    </div>
+
+    {% assign faq_list = product.metafields.custom.product_weight_faqs.value %}
+    {% if faq_list %}
+      <div class="faq-section">
+        {% for faq in faq_list %}
+          <div class="faq-item {% if forloop.first %}active{% endif %}">
+            <button class="faq-question">
+              <span>{{ faq.question }}</span>
+              <span class="faq-icon">{% render 'chevron-down' %}</span>
+            </button>
+            <div class="faq-answer" {% if forloop.first %}style="display:block;"{% endif %}>
+              {{ faq.answer | metafield_tag }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% assign graph_image = product.metafields.custom.weight_graph_image %}
+    {% if graph_image != blank %}
+      <div class="graph_image_img">
+        <img src="{{ graph_image | image_url }}" alt="{{ product.title }}" loading="lazy" width="600" height="auto">
+      </div>
+    {% endif %}
+
+    {% assign section_data = product.metafields.custom.weight_steps.value %}
+    {% if section_data %}
+      <div class="usage-steps">
+        <h2 class="step-heading">{{ section_data.heading | metafield_tag }}</h2>
+        <div class="step-des">{{ section_data.description | metafield_tag }}</div>
+        <div class="step-grid">
+          {% for step in section_data.custom_steps.value %}
+            <div class="step-box">
+              {% if step.step_image %}<img src="{{ step.step_image | image_url }}" alt="{{ step.title }}" class='box-img'>{% endif %}
+              <div class="steps-content">
+                <div class="step-number">{{ step.step_number | metafield_tag }}</div>
+                <h4 class="step-titled">{{ step.step_title }}</h4>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% assign testimonial_data = product.metafields.custom.weight_testimonial.value %}
+    {% if testimonial_data %}
+
+      
+      <div class="testimonial-section">
+        <div class="testimonial-subheading">{{ testimonial_data.subheading | metafield_tag }}</div>
+        <h2 class="testimonial-heading">{{ testimonial_data.heading | metafield_tag }}</h2>
+        {%- assign testimonial_swiper_id = 'testimonialSwiper_' | append: product.id -%}
+        <div class="swiper testimonialSwiper" id="{{ testimonial_swiper_id }}">
+          <div class="swiper-wrapper">
+            {% for item in testimonial_data.testimonial.value %}
+              <div class="swiper-slide">
+                <div class="testimonial-content">
+                  <div class="testimonial-name">{{ item.name | metafield_tag }}</div>
+                  <div class="testimonial-headline">{{ item.heading }}</div>
+                  <div class="testimonial-info">{{ item.info | metafield_tag }}</div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination cs-pag"></div>
+        </div>
+        <script>
+          (function() {
+            var el = document.getElementById('{{ testimonial_swiper_id }}');
+            if (!el) return;
+            new Swiper(el, { slidesPerView: 1.7, spaceBetween: 8, loop: false, speed: 1000, pagination: { el: el.querySelector('.swiper-pagination'), clickable: true }, breakpoints: { 0: { slidesPerView: 1.2, spaceBetween: 8 }, 488: { slidesPerView: 1.2, spaceBetween: 8 }, 1024: { slidesPerView: 1.7, spaceBetween: 8 } } });
+          })();
+        </script>
+      </div>
+    {% endif %}
+
+    {% assign benefits_list = product.metafields.custom.weight_benefits_points.value %}
+    {% if benefits_list %}
+      <div class="benefits-section">
+        <div class="benefits-grid">
+          {% for benefit in benefits_list %}
+            <div class="benefit-card">
+              {% if benefit.benefit_image %}<div class="benefit-img"><img src="{{ benefit.benefit_image | image_url: width: 400 }}" alt="Benefit image"></div>{% endif %}
+              {% if benefit.benefit_text %}<div class="benefit-text">{{ benefit.benefit_text | metafield_tag }}</div>{% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% comment %} <div class="weight-review-box">
+      <p>Excellent {% render 'start-trustpilot' %}</p>
+      <span><strong>{{ product.metafields.custom.weight_reviews_number }}</strong> reviews on</span>
+      {% render 'trust-reviews' %}
+    </div> {% endcomment %}
+
+  </div>
+{% endfor %}
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MEDICATION PURCHASED POPUP
+═══════════════════════════════════════════ -->
+<div class="pharma-popup-overlay" id="pharmaPopupOverlay">
+  <div class="pharma-popup-box">
+    <div class="pharma-popup-emoji-wrap">
+      <img src = '{{ section.settings.emoji-img | image_url }}' width = 'auto' height = 'auto'>
+    </div>
+    <h2 class="pharma-popup-title">Medication purchased</h2>
+    <ul class="pharma-popup-list">
+      <li>You'll <strong> receive an email </strong> from us Instantly</li>
+      <li>Complete a short <strong> medical questionnaire </strong></li>
+      <li>After that your <strong> consultation will be booked </strong></li>
+    </ul>
+    <button class="pharma-popup-continue-btn" id="pharmaPopupContinue">
+      <span class="pharma-popup-spinner"></span>
+      <span class="pharma-popup-btn-text">CONTINUE</span>
+    </button>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Custom Section",
+  "settings": [
+    { "type": "range", "id": "page_width", "label": "Page Width", "min": 900, "max": 1600, "step": 50, "default": 1200 },
+    { "type": "color", "id": "bg_color", "label": "Background Color", "default": "#ffffff" },
+    { "type": "range", "id": "padding_top_desktop", "label": "Padding Top Desktop", "min": 0, "max": 150, "step": 5, "default": 60 },
+    { "type": "range", "id": "padding_bottom_desktop", "label": "Padding Bottom Desktop", "min": 0, "max": 150, "step": 5, "default": 60 },
+    { "type": "range", "id": "padding_top_mobile", "label": "Padding Top Mobile", "min": 0, "max": 150, "step": 5, "default": 40 },
+    { "type": "range", "id": "padding_bottom_mobile", "label": "Padding Bottom Mobile", "min": 0, "max": 150, "step": 5, "default": 40 },
+    { "type": "product_list", "id": "products", "label": "Select products"},
+    {
+      "type": "image_picker",
+      "id": "emoji-img",
+      "label": "emoji label"
+    }
+  ],
+  "presets": [{ "name": "Media Gallery" }]
+}
+{% endschema %}
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  var QUIZ_KEY = 'pharmazon_quiz_answers';
+
+  function getQuizAnswers() {
+    try { return JSON.parse(localStorage.getItem(QUIZ_KEY) || '{}'); }
+    catch(e) { return {}; }
+  }
+
+  function buildCartProperties(quiz, dosageLabel, productName) {
+    var props = {};
+    var stepNum = 1;
+    var order = (quiz.stepOrder && quiz.stepOrder.length) ? quiz.stepOrder : Object.keys(quiz.steps || {});
+    var steps = quiz.steps || {};
+    var popups = quiz.popups || {};
+
+    // ★ Build map: triggerStep → popups that belong after it
+    var popupsByStep = {};
+    Object.keys(popups).forEach(function(pName) {
+      var p = popups[pName];
+      var triggerStep = p.triggerStep || p.afterStep || p.stepId || null;
+      if (triggerStep) {
+        if (!popupsByStep[triggerStep]) popupsByStep[triggerStep] = [];
+        popupsByStep[triggerStep].push({ name: pName, data: p });
+      }
+    });
+
+    // ★ Build map: stepId → step number (so popup key can use correct Q number)
+    var stepNumMap = {};
+    var tempNum = 1;
+    order.forEach(function(stepId) {
+      var step = steps[stepId];
+      if (!step) return;
+      // Only count steps that have a question and real content
+      if (step.question || step.answer || step.inputValues) {
+        stepNumMap[stepId] = tempNum;
+        tempNum++;
+      }
+    });
+
+    order.forEach(function(stepId) {
+      var step = steps[stepId];
+      if (!step) return;
+
+      // Skip steps with no question and no data
+      if (!step.question && !step.answer && !step.inputValues) return;
+
+      var question = (step.question || stepId).replace(/\s+/g, ' ').trim();
+      var key = 'Quiz: Q' + stepNum + ' - ' + question;
+      stepNum++;
+
+      // ── consent/photo step ──
+      if (stepId === 'consent-step') {
+        var frontUrl = step.frontPhotoUrl || (quiz.weightPhotos && quiz.weightPhotos.frontPhotoUrl) || '';
+        var sideUrl  = step.sidePhotoUrl  || (quiz.weightPhotos && quiz.weightPhotos.sidePhotoUrl)  || '';
+        var videoUrl = step.videoUrl      || (quiz.weightPhotos && quiz.weightPhotos.videoUrl)       || '';
+        if (frontUrl) props['Quiz: Weight Photo (Front)'] = frontUrl;
+        if (sideUrl)  props['Quiz: Weight Photo (Side)']  = sideUrl;
+        if (videoUrl) props['Quiz: Weight Video']         = videoUrl;
+
+      // ── GP info step ──
+      } else if (step.inputValues && (step.inputValues['Full Name'] || step.inputValues['NHS Number'])) {
+        var gpLines = [];
+        var fieldOrder = ['Full Name', 'NHS Number', 'Phone Number', 'Address', 'Town', 'Postcode'];
+        fieldOrder.forEach(function(field) {
+          if (step.inputValues[field]) gpLines.push(field + ': ' + step.inputValues[field]);
+        });
+        var idType = step.inputValues['ID Type'] || '';
+        if (idType) gpLines.push('ID Type: ' + idType);
+        props[key] = gpLines.join(' | ');
+
+        // ★ ID Image as its own clickable property
+        var idImage = step.inputValues['ID Image URL'] || step.inputValues['ID Image'] || '';
+        if (idImage) props['Quiz: GP ID Image'] = idImage;
+
+      // ── answer step ──
+      } else if (step.answer) {
+        props[key] = step.answer;
+
+      // ── input values step ──
+      } else if (step.inputValues && Object.keys(step.inputValues).length) {
+        var parts = [];
+        Object.keys(step.inputValues).forEach(function(field) {
+          if (field === 'unit') return;
+          parts.push(step.inputValues[field]);
+        });
+        if (step.inputValues.unit) parts.push('(' + step.inputValues.unit + ')');
+        props[key] = parts.join(' ').trim();
+      }
+
+      // ★ FIX: BMI — inject right after height step (thir-step) by stepId
+      if (stepId === 'thir-step' && quiz.bmi && quiz.bmi.bmi) {
+        props['Quiz: BMI Score']    = quiz.bmi.bmi;
+        props['Quiz: BMI Eligible'] = quiz.bmi.eligible ? 'Yes' : 'No';
+      }
+
+      // ★ FIX: Popups — inject right after their triggerStep
+      // Key format: "Quiz: Q{n} - Extra Info - {popup title}"
+      if (popupsByStep[stepId]) {
+        var currentStepNum = stepNum - 1; // stepNum was already incremented above
+        popupsByStep[stepId].forEach(function(entry) {
+          var p    = entry.data;
+          var pKey = 'Quiz: Q' + currentStepNum + ' - Extra Info - ' + (p.title || entry.name);
+          var value = p.action || 'opened';
+          if (p.userInput && p.userInput.trim()) value = p.userInput.trim();
+          props[pKey] = value;
+        });
+      }
+
+    });
+
+    // ── fallback: weight photos from top-level ──
+    if (quiz.weightPhotos) {
+      if (quiz.weightPhotos.frontPhotoUrl && !props['Quiz: Weight Photo (Front)']) props['Quiz: Weight Photo (Front)'] = quiz.weightPhotos.frontPhotoUrl;
+      if (quiz.weightPhotos.sidePhotoUrl  && !props['Quiz: Weight Photo (Side)'])  props['Quiz: Weight Photo (Side)']  = quiz.weightPhotos.sidePhotoUrl;
+      if (quiz.weightPhotos.videoUrl      && !props['Quiz: Weight Video'])          props['Quiz: Weight Video']         = quiz.weightPhotos.videoUrl;
+    }
+
+    // ── fallback: BMI if thir-step wasn't found ──
+    if (quiz.bmi && quiz.bmi.bmi && !props['Quiz: BMI Score']) {
+      props['Quiz: BMI Score']    = quiz.bmi.bmi;
+      props['Quiz: BMI Eligible'] = quiz.bmi.eligible ? 'Yes' : 'No';
+    }
+
+    // ── fallback: any popups with no triggerStep match ──
+    Object.keys(popups).forEach(function(pName) {
+      var p    = popups[pName];
+      var alreadyAdded = Object.keys(props).some(function(k) {
+        return k.indexOf(p.title || pName) !== -1;
+      });
+      if (!alreadyAdded) {
+        var pKey  = 'Quiz: Extra Info - ' + (p.title || pName);
+        var value = p.action || 'opened';
+        if (p.userInput && p.userInput.trim()) value = p.userInput.trim();
+        props[pKey] = value;
+      }
+    });
+
+    return props;
+  }
+
+
+  /* ══════════════════════════════════════════
+     1. SHOW CORRECT PRODUCT based on ?variant_id=
+  ══════════════════════════════════════════ */
+  var params      = new URLSearchParams(window.location.search);
+  var urlVariant  = params.get('variant_id');
+  var allSections = document.querySelectorAll('.product-section');
+
+  function showSection(el) { if (!el) return; el.classList.add('active'); el.style.display = 'block'; }
+
+
+  /* ══════════════════════════════════════════
+     DOSAGE LOCK
+  ══════════════════════════════════════════ */
+  var LOCK_IF_ANY_VALUE_MATCHES = [
+    'No, I\'m new to GLP-1 medications',
+    'More than 3 months ago'
+  ];
+
+  function shouldLockDosage() {
+    var quiz       = getQuizAnswers();
+    var properties = buildCartProperties(quiz, '', '');
+
+    var allValues = Object.values(properties).map(function(v) {
+      return String(v).toLowerCase().trim();
+    });
+
+    Object.keys(quiz).forEach(function(k) {
+      allValues.push(String(k).toLowerCase().trim());
+      if (quiz[k] && typeof quiz[k] === 'object') {
+        Object.values(quiz[k]).forEach(function(v) {
+          allValues.push(String(v).toLowerCase().trim());
+        });
+      }
+    });
+
+    for (var i = 0; i < LOCK_IF_ANY_VALUE_MATCHES.length; i++) {
+      var needle = LOCK_IF_ANY_VALUE_MATCHES[i].toLowerCase().trim();
+      if (allValues.indexOf(needle) !== -1) {
+        console.log('[DosageLock] Match found for:', needle, '→ locking dosage');
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function applyDosageLock() {
+    if (!shouldLockDosage()) return;
+
+    allSections.forEach(function(section) {
+      var allOptions = section.querySelectorAll('.variant-option');
+
+      allOptions.forEach(function(option, index) {
+        var radio = option.querySelector('input[type="radio"]');
+
+        if (index === 0) {
+          if (radio) { radio.checked = true; radio.disabled = false; }
+          option.style.opacity       = '1';
+          option.style.cursor        = 'pointer';
+          option.style.pointerEvents = '';
+        } else {
+          if (radio) { radio.checked = false; radio.disabled = true; }
+          option.style.opacity       = '0.4';
+          option.style.cursor        = 'not-allowed';
+          option.style.pointerEvents = 'none';
+        }
+      });
+
+      var firstRadio = section.querySelector('input[type="radio"]:checked');
+      var priceEl    = section.querySelector('.dosage-price-display');
+      if (firstRadio && priceEl) priceEl.textContent = firstRadio.dataset.price;
+    });
+  }
+
+  applyDosageLock();
+
+  if (urlVariant) {
+    var matched = document.getElementById(urlVariant);
+    if (matched && matched.classList.contains('product-section')) { showSection(matched); }
+    else if (allSections.length > 0) { showSection(allSections[0]); }
+  } else {
+    if (allSections.length > 0) showSection(allSections[0]);
+  }
+
+
+  /* ══════════════════════════════════════════
+     POPUP elements (shared across all products)
+  ══════════════════════════════════════════ */
+  var popupOverlay = document.getElementById('pharmaPopupOverlay');
+  var popupBtn     = document.getElementById('pharmaPopupContinue');
+  var popupBtnText = popupBtn ? popupBtn.querySelector('.pharma-popup-btn-text') : null;
+
+  var pendingCart = null;
+
+  function setPopupBtnLoading(isLoading) {
+    if (!popupBtn) return;
+    popupBtn.disabled = isLoading;
+    if (isLoading) {
+      popupBtn.classList.add('loading');
+      if (popupBtnText) popupBtnText.textContent = 'Adding to cart...';
+    } else {
+      popupBtn.classList.remove('loading');
+      if (popupBtnText) popupBtnText.textContent = 'CONTINUE';
+    }
+  }
+
+
+  /* ══════════════════════════════════════════
+     2. PER-PRODUCT: dosage, checkbox, cart
+  ══════════════════════════════════════════ */
+  allSections.forEach(function (section) {
+
+    var radios      = section.querySelectorAll('input[type="radio"]');
+    var priceEl     = section.querySelector('.dosage-price-display');
+    var checkbox    = section.querySelector('.pharma-confirm-checkbox');
+    var btn         = section.querySelector('.pharma-add-to-cart');
+    var productName = btn ? (btn.getAttribute('data-product-name') || '') : '';
+
+    if (!btn || !checkbox) return;
+
+    radios.forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        if (priceEl) priceEl.textContent = this.dataset.price;
+      });
+    });
+    var defaultRadio = section.querySelector('input[type="radio"]:checked');
+    if (defaultRadio && priceEl) priceEl.textContent = defaultRadio.dataset.price;
+
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        btn.disabled = false;
+        btn.style.background = '#4C3E79';
+        btn.style.cursor = 'pointer';
+      } else {
+        btn.disabled = true;
+        btn.style.background = '';
+        btn.style.cursor = 'not-allowed';
+      }
+    });
+
+    btn.addEventListener('click', function () {
+      var selectedRadio = section.querySelector('input[type="radio"]:checked');
+      if (!selectedRadio) return;
+
+      var variantId   = selectedRadio.value;
+      var dosageLabel = selectedRadio.getAttribute('data-dosage-label') || selectedRadio.getAttribute('data-product-title') || '';
+      var quiz        = getQuizAnswers();
+      var properties  = buildCartProperties(quiz, dosageLabel, productName);
+
+      pendingCart = { variantId: variantId, properties: properties };
+
+      setPopupBtnLoading(false);
+
+      if (popupOverlay) popupOverlay.classList.add('open');
+    });
+
+  });
+
+
+  /* ══════════════════════════════════════════
+     3. POPUP CONTINUE → add to cart THEN checkout
+  ══════════════════════════════════════════ */
+  if (popupBtn) {
+    popupBtn.addEventListener('click', function () {
+      if (!pendingCart) { window.location.href = '/checkout'; return; }
+
+      setPopupBtnLoading(true);
+
+      fetch('/cart/add.js', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: [{ id: pendingCart.variantId, quantity: 1, properties: pendingCart.properties }] })
+      })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function () {
+        pendingCart = null;
+        window.location.href = '/checkout';
+      })
+      .catch(function (err) {
+        console.error('[Cart] Error:', err);
+        setPopupBtnLoading(false);
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  }
+
+  if (popupOverlay) {
+    popupOverlay.addEventListener('click', function (e) {
+      if (e.target === popupOverlay) {
+        popupOverlay.classList.remove('open');
+      }
+    });
+  }
+
+
+  /* ══════════════════════════════════════════
+     4. FAQ ACCORDION
+  ══════════════════════════════════════════ */
+  allSections.forEach(function (section) {
+    var faqItems = section.querySelectorAll('.faq-item');
+    faqItems.forEach(function (item) {
+      var question = item.querySelector('.faq-question');
+      var answer   = item.querySelector('.faq-answer');
+      if (item.classList.contains('active')) answer.style.maxHeight = answer.scrollHeight + 'px';
+      question.addEventListener('click', function () {
+        var isActive = item.classList.contains('active');
+        faqItems.forEach(function (i) { i.classList.remove('active'); i.querySelector('.faq-answer').style.maxHeight = null; });
+        if (!isActive) { item.classList.add('active'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+      });
+    });
+  });
+
+});
+</script>

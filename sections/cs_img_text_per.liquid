@@ -1,0 +1,417 @@
+<section
+  class="stats-highlight-section"
+  style="
+    --stats-pt-desktop: {{ section.settings.padding_top_desktop }}px;
+    --stats-pb-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --stats-pt-mobile: {{ section.settings.padding_top_mobile }}px;
+    --stats-pb-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="page-width">
+  <div class="stats-background-wrapper">
+
+    {% if section.settings.desktop_bg != blank %}
+      {{
+        section.settings.desktop_bg
+        | image_url: width: 2000
+        | image_tag:
+          class: 'stats-bg-image stats-bg-desktop',
+          loading: 'lazy'
+      }}
+    {% endif %}
+
+    {% if section.settings.mobile_bg != blank %}
+      {{
+        section.settings.mobile_bg
+        | image_url: width: 1200
+        | image_tag:
+          class: 'stats-bg-image stats-bg-mobile',
+          loading: 'lazy'
+      }}
+    {% endif %}
+
+    <div class="stats-content-overlay"></div>
+      <div class="stats-highlight-wrapper">
+
+        <!-- Percentage Box -->
+        <div class="stats-percentage-box">
+          <h2 
+            class="stats-percentage-number" 
+            data-target="{{ section.settings.percentage_number }}"
+          >
+            0%
+          </h2>
+          <p class="stats-percentage-label">
+            {{ section.settings.percentage_label }}
+          </p>
+        </div>
+
+        <!-- Client Content Box -->
+        <div class="stats-client-box">
+          <p class="stats-client-description">
+            {{ section.settings.client_description }}
+          </p>
+
+          <div class="stats-client-meta">
+            <p class="stats-client-name">
+              {{ section.settings.client_name }}
+            </p>
+            <p class="stats-client-position">
+              {{ section.settings.client_position }}
+            </p>
+          </div>
+        </div>
+
+      </div>
+    
+
+  </div>
+  </div>
+</section>
+
+
+<style>
+.stats-highlight-section {
+  padding-top: var(--stats-pt-desktop);
+  padding-bottom: var(--stats-pb-desktop);
+
+}
+.stats-background-wrapper {
+   position:relative;
+}
+
+.stats-highlight-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: absolute;
+  left: 36px;
+  bottom: 55.016px;
+}
+
+.stats-percentage-box {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px);
+  display: flex;
+      flex-direction: column-reverse;
+  align-items: flex-start;
+  gap: 22px;
+  padding:24px;
+  transition: transform 0.3s ease;
+}
+
+.stats-percentage-box:hover {
+  transform: translateY(-5px);
+}
+
+.stats-percentage-number {
+  color: var(--Yellow, #FFD902);
+  font-family: var(--custom-fonts);
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 90px; /* 120px */
+  letter-spacing: -2px;
+  margin: 0;
+}
+
+.stats-percentage-label {
+  color: var(--Light-Gray, #F9F9F9);
+  font-family: var(--custom-fonts);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */
+  letter-spacing: -0.4px;
+  margin:0px;
+}
+
+.stats-client-box {
+  flex: 1;
+  display: flex;
+  max-width: 590px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  transition: transform 0.3s ease;
+}
+
+.stats-client-box:hover {
+  transform: translateY(-5px);
+}
+
+.stats-client-description {
+      color: var(--White, #FFF);
+      font-family: var(--custom-fonts);
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 28.8px */
+      letter-spacing: -1px;
+      margin:0px;
+}
+
+.stats-client-name {
+  color: var(--Light-Gray, #F9F9F9);
+  font-family: var(--custom-fonts);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%; /* 24px */
+  letter-spacing: -0.4px;
+  margin: 0;
+}
+
+.stats-client-position {
+  color: var(--Light-Gray, #F9F9F9);
+  font-family: var(--custom-fonts);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 16.8px */
+  letter-spacing: -0.28px;
+  margin: 0px 0 0;
+}
+.stats-client-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.stats-bg-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.stats-bg-desktop {
+   display:block;
+}
+.stats-bg-mobile {
+   display:none;
+}
+.stats-percentage-box, .stats-client-box {
+   cursor:pointer;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .stats-highlight-section {
+    padding-top: var(--stats-pt-mobile);
+    padding-bottom: var(--stats-pb-mobile);
+  }
+.stats-client-name{
+  font-weight: 500;
+}
+.stats-client-position {
+    font-weight: 400;
+}
+  .stats-highlight-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stats-percentage-box,
+  .stats-client-box {
+    padding: 12px;
+  }
+
+  .stats-percentage-number {
+    font-size: 66px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 68px; /* 79.2px */
+    letter-spacing: -2px;
+  }
+  .stats-background-wrapper {
+    position: relative;
+  }
+  .stats-bg-desktop {
+   display:none;
+}
+.stats-bg-mobile {
+   display:block;
+}
+
+.stats-highlight-wrapper {
+    left:12px;
+    bottom:12px;
+    right:12px;
+    gap:12px;
+}
+.stats-percentage-box {
+    flex-direction:column-reverse;
+    {% comment %} gap:26px; {% endcomment %}
+    border-radius: 20px;
+    background: rgba(13, 13, 13, 0.14);
+    backdrop-filter: blur(20px);
+}
+
+.stats-percentage-label {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+  letter-spacing: -0.5px;
+}
+.stats-client-box {
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.14);
+    backdrop-filter: blur(20px);
+}
+.stats-client-description {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.64px;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+}
+
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const counter = document.querySelector(".stats-percentage-number");
+  if (!counter) return;
+
+  const target = parseInt(counter.getAttribute("data-target"), 10) || 0;
+  const duration = 1800; // animation duration in ms
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function animateCounter() {
+    const startTime = performance.now();
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOutCubic(progress);
+
+      const value = Math.floor(easedProgress * target);
+      counter.innerText = value + "%";
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target + "%";
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter();
+        observer.unobserve(entry.target); // run once
+      }
+    });
+  }, {
+    threshold: 0.4
+  });
+
+  observer.observe(counter);
+
+});
+</script>
+
+
+
+{% schema %}
+{
+  "name": "Stats Highlight Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_bg",
+      "label": "Desktop Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_bg",
+      "label": "Mobile Background Image"
+    },
+    {
+      "type": "text",
+      "id": "percentage_number",
+      "label": "Percentage Number",
+      "default": "21"
+    },
+    {
+      "type": "text",
+      "id": "percentage_label",
+      "label": "Percentage Label",
+      "default": "Increase in customer retention"
+    },
+    {
+      "type": "textarea",
+      "id": "client_description",
+      "label": "Client Description"
+    },
+    {
+      "type": "text",
+      "id": "client_name",
+      "label": "Client Name"
+    },
+    {
+      "type": "text",
+      "id": "client_position",
+      "label": "Client Position"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 48
+    }
+  ],
+  "presets": [
+    {
+      "name": "Stats Highlight Section"
+    }
+  ]
+}
+{% endschema %}

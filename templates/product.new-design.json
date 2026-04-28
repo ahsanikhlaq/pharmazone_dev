@@ -1,0 +1,972 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_bage_gfRHac": {
+          "type": "custom-bage",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_JKhcwC": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "custom_reviews_LUQe4n": {
+          "type": "custom-reviews",
+          "settings": {
+            "content": "<p><strong>Achieve sustainable weight loss with Mounjaro</strong><br/>Control hunger, support weight loss, and improve overall health with Mounjaro Injection prescribed following a clinical review for safe, responsible treatment.</p>"
+          }
+        },
+        "icon_text_NFfamz": {
+          "type": "icon-text",
+          "settings": {
+            "icon1": "shopify://shop_images/Frame_31.svg",
+            "icon-text1": "Clinically Studied",
+            "icon2": "shopify://shop_images/Line.svg",
+            "icon-text2": "Weight Loss",
+            "icon3": "shopify://shop_images/Capa_1_6.svg",
+            "icon-text3": "Weekly Dosing",
+            "icon4": "shopify://shop_images/Capa_1_7.svg",
+            "icon-text4": "Appetite Control"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "title": "Choose your dosage:",
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "custom_variants_GbN8jb": {
+          "type": "custom-variants",
+          "settings": {}
+        },
+        "doctor_comments_AtT6P6": {
+          "type": "doctor-comments",
+          "settings": {
+            "img": "shopify://shop_images/65f45f41cca7664d43290e73_dr_20avatar_20medium_20opt_png.png",
+            "richtext": "<p>\"Only patients who are currently on the medication or have recently been on it can start on a higher dose\"</p>",
+            "name": "Dr. Ruth Cohen"
+          }
+        },
+        "get_started_BkUF8q": {
+          "type": "Get-Started",
+          "settings": {
+            "butt-text": "Get Started",
+            "butt-url": "https://pharmazonexpress.com/pages/questionaire-journey",
+            "icon1": "shopify://shop_images/65f45f41cca7664d43290e8d_renew-icon_svg.svg",
+            "icon-text1": "Cancel-any-time",
+            "icon2": "shopify://shop_images/SVG_2.svg",
+            "icon-text2": "Standard UK Delivery",
+            "icon3": "shopify://shop_images/SVG_3.svg",
+            "icon-text3": "Safe Payment"
+          }
+        },
+        "collapse_R94r4B": {
+          "type": "collapse",
+          "settings": {
+            "heading_faq": "What results can you expect with Mounjaro?",
+            "heading_ans": "<p>Around 4% weight loss by week 4, ~6% by week 8, ~9% by week 12, with long-term clinical studies showing up to 20%+ weight loss with continued use.</p>"
+          }
+        },
+        "collapse_Heg8mL": {
+          "type": "collapse",
+          "settings": {
+            "heading_faq": "How does Mounjaro work in the body for weight loss?",
+            "heading_ans": "<p>Around 4% weight loss by week 4, ~6% by week 8, ~9% by week 12, with long-term clinical studies showing up to 20%+ weight loss with continued use.</p>"
+          }
+        },
+        "collapse_HwF6Wb": {
+          "type": "collapse",
+          "settings": {
+            "heading_faq": "Is Mounjaro licensed and prescribed in the UK?",
+            "heading_ans": "<p>Around 4% weight loss by week 4, ~6% by week 8, ~9% by week 12, with long-term clinical studies showing up to 20%+ weight loss with continued use.</p>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "btn_custom_link": ""
+          }
+        },
+        "swishlist_simple_wishlist_wishlist_product_button_YpqN7P": {
+          "type": "shopify://apps/swishlist-simple-wishlist/blocks/wishlist_product_button/bfcb80f2-f00d-42ae-909a-9f00c726327b",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "order_text_MQAaUP": {
+          "type": "order_text",
+          "disabled": true,
+          "settings": {
+            "order_bg_box_full": "#e7f7f6",
+            "order_text_color": "#000000",
+            "image_1_order": "shopify://shop_images/tracking_1_2.png",
+            "heading_1_order": "Standard delivery get order in 2-4 working days.",
+            "heading_2_order": "Express delivery get order in 1-3 working days"
+          }
+        },
+        "icon_with_text_qwpcxb": {
+          "type": "icon-with-text",
+          "disabled": true,
+          "settings": {
+            "layout": "vertical",
+            "bg_box_full": "#f5f5f5",
+            "box_text_color": "#000000",
+            "ctm_changes": true,
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/security_1.png",
+            "heading_1": "Safe Payment",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/fast-delivery_2_1.png",
+            "heading_2": "Standard UK Delivery",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/reduce-cost_1_d061122b-5fa0-442b-b4e0-a248ee490193.png",
+            "heading_3": "Lowest Price"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "custom_bage_gfRHac",
+        "title",
+        "judge_me_reviews_preview_badge_JKhcwC",
+        "custom_reviews_LUQe4n",
+        "icon_text_NFfamz",
+        "variant_picker",
+        "custom_variants_GbN8jb",
+        "doctor_comments_AtT6P6",
+        "get_started_BkUF8q",
+        "collapse_R94r4B",
+        "collapse_Heg8mL",
+        "collapse_HwF6Wb",
+        "price",
+        "quantity_selector",
+        "buy_buttons",
+        "swishlist_simple_wishlist_wishlist_product_button_YpqN7P",
+        "order_text_MQAaUP",
+        "icon_with_text_qwpcxb",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "custom-main-calss": true,
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-be9c90ba-dd79-41a9-9d5e-aab32db15a21",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "vertical_thumb": false,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    },
+    "tab_product_GD8UeE": {
+      "type": "tab--product",
+      "disabled": true,
+      "name": "Product Tabs",
+      "settings": {
+        "show_product_description": "Product Details"
+      }
+    },
+    "custom_marquee_LFV9Jy": {
+      "type": "custom-marquee",
+      "blocks": {
+        "feature_LpxWPz": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160914.png",
+            "title": "Free next-day delivery"
+          }
+        },
+        "feature_bNGLCq": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160914.png",
+            "title": "Free next-day delivery"
+          }
+        },
+        "feature_EpGm9h": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160913.png",
+            "title": "UK Licensed medication"
+          }
+        },
+        "feature_h3mCmJ": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160914.png",
+            "title": "Free next-day delivery"
+          }
+        },
+        "feature_U89hLA": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160913.png",
+            "title": "UK Licensed medication"
+          }
+        }
+      },
+      "block_order": [
+        "feature_LpxWPz",
+        "feature_bNGLCq",
+        "feature_EpGm9h",
+        "feature_h3mCmJ",
+        "feature_U89hLA"
+      ],
+      "custom_css": [],
+      "name": "Custom Marquee",
+      "settings": {
+        "hide": false,
+        "background_color": "#faf8ed"
+      }
+    },
+    "custom_manjor_p7kf97": {
+      "type": "custom-manjor",
+      "blocks": {
+        "benefit_6r9aCK": {
+          "type": "benefit",
+          "settings": {
+            "text": "Long-term health",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z\" stroke=\"#26295D\" stroke-width=\"1.44\"></path>\n  <path d=\"M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873\" stroke=\"#26295D\" stroke-width=\"1.44\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>"
+          }
+        },
+        "benefit_bNg8hF": {
+          "type": "benefit",
+          "settings": {
+            "text": "Elevates overall wellness",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z\" stroke=\"#26295D\" stroke-width=\"1.44\"></path>\n  <path d=\"M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873\" stroke=\"#26295D\" stroke-width=\"1.44\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>"
+          }
+        },
+        "benefit_p8hXjn": {
+          "type": "benefit",
+          "settings": {
+            "text": "Reduced risk of diabetes",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z\" stroke=\"#26295D\" stroke-width=\"1.44\"></path>\n  <path d=\"M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873\" stroke=\"#26295D\" stroke-width=\"1.44\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>"
+          }
+        },
+        "benefit_HjtHEN": {
+          "type": "benefit",
+          "settings": {
+            "text": "Reduced Appetite",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z\" stroke=\"#26295D\" stroke-width=\"1.44\"></path>\n  <path d=\"M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873\" stroke=\"#26295D\" stroke-width=\"1.44\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_6r9aCK",
+        "benefit_bNg8hF",
+        "benefit_p8hXjn",
+        "benefit_HjtHEN"
+      ],
+      "name": "Mounjaro Section",
+      "settings": {
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 25,
+        "padding_bottom_mobile": 40,
+        "bg_color": "#f5f5f5",
+        "heading": "<p>What is <strong>Mounjaro?</strong></p>",
+        "description": "<p>Mounjaro (Tirzepatide) is a clinically proven prescription medication available in the UK. It works with your body’s natural biology by mimicking gut hormones GLP-1 and GIP to regulate appetite and boost metabolism for effective weight loss.</p>",
+        "percentage": 90,
+        "percentage_text": "<p>Noticeable weight loss and improved appetite control achieved within the first three months of use.</p>",
+        "button_text": "Get Started",
+        "button_link": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "graf-img": "shopify://shop_images/Toggle_You_Could_Lose.png",
+        "graf-img-mbl": "shopify://shop_images/Toggle_You_Could_Lose_1.png"
+      }
+    },
+    "clinically_proven_eNW3gy": {
+      "type": "Clinically-Proven",
+      "blocks": {
+        "clinical_block_wWk7NT": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241667.svg",
+            "text": "Clinically proven to support weight loss and type 2 diabetes management"
+          }
+        },
+        "clinical_block_DH9b3C": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668.svg",
+            "text": "Dual-action on GLP-1 and GIP receptors for enhanced efficacy"
+          }
+        },
+        "clinical_block_PB48HR": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668_1.svg",
+            "text": "Reduces appetite and promotes a feeling of fullness"
+          }
+        },
+        "clinical_block_yGAjGW": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668_2.svg",
+            "text": "Helps lower blood sugar and improve insulin sensitivity"
+          }
+        },
+        "clinical_block_G7BaFP": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668_3.svg",
+            "text": "Convenient once-weekly pre-filled injection pen"
+          }
+        },
+        "clinical_block_MJhc84": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668_4.svg",
+            "text": "Proven results in clinical trials with significant weight reduction"
+          }
+        }
+      },
+      "block_order": [
+        "clinical_block_wWk7NT",
+        "clinical_block_DH9b3C",
+        "clinical_block_PB48HR",
+        "clinical_block_yGAjGW",
+        "clinical_block_G7BaFP",
+        "clinical_block_MJhc84"
+      ],
+      "name": "Clinical Section",
+      "settings": {
+        "title": "Clinically Proven<strong> Benefits Backed by Science</strong>",
+        "block_heading": "Key Benefits",
+        "desktop_image": "shopify://shop_images/Component_184.png",
+        "mobile_image": "shopify://shop_images/Component_184_1.png",
+        "button_label": "Started your free assessment",
+        "button_link": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "bg_color": "var(--Gradient, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, rgba(244, 239, 253, 0.60) 0.38%, rgba(255, 245, 191, 0.60) 100%), #FFF)",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "mounjaro_price_CMTEnh": {
+      "type": "Mounjaro-price",
+      "blocks": {
+        "block_7p6yJQ": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Pharmazon Express",
+            "bar_width_des": 215,
+            "bar_width_mbl": 190,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffd902",
+            "bar_price": "<p><strong>~£2,660 </strong>Annual Cost  😮</p>",
+            "bar_price_color": "#ffd902"
+          }
+        },
+        "block_CzXyCW": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Oxford Online Pharmacy",
+            "bar_width_des": 320,
+            "bar_width_mbl": 225,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,160 </strong>Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_RqahjC": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Medicspot",
+            "bar_width_des": 340,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,240</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_xMeRaH": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Numan",
+            "bar_width_des": 360,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,200-£3,840</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_dzUfWd": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Med Express",
+            "bar_width_des": 380,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,500+</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_4ePpNk": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Simple Online Pharmacy",
+            "bar_width_des": 400,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,560+</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_BeJ3af": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Boots Inline Doctor",
+            "bar_width_des": 420,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£4,050+</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_7p6yJQ",
+        "block_CzXyCW",
+        "block_RqahjC",
+        "block_xMeRaH",
+        "block_dzUfWd",
+        "block_4ePpNk",
+        "block_BeJ3af"
+      ],
+      "name": "Mounjaro price",
+      "settings": {
+        "heading": "<p>Mounjaro <strong>price</strong></p>",
+        "image": "shopify://shop_images/Frame_2147241831_1.png",
+        "sub-heading": "<p>Includes programme costs.</p><p>Example only - individual treatment plans vary.</p>",
+        "bg_color": "#ffffff",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "cs_smarter_pU6d49": {
+      "type": "cs-smarter",
+      "name": "Smarter Section",
+      "settings": {
+        "back-image": "shopify://shop_images/Background_Border_Shadow_OverlayBlur.png",
+        "back-image_mbl": "shopify://shop_images/Background_Border_Shadow_OverlayBlur_3.png",
+        "image": "shopify://shop_images/Frame_2147241935.png",
+        "title": "<strong>A smarter,</strong> more affordable way to start your weight-loss journey. <strong>Go ahead, Hit the damn button below.</strong>",
+        "button_text": "Start Your Weight Loss Journey",
+        "button_link": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "bg_image": "shopify://shop_images/Ellipse_549_6.png",
+        "bg_color": "linear-gradient(135deg, rgba(NaN, NaN, NaN, 1), rgba(250, 244, 212, 1) 50%, rgba(250, 242, 192, 1) 100%)",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 30,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "custom_image_text_qETiEn": {
+      "type": "custom-image-text",
+      "blocks": {
+        "faq_r6MJCD": {
+          "type": "Faq",
+          "settings": {
+            "heading_faq": "Is Mounjaro Safe?",
+            "heading_ans": "<p>Mounjaro (tirzepatide) has demonstrated a strong safety profile through extensive clinical trials and regulatory review. The medication has received approval from major health authorities, including the UK's MHRA, for weight management.</p>"
+          }
+        },
+        "faq_q3GFJi": {
+          "type": "Faq",
+          "settings": {
+            "heading_faq": "Mounjaro Side Effects",
+            "heading_ans": "<p>The most common side effects are mild to moderate stomach issues like nausea, loose stools or constipation. These happen mainly when increasing your dose, but should disappear on their own.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_r6MJCD",
+        "faq_q3GFJi"
+      ],
+      "name": "Image Text Section",
+      "settings": {
+        "heading": "<p>Is Mounjaro <strong>safe?</strong></p>",
+        "richtext": "<p>Mounjaro (tirzepatide) has demonstrated a strong safety profile through extensive clinical trials and regulatory review. The medication has received approval from major health authorities, including the UK's MHRA, for weight management.</p>",
+        "butt_text": "Check Your Eligibility",
+        "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "img": "shopify://shop_images/8_816779db-9ac5-4ef2-ab5f-5270ab7dbbfa.png",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "proven_n9TfJz": {
+      "type": "Proven",
+      "blocks": {
+        "faq_LdarAE": {
+          "type": "Faq",
+          "settings": {
+            "block_richtext": "<p>Treatment type<br/><strong>GLP-1 + GIP injectable pen</strong></p>"
+          }
+        },
+        "faq_rLG3WG": {
+          "type": "Faq",
+          "settings": {
+            "block_richtext": "<p>Weight loss in 9 months<br/><strong>Average 20.9% body weight</strong></p>"
+          }
+        },
+        "faq_bjQWwG": {
+          "type": "Faq",
+          "settings": {
+            "block_richtext": "<p>Weight loss in 20 months<br/><strong>Average 25.3% of body weight</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_LdarAE",
+        "faq_rLG3WG",
+        "faq_bjQWwG"
+      ],
+      "name": "Mounjaro®  Proven",
+      "settings": {
+        "des-img": "shopify://shop_images/Frame_2147241664.png",
+        "mbl-img": "shopify://shop_images/Frame_2147241478.png",
+        "heading": "<p>Mounjaro®  Proven Results, Clear Facts</p>",
+        "loss_text": "Weight Loss up-to",
+        "loss_number": 21,
+        "butt_text": "Check Your Eligibility",
+        "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "Treatment-type": "<p>Treatment type<br/><strong>2.5mg – 15mg</strong></p>",
+        "Active-ingredient": "<p>Active ingredient<br/><strong>Tirzepatide</strong></p>",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "transforming_EtjiGV": {
+      "type": "transforming",
+      "blocks": {
+        "faq_pY6HCi": {
+          "type": "Faq",
+          "settings": {
+            "slider_img": "shopify://shop_images/Frame_2147239715_2.png",
+            "slider_text": "Before",
+            "slider_img1": "shopify://shop_images/Frame_2147239716_2_d9a79e73-9762-4dfe-b1be-ce15e3066d42.png",
+            "slider_text1": "After"
+          }
+        },
+        "faq_9tXzxh": {
+          "type": "Faq",
+          "settings": {
+            "slider_img": "shopify://shop_images/Frame_2147239715_1.png",
+            "slider_text": "After",
+            "slider_img1": "shopify://shop_images/Frame_2147239716_1_ac73bf99-0daf-49cc-b3e8-2122fd7023bd.png",
+            "slider_text1": "After"
+          }
+        }
+      },
+      "block_order": [
+        "faq_pY6HCi",
+        "faq_9tXzxh"
+      ],
+      "name": "transforming people",
+      "settings": {
+        "title": "<p><strong>Pharmazon</strong> is transforming people's lives</p>",
+        "reviews_img": "shopify://shop_images/Container_35.png",
+        "reviews_text": "TrustScore 4.7/5",
+        "weight_number": 22,
+        "weight_unit": "kg",
+        "loss-text": "Lost in 12 months",
+        "rich-text": "<p> “With Pharmazoon, everything felt different. The medication, the app, the support — it gave me the structure I needed to finally make it stick. I’ve lost 35kg, feel stronger, more energised, and for the first time in years, genuinely proud of myself “</p>",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 60,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 40
+      }
+    },
+    "steps_GicTDM": {
+      "type": "steps",
+      "blocks": {
+        "faq_UJqT8f": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147241418_2.png",
+            "tag_text": "First Step",
+            "title_text": "Start With a Few Questions",
+            "sub-title_text": "Answer a few easy questions and let us understand your body, lifestyle, and weight-loss goals."
+          }
+        },
+        "faq_PDrQfw": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147241418_7.png",
+            "tag_text": "Second Step",
+            "title_text": "Reviewed by Medical Experts",
+            "sub-title_text": "A licensed prescriber checks everything to make sure your plan is safe & suitable."
+          }
+        },
+        "faq_6bqe8d": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147241418_8.png",
+            "tag_text": "Third Step",
+            "title_text": "Straight to Your Door",
+            "sub-title_text": "Once approved, your treatment is delivered discreetly to your home—no clinics, no hassle, just convenience."
+          }
+        }
+      },
+      "block_order": [
+        "faq_UJqT8f",
+        "faq_PDrQfw",
+        "faq_6bqe8d"
+      ],
+      "name": "three-step method",
+      "settings": {
+        "title": "<p>Our three-step method <strong>helps you weight loss</strong></p>",
+        "back_color": "#faf8ed",
+        "desktop-padding-top": 60,
+        "desktop-padding-bottom": 60,
+        "padding-top-mbl": 40,
+        "padding-bottom-mbl": 40
+      }
+    },
+    "cs_faq_sec_igVimy": {
+      "type": "cs_faq_sec",
+      "blocks": {
+        "best_sellers_mnnnaL": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How many injections are in a Mounjaro pen?",
+            "heading_ans": "<p>Each Mounjaro KwikPen contains 4 doses. You inject one dose per week, so one pen lasts 4 weeks when used as prescribed.</p>"
+          }
+        },
+        "best_sellers_inzVJg": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How long does Mounjaro injectable pen 2.5 mg (1 pen) last?",
+            "heading_ans": "<p>A 2.5 mg Mounjaro KwikPen lasts 4 weeks because it contains four weekly doses.</p>"
+          }
+        },
+        "best_sellers_yxYHwe": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Can you take 2 shots of 2.5 mg Mounjaro to make 5 mg?",
+            "heading_ans": "<p>No. You should only take the dose prescribed by your doctor or prescriber. Using two injections or trying to combine doses is not recommended unless specifically advised by a healthcare professional.</p>"
+          }
+        },
+        "best_sellers_TUqz7R": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Can you lose weight on 2.5 mg of Mounjaro?",
+            "heading_ans": "<p>Yes, some people begin to lose weight on 2.5 mg, but it is usually a starter dose used to help your body adjust to the medication. More noticeable weight loss typically occurs as the dose increases.</p>"
+          }
+        },
+        "best_sellers_RXK9RA": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Can you stay on Mounjaro 2.5 mg for 8 weeks?",
+            "heading_ans": "<p>Yes. Some prescribers may keep patients on 2.5 mg for longer than 4 weeks, particularly if side effects occur. However, the usual schedule is to increase to 5 mg after the first 4 weeks if appropriate.</p>"
+          }
+        },
+        "best_sellers_tnJMHT": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "What should I avoid while taking Mounjaro?",
+            "heading_ans": "<p>To help reduce side effects, try to avoid:<br/>- Fatty or fried foods<br/>- Large meals<br/>- Highly processed or sugary foods<br/>- Excess alcohol</p><p>Instead, aim for smaller balanced meals and good hydration.</p>"
+          }
+        },
+        "best_sellers_a9cggb": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "What happens if you eat chocolate on Mounjaro?",
+            "heading_ans": "<p>Yes, you can eat chocolate in moderation. However, eating large amounts of sugary or rich foods may increase side effects such as nausea or stomach discomfort.</p>"
+          }
+        },
+        "best_sellers_pEEcbg": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "What are the common mistakes with Mounjaro?",
+            "heading_ans": "<p>Common mistakes include:<br/>- Eating large portions or eating too quickly<br/>- Skipping meals and then overeating later<br/>- Not drinking enough water<br/>- Increasing the dose too quickly<br/>- Ignoring persistent side effects instead of speaking to a healthcare professional</p>"
+          }
+        },
+        "best_sellers_hHEY3w": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Can you drink alcohol on Mounjaro?",
+            "heading_ans": "<p>Alcohol can be consumed in moderation, but it may worsen side effects like nausea and may slow weight‑loss progress for some people.</p>"
+          }
+        },
+        "best_sellers_C9j8jb": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "What is the best thing to drink on Mounjaro?",
+            "heading_ans": "<p>The best options include:<br/>- Water<br/>- Herbal teas<br/>- Low‑sugar drinks<br/>- Electrolyte drinks if needed</p><p>Staying well hydrated can help reduce side effects.</p>"
+          }
+        },
+        "best_sellers_cwMD7X": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How quickly does Mounjaro start working?",
+            "heading_ans": "<p>Mounjaro starts working in the body within the first few weeks, helping to reduce appetite and improve blood sugar control. </p><p>Many people begin to notice visible weight loss after about 4–8 weeks, although this varies between individuals.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_mnnnaL",
+        "best_sellers_inzVJg",
+        "best_sellers_yxYHwe",
+        "best_sellers_TUqz7R",
+        "best_sellers_RXK9RA",
+        "best_sellers_tnJMHT",
+        "best_sellers_a9cggb",
+        "best_sellers_pEEcbg",
+        "best_sellers_hHEY3w",
+        "best_sellers_C9j8jb",
+        "best_sellers_cwMD7X"
+      ],
+      "name": "Custom Faq Section",
+      "settings": {
+        "heading": "<p>Still Got <strong>Questions?</strong></p>",
+        "butt-text": "Contact Us",
+        "butt_url": "shopify://pages/contact",
+        "back_color": "",
+        "desktop-padding-top": 60,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 40,
+        "padding-bottom-mbl": 20,
+        "section_color": "rgba(0,0,0,0)"
+      }
+    },
+    "weight_loss_3ehqcf": {
+      "type": "Weight-loss",
+      "blocks": {
+        "faq_6HzLbp": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240424.png",
+            "max_width": 180,
+            "max-height": 160,
+            "title": "Mounjaro",
+            "type": "Type",
+            "Weekly": "Weekly Injection",
+            "Benefits": "Benefits",
+            "Helps-control": "Helps control appetite",
+            "Common": "Common Side Effects",
+            "Nausea": "Nausea, Vomiting, Diarrhea",
+            "Recommended": "Recommended For",
+            "Support": "Support for overweight or obesity"
+          }
+        },
+        "faq_ykGHjm": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240418.png",
+            "max_width": 250,
+            "max-height": 160,
+            "title": "Wegovy",
+            "type": "Type",
+            "Weekly": "Weekly Injection",
+            "Benefits": "Benefits",
+            "Helps-control": "Helps control appetite",
+            "Common": "Common Side Effects",
+            "Nausea": "Nausea, Vomiting, Diarrhea",
+            "Recommended": "Recommended For",
+            "Support": "BMI 30 or higher (obesity)"
+          }
+        },
+        "faq_BWYhkz": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240419.png",
+            "max_width": 200,
+            "max-height": 160,
+            "title": "Saxenda",
+            "type": "Type",
+            "Weekly": "Daily Injection",
+            "Benefits": "Benefits",
+            "Helps-control": "Helps control appetite",
+            "Common": "Common Side Effects",
+            "Nausea": "Headache, fatigue, dizziness",
+            "Recommended": "Recommended For",
+            "Support": "Adults with BMI 30+ or 27+ with health risks"
+          }
+        },
+        "faq_yD4YPj": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240419_1.png",
+            "max_width": 170,
+            "max-height": 160,
+            "title": "Orlistat",
+            "type": "Type",
+            "Weekly": "Capsule",
+            "Benefits": "Benefits",
+            "Helps-control": "Supports reduced fat absorption",
+            "Common": "Common Side Effects",
+            "Nausea": "May cause gastrointestinal side effects",
+            "Recommended": "Recommended For",
+            "Support": "Adults 18+ with BMI 30+, or 28+ with health risks"
+          }
+        }
+      },
+      "block_order": [
+        "faq_6HzLbp",
+        "faq_ykGHjm",
+        "faq_BWYhkz",
+        "faq_yD4YPj"
+      ],
+      "name": "Weight loss",
+      "settings": {
+        "title": "<p>Weight loss <strong>treatment</strong></p>",
+        "rich-text": "<p>Based on your health history, BMI and personal goals, we’ll recommend the one that’s right for you.</p>",
+        "butt-text": "Check Your Eligibility",
+        "butt-url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "cs_back_img_3bL9mC": {
+      "type": "cs_back_img",
+      "name": "Loss Journey",
+      "settings": {
+        "back-img": "shopify://shop_images/Frame_2147241468_15.png",
+        "back-img-mbl": "shopify://shop_images/Frame_2147241468_14.png",
+        "heading": "<p>Start Your Weight Loss Journey Today!</p>",
+        "boot-text": "Boost Confidence",
+        "butt-text": "Get Started now",
+        "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 20,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "<strong>You may also like...</strong>",
+        "heading_size": "h2",
+        "section_subheading": "You’ll Love These Too",
+        "btm_spacing": 52,
+        "description_style": "body",
+        "products_to_show": 8,
+        "quick_add": "standard",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "1",
+        "padding_top": 52,
+        "padding_bottom": 72
+      }
+    },
+    "slider_related_product_qjUKJA": {
+      "type": "slider-related-product",
+      "disabled": true,
+      "name": "Slider related product",
+      "settings": {
+        "heading": "<strong>You may also like...</strong>",
+        "heading_size": "h1",
+        "section_subheading": "You’ll Love These Too",
+        "btm_spacing": 52,
+        "description_style": "body",
+        "products_to_show": 8,
+        "quick_add": "none",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 52,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "tab_product_GD8UeE",
+    "custom_marquee_LFV9Jy",
+    "custom_manjor_p7kf97",
+    "clinically_proven_eNW3gy",
+    "mounjaro_price_CMTEnh",
+    "cs_smarter_pU6d49",
+    "custom_image_text_qETiEn",
+    "proven_n9TfJz",
+    "transforming_EtjiGV",
+    "steps_GicTDM",
+    "cs_faq_sec_igVimy",
+    "weight_loss_3ehqcf",
+    "cs_back_img_3bL9mC",
+    "related-products",
+    "slider_related_product_qjUKJA"
+  ]
+}

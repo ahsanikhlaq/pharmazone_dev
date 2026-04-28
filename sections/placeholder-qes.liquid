@@ -1,0 +1,266 @@
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      background: var(--Gradient, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, rgba(244, 239, 253, 0.60) 0.38%, rgba(255, 245, 191, 0.60) 100%), #FFF);
+    }
+  .new-qes-content {
+      max-width: 500px;
+      margin: 0 auto;
+  }
+  h3.qes-heading {
+      margin: 0;
+      color: var(--Black, #111);
+      font-family: "SF Pro";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      letter-spacing: -0.24px;
+      padding-bottom: 24px;
+  }
+  .single-place-inp {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.single-place-inp label{
+        color: #111;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0px;
+}
+input.inp-place {
+    color: var(--Gray-for-Fields, #8D8D8D);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "SF Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: #FFF;
+}
+*:focus-visible {
+     outline: none !important; 
+    outline-offset: none !important; 
+box-shadow: none !important; 
+}
+.place-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+button.submitt-btn {
+    border-radius: 45px;
+    background: var(--Purple, #4C3E79);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    color: #FFF;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-top: 24px;
+}
+.wl-profile {
+    border-radius: 66.67px;
+    border: 0.5px solid #4C3E79;
+    background: #FFF;
+    max-width: 133px;
+    width: 100%;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4C3E79;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "SF Pro";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12.65px;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+}
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+     h3.qes-heading {
+      font-size: 20px;
+     }
+     input.inp-place {
+        padding: 16px;
+     }
+     .place-inputs {
+    gap: 20px;
+}
+.wl-profile {
+  margin-bottom: 12px;
+}
+    }
+{%- endstyle -%}
+
+<section class="new-qes-section  section-{{ section.id }}-padding" data-step = '{{ section.settings.step-name }}' next-step = '{{ section.settings.next-step }}'>
+  <div class="page-width">
+    <div class="new-qes-content">
+      {% if section.settings.wl-text != blank %}
+      <div class="wl-profile">
+       {{ section.settings.wl-text }}
+      </div>
+    {% endif %}
+      <h3 class="qes-heading">
+        {{ section.settings['qes-headong'] }}
+      </h3>
+
+      <div class="place-inputs">
+        {% for block in section.blocks %}
+          <div class="single-place-inp">
+            {% if  block.settings.label != blank  %}
+            <label>
+              {{ block.settings.label }}
+            </label>
+          {% endif %}
+            <input type="{{ block.settings.input-type }}" {% if block.settings.input-type == 'date' %} non-eli-step = '{{ block.settings.not-el-name }}' min-age = '{{ block.settings.min-age }}' max-age = '{{ block.settings.max-age }}' {% endif %}  placeholder="{{ block.settings.placeholder }}" class="inp-place">
+          </div>
+        {% endfor %}
+      </div>
+      <button class="submitt-btn">
+         {{ section.settings.button-text }}
+      </button>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "placeholder question",
+  "settings": [
+    {
+      "type": "range",
+      "id": "btm_spacing",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Header Bottom space",
+      "default": 30
+    },
+    {
+      "type": "text",
+      "id": "section_subheading",
+      "label": "Subheading",
+      "default": "Check Our Featured Products And Deals"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "qes-headong",
+      "label": "heading"
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "button text"
+    },
+    {
+      "type": "text",
+      "id": "wl-text",
+      "label": "wl-text"
+    },
+    {
+      "type": "text",
+      "id": "step-name",
+      "label": "step name"
+    },
+    {
+      "type": "text",
+      "id": "next-step",
+      "label": "next step"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "label"
+        },
+        {
+            "type": "text",
+            "id": "placeholder",
+            "label": "placeholder"
+        },
+        {
+          "type": "text",
+          "id": "input-type",
+          "label": "input type",
+          "default": "text"
+        },
+        {
+          "type": "text",
+          "id": "min-age",
+          "label": "min age",
+          "default": "18"
+        },
+         {
+          "type": "text",
+          "id": "max-age",
+          "label": "max age",
+          "default": "75"
+        },
+        {
+          "type": "text",
+          "id": "not-el-name",
+          "label": "not eligible step",
+          "default": "not-eligible"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "placeholder question"
+    }
+  ]
+}
+{% endschema %}

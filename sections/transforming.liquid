@@ -1,0 +1,612 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_tra_title_button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.cs_tra_slider_button{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-direction: row-reverse;
+    cursor: pointer;
+}
+.cs_tra_title p{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_tra_title p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_tra_left_right{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+.cs_tra_reiv_img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-width: 242px;
+    max-height: 28px;
+}
+.cs_tra_left_review_text{
+    margin: 0;
+    color: var(--Gray, #545454);
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: var(--font-size-24, 24px);
+}
+.cs_tra_left_review_main{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.cs_tra_weight_main{
+    display: flex;
+    align-items: end;
+    margin: 25px 0 10px 0;
+}
+.cs_tra_weight_number{
+    margin: 0;
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 92px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 74px;
+}
+.cs_tra_weight_unit{
+    margin: 0;
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+}
+.cs_tra_loss_text{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+}
+.cs_tra_ruchtext p{
+    margin: 0;
+    color: var(--Gray, #545454);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: -0.18px;
+    padding-top: 40px;
+    max-width: 577px;
+}
+.cs_tra_slider_image{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+.cs_tra_slider_img_text{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.24px;
+    padding: 12px 40px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(18.850000381469727px);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.cs_tra_slider_block{
+    position: relative;
+}
+.cs_tra_left_content{
+    width: 48%;
+}
+.cs_tra_right_content{
+    width: 52%;
+}
+.cs_tra_slider_button .swiper-button-lock {
+    display: block !important;
+}
+.cs_tra_slider_block_parent{
+    display: flex;
+    gap: 12px;
+}
+.custom_loss_swiper-paginationss{
+    display: none;
+}
+
+/* ── Per-slide dynamic left content ── */
+.cs_tra_slide_data {
+    display: none;
+}
+
+/* Fade transition for left content */
+.cs_tra_left_dynamic {
+    transition: opacity 0.4s ease;
+}
+.cs_tra_left_dynamic.fading {
+    opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .cs_tra_slider_block_parent{
+        display: flex;
+        gap: 8px;
+    }
+    .cs_tra_slider_img_text {
+        font-size: 16px;
+        padding: 6px 20px;
+        bottom: 14px;
+        left: 14px;
+    }
+    .cs_tra_title p{
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .cs_tra_title p strong{
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .cs_tra_title_button {
+        margin-bottom: 18px;
+    }
+    .custom_loss_swiper-paginationss {
+        width: 99% !important;
+    }
+    .my_tra_slider_Swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        background: var(--Purple, #4C3E79) !important;
+    }
+    .my_tra_slider_Swiper .swiper-wrapper{
+        margin-bottom: 24px;
+    }
+    .custom_loss_swiper-paginationss {
+        position: absolute;
+        bottom: 0;
+        top: unset !important;
+    }
+    .cs_tra_slider_button{
+        display: none;
+    }
+    .cs_tra_left_right{
+        flex-direction: column;
+        gap: 24px;
+    }
+    .cs_tra_left_review_main {
+        flex-direction: row;
+    }
+    .cs_tra_left_review_text {
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .cs_tra_reiv_img {
+        max-width: 128px;
+        max-height: 21px;
+    }
+    .cs_tra_weight_number{
+        font-size: 72px;
+        line-height: 70px;
+    }
+    .cs_tra_loss_text{
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: -0.64px;
+    }
+    .cs_tra_ruchtext p {
+        font-size: 16px;
+        line-height: 19px;
+        padding-top: 16px;
+        max-width: 100%;
+    }
+    .cs_tra_left_content{
+        width: 100%;
+    }
+    .cs_tra_right_content{
+        width: 100%;
+    }
+    .custom_loss_swiper-paginationss{
+        display: block;
+    }
+}
+{% endstyle %}
+
+{%- comment -%} Hidden data store for per-slide content {%- endcomment -%}
+<div id="cs_tra_slide_data_store_{{ section.id }}" style="display:none;">
+  {%- for block in section.blocks -%}
+    <div
+      class="cs_tra_slide_data"
+      data-slide-index="{{ forloop.index0 }}"
+      data-weight-number="{{ block.settings.weight_number }}"
+      data-weight-unit="{{ block.settings.weight_unit }}"
+      data-loss-text="{{ block.settings.loss_text | escape }}"
+    >
+      <div class="cs_tra_slide_richtext">{{ block.settings.rich_text }}</div>
+    </div>
+  {%- endfor -%}
+</div>
+
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_tra_title_button">
+        <div class="cs_tra_title">{{ section.settings.title }}</div>
+        <div class="cs_tra_slider_button">
+            <span class="cs_tra_next_button">{% render 'cs_tra_next_button_svg' %}</span>
+            <span class="cs_tra_prev_button">{% render 'cs_tra_prev_button_svg' %}</span>
+        </div>
+    </div>
+    <div class="cs_tra_left_right">
+        <div class="cs_tra_left_content">
+            <div class="cs_tra_left_review_main">
+                <div class="cs_tra_left_review_img">
+                    {{ section.settings.reviews_img | image_url: width: 1440 | image_tag:
+                        class: 'cs_tra_reiv_img',
+                        widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                        height: 100,
+                        width: 100,
+                        alt: logo_alt,
+                        loading: "lazy"
+                    }}
+                </div>
+                <span class="cs_tra_left_review_text">{{ section.settings.reviews_text }}</span>
+            </div>
+
+            {%- comment -%} Dynamic left content — updated by JS on slide change {%- endcomment -%}
+            <div class="cs_tra_left_dynamic" id="cs_tra_left_dynamic_{{ section.id }}">
+                <div class="cs_tra_weight_main">
+                    <span class="cs_tra_weight_number" id="cs_tra_weight_num_{{ section.id }}">
+                        {%- if section.blocks[0].settings.weight_number != blank -%}
+                            {{ section.blocks[0].settings.weight_number }}
+                        {%- else -%}
+                            {{ section.settings.weight_number }}
+                        {%- endif -%}
+                    </span>
+                    <span class="cs_tra_weight_unit" id="cs_tra_weight_unit_{{ section.id }}">
+                        {%- if section.blocks[0].settings.weight_unit != blank -%}
+                            {{ section.blocks[0].settings.weight_unit }}
+                        {%- else -%}
+                            {{ section.settings.weight_unit }}
+                        {%- endif -%}
+                    </span>
+                </div>
+                <span class="cs_tra_loss_text" id="cs_tra_loss_text_{{ section.id }}">
+                    {%- if section.blocks[0].settings.loss_text != blank -%}
+                        {{ section.blocks[0].settings.loss_text }}
+                    {%- else -%}
+                        {{ section.settings.loss-text }}
+                    {%- endif -%}
+                </span>
+                <div class="cs_tra_ruchtext" id="cs_tra_richtext_{{ section.id }}">
+                    {%- if section.blocks[0].settings.rich_text != blank -%}
+                        {{ section.blocks[0].settings.rich_text }}
+                    {%- else -%}
+                        {{ section.settings.rich-text }}
+                    {%- endif -%}
+                </div>
+            </div>
+        </div>
+
+        <div class="cs_tra_right_content">
+            <div class="cs_tra_slider_block_main">
+                <div class="swiper my_tra_slider_Swiper" id="my_tra_slider_Swiper_{{ section.id }}">
+                    <div class="swiper-wrapper">
+                        {% for block in section.blocks %}
+                        <div class="swiper-slide" data-slide-index="{{ forloop.index0 }}">
+                            <div class="cs_tra_slider_block_parent">
+                                <div class="cs_tra_slider_block">
+                                    <div class="cs_tra_slider_img">
+                                        {{ block.settings.slider_img | image_url: width: 1440 | image_tag:
+                                            class: 'cs_tra_slider_image',
+                                            widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                            height: 100,
+                                            width: 100,
+                                            alt: logo_alt,
+                                            loading: "lazy"
+                                        }}
+                                    </div>
+                                    <h3 class="cs_tra_slider_img_text">{{ block.settings.slider_text }}</h3>
+                                </div>
+                                <div class="cs_tra_slider_block">
+                                    <div class="cs_tra_slider_img">
+                                        {{ block.settings.slider_img1 | image_url: width: 1440 | image_tag:
+                                            class: 'cs_tra_slider_image',
+                                            widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                            height: 100,
+                                            width: 100,
+                                            alt: logo_alt,
+                                            loading: "lazy"
+                                        }}
+                                    </div>
+                                    <h3 class="cs_tra_slider_img_text">{{ block.settings.slider_text1 }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="custom_loss_swiper-paginationss"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sectionId = "{{ section.id }}";
+
+  // ── Counter animation ──
+  const animateCounter = (el, target) => {
+    let count = 0;
+    const update = () => {
+      const increment = target / 100;
+      if (count < target) {
+        count += increment;
+        el.innerText = Math.ceil(count);
+        requestAnimationFrame(update);
+      } else {
+        el.innerText = target;
+      }
+    };
+    update();
+  };
+
+  // Observe counter on first load
+  const counterEl = document.getElementById("cs_tra_weight_num_" + sectionId);
+  if (counterEl) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(counterEl, +counterEl.innerText);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(counterEl);
+  }
+
+  // ── Collect per-slide data from hidden store ──
+  const dataStore = document.getElementById("cs_tra_slide_data_store_" + sectionId);
+  const slideDataMap = {};
+
+  if (dataStore) {
+    dataStore.querySelectorAll(".cs_tra_slide_data").forEach(el => {
+      const idx = el.getAttribute("data-slide-index");
+      slideDataMap[idx] = {
+        weightNumber: el.getAttribute("data-weight-number"),
+        weightUnit:   el.getAttribute("data-weight-unit"),
+        lossText:     el.getAttribute("data-loss-text"),
+        richText:     el.querySelector(".cs_tra_slide_richtext")?.innerHTML || ""
+      };
+    });
+  }
+
+  // ── Update left content on slide change ──
+  const dynamicWrapper = document.getElementById("cs_tra_left_dynamic_" + sectionId);
+  const weightNumEl    = document.getElementById("cs_tra_weight_num_" + sectionId);
+  const weightUnitEl   = document.getElementById("cs_tra_weight_unit_" + sectionId);
+  const lossTextEl     = document.getElementById("cs_tra_loss_text_" + sectionId);
+  const richTextEl     = document.getElementById("cs_tra_richtext_" + sectionId);
+
+  const updateLeftContent = (index) => {
+    const data = slideDataMap[index];
+    if (!data) return;
+
+    // Fade out
+    dynamicWrapper.classList.add("fading");
+
+    setTimeout(() => {
+      // Update weight number (only if block has a value)
+      if (data.weightNumber && weightNumEl) {
+        const newTarget = +data.weightNumber;
+        weightNumEl.innerText = newTarget;
+        animateCounter(weightNumEl, newTarget);
+      }
+
+      // Update weight unit
+      if (data.weightUnit && weightUnitEl) {
+        weightUnitEl.innerText = data.weightUnit;
+      }
+
+      // Update loss text
+      if (data.lossText && lossTextEl) {
+        lossTextEl.innerText = data.lossText;
+      }
+
+      // Update rich text
+      if (data.richText && richTextEl) {
+        richTextEl.innerHTML = data.richText;
+      }
+
+      // Fade back in
+      dynamicWrapper.classList.remove("fading");
+    }, 300);
+  };
+
+  // ── Init Swiper ──
+  var swiper = new Swiper("#my_tra_slider_Swiper_" + sectionId, {
+    spaceBetween: 12,
+    slidesPerView: 1,
+    speed: 1000,
+    navigation: {
+      nextEl: ".cs_tra_next_button",
+      prevEl: ".cs_tra_prev_button",
+    },
+    pagination: {
+      el: ".custom_loss_swiper-paginationss",
+      type: "progressbar",
+    },
+    breakpoints: {
+      0:    { slidesPerView: 1, spaceBetween: 12 },
+      640:  { slidesPerView: 2, spaceBetween: 12 },
+      1024: { slidesPerView: 1, spaceBetween: 12 }
+    },
+    on: {
+      slideChange: function () {
+        updateLeftContent(this.realIndex);
+      }
+    }
+  });
+
+});
+</script>
+
+{% schema %}
+{
+    "name": "transforming people",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "image_picker",
+            "id": "reviews_img",
+            "label": "Reviews Image"
+        },
+        {
+            "type": "text",
+            "id": "reviews_text",
+            "label": "Reviews Text"
+        },
+        {
+            "type": "color",
+            "id": "back_color",
+            "label": "Background Color"
+        },
+        {
+            "type": "range",
+            "id": "desktop-padding-top",
+            "label": "Desktop Padding Top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "desktop-padding-bottom",
+            "label": "Desktop Padding Bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "padding-top-mbl",
+            "label": "Mobile Padding Top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 16
+        },
+        {
+            "type": "range",
+            "id": "padding-bottom-mbl",
+            "label": "Mobile Padding Bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 16
+        }
+    ],
+    "blocks": [
+        {
+            "type": "slide",
+            "name": "Add Slide",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "slider_img",
+                    "label": "Before Image"
+                },
+                {
+                    "type": "text",
+                    "id": "slider_text",
+                    "label": "Before Text"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "slider_img1",
+                    "label": "After Image"
+                },
+                {
+                    "type": "text",
+                    "id": "slider_text1",
+                    "label": "After Text"
+                },
+                {
+                    "type": "header",
+                    "content": "Left Side Content for this Slide"
+                },
+                {
+                    "type": "number",
+                    "id": "weight_number",
+                    "label": "Weight Number"
+                },
+                {
+                    "type": "text",
+                    "id": "weight_unit",
+                    "label": "Weight Unit"
+                },
+                {
+                    "type": "text",
+                    "id": "loss_text",
+                    "label": "Loss Text"
+                },
+                {
+                    "type": "richtext",
+                    "id": "rich_text",
+                    "label": "Rich Text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        { "name": "transforming people" }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,304 @@
+<style>
+  .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.back_color }};
+  }
+  .standard .main-heading  {
+    max-width:440px;
+    margin:0 auto 40px;
+  
+ }
+  .standard .main-heading  p {
+        color: #111;
+        text-align: center;
+        font-family: var(--custom-fonts);
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%; /* 68.2px */
+        letter-spacing: -1.24px;
+        margin:0px;
+  }
+  .standard .main-heading strong {
+        color: var(--Purple, #4C3E79);
+        font-family: var(--custom-fonts);
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -1.24px;
+  }
+  .standard .main-heading-img {
+    position: relative;
+  }
+  .standard .b-line {
+        position: absolute;
+    bottom: 10px;
+    max-width: 202px;
+    left: 90px;
+    display: block;
+    height: 6px;
+  }
+  
+  /* Desktop Grid Layout */
+  .standard .bottom-sec {
+        display: flex;
+        justify-content:space-between;
+        gap: 16px;
+        margin:0px;
+  }
+  
+.standard .item-card {
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 217, 2, 0.03) 0%, rgba(255, 217, 2, 0.15) 53.37%, rgba(255, 217, 2, 0.03) 100%), #FAF8ED;
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    flex: 1 0 0;
+    cursor:pointer;
+
+  /* smooth animation */
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.standard .item-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+  .standard .f-img {
+    width: 42px;
+    height: 42px;
+    aspect-ratio: 1/1;
+    object-fit:cover;
+}
+.standard .f-text {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 38.4px */
+    letter-spacing: -0.64px;
+    text-transform: capitalize;
+    margin:0px;
+}
+.standard .vedio-des {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
+    letter-spacing: -0.8px;
+}
+  
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.mbl_padding_top }}px;
+      padding-bottom: {{ section.settings.mbl_padding_bottom }}px;
+    }
+    .standard .main-heading {
+       max-width:210px;
+       margin:0 auto 24px;
+    }
+    .standard .main-heading p {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 36px */
+        letter-spacing: -0.6px;
+}
+.standard .main-heading strong {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.6px;
+}
+    .standard .b-line {
+    position: absolute;
+    bottom: 0px;
+    max-width: 168px;
+    left: 2px;
+    display: block;
+    height: 6px;
+}
+    .standard .bottom-sec {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.standard .f-img {
+    width: 32px;
+    height: 32px;
+}
+.standard .vedio-des {
+    max-width: 100%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: -0.64px;
+}
+.standard .item-card {
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+.standard .f-text {
+   font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: -0.96px; 
+}
+    
+    
+}
+  @media screen and (max-width: 768px) {
+        .standard .vedio-des {
+        max-width: 293px;
+      }
+  }
+</style>
+
+<section class="standard section-{{ section.id }}-padding {% if section.settings.custom_pdp %}pdp-standard{% endif %}">
+  <div class="page-width">
+    <div class="top-sec">
+      <div class="main-heading-img">
+        {% if section.settings.main_heading %}
+          <div class="main-heading">{{ section.settings.main_heading }}</div>
+        {% endif %}
+        <img
+          class="b-line"
+          src="{{ section.settings.b_line | image_url }}"
+          alt="{{ section.settings.title }}"
+          width="auto"
+          height="auto"
+          loading="lazy"
+        >
+      </div>
+    </div>
+    
+    <div class="bottom-sec">
+          {% for block in section.blocks %}
+            <div class="item-card">
+              {% if block.settings.f_img %}
+                <img class="f-img" src="{{ block.settings.f_img | image_url }}" width="auto" height="auto" alt="feature">
+              {% endif %}
+              {% if block.settings.f_text %}
+                <div class="f-text">{{ block.settings.f_text }}</div>
+              {% endif %}
+              {% if block.settings.v_des_text %}
+                <div class="vedio-des">{{ block.settings.v_des_text }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Standard Heritage",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Top Padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Bottom Padding",
+      "default": 10
+    },
+    {
+      "type": "color_background",
+      "id": "back_color",
+      "label": "Background Color"
+    },
+    {
+        "type": "checkbox",
+        "id": "custom_pdp",
+        "label": "Enable Pdp Styling"
+    },
+    {
+      "type": "richtext",
+      "id": "main_heading",
+      "label": "Main Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "b_line",
+      "label": "Bottom Line Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "f_img",
+          "label": "Feature Image"
+        },
+        {
+          "type": "text",
+          "id": "f_text",
+          "label": "Feature Text"
+        },
+        {
+          "type": "text",
+          "id": "v_des_text",
+          "label": " Description Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "standard Heritage"
+    }
+  ]
+}
+{% endschema %}

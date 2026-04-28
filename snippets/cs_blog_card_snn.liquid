@@ -1,0 +1,47 @@
+<div class="swiper-wrapper">
+        {% for article in blog.articles %}
+          <div class="swiper-slide">
+            <div class="news-card csp-img">
+              {% if article.image %}
+                <div class="news-image-link">
+                  <div class="news-image">
+                    {% if blog.metafields.custom.blog_post_image !=blank %}
+                    {{ blog.metafields.custom.blog_post_image 
+                      | image_url: width: article.image.width, height: article.image.height 
+                      | image_tag: alt: article.title 
+                    }}
+                    {% else %}
+                    {{ article.image 
+                      | image_url: width: article.image.width, height: article.image.height 
+                      | image_tag: alt: article.title 
+                    }}
+                  {% endif %}
+                  </div>
+                  <div class="news-content_parent">
+                <div class="news_content_weight_less">Weight Loss</div>
+              <div class="news-content">
+                {% if article.metafields.custom.blog_post_tag != blank %}
+                  <p class="news-tag">
+                    {{ article.metafields.custom.blog_post_tag }}
+                  </p>
+                {% endif %}
+                <p class="news-date">{{ article.published_at | time_tag: format: 'date' }}</p>
+                <h3 class="news-title">{{ article.title | strip_html | truncatewords: 5 }}</h3>
+                <div class="news-description">
+  {%- if article.excerpt.size > 0 -%}
+    {{ article.excerpt | strip_html | truncatewords: 10 }}...
+  {%- else -%}
+    {{ article.content | strip_html | truncatewords: 10 }}...
+  {%- endif -%}
+  <a href="{{ article.url }}" class="read-more">Read More</a>
+</div>
+
+              </div>
+            </div>
+        </div>
+              {% endif %}
+              
+            </div>
+          </div>
+        {% endfor %}
+      </div>

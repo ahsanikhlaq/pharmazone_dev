@@ -1,0 +1,470 @@
+<section
+  id="science-medication-{{ section.id }}"
+  class="science-medication-section"
+  style="
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  "
+>
+  <div class="page-width">
+    <div class="science-medication-wrapper" style="background: {{ section.settings.bg_color }}; border-radius: 20px;">
+
+      <!-- LEFT CONTENT -->
+      <div class="science-left">
+        <div class="science-left-inner">
+
+          {% if section.settings.heading != blank %}
+            <div class="science-heading rte">
+              {{ section.settings.heading }}
+            </div>
+          {% endif %}
+
+          {% if section.settings.description != blank %}
+            <div class="science-description rte">
+              {{ section.settings.description }}
+            </div>
+          {% endif %}
+
+         
+
+        </div>
+         {% if section.settings.button_label != blank %}
+            <a href="{{ section.settings.button_link }}" class="science-btn cs_faq_sec_button_des_hover">
+              {{ section.settings.button_label }}
+            </a>
+          {% endif %}
+      </div>
+
+      <!-- RIGHT CARD -->
+      <div class="science-right">
+
+        <div class="science-card">
+
+          {% if section.settings.card_text != blank %}
+            <div class="science-card-text rte">
+              {{ section.settings.card_text }}
+            </div>
+          {% endif %}
+
+          <div class="science-card-footer">
+            <span class="science-card-name">
+              {{ section.settings.card_name }}
+            </span>
+
+            <span class="science-card-date">
+              {{ section.settings.card_date }}
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+{% if section.settings.icon != blank %}
+                    <img src="{{ section.settings.icon | image_url }}" alt="" class="bas-image">
+    {% endif %}
+      {% if section.settings.icon_mob != blank %}
+                    <img src="{{ section.settings.icon_mob | image_url }}" alt="" class="bas-image-mob">
+    {% endif %}
+    </div>
+  </div>
+      
+</section>
+
+<style>
+  #science-medication-{{ section.id }} {
+      position:relative;
+  
+  }
+  .science-medication-wrapper{
+padding: 40px;
+position: relative;
+    z-index: 1;
+}
+#science-medication-{{ section.id }} .science-medication-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.bas-image {
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height: 100%;
+    
+    border-radius: 0 0 0 20px;
+}
+.science-medication-wrapper .bas-image{
+z-index: -1;
+}
+#science-medication-{{ section.id }} .science-left-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.science-heading * {
+   margin:0px;
+   max-width:620px;
+}
+
+
+.science-heading p {
+    color: var(--Black, #111);
+font-family: var(--custom-fonts);
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: 100%; /* 48px */
+letter-spacing: -0.96px;
+text-transform: capitalize;
+}
+.science-heading strong {
+   color: var(--Purple, #4C3E79);
+font-family: var(--custom-fonts);
+font-size: 101px;
+font-style: normal;
+font-weight: 500;
+line-height: 100%;
+letter-spacing: -2.02px;
+text-transform: capitalize;
+}
+
+#science-medication-{{ section.id }} .science-description {
+  max-width: 440px;
+}
+
+#science-medication-{{ section.id }} .science-description {
+   color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 26px */
+    letter-spacing: -0.5px;
+    margin:0px;
+    max-width: 440px;
+
+}
+#science-medication-{{ section.id }} .science-btn {
+    display: flex;
+    padding: 16px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 75px;
+    background: var(--Yellow, #FFD902);
+    border: 1px solid #FFD902;
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    text-decoration:none;
+    max-width: fit-content;
+    cursor: pointer;
+}
+#science-medication-{{ section.id }}  .science-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 200px;
+}
+
+/* CARD */
+
+#science-medication-{{ section.id }} .science-right {
+  display: flex;
+  justify-content: center;
+}
+
+#science-medication-{{ section.id }} .science-card {
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+  transform: rotate(-10deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height:380px;
+    border-radius: 20px;
+    background: var(--White, #FFF);
+    box-shadow: 0 4px 32px 0 rgba(76, 62, 121, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+#science-medication-{{ section.id }} .science-card:hover{
+transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+#science-medication-{{ section.id }} .science-card-text {
+     max-width:310px;
+}
+
+#science-medication-{{ section.id }} .science-card-text  p {
+     color: var(--Black, #111);
+        font-family: var(--custom-fonts);
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 33.6px */
+        letter-spacing: -0.56px;
+        margin:0;
+}
+
+#science-medication-{{ section.id }} .science-card-text  strong {
+      color: var(--Gray, #545454);
+font-family: var(--custom-fonts);
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%;
+letter-spacing: -0.56px;
+}
+
+
+#science-medication-{{ section.id }} .science-card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 20px;
+  opacity: 0.7;
+}
+.science-card-date , .science-card-name {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 510;
+    line-height: 120%; /* 12px */
+    letter-spacing: -0.2px;
+}
+  .bas-image-mob {
+     display:none;
+  }
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  #science-medication-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px !important;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+  }
+  .science-medication-wrapper{
+padding: 20px 12px;
+}
+#science-medication-{{ section.id }} .science-btn {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+}
+  .bas-image {
+     display:none;
+  }
+  .bas-image-mob {
+    position:absolute;
+    top:0px;
+    right:0px;
+    
+}
+
+  #science-medication-{{ section.id }} .science-medication-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  #science-medication-{{ section.id }} .science-card {
+    transform: unset;
+    max-width:100%;
+    padding:20px;
+  }
+  #science-medication-{{ section.id }} .science-description {
+    text-align: center;
+    font-size: 16px;
+    line-height: 19px;
+    max-width: 310px;
+    margin: 0 auto;
+}
+  .science-heading p {
+      font-family: var(--custom-fonts);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 120%; /* 36px */
+    letter-spacing: -0.6px;
+    text-transform: capitalize;
+    text-align: center; 
+  }
+  .science-heading strong {
+        font-family: var(--custom-fonts);
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 590;
+        line-height: 100%;
+        letter-spacing: -1.28px;
+        text-transform: capitalize;
+  }
+  #science-medication-{{ section.id }}  .science-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+}
+
+#science-medication-{{ section.id }} .science-card-text {
+     max-width:100%;
+}
+
+#science-medication-{{ section.id }} .science-card-text  p {
+     color: var(--Black, #111);
+        font-family: var(--custom-fonts);
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 33.6px */
+        letter-spacing: -0.56px;
+        margin:0;
+}
+
+#science-medication-{{ section.id }} .science-card-text  strong {
+      color: var(--Gray, #545454);
+font-family: var(--custom-fonts);
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%;
+letter-spacing: -0.56px;
+}
+
+}
+</style>
+
+{% schema %}
+{
+  "name": "Science Medication",
+  "settings": [
+
+
+
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background",
+      "default": "#e9e3d3"
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 80
+    },
+
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 80
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 40
+    },
+
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 40
+    },
+
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<h2>The Science Behind The <strong>Medication</strong></h2>"
+    },
+
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Clinically proven weight loss treatments target your metabolic patterns, helping you lose weight and keep it off.</p>"
+    },
+
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Check Your Eligibility"
+    },
+
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+
+    {
+      "type": "richtext",
+      "id": "card_text",
+      "label": "Card Text",
+      "default": "<p>Silence food noise. Targets the reward center in your brain so you'll feel more satisfied.</p>"
+    },
+
+    {
+      "type": "text",
+      "id": "card_name",
+      "label": "Card Name",
+      "default": "Pharmacist"
+    },
+
+    {
+      "type": "text",
+      "id": "card_date",
+      "label": "Card Date",
+      "default": "2026"
+    },
+    {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Absolute Gradient"
+    },
+    {
+          "type": "image_picker",
+          "id": "icon_mob",
+          "label": "Absolute Gradient"
+    },
+
+  ],
+  "presets": [
+    {
+      "name": "Science Medication"
+    }
+  ]
+}
+{% endschema %}

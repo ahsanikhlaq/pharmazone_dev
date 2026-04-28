@@ -1,0 +1,95 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_ann_richtext p{
+    margin: 0;
+    color: #F7F7F7;
+    text-align: center;
+    font-family: "SF Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.9px; /* 130% */
+}
+.cs_ann_richtext p strong{
+    color: var(--Yellow, #FFD902);
+    font-family: "SF Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16.9px;
+}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .cs_ann_richtext p{
+    font-size: 13px;
+}
+.cs_ann_richtext p strong{
+    font-size: 13px;
+}
+  }
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding"   {% if page.template_suffix == 'questionaire-journey' or page.template_suffix == 'medical-history-qes' or page.template_suffix == 'new-journey' %}style="display: none"{% endif %}>
+  <div class="page-width">
+    <div class="cs_ann_richtext">{{ section.settings.heading }}</div>
+  </div>
+</section>
+{% schema %}
+{
+    "name": "Custom Announcement Bar",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        }
+    ],
+    "presets": [
+        { "name": "Custom Announcement Bar" }
+    ]
+}
+{% endschema %}

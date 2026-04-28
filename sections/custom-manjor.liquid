@@ -1,0 +1,943 @@
+<style>
+  .mounjaro-section {
+    background-color: {{ section.settings.bg_color }};
+    
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+      padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    overflow: hidden;
+  }
+  .mounjaro-card {
+    display: grid;
+    grid-template-columns: 51% auto;
+    gap: 80px;
+}
+.mounjaro-heading p{
+  margin: 0;
+  color: #0C2421;
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+}
+span.benefit-icon {
+    line-height: 0;
+}
+.mounjaro-heading p strong{
+   margin: 0;
+   color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+}
+.mounjaro-description p{
+    margin: 0;
+    color: var(--Gray, #545454);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0;
+    padding: 16px 0 24px 0;
+    letter-spacing: -0.5px;
+}
+.mounjaro-percentage-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    border-radius: 8px;
+    background: linear-gradient(to right, #ECE7C9, #EBEADF);
+    padding: 20px;
+}
+img.cs_graf-img-des {
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+img.cs_graf-img-mbl {
+    object-fit: cover;
+    display: none;
+    width: 100%;
+    height: auto;
+}
+.percentage-numbers{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+        min-width: 16%;
+}
+.percentage-text p{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: 0;
+}
+ul.mounjaro-benefits {
+    padding: 0;
+    margin: 24px 0 30px 0;
+    list-style-type: none;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    max-width: 540px;
+}
+.mounjaro-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    line-height: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 16.7px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; /* 131.737% */
+    text-transform: capitalize;
+}
+.mounjaro-button{
+    display: flex;
+    padding: 16px 70px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 75px;
+   background: var(--Yellow, #FFD902);
+   color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    border: 1px solid #FFD902;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    width: fit-content;
+    text-decoration: none; 
+    cursor: pointer;
+}
+.cs_content_desktop_main{
+    display: block;
+}
+.cs_content_mbl_main{
+    display: none;
+}
+  @media (max-width: 768px) {
+    .mounjaro-section {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+    .cs_content_desktop_main{
+    display: none;
+}
+.cs_content_mbl_main{
+    display: block;
+}
+.mounjaro-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+.mounjaro-heading p{
+    font-size: 30px;
+    line-height: 36px;
+}
+.mounjaro-heading p strong{
+    font-size: 30px;
+    line-height: 36px;
+} 
+.mounjaro-description p{
+    font-size: 14px;
+    line-height: 18px;
+    padding: 12px 0 0 0; 
+}
+.percentage-numbers {
+    font-size: 36px;
+    line-height: normal;
+    min-width: 24%;
+}
+.percentage-text p {
+    font-size: 14px;
+    line-height: 16px;
+}
+.mounjaro-percentage-box {
+    gap: 14px;
+    border-radius: 8px;
+    padding: 12px;
+}
+ul.mounjaro-benefits {
+    margin: 24px 0;
+    gap: 12px;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+}
+.mounjaro-benefits li {
+    font-size: 14px;
+    font-weight: 400;
+}
+.mounjaro-button{
+    width: 100%;
+    padding: 14px 0px;
+}
+.benefit-icon svg{
+    width: 20px;
+    height: 20px;
+}
+img.cs_graf-img-des {
+    display: none;
+}
+img.cs_graf-img-mbl {
+    display: block;
+}
+  }
+</style>
+
+<section class="mounjaro-section">
+  <div class="page-width">
+    <div class="mounjaro-card">
+      <!-- Left Content -->
+      <div class="mounjaro-left">
+        <div class="mounjaro-heading">
+          <span>{{section.settings.heading }}</span>
+        </div>
+        
+        <div class="mounjaro-description">
+          {{ section.settings.description }}
+        </div>
+    <div class="cs_content_desktop_main">
+        <div class="mounjaro-percentage-box">
+            <div class="percentage-number percentage-numbers">
+                {{ section.settings.percentage }}%
+                </div>
+          <div class="percentage-text">
+            {{ section.settings.percentage_text }}
+          </div>
+        </div>
+
+        {% if section.blocks.size > 0 %}
+          <ul class="mounjaro-benefits">
+            {% for block in section.blocks %}
+              <li {{ block.shopify_attributes }}>
+                <span class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z" stroke="#0C2421" stroke-width="1.44"/>
+        <path d="M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873" stroke="#0C2421" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        </span>
+                {{ block.settings.text }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_link }}" class="mounjaro-button csym-animated-btn cs_faq_sec_button_des_hover">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+    </div>
+      </div>
+
+     
+    <div class="mounjaro-right">
+      <!-- Chart Container -->
+     {% comment %} {{ section.settings.graf-img | image_url: width: 1440 | image_tag:
+                                class: 'cs_graf-img-des',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }}
+                            {{ section.settings.graf-img-mbl | image_url: width: 1440 | image_tag:
+                                class: 'cs_graf-img-mbl',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }} {% endcomment %}
+                              <div class="mounjaro-right">
+      <!-- Chart Container -->
+      <div class="graph-container">
+            <svg id="weight-loss-chart" class="chart-svg" viewBox="0 0 700 450" preserveAspectRatio="xMidYMid meet"></svg>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-line" style="background-color: var(--color-jood-line);"></div>
+                    {{ section.settings.graph-text-1 }}
+                </div>
+                <div class="legend-item">
+                    <div class="legend-line" style="background-color: var(--color-patients-line);"></div>
+                    {{section.settings.graph-text-2}}
+                </div>
+            </div>
+        </div>
+      </div>
+        </div>
+        <div class="cs_content_mbl_main">
+        <div class="mounjaro-percentage-box">
+          <div class="percentage-number percentage-numbers">
+            {{ section.settings.percentage }}%
+            </div>
+          <div class="percentage-text">
+            {{ section.settings.percentage_text }}
+          </div>
+        </div>
+
+        {% if section.blocks.size > 0 %}
+          <ul class="mounjaro-benefits">
+            {% for block in section.blocks %}
+              <li {{ block.shopify_attributes }}>
+                <span class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z" stroke="#0C2421" stroke-width="1.44"/>
+        <path d="M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873" stroke="#0C2421" stroke-width="1.44" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        </span>
+                {{ block.settings.text }}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if section.settings.button_text != blank %}
+          <a href="{{ section.settings.button_link }}" class="mounjaro-button csym-animated-btn cs_faq_sec_button_des_hover">
+            {{ section.settings.button_text }}
+          </a>
+        {% endif %}
+    </div>
+      </div>
+</div>
+</section>
+<script>
+const counters = document.querySelectorAll('.percentage-number');
+
+const animateCounter = (counter) => {
+  const target = parseInt(counter.innerText);
+  let start = 0;
+  const duration = 1500; // animation time in ms
+  let startTime = null;
+
+  const easeOutCubic = t => 1 - Math.pow(1 - t, 3); // smooth easing
+
+  const update = (timestamp) => {
+    if (!startTime) startTime = timestamp;
+    const progress = timestamp - startTime;
+    const percent = Math.min(progress / duration, 1);
+    const eased = easeOutCubic(percent);
+
+    counter.innerText = Math.floor(eased * target) + "%";
+
+    if (progress < duration) {
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target + "%";
+    }
+  };
+
+  requestAnimationFrame(update);
+};
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCounter(entry.target);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(counter => {
+  observer.observe(counter);
+});
+</script>
+{% schema %}
+{
+  "name": "Mounjaro Section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop Padding Top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop Padding Bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Padding Top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "unit": "px",
+      "label": "Mobile Padding Bottom",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<h2>What is Mounjaro?</h2>"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Mounjaro (Tirzepatide) is a clinically proven prescription medication available in the UK. It works with your body's natural biology by mimicking gut hormones GLP-1 and GIP to regulate appetite and boost metabolism for effective weight loss.</p>"
+    },
+    {
+      "type": "number",
+      "id": "percentage",
+      "label": "Percentage"
+    },
+    {
+      "type": "richtext",
+      "id": "percentage_text",
+      "label": "Percentage Description",
+      "default": "<p>Noticeable weight loss and improved appetite control achieved within the first three months of treatment</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Started"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+        "type": "image_picker",
+        "id": "graf-img",
+        "label": "Graf Image"
+    },
+    {
+        "type": "image_picker",
+        "id": "graf-img-mbl",
+        "label": "Graf Image Mobile"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit Item",
+      "settings": [
+                {
+          "type": "text",
+          "id": "text",
+          "label": "Benefit Text"
+        },
+        {
+          "type": "html",
+          "id": "icon_svg",
+          "label": "Icon SVG Code",
+          "default": "<svg width='20' height='20' viewBox='0 0 20 20' fill='none'><circle cx='10' cy='10' r='8' stroke='currentColor' stroke-width='2'/><path d='M6 10l3 3 5-6' stroke='currentColor' stroke-width='2' fill='none'/></svg>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mounjaro Section",
+    }
+  ]
+}
+{% endschema %}
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const leftSection = document.querySelector('.mounjaro-left');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        leftSection.classList.add('animate');
+        observer.unobserve(leftSection);
+      }
+    });
+  }, { threshold: 0.2 }); // triggers when 20% visible
+
+  if (leftSection) {
+    observer.observe(leftSection);
+  }
+});
+</script>
+
+
+
+  <style>
+
+  :root {
+            --color-bg: #D3DABE;
+            --color-primary-dark: #0C2421;
+            --color-jood-line: #87AF74;
+            --color-patients-line: #9B9B9B;
+            --color-jood-area: rgba(107, 158, 111, 0.35);
+            --color-grid: #B8C4A8;
+            --color-label: #0C2421;
+            --color-white: #FFFFFF;
+            --animation-duration: 2s;
+        }
+
+        .graph-container {
+            width: 100%;
+            max-width: 750px;
+            border-radius: 16px;
+          background: var(--Warm-color, #FAF8ED);
+            padding: 12px 0 0 0;
+            {% comment %} box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); {% endcomment %}
+        }
+
+        .chart-svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .line-jood,
+        .line-patients {
+            stroke-width: 3;
+            fill: none;
+            transition: stroke-dashoffset var(--animation-duration) ease-in-out;
+        }
+
+        .line-jood {
+            stroke: #4C3E79;
+        }
+
+        .line-patients {
+            stroke: var(--color-patients-line);
+        }
+
+        .area-jood {
+            fill: rgb(186, 172, 144);
+        } 
+
+        #clip-rect {
+            transition: width var(--animation-duration) ease-in-out;
+        }
+
+        .grid-line {
+            stroke: #E0E0E0;
+            stroke-width: 1;
+            opacity: 0.8;
+        }
+
+        .axis-line {
+            stroke: transparent;
+            stroke-width: 2;
+        }
+
+        .axis-label {
+           color: var(--Black, #111);
+          font-family: var(--custom-fonts);
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 510;
+          line-height: normal;
+          text-transform: capitalize;
+
+        }
+        .axis-title {
+            color: var(--Black, #111);
+              font-family: var(--custom-fonts);
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 510;
+              line-height: normal;
+              text-transform: capitalize;
+        }
+
+        .data-point,
+        .data-point-patients {
+            stroke: var(--color-white);
+            stroke-width: 3;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .data-point {
+            fill: #4C3E79;
+        }
+
+        .data-point-patients {
+            fill: var(--color-patients-line);
+        }
+
+       .legend {
+    display: flex;
+    gap: 4px;
+    margin-top: 24px;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+           
+            color: #2C2C2C;
+            font-family: Outfit;
+font-weight: 500;
+font-style: Medium;
+font-size: 14px;
+leading-trim: NONE;
+line-height: 130%;
+letter-spacing: 0%;
+
+        }
+
+        .legend-line {
+            width: 40px;
+            height: 3px;
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        .callout-box {
+            fill: #4C3E79;
+            opacity: 0;
+            transition: opacity 0.5s ease-out calc(var(--animation-duration) + 0.2s);
+        }
+
+     
+        .callout-text {
+          fill: #fff;
+    color: #FFF;
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    padding: 8.85px 14px;
+    position: absolute;
+    left: 37px !important;
+    right: 890px;
+}
+  </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const svg = document.getElementById('weight-loss-chart');
+            const svgWidth = 700;
+            const svgHeight = 450;
+            const padding = { left: 80, right: 40, top: 60, bottom: 80 };
+            const chartAreaWidth = svgWidth - padding.left - padding.right;
+            const chartAreaHeight = svgHeight - padding.top - padding.bottom;
+
+            // Data with months instead of weeks
+            const dataJood = [
+                [0, 100], [1, 95], [2, 88], [3, 82], [4, 78], [5, 74], [6, 72]
+            ];
+            
+            const dataPatients = [
+                [0, 100], [1, 97], [2, 92], [3, 87], [4, 82], [5, 78], [6, 76]
+            ];
+
+            const maxMonths = 6;
+            const minWeight = 70;
+            const maxWeight = 100;
+            const weightRange = maxWeight - minWeight;
+
+            const xScale = (month) => padding.left + (month / maxMonths) * chartAreaWidth;
+            const yScale = (weight) => {
+                const normalizedWeight = (weight - minWeight) / weightRange;
+                return padding.top + (1 - normalizedWeight) * chartAreaHeight;
+            };
+
+            const generatePathD = (data, closed = false) => {
+                if (data.length === 0) return "";
+                let path = `M ${xScale(data[0][0])} ${yScale(data[0][1])}`;
+                for (let i = 1; i < data.length; i++) {
+                    const [month, weight] = data[i];
+                    path += ` L ${xScale(month)} ${yScale(weight)}`;
+                }
+                if (closed) {
+                    const bottomY = yScale(minWeight);
+                    path += ` L ${xScale(data[data.length - 1][0])} ${bottomY}`;
+                    path += ` L ${xScale(0)} ${bottomY}`;
+                    path += ` Z`;
+                }
+                return path;
+            };
+
+            const drawGrid = () => {
+                const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+                // Y-axis line
+                const yAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                yAxis.setAttribute('x1', padding.left);
+                yAxis.setAttribute('y1', padding.top);
+                yAxis.setAttribute('x2', padding.left);
+                yAxis.setAttribute('y2', svgHeight - padding.bottom);
+                yAxis.classList.add('axis-line');
+                g.appendChild(yAxis);
+
+                // X-axis line
+                const xAxis = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                xAxis.setAttribute('x1', padding.left);
+                xAxis.setAttribute('y1', svgHeight - padding.bottom);
+                xAxis.setAttribute('x2', svgWidth - padding.right);
+                xAxis.setAttribute('y2', svgHeight - padding.bottom);
+                xAxis.classList.add('axis-line');
+                g.appendChild(xAxis);
+
+                // Horizontal Grid Lines - matching image (100, 94, 88, 82, 76, 70)
+                const gridWeights = [100, 94, 88, 82, 76, 70];
+                gridWeights.forEach(weight => {
+                    const y = yScale(weight);
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', padding.left);
+                    line.setAttribute('y1', y);
+                    line.setAttribute('x2', svgWidth - padding.right);
+                    line.setAttribute('y2', y);
+                    line.classList.add('grid-line');
+                    g.appendChild(line);
+                });
+
+                svg.appendChild(g);
+            };
+
+            const drawLabels = () => {
+                const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+
+                // Y-Axis Title
+                const yTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                yTitle.textContent = 'Weight (kg)';
+                yTitle.setAttribute('x', padding.left);
+                yTitle.setAttribute('y', padding.top - 30);
+                yTitle.classList.add('axis-title');
+                yTitle.setAttribute('text-anchor', 'start');
+                g.appendChild(yTitle);
+
+                // Y-axis labels - matching image (100, 94, 88, 82, 76, 70)
+                const yLabels = [100, 94, 88, 82, 76, 70];
+                yLabels.forEach(weight => {
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.textContent = weight;
+                    label.setAttribute('x', padding.left - 15);
+                    label.setAttribute('y', yScale(weight) + 5);
+                    label.classList.add('axis-label');
+                    label.setAttribute('text-anchor', 'end');
+                    g.appendChild(label);
+                });
+
+                // X-axis labels - matching image
+                const xLabels = ['Start', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'];
+                xLabels.forEach((label, index) => {
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.textContent = label;
+                    text.setAttribute('x', xScale(index));
+                    text.setAttribute('y', svgHeight - padding.bottom + 30);
+                    text.classList.add('axis-label');
+                    text.setAttribute('text-anchor', 'middle');
+                    g.appendChild(text);
+                });
+
+                svg.appendChild(g);
+            };
+
+            const drawCallout = () => {
+                const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                
+                const calloutMonth = 5;
+                const calloutWeight = 76;
+                
+                const cx = xScale(calloutMonth);
+                const cy = yScale(calloutWeight);
+                const boxWidth = 85;
+                const boxHeight = 45;
+
+                // Callout rounded box
+                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('x', cx - boxWidth / 2 + 20);
+                rect.setAttribute('y', cy - boxHeight / 2);
+                rect.setAttribute('width', boxWidth);
+                rect.setAttribute('height', boxHeight);
+                rect.setAttribute('rx', 22);
+                rect.classList.add('callout-box');
+                g.appendChild(rect);
+
+                // Callout Text
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.textContent = '-21%';
+                text.setAttribute('x', cx + 20);
+                text.setAttribute('y', cy + 8);
+                text.setAttribute('text-anchor', 'middle');
+                text.classList.add('callout-text');
+                g.appendChild(text);
+
+                svg.appendChild(g);
+                return { rect, text };
+            };
+
+            const drawAndAnimate = () => {
+                svg.innerHTML = '';
+
+                drawGrid();
+                drawLabels();
+                const calloutElements = drawCallout();
+
+                // Clip-path setup
+                const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+                const clipRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                clipRect.setAttribute('id', 'clip-rect');
+                clipRect.setAttribute('x', padding.left);
+                clipRect.setAttribute('y', padding.top);
+                clipRect.setAttribute('height', chartAreaHeight);
+                clipRect.setAttribute('width', 0);
+                
+                const clipPath = document.createElementNS('http://www.w3.org/2000/svg', 'clipPath');
+                clipPath.setAttribute('id', 'chart-clip');
+                clipPath.appendChild(clipRect);
+                defs.appendChild(clipPath);
+                svg.appendChild(defs);
+
+                // Clipped group for area
+                const clippedGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                clippedGroup.setAttribute('clip-path', 'url(#chart-clip)');
+                svg.appendChild(clippedGroup);
+
+                // Area fill
+                const areaPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                areaPath.setAttribute('d', generatePathD(dataJood, true));
+                areaPath.classList.add('area-jood');
+                clippedGroup.appendChild(areaPath);
+
+                // Lines
+                const linePatients = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                linePatients.setAttribute('d', generatePathD(dataPatients));
+                linePatients.classList.add('line-patients');
+                svg.appendChild(linePatients);
+
+                const lineJood = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                lineJood.setAttribute('d', generatePathD(dataJood));
+                lineJood.classList.add('line-jood');
+                svg.appendChild(lineJood);
+
+                // Data points - only last points
+                const joodPoints = [];
+                const lastJoodIndex = dataJood.length - 1;
+                const [lastJoodMonth, lastJoodWeight] = dataJood[lastJoodIndex];
+                const joodCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                joodCircle.setAttribute('cx', xScale(lastJoodMonth));
+                joodCircle.setAttribute('cy', yScale(lastJoodWeight));
+                joodCircle.setAttribute('r', 8);
+                joodCircle.classList.add('data-point');
+                svg.appendChild(joodCircle);
+                joodPoints.push(joodCircle);
+
+                const patientPoints = [];
+                const lastPatientIndex = dataPatients.length - 1;
+                const [lastPatientMonth, lastPatientWeight] = dataPatients[lastPatientIndex];
+                const patientCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                patientCircle.setAttribute('cx', xScale(lastPatientMonth));
+                patientCircle.setAttribute('cy', yScale(lastPatientWeight));
+                patientCircle.setAttribute('r', 8);
+                patientCircle.classList.add('data-point-patients');
+                svg.appendChild(patientCircle);
+                patientPoints.push(patientCircle);
+
+                // Animation
+                const joodLength = lineJood.getTotalLength();
+                const patientsLength = linePatients.getTotalLength();
+
+                lineJood.style.strokeDasharray = joodLength;
+                lineJood.style.strokeDashoffset = joodLength;
+                linePatients.style.strokeDasharray = patientsLength;
+                linePatients.style.strokeDashoffset = patientsLength;
+
+                requestAnimationFrame(() => {
+                    lineJood.style.strokeDashoffset = 0;
+                    linePatients.style.strokeDashoffset = 0;
+                    clipRect.style.width = `${chartAreaWidth}px`;
+
+                    joodPoints.forEach((point, index) => {
+                        setTimeout(() => { point.style.opacity = 1; }, index * 100 + 2000);
+                    });
+                    
+                    patientPoints.forEach((point, index) => {
+                        setTimeout(() => { point.style.opacity = 1; }, index * 100 + 2000);
+                    });
+
+                    calloutElements.rect.style.opacity = 1;
+                    calloutElements.text.style.opacity = 1;
+                });
+            };
+
+            drawAndAnimate();
+        });
+    </script>
+
+<script>
+  // Animate percentage counter
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target;
+          const target = parseInt(counter.getAttribute('data-target'));
+          let current = 0;
+          const increment = target / 60;
+          
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              counter.textContent = target + '%';
+              clearInterval(timer);
+            } else {
+              counter.textContent = Math.ceil(current) + '%';
+            }
+          }, 25);
+          
+          observer.unobserve(counter);
+        }
+      });
+    });
+
+    {% comment %} const counter = document.querySelector('.percentage-number'); {% endcomment %}
+    if (counter) {
+      observer.observe(counter);
+    }
+  });
+</script>

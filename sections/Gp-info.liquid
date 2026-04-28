@@ -1,0 +1,578 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background: linear-gradient(0deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%), linear-gradient(107deg, rgba(244,239,253,0.60) 0.38%, rgba(255,245,191,0.60) 100%), #FFF;
+  }
+
+  .gp-wrap-{{ section.id }} {
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: "SF Pro", -apple-system, sans-serif;
+  }
+.all-gp-wrapper {
+    border-radius: 10px;
+    background: #FFF;
+    padding: 16px;
+    margin-bottom: 40px;
+}
+  /* Progress bar */
+  .gp-progress-{{ section.id }} {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .gp-progress-bar-{{ section.id }} {
+    height: 3px;
+    flex: 1;
+    border-radius: 10px;
+    background: #E0E0E0;
+  }
+
+  .gp-progress-bar-{{ section.id }}.active {
+    background: #4C3E79;
+  }
+
+  /* Badge */
+  .gp-badge-{{ section.id }} {
+    border-radius: 66px;
+    border: 0.5px solid #4C3E79;
+    background: #FFF;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    color: #4C3E79;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  /* Heading */
+  .gp-heading-{{ section.id }} {
+   color: var(--Black, #111);
+font-family: "SF Pro";
+font-size: 24px;
+font-style: normal;
+font-weight: 510;
+line-height: 120%; /* 28.8px */
+letter-spacing: -0.24px;
+margin: 0;
+padding-bottom: 24px;
+  }
+
+  /* Card */
+  .gp-card-{{ section.id }} {
+    margin-bottom: 20px;
+  }
+
+  .gp-card-title-{{ section.id }} {
+   color: var(--Black, #111);
+font-family: "SF Pro";
+font-size: 20px;
+font-style: normal;
+font-weight: 510;
+line-height: 120%; /* 24px */
+letter-spacing: -0.8px;
+text-transform: capitalize;
+padding-bottom: 20px;
+  }
+
+  /* Inputs */
+  .gp-fields-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  input.gp-inp-{{ section.id }} {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 12px;
+    color: var(--Gray, #767676);
+    text-align: right;
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.32px;
+    text-align: start;
+    background: transparent;
+    border-radius: 8px;
+    border: 1px solid var(--light-gray-20, #E0E0E0);
+    background: var(--White, #FFF);
+  }
+
+  input.gp-inp-{{ section.id }}::placeholder {
+    color: #ABABAB;
+  }
+
+  input.gp-inp-{{ section.id }}:focus {
+    border-color: #4C3E79;
+    background: #FFF;
+  }
+
+  /* Upload section */
+  .gp-upload-title-{{ section.id }} {
+    color: #111;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 14px;
+  }
+
+  /* ID type toggle */
+  .gp-id-toggle-{{ section.id }} {
+    display: flex;
+    background: #F2F2F2;
+    border-radius: 60px;
+    padding: 5px;
+    gap: 4px;
+    margin-bottom: 16px;
+    height: 44px;
+    box-sizing: border-box;
+    border-radius: 60px;
+background: linear-gradient(0deg, #FDFDFD 0%, #FDFDFD 100%), #FFF;
+  }
+
+  .gp-id-tab-{{ section.id }} {
+    flex: 1;
+    border: none;
+    border-radius: 36px;
+    background: transparent;
+    color: #4C3E79;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .gp-id-tab-{{ section.id }}.active {
+    background: linear-gradient(0deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%), linear-gradient(107deg, #F4EFFD 0.38%, #FFF5BF 100%);
+    color: #111;
+    font-weight: 600;
+  }
+
+  /* Upload box */
+  .gp-upload-box-{{ section.id }} {
+    border-radius: 8px;
+border: 1px solid var(--light-gray-20, #E0E0E0);
+background: var(--White, #FFF);
+    padding: 28px 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .gp-upload-icon-{{ section.id }} {
+    margin-bottom: 8px;
+  }
+
+  .gp-upload-maxsize-{{ section.id }} {
+    color: #ABABAB;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .gp-upload-btn-{{ section.id }} {
+    border-radius: 8px;
+    background: #4C3E79;
+    border: none;
+    padding: 10px 24px;
+    color: #FFF;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Note */
+  .gp-note-{{ section.id }} {
+    color: #888;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  .gp-note-{{ section.id }} strong {
+    color: #555;
+  }
+
+  /* Submit */
+  .gp-submit-btn-{{ section.id }} {
+    display: block;
+    width: 100%;
+    border-radius: 45px;
+    background: #4C3E79;
+    border: none;
+    padding: 16px;
+    color: #FFF;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+   .m-gp .gp-card-{{ section.id }} {
+    margin: 0;
+   }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .gp-heading-{{ section.id }} {
+      font-size: 20px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="new-qes-section {% if section.settings.new-class %}m-gp{% endif %} section-{{ section.id }}-padding" data-step = '{{ section.settings.step-name }}' next-step = '{{ section.settings.next-step }}'>
+  <div class="page-width">
+    <div class="gp-wrap-{{ section.id }}">
+      <!-- Badge -->
+      {% if section.settings.badge_text != blank %}
+        <div class="wl-profile">{{ section.settings.badge_text }}</div>
+      {% endif %}
+
+      <!-- Heading -->
+      <h2 class="gp-heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+        <div class="all-gp-wrapper">
+      <!-- Form Card -->
+      <div class="gp-card-{{ section.id }}">
+        {% if section.settings.card_title != blank %}
+          <p class="gp-card-title-{{ section.id }}">{{ section.settings.card_title }}</p>
+        {% endif %}
+
+        <div class="gp-fields-{{ section.id }}">
+          {% for block in section.blocks %}
+            {% if block.type == 'field' %}
+              <input
+                type="{{ block.settings.field_type }}"
+                placeholder="{{ block.settings.placeholder }}"
+                class="gp-inp-{{ section.id }}"
+              >
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Upload Section -->
+      {% if section.settings.show_upload %}
+        <p class="gp-upload-title-{{ section.id }}">{{ section.settings.upload_title }}</p>
+
+        <!-- ID type toggle -->
+        <div class="gp-id-toggle-{{ section.id }}">
+          <button class="gp-id-tab-{{ section.id }} active" id="tab-passport-{{ section.id }}">
+            {{ section.settings.tab1_text }}
+          </button>
+          <button class="gp-id-tab-{{ section.id }}" id="tab-driving-{{ section.id }}">
+            {{ section.settings.tab2_text }}
+          </button>
+        </div>
+
+        <!-- Upload box -->
+       <!-- Upload box -->
+<div class="gp-upload-box-{{ section.id }}" id="gp-dropzone-{{ section.id }}">
+
+  <!-- Default UI -->
+  <div id="gp-default-ui-{{ section.id }}">
+    <div class="gp-upload-icon-{{ section.id }}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="38" viewBox="0 0 48 38" fill="none">
+  <path d="M38.0593 13.2411C37.9591 5.92293 31.9748 0 24.6331 0C21.3674 0 18.221 1.188 15.774 3.34518C13.59 5.27033 12.096 7.84302 11.5043 10.6676C11.4611 10.6671 11.4183 10.6668 11.3755 10.6668C5.10318 10.6668 0 15.7698 0 22.0423C0 28.3147 5.10318 33.4178 11.3756 33.4178H19.3202C19.8855 33.4178 20.3439 32.9595 20.3439 32.3941C20.3439 31.8287 19.8855 31.3705 19.3202 31.3705H11.3756C6.23193 31.3705 2.04731 27.1859 2.04731 22.0423C2.04731 16.8987 6.23193 12.7141 11.3756 12.7141C11.6496 12.7141 11.9393 12.7288 12.2614 12.7591C12.8072 12.8102 13.2972 12.4219 13.3715 11.8782C13.7402 9.17633 15.0741 6.6913 17.1278 4.8809C19.2007 3.05352 21.8661 2.04721 24.633 2.04721C30.9082 2.04721 36.0132 7.15236 36.0132 13.4274C36.0132 13.6533 35.9965 13.8862 35.9787 14.1328L35.9711 14.2376C35.9499 14.5387 36.0626 14.8339 36.2793 15.0442C36.4958 15.2545 36.7938 15.3584 37.0946 15.3283C37.3669 15.3008 37.6416 15.287 37.911 15.287C42.3451 15.287 45.9527 18.8945 45.9527 23.3287C45.9527 27.7628 42.3452 31.3703 37.911 31.3703H29.5569C28.9917 31.3703 28.5332 31.8285 28.5332 32.3939C28.5332 32.9593 28.9917 33.4176 29.5569 33.4176H37.911C43.474 33.4176 48 28.8918 48 23.3287C47.9999 17.8156 43.5543 13.3207 38.0593 13.2411Z" fill="black"/>
+  <path d="M38.0593 13.2411C37.9591 5.92293 31.9748 0 24.6331 0C21.3674 0 18.221 1.188 15.774 3.34518C13.59 5.27033 12.096 7.84302 11.5043 10.6676C11.4611 10.6671 11.4183 10.6668 11.3755 10.6668C5.10318 10.6668 0 15.7698 0 22.0423C0 28.3147 5.10318 33.4178 11.3756 33.4178H19.3202C19.8855 33.4178 20.3439 32.9595 20.3439 32.3941C20.3439 31.8287 19.8855 31.3705 19.3202 31.3705H11.3756C6.23193 31.3705 2.04731 27.1859 2.04731 22.0423C2.04731 16.8987 6.23193 12.7141 11.3756 12.7141C11.6496 12.7141 11.9393 12.7288 12.2614 12.7591C12.8072 12.8102 13.2972 12.4219 13.3715 11.8782C13.7402 9.17633 15.0741 6.6913 17.1278 4.8809C19.2007 3.05352 21.8661 2.04721 24.633 2.04721C30.9082 2.04721 36.0132 7.15236 36.0132 13.4274C36.0132 13.6533 35.9965 13.8862 35.9787 14.1328L35.9711 14.2376C35.9499 14.5387 36.0626 14.8339 36.2793 15.0442C36.4958 15.2545 36.7938 15.3584 37.0946 15.3283C37.3669 15.3008 37.6416 15.287 37.911 15.287C42.3451 15.287 45.9527 18.8945 45.9527 23.3287C45.9527 27.7628 42.3452 31.3703 37.911 31.3703H29.5569C28.9917 31.3703 28.5332 31.8285 28.5332 32.3939C28.5332 32.9593 28.9917 33.4176 29.5569 33.4176H37.911C43.474 33.4176 48 28.8918 48 23.3287C47.9999 17.8156 43.5543 13.3207 38.0593 13.2411Z" fill="url(#paint0_linear_2435_8361)"/>
+  <path d="M24.6333 4.81641C20.3528 4.81641 16.6887 8.01524 16.1101 12.257C16.0337 12.8172 16.4259 13.3333 16.986 13.4097C17.033 13.4161 17.0796 13.4193 17.1256 13.4193C17.6295 13.4193 18.0686 13.0471 18.1385 12.5339C18.5794 9.3014 21.3715 6.86371 24.6332 6.86371C25.1986 6.86371 25.6568 6.40547 25.6568 5.84006C25.6569 5.27475 25.1986 4.81641 24.6333 4.81641Z" fill="black"/>
+  <path d="M24.6333 4.81641C20.3528 4.81641 16.6887 8.01524 16.1101 12.257C16.0337 12.8172 16.4259 13.3333 16.986 13.4097C17.033 13.4161 17.0796 13.4193 17.1256 13.4193C17.6295 13.4193 18.0686 13.0471 18.1385 12.5339C18.5794 9.3014 21.3715 6.86371 24.6332 6.86371C25.1986 6.86371 25.6568 6.40547 25.6568 5.84006C25.6569 5.27475 25.1986 4.81641 24.6333 4.81641Z" fill="url(#paint1_linear_2435_8361)"/>
+  <path d="M29.2884 24.9577L25.5649 21.6315C24.923 21.0577 23.9545 21.0578 23.3123 21.6314L19.5888 24.9578C19.1671 25.3344 19.1307 25.9815 19.5073 26.4032C19.8839 26.8247 20.531 26.8614 20.9528 26.4847L23.415 24.2851V36.8787C23.415 37.4441 23.8732 37.9023 24.4387 37.9023C25.004 37.9023 25.4623 37.4441 25.4623 36.8787V24.285L27.9246 26.4846C28.1198 26.6591 28.3635 26.7449 28.6062 26.7449C28.8876 26.7449 29.1678 26.6296 29.3701 26.4031C29.7465 25.9815 29.71 25.3344 29.2884 24.9577Z" fill="black"/>
+  <path d="M29.2884 24.9577L25.5649 21.6315C24.923 21.0577 23.9545 21.0578 23.3123 21.6314L19.5888 24.9578C19.1671 25.3344 19.1307 25.9815 19.5073 26.4032C19.8839 26.8247 20.531 26.8614 20.9528 26.4847L23.415 24.2851V36.8787C23.415 37.4441 23.8732 37.9023 24.4387 37.9023C25.004 37.9023 25.4623 37.4441 25.4623 36.8787V24.285L27.9246 26.4846C28.1198 26.6591 28.3635 26.7449 28.6062 26.7449C28.8876 26.7449 29.1678 26.6296 29.3701 26.4031C29.7465 25.9815 29.71 25.3344 29.2884 24.9577Z" fill="url(#paint2_linear_2435_8361)"/>
+  <defs>
+    <linearGradient id="paint0_linear_2435_8361" x1="41.0006" y1="0.454881" x2="-9.91638" y2="25.5298" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4C3E79"/>
+      <stop offset="1" stop-color="#C6B5FC"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_2435_8361" x1="24.2633" y1="4.93351" x2="13.2634" y2="9.12287" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4C3E79"/>
+      <stop offset="1" stop-color="#C6B5FC"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear_2435_8361" x1="28.1161" y1="21.4285" x2="15.0256" y2="24.2188" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4C3E79"/>
+      <stop offset="1" stop-color="#C6B5FC"/>
+    </linearGradient>
+  </defs>
+</svg>
+    </div>
+    <p class="gp-upload-maxsize-{{ section.id }}">{{ section.settings.upload_size_text }}</p>
+    <input type="file" accept="image/*,.pdf" style="display:none;" id="gp-file-{{ section.id }}">
+    <span class="gp-upload-btn-{{ section.id }}" onclick="document.getElementById('gp-file-{{ section.id }}').click()">
+      {{ section.settings.upload_btn_text }}
+    </span>
+  </div>
+
+  <!-- Preview UI (hidden until file selected) -->
+  <div id="gp-preview-ui-{{ section.id }}" style="display:none; flex-direction:column; align-items:center; gap:10px; width:100%;">
+    <img id="gp-preview-img-{{ section.id }}" src="" alt="Preview" style="display:none; max-width:100%; max-height:140px; border-radius:10px; object-fit:cover;">
+    <p id="gp-preview-name-{{ section.id }}" style="font-size:13px; color:#4C3E79; font-weight:500; word-break:break-all; text-align:center;"></p>
+    <div id="gp-remove-{{ section.id }}" style="background:none; border:1px solid #DDD; border-radius:20px; padding:4px 14px; font-size:12px; color:#888; cursor:pointer; font-family:'SF Pro',sans-serif;">✕ Remove</div>
+  </div>
+
+</div>
+
+        <!-- Note -->
+        {% if section.settings.note_text != blank %}
+          <p class="gp-note-{{ section.id }}">
+            <strong>Note:</strong> {{ section.settings.note_text }}
+          </p>
+        {% endif %}
+      {% endif %}
+
+    </div>
+
+      <!-- Submit -->
+      <button class="gp-submit-btn-{{ section.id }}">{{ section.settings.button_text }}</button>
+
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  // ── Tab toggle ──
+  var tab1 = document.getElementById('tab-passport-{{ section.id }}');
+  var tab2 = document.getElementById('tab-driving-{{ section.id }}');
+  if (tab1 && tab2) {
+    [tab1, tab2].forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        [tab1, tab2].forEach(function(t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+      });
+    });
+  }
+
+  // ── Upload preview (same logic as evidence section) ──
+  var fileInput  = document.getElementById('gp-file-{{ section.id }}');
+  var defaultUi  = document.getElementById('gp-default-ui-{{ section.id }}');
+  var previewUi  = document.getElementById('gp-preview-ui-{{ section.id }}');
+  var previewImg = document.getElementById('gp-preview-img-{{ section.id }}');
+  var previewName= document.getElementById('gp-preview-name-{{ section.id }}');
+  var removeBtn  = document.getElementById('gp-remove-{{ section.id }}');
+  var dropzone   = document.getElementById('gp-dropzone-{{ section.id }}');
+
+  if (!fileInput) return;
+
+  function showPreview(file) {
+    previewName.textContent = file.name;
+    defaultUi.style.display = 'none';
+    previewUi.style.display = 'flex';
+
+    if (file.type.startsWith('image/')) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        previewImg.src = e.target.result;
+        previewImg.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    } else {
+      previewImg.style.display = 'none';
+    }
+  }
+
+  function resetUpload() {
+    fileInput.value = '';
+    previewImg.src = '';
+    previewImg.style.display = 'none';
+    previewName.textContent = '';
+    previewUi.style.display = 'none';
+    defaultUi.style.display = '';
+  }
+
+  fileInput.addEventListener('change', function() {
+    if (this.files && this.files[0]) showPreview(this.files[0]);
+  });
+
+  removeBtn.addEventListener('click', resetUpload);
+
+  // Drag & drop
+  dropzone.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    dropzone.style.borderColor = '#4C3E79';
+  });
+  dropzone.addEventListener('dragleave', function() {
+    dropzone.style.borderColor = '#D8D8D8';
+  });
+  dropzone.addEventListener('drop', function(e) {
+    e.preventDefault();
+    dropzone.style.borderColor = '#D8D8D8';
+    var file = e.dataTransfer.files[0];
+    if (file) {
+      var dt = new DataTransfer();
+      dt.items.add(file);
+      fileInput.files = dt.files;
+      showPreview(file);
+    }
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "GP Information Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "Weight Loss Profile"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Enter Your GP Information"
+    },
+    {
+      "type": "text",
+      "id": "card_title",
+      "label": "Card Title",
+      "default": "Enter Your Detail"
+    },
+    {
+      "type": "header",
+      "content": "Upload Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_upload",
+      "label": "Show Upload Section?",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "upload_title",
+      "label": "Upload Section Title",
+      "default": "Upload A Valid Photo ID To Verify Your Identity."
+    },
+    {
+      "type": "text",
+      "id": "tab1_text",
+      "label": "ID Tab 1 Text",
+      "default": "Passport"
+    },
+    {
+      "type": "text",
+      "id": "tab2_text",
+      "label": "ID Tab 2 Text",
+      "default": "UK Driving License"
+    },
+    {
+      "type": "text",
+      "id": "upload_size_text",
+      "label": "Upload Size Text",
+      "default": "Maximum file size: 5MB."
+    },
+    {
+      "type": "text",
+      "id": "upload_btn_text",
+      "label": "Upload Button Text",
+      "default": "Upload File"
+    },
+    {
+      "type": "textarea",
+      "id": "note_text",
+      "label": "Note Text",
+      "default": "Please make sure your Photo ID is clear and shows your face, name, and date of birth for verification."
+    },
+    {
+      "type": "header",
+      "content": "Submit Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "SUBMIT DETAILS"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "step-name",
+      "label": "step name"
+    },
+    {
+      "type": "text",
+      "id": "next-step",
+      "label": "next step"
+    },
+    {
+      "type": "checkbox",
+      "id": "new-class",
+      "label": "add new class",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "field",
+      "name": "Input Field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "placeholder",
+          "label": "Placeholder Text",
+          "default": "Full Name"
+        },
+        {
+          "type": "select",
+          "id": "field_type",
+          "label": "Field Type",
+          "options": [
+            { "value": "text", "label": "Text" },
+            { "value": "number", "label": "Number" },
+            { "value": "tel", "label": "Phone" },
+            { "value": "email", "label": "Email" }
+          ],
+          "default": "text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "GP Information Form",
+      "blocks": [
+        { "type": "field", "settings": { "placeholder": "Full Name", "field_type": "text" } },
+        { "type": "field", "settings": { "placeholder": "NHS Number", "field_type": "text" } },
+        { "type": "field", "settings": { "placeholder": "Phone Number", "field_type": "tel" } },
+        { "type": "field", "settings": { "placeholder": "Address", "field_type": "text" } },
+        { "type": "field", "settings": { "placeholder": "Town", "field_type": "text" } },
+        { "type": "field", "settings": { "placeholder": "Postcode", "field_type": "text" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

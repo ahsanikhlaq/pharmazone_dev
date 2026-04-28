@@ -1,0 +1,440 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_loss_title p{
+    margin: 0;
+    color: var(--Black, #111);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_loss_title p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_loss_richtext p{
+    margin: 0;
+    color: var(--Gray, #545454);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: -0.5px;
+    padding-top: 10px;
+}
+.cs_loss_block_img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: cover;
+}
+.cs_loss_block_title{
+    margin: 0;
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 36.4px */
+    letter-spacing: -1.04px;
+    text-align: center;
+    padding-top: 20px;
+}
+.cs_loss_block_sub_title{
+    margin: 0;
+    color: var(--Gray, #545454);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+    letter-spacing: -0.5px;
+}
+.sc_loss_block_heading{
+    margin: 0;
+    color: var(--Black, #111);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: -0.64px;
+}
+.cs_loss_block_sub_title_title-bb .sc_loss_block_heading{
+    max-width: 208px;
+    margin: 0 auto;
+}
+.cs_loss_block_sub_title_title.cs_loss_block_sub_title_title-bb {
+    min-height: 74px;
+}
+.cs_loss_block_sub_title_title{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 0;
+}
+.cs_loss_block_sub_title_titles{
+    border-bottom: 1px solid var(--light-gray-20, #E0E0E0);
+}
+.cs_loss_block{
+    border-radius: 12px;
+    padding: 20px;
+    background: linear-gradient(180deg, #FFF8CC 0%, #FBF9EE 100%);
+}
+.cs_loss_blocks_main{
+    margin-top: 40px;
+}
+.cs_loss_button{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    display: flex;
+    padding: 16px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 75px;
+    background: var(--Yellow, #FFD902);
+    border: 1px solid #FFD902;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.custom_loss_swiper-pagination"{
+    display: none;
+}
+.my_loss_slider_Swiper{
+    position: relative;
+}
+.custom_loss_swiper-pagination {
+    position: absolute;
+    bottom: 0;
+    top: unset !important;
+}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    
+    .cs_loss_block_sub_title_title.cs_loss_block_sub_title_title-bb {
+    min-height: auto;
+}
+.cs_loss_block_sub_title_title-bb .sc_loss_block_heading {
+    max-width: 160px;
+    margin: 0 auto;
+}
+    .cs_loss_block_image {
+    min-height: 160px;
+}
+    .my_loss_slider_Swiper .swiper-wrapper{
+        margin-bottom: 27px;
+    }
+    .my_loss_slider_Swiper .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+        background: var(--Purple, #4C3E79);
+    }
+    .cs_loss_button{
+            width: 100%;
+            margin-top: 24px;
+            padding: 14px 30px;
+    }
+    .cs_loss_button_main {
+    padding-right: 12px;
+}
+.custom_loss_swiper-pagination {
+    width: 96% !important;
+}
+    .section-{{ section.id }}-padding .page-width{
+        padding-right: 0 !important;
+    }
+    .cs_loss_title p{
+        font-size: 30px;
+        line-height: 36px;
+        text-align: Left;
+        padding-right: 12px;
+
+    }
+    .cs_loss_title p strong{
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .cs_loss_richtext p{
+        font-size: 14px;
+        line-height: 16px;
+        text-align: left;
+        padding-right: 12px;
+    }
+    .cs_loss_blocks_main {
+        margin-top: 24px;
+    }
+    .custom_loss_swiper-pagination{
+    display: block;
+}
+.cs_loss_block_sub_title_title-cc .sc_loss_block_heading{
+    max-width: 129px;
+    margin: 0 auto;
+}
+.cs_loss_block_sub_title_title-ss .sc_loss_block_heading{
+    max-width: 168px;
+    margin: 0 auto;
+}
+  }
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_loss_title">{{ section.settings.title }}</div>
+    <div class="cs_loss_richtext">{{ section.settings.rich-text }}</div>
+    <div class="cs_loss_blocks_main">
+         <div class="swiper my_loss_slider_Swiper">
+             <div class="swiper-wrapper">
+         {% for block in section.blocks %}
+            <div class="swiper-slide">
+            <div class="cs_loss_block block-{{ block.id }}">
+                <div class="cs_loss_block_image">
+                {{ block.settings.img | image_url: width: 1440 | image_tag:
+                        class: 'cs_loss_block_img',
+                        widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                        height: 100,
+                        width: 100,
+                        alt: logo_alt,
+                        loading: "lezy"
+                    }}
+            </div class="cs_loss_content_main">
+            <div>
+            <h4 class="cs_loss_block_title">{{ block.settings.title }}</h4>
+            <div class="cs_loss_block_sub_title_title cs_loss_block_sub_title_titles cs_loss_block_sub_title_title-ff">
+                <h4 class="cs_loss_block_sub_title">{{ block.settings.type }}</h4>
+                <h3 class="sc_loss_block_heading">{{ block.settings.Weekly }}</h3>
+            </div>
+            <div class="cs_loss_block_sub_title_title cs_loss_block_sub_title_titles cs_loss_block_sub_title_title-cc">
+                <h4 class="cs_loss_block_sub_title">{{ block.settings.Benefits }}</h4>
+                <h3 class="sc_loss_block_heading">{{ block.settings.Helps-control }}</h3>
+            </div>
+            <div class="cs_loss_block_sub_title_title cs_loss_block_sub_title_titles cs_loss_block_sub_title_title-ss">
+                <h4 class="cs_loss_block_sub_title">{{ block.settings.Common }}</h4>
+                <h3 class="sc_loss_block_heading">{{ block.settings.Nausea }}</h3>
+            </div>
+            <div class="cs_loss_block_sub_title_title cs_loss_block_sub_title_title-bb">
+                <h4 class="cs_loss_block_sub_title">{{ block.settings.Recommended }}</h4>
+                <h3 class="sc_loss_block_heading">{{ block.settings.Support }}</h3>
+            </div>
+        </div>
+            </div>
+        </div>
+        {% style %}
+        .block-{{ block.id }} .cs_loss_block_img{
+            max-width: {{ block.settings.max_width }}px;
+            max-height: {{ block.settings.max-height }}px;
+        }
+        {% endstyle %}
+            {% endfor %}
+        </div>
+        <div class="custom_loss_swiper-pagination"></div>
+    </div>
+    <div class="cs_loss_button_main">
+    <a class="cs_loss_button cs_faq_sec_button_des_hover" href="{{ section.settings.butt-url }}">{{ section.settings.butt-text }}</a>
+    </div>
+    </div>
+</div>
+</section>
+<script>
+  var swiper = new Swiper(".my_loss_slider_Swiper", {
+     spaceBetween: 16,
+     slidesPerView: 4,
+     navigation: {
+      nextEl: ".cs_tra_next_button",
+      prevEl: ".cs_tra_prev_button",
+    },
+    pagination: {
+      el: ".custom_loss_swiper-pagination",
+      type: "progressbar",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.5,
+         spaceBetween: 12,
+      },
+      640: {
+        slidesPerView: 2,
+         spaceBetween: 12,
+      },
+      1024: {
+        slidesPerView: 4,
+         spaceBetween: 16,
+      }
+    }
+    
+  });
+</script>
+{% schema %}
+{
+    "name": "Weight loss",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "rich-text",
+            "label": "Rich Text"
+        },
+        {
+            "type": "text",
+            "id": "butt-text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "butt-url",
+            "label": "Button Url"
+        },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        }
+    ],
+  "blocks": [
+      {
+        "type": "Faq",
+        "name": "Add Tab",
+         "settings": [
+            {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Image"
+        },
+         {
+            "type": "range",
+            "id": "max_width",
+            "label": "Image Width",
+            "min": 0,
+            "max": 500,
+            "step": 5,
+            "unit": "px",
+            "default": 200
+            },
+            {
+                "type": "range",
+                "id": "max-height",
+                "label": "Image Height",
+                "min": 0,
+                "max": 500,
+                "step": 5,
+                "unit": "px",
+                "default": 200
+            },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "type",
+            "label": "Type"
+        },
+        {
+            "type": "text",
+            "id": "Weekly",
+            "label": "Weekly"
+        },
+        {
+            "type": "text",
+            "id": "Benefits",
+            "label": "Benefits"
+        },
+        {
+            "type": "text",
+            "id": "Helps-control",
+            "label": "Helps control "
+        },
+        {
+            "type": "text",
+            "id": "Common",
+            "label": "Common"
+        },
+        {
+            "type": "text",
+            "id": "Nausea",
+            "label": "Nausea"
+        },
+        {
+            "type": "text",
+            "id": "Recommended",
+            "label": "Recommended"
+        },
+        {
+            "type": "text",
+            "id": "Support",
+            "label": "Support"
+        }
+         ]
+        },
+    ],
+    "presets": [
+        { "name": "Weight loss" }
+    ]
+}
+{% endschema %}

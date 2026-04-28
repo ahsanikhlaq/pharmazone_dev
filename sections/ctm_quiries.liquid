@@ -1,0 +1,2099 @@
+{%- style -%}
+    html {
+    scroll-behavior: smooth;
+  }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+{%- endstyle -%}
+<style>
+  
+@font-face {
+  font-family: Lato;
+  src: url(https://cdn.shopify.com/s/files/1/0902/7823/2430/files/Lato-Regular.ttf?v=1749465921);
+}
+.custom-form-container p {
+  font-family: Lato;
+}
+/* General Styles */
+
+#terms-error_nd {
+  background-color: #d8d8e4;
+  color: black;
+}
+
+.custom-form-container textarea::placeholder {
+  letter-spacing: 0px;
+  color: black;
+  font-family: Lato;
+  padding-top: 5px;
+}
+
+.ctm_text_area input[type="number"] {
+  height: 40px;
+  width: 90px;
+}
+
+.custom-form-container textarea,
+.ctm_text_area input[type="number"] {
+  border: 2px solid rgba(81, 195, 190, 0.25);
+  border-radius: 4px;
+  padding: 10px 10px;
+  font-size: 16px;
+  font-family: lato;
+}
+
+.custom-form-container textarea:focus-visible,
+.ctm_text_area input[type="number"]:focus-visible {
+  box-shadow: unset !important;
+  outline: none !important;
+}
+
+/* Container for the form */
+.custom-form-container .content {
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.customize--product-poppup .product-details {
+  display: flex;
+}
+
+.customize--product-poppup .both--btn-final .new--form--ppup {
+  margin-left: 12px;
+}
+/* Form Title */
+.custom-form-container .form-head {
+  font-size: 24px;
+  color: #1e3d58;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Fieldset and Legend */
+.custom-form-container fieldset {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fafafa;
+}
+
+.custom-form-container .heading_part_ctm {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1e3d58;
+  margin-bottom: 20px;
+  font-family: Lato;
+  display: block;
+  padding-top: 20px;
+  text-transform: uppercase;
+}
+
+/* Question labels */
+.custom-form-container label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 600;
+  font-family: Lato;
+}
+
+/* Radio buttons and checkboxes */
+.custom-form-container input[type="radio"],
+.custom-form-container input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Input and Textarea Fields */
+.custom-form-container input[type="radio"],
+.custom-form-container input[type="checkbox"] {
+  accent-color: #4C3E79; /* Orange accent for checkboxes and radio buttons */
+  cursor: pointer;
+}
+
+/* Styling for hidden alert messages */
+
+.custom-form-container .custom_hidden {
+  display: none !important;
+}
+
+.custom-form-container .alert {
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.custom-error-msg {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.custom-form-container .alert-danger,
+.custom-form-container .button_block_ctm,
+.custom-error-msg {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.custom-form-container .alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.custom-form-container .hidden {
+  display: none;
+}
+
+/* Button styles */
+/* .custom-form-container  button {
+        padding: 12px 20px;
+        font-size: 16px;
+        background-color: #ff9900;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    } */
+
+/* Input group for radio buttons and checkboxes */
+.custom-form-container input[type="radio"]:checked,
+.custom-form-container input[type="checkbox"]:checked {
+  accent-color: #4C3E79 ;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .custom-form-container .content {
+    padding: 15px;
+  }
+
+  .custom-form-container .form-head {
+    font-size: 20px;
+  }
+
+  .custom-form-container label {
+    font-size: 14px;
+  }
+
+  .custom-form-container input[type="radio"],
+  .custom-form-container input[type="checkbox"] {
+    margin-right: 8px;
+  }
+}
+
+/* Style for the checkbox for final consent */
+.custom-form-container #confirm_terms {
+  margin-right: 10px;
+}
+
+/* Style for the Terms and Conditions error message */
+.custom-form-container #terms-error {
+  font-size: 14px;
+  color: #721c24;
+  margin-top: 10px;
+}
+
+/* Styling for the medication list */
+.custom-form-container #medication-list {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.custom-form-container #medication-list p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.custom-form-container #medication-list input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Alert styling for "You must agree..." messages */
+.custom-form-container #q1-error,
+.custom-form-container #q2-warning,
+.custom-form-container #q3-error,
+.custom-form-container #q4-error,
+.custom-form-container #q6-error,
+.custom-form-container #q7-error,
+.custom-form-container #q8-error,
+.custom-form-container #q9-error,
+.custom-form-container #q11-error,
+.custom-form-container #q12-error,
+.custom-form-container #q13-error,
+.custom-form-container #q14-error {
+  margin-top: 10px;
+}
+
+.custom-form-container hr {
+  margin: 29px 0;
+}
+
+.custom-form-container .product-images img {
+  width: 100%;
+}
+.custom-form-container .product-images {
+  flex: 0 0 150px;
+  margin-right: 20px;
+  max-width: 150px;
+}
+
+/* Custom style for submit button */
+.custom-form-container #submitBtn {
+  width: 100%;
+  padding: 15px;
+  font-size: 15px;
+  /* background-color: #4C3E79; */
+  color: white;
+  border: none;
+  /* border-radius: 5px; */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: auto;
+  margin-top: 15px;
+  position: relative;
+  border: 2px solid #544586;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.custom-form-container #submitBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #544586;
+  z-index: -1;
+  transition: height 0.3s ease-out;
+}
+
+.custom-form-container #submitBtn:hover {
+  color: #544586;
+  background-color: white;
+}
+
+.custom-form-container #submitBtn:hover::before {
+  height: 0%;
+}
+
+.custom-form-container .next:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.custom-form-container #submitBtn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.custom-form-container .show_checkboxes {
+  display: block;
+}
+
+.custom-form-container .ctm--inner--options {
+  padding-left: 15px;
+}
+
+.form-container.custom-form-container button {
+  padding: 10px 20px;
+  /* background-color: #4C3E79; */
+  color: #fff;
+  border: none;
+  /* border-radius: 4px; */
+  cursor: pointer;
+  width: 100%;
+}
+@media screen and (min-width: 750px) {
+  .custom-form-container #submitBtn {
+    width: 50%;
+  }
+  .form-container.custom-form-container button {
+    width: 50%;
+  }
+  .other-info-wrapper.mobile_part {
+    display: none;
+  }
+}
+
+/* general-enquiry-page-css */
+
+.form_step-product-card {
+  display: flex;
+  flex-direction: row-reverse;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  justify-content: center;
+}
+.parent_ctm_part {
+  width: 70%;
+  padding: 0 20px 20px 0;
+}
+.main-heading {
+  margin: 0 0 10px;
+  font-family: Lato;
+  font-size: 31px;
+  padding: 10px 20px;
+  background-color: #4C3E79;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: bold;
+}
+.product_info-other_info {
+  width: 30%;
+  font-family: Lato;
+}
+.product-card-block {
+  padding: 20px;
+  box-shadow: 0px 0px 1px #000000;
+  height: max-content;
+}
+.product-image-wrap img {
+  width: 100%;
+}
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.other-info-wrapper {
+  padding: 20px;
+  background: #d8d8e4;
+  margin-top: 20px;
+}
+.other-info-container h3 {
+  font-size: 22px;
+  margin: 0;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  font-family: Lato;
+  border-bottom: 1px solid #00000021;
+}
+.sub_heading_text h4 {
+  font-size: 16px;
+  margin: 30px 0 10px;
+  position: relative;
+  padding-left: 30px;
+  font-family: Lato;
+}
+span.num-count {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  background: #4C3E79;
+  color: #fff;
+  display: block;
+  border-radius: 50%;
+  font-size: 12px;
+  /* font-size: .75rem; */
+}
+.num-count.tick-mark {
+  background: none;
+}
+.num-count svg {
+  width: 100%;
+  height: 100%;
+  fill: #30ba87;
+}
+.other-info_text {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.form-container.custom-form-container .progressbar li::before {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-container.custom-form-container button {
+  padding: 20px 20px;
+}
+.form-container.custom-form-container .both--btn-final {
+  margin-left: 0;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 750px) {
+  .custom-form-container fieldset {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 749px) {
+  .other-info-wrapper.desktop_part {
+    display: none;
+  }
+  #multiStepForm textarea {
+    width: 100%;
+  }
+  .custom-form-container .form-step fieldset {
+    padding: 10px 0;
+  }
+  .main-heading {
+    font-size: 22px;
+  }
+  .form_step-product-card {
+    padding: 0px 20px;
+  }
+  .form_step-product-card {
+    flex-direction: column;
+  }
+  .parent_ctm_part {
+    width: 100%;
+    padding: 0px;
+  }
+  .product_info-other_info {
+    width: 100%;
+  }
+  .main-heading {
+    margin: 15px 0;
+  }
+  .custom-form-container fieldset {
+    margin-top: 20px;
+    padding: 0px;
+  }
+}
+.custom-form-container fieldset {
+  background-color: #fff;
+}
+.radio-toolbar input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.radio-toolbar label {
+  display: inline-block;
+  /* background-color: #eee; */
+  height: 40px;
+  line-height: 40px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-family: Lato;
+  padding: 0px 20px;
+  border: 2px solid #d8d8e4;
+  border-radius: 4px; /* use 0 for sharp edges */
+  cursor: pointer;
+  margin-right: 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.radio-toolbar input[type="radio"]:checked + label {
+  background-color: #4C3E79;
+  border-color: #;51c3be40
+  color: white;
+  pointer-events: none;
+}
+.radio-toolbar label:hover {
+  background-color: #d8d8e4;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+  border-color: #d8d8e4;
+}
+.radio-toolbar input[type="radio"]:focus + label {
+  /* outline: 2px dashed #4caf50; */
+  outline-offset: 2px;
+}
+.radio-toolbar,
+.ctm_text_area {
+  border-bottom: 1px solid #d8e5e8;
+  padding-bottom: 10px;
+}
+.multiple_checkboxes.question-block {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d8e5e8;
+}
+.card_product-title {
+  font-size: 16px;
+  font-family: Lato;
+  letter-spacing: normal;
+}
+.radio-toolbar .cstm-label-css {
+  display: block;
+  background-color: #fff;
+  height: unset;
+  line-height: unset;
+  color: unset;
+  font-family: unset;
+  font-size: unset;
+  padding: unset;
+  border: unset;
+  border-radius: 0;
+  cursor: auto;
+  margin-right: unset;
+  transition: unset;
+  margin-top: 10px;
+}
+.radio-toolbar .cstm-label-css:hover {
+  background-color: unset;
+  /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+  border-color: unset;
+}
+.radio-toolbar .sub-opt-border {
+  border: 0;
+}
+.form_step-product-card input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 0;
+}
+
+.cent_kilo_part {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cent_kilo_part p {
+  margin: unset;
+  letter-spacing: 0px;
+}
+
+.button_swich {
+  cursor: pointer;
+  letter-spacing: 0px;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 14px;
+  margin-top: 10px;
+  display: inline-block;
+  color: #544586;
+  font-weight: bold;
+}
+
+  
+.radio-toolbar.ctm_text_area{
+  position: relative;
+}
+
+.total_bmi_claculation{
+    position: absolute;
+    right: 10px;
+    max-width: 130px;
+    padding: 10px;
+    text-align: center;
+    background: #544586;
+    color: white;
+    top: -50px;
+}
+
+@media screen and (max-width: 500px) {
+    .main-heading {
+      font-size: 16px;
+    }
+
+  .total_bmi_claculation {
+    display: none;
+  }
+}
+
+</style>
+<div class="section-{{ section.id }}-padding">
+  <div class="page_width">
+    <div class="form-container custom-form-container" id="formContainer">
+      <form id="multiStepForm" class="form_step-product-card">
+        <div class="product_info-other_info">
+          <div class="product-card-block">
+            <div class="product-details">
+              <div class="product-image-wrap">
+                <img id="product-image" alt="pharmazondirect">
+              </div>
+              <div id="product-title" class="card_product-title card__heading h5"></div>
+              <div class="product-price price">£<span id="product-price"></span></div>
+            </div>
+          </div>
+          <div class="other-info-wrapper desktop_part">
+            {% assign other_info = section.blocks | where: 'type', 'other_info' %}
+            {% for block in other_info %}
+              {% if block.settings.heading != blank %}
+                <div class="other-info-container">
+                  <h3 class="h3">{{ block.settings.heading }}</h3>
+                  <div class="sub_headings-texts-wrapper">
+                    {% if block.settings.sub_heading_1 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4">
+                          <span class="num-count">1</span>
+                          {{- block.settings.sub_heading_1 }}
+                        </h4>
+                        <div class="other-info_text">{{ block.settings.text_1 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_2 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">2</span>{{ block.settings.sub_heading_2 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_2 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_3 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">3</span>{{ block.settings.sub_heading_3 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_3 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_4 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">4</span>{{ block.settings.sub_heading_4 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_4 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_5 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">5</span>{{ block.settings.sub_heading_5 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_5 }}</div>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Step 1: Account + Personal -->
+        <div class="parent_ctm_part">
+          {% if section.settings.custom_heading_form != blank %}
+            <h2 class="main-heading">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                shape-rendering="geometricPrecision"
+                text-rendering="geometricPrecision"
+                image-rendering="optimizeQuality"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                viewBox="0 0 512 512"
+                width="50px"
+                height="50px"
+              >
+                <path fill="#fff" fill-rule="nonzero" d="M256 0c70.69 0 134.7 28.66 181.02 74.99C483.34 121.3 512 185.31 512 256s-28.66 134.7-74.98 181.02C390.7 483.34 326.69 512 256 512c-70.69 0-134.7-28.66-181.01-74.98C28.66 390.7 0 326.69 0 256c0-70.68 28.65-134.68 74.99-181.01C121.3 28.66 185.31 0 256 0zm13.16 229.92a29.41 29.41 0 0112.12 11.43l41.27.01c-1.51-3.57-1.11-7.84 1.43-11.13 3.75-4.86 10.72-5.75 15.57-2l24.52 18.93c2.81 2.17 4.3 5.41 4.32 8.69V256.15c-.02 3.3-1.51 6.54-4.32 8.71l-24.52 18.93c-4.85 3.75-11.82 2.85-15.57-2-2.54-3.28-2.94-7.54-1.44-11.11l-41.27-.01c-5.06 8.7-14.49 14.55-25.27 14.55-16.14 0-29.22-13.08-29.22-29.22 0-10.11 5.15-19.04 12.96-24.27l.35-56.46a11.078 11.078 0 01-11.47-1.53c-4.76-3.86-5.48-10.85-1.62-15.6l19.48-24.09c2.11-2.6 5.15-4 8.26-4.1h.26c3.49-.06 6.95 1.5 9.16 4.52l18.38 24.95c3.63 4.93 2.56 11.89-2.38 15.5-3.2 2.35-7.23 2.72-10.67 1.36l-.33 53.64zm91.71 183.07c3.41 5.88 1.4 13.43-4.48 16.84-5.89 3.41-13.44 1.4-16.85-4.49l-9.19-15.92c-3.41-5.89-1.4-13.43 4.48-16.84 5.89-3.41 13.44-1.4 16.85 4.48l9.19 15.93zM151.13 98.96c-3.38-5.89-1.35-13.42 4.54-16.8 5.88-3.37 13.41-1.35 16.79 4.54l9.19 15.93c3.38 5.89 1.35 13.42-4.53 16.79-5.89 3.38-13.42 1.35-16.79-4.53l-9.2-15.93zM425.3 339.54c5.89 3.38 7.91 10.91 4.54 16.8-3.38 5.88-10.91 7.91-16.79 4.53l-15.94-9.19c-5.88-3.38-7.91-10.91-4.53-16.8 3.37-5.88 10.9-7.91 16.79-4.53l15.93 9.19zM86.65 172.46c-5.89-3.41-7.9-10.96-4.49-16.84 3.41-5.89 10.96-7.9 16.85-4.49l15.93 9.2c5.88 3.41 7.89 10.96 4.48 16.85-3.41 5.88-10.95 7.89-16.84 4.48l-15.93-9.2zm357.76 71.18c6.82 0 12.36 5.54 12.36 12.36 0 6.82-5.54 12.35-12.36 12.35h-18.39c-6.82 0-12.36-5.53-12.36-12.35 0-6.82 5.54-12.36 12.36-12.36h18.39zM67.58 268.36c-6.82 0-12.35-5.54-12.35-12.36 0-6.81 5.53-12.35 12.35-12.35h18.4c6.82 0 12.36 5.54 12.36 12.35 0 6.82-5.54 12.36-12.36 12.36h-18.4zm345.46-117.23c5.88-3.38 13.41-1.35 16.79 4.54 3.38 5.88 1.35 13.41-4.54 16.79l-15.93 9.19c-5.88 3.38-13.41 1.35-16.79-4.53-3.38-5.89-1.35-13.42 4.54-16.79l15.93-9.2zM98.96 360.87c-5.89 3.38-13.42 1.35-16.8-4.53-3.37-5.89-1.35-13.42 4.54-16.8l15.93-9.19c5.89-3.38 13.42-1.35 16.79 4.53 3.38 5.89 1.35 13.42-4.53 16.8l-15.93 9.19zM339.54 86.7c3.37-5.89 10.9-7.91 16.79-4.54 5.88 3.38 7.91 10.91 4.53 16.8l-9.19 15.93c-3.38 5.88-10.91 7.91-16.79 4.53-5.89-3.37-7.92-10.9-4.54-16.79l9.2-15.93zM172.45 425.35c-3.41 5.89-10.96 7.9-16.84 4.49-5.89-3.41-7.9-10.96-4.49-16.84l9.21-15.94c3.41-5.88 10.95-7.89 16.84-4.48 5.88 3.41 7.89 10.95 4.48 16.84l-9.2 15.93zm71.18-357.76c0-6.82 5.54-12.36 12.36-12.36 6.82 0 12.35 5.54 12.35 12.36v18.39c0 6.82-5.53 12.36-12.35 12.36-6.82 0-12.36-5.54-12.36-12.36V67.59zm24.72 376.83c0 6.82-5.53 12.36-12.35 12.36-6.82 0-12.36-5.54-12.36-12.36v-18.4c0-6.82 5.54-12.36 12.36-12.36 6.82 0 12.35 5.54 12.35 12.36v18.4zM416.62 95.38C375.53 54.28 318.73 28.85 256 28.85c-62.72 0-119.53 25.43-160.62 66.53-41.1 41.1-66.53 97.9-66.53 160.62 0 62.73 25.43 119.53 66.53 160.62 41.09 41.11 97.9 66.53 160.62 66.53 62.73 0 119.53-25.42 160.62-66.53 41.11-41.09 66.53-97.89 66.53-160.62 0-62.72-25.42-119.53-66.53-160.62z"></path>
+              </svg>
+              {{ section.settings.custom_heading_form }}
+            </h2>
+          {% endif %}
+          {% if section.settings.custom_subhead_form != blank %}
+            <div>{{ section.settings.custom_subhead_form }}</div>
+          {% endif %}
+          <form id="edForm">
+            <fieldset>
+              {% assign quiries = section.blocks | where: 'type', 'quiries' %}
+              {% for block in quiries %}
+                {% if block.settings.heading != blank %}
+                  <div class="heading_part_ctm">{{ block.settings.heading }}</div>
+                {% endif %}
+                {% if block.settings.height and block.settings.question != blank %}
+                  <p class="question-block">
+                    <label>{{ block.settings.question }}</label>
+                    {% if block.settings.paragraph_list_text != blank -%}
+                      {{ block.settings.paragraph_list_text }}
+                    {%- endif %}
+                    <div class="radio-toolbar ctm_text_area">
+                    <div class="total_bmi_claculation"></div>
+                      <!-- Centimeters -->
+                      <div class="cent_kilo_part">
+                        <div>
+                          <input
+                            class="height_part"
+                            type="number"
+                            placeholder="0"
+                            min="140"
+                            max="270"
+                          >
+                        </div>
+                        <p>Centimeters</p>
+                      </div>
+                      <!-- Feet-Inches -->
+                      <div class="cent_kilo_part hidden">
+                        <div>
+                          <input
+                            class="height_feet"
+                            placeholder="0"
+                            min="0"
+                            max="8"
+                            type="number"
+                          >
+                        </div>
+                        <p>Feet</p>
+                        <div>
+                          <input
+                            class="height_inches"
+                            placeholder="0"
+                            min="0"
+                            max="11"
+                            type="number"
+                          >
+                        </div>
+                        <p>Inches</p>
+                      </div>
+                      <input type="hidden" class="bmi_output" name="properties[{{ block.settings.question }}-BMI]">
+                    </div>
+                  </p>
+                {% elsif block.settings.weight and block.settings.question != blank %}
+                  <p class="question-block">
+                    <label>{{ block.settings.question }}</label>
+                    {% if block.settings.paragraph_list_text != blank -%}
+                      {{ block.settings.paragraph_list_text }}
+                    {%- endif %}
+                    <div class="radio-toolbar ctm_text_area">
+                      <!-- Kilograms -->
+                      <div class="cent_kilo_part">
+                        <div>
+                          <input
+                            class="weight_part"
+                            type="number"
+                            placeholder="0"
+                            min="0"
+                            max="680"
+                          >
+                        </div>
+                        <p>Kilograms</p>
+                      </div>
+                      <!-- Stones/Pounds -->
+                      <div class="cent_kilo_part hidden">
+                        <div>
+                          <input
+                            class="weight_stones"
+                            placeholder="0"
+                            min="0"
+                            max="100"
+                            type="number"
+                          >
+                        </div>
+                        <p>Stones</p>
+                        <div>
+                          <input
+                            class="weight_pounds"
+                            placeholder="0"
+                            min="0"
+                            max="13"
+                            type="number"
+                          >
+                        </div>
+                        <p>Pounds</p>
+                      </div>
+
+                      <div class="button_swich">
+                        <span>Switch to Feet/Inches - Stones/Pounds</span>
+                        <span class="hidden">Switch to Centimeters/Kilograms</span>
+                      </div>
+                      <p id="bmi-error" class="hidden alert alert-danger"></p>
+                      <input type="hidden" class="bmi_output" name="properties[{{ block.settings.question }}-BMI]">
+                    </div>
+                  </p>
+                {% elsif block.settings.enable_checkbox_fields and block.settings.question != blank %}
+                  <p class="multiple_checkboxes{% if block.settings.select_multiple_checkbox_value %} multichecked{% else %} single_checked{% endif %} question-block">
+                    <label>{{ block.settings.question }}</label>
+                    {% if block.settings.paragraph_list_text != blank -%}
+                      {{ block.settings.paragraph_list_text }}
+                    {%- endif %}
+                    {% if block.settings.question_1checkbox != blank -%}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_1checkbox }}"
+                        class="reg_option_more"
+                      >
+                      {{- block.settings.question_1checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_2checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_2checkbox }}"
+                        class="reg_option_more"
+                      >
+                      {{- block.settings.question_2checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_3checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_3checkbox }}"
+                        class="reg_option_more"
+                      >
+                      {{- block.settings.question_3checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_4checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_4checkbox }}"
+                        class="reg_option_more"
+                      >
+                      {{- block.settings.question_4checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_5checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_5checkbox }}"
+                      >
+                      {{- block.settings.question_5checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_6checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_6checkbox }}"
+                      >
+                      {{- block.settings.question_6checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_7checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_7checkbox }}"
+                      >
+                      {{- block.settings.question_7checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_8checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_8checkbox }}"
+                      >
+                      {{- block.settings.question_8checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_9checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_9checkbox }}"
+                      >
+                      {{- block.settings.question_9checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_10checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_10checkbox }}"
+                      >
+                      {{- block.settings.question_10checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_11checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_11checkbox }}"
+                      >
+                      {{- block.settings.question_11checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_12checkbox != blank -%}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{  block.settings.question_12checkbox }}"
+                      >
+                      {{- block.settings.question_12checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_13checkbox != blank %}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_13checkbox }}"
+                      >
+                      {{- block.settings.question_13checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    {% if block.settings.question_14checkbox != blank -%}
+                      <input
+                        type="checkbox"
+                        name="properties[{{ block.settings.question }}]"
+                        value="{{ block.settings.question_14checkbox }}"
+                      >
+                      {{- block.settings.question_14checkbox -}}
+                      <br>
+                    {%- endif %}
+
+                    <!-- if 1, 2, 3, 4 checked -->
+                    {% if block.settings.aler_msg != blank -%}
+                      <span class="hidden alert alert-danger">{{ block.settings.aler_msg }}</span>
+                    {%- endif %}
+                  </p>
+                {% elsif block.settings.question != blank and block.settings.enable_comment_box %}
+                  <div class="question-block ctm_text_area">
+                    <p>
+                    <label>{{ block.settings.question }}</label></p>
+                    {% if block.settings.paragraph_list_text != blank -%}
+                      {{ block.settings.paragraph_list_text }}
+                    {%- endif %}
+                    <textarea rows="5" cols="60" name="properties[{{ block.settings.question }}]"></textarea>
+                  </div>
+                {% elsif block.settings.question != blank and block.settings.enable_number_field %}
+                  <p class="question-block ctm_text_area">
+                    <label>{{ block.settings.question }}</label>
+                    {% if block.settings.paragraph_list_text != blank -%}
+                      {{ block.settings.paragraph_list_text }}
+                    {%- endif %}
+                    <input type="number" placeholder="0" name="properties[{{ block.settings.question }}]">
+                  </p>
+                {% else %}
+                  {% if block.settings.question != blank %}
+                    <p class="question-block">
+                      <label>{{ block.settings.question }}</label>
+                      {% if block.settings.paragraph_list_text != blank -%}
+                        {{ block.settings.paragraph_list_text }}
+                      {%- endif %}
+                      <div class="radio-toolbar">
+                        <input
+                          id="{{ block.id }}--input--yes"
+                          type="radio"
+                          name="properties[{{ block.settings.question }}]"
+                          value="Yes"
+                          class="
+                            {% if block.settings.error_message_yes_no == 'yes' and block.settings.aler_msg == blank %}below_checkbox_enable{% elsif block.settings.error_message_yes_no == 'no' and block.settings.aler_msg == blank %}no_checkbox_enable{% endif %}
+                            {% if block.settings.error_message_yes_no == 'yes' %}input_yes_change_error{% elsif block.settings.error_message_yes_no == 'no' %}non_change_error{% endif %} cstm_input
+                          "
+                        >
+                        <label class="cstm-label" for="{{ block.id }}--input--yes">Yes</label>
+                        <input
+                          id="{{ block.id }}--input--no"
+                          type="radio"
+                          name="properties[{{ block.settings.question }}]"
+                          value="No"
+                          class="
+                            {% if block.settings.error_message_yes_no == 'yes' and block.settings.aler_msg == blank %}below_checkbox_enable{% elsif block.settings.error_message_yes_no == 'no' and block.settings.aler_msg == blank %}no_checkbox_enable{% endif %}
+                            {% if block.settings.error_message_yes_no == 'yes' %}input_yes_change_error{% elsif block.settings.error_message_yes_no == 'no' %}non_change_error{% endif %} cstm_input
+                          "
+                        >
+                        <label class="cstm-label" for="{{ block.id }}--input--no">No</label>
+
+                        <!-- if Yes / No -->
+                        {% if block.settings.further_questions %}
+                          <span class="hidden ctm--inner--options show_checkboxes">
+                            {% if block.settings.question_inner_1 != blank %}
+                              <label class="cstm-label-css">{{ block.settings.question_inner_1 }}</label>
+                              {% if block.settings.further_list_text_1 != blank -%}
+                                {{ block.settings.further_list_text_1 }}
+                              {%- endif %}
+                              <div class="radio-toolbar">
+                                <input
+                                  id="{{ block.id }}--innner-first--yes"
+                                  type="radio"
+                                  name="properties[{{ block.settings.question_inner_1 }}]"
+                                  value="Yes"
+                                  class="
+                                    {% if block.settings.further_error_message_yes_no_1 == 'yes' and block.settings.aler_msg == blank %}below_checkbox_enable{% elsif block.settings.further_error_message_yes_no_1 == 'no' and block.settings.aler_msg == blank %}no_checkbox_enable{% endif %}
+                                    {% if block.settings.further_error_message_yes_no_1 == 'yes' %}input_yes_change_error{% elsif block.settings.further_error_message_yes_no_1 == 'no' %}non_change_error{% endif %} cstm_input
+                                  "
+                                >
+                                <label class="cstm-label" for="{{ block.id }}--innner-first--yes">Yes</label>
+                                <input
+                                  id="{{ block.id }}--innner-first--no"
+                                  type="radio"
+                                  name="properties[{{ block.settings.question_inner_1 }}]"
+                                  value="No"
+                                  class="
+                                    {% if block.settings.further_error_message_yes_no_1 == 'yes' and block.settings.aler_msg == blank %}below_checkbox_enable{% elsif block.settings.further_error_message_yes_no_1 == 'no' and block.settings.aler_msg == blank %}no_checkbox_enable{% endif %}
+                                    {% if block.settings.further_error_message_yes_no_1 == 'yes' %}input_yes_change_error{% elsif block.settings.further_error_message_yes_no_1 == 'no' %}non_change_error{% endif %} cstm_input
+                                  "
+                                >
+                                <label class="cstm-label" for="{{ block.id }}--innner-first--no">No</label>
+                                {% if block.settings.aler_msgfurth_1 != blank %}
+                                  <span class="hidden alert alert-danger">{{ block.settings.aler_msgfurth_1 }}</span>
+                                {%- endif %}
+                              </div>
+                            {% endif %}
+                            {% if block.settings.question_inner_2 != blank %}
+                              <label class="cstm-label-css">{{ block.settings.question_inner_2 }}</label>
+                              {% if block.settings.further_list_text_2 != blank -%}
+                                {{ block.settings.further_list_text_2 }}
+                              {%- endif %}
+                              <div class="radio-toolbar sub-opt-border">
+                                <input
+                                  id="{{ block.id }}--innner-second--yes"
+                                  type="radio"
+                                  name="properties[{{ block.settings.question_inner_2 }}]"
+                                  value="Yes"
+                                  class="
+                                    {% if block.settings.further_error_message_yes_no_2 == 'yes' and block.settings.aler_msg == blank %}below_checkbox_enable{% elsif block.settings.further_error_message_yes_no_2 == 'no' and block.settings.aler_msg == blank %}no_checkbox_enable{% endif %}
+                                    {% if block.settings.further_error_message_yes_no_2 == 'yes' %}input_yes_change_error{% elsif block.settings.further_error_message_yes_no_2 == 'no' %}non_change_error{% endif %} cstm_input
+                                  "
+                                >
+                                <label class="cstm-label" for="{{ block.id }}--innner-second--yes">Yes</label>
+                                <input
+                                  id="{{ block.id }}--innner-second--no"
+                                  type="radio"
+                                  name="properties[{{ block.settings.question_inner_2 }}]"
+                                  value="No"
+                                  class="
+                                    {% if block.settings.further_error_message_yes_no_2 == 'yes' and block.settings.aler_msg == blank %}below_checkbox_enable{% elsif block.settings.further_error_message_yes_no_2 == 'no' and block.settings.aler_msg == blank %}no_checkbox_enable{% endif %}
+                                    {% if block.settings.further_error_message_yes_no_2 == 'yes' %}input_yes_change_error{% elsif block.settings.further_error_message_yes_no_2 == 'no' %}non_change_error{% endif %} cstm_input
+                                  "
+                                >
+                                <label class="cstm-label" for="{{ block.id }}--innner-second--no">No</label>
+                                {% if block.settings.aler_msgfurth_2 != blank %}
+                                  <span class="hidden alert alert-danger">{{ block.settings.aler_msgfurth_2 }}</span>
+                                {%- endif %}
+                              </div>
+                            {% endif %}
+                          </span>
+                        {% endif %}
+                        <!-- if no / yes -->
+                        {% if block.settings.aler_msg != blank %}
+                          <span class="hidden alert alert-danger">{{ block.settings.aler_msg }}</span>
+                        {%- endif %}
+
+                        {% if block.settings.enable_comment_boxwith_yes_no %}
+                          <span class="hidden ctm--inner--options show_checkboxes">
+                            {% if block.settings.text_comment_box !=blank %}
+                            <p>{{ block.settings.text_comment_box }}</p>
+                            {% endif %}
+                            <textarea
+                              rows="5"
+                              cols="60"
+                              name="properties[{{ block.settings.question }}- Details]"
+                              class="cstm_input"
+                            ></textarea>
+                          </span>
+                        {% endif %}
+                      </div>
+                    </p>
+                  {% endif %}
+                {%- endif %}
+              {% endfor %}
+
+              {% if section.settings.inline_custom_terms != blank -%}
+                <p class="question-block">
+                  <input type="checkbox" id="confirm_terms" name="confirm_terms" value="Yes">
+                  {{ section.settings.inline_custom_terms }}
+                  {% if section.settings.alert25q_text != blank -%}
+                    <span id="terms-error" class="alert alert-danger">{{ section.settings.alert25q_text }}</span>
+                  {%- endif %}
+                </p>
+              {%- endif %}
+
+              {% if section.settings.important_note != blank -%}
+                <p class="question-block">
+                  <input type="checkbox" id="confirm_terms_nd" name="Important_note" value="Yes">
+                  {{ section.settings.important_note }}
+                  {% if section.settings.alq_text_imp != blank -%}
+                    <span id="terms-error_nd" class="alert alert-danger">{{ section.settings.alq_text_imp }}</span>
+                  {%- endif %}
+                </p>
+              {%- endif %}
+              
+
+              {% if section.settings.alert26q_text != blank -%}
+                <span class="custom_hidden alert button_block_ctm">{{ section.settings.alert26q_text }}</span>
+              {%- endif %}
+
+              {% if section.settings.check_my_btn != blank %}
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="buy_btn custom_add_to_cart_button new--form--ppup"
+                >
+                  <span>{{ section.settings.check_my_btn }}</span>
+                </button>
+              {%- endif %}
+            </fieldset>
+
+           <div class="other-info-wrapper mobile_part" >
+            {% assign other_info = section.blocks | where: 'type', 'other_info' %}
+            {% for block in other_info %}
+              {% if block.settings.heading != blank %}
+                <div class="other-info-container">
+                  <h3 class="h3">{{ block.settings.heading }}</h3>
+                  <div class="sub_headings-texts-wrapper">
+                    {% if block.settings.sub_heading_1 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4">
+                          <span class="num-count">1</span>
+                          {{- block.settings.sub_heading_1 }}
+                        </h4>
+                        <div class="other-info_text">{{ block.settings.text_1 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_2 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">2</span>{{ block.settings.sub_heading_2 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_2 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_3 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">3</span>{{ block.settings.sub_heading_3 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_3 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_4 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">4</span>{{ block.settings.sub_heading_4 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_4 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_5 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">5</span>{{ block.settings.sub_heading_5 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_5 }}</div>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          </form>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const handle = params.get('handle');
+  const variantId = params.get('variant');
+  const quantity = params.get('quantity');
+
+  if(handle){
+    fetch(`/products/${handle}.js`)
+     .then(response => response.json())
+     .then(product => {
+       document.getElementById('product-title').textContent = product.title;
+       document.getElementById('product-price').textContent = product.price / 100 + ' ' + Shopify.currency.active;
+       document.getElementById('product-image').src = product.images[0];
+       // document.getElementById('variant-i').textContent = product.title;
+     })
+    .catch(error => console.error("Error loading product:", error));
+  }
+  if(variantId){
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.setAttribute('data_id_attr', variantId);
+  }
+  if(variantId){
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.setAttribute('data_quantity', quantity);
+  }
+
+
+
+// $('body').on('click', '.button_swich', function () {
+//   var $toolbar = $(this).closest('.radio-toolbar');
+//   var $parts = $toolbar.find('.cent_kilo_part');
+
+//   $parts.each(function () {
+//     $(this).toggleClass('hidden');
+//   });
+
+//   $(this).find('span').each(function () {
+//     $(this).toggleClass('hidden');
+//   });
+// });
+
+
+$('body').on('click', '.button_swich', function () {
+  var $toolbar = $(this).closest('.radio-toolbar'); // Parent toolbar
+  var $siblings = $toolbar.siblings(); // Sibling toolbars
+  var $parts = $toolbar.find('.cent_kilo_part'); // Inside parent
+  var $siblingParts = $siblings.find('.cent_kilo_part'); // Inside siblings
+
+  // Toggle inside current toolbar
+  $parts.each(function () {
+    $(this).toggleClass('hidden');
+  });
+
+  // Toggle inside sibling toolbars
+  $siblingParts.each(function () {
+    $(this).toggleClass('hidden');
+  });
+
+  // Toggle spans inside the clicked button
+  $(this).find('span').each(function () {
+    $(this).toggleClass('hidden');
+  });
+});
+
+
+$('body').on('input', '.cent_kilo_part input[type="number"]:visible', function () {
+  // ----- Try Metric Units -----
+  const heightCmInput = $('.cent_kilo_part input.height_part:visible');
+  const weightKgInput = $('.cent_kilo_part input.weight_part:visible');
+
+  const heightCm = parseFloat(heightCmInput.val());
+  const weightKg = parseFloat(weightKgInput.val());
+
+  if (!isNaN(heightCm) && !isNaN(weightKg) && heightCm > 0) {
+    const heightM = heightCm / 100;
+    const bmi = weightKg / (heightM * heightM);
+
+    console.log('BMI:', bmi);
+
+    $('.total_bmi_claculation').text("Your BMI : " + bmi.toFixed(2));
+    if (bmi >= 28) {
+      $('#bmi-error').addClass('hidden').text('');
+      $('.bmi_output').val(bmi.toFixed(2));
+    } else {
+      $('#bmi-error').removeClass('hidden').text('You are not eligible with this height and weight');
+      $('.bmi_output').val('');
+    }
+    return;
+  }
+
+  // ----- Try Imperial Units -----
+  const feet = parseFloat($('.height_feet:visible').val()) || 0;
+  const inches = parseFloat($('.height_inches:visible').val()) || 0;
+  const stones = parseFloat($('.weight_stones:visible').val()) || 0;
+  const pounds = parseFloat($('.weight_pounds:visible').val()) || 0;
+
+  const totalInches = (feet * 12) + inches;
+  const totalPounds = (stones * 14) + pounds;
+
+  if (totalInches > 0 && totalPounds > 0) {
+    const bmi = (totalPounds / (totalInches * totalInches)) * 703;
+
+    console.log('BMI:', bmi);
+    $('.total_bmi_claculation').text("Your BMI : " + bmi.toFixed(2));
+    if (bmi >= 28) {
+      $('#bmi-error').addClass('hidden').text('');
+      $('.bmi_output').val(bmi.toFixed(2));
+    } else {
+      $('#bmi-error').removeClass('hidden').text('You are not eligible with this height and weight');
+      $('.bmi_output').val('');
+    }
+  } else {
+    $('#bmi-error').addClass('hidden').text('');
+    $('.bmi_output').val('');
+  }
+});
+
+  
+
+$('input.input_yes_change_error').change(function () {
+  if ($(this).val() == "Yes") {
+    $(this).siblings('.alert-danger').removeClass('hidden');
+  } else {
+    $(this).siblings('.alert-danger').addClass('hidden');
+  }
+
+
+  checkFormErrors();
+});
+  
+  
+$('input.non_change_error').change(function () {
+  if ($(this).val() == "No") {
+    $(this).siblings('.alert-danger').removeClass('hidden');
+  } else {
+    $(this).siblings('.alert-danger').addClass('hidden');
+  }
+
+  checkFormErrors();
+});
+
+  
+$('input.below_checkbox_enable').change(function () {
+  if ($(this).val() == "Yes") {
+    $(this).siblings('.ctm--inner--options').removeClass('hidden');
+    $(this).siblings('.ctm--inner--options').addClass('show_checkboxes');
+    $(this).siblings('.ctm--inner--options').find('input').attr('required', 'true');
+  } else {
+    $(this).siblings('.ctm--inner--options').addClass('hidden');
+    $(this).siblings('.ctm--inner--options').removeClass('show_checkboxes');
+    $(this).siblings('.ctm--inner--options').find('input').removeAttr('required');
+  }
+
+  checkFormErrors();
+});
+  
+
+$('input.no_checkbox_enable').change(function () {
+  if ($(this).val() == "No") {
+    $(this).siblings('.ctm--inner--options').removeClass('hidden');
+    $(this).siblings('.ctm--inner--options').addClass('show_checkboxes');
+    $(this).siblings('.ctm--inner--options').find('input').attr('required', 'true');
+  } else {
+    $(this).siblings('.ctm--inner--options').addClass('hidden');
+    $(this).siblings('.ctm--inner--options').removeClass('show_checkboxes');
+    $(this).siblings('.ctm--inner--options').find('input').removeAttr('required');
+  }
+
+  checkFormErrors();
+});
+  
+
+$('.multiple_checkboxes.single_checked input').on('change', function () {
+  const $group = $(this).closest('.multiple_checkboxes'); 
+
+  $group.find('input').not(this).prop('checked', false); 
+  $(this).closest('.multiple_checkboxes').find('.alert-danger').addClass('hidden');
+
+  const isSpecial = $(this).hasClass('reg_option_more');
+
+  if (isSpecial && $(this).is(':checked')) {
+    $(this).siblings('.alert-danger').removeClass('hidden');
+  } else {
+    $(this).siblings('.alert-danger').addClass('hidden');
+  }
+
+  checkFormErrors();
+});
+
+  
+
+$('#confirm_terms').on('change', function () {
+  if ($(this).is(':checked')) {
+    $('#terms-error').addClass('hidden');
+  } else {
+    $('#terms-error').removeClass('hidden');
+  }
+  checkFormErrors(); 
+});
+
+
+$('#confirm_terms_nd').on('change', function () {
+  if ($(this).is(':checked')) {
+    $('#terms-error_nd').addClass('hidden');
+  } else {
+    $('#terms-error_nd').removeClass('hidden');
+  }
+  checkFormErrors(); 
+});
+
+  
+function checkFormErrors() {
+  let hasError = false;
+
+  $('form .alert-danger').each(function () {
+    if (!$(this).hasClass('hidden')) {
+      hasError = true;
+      return false; 
+    }
+  });
+
+  if (!$('#confirm_terms').is(':checked')) {
+    hasError = true;
+    $('#terms-error').removeClass('hidden');
+  } else {
+    $('#terms-error').addClass('hidden');
+  }
+
+  
+  if (!$('#confirm_terms_nd').is(':checked')) {
+    hasError = true;
+    $('#terms-error_nd').removeClass('hidden');
+  } else {
+    $('#terms-error_nd').addClass('hidden');
+  }
+}
+
+
+document.querySelector('.custom_add_to_cart_button.new--form--ppup').addEventListener('click', function (event) {
+  event.preventDefault();
+
+  $('body').on('change', 'input[type="radio"]', function () {
+    var $toolbar = $(this).closest('.radio-toolbar');
+    $toolbar.find('.custom-error-msg').remove();
+  });
+
+  
+  $('body').on('change', 'input[type="checkbox"]', function () {
+    var $toolbar = $(this).closest('.multiple_checkboxes');
+    $toolbar.find('.custom-error-msg').remove();
+  });
+
+
+  $('body').on('input', 'textarea[name^="properties["], input[name^="properties["][type="number"]:visible, input[type="number"]', function () {
+    const $el = $(this);
+    $el.css({ border: '' });
+    $el.next('.custom-error-msg').remove();
+
+    const $wrapper = $el.closest('.ctm_text_area');
+    $wrapper.find('input[type="number"]:visible').css({ border: '' });
+    $wrapper.find('.custom-error-msg').remove();
+  });
+
+  
+    var isValid = true;
+    var checkedRadioGroups = new Set();
+    var checkedCheckboxGroups = new Set();
+    // var textAreaGroups = new Set();
+    
+    // RADIO VALIDATION + ERROR CHECK
+    $("input:radio:visible").each(function () {
+        var name = $(this).attr("name");
+    
+        if (!checkedRadioGroups.has(name)) {
+            var $group = $("input:radio[name='" + name + "']:visible");
+            var $checked = $group.filter(":checked");
+    
+            if ($checked.length === 0) {
+                isValid = false;
+            } else {
+                // Check if any .alert:not(.hidden) exists in the group
+                var $alert = $group.first().closest('.radio-toolbar').find('.alert:not(.hidden)');
+                if ($alert.length > 0) {
+                    isValid = false;
+                }
+            }
+    
+            checkedRadioGroups.add(name);
+        }
+    });
+    
+    // CHECKBOX VALIDATION + ERROR CHECK
+    $("input:checkbox").each(function () {
+        var name = $(this).attr("name");
+    
+        if (!checkedCheckboxGroups.has(name)) {
+            var $group = $("input:checkbox[name='" + name + "']");
+            var $checked = $group.filter(":checked");
+    
+            if ($checked.length === 0) {
+                isValid = false;
+            } else {
+                // Check if any .alert:not(.hidden) exists in the group
+                var $alert = $group.first().closest('.multiple_checkboxes').find('.alert:not(.hidden)');
+                if ($alert.length > 0) {
+                    isValid = false;
+                }
+            }
+    
+            checkedCheckboxGroups.add(name);
+        }
+    });
+
+    $('textarea[name^="properties["]:visible, input[name^="properties["][type="number"]:visible, input[name^="properties["][type="hidden"]').each(function () {
+      const $el = $(this);
+      const value = $el.val().trim();
+      
+      if (!value) {
+        isValid = false; 
+      }
+    });
+
+
+    if (isValid) {
+      var targetButton = event.target.closest('.custom_add_to_cart_button');
+      if (!targetButton) return;
+    
+      var elementAttr = targetButton.getAttribute('data_id_attr');
+      var quantityAttr = targetButton.getAttribute('data_quantity');
+    
+      let properties = {};
+    
+      document.querySelectorAll(
+        'input[name^="properties["]:checked, textarea[name^="properties["], input[name^="properties["][type="number"], input[name^="properties["][type="hidden"]'
+      ).forEach((input) => {
+        const nameAttr = input.getAttribute('name');
+        const matches = nameAttr.match(/^properties\[(.+?)\]$/);
+        const value = input.value;
+    
+        if (matches && matches[1] && value !== '') {
+          const propName = matches[1];
+    
+          if (properties[propName]) {
+            if (!Array.isArray(properties[propName])) {
+              properties[propName] = [properties[propName]];
+            }
+            if (!properties[propName].includes(value)) {
+              properties[propName].push(value);
+            }
+          } else {
+            properties[propName] = value;
+          }
+        }
+      });
+    
+      if (!elementAttr || !quantityAttr || Object.keys(properties).length === 0) {
+        console.warn("Missing elementAttr or properties");
+        return;
+      }
+    
+      let formData = {
+        items: [{
+          id: elementAttr,
+          quantity: parseInt(quantityAttr),
+          properties: properties
+        }]
+      };
+    
+      console.log("Sending formData:", formData);
+    
+      fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+        .then(response => response.json())
+        .then(data => {
+          window.location.href = '/cart';
+          console.log("Added to cart:", data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    }
+   else {
+    var $btnBlockShown = false;
+    var $btnBlock = $(".new--form--ppup").siblings('.button_block_ctm');
+    var firstInvalidInput = null;
+    var checkedRadioGroups = new Set();
+    var checkedCheckboxGroups = new Set();
+  
+    // RADIO VALIDATION
+    $("input:radio:visible").each(function () {
+      var name = $(this).attr("name");
+      if (!checkedRadioGroups.has(name)) {
+        var $group = $("input:radio[name='" + name + "']:visible");
+        var $checked = $group.filter(":checked");
+        var $alert = $group.first().closest('.radio-toolbar').find('.alert:not(.hidden)');
+  
+        if ($checked.length === 0) {
+          if (!firstInvalidInput) {
+            firstInvalidInput = $group.first()[0];
+          }
+  
+          var $toolbar = $group.first().closest('.radio-toolbar');
+          if ($toolbar.find('.custom-error-msg').length === 0) {
+            $toolbar.append('<div class="custom-error-msg">This field is required</div>');
+          }
+  
+          if (!$btnBlockShown) {
+            $btnBlock.removeClass('custom_hidden');
+            setTimeout(() => $btnBlock.addClass('custom_hidden'), 6000);
+            $btnBlockShown = true;
+          }
+        } else if ($alert.length > 0 && !firstInvalidInput) {
+          firstInvalidInput = $group.first()[0];
+        }
+  
+        checkedRadioGroups.add(name);
+      }
+    });
+  
+    // CHECKBOX VALIDATION
+    $("input:checkbox").each(function () {
+      var name = $(this).attr("name");
+      if (!checkedCheckboxGroups.has(name)) {
+        var $group = $("input:checkbox[name='" + name + "']");
+        var $checked = $group.filter(":checked");
+        var $alert = $group.first().closest('.multiple_checkboxes').find('.alert:not(.hidden)');
+  
+        if ($checked.length === 0) {
+          if (!firstInvalidInput) {
+            firstInvalidInput = $group.first()[0];
+          }
+  
+          var $toolbar = $group.first().closest('.multiple_checkboxes');
+          if ($toolbar.find('.custom-error-msg').length === 0) {
+            $toolbar.append('<div class="custom-error-msg">This field is required</div>');
+          }
+  
+          if (!$btnBlockShown) {
+            $btnBlock.removeClass('custom_hidden');
+            setTimeout(() => $btnBlock.addClass('custom_hidden'), 6000);
+            $btnBlockShown = true;
+          }
+        } else if ($alert.length > 0 && !firstInvalidInput) {
+          firstInvalidInput = $group.first()[0];
+        }
+  
+        checkedCheckboxGroups.add(name);
+      }
+    });
+
+
+    // TEXTAREA VALIDATION
+     $('textarea[name^="properties["]:visible, input[name^="properties["][type="number"]:visible, input[name^="properties["][type="hidden"]').each(function () {
+        const $el = $(this);
+        const value = $el.val().trim();
+        const $visibleSibling = $el.siblings('.cent_kilo_part').find('input[type="number"]:visible');
+        if (!value) {
+      
+          if (!firstInvalidInput) {
+            firstInvalidInput = $el[0];
+            firstInvalidInput = $visibleSibling[0];
+          }
+      
+          if (!$el.next('.custom-error-msg').length) {
+            $el.after('<div class="custom-error-msg">This field is required</div>');
+          }
+      
+          if (!$btnBlockShown) {
+            $btnBlock.removeClass('custom_hidden');
+            setTimeout(() => $btnBlock.addClass('custom_hidden'), 6000);
+            $btnBlockShown = true;
+          }
+      
+          // Optional: highlight
+          $el.css({ border: '2px solid red' });
+          $visibleSibling.css({ border: '2px solid red' });
+        }
+      });
+
+
+    // SCROLL TO FIRST INVALID OR ALERT FIELD
+    if (firstInvalidInput) {
+      setTimeout(() => {
+        firstInvalidInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstInvalidInput.focus();
+      }, 1500);
+    }
+  }
+
+});
+</script>
+
+{% schema %}
+{
+  "name": "Quiries section",
+  "settings": [
+      {
+        "type": "text",
+        "id": "custom_heading_form",
+        "label": "Heading",
+        "default": "SIGN UP YOUR USER ACCOUNT"
+      },
+      {
+        "type": "richtext",
+        "id": "custom_subhead_form",
+        "label": "Sub heading"
+      },
+      {
+        "type": "inline_richtext",
+        "id": "inline_custom_terms",
+        "label": "Terms text"
+      },
+      {
+        "type": "text",
+        "id": "alert25q_text",
+        "label": "Alert text",
+        "default": "You must agree to continue."
+      },
+      {
+        "type": "inline_richtext",
+        "id": "important_note",
+        "label": "Important Note"
+      },
+      {
+        "type": "text",
+        "id": "alq_text_imp",
+        "label": "Important Alert text",
+      },
+      {
+        "type": "text",
+        "id": "alert26q_text",
+        "label": "Error text",
+        "default": "Question answer is pending"
+      },
+      {
+        "type": "header",
+        "content": "Button text"
+      },
+      {
+        "type": "text",
+        "id": "check_my_btn",
+        "label": "Check text",
+        "default": "Check My Eligibility"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+  ],
+  "blocks":[
+    {
+      "type":"other_info",
+      "name":"Other info",
+      "settings":[
+        {
+          "type":"inline_richtext",
+          "id":"heading",
+          "label":"Heading"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_1",
+          "label":"Sub heading first"
+        },
+        {
+          "type":"richtext",
+          "id":"text_1",
+          "label":"Text first"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_2",
+          "label":"Sub heading second"
+        },
+        {
+          "type":"richtext",
+          "id":"text_2",
+          "label":"Text second"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_3",
+          "label":"Sub heading third"
+        },
+        {
+          "type":"richtext",
+          "id":"text_3",
+          "label":"Text third"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_4",
+          "label":"Sub heading fourth"
+        },
+        {
+          "type":"richtext",
+          "id":"text_4",
+          "label":"Text fourth"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_5",
+          "label":"Sub heading fifth"
+        },
+        {
+          "type":"richtext",
+          "id":"text_5",
+          "label":"Text fifth"
+        }
+      ]
+    },
+    {
+      "type": "quiries",
+      "name": "Quiries",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+        },
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Q1: Are you male?"
+        },
+        {
+          "type": "richtext",
+          "id": "paragraph_list_text",
+          "label": "List"
+        },
+        {
+          "type": "checkbox",
+          "id": "height",
+          "label": "Enable height",
+        },
+        {
+          "type": "checkbox",
+          "id": "weight",
+          "label": "Enable weight",
+        },
+        {
+          "type": "checkbox",
+          "id": "further_questions",
+          "label": "Further Questions ",
+        },
+        {
+          "type": "text",
+          "id": "question_inner_1",
+          "label": "Further Question 1",
+          "visible_if": "{{ block.settings.further_questions }}"
+        },
+        {
+          "type": "richtext",
+          "id": "further_list_text_1",
+          "label": "Further text list 1",
+          "visible_if": "{{ block.settings.question_inner_1 !=blank }}"
+        },
+        {
+          "type": "text",
+          "id": "aler_msgfurth_1",
+          "label": "Further Q.1 Alert text",
+
+         "visible_if": "{{ block.settings.question_inner_1 !=blank }}"
+        },
+        {
+          "type": "select",
+          "id": "further_error_message_yes_no_1",
+          "options": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No",
+            },
+            {
+              "value": "no_msg_needed",
+              "label": "Don't need"
+            }
+          ],
+          "default": "no_msg_needed",
+          "label": "Further error message on yes/no",
+          "visible_if": "{{ block.settings.question_inner_1 !=blank }}"
+        },
+        {
+          "type": "text",
+          "id": "question_inner_2",
+          "label": "Further Question 2",
+          "visible_if": "{{ block.settings.further_questions }}"
+        },
+        {
+          "type": "richtext",
+          "id": "further_list_text_2",
+          "label": "Further text list 2",
+          "visible_if": "{{ block.settings.question_inner_2 !=blank }}"
+        },
+        {
+          "type": "text",
+          "id": "aler_msgfurth_2",
+          "label": "Further Q.2 Alert text",
+          "visible_if": "{{ block.settings.question_inner_2 !=blank }}"
+        },
+        {
+          "type": "select",
+          "id": "further_error_message_yes_no_2",
+          "options": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No",
+            },
+            {
+              "value": "no_msg_needed",
+              "label": "Don't need"
+            }
+          ],
+          "default": "no_msg_needed",
+          "label": "Further error message on yes/no",
+          "visible_if": "{{ block.settings.question_inner_2 !=blank }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_checkbox_fields",
+          "label": "Checkbox fields"
+        },
+        {
+          "type": "checkbox",
+          "id": "select_multiple_checkbox_value",
+          "label": "Select Multiple Checkbox value",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_1checkbox",
+          "label": "Checkbox 1",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_2checkbox",
+          "label": "Checkbox 2",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_3checkbox",
+          "label": "Checkbox 3",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_4checkbox",
+          "label": "Checkbox 4",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_5checkbox",
+          "label": "Checkbox 5",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_6checkbox",
+          "label": "Checkbox 6",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_7checkbox",
+          "label": "Checkbox 7",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_8checkbox",
+          "label": "Checkbox 8",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_9checkbox",
+          "label": "Checkbox 9",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_10checkbox",
+          "label": "Checkbox 10",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_11checkbox",
+          "label": "Checkbox 11",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_12checkbox",
+          "label": "Checkbox 12",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_13checkbox",
+          "label": "Checkbox 13",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "text",
+          "id": "question_14checkbox",
+          "label": "Checkbox 14",
+          "visible_if": "{{ block.settings.enable_checkbox_fields }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_comment_box",
+          "label": "Comment box ",
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_comment_boxwith_yes_no",
+          "label": "Comment box with yes/no",
+        },
+        {
+          "type": "text",
+          "id": "text_comment_box",
+          "label": "Add text",
+          "visible_if": "{{ block.settings.enable_comment_boxwith_yes_no }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_number_field",
+          "label": "Number Field",
+        },
+        {
+          "type": "text",
+          "id": "aler_msg",
+          "label": "Alert text",
+          "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+          "type": "select",
+          "id": "error_message_yes_no",
+          "options": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No",
+            },
+            {
+              "value": "no_msg_needed",
+              "label": "Don't need"
+            }
+          ],
+          "default": "no_msg_needed",
+          "label": "Error message on yes/no",
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"Quiries section"
+    }
+  ]
+}
+{% endschema %}

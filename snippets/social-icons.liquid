@@ -1,0 +1,117 @@
+{% comment %}
+  Renders social icons.
+  Accepts:
+  - class: {String} a class to be added to the <ul> element (optional).
+
+  Usage:
+  {% render 'social-icons',
+    class: 'my-class'
+  %}
+{% endcomment %}
+
+<ul class="list-unstyled list-social{% if class %} {{ class}}{% endif %}" role="list">
+  {%- if settings.social_facebook_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_facebook_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {% comment %}{{- 'icon-facebook.svg' | inline_asset_content -}}{% endcomment %}
+
+          <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 5C0 2.23858 2.23858 0 5 0H32C34.7614 0 37 2.23858 37 5V32C37 34.7614 34.7614 37 32 37H5C2.23858 37 0 34.7614 0 32V5Z" fill="white" fill-opacity="0.34"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M21.5266 32V20.75H24.9421L25.5 15.75H21.5266V13.3147C21.5266 12.0272 21.5595 10.75 23.3586 10.75H25.1809V7.17517C25.1809 7.12142 23.6156 7 22.0321 7C18.725 7 16.6543 9.07149 16.6543 12.8752V15.75H13V20.75H16.6543V32H21.5266Z" fill="white"/>
+</svg>
+
+
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_instagram_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_instagram_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {% comment %}{{- 'icon-instagram.svg' | inline_asset_content -}}{% endcomment %}
+
+          
+<svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 5C0 2.23858 2.23858 0 5 0H32C34.7614 0 37 2.23858 37 5V32C37 34.7614 34.7614 37 32 37H5C2.23858 37 0 34.7614 0 32V5Z" fill="white" fill-opacity="0.34"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6 11.2C6 8.32812 8.32812 6 11.2 6H26.8C29.6718 6 32 8.32812 32 11.2V26.8C32 29.6718 29.6718 32 26.8 32H11.2C8.32812 32 6 29.6718 6 26.8V11.2ZM11.2 8.6C9.76406 8.6 8.6 9.76406 8.6 11.2V26.8C8.6 28.236 9.76406 29.4 11.2 29.4H26.8C28.236 29.4 29.4 28.236 29.4 26.8V11.2C29.4 9.76406 28.236 8.6 26.8 8.6H11.2ZM19 15.1C16.846 15.1 15.1 16.846 15.1 19C15.1 21.154 16.846 22.9 19 22.9C21.154 22.9 22.9 21.154 22.9 19C22.9 16.846 21.154 15.1 19 15.1ZM12.5 19C12.5 15.4102 15.4102 12.5 19 12.5C22.5898 12.5 25.5 15.4102 25.5 19C25.5 22.5898 22.5898 25.5 19 25.5C15.4102 25.5 12.5 22.5898 12.5 19ZM26.15 13.8C27.2269 13.8 28.1 12.927 28.1 11.85C28.1 10.773 27.2269 9.9 26.15 9.9C25.0731 9.9 24.2 10.773 24.2 11.85C24.2 12.927 25.0731 13.8 26.15 13.8Z" fill="white"/>
+</svg>
+
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_youtube_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_youtube_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-youtube.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_tiktok_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_tiktok_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-tiktok.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_twitter_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_twitter_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-twitter.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_pinterest_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_pinterest_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-pinterest.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_snapchat_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_snapchat_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-snapchat.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_tumblr_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_tumblr_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-tumblr.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+  {%- if settings.social_vimeo_link != blank -%}
+    <li class="list-social__item">
+      <a href="{{ settings.social_vimeo_link }}" class="link list-social__link">
+        <span class="svg-wrapper">
+          {{- 'icon-vimeo.svg' | inline_asset_content -}}
+        </span>
+        <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
+      </a>
+    </li>
+  {%- endif -%}
+</ul>

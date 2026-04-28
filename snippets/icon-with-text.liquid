@@ -1,0 +1,151 @@
+{% comment %}
+  Renders icon with text block
+
+  Accepts:
+  - block: {Object} passes in the block information.
+
+
+  Usage:
+  {% render 'icon-with-text',
+    block: block
+  %}
+{% endcomment %}
+{%- liquid
+  assign heading_1_empty = false
+  assign heading_2_empty = false
+  assign heading_3_empty = false
+  assign text_only_all_items = true
+
+  if block.settings.heading_1 == empty
+    assign heading_1_empty = true
+  endif
+
+  if block.settings.heading_2 == empty
+    assign heading_2_empty = true
+  endif
+
+  if block.settings.heading_3 == empty
+    assign heading_3_empty = true
+  endif
+
+  if heading_1_empty == false and block.settings.icon_1 != 'none' or block.settings.image_1 != null
+    assign text_only_all_items = false
+  elsif heading_2_empty == false and block.settings.icon_2 != 'none' or block.settings.image_2 != null
+    assign text_only_all_items = false
+  elsif heading_3_empty == false and block.settings.icon_3 != 'none' or block.settings.image_3 != null
+    assign text_only_all_items = false
+  endif
+-%}
+
+
+{% style %}
+.custom--{{ block.id }}--background{
+  background-color: {{ block.settings.bg_box_full }};
+  color: {{ block.settings.box_text_color }};
+}
+.custom--{{ block.id }}--text-icon.icon-with-text--vertical{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom--{{ block.id }}--text-icon.icon-with-text--vertical .icon-with-text__item{
+  padding: 21px 21px;
+  border-right: 1px solid #dededf;
+  margin-bottom: 0px;
+}
+  .custom--{{ block.id }}--text-icon.icon-with-text--vertical .icon-with-text__item:last-child{
+    border-right: none;
+  }
+   .custom--{{ block.id }}--text-icon.icon-with-text--vertical .icon-with-text__item .h4{
+     font-size: 13px;
+   }
+
+
+  @media screen and (max-width: 600px){
+    .custom--{{ block.id }}--text-icon.icon-with-text--vertical{
+          overflow: scroll;
+      justify-content: start;
+    }
+    .custom--{{ block.id }}--text-icon.icon-with-text--vertical .icon-with-text__item{
+          width: 100%;
+    min-width: 263px;
+      justify-content: center;
+    }
+    .custom--{{ block.id }}--text-icon.icon-with-text--vertical::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+    
+  }
+{% endstyle %}  
+
+<ul
+  class="icon-with-text custom--{{ block.id }}--background icon-with-text--{{ block.settings.layout }} {% if block.settings.ctm_changes != blank %} custom--{{ block.id }}--text-icon {% endif %}  list-unstyled{% if text_only_all_items %} icon-with-text--text-only{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  {%- unless heading_1_empty -%}
+    <li class="icon-with-text__item">
+      {%- if block.settings.image_1 == null -%}
+        {%- render 'icon-accordion', icon: block.settings.icon_1 -%}
+      {%- else -%}
+        <img
+          src="{{ block.settings.image_1 | image_url }}"
+          {% if block.settings.image_1.alt != blank %}
+            alt="{{ block.settings.image_1.alt | escape }}"
+          {% else %}
+            role="presentation"
+          {% endif %}
+          height="auto"
+          width="auto"
+          loading="lazy"
+        >
+      {%- endif -%}
+      <span class="h4 inline-richtext">
+        {{- block.settings.heading_1 -}}
+      </span>
+    </li>
+  {%- endunless -%}
+  {%- unless heading_2_empty -%}
+    <li class="icon-with-text__item">
+      {%- if block.settings.image_2 == null -%}
+        {% render 'icon-accordion', icon: block.settings.icon_2 -%}
+      {%- else -%}
+        <img
+          src="{{ block.settings.image_2 | image_url }}"
+          {% if block.settings.image_2.alt != blank %}
+            alt="{{ block.settings.image_2.alt | escape }}"
+          {% else %}
+            role="presentation"
+          {% endif %}
+          height="auto"
+          width="auto"
+          loading="lazy"
+        >
+      {%- endif -%}
+      <span class="h4 inline-richtext">
+        {{- block.settings.heading_2 -}}
+      </span>
+    </li>
+  {%- endunless -%}
+  {%- unless heading_3_empty -%}
+    <li class="icon-with-text__item">
+      {%- if block.settings.image_3 == null -%}
+        {% render 'icon-accordion', icon: block.settings.icon_3 -%}
+      {%- else -%}
+        <img
+          src="{{ block.settings.image_3 | image_url }}"
+          {% if block.settings.image_3.alt != blank %}
+            alt="{{ block.settings.image_3.alt | escape }}"
+          {% else %}
+            role="presentation"
+          {% endif %}
+          height="auto"
+          width="auto"
+          loading="lazy"
+        >
+      {%- endif -%}
+      <span class="h4 inline-richtext">
+        {{- block.settings.heading_3 -}}
+      </span>
+    </li>
+  {%- endunless -%}
+</ul>

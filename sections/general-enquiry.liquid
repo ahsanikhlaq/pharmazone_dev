@@ -1,0 +1,2473 @@
+{%- style -%}
+    html {
+    scroll-behavior: smooth;
+  }
+
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+{%- endstyle -%}
+<style>
+    @font-face {
+    font-family: Lato;
+    src: url(https://cdn.shopify.com/s/files/1/0902/7823/2430/files/Lato-Regular.ttf?v=1749465921);
+  }
+    .custom-form-container p{
+      font-family: Lato;
+    }
+    /* General Styles */
+
+
+    /* Container for the form */
+    .custom-form-container  .content {
+        max-width: 900px;
+        margin: 30px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+
+    .customize--product-poppup .product-details{
+      display: flex;
+    }
+
+    .customize--product-poppup .both--btn-final .new--form--ppup{
+          margin-left: 12px;
+    }
+    /* Form Title */
+    .custom-form-container  .form-head {
+        font-size: 24px;
+        color: #1e3d58;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Fieldset and Legend */
+    .custom-form-container  fieldset {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #fafafa;
+    }
+
+    .custom-form-container  legend {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1e3d58;
+        margin-bottom: 20px;
+        display: contents;
+      font-family: Lato;
+    }
+
+    /* Question labels */
+    .custom-form-container  label {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 10px;
+        display: block;
+      font-weight: 600;
+      font-family: Lato;
+    }
+
+    /* Radio buttons and checkboxes */
+    .custom-form-container  input[type="radio"],
+    .custom-form-container  input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    /* Input and Textarea Fields */
+    .custom-form-container  input[type="radio"],
+    .custom-form-container  input[type="checkbox"] {
+        accent-color: #4ad6c9; /* Orange accent for checkboxes and radio buttons */
+        cursor: pointer;
+    }
+
+    /* Styling for hidden alert messages */
+
+     .custom-form-container .custom_hidden{
+      display: none !important;
+    }
+
+    .custom-form-container  .alert {
+        display: block;
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .custom-error-msg{
+       margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .custom-form-container  .alert-danger,
+    .custom-form-container  .button_block_ctm,
+    .custom-error-msg{
+        background-color: #f8d7da;
+        color: #721c24;
+    }
+
+    .custom-form-container  .alert-warning {
+        background-color: #fff3cd;
+        color: #856404;
+    }
+
+    .custom-form-container  .hidden {
+        display: none;
+    }
+
+
+
+    /* Button styles */
+   /* .custom-form-container  button {
+        padding: 12px 20px;
+        font-size: 16px;
+        background-color: #ff9900;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    } */
+
+
+    /* Input group for radio buttons and checkboxes */
+    .custom-form-container  input[type="radio"]:checked,
+    .custom-form-container  input[type="checkbox"]:checked {
+        accent-color: #4ad6c9;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .custom-form-container  .content {
+            padding: 15px;
+        }
+
+        .custom-form-container  .form-head {
+            font-size: 20px;
+        }
+
+        .custom-form-container  label {
+            font-size: 14px;
+        }
+
+        .custom-form-container  input[type="radio"],
+      .custom-form-container  input[type="checkbox"] {
+            margin-right: 8px;
+        }
+    }
+
+    /* Style for the checkbox for final consent */
+    .custom-form-container  #confirm_terms {
+        margin-right: 10px;
+    }
+
+    /* Style for the Terms and Conditions error message */
+    .custom-form-container  #terms-error {
+        font-size: 14px;
+        color: #721c24;
+        margin-top: 10px;
+    }
+
+    /* Styling for the medication list */
+    .custom-form-container  #medication-list {
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+
+    .custom-form-container  #medication-list p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .custom-form-container  #medication-list input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    /* Alert styling for "You must agree..." messages */
+    .custom-form-container  #q1-error,
+    .custom-form-container  #q2-warning,
+    .custom-form-container  #q3-error,
+    .custom-form-container  #q4-error,
+    .custom-form-container  #q6-error,
+    .custom-form-container  #q7-error,
+    .custom-form-container  #q8-error,
+    .custom-form-container  #q9-error,
+    .custom-form-container  #q11-error,
+    .custom-form-container  #q12-error,
+    .custom-form-container  #q13-error,
+    .custom-form-container  #q14-error {
+        margin-top: 10px;
+    }
+
+    .custom-form-container  hr {
+      margin: 29px 0;
+  }
+
+    .custom-form-container   .product-images img{
+      width: 100%;
+    }
+     .custom-form-container   .product-images{
+    flex: 0 0 150px;
+      margin-right: 20px;
+      max-width: 150px;
+     }
+
+
+
+    /* Custom style for submit button */
+    .custom-form-container  #submitBtn {
+        width: 100%;
+        padding: 15px;
+        font-size: 15px;
+        /* background-color: #51c3be; */
+        color: white;
+        border: none;
+        /* border-radius: 5px; */
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        height:auto;
+        margin-top: 15px;
+        position: relative;
+        border: 2px solid #5DC5C2;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+  .custom-form-container #submitBtn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5DC5C2;
+    z-index: -1;
+    transition: height 0.3s ease-out;
+  }
+
+  .custom-form-container #submitBtn:hover{
+    color: #5DC5C2;
+    background-color:white;
+  }
+
+    .custom-form-container #submitBtn:hover::before {
+      height: 0%;
+    }
+
+    .custom-form-container .next:disabled{
+      opacity: 0.4;
+       cursor: not-allowed;
+    }
+
+   .custom-form-container  #submitBtn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+
+    .custom-form-container  .show_checkboxes{
+      display: block;
+    }
+
+    .custom-form-container  .ctm--inner--options{
+      padding-left:15px;
+    }
+
+  .form-container.custom-form-container button {
+    padding: 10px 20px;
+    /* background-color: #51c3be; */
+    color: #fff;
+    border: none;
+    /* border-radius: 4px; */
+    cursor: pointer;
+    width: 100%;
+  }
+    @media screen and (min-width: 750px){
+      .custom-form-container  #submitBtn {
+        width: 50%;
+    }
+      .form-container.custom-form-container button {
+        width: 50%;
+      }
+    }
+
+  /* general-enquiry-page-css */
+
+  .form_step-product-card {
+      display: flex;
+    flex-direction:row-reverse;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+        justify-content: center;
+  }
+    .form_step-product-card .form-step {
+      width: 70%;
+      padding: 0 20px 20px 0;
+  }
+  .main-heading {
+      margin: 0 0 10px;
+      font-family: Lato;
+      font-size: 31px;
+      padding: 10px 20px;
+      background-color: #51c3be;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-weight: bold;
+  }
+    .product_info-other_info{
+       width: 30%;
+      font-family: Lato;
+
+    }
+    .product-card-block {
+      padding: 20px;
+      box-shadow: 0px 0px 1px #000000;
+          height: max-content;
+  }
+    .product-image-wrap img {
+      width: 100%;
+  }
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+  }
+     .other-info-wrapper {
+      padding: 20px;
+      background: #51c3be24;
+          margin-top: 20px;
+  }
+    .other-info-container h3 {
+      font-size: 22px;
+      margin: 0;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      font-family: Lato;
+      border-bottom: 1px solid #00000021;
+  }
+  .sub_heading_text h4 {
+      font-size: 16px;
+      margin: 30px 0 10px;
+      position: relative;
+      padding-left: 30px;
+    font-family: Lato;
+  }
+    span.num-count {
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 20px;
+      background: #51c3be;
+      color: #fff;
+      display: block;
+      border-radius: 50%;
+      font-size: 12px;
+      /* font-size: .75rem; */
+  }
+    .num-count.tick-mark{
+      background: none;;
+    }
+    .num-count svg{
+      width :100%;
+      height:100%;
+      fill: #30ba87;
+    }
+    .other-info_text{
+      font-size:14px;
+      margin:0;
+      line-height:1.5;
+    }
+
+    .form-container.custom-form-container .progressbar li::before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+    .form-container.custom-form-container button {
+      padding: 20px 20px;
+  }
+    .form-container.custom-form-container .both--btn-final {
+      margin-left: 0;
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+  }
+     @media screen and (min-width: 750px){
+       .custom-form-container fieldset{
+         padding-left:0;
+       }
+     }
+    @media screen and (max-width: 749px){
+      .custom-form-container .form-step fieldset {
+      padding: 10px 0;
+  }
+      .main-heading {
+      font-size: 22px;
+  }
+      .form_step-product-card {
+      padding: 30px 20px;
+  }
+      .form_step-product-card {
+    flex-direction:column;
+  }
+       .form_step-product-card .form-step {
+      width: 100%;
+  }
+    .product_info-other_info{
+       width: 100%;
+    }
+      .main-heading{
+      margin:15px 0;;
+    }
+      .custom-form-container  fieldset {
+      margin-top: 20px;
+  }
+    }
+    .custom-form-container  fieldset {
+      background-color: #fff;
+  }
+    .radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+
+  .radio-toolbar label {
+    display: inline-block;
+    /* background-color: #eee; */
+    height:40px;
+    line-height: 40px;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-family: Lato;
+    padding: 0px 20px;
+    border: 2px solid #51c3be40;
+    border-radius: 4px; /* use 0 for sharp edges */
+    cursor: pointer;
+    margin-right: 8px;
+    transition: background-color 0.2s, border-color 0.2s;
+  }
+
+  .radio-toolbar input[type="radio"]:checked + label {
+    background-color: #51c3be;
+    border-color: #51c3be40;
+    color: white;
+    pointer-events:none;
+  }
+  .radio-toolbar label:hover{
+     background-color: #51c3be40;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    border-color:#51c3be40;
+  }
+  .radio-toolbar input[type="radio"]:focus + label {
+    /* outline: 2px dashed #4caf50; */
+    outline-offset: 2px;
+  }
+    .radio-toolbar {
+      border-bottom: 1px solid #d8e5e8;
+      padding-bottom: 10px;
+  }
+  .multiple_checkboxes.question-block {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #d8e5e8;
+  }
+    .card_product-title {
+      font-size: 16px;
+      font-family: Lato;
+      letter-spacing: normal;
+  }
+    .radio-toolbar .cstm-label-css {
+      display: block;
+      background-color: #fff;
+      height: unset;
+      line-height: unset;
+      color: unset;
+      font-family: unset;
+      font-size: unset;
+      padding: unset;
+      border: unset;
+      border-radius: 0;
+      cursor: auto;
+      margin-right: unset;
+      transition: unset;
+          margin-top: 10px;
+  }
+    .radio-toolbar .cstm-label-css:hover{
+     background-color: unset;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    border-color: unset;
+  }
+    .radio-toolbar .sub-opt-border{
+      border:0;
+    }
+    .form_step-product-card input[type=checkbox] {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+      margin-left: 0;
+  }
+</style>
+<div class="section-{{ section.id }}-padding">
+  <div class="page_width">
+    <div class="form-container custom-form-container" id="formContainer">
+      <!--
+        <ul class="progressbar">
+          {% if section.settings.details_progress != blank %}
+            <li class="active">{{ section.settings.details_progress }}</li>
+          {% endif %}
+          {% if section.settings.finish_progress != blank %}
+            <li>{{ section.settings.finish_progress }}</li>
+          {% endif %}
+        </ul>
+        <div class="progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      -->
+      <form id="multiStepForm" class="form_step-product-card">
+        <div class="product_info-other_info">
+          <div class="product-card-block">
+            <div class="product-details">
+              <div class="product-image-wrap">
+                <img id="product-image" alt="pharmazondirect">
+              </div>
+              <div id="product-title" class="card_product-title card__heading h5"></div>
+              <div class="product-price price">£<span id="product-price"></span></div>
+            </div>
+          </div>
+          <div class="other-info-wrapper">
+            {% for block in section.blocks %}
+              {% if block.settings.heading != blank %}
+                <div class="other-info-container">
+                  <h3 class="h3">{{ block.settings.heading }}</h3>
+                  <div class="sub_headings-texts-wrapper">
+                    {% if block.settings.sub_heading_1 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4">
+                          <span class="num-count tick-mark">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="176"
+                              height="176"
+                              viewBox="0 0 176 176"
+                              xml:space="preserve"
+                            >
+                              <path d="M88 0C39.4 0 0 39.4 0 88s39.4 88 88 88 88-39.4 88-88S136.6 0 88 0zm51.35 58.15-64.29 66.26C71.12 129 64.56 129 61.94 129c-4.59 0-9.18-2.62-12.46-5.9l-13.12-15.09c-2.62-2.62-1.97-6.56.66-9.18 2.62-2.62 6.56-1.97 9.18.66l13.78 15.74c.66.66 1.31 1.31 1.97 1.31h2.62l.66-.66 64.94-66.91c2.62-2.62 6.56-2.62 9.18 0s2.62 6.56 0 9.18z"></path>
+                            </svg>
+                          </span>
+                          {{- block.settings.sub_heading_1 }}
+                        </h4>
+                        <div class="other-info_text">{{ block.settings.text_1 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_2 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">2</span>{{ block.settings.sub_heading_2 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_2 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_3 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">3</span>{{ block.settings.sub_heading_3 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_3 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_4 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">4</span>{{ block.settings.sub_heading_4 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_4 }}</div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.sub_heading_5 != blank %}
+                      <div class="sub_heading_text">
+                        <h4 class="h4"><span class="num-count">5</span>{{ block.settings.sub_heading_5 }}</h4>
+                        <div class="other-info_text">{{ block.settings.text_5 }}</div>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Step 1: Account + Personal -->
+        <fieldset class="form-step active">
+          {% if section.settings.custom_heading_form != blank %}
+            <h2 class="main-heading">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                shape-rendering="geometricPrecision"
+                text-rendering="geometricPrecision"
+                image-rendering="optimizeQuality"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                viewBox="0 0 512 512"
+                width="50px"
+                height="50px"
+              >
+                <path fill="#fff" fill-rule="nonzero" d="M256 0c70.69 0 134.7 28.66 181.02 74.99C483.34 121.3 512 185.31 512 256s-28.66 134.7-74.98 181.02C390.7 483.34 326.69 512 256 512c-70.69 0-134.7-28.66-181.01-74.98C28.66 390.7 0 326.69 0 256c0-70.68 28.65-134.68 74.99-181.01C121.3 28.66 185.31 0 256 0zm13.16 229.92a29.41 29.41 0 0112.12 11.43l41.27.01c-1.51-3.57-1.11-7.84 1.43-11.13 3.75-4.86 10.72-5.75 15.57-2l24.52 18.93c2.81 2.17 4.3 5.41 4.32 8.69V256.15c-.02 3.3-1.51 6.54-4.32 8.71l-24.52 18.93c-4.85 3.75-11.82 2.85-15.57-2-2.54-3.28-2.94-7.54-1.44-11.11l-41.27-.01c-5.06 8.7-14.49 14.55-25.27 14.55-16.14 0-29.22-13.08-29.22-29.22 0-10.11 5.15-19.04 12.96-24.27l.35-56.46a11.078 11.078 0 01-11.47-1.53c-4.76-3.86-5.48-10.85-1.62-15.6l19.48-24.09c2.11-2.6 5.15-4 8.26-4.1h.26c3.49-.06 6.95 1.5 9.16 4.52l18.38 24.95c3.63 4.93 2.56 11.89-2.38 15.5-3.2 2.35-7.23 2.72-10.67 1.36l-.33 53.64zm91.71 183.07c3.41 5.88 1.4 13.43-4.48 16.84-5.89 3.41-13.44 1.4-16.85-4.49l-9.19-15.92c-3.41-5.89-1.4-13.43 4.48-16.84 5.89-3.41 13.44-1.4 16.85 4.48l9.19 15.93zM151.13 98.96c-3.38-5.89-1.35-13.42 4.54-16.8 5.88-3.37 13.41-1.35 16.79 4.54l9.19 15.93c3.38 5.89 1.35 13.42-4.53 16.79-5.89 3.38-13.42 1.35-16.79-4.53l-9.2-15.93zM425.3 339.54c5.89 3.38 7.91 10.91 4.54 16.8-3.38 5.88-10.91 7.91-16.79 4.53l-15.94-9.19c-5.88-3.38-7.91-10.91-4.53-16.8 3.37-5.88 10.9-7.91 16.79-4.53l15.93 9.19zM86.65 172.46c-5.89-3.41-7.9-10.96-4.49-16.84 3.41-5.89 10.96-7.9 16.85-4.49l15.93 9.2c5.88 3.41 7.89 10.96 4.48 16.85-3.41 5.88-10.95 7.89-16.84 4.48l-15.93-9.2zm357.76 71.18c6.82 0 12.36 5.54 12.36 12.36 0 6.82-5.54 12.35-12.36 12.35h-18.39c-6.82 0-12.36-5.53-12.36-12.35 0-6.82 5.54-12.36 12.36-12.36h18.39zM67.58 268.36c-6.82 0-12.35-5.54-12.35-12.36 0-6.81 5.53-12.35 12.35-12.35h18.4c6.82 0 12.36 5.54 12.36 12.35 0 6.82-5.54 12.36-12.36 12.36h-18.4zm345.46-117.23c5.88-3.38 13.41-1.35 16.79 4.54 3.38 5.88 1.35 13.41-4.54 16.79l-15.93 9.19c-5.88 3.38-13.41 1.35-16.79-4.53-3.38-5.89-1.35-13.42 4.54-16.79l15.93-9.2zM98.96 360.87c-5.89 3.38-13.42 1.35-16.8-4.53-3.37-5.89-1.35-13.42 4.54-16.8l15.93-9.19c5.89-3.38 13.42-1.35 16.79 4.53 3.38 5.89 1.35 13.42-4.53 16.8l-15.93 9.19zM339.54 86.7c3.37-5.89 10.9-7.91 16.79-4.54 5.88 3.38 7.91 10.91 4.53 16.8l-9.19 15.93c-3.38 5.88-10.91 7.91-16.79 4.53-5.89-3.37-7.92-10.9-4.54-16.79l9.2-15.93zM172.45 425.35c-3.41 5.89-10.96 7.9-16.84 4.49-5.89-3.41-7.9-10.96-4.49-16.84l9.21-15.94c3.41-5.88 10.95-7.89 16.84-4.48 5.88 3.41 7.89 10.95 4.48 16.84l-9.2 15.93zm71.18-357.76c0-6.82 5.54-12.36 12.36-12.36 6.82 0 12.35 5.54 12.35 12.36v18.39c0 6.82-5.53 12.36-12.35 12.36-6.82 0-12.36-5.54-12.36-12.36V67.59zm24.72 376.83c0 6.82-5.53 12.36-12.35 12.36-6.82 0-12.36-5.54-12.36-12.36v-18.4c0-6.82 5.54-12.36 12.36-12.36 6.82 0 12.35 5.54 12.35 12.36v18.4zM416.62 95.38C375.53 54.28 318.73 28.85 256 28.85c-62.72 0-119.53 25.43-160.62 66.53-41.1 41.1-66.53 97.9-66.53 160.62 0 62.73 25.43 119.53 66.53 160.62 41.09 41.11 97.9 66.53 160.62 66.53 62.73 0 119.53-25.42 160.62-66.53 41.11-41.09 66.53-97.89 66.53-160.62 0-62.72-25.42-119.53-66.53-160.62z"/>
+              </svg>
+              {{ section.settings.custom_heading_form }}
+            </h2>
+          {% endif %}
+          {% if section.settings.custom_subhead_form != blank %}
+            <div>{{ section.settings.custom_subhead_form }}</div>
+          {% endif %}
+          <form id="edForm">
+            <!-- About You Section -->
+            <fieldset>
+              {% if section.settings.heading1_block != blank %}
+                <legend>{{ section.settings.heading1_block }}</legend>
+              {% endif %}
+
+              <!-- Question 1 -->
+              <p class="question-block">
+                {% if section.settings.question1_block != blank %}
+                  <label>{{ section.settings.question1_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="gender_yes"
+                    type="radio"
+                    name="properties[Gender]"
+                    value="Yes"
+                    class="non_change_error cstm_input"
+                  >
+                  <label class="cstm-label" for="gender_yes">Yes</label>
+                  <input
+                    id="gender_no"
+                    type="radio"
+                    name="properties[Gender]"
+                    value="No"
+                    class="non_change_error cstm_input"
+                  >
+                  <label class="cstm-label" for="gender_no">No</label>
+
+                  <!-- if no -->
+                  {% if section.settings.alert1_text != blank %}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert1_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 2 -->
+
+              <p class="question-block">
+                {% if section.settings.question2_block != blank %}
+                  <label>{{ section.settings.question2_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input id="age_yes" type="radio" name="properties[Age]" value="Yes" class="input_yes_change_error">
+                  <label class="cstm-label" for="age_yes">Yes</label>
+
+                  <input id="age_no" type="radio" name="properties[Age]" value="No" class="input_yes_change_error">
+                  <label class="cstm-label" for="age_no">No</label>
+
+                  <!-- if yes -->
+                  {% if section.settings.alert2_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert2_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 3 -->
+              <p class="question-block">
+                {% if section.settings.question3_block != blank %}
+                  <label>{{ section.settings.question3_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input id="smoke_yes" type="radio" name="properties[Smoke drink]" value="Yes">
+                  <label class="cstm-label" for="smoke_yes">Yes</label>
+                  <input id="smoke_no" type="radio" name="properties[Smoke drink]" value="No">
+                  <label class="cstm-label" for="smoke_no">No</label>
+                </div>
+
+                <!-- if yes -->
+                <!--
+                  <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+                -->
+              </p>
+            </fieldset>
+
+            <fieldset>
+              {% if section.settings.heading2_block != blank %}
+                <legend>{{ section.settings.heading2_block }}</legend>
+              {% endif %}
+
+              <!-- Question 1 -->
+              <p class="question-block">
+                {% if section.settings.question4_block != blank -%}
+                  <label>{{ section.settings.question4_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="performance_yes"
+                    type="radio"
+                    name="properties[Sexual performance]"
+                    value="Yes"
+                    class="non_change_error"
+                  >
+                  <label class="cstm-label" for="performance_yes">Yes</label>
+                  <input
+                    id="performance_no"
+                    type="radio"
+                    name="properties[Sexual performance]"
+                    value="No"
+                    class="non_change_error"
+                  >
+                  <label class="cstm-label" for="performance_no">No</label>
+                  <!-- if no -->
+                  {% if section.settings.alert4_text != blank %}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert4_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 2 -->
+
+              <p class="question-block">
+                {% if section.settings.question5_block != blank %}
+                  <label>{{ section.settings.question5_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="medi_for_erec_yes"
+                    type="radio"
+                    name="properties[Medication for erectile]"
+                    value="Yes"
+                    class="below_checkbox_enable"
+                  >
+                  <label class="cstm-label" for="medi_for_erec_yes">Yes</label>
+                  <input
+                    id="medi_for_erec_no"
+                    type="radio"
+                    name="properties[Medication for erectile]"
+                    value="No"
+                    class="below_checkbox_enable"
+                  >
+                  <label class="cstm-label" for="medi_for_erec_no">No</label>
+
+                  <!-- if yes -->
+                  <span class="hidden ctm--inner--options">
+                    <!-- <input type="checkbox" name="properties[Erectile dysfunction]" value="Did it work"><br> -->
+                    {% if section.settings.quesinner1_block != blank -%}
+                      <label class="cstm-label-css">{{ section.settings.quesinner1_block }}</label>
+                    {%- endif %}
+                    <div class="radio-toolbar">
+                      <input id="did_it_work_yes" type="radio" name="properties[Did it work]" value="Yes">
+                      <label class="cstm-label" for="did_it_work_yes">Yes</label>
+                      <input id="did_it_work_no" type="radio" name="properties[Did it work]" value="No">
+                      <label class="cstm-label" for="did_it_work_no">No</label>
+                    </div>
+
+                    <!--
+                      <input type="checkbox" name="properties[Erectile dysfunction]" value="Did you experience any side effects?">Did you experience any side effects?<br>
+                    -->
+                    {% if section.settings.quesinner2_block != blank -%}
+                      <label class="cstm-label-css">{{ section.settings.quesinner2_block }}</label>
+                    {%- endif %}
+                    {% comment %} <label></label>  {% endcomment %}
+                    <div class="radio-toolbar sub-opt-border">
+                      <input id="did_you_experience_yes" type="radio" name="properties[Did you experience]" value="Yes">
+                      <label class="cstm-label" for="did_you_experience_yes">Yes</label>
+                      <input id="did_you_experience_no" type="radio" name="properties[Did you experience]" value="No">
+                      <label class="cstm-label" for="did_you_experience_no">No</label>
+                    </div>
+                  </span>
+                </div>
+              </p>
+
+              <!-- Question 3 -->
+              <p class="question-block">
+                {% if section.settings.question6_block != blank -%}
+                  <label>{{ section.settings.question6_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="ingredients_yes"
+                    type="radio"
+                    name="properties[Ingredients]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="ingredients_yes">Yes</label>
+                  <input
+                    id="ingredients_no"
+                    type="radio"
+                    name="properties[Ingredients]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="ingredients_no">No</label>
+                  <!-- if yes -->
+                  <span class="hidden alert alert-danger">{{ section.settings.alert6q_text }}</span>
+                </div>
+              </p>
+
+              <!-- Question 4 -->
+              <p class="question-block">
+                {% if section.settings.question7_block != blank -%}
+                  <label>{{ section.settings.question7_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input id="allergic_yes" type="radio" name="properties[Allergic to any medicines]" value="Yes">
+                  <label class="cstm-label" for="allergic_yes">Yes</label>
+                  <input id="allergic_no" type="radio" name="properties[Allergic to any medicines]" value="No">
+                  <label class="cstm-label" for="allergic_no">No</label>
+                </div>
+              </p>
+            </fieldset>
+
+            <fieldset>
+              {% if section.settings.heading3_block != blank %}
+                <legend>{{ section.settings.heading3_block }}</legend>
+              {% endif %}
+
+              <!-- Question 1 -->
+              <p class="question-block">
+                {% if section.settings.questpatient1_block != blank -%}
+                  <label>{{ section.settings.questpatient1_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="sexual_activity_yes"
+                    type="radio"
+                    name="properties[Sexual activity]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="sexual_activity_yes">Yes</label>
+                  <input
+                    id="sexual_activity_no"
+                    type="radio"
+                    name="properties[Sexual activity]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="sexual_activity_no">No</label>
+                  <!-- if yes -->
+                  {% if section.settings.alert7q_text != blank %}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert7q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+              <!-- Question 2 -->
+
+              <p class="question-block">
+                {% if section.settings.questpatient2_block != blank -%}
+                  <label>{{ section.settings.questpatient2_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="breathless_chest_pain_yes"
+                    type="radio"
+                    name="properties[Breathless or chest pain]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="breathless_chest_pain_yes">Yes</label>
+                  <input
+                    id="breathless_chest_pain_no"
+                    type="radio"
+                    name="properties[Breathless or chest pain]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="breathless_chest_pain_no">No</label>
+
+                  <!-- if yes -->
+                  {% if section.settings.alert8q_text != blank %}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert8q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 3 -->
+
+              <p class="question-block">
+                {% if section.settings.questpatient3_block != blank %}
+                  <label>{{ section.settings.questpatient3_block }} </label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="heart_attack_stroke_yes"
+                    type="radio"
+                    name="properties[Heart attack or stroke]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="heart_attack_stroke_yes">Yes</label>
+                  <input
+                    id="heart_attack_stroke_no"
+                    type="radio"
+                    name="properties[Heart attack or stroke]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="heart_attack_stroke_no">No</label>
+                  <!-- if yes -->
+                  {% if section.settings.alert9q_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert9q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 4 -->
+              <p class="question-block">
+                {% if section.settings.questpatient4_block != blank -%}
+                  <label>{{ section.settings.questpatient4_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="suffer_low_bp_yes"
+                    type="radio"
+                    name="properties[Suffer from low blood pressure]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="suffer_low_bp_yes">Yes</label>
+                  <input
+                    id="suffer_low_bp_no"
+                    type="radio"
+                    name="properties[Suffer from low blood pressure]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="suffer_low_bp_no">No</label>
+                  <!-- if yes -->
+                  {% if section.settings.alert10q_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert10q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 5 -->
+              <p class="question-block">
+                {% if section.settings.questpatient5_block != blank %}
+                  <label>{{ section.settings.questpatient5_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="high_bp_yes"
+                    type="radio"
+                    name="properties[High blood pressure]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="high_bp_yes">Yes</label>
+                  <input
+                    id="high_bp_no"
+                    type="radio"
+                    name="properties[High blood pressure]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="high_bp_no">No</label>
+
+                  <!-- if yes -->
+                  {% if section.settings.alert11q_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert11q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 6 -->
+              <p class="question-block">
+                {% if section.settings.paragraph_list_question != blank %}
+                  <label>{{ section.settings.paragraph_list_question }}</label>
+                {%- endif %}
+                {% if section.settings.paragraph_list_text != blank %}
+                  {{ section.settings.paragraph_list_text -}}
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="other_problem_yes"
+                    type="radio"
+                    name="properties[Other heart problems]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="other_problem_yes">Yes</label>
+                  <input
+                    id="other_problem_no"
+                    type="radio"
+                    name="properties[Other heart problems]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="other_problem_no">No</label>
+
+                  <!-- if yes -->
+                  {% if section.settings.alert12q_text != blank %}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert12q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 7 -->
+              <p class="question-block">
+                {% if section.settings.questpatient7_block != blank -%}
+                  <label>{{ section.settings.questpatient7_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="peyronies_disease_yes"
+                    type="radio"
+                    name="properties[Peyronies disease]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="peyronies_disease_yes">Yes</label>
+                  <input
+                    id="peyronies_disease_no"
+                    type="radio"
+                    name="properties[Peyronies disease]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="peyronies_disease_no">No</label>
+                  <!-- if yes -->
+                  {% if section.settings.alert13q_text != blank %}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert13q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 8 -->
+              <p class="question-block">
+                {% if section.settings.questpatient8_block != blank %}
+                  <label>{{ section.settings.questpatient8_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="inherited_eye_disease_yes"
+                    type="radio"
+                    name="properties[Inherited eye disease]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="inherited_eye_disease_yes">Yes</label>
+                  <input
+                    id="inherited_eye_disease_no"
+                    type="radio"
+                    name="properties[Inherited eye disease]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="inherited_eye_disease_no">No</label>
+                  <!-- if no -->
+                  {% if section.settings.alert14q_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert14q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 9 -->
+              <p class="question-block">
+                {% if section.settings.questpatient9_block != blank %}
+                  <label>{{ section.settings.questpatient9_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="galactose_intolerance_yes"
+                    type="radio"
+                    name="properties[Galactose intolerance]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="galactose_intolerance_yes">Yes</label>
+                  <input
+                    id="galactose_intolerance_no"
+                    type="radio"
+                    name="properties[Galactose intolerance]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="galactose_intolerance_no">No</label>
+                  <!-- if yes -->
+                  {% if section.settings.alert15q_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert15q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 10 -->
+              <p class="question-block">
+                {% if section.settings.questpatient10_block != blank %}
+                  <label>{{ section.settings.questpatient10_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="diagnosed_liver_yes"
+                    type="radio"
+                    name="properties[Diagnosed liver, kidney or urinary problems]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="diagnosed_liver_yes">Yes</label>
+                  <input
+                    id="diagnosed_liver_no"
+                    type="radio"
+                    name="properties[Diagnosed liver, kidney or urinary problems]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="diagnosed_liver_no">No</label>
+                  <!-- if no -->
+                  {% if section.settings.alert16q_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert16q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 11 -->
+              <p class="question-block">
+                {% if section.settings.questpatient11_block != blank %}
+                  <label>{{ section.settings.questpatient11_block }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="abnormal_sugar_yes"
+                    type="radio"
+                    name="properties[Abnormal sugar levels]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="abnormal_sugar_yes">Yes</label>
+                  <input
+                    id="abnormal_sugar_no"
+                    type="radio"
+                    name="properties[Abnormal sugar levels]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="abnormal_sugar_no">No</label>
+                  <!-- if no -->
+                  {% if section.settings.alert17q_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert17q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 12 -->
+              <p class="question-block">
+                {% if section.settings.questpatient12_block != blank %}
+                  <label>{{ section.settings.questpatient12_block }}</label>
+                {%- endif %}
+                {% if section.settings.paragraph_list2_text != blank -%}
+                  {{- section.settings.paragraph_list2_text -}}
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="health_conditions_yes"
+                    type="radio"
+                    name="properties[Health conditions]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="health_conditions_yes">Yes</label>
+                  <input
+                    id="health_conditions_no"
+                    type="radio"
+                    name="properties[Health conditions]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="health_conditions_no">No</label>
+                  <!-- if yes -->
+                  {% if section.settings.alert18q_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert18q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <!-- Question 13 -->
+              <p class="multiple_checkboxes question-block">
+                {% if section.settings.questpatient13_block != blank %}
+                  <label>{{ section.settings.questpatient13_block }}</label>
+                {%- endif %}
+
+                {% if section.settings.question_1checkbox != blank -%}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_1checkbox }}"
+                    class="reg_option_more"
+                  >
+                  {{- section.settings.question_1checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_2checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_2checkbox }}"
+                    class="reg_option_more"
+                  >
+                  {{- section.settings.question_2checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_3checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_3checkbox }}"
+                    class="reg_option_more"
+                  >
+                  {{- section.settings.question_3checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_4checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_4checkbox }}"
+                    class="reg_option_more"
+                  >
+                  {{- section.settings.question_4checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_5checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_5checkbox }}"
+                  >
+                  {{- section.settings.question_5checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_6checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_6checkbox }}"
+                  >
+                  {{- section.settings.question_6checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_7checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_7checkbox }}"
+                  >
+                  {{- section.settings.question_7checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_8checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_8checkbox }}"
+                  >
+                  {{- section.settings.question_8checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_9checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_9checkbox }}"
+                  >
+                  {{- section.settings.question_9checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_10checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_10checkbox }}"
+                  >
+                  {{- section.settings.question_10checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_11checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_11checkbox }}"
+                  >
+                  {{- section.settings.question_11checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_12checkbox != blank -%}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{  section.settings.question_12checkbox }}"
+                  >
+                  {{- section.settings.question_12checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_13checkbox != blank %}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_13checkbox }}"
+                  >
+                  {{- section.settings.question_13checkbox -}}
+                {%- endif %}
+
+                <br>
+                {% if section.settings.question_14checkbox != blank -%}
+                  <input
+                    type="checkbox"
+                    name="properties[Currently using any other medication]"
+                    value="{{ section.settings.question_14checkbox }}"
+                  >
+                  {{- section.settings.question_14checkbox -}}
+                {%- endif %}
+                <br>
+
+                <!-- if 1, 2, 3, 4 checked -->
+                {% if section.settings.alert22q_text != blank -%}
+                  <span class="hidden alert alert-danger">{{ section.settings.alert22q_text }}</span>
+                {%- endif %}
+              </p>
+
+              <!-- Question 14 -->
+              <p class="question-block">
+                {% if section.settings.question_15checkbox != blank %}
+                  <label>{{ section.settings.question_15checkbox }}</label>
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="recreational_drug_yes"
+                    type="radio"
+                    name="properties[Recreational drug]"
+                    value="Yes"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="recreational_drug_yes">Yes</label>
+                  <input
+                    id="recreational_drug_no"
+                    type="radio"
+                    name="properties[Recreational drug]"
+                    value="No"
+                    class="input_yes_change_error"
+                  >
+                  <label class="cstm-label" for="recreational_drug_no">No</label>
+                  <!-- if no -->
+                  {% if section.settings.alert23q_text != blank %}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert23q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+            </fieldset>
+
+            <fieldset>
+              {% if section.settings.heading10_block != blank %}
+                <legend>{{ section.settings.heading10_block }}</legend>
+              {% endif %}
+
+              <!-- Question 1 -->
+              <p class="question-block">
+                {% if section.settings.questconsent1_block != blank %}
+                  <label>{{ section.settings.questconsent1_block }}</label>
+                {%- endif %}
+                {% if section.settings.paragraph_list3_text != blank %}
+                  {{ section.settings.paragraph_list3_text -}}
+                {%- endif %}
+                <div class="radio-toolbar">
+                  <input
+                    id="aware_following_yes"
+                    type="radio"
+                    name="properties[Aware of the following]"
+                    value="Yes"
+                    class="non_change_error"
+                  >
+                  <label class="cstm-label" for="aware_following_yes">Yes</label>
+                  <input
+                    id="aware_following_no"
+                    type="radio"
+                    name="properties[Aware of the following]"
+                    value="No"
+                    class="non_change_error"
+                  >
+                  <label class="cstm-label" for="aware_following_no">No</label>
+                  <!-- if no -->
+                  {% if section.settings.alert24q_text != blank -%}
+                    <span class="hidden alert alert-danger">{{ section.settings.alert24q_text }}</span>
+                  {%- endif %}
+                </div>
+              </p>
+
+              <p class="question-block">
+                <input type="checkbox" id="confirm_terms" name="confirm_terms" value="Yes">
+                {% if section.settings.inline_custom_terms != blank -%}
+                  {{- section.settings.inline_custom_terms -}}
+                {%- endif %}
+                {% if section.settings.alert25q_text != blank -%}
+                  <span id="terms-error" class="alert alert-danger">{{ section.settings.alert25q_text }}</span>
+                {%- endif %}
+              </p>
+
+              {% if section.settings.alert26q_text != blank -%}
+                <span class="custom_hidden alert button_block_ctm">{{ section.settings.alert26q_text }}</span>
+              {%- endif %}
+
+              {% if section.settings.check_my_btn != blank %}
+                <button
+                  type="submit"
+                  id="submitBtn"
+
+                  class="buy_btn custom_add_to_cart_button new--form--ppup"
+                >
+                  <span>{{ section.settings.check_my_btn }}</span>
+                </button>
+              {%- endif %}
+            </fieldset>
+            {% comment %}
+              <div class="btns">
+                {% if section.settings.next_btn != blank -%}
+                  <button type="button" class="next" disabled>{{ section.settings.next_btn }}</button>
+                {%- endif %}
+              </div>
+            {% endcomment %}
+          </form>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+   const params = new URLSearchParams(window.location.search);
+   const handle = params.get('handle');
+   const variantId = params.get('variant');
+
+  if(handle){
+    fetch(`/products/${handle}.js`)
+     .then(response => response.json())
+     .then(product => {
+       document.getElementById('product-title').textContent = product.title;
+       document.getElementById('product-price').textContent = product.price / 100 + ' ' + Shopify.currency.active;
+       document.getElementById('product-image').src = product.images[0];
+       // document.getElementById('variant-i').textContent = product.title;
+     })
+    .catch(error => console.error("Error loading product:", error));
+  }
+  if(variantId){
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.setAttribute('data_id_attr', variantId);
+  }
+  
+ // Multi step form value end
+$('input.input_yes_change_error').change(function () {
+  if ($(this).val() == "Yes") {
+    $(this).siblings('.alert-danger').removeClass('hidden');
+  } else {
+    $(this).siblings('.alert-danger').addClass('hidden');
+  }
+
+
+  checkFormErrors();
+});
+  
+
+  
+$('input.non_change_error').change(function () {
+  if ($(this).val() == "No") {
+    $(this).siblings('.alert-danger').removeClass('hidden');
+  } else {
+    $(this).siblings('.alert-danger').addClass('hidden');
+  }
+
+  checkFormErrors();
+});
+
+  
+
+$('input.below_checkbox_enable').change(function () {
+  if ($(this).val() == "Yes") {
+    $(this).siblings('.ctm--inner--options').removeClass('hidden');
+    $(this).siblings('.ctm--inner--options').addClass('show_checkboxes');
+    $(this).siblings('.ctm--inner--options').find('input').attr('required', 'true');
+  } else {
+    $(this).siblings('.ctm--inner--options').addClass('hidden');
+    $(this).siblings('.ctm--inner--options').removeClass('show_checkboxes');
+    $(this).siblings('.ctm--inner--options').find('input').removeAttr('required');
+  }
+
+  checkFormErrors();
+});
+
+
+  
+$('.multiple_checkboxes input').on('change', function () {
+ 
+  $('.multiple_checkboxes input').not(this).prop('checked', false);
+
+  $(this).find('.alert-danger').addClass('hidden');
+
+  const isSpecial = $(this).hasClass('reg_option_more');
+  const index = $('input.reg_option_more').index(this);
+
+  if (isSpecial && $(this).is(':checked') && index >= 0 && index <= 3) {
+    $(this).siblings('.alert-danger').removeClass('hidden');
+  }else{
+    $(this).siblings('.alert-danger').addClass('hidden');
+  }
+
+
+  checkFormErrors();
+});
+
+
+$('#confirm_terms').on('change', function () {
+  if ($(this).is(':checked')) {
+    $('#terms-error').addClass('hidden');
+  } else {
+    $('#terms-error').removeClass('hidden');
+  }
+
+  checkFormErrors(); 
+});
+  
+
+function checkFormErrors() {
+  let hasError = false;
+
+  $('form .alert-danger').each(function () {
+    if (!$(this).hasClass('hidden')) {
+      hasError = true;
+      return false; 
+    }
+  });
+
+  if (!$('#confirm_terms').is(':checked')) {
+    hasError = true;
+    $('#terms-error').removeClass('hidden');
+  } else {
+    $('#terms-error').addClass('hidden');
+  }
+}
+
+  // Custom multistep some code start
+
+
+// const nextBtns = document.querySelectorAll(".next");
+// const prevBtns = document.querySelectorAll(".prev");
+// const progressBar = document.getElementById("progressBar");
+// const progressItems = document.querySelectorAll(".progressbar li");
+
+//   let currentStep = 0;
+
+//   function showStep(index) {
+//   steps.forEach((step, i) => {
+//     step.classList.toggle("active", i === index);
+//     progressItems[i].classList.toggle("active", i <= index);
+//   });
+
+//   const percent = (index / (steps.length - 1)) * 100;
+//   progressBar.style.width = percent + "%";
+// }
+
+
+  // Custom multistep some code end
+  
+
+document.querySelector('.new--form--ppup').addEventListener('click', function (event) {
+  event.preventDefault();
+
+  $('body').on('change', 'input[type="radio"]', function () {
+    var $toolbar = $(this).closest('.radio-toolbar');
+    $toolbar.find('.custom-error-msg').remove();
+  });
+
+  
+  $('body').on('change', 'input[type="checkbox"]', function () {
+    var $toolbar = $(this).closest('.multiple_checkboxes');
+    $toolbar.find('.custom-error-msg').remove();
+  });
+  
+    var elementAttr = event.target.getAttribute('data_id_attr');
+
+    var isValid = true;
+    var checkedRadioGroups = new Set();
+    var checkedCheckboxGroups = new Set();
+    
+    // RADIO VALIDATION + ERROR CHECK
+    $("input:radio:visible").each(function () {
+        var name = $(this).attr("name");
+    
+        if (!checkedRadioGroups.has(name)) {
+            var $group = $("input:radio[name='" + name + "']:visible");
+            var $checked = $group.filter(":checked");
+    
+            if ($checked.length === 0) {
+                isValid = false;
+            } else {
+                // Check if any .alert:not(.hidden) exists in the group
+                var $alert = $group.first().closest('.radio-toolbar').find('.alert:not(.hidden)');
+                if ($alert.length > 0) {
+                    isValid = false;
+                }
+            }
+    
+            checkedRadioGroups.add(name);
+        }
+    });
+    
+    // CHECKBOX VALIDATION + ERROR CHECK
+    $("input:checkbox").each(function () {
+        var name = $(this).attr("name");
+    
+        if (!checkedCheckboxGroups.has(name)) {
+            var $group = $("input:checkbox[name='" + name + "']");
+            var $checked = $group.filter(":checked");
+    
+            if ($checked.length === 0) {
+                isValid = false;
+            } else {
+                // Check if any .alert:not(.hidden) exists in the group
+                var $alert = $group.first().closest('.multiple_checkboxes').find('.alert:not(.hidden)');
+                if ($alert.length > 0) {
+                    isValid = false;
+                }
+            }
+    
+            checkedCheckboxGroups.add(name);
+        }
+    });
+
+  if (isValid) {
+    const input = params.get('quantity');
+    if(quantity){
+      var quantity = input ? parseInt(input.value, 10) : 0;
+    }
+
+
+
+  let properties = {};
+
+   var genderAnswer = document.querySelector('input[name="properties[Gender]"]:checked');
+   var ageAnswer = document.querySelector('input[name="properties[Age]"]:checked');
+   var Smoke_drink = document.querySelector('input[name="properties[Smoke drink]"]:checked');
+   var sexual_performance = document.querySelector('input[name="properties[Sexual performance]"]:checked');
+   var medication_for_erectile = document.querySelector('input[name="properties[Medication for erectile]"]:checked'); 
+   var DidItWork = document.querySelector('input[name="properties[Did it work]"]:checked'); 
+   var Did_you_experience = document.querySelector('input[name="properties[Did you experience]"]:checked'); 
+   var ingredients = document.querySelector('input[name="properties[Ingredients]"]:checked');  
+   var aalergic_medicines = document.querySelector('input[name="properties[Allergic to any medicines]"]:checked'); 
+   var sexual_activity = document.querySelector('input[name="properties[Sexual activity]"]:checked'); 
+   var breathless_chestPain = document.querySelector('input[name="properties[Breathless or chest pain]"]:checked'); 
+   var heart_attack = document.querySelector('input[name="properties[Heart attack or stroke]"]:checked'); 
+   var low_blood_pressure = document.querySelector('input[name="properties[Suffer from low blood pressure]"]:checked'); 
+   var high_blood_pressure = document.querySelector('input[name="properties[High blood pressure]"]:checked'); 
+   var OtherHeartProblems = document.querySelector('input[name="properties[Other heart problems]"]:checked'); 
+   var Peyronies_disease = document.querySelector('input[name="properties[Peyronies disease]"]:checked'); 
+   var Inherited_eye_disease = document.querySelector('input[name="properties[Inherited eye disease]"]:checked'); 
+   var GalactoseIntolerance = document.querySelector('input[name="properties[Galactose intolerance]"]:checked'); 
+   var DiagnosedLiver = document.querySelector('input[name="properties[Diagnosed liver, kidney or urinary problems]"]:checked'); 
+   var AbnormalSugarLevels = document.querySelector('input[name="properties[Abnormal sugar levels]"]:checked'); 
+   var HealthConditions = document.querySelector('input[name="properties[Health conditions]"]:checked'); 
+   var currently_medication = document.querySelector('input[name="properties[Currently using any other medication]"]:checked'); 
+   var RecreationalDrug = document.querySelector('input[name="properties[Recreational drug]"]:checked'); 
+   var awarefollow = document.querySelector('input[name="properties[Aware of the following]"]:checked'); 
+
+
+  
+    if (genderAnswer) {
+      properties['Are you male?'] = genderAnswer.value;
+    }
+
+    if (ageAnswer) {
+      properties['Are you under 18 years of age?'] = ageAnswer.value;
+    }
+
+    if (Smoke_drink) {
+      properties['Are you a smoker and do you consume more than 2 cigarettes a day?'] = Smoke_drink.value;
+    }
+
+    if (sexual_performance) {
+      properties['Are you having difficulty in getting and/or maintaining an erection satisfactory for sexual performance'] = sexual_performance.value;
+    }
+
+    if (medication_for_erectile) {
+      properties['Have you used any medication for erectile dysfunction before?'] = medication_for_erectile.value;
+    }
+
+    if (DidItWork) {
+      properties['Did It Work'] = DidItWork.value;
+    }
+
+    if (Did_you_experience) {
+      properties['Did you experience any side effects?'] = Did_you_experience.value;
+    }
+
+    if (ingredients) {
+      properties['Do you have any allergy to Sildenafil, tadalafil and vardenafil or any of its ingredients?'] = ingredients.value;
+    }
+
+    if (aalergic_medicines) {
+      properties['Are you allergic to any medicines or other substances, for example peanuts or soya?'] = aalergic_medicines.value;
+    }
+
+    if (sexual_activity) {
+      properties['Has your doctor advised that you are not fit enough for any physical and/or sexual activity?'] = sexual_activity.value;
+    }
+
+     if (breathless_chestPain) {
+      properties['Do you feel very breathless or experience chest pain with light or moderate physical activity, such as walking briskly for 20 minutes or climbing two flights of stairs?'] = breathless_chestPain.value;
+    }
+
+   if (heart_attack) {
+      properties['Have you had a heart attack or stroke within the last 6 months?'] = heart_attack.value;
+    }
+
+    if (low_blood_pressure) {
+      properties['Do you suffer from low blood pressure (i.e. less than 90/50mmHg), and/or are prone to faints or collapses? If you are unsure, check with your GP or local pharmacy'] = low_blood_pressure.value;
+    }
+
+    if (high_blood_pressure) {
+      properties['Do you have high blood pressure (i.e. above 150/90mmHg)? If you are unsure, check with your GP or local pharmacy?'] = high_blood_pressure.value;
+    }
+  
+    if (OtherHeartProblems) {
+      properties['Do you have any other heart problems or are you under a doctor’s care for any of the following'] = OtherHeartProblems.value;
+    }
+
+    if (Peyronies_disease) {
+      properties['Do you have Peyronies disease, angulation or any other deformation of the penis?'] = Peyronies_disease.value;
+    }
+  
+    if (Inherited_eye_disease) {
+      properties['Have ever had loss of vision because of damage to the optic nerve (such as non-arteritic anterior ischaemic optic neuropathy [NAION]) or have an inherited eye disease?'] = Inherited_eye_disease.value;
+    }
+
+    if (GalactoseIntolerance) {
+      properties['Do you have galactose intolerance, Lapp lactase deficiency or glucose-galactose malabsorption?'] = GalactoseIntolerance.value;
+    }
+
+   if (DiagnosedLiver) {
+      properties['Do you have previously diagnosed liver, kidney or urinary problems?'] = DiagnosedLiver.value;
+   }
+
+   if (AbnormalSugarLevels) {
+      properties['Do you currently suffer from diabetes or abnormal sugar levels?'] = AbnormalSugarLevels.value;
+   }
+
+  if (HealthConditions) {
+      properties['Do you have any of the following health conditions'] = HealthConditions.value;
+   }
+
+  if (currently_medication) {
+      properties['Are you currently using any other medication, even if you’re not taking it regularly? Select from list below'] = currently_medication.value;
+   }
+
+   if (RecreationalDrug) {
+      properties['Do you take any recreational drug such as Amyl Nitrate (poppers) or cocaine?'] = RecreationalDrug.value;
+   }
+
+    if (awarefollow) {
+      properties['Please confirm that you are aware of the following'] = awarefollow.value;
+   }
+  
+  
+
+    if (Object.keys(properties).length === 0) {
+      return;
+    }
+  
+    let formData = {
+      'items': [{
+        'id': elementAttr,
+        'quantity': quantity,
+        'properties': properties
+      }]
+    };
+
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      window.location.href = '/cart';
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+    }
+  else {
+  var $btnBlockShown = false;
+  var $btnBlock = $(".new--form--ppup").siblings('.button_block_ctm');
+  var firstInvalidInput = null;
+  var checkedRadioGroups = new Set();
+  var checkedCheckboxGroups = new Set();
+
+  // RADIO VALIDATION
+  $("input:radio:visible").each(function () {
+    var name = $(this).attr("name");
+    if (!checkedRadioGroups.has(name)) {
+      var $group = $("input:radio[name='" + name + "']:visible");
+      var $checked = $group.filter(":checked");
+      var $alert = $group.first().closest('.radio-toolbar').find('.alert:not(.hidden)');
+
+      if ($checked.length === 0) {
+        if (!firstInvalidInput) {
+          firstInvalidInput = $group.first()[0];
+        }
+
+        var $toolbar = $group.first().closest('.radio-toolbar');
+        if ($toolbar.find('.custom-error-msg').length === 0) {
+          $toolbar.append('<div class="custom-error-msg">This field is required</div>');
+        }
+
+        if (!$btnBlockShown) {
+          $btnBlock.removeClass('custom_hidden');
+          setTimeout(() => $btnBlock.addClass('custom_hidden'), 6000);
+          $btnBlockShown = true;
+        }
+      } else if ($alert.length > 0 && !firstInvalidInput) {
+        firstInvalidInput = $group.first()[0];
+      }
+
+      checkedRadioGroups.add(name);
+    }
+  });
+
+  // CHECKBOX VALIDATION
+  $("input:checkbox").each(function () {
+    var name = $(this).attr("name");
+    if (!checkedCheckboxGroups.has(name)) {
+      var $group = $("input:checkbox[name='" + name + "']");
+      var $checked = $group.filter(":checked");
+      var $alert = $group.first().closest('.multiple_checkboxes').find('.alert:not(.hidden)');
+
+      if ($checked.length === 0) {
+        if (!firstInvalidInput) {
+          firstInvalidInput = $group.first()[0];
+        }
+
+        var $toolbar = $group.first().closest('.multiple_checkboxes');
+        if ($toolbar.find('.custom-error-msg').length === 0) {
+          $toolbar.append('<div class="custom-error-msg">This field is required</div>');
+        }
+
+        if (!$btnBlockShown) {
+          $btnBlock.removeClass('custom_hidden');
+          setTimeout(() => $btnBlock.addClass('custom_hidden'), 6000);
+          $btnBlockShown = true;
+        }
+      } else if ($alert.length > 0 && !firstInvalidInput) {
+        firstInvalidInput = $group.first()[0];
+      }
+
+      checkedCheckboxGroups.add(name);
+    }
+  });
+
+  // SCROLL TO FIRST INVALID OR ALERT FIELD
+  if (firstInvalidInput) {
+    setTimeout(() => {
+      firstInvalidInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      firstInvalidInput.focus();
+    }, 1500);
+  }
+}
+
+});
+</script>
+
+{% schema %}
+{
+  "name": "General enquiry",
+      "settings": [
+        {
+        "type": "text",
+        "id": "custom_heading_form",
+        "label": "Heading",
+        "default": "SIGN UP YOUR USER ACCOUNT"
+        },
+        {
+        "type": "richtext",
+        "id": "custom_subhead_form",
+        "label": "Sub heading"
+        },
+        {
+        "type": "header",
+        "content": "Progress bar text"
+        },
+        {
+        "type": "text",
+        "id": "details_progress",
+        "label": "Text",
+        "default": "Details"
+        },
+        {
+        "type": "text",
+        "id": "finish_progress",
+        "label": "Text",
+        "default": "Finish"
+        },
+        {
+        "type": "header",
+        "content": "ABOUT YOU"
+        },
+        {
+        "type": "text",
+        "id": "heading1_block",
+        "label": "Heading Block",
+        "default": "ABOUT YOU"
+        },
+        {
+        "type": "text",
+        "id": "question1_block",
+        "label": "Question 1",
+        "default": "Q1: Are you male?"
+        },
+        {
+        "type": "text",
+        "id": "alert1_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "question2_block",
+        "label": "Question 2",
+        "default": "Q2: Are you under 18 years of age?"
+        },
+        {
+        "type": "text",
+        "id": "alert2_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "question3_block",
+        "label": "Question 3",
+        "default": "Q3: Are you a smoker and do you consume more than 2 cigarettes a day?"
+        },
+        {
+        "type": "header",
+        "content": "INDICATION"
+        },
+        {
+        "type": "text",
+        "id": "heading2_block",
+        "label": "Heading Block",
+        "default": "INDICATION"
+        },
+        {
+        "type": "text",
+        "id": "question4_block",
+        "label": "Question 1",
+        "default": "Q1: Are you having difficulty in getting and/or maintaining an erection satisfactory for sexual performance"
+        },
+        {
+        "type": "text",
+        "id": "alert4_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "question5_block",
+        "label": "Question 2",
+        "default": "Q2: Have you used any medication for erectile dysfunction before?"
+        },
+        {
+        "type": "text",
+        "id": "quesinner1_block",
+        "label": "Inner Question 1",
+        "default": "Q1: Did it work"
+        },
+        {
+        "type": "text",
+        "id": "quesinner2_block",
+        "label": "Inner Question 1",
+        "default": "Q2: Did you experience any side effects?"
+        },
+        {
+        "type": "text",
+        "id": "question6_block",
+        "label": "Question 3",
+        "default": "Q3: Do you have any allergy to Sildenafil, tadalafil and vardenafil or any of its ingredients?"
+        },
+        {
+        "type": "text",
+        "id": "alert6q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+       {
+        "type": "text",
+        "id": "question7_block",
+        "label": "Question 4",
+        "default": "Q4: Are you allergic to any medicines or other substances, for example peanuts or soya?"
+        },
+       {
+        "type": "header",
+        "content": "PATIENT HEALTH"
+        },
+        {
+        "type": "text",
+        "id": "heading3_block",
+        "label": "Heading Block",
+        "default": "PATIENT HEALTH"
+        },
+        {
+        "type": "text",
+        "id": "questpatient1_block",
+        "label": "Question 1",
+        "default": "Q1: Has your doctor advised that you are not fit enough for any physical and/or sexual activity?"
+        },
+        {
+        "type": "text",
+        "id": "alert7q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "questpatient2_block",
+        "label": "Question 2",
+        "default": "Q2: Do you feel very breathless or experience chest pain with light or moderate physical activity, such as walking briskly for 20 minutes or climbing two flights of stairs?"
+        },
+        {
+        "type": "text",
+        "id": "alert8q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "questpatient3_block",
+        "label": "Question 3",
+        "default": "Q3: Have you had a heart attack or stroke within the last 6 months?"
+        },
+        {
+        "type": "text",
+        "id": "alert9q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "questpatient4_block",
+        "label": "Question 4",
+        "default": "Q4: Do you suffer from low blood pressure (i.e. less than 90/50mmHg), and/or are prone to faints or collapses? If you are unsure, check with your GP or local pharmacy."
+        },
+        {
+        "type": "text",
+        "id": "alert10q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "questpatient5_block",
+        "label": "Question 5",
+        "default": "Q5: Do you have high blood pressure (i.e. above 150/90mmHg)? If you are unsure, check with your GP or local pharmacy?"
+        },
+        {
+        "type": "text",
+        "id": "alert11q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "paragraph_list_question",
+        "label": "Question 6",
+        "default": "Q6: Do you have any other heart problems or are you under a doctor’s care for any of the following:"
+        },
+        {
+        "type": "richtext",
+        "id": "paragraph_list_text",
+        "label": "List"
+        },
+        {
+        "type": "text",
+        "id": "alert12q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "questpatient7_block",
+        "label": "Question 7",
+        "default": "Q7: Do you have Peyronie's disease, angulation or any other deformation of the penis?"
+        },
+       {
+        "type": "text",
+        "id": "alert13q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "questpatient8_block",
+        "label": "Question 8",
+        "default": "Q8: Have ever had loss of vision because of damage to the optic nerve (such as non-arteritic anterior ischaemic optic neuropathy [NAION]) or have an inherited eye disease?"
+        },
+       {
+        "type": "text",
+        "id": "alert14q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "questpatient9_block",
+        "label": "Question 9",
+        "default": "Q9: Do you have galactose intolerance, Lapp lactase deficiency or glucose-galactose malabsorption?"
+        },
+       {
+        "type": "text",
+        "id": "alert15q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "questpatient10_block",
+        "label": "Question 10",
+        "default": "Q10: Do you have previously diagnosed liver, kidney or urinary problems?"
+        },
+       {
+        "type": "text",
+        "id": "alert16q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+      {
+        "type": "text",
+        "id": "questpatient11_block",
+        "label": "Question 11",
+        "default": "Q11: Do you currently suffer from diabetes or abnormal sugar levels?"
+        },
+       {
+        "type": "text",
+        "id": "alert17q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "questpatient12_block",
+        "label": "Question 12",
+        "default": "Q12: Do you have any of the following health conditions:"
+        },
+        {
+        "type": "richtext",
+        "id": "paragraph_list2_text",
+        "label": "List"
+        },
+        {
+        "type": "text",
+        "id": "alert18q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+         {
+        "type": "text",
+        "id": "questpatient13_block",
+        "label": "Question 13",
+        "default": "Q13: Are you currently using any other medication, even if you’re not taking it regularly? Select from list below:"
+        },
+        {
+        "type": "text",
+        "id": "question_1checkbox",
+        "label": "Checkbox 1",
+        "default": "Nicorandil"
+        },
+        {
+        "type": "text",
+        "id": "question_2checkbox",
+        "label": "Checkbox 2",
+        "default": "Nitrate medication such as Glyceryl Trinitrate (GTN), Isosorbide Mononitrate and Dinitrate.  (including sprays, patches, gels or creams)"
+        },
+        {
+        "type": "text",
+        "id": "question_3checkbox",
+        "label": "Checkbox 3",
+        "default": "Existing erectile dysfunction treatment"
+        },
+        {
+        "type": "text",
+        "id": "question_4checkbox",
+        "label": "Checkbox 4",
+        "default": "Alpha-blockers: Alfuzosin, Doxazosin, Indoramin, Prazosin, Tamsulosin, Terazosin"
+        },
+        {
+        "type": "text",
+        "id": "question_5checkbox",
+        "label": "Checkbox 5",
+        "default": "Antibacterials: Rifampicin, Erythromycin, Clarithromycin, Telithromycin, Gatifloxacin"
+        },
+        {
+        "type": "text",
+        "id": "question_6checkbox",
+        "label": "Checkbox 6",
+        "default": "Antivirals: Atanzavir, Indinavir, Ritonavir, Saquinavir, Telaprevir, Fosamprenavir, Tipranavir, Nelfinavir, Aprinovir or Etravirine"
+        },
+        {
+        "type": "text",
+        "id": "question_7checkbox",
+        "label": "Checkbox 7",
+        "default": "Oral Antifungals: Ketoconazole, Itraconazole, Voriconazole, Fluconazole"
+        },
+        {
+        "type": "text",
+        "id": "question_8checkbox",
+        "label": "Checkbox 8",
+        "default": "Cobicistat"
+        },
+        {
+        "type": "text",
+        "id": "question_9checkbox",
+        "label": "Checkbox 9",
+        "default": "Disopyramide"
+        },
+        {
+        "type": "text",
+        "id": "question_10checkbox",
+        "label": "Checkbox 10",
+        "default": "Dapoxetine (Priligy)"
+        },
+        {
+        "type": "text",
+        "id": "question_11checkbox",
+        "label": "Checkbox 11",
+        "default": "Cimetidine"
+        },
+        {
+        "type": "text",
+        "id": "question_12checkbox",
+        "label": "Checkbox 12",
+        "default": "Bosentan"
+        },
+        {
+        "type": "text",
+        "id": "question_13checkbox",
+        "label": "Checkbox 13",
+        "default": "Riociguat"
+        },
+        {
+        "type": "text",
+        "id": "question_14checkbox",
+        "label": "Checkbox 14",
+        "default": "Please list any other prescription medicines you are taking"
+        },
+         {
+        "type": "text",
+        "id": "alert22q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "text",
+        "id": "question_15checkbox",
+        "label": "Checkbox 15",
+        "default": "Q14: Do you take any recreational drug such as Amyl Nitrate (poppers) or cocaine?"
+        },
+         {
+        "type": "text",
+        "id": "alert23q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "header",
+        "content": "CONSENT AND ACKNOWLEDGEMENT"
+        },
+        {
+        "type": "text",
+        "id": "heading10_block",
+        "label": "Heading Block",
+        "default": "CONSENT AND ACKNOWLEDGEMENT"
+        },
+        {
+        "type": "text",
+        "id": "questconsent1_block",
+        "label": "Question 1",
+        "default": "Q1: Please confirm that you are aware of the following:"
+        },
+        {
+        "type": "richtext",
+        "id": "paragraph_list3_text",
+        "label": "List"
+        },
+        {
+        "type": "text",
+        "id": "alert24q_text",
+        "label": "Alert text",
+        "default": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP."
+        },
+        {
+        "type": "inline_richtext",
+        "id": "inline_custom_terms",
+        "label": "Terms text"
+        },
+         {
+        "type": "text",
+        "id": "alert25q_text",
+        "label": "Alert text",
+        "default": "You must agree to continue."
+        },
+        {
+        "type": "text",
+        "id": "alert26q_text",
+        "label": "Error text",
+        "default": "Question answer is pending"
+        },
+        {
+        "type": "header",
+        "content": "Button text"
+        },
+        {
+        "type": "text",
+        "id": "next_btn",
+        "label": "Next text",
+        "default": "Next"
+        },
+        {
+        "type": "text",
+        "id": "prev_btn",
+        "label": "Previous text",
+        "default": "Previous"
+        },
+        {
+        "type": "text",
+        "id": "check_my_btn",
+        "label": "Check text",
+        "default": "Check My Eligibility"
+        },
+          {
+    "type": "header",
+    "content": "t:sections.all.padding.section_padding_heading"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_top",
+    "default": 36
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "t:sections.all.padding.padding_bottom",
+    "default": 36
+  }
+    ] ,
+  "blocks":[
+    {
+      "type":"other_info",
+      "name":"Other info",
+      "settings":[
+        {
+          "type":"inline_richtext",
+          "id":"heading",
+          "label":"Heading"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_1",
+          "label":"Sub heading first"
+        },
+        {
+          "type":"richtext",
+          "id":"text_1",
+          "label":"Text first"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_2",
+          "label":"Sub heading second"
+        },
+        {
+          "type":"richtext",
+          "id":"text_2",
+          "label":"Text second"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_3",
+          "label":"Sub heading third"
+        },
+        {
+          "type":"richtext",
+          "id":"text_3",
+          "label":"Text third"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_4",
+          "label":"Sub heading fourth"
+        },
+        {
+          "type":"richtext",
+          "id":"text_4",
+          "label":"Text fourth"
+        },
+        {
+          "type":"inline_richtext",
+          "id":"sub_heading_5",
+          "label":"Sub heading fifth"
+        },
+        {
+          "type":"richtext",
+          "id":"text_5",
+          "label":"Text fifth"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name":"General enquiry"
+    }
+  ]
+}
+{% endschema %}

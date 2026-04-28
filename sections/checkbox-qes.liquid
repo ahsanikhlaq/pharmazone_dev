@@ -1,0 +1,539 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background: var(--Gradient, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, rgba(244, 239, 253, 0.60) 0.38%, rgba(255, 245, 191, 0.60) 100%), #FFF);
+  }
+
+  .new-qes-content {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  button.submitt-btn {
+    border-radius: 45px;
+    background: var(--Purple, #4C3E79);
+    border: none;
+    padding: 15px;
+    width: 100%;
+    color: #FFF;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-top: 24px;
+}
+.wl-profile {
+    border-radius: 66.67px;
+    border: 0.5px solid #4C3E79;
+    background: #FFF;
+    max-width: 133px;
+    width: 100%;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4C3E79;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "SF Pro";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12.65px;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+}
+
+  h3.qes-heading {
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: "SF Pro";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.24px;
+    padding-bottom: 24px;
+  }
+
+  .single-qes {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: #FFF;
+    position: relative;
+  }
+
+  p.qes-text {
+    margin: 0;
+    color: var(--Black, #111);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0px;
+  }
+
+  input.qes-inp {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    margin: 0;
+  }
+
+  .inp-svgg {
+    display: flex !important;
+    border-radius: 4px; /* ← changed from 18px (circle) to 4px (square checkbox) */
+    border: 1px solid #111;
+    min-width: 18px;
+    height: 18px;
+  }
+
+  .questionaire-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  p.qes-des {
+    margin: 0;
+    color: #111;
+    font-family: "SF Pro";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.12px;
+    padding-bottom: 24px;
+  }
+
+  .qes-popup-overlay-{{ section.id }} {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .qes-popup-modal-{{ section.id }} {
+    background: #FFF;
+    border-radius: 24px;
+    padding: 60px 32px 32px 32px;
+    max-width: 560px;
+    width: 100%;
+    position: relative;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .qes-popup-close-{{ section.id }} {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    border-radius: 100px;
+    background: #FFF;
+    box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0;
+    line-height: 1;
+    border: none;
+  }
+
+  .qes-popup-heading-{{ section.id }} {
+    color: var(--Black, #111);
+    font-family: "SF Pro";
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 120%;
+    letter-spacing: -0.23px;
+    margin: 0;
+    padding-bottom: 12px;
+  }
+
+  .qes-popup-desc-{{ section.id }} {
+    color: var(--Gray, #545454);
+    font-family: "SF Pro";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 510;
+    line-height: 130%;
+    letter-spacing: -0.32px;
+    padding-bottom: 24px;
+    margin: 0;
+  }
+
+  .qes-popup-textarea-{{ section.id }} {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(0deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%),
+                linear-gradient(107deg, rgba(244,239,253,0.40) 0.38%, rgba(255,245,191,0.40) 100%), #FAFAFA;
+    padding: 18px 20px;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 14px;
+    color: #111;
+    resize: none;
+    height: 180px;
+    outline: none;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .qes-popup-textarea-{{ section.id }}::placeholder {
+    color: #ABABAB;
+  }
+
+  .qes-popup-next-btn-{{ section.id }} {
+    display: block;
+    width: 100%;
+    border-radius: 45px;
+    background: #4C3E79;
+    border: none;
+    padding: 17px;
+    color: #FFF;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  /* Checked state - card border */
+.single-qes:has(input.qes-inp:checked) {
+  border: 1.5px solid #111;
+}
+
+/* Checked state - filled checkbox */
+.single-qes input.qes-inp:checked ~ .inp-svgg {
+  background: #111;
+  border-color: #111;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Checkmark SVG inside */
+.single-qes input.qes-inp:checked ~ .inp-svgg::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) translateY(-1px);
+}
+
+  @media screen and (max-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    h3.qes-heading {
+      font-size: 20px;
+    }
+    .single-qes {
+      padding: 16px;
+      gap: 12px;
+    }
+    p.qes-text {
+      font-size: 14px;
+    }
+    .qes-popup-heading-{{ section.id }} {
+      font-size: 20px;
+    }
+    .qes-popup-desc-{{ section.id }} {
+      font-size: 14px;
+      font-weight: 400;
+      padding-bottom: 16px;
+    }
+    .qes-popup-modal-{{ section.id }} {
+      padding: 40px 24px 24px 24px;
+    }
+    .wl-profile {
+  margin-bottom: 12px;
+}
+  }
+{%- endstyle -%}
+
+{%- comment -%} ── QUESTION SECTION ── {%- endcomment -%}
+<section
+  class="new-qes-section section-{{ section.id }}-padding"
+  data-step="{{ section.settings.step-name }}"
+  next-step="{{ section.settings.next-step }}"
+  {% if section.settings.show-section %}style="display: flex"{% endif %}
+  >
+  <div class="page-width">
+    <div class="new-qes-content">
+
+      {% if section.settings.wl-text != blank %}
+        <div class="wl-profile">{{ section.settings.wl-text }}</div>
+      {% endif %}
+
+      <h3 class="qes-heading">{{ section.settings.qes-headong }}</h3>
+
+      {% if section.settings.des != blank %}
+        <p class="qes-des">{{ section.settings.des }}</p>
+      {% endif %}
+
+      <div class="questionaire-content">
+        {% for block in section.blocks %}
+          {% if block.type == 'question' %}
+            <div class="single-qes" {{ block.shopify_attributes }}>
+              <input
+                type="checkbox"
+                class="qes-inp"
+                next-step="{{ block.settings.next-step }}"
+                popup-step="{{ block.settings.popup-name }}"
+              >
+              <div class="inp-svgg"></div>
+              <p class="qes-text">{{ block.settings.qes-text }}</p>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+            <button class="submitt-btn">
+         {{ section.settings.button-text }}
+      </button>
+    </div>
+  </div>
+</section>
+
+{%- comment -%} ── INLINE POPUP ── {%- endcomment -%}
+{% if section.settings.enable-popup %}
+<div
+  class="qes-popup-overlay-{{ section.id }}"
+  popup-name="{{ section.settings.popup-name }}"
+  next-step="{{ section.settings.popup-next-step }}"
+  id="qes-popup-{{ section.id }}"
+>
+  <div class="qes-popup-modal-{{ section.id }}">
+
+    <button class="qes-popup-close-{{ section.id }}">&#x2715;</button>
+
+    <h2 class="qes-popup-heading-{{ section.id }}">{{ section.settings.popup-heading }}</h2>
+
+    <p class="qes-popup-desc-{{ section.id }}">{{ section.settings.popup-description }}</p>
+
+    {% if section.settings.show-textarea %}
+      <textarea
+        class="qes-popup-textarea-{{ section.id }}"
+        placeholder="{{ section.settings.popup-placeholder }}"
+      ></textarea>
+    {% endif %}
+
+    <button class="qes-popup-next-btn-{{ section.id }}">
+      {{ section.settings.popup-btn-text | default: 'NEXT' }}
+    </button>
+
+  </div>
+</div>
+
+<script>
+  (function () {
+    var overlay  = document.getElementById('qes-popup-{{ section.id }}');
+    var closeBtn = overlay ? overlay.querySelector('.qes-popup-close-{{ section.id }}') : null;
+    var nextBtn  = overlay ? overlay.querySelector('.qes-popup-next-btn-{{ section.id }}') : null;
+
+    if (!overlay) return;
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        overlay.style.display = 'none';
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function () {
+        overlay.style.display = 'none';
+        var nextStep = overlay.getAttribute('next-step');
+        if (nextStep && window.QuizFlow) {
+          window.QuizFlow.goTo(nextStep);
+        }
+      });
+    }
+  })();
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Question checkbox Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "qes-headong",
+      "label": "Question Heading"
+    },
+    {
+      "type": "text",
+      "id": "wl-text",
+      "label": "Badge Text (e.g. Weight Loss Profile)",
+      "info": "Leave blank to hide"
+    },
+    {
+      "type": "textarea",
+      "id": "des",
+      "label": "Description / Sub-text",
+      "info": "Leave blank to hide"
+    },
+    {
+      "type": "text",
+      "id": "step-name",
+      "label": "This Step Name (data-step)",
+      "info": "e.g. fiv-step"
+    },
+    {
+      "type": "text",
+      "id": "next-step",
+      "label": "Default Next Step",
+      "info": "Used only if no block sets a next-step. Usually leave blank."
+    },
+    {
+      "type": "checkbox",
+      "id": "show-section",
+      "label": "Show this section on load",
+      "default": false,
+      "info": "Only enable on the very first section of the quiz"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Popup Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable-popup",
+      "label": "Enable Popup for this section",
+      "default": false,
+      "info": "When enabled, a popup overlay is added to this section."
+    },
+    {
+      "type": "text",
+      "id": "popup-name",
+      "label": "Popup Name",
+      "info": "Must match the popup-step value set on the question block that triggers it. e.g. p-popup"
+    },
+    {
+      "type": "text",
+      "id": "popup-next-step",
+      "label": "Popup → Next Step",
+      "info": "Which step to go to after clicking NEXT inside the popup. e.g. per-step"
+    },
+    {
+      "type": "text",
+      "id": "popup-heading",
+      "label": "Popup Heading",
+      "default": "More Information"
+    },
+    {
+      "type": "textarea",
+      "id": "popup-description",
+      "label": "Popup Description",
+      "default": "Please provide more details."
+    },
+    {
+      "type": "checkbox",
+      "id": "show-textarea",
+      "label": "Show text area in popup",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "popup-placeholder",
+      "label": "Textarea Placeholder",
+      "default": "Specify here..."
+    },
+    {
+      "type": "text",
+      "id": "popup-btn-text",
+      "label": "Popup Button Text",
+      "default": "NEXT"
+    },
+    {
+      "type": "text",
+      "id": "button-text",
+      "label": "button text",
+      "default": "Submit"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Answer Option",
+      "settings": [
+        {
+          "type": "text",
+          "id": "qes-text",
+          "label": "Answer Text"
+        },
+        {
+          "type": "text",
+          "id": "next-step",
+          "label": "Next Step",
+          "info": "Which step to show when this option is selected. e.g. six-step"
+        },
+        {
+          "type": "text",
+          "id": "popup-name",
+          "label": "Popup Name (optional)",
+          "info": "If set, clicking this option opens a popup. Must match the Popup Name in section settings above."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Question checkbox Section"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,858 @@
+<section
+  class="custom-hero-section {%  if section.settings.about-styling %}about-styling{% endif %}"
+  style="
+    --pt-desktop: {{ section.settings.padding_top_desktop }}px;
+    --pb-desktop: {{ section.settings.padding_bottom_desktop }}px;
+    --pt-mobile: {{ section.settings.padding_top_mobile }}px;
+    --pb-mobile: {{ section.settings.padding_bottom_mobile }}px;
+  "
+>
+  <div class="page-width">
+  <div class="cs-content-wrapper">
+  {% if section.settings.desktop_banner != blank %}
+    
+     {{ section.settings.desktop_banner
+        | image_url: width: 1200
+        | image_tag:
+          class: 'hero-bg hero-bg-image hero-bg-desktop',
+          loading: 'eager',
+          alt: section.settings.mobile_banner.alt
+      }}
+    {% else %}
+        {% assign video_poster = section.settings.video | image_url   %}
+                    {% if section.settings.video != blank %}
+                   <div class="play-wrapper">
+                    <!-- Video -->
+                   <div class="video-slider">
+                    {{ section.settings.video | video_tag: 
+                        class: 'custom-video-slider des',
+                        controls: false,
+                        autoplay: false,
+                        loop: true,
+                        muted: false,
+                        playsinline: true,
+                        poster: video_poster
+                    }}
+                    <span class="cs-video-slider-play-butt">{% render 'video-play' %}</span>
+                  </div>
+
+                    
+
+                  </div>
+                   {% endif %}
+    {% endif %}
+
+  {% if section.settings.mobile_banner != blank %}
+    <div class="hero-bg hero-bg-mobile">
+      {{ section.settings.mobile_banner
+        | image_url: width: 1200
+        | image_tag:
+          class: 'hero-bg-image ',
+          loading: 'eager',
+          alt: section.settings.mobile_banner.alt
+      }}
+    </div>
+
+     {% else %}
+                {% assign video_poster = section.settings.video | image_url   %}
+                    {% if section.settings.video != blank %}
+
+                    <!-- Video -->
+                    <div class="video-slider">
+                        {{ section.settings.video | video_tag: class: 'custom-video-slider mob', controls: false, muted: false, poster: video_poster }}
+                        <span class="cs-video-slider-play-butt {% if section.settings.desktop_banner != blank %}des-hide{% endif %}  {% if section.settings.mobile_banner != blank %}mob-hide{% endif %}">{% render 'video-play' %}</span>
+                    </div>
+                      
+
+                   {% endif %}
+
+
+  {% endif %}
+   <div class="cs-overlay"></div>
+
+
+   
+    <div class="hero-content
+      {% if section.settings.cs-class-work != blank %}main-heading_cheak_how-it{% endif %}
+        desktop-v-{{ section.settings.content_vertical_desktop }}
+        desktop-h-{{ section.settings.content_horizontal_desktop }}
+        mobile-v-{{ section.settings.content_vertical_mobile }}
+        mobile-h-{{ section.settings.content_horizontal_mobile }} "
+    
+        style="
+        --desktop-top: {{ section.settings.desktop_top }}px;
+        --desktop-bottom: {{ section.settings.desktop_bottom }}px;
+        --desktop-left: {{ section.settings.desktop_left }}px;
+
+        --mobile-top: {{ section.settings.mobile_top }}px;
+        --mobile-bottom: {{ section.settings.mobile_bottom }}px;
+        --mobile-left: {{ section.settings.mobile_left }}px;
+        "
+    >
+
+      {% if section.settings.img_rat != blank %}
+        <div class="hero-rating">
+          {% if section.settings.mobile_banner != blank %}
+            <img class="desktop-img" src="{{ section.settings.img_rat | image_url }}" alt="img_rat" class="rat-img" loading="eager">
+          {% endif %}
+          <p class="hero-rating-text">
+            {{ section.settings.rating_text }}
+            <span class="pipe-text">{{ section.settings.sec_rating_text }}</span>
+
+          </p>
+        </div>
+      {% endif %}
+
+      <div class="main-heading-img ">
+        {% if section.settings.ab_description %}
+          <p class="cs-title white">{{ section.settings.ab_description }}</p>
+        {% endif %}
+        {% if section.settings.heading %}
+          <div class="main-heading {% if section.settings.cs-class-cheak != blank %}main-heading_cheak{% endif %}">{{ section.settings.heading }}</div>
+        {% endif %}
+        <img
+          class="b-line"
+          src="{{ section.settings.b_line | image_url }}"
+          alt="{{ section.settings.title }}"
+          width="auto"
+          height="auto"
+          loading="lazy"
+        >
+      </div>
+
+      {% if section.settings.description != blank %}
+        <p class="main-description">
+          {{ section.settings.description }}
+        </p>
+      {% endif %}
+{% if section.settings.primary_button_label != blank %}
+      <div class="hero-buttons">
+        
+          <a
+            href="{{ section.settings.primary_button_link }}"
+            class="button--primary cs_button_hover"
+          >
+            {{ section.settings.primary_button_label }}
+          </a>
+        
+
+
+
+    </div>
+    {% endif %}
+    </div>
+  </div>
+</div>
+</section>
+
+
+<style>
+.video-slider {
+    position: relative;
+    cursor:pointer;
+}
+.cs-video-slider-play-butt {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index:5;
+}
+.custom-hero-section {
+  padding-top: var(--pt-desktop);
+  padding-bottom: var(--pb-desktop);
+  overflow: hidden;
+  {% comment %} padding-left:20px;
+  padding-right:20px; {% endcomment %}
+}
+
+.cs-content-wrapper {
+   position:relative;
+   line-height:0px !important;
+}
+
+.hero-bg-image {
+  width:100%;
+  height:auto;
+  border-radius: 20px;  
+}
+.cs-content-wrapper {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden; /* taake overlay rounded ho */
+}
+
+.cs-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display:block !important;
+    border-radius: 20px;
+   background: linear-gradient(180deg, rgba(0, 0, 0, 0.03) 14.45%, rgb(0 0 0 / 42%) 67.91%);
+}
+.hero-content {
+  position: absolute;
+  z-index: 2; /* overlay se upar */
+}
+
+
+.hero-bg-mobile {
+  display: none;
+}
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+.custom-hero-section .main-heading-img {
+    position: relative;
+}
+
+
+.hero-content {
+    {% comment %} max-width: 794px; {% endcomment %}
+     max-width: 890px;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform:translateX(-50%);
+
+}
+.hero-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+.custom-hero-section .main-heading * {
+   color:white !important;
+} 
+.custom-hero-section .main-heading {
+   {% comment %} max-width:552px; {% endcomment %}
+    max-width: 604px;
+    margin: 0 auto;
+}
+.main-heading_cheak_how-it .main-heading{
+  min-width: 900px;
+}
+.main-heading_cheak_how-it{
+  display: flex;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.custom-hero-section .main-heading.main-heading_cheak{
+max-width: 100%;
+ }
+.custom-hero-section .main-heading p {
+    color: {{ section.settings.heading-color }};
+    text-align: {{ section.settings.heading-align }};
+    font-family: var(--custom-fonts);
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 70px; /* 79.2px */
+    letter-spacing: -2px;
+    text-transform: capitalize;
+    margin:0px;
+}
+.custom-hero-section .main-heading p strong{
+    color: {{ section.settings.strong-heading-color }};
+    font-family: var(--custom-fonts);
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 79.2px */
+    letter-spacing: -2px;
+    text-transform: capitalize;
+    margin:0px;
+}
+
+
+
+img.desktop-img {
+   width:80px;
+   height:auto;
+   object-fit:cover;
+}
+.hero-rating-text{
+   color: #FFF;
+    /* copy 2 */
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.4px;
+    margin:0px;
+}
+
+
+
+
+.main-description {
+    color: {{ section.settings.description-color }};
+   text-align: {{ section.settings.heading-align }};
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px; /* 21.6px */
+    margin: 15px auto 0px auto;
+    letter-spacing: 0;
+    max-width: {{ section.settings.des-max-widthh }}px;
+}
+
+.button--primary {
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: -0.72px;
+    text-transform: capitalize;
+    display: flex;
+    height: 60px;
+    padding: 16px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 75px;
+    background: var(--Yellow, #FFD902);
+    border: 1px solid #FFD902;
+    text-decoration:none;
+    max-width:max-content;
+    cursor: pointer;
+    {% comment %} transition: all 0.3s ease; {% endcomment %}
+}
+
+
+.button--primary {
+  cursor: pointer;
+}
+
+/* Hover effect */
+
+
+/* Hover effect */
+.button--secondary:hover {
+  background-color: black;
+  color: white;
+  transform: scale(1.05);
+  border-color: black;
+}
+
+  .custom-hero-section .b-line {
+    position: absolute;
+    max-width: 250px;
+    bottom: 4px;
+    left: 0px;
+
+  }
+
+
+.custom-video-slider.des {
+  display:block;
+   z-index: 5;
+        position: relative;
+}
+.custom-video-slider.mob {
+  display:none;
+}
+.des-hide {
+  display:none !important;
+}
+/* Mobile */
+@media (max-width: 768px) {
+
+ .main-heading_cheak_how-it .main-heading{
+  min-width: unset;
+}
+.cs-overlay{
+  background: transparent;
+
+}
+  .custom-hero-section {
+    padding-top: var(--pt-mobile);
+    padding-bottom: var(--pb-mobile);
+    {% comment %} padding-right:12px;
+    padding-left:12px; {% endcomment %}
+  }
+   .hero-bg-mobile img {
+    width:100%;    
+    height: 600px;
+    display: block; 
+  }
+  .hero-bg-desktop {
+    display: none;
+  }
+
+  .hero-bg-mobile {
+    display: block;
+  }
+  .hero-content {
+    max-width: 342px;
+    bottom:30px;
+    left:12px;
+    right:12px;
+    transform:unset;
+}
+
+.custom-hero-section .main-heading p {
+   font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 43.2px */
+    letter-spacing: -0.72px;
+    max-width: 325px;
+    text-align: {{ section.settings.heading-align-mbl }};
+    color: {{ section.settings.mbl-heading-color }} !important;
+}
+.custom-hero-section .main-heading p strong{
+  font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 43.2px */
+  color: {{ section.settings.mbl-strong-heading-color }} !important;
+}
+.hero-description {
+   margin:12px 0 24px;
+}
+
+.button--primary, .button--secondary {
+  max-width: fit-content;
+padding: 14px 24px;
+margin: 0 auto;
+}
+
+.main-description {
+  color: {{ section.settings.mbl-description-color }};
+   font-size: 14px;
+   line-height: 22px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0px;
+    text-align: {{ section.settings.heading-align-mbl }};
+    margin: 12px 0 0px 0;
+}
+
+
+.hero-rating {
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    flex-direction: column;
+}
+
+.pipe-text {
+   display:none;
+}
+.about-styling .hero-content {
+   max-width:290px;
+}
+
+.cs-title.white {
+  margin:0 0 8px;
+  left:16px;
+  bottom:40px;
+}
+.about-styling .main-heading p {
+   padding:0px;
+}
+
+.custom-video-slider.mob {
+  display:block;
+    z-index: 5;
+        position: relative;
+}
+.custom-video-slider.des {
+  display:none;
+}
+.mob-hide {
+  display:none;
+  
+
+}
+
+}
+
+
+
+{% comment %} styling position {% endcomment %}
+/* Desktop Vertical */
+.desktop-v-top {
+  top: var(--desktop-top);
+  bottom: auto;
+}
+
+.desktop-v-center {
+  top: 50%;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+}
+
+.desktop-v-bottom {
+  bottom: var(--desktop-bottom);
+  top: auto;
+}
+
+/* Desktop Horizontal */
+.desktop-h-left {
+  left: var(--desktop-left);
+  transform: none ;
+}
+
+.desktop-h-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+@media (max-width: 768px) {
+
+  /* Mobile Vertical */
+  .mobile-v-top {
+    top: var(--mobile-top);
+    bottom: auto;
+  }
+
+  .mobile-v-center {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  .mobile-v-bottom {
+    bottom: var(--mobile-bottom);
+    top: auto;
+  }
+
+  /* Mobile Horizontal */
+  .mobile-h-left {
+    left: var(--mobile-left);
+    {% comment %} right: auto; {% endcomment %}
+    transform: none;
+  }
+
+  .mobile-h-center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+}
+
+
+</style>
+
+{% schema %}
+{
+  "name": "Image Video Banner",
+  "settings": [
+
+    {
+      "type": "image_picker",
+      "id": "desktop_banner",
+      "label": "Desktop Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_banner",
+      "label": "Mobile Banner Image"
+    },
+    {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+    },
+    {
+        "type": "select",
+        "id": "content_vertical_desktop",
+        "label": "Desktop Vertical Position",
+        "options": [
+            { "value": "top", "label": "Top" },
+            { "value": "center", "label": "Center" },
+            { "value": "bottom", "label": "Bottom" }
+        ],
+        "default": "bottom"
+        },
+        {
+        "type": "select",
+        "id": "content_horizontal_desktop",
+        "label": "Desktop Horizontal Position",
+        "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+        ],
+        "default": "center"
+        },
+        {
+        "type": "select",
+        "id": "content_vertical_mobile",
+        "label": "Mobile Vertical Position",
+        "options": [
+            { "value": "top", "label": "Top" },
+            { "value": "center", "label": "Center" },
+            { "value": "bottom", "label": "Bottom" }
+        ],
+        "default": "bottom"
+        },
+        {
+        "type": "select",
+        "id": "content_horizontal_mobile",
+        "label": "Mobile Horizontal Position",
+        "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" }
+        ],
+        "default": "left"
+    },
+        {
+        "type": "range",
+        "id": "mobile_top",
+        "label": "Mobile Top Position (px)",
+        "min": 0,
+        "max": 400,
+        "step": 5,
+        "default": 0
+    },
+    {
+        "type": "range",
+        "id": "mobile_bottom",
+        "label": "Mobile Bottom Position (px)",
+        "min": 0,
+        "max": 400,
+        "step": 5,
+        "default": 30
+    },
+    {
+        "type": "range",
+        "id": "mobile_left",
+        "label": "Mobile Left Position (px)",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "default": 12
+    },
+    {
+        "type": "range",
+        "id": "desktop_top",
+        "label": "Desktop Top Position (px)",
+        "min": 0,
+        "max": 500,
+        "step": 5,
+        "default": 0
+    },
+    {
+        "type": "range",
+        "id": "desktop_bottom",
+        "label": "Desktop Bottom Position (px)",
+        "min": 0,
+        "max": 500,
+        "step": 5,
+        "default": 60
+    },
+    {
+        "type": "range",
+        "id": "desktop_left",
+        "label": "Desktop Left Position (px)",
+        "min": 0,
+        "max": 500,
+        "step": 5,
+        "default": 0
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "color",
+      "id": "heading-color",
+      "label": "Heading Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "strong-heading-color",
+      "label": "Heading Strong Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "mbl-heading-color",
+      "label": "Heading Mobile Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "mbl-strong-heading-color",
+      "label": "Heading Strong Mobile Color",
+      "default": "#fff"
+    },
+    {
+      "type": "checkbox",
+      "id": "cs-class-cheak",
+      "label": "Custom Class"
+    },
+    {
+      "type": "checkbox",
+      "id": "cs-class-work",
+      "label": "Custom Class How Its Work"
+    },
+    {
+        "type": "select",
+        "id": "heading-align",
+        "label": "Heading Alignment",
+        "options": [
+            { "value": "left", "label": "left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "right" }
+        ],
+        "default": "center"
+        },
+        {
+        "type": "select",
+        "id": "heading-align-mbl",
+        "label": "Heading Alignment Mobile",
+        "options": [
+            { "value": "left", "label": "left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "right" }
+        ],
+        "default": "center"
+        },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "color",
+      "id": "description-color",
+      "label": "Description Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "mbl-description-color",
+      "label": "Description Mobile Color",
+      "default": "#fff"
+    },
+    {
+        "type": "range",
+        "id": "des-max-widthh",
+        "label": "Max-Width (px)",
+        "min": 0,
+        "max": 1000,
+        "step": 10,
+        "default": 0
+    },
+    {
+      "type": "text",
+      "id": "primary_button_label",
+      "label": "Primary Button Label"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Primary Button Link"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 80
+    },
+    {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "label": "Padding Top (Mobile)",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "default": 48
+    },
+    {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "label": "Padding Bottom (Mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "default": 48
+    },
+
+
+
+  ],
+  "presets": [
+    {
+      "name": "Image Video Banner"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const videoWrappers = document.querySelectorAll(".video-slider");
+
+  videoWrappers.forEach((wrapper, index) => {
+    const video = wrapper.querySelector(".custom-video-slider");
+    const playButton = wrapper.querySelector(".cs-video-slider-play-butt");
+
+    if (!video) return;
+
+    console.log(`[Video ${index}] Ready`, video);
+
+    // Default: paused, button visible
+    video.pause();
+    if (playButton) playButton.style.display = "flex";
+
+    const togglePlayPause = () => {
+      if (video.paused || video.ended) { // <-- include ended
+        console.log(`[Video ${index}] Play`);
+        video.play();
+        if (playButton) playButton.style.display = "none";
+      } else {
+        console.log(`[Video ${index}] Pause`);
+        video.pause();
+        if (playButton) playButton.style.display = "flex";
+      }
+    };
+
+    // Listen to button click
+    if (playButton) {
+      playButton.addEventListener("click", togglePlayPause);
+      console.log(`[Video ${index}] Play button listener added`);
+    }
+
+    // Listen to video click
+    video.addEventListener("click", togglePlayPause);
+    console.log(`[Video ${index}] Video click listener added`);
+
+    // Make sure video is ready before toggling
+    video.addEventListener("loadedmetadata", () => {
+      console.log(`[Video ${index}] Metadata loaded`);
+      video.pause(); // ensure paused by default
+      if (playButton) playButton.style.display = "flex";
+    });
+  });
+});
+</script>

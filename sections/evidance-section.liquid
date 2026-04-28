@@ -1,0 +1,432 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background: var(--Gradient, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, rgba(244, 239, 253, 0.60) 0.38%, rgba(255, 245, 191, 0.60) 100%), #FFF);
+    min-height: 100vh;
+  }
+
+  .ue-wrap-{{ section.id }} {
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: "SF Pro", -apple-system, sans-serif;
+  }
+
+  /* ── Heading ── */
+  .ue-heading-{{ section.id }} {
+  color: var(--Black, #111);
+font-family: "SF Pro";
+font-size: 24px;
+font-style: normal;
+font-weight: 510;
+line-height: 120%; /* 28.8px */
+letter-spacing: -0.24px;
+margin: 0px 0px 24px 0px;
+  }
+
+  /* ── Upload card ── */
+  .ue-card-{{ section.id }} {
+    background: #FFF;
+    border-radius: 16px;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    min-height: 220px;
+    position: relative;
+    transition: border-color 0.2s ease;
+    border: 2px dashed transparent;
+    border-radius: 8px;
+border: 1px solid var(--light-gray-20, #E0E0E0);
+background: var(--White, #FFF);
+  }
+  div#ue-default-template--26994682102126__evidance_section_PFJn9R {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  .ue-card-{{ section.id }}.drag-over {
+    border-color: #4C3E79;
+    background: linear-gradient(107deg, rgba(244,239,253,0.3) 0.38%, rgba(255,245,191,0.3) 100%), #FFF;
+  }
+
+  /* Cloud icon */
+  .ue-icon-{{ section.id }} {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .ue-icon-{{ section.id }} svg {
+    width: 56px;
+    height: 56px;
+  }
+
+  /* Supported types text */
+  .ue-filetypes-{{ section.id }} {
+    color: var(--Gray, #767676);
+text-align: center;
+font-family: "SF Pro";
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 14.4px */
+letter-spacing: -0.48px;
+  }
+
+  .ue-filetypes-{{ section.id }} span {
+   color: var(--Black, #111);
+font-family: "SF Pro";
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%;
+letter-spacing: -0.48px;
+  }
+
+  /* Upload button */
+  .ue-upload-btn-{{ section.id }} {
+   border-radius: 8px;
+    background: #4C3E79;
+    border: none;
+    padding: 14px 28px;
+    color: #FFF;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: opacity 0.15s ease;
+    width: 100%;
+    color: #FFF;
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "SF Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 510;
+    line-height: 120%;
+    text-transform: capitalize;
+  }
+
+  .ue-upload-btn-{{ section.id }}:hover {
+    opacity: 0.88;
+  }
+
+  /* Hidden real file input */
+  .ue-file-input-{{ section.id }} {
+    display: none;
+  }
+
+  /* Preview area (shown after file selected) */
+  .ue-preview-{{ section.id }} {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .ue-preview-{{ section.id }}.visible {
+    display: flex;
+  }
+
+  .ue-preview-img-{{ section.id }} {
+    max-width: 100%;
+    max-height: 140px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .ue-preview-name-{{ section.id }} {
+    font-size: 13px;
+    color: #4C3E79;
+    font-weight: 500;
+    word-break: break-all;
+    text-align: center;
+  }
+
+  .ue-preview-remove-{{ section.id }} {
+    background: none;
+    border: 1px solid #DDD;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 12px;
+    color: #888;
+    cursor: pointer;
+    font-family: "SF Pro", sans-serif;
+  }
+
+  .ue-preview-remove-{{ section.id }}:hover {
+    border-color: #4C3E79;
+    color: #4C3E79;
+  }
+
+  /* ── Note text ── */
+  .ue-note-{{ section.id }} {
+   color: #4C4C4C;
+leading-trim: both;
+text-edge: cap;
+font-family: "SF Pro";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.5px;
+margin: 0px 0px 24px 0px;
+  }
+
+  .ue-note-{{ section.id }} strong {
+    color: #111;
+    font-weight: 700;
+  }
+
+  /* ── Submit button ── */
+  .ue-submit-btn-{{ section.id }} {
+    display: block;
+    width: 100%;
+    border-radius: 45px;
+    background: #4C3E79;
+    border: none;
+    padding: 16px;
+    color: #FFF;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: opacity 0.15s ease;
+  }
+
+  .ue-submit-btn-{{ section.id }}:hover {
+    opacity: 0.88;
+  }
+
+  @media screen and (max-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .ue-heading-{{ section.id }} {
+      font-size: 20px;
+    }
+  }
+{%- endstyle -%}
+
+<section
+  class="new-qes-section section-{{ section.id }}-padding"
+  data-step="{{ section.settings.step-name }}"
+  next-step="{{ section.settings.next-step }}"
+>
+  <div class="page-width">
+    <div class="ue-wrap-{{ section.id }}">
+
+      <!-- Heading -->
+      <h3 class="ue-heading-{{ section.id }}">{{ section.settings.heading }}</h3>
+
+      <!-- Upload Card -->
+      <div class="ue-card-{{ section.id }}" id="ue-dropzone-{{ section.id }}">
+
+        <!-- Default upload UI -->
+        <div class="ue-default-ui-{{ section.id }}" id="ue-default-{{ section.id }}">
+          <div class="ue-icon-{{ section.id }}">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Cloud body -->
+              <path d="M38.5 38.5H40.25C44.806 38.5 48.5 34.806 48.5 30.25C48.5 26.204 45.72 22.806 41.956 21.826C41.98 21.554 42 21.279 42 21C42 15.201 37.299 10.5 31.5 10.5C27.097 10.5 23.316 13.146 21.56 16.924C20.734 16.648 19.854 16.5 18.937 16.5C14.381 16.5 10.687 20.194 10.687 24.75C10.687 24.887 10.693 25.021 10.701 25.155C8.23 26.513 6.5 29.176 6.5 32.25C6.5 36.806 10.194 40.5 14.75 40.5H17.5" stroke="#4C3E79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Arrow up -->
+              <path d="M28 28L28 46" stroke="#4C3E79" stroke-width="2" stroke-linecap="round"/>
+              <path d="M22 34L28 28L34 34" stroke="#4C3E79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <p class="ue-filetypes-{{ section.id }}">
+            Supported file types: <span>{{ section.settings.file_types | default: 'PDF, JPG, PNG' }}</span>
+          </p>
+
+          <input
+            type="file"
+            class="ue-file-input-{{ section.id }}"
+            id="ue-input-{{ section.id }}"
+            accept=".pdf,.jpg,.jpeg,.png"
+          >
+
+          <div
+            class="ue-upload-btn-{{ section.id }}"
+            onclick="document.getElementById('ue-input-{{ section.id }}').click(); return false;"
+          >
+            Upload File
+          </div>
+        </div>
+
+        <!-- Preview UI (shown after file selected) -->
+        <div class="ue-preview-{{ section.id }}" id="ue-preview-{{ section.id }}">
+          <img class="ue-preview-img-{{ section.id }}" id="ue-preview-img-{{ section.id }}" src="" alt="Preview" style="display:none">
+          <p class="ue-preview-name-{{ section.id }}" id="ue-preview-name-{{ section.id }}"></p>
+          <div class="ue-preview-remove-{{ section.id }}" id="ue-remove-{{ section.id }}">✕ Remove</div>
+        </div>
+
+      </div>
+
+      <!-- Note -->
+      {% if section.settings.note != blank %}
+        <p class="ue-note-{{ section.id }}">
+          <strong>Note:</strong> {{ section.settings.note }}
+        </p>
+      {% endif %}
+
+      <!-- Submit -->
+      <button class="ue-submit-btn-{{ section.id }}">
+        {{ section.settings.btn_text | default: 'SUBMIT DETAILS' }}
+      </button>
+
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var sId      = '{{ section.id }}';
+  var dropzone = document.getElementById('ue-dropzone-' + sId);
+  var fileInput= document.getElementById('ue-input-' + sId);
+  var defaultUi= document.getElementById('ue-default-' + sId);
+  var previewEl= document.getElementById('ue-preview-' + sId);
+  var previewImg = document.getElementById('ue-preview-img-' + sId);
+  var previewName= document.getElementById('ue-preview-name-' + sId);
+  var removeBtn  = document.getElementById('ue-remove-' + sId);
+
+  if (!dropzone || !fileInput) return;
+
+  function showPreview(file) {
+    previewName.textContent = file.name;
+    defaultUi.style.display = 'none';
+    previewEl.classList.add('visible');
+
+    if (file.type.startsWith('image/')) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        previewImg.src = e.target.result;
+        previewImg.style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    } else {
+      previewImg.style.display = 'none';
+    }
+  }
+
+  function resetUpload() {
+    fileInput.value = '';
+    previewImg.src  = '';
+    previewImg.style.display = 'none';
+    previewName.textContent  = '';
+    previewEl.classList.remove('visible');
+    defaultUi.style.display  = '';
+    dropzone.classList.remove('drag-over');
+  }
+
+  fileInput.addEventListener('change', function () {
+    if (this.files && this.files[0]) showPreview(this.files[0]);
+  });
+
+  removeBtn.addEventListener('click', resetUpload);
+
+  // Drag & drop
+  dropzone.addEventListener('dragover', function (e) {
+    e.preventDefault();
+    dropzone.classList.add('drag-over');
+  });
+  dropzone.addEventListener('dragleave', function () {
+    dropzone.classList.remove('drag-over');
+  });
+  dropzone.addEventListener('drop', function (e) {
+    e.preventDefault();
+    dropzone.classList.remove('drag-over');
+    var file = e.dataTransfer.files[0];
+    if (file) {
+      // Transfer to input for form submission
+      var dt = new DataTransfer();
+      dt.items.add(file);
+      fileInput.files = dt.files;
+      showPreview(file);
+    }
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Upload Evidence Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Please Upload Evidence Of Previous Use"
+    },
+    {
+      "type": "text",
+      "id": "file_types",
+      "label": "Supported File Types (display text)",
+      "default": "PDF, JPG, PNG"
+    },
+    {
+      "type": "textarea",
+      "id": "note",
+      "label": "Note text",
+      "default": "Ensure your prescription label, clinic letter, or pharmacy record confirms your dosage and usage instructions."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Submit Button Text",
+      "default": "SUBMIT DETAILS"
+    },
+    {
+      "type": "text",
+      "id": "step-name",
+      "label": "Step Name (data-step)",
+      "info": "e.g. upload-step"
+    },
+    {
+      "type": "text",
+      "id": "next-step",
+      "label": "Next Step",
+      "info": "e.g. per-step"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 28
+    }
+  ],
+  "presets": [
+    {
+      "name": "Upload Evidence Section"
+    }
+  ]
+}
+{% endschema %}

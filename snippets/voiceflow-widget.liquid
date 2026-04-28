@@ -1,0 +1,81 @@
+<!-- Voiceflow Chat Widget with Conditional Loading -->
+<style>
+  /* Override theme's empty div rule for Voiceflow chat */
+  #voiceflow-chat,
+  #voiceflow-chat:empty {
+    display: block !important;
+  }
+  .vfrc-launcher {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  }
+
+  .vfrc-launcher img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+  }
+</style>
+
+<script type="text/javascript">
+  // Define allowed pages where widget should initially load
+  const allowedPages = [
+    '/',
+    '/collections/weight-loss-treatment',
+    '/products/mounjaro-pen-tirzepatide',
+    '/products/wegovy-injectable-pen'
+  ];
+
+  // Check if user is on an allowed page OR has previously interacted with the widget
+  const isAllowedPage = allowedPages.some(path => window.location.pathname.includes(path));
+  const hasInteracted = localStorage.getItem('vf_chat_started') === 'true';
+
+  // Load widget if on allowed page OR if user has previously interacted
+  if (isAllowedPage || hasInteracted) {
+    
+    (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '695c0b9d87d1d8987eb7c6f1' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production',
+          voice: {
+            url: "https://runtime-api.voiceflow.com"
+          },
+          assistant: {
+            persistence: 'localStorage', // Preserves conversation across pages
+            extensions: [
+              window.VoiceflowExtensions.multiselect,
+              window.VoiceflowExtensions.addToCart,
+              window.VoiceflowExtensions.bmiCalculator
+            ]
+          }
+        }).then(() => {
+          // Listen for when user opens the chat
+          window.addEventListener('message', (event) => {
+            if (event.data && typeof event.data === 'string') {
+              try {
+                const message = JSON.parse(event.data);
+                // Only set flag when user actually opens the widget
+                if (message.type === 'voiceflow:open') {
+                  localStorage.setItem('vf_chat_started', 'true');
+                }
+              } catch (e) {
+                // Not a Voiceflow message, ignore
+              }
+            }
+          });
+        });
+      };
+
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+    
+  }
+</script>

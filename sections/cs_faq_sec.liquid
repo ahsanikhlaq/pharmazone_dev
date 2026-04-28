@@ -1,0 +1,329 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_faq_sec_main{
+    max-width: 765px;
+    margin: 0 auto;
+}
+.cs_faq_quastion{
+    margin: 0;
+    color: #0C2421;
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 112%; /* 22.4px */
+    letter-spacing: -0.64px;
+    
+}
+.cs_fa1_main_title p{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 70px; /* 74.4px */
+    letter-spacing: -1.24px;
+    text-align: center;
+    letter-spacing: -0.64px;
+    padding-bottom: 40px;
+}
+.cs_fa1_main_title p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    padding-bottom: 40px;
+}
+.cs_faq_ans p{
+    margin: 0;
+    color: #0C2421;
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; 
+}
+.cs_faq_heading_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* -------faq----- */
+.cs_faq_main{
+    padding: 16px 0px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(12, 36, 33, 0.30);
+}
+.cs_faq_ans {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  transition: all 0.5s ease-in-out; 
+}
+
+.cs_faq_main.active .cs_faq_ans {
+  max-height: 500px; 
+  opacity: 1;
+  padding-top: 15px; 
+}
+
+.cs_faq_icon .faq-icon {
+  transition: transform 0.3s ease;
+}
+.cs_faq_main.active .cs_faq_icon .faq-icon {
+  transform: rotate(180deg); 
+}
+.cs_faq_sec_block_side{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cs_faq_sec_button{
+    display: flex;
+    padding: 16px 54px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 75px;
+    background: var(--Yellow, #FFD902);
+    border: 1px solid  #FFD902;
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    max-width: fit-content;
+    margin: 40px auto 0 auto;
+        text-decoration: none;
+        cursor: pointer;
+}
+.cs_faq_sec_button_mbl{
+    display: none;
+}
+.cs_faq_sec_button_des{
+    display: block;
+}
+/* ------ */
+.cs_faq_icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.cs_faq_icon_main{
+    width: 28px;
+  height: 28px;
+  border-radius: 97.127px;
+  background: linear-gradient(101deg, #F4EFFD -56.39%, #FFF5BF 100%);
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cs_faq_icon .line {
+  position: absolute;
+  background: #343330;
+  transition: all 0.3s ease;
+}
+
+.line1 {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.line2 {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+/* When active → convert PLUS to MINUS */
+.cs_faq_main.active .line2 {
+  opacity: 0;
+  transform: translateX(-50%) scaleY(0);
+}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .cs_fa1_main_title p{
+        font-size: 30px;
+        line-height: 36px;
+        padding: 0;
+    }
+    .cs_fa1_main_title p strong{
+        font-size: 30px;
+        line-height: 36px;
+         padding: 0;
+    }
+    .cs_faq_sec_block_side {
+    gap: 0;
+}
+.cs_faq_icon_main {
+    min-width: 27px;
+    min-height: 27px;
+  }
+    .cs_faq_sec_button_mbl{
+    display: block;
+}
+.cs_faq_sec_button_des{
+    display: none;
+}
+.cs_faq_sec_button{
+    margin: 24px auto;
+    padding: 14px 54px;
+}
+.cs_faq_quastion {
+    font-size: 16px;
+    line-height: 19px; 
+}
+.cs_faq_ans p {
+    font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0;
+}
+  }
+
+  
+  /* ----- */ 
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding cs_faq_main_parent" id="cs_custom_faq_section">
+  <div class="page-width">
+    <div class="cs_faq_sec_main">
+        <div class="cs_fa1_main_title">{{ section.settings.heading }}</div>
+         <a class="cs_faq_sec_button cs_faq_sec_button_mbl cs_faq_sec_button_des_hover" href="{{ section.settings.butt_url }}">{{ section.settings.butt-text }}</a>
+        <div class="cs_faq_sec_block_side">
+            {% for block in section.blocks %}
+            <div class="cs_faq_main">
+  <div class="cs_faq_heading_main">
+    <div class="cs_faq_quastion">{{ block.settings.heading_faq }}</div>
+    <div class="cs_faq_icon_main">
+    <div class="cs_faq_icon">
+      <!-- PLUS / MINUS ICON (pure CSS based) -->
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+    </div>
+    </div>
+  </div>
+  <div class="cs_faq_ans">
+    {{ block.settings.heading_ans }}
+  </div>
+</div>
+        {% endfor %}
+        </div>
+        <a class="cs_faq_sec_button cs_faq_sec_button_des cs_faq_sec_button_des_hover" href="{{ section.settings.butt_url }}">{{ section.settings.butt-text }}</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+    "name": "Custom Faq Section",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "butt-text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "butt_url",
+            "label": "Button Url"
+        },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        {
+        "type": "color",
+        "id": "section_color",
+        "label": "Section Color",
+        "default": "#EFEEE1"
+      },
+    ],
+  "blocks": [
+      {
+        "type": "best-sellers",
+        "name": "Add Tab",
+         "settings": [
+             {
+            "type": "text",
+            "id": "heading_faq",
+            "label": "Question",
+        },
+        {
+            "type": "richtext",
+            "id": "heading_ans",
+            "label": "Answar",
+        },
+      ]
+      },
+    ],
+    "presets": [
+        { "name": "Custom Faq Section" }
+    ]
+}
+{% endschema %}
+<script> 
+  document.querySelectorAll('.cs_faq_heading_main').forEach(function(heading) 
+  { heading.addEventListener('click', function() { 
+    let parent = this.parentElement; if (parent.classList.contains('active'))
+     {
+        parent.classList.remove('active'); } else { 
+           document.querySelectorAll('.cs_faq_main.active').forEach(function(activeItem) {
+             activeItem.classList.remove('active'); });  parent.classList.add('active'); } }); });
+             </script>

@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_img_video_dCGkpE": {
+      "type": "custom-img-video",
+      "name": "Image Video Banner",
+      "settings": {
+        "desktop_banner": "shopify://shop_images/Frame_2147241468_4.png",
+        "mobile_banner": "shopify://shop_images/Frame_2147241468_5.png",
+        "content_vertical_desktop": "bottom",
+        "content_horizontal_desktop": "left",
+        "content_vertical_mobile": "bottom",
+        "content_horizontal_mobile": "left",
+        "mobile_top": 0,
+        "mobile_bottom": 20,
+        "mobile_left": 12,
+        "desktop_top": 0,
+        "desktop_bottom": 60,
+        "desktop_left": 40,
+        "heading": "<p>Pharmazon Wellness Library</p>",
+        "heading-color": "#ffffff",
+        "strong-heading-color": "#ffffff",
+        "mbl-heading-color": "#ffffff",
+        "mbl-strong-heading-color": "#ffffff",
+        "cs-class-cheak": true,
+        "cs-class-work": false,
+        "heading-align": "left",
+        "heading-align-mbl": "left",
+        "description": "Explore expert tips and proven advice to support your weight loss and wellbeing goals. Learn how to create a healthier lifestyle that truly lasts.",
+        "description-color": "#ffffff",
+        "mbl-description-color": "#ffffff",
+        "des-max-widthh": 1000,
+        "primary_button_label": "",
+        "primary_button_link": "",
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 12,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "recent_blog_Nf4bfF": {
+      "type": "Recent-blog",
+      "blocks": {
+        "add_UmFYXm": {
+          "type": "add",
+          "settings": {
+            "butt-text": "All Articles",
+            "butt-url": "shopify://blogs/blogs"
+          }
+        },
+        "add_p4zVtR": {
+          "type": "add",
+          "disabled": true,
+          "settings": {
+            "butt-text": "Health & Diet",
+            "butt-url": "shopify://blogs/blogs"
+          }
+        },
+        "add_8pQdiC": {
+          "type": "add",
+          "disabled": true,
+          "settings": {
+            "butt-text": "Pharmazon Updates",
+            "butt-url": "shopify://blogs/blogs"
+          }
+        }
+      },
+      "block_order": [
+        "add_UmFYXm",
+        "add_p4zVtR",
+        "add_8pQdiC"
+      ],
+      "name": "Recent blog posts",
+      "settings": {
+        "heading": "<p>Recent <strong>blog posts</strong></p>",
+        "richtext": "<p>Explore expert tips and proven advice to support your weight loss and wellbeing goals. Learn how to create a healthier lifestyle that truly lasts.</p>",
+        "back_color": "",
+        "desktop-padding-top": 40,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 10,
+        "padding-bottom-mbl": 24
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "layout": "grid",
+        "show_image": true,
+        "image_height": "large",
+        "show_date": true,
+        "show_author": false,
+        "padding_top": 36,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "custom_img_video_dCGkpE",
+    "recent_blog_Nf4bfF",
+    "main"
+  ]
+}

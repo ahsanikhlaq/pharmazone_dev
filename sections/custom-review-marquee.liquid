@@ -1,0 +1,292 @@
+{% stylesheet %}
+.cfeature-scroll-container-mf {
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 0;
+    margin:  0;
+}
+
+.cfeature-scroll-track-mf {
+    display: flex;
+    animation: scroll-seamless 20s linear infinite;
+    width: max-content;
+    will-change: transform;
+}
+
+.cfeature-icon-item-mf {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    margin-right: 60px;
+}
+
+.cfeature-icon-item-mf img {
+    width: 24px;
+    height: 24px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.cfeature-icon-item-mf span {
+    color: var(--Gray, #545454);
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.ccs-marquee {
+    max-width: 1080px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto !important;
+    padding: 24px 0px  !important;
+    border: 0px !important;
+}
+.cweight-parent {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 12px 0px;
+}
+
+/* pdp styling */
+.ccs-marquee.pdp-marquee {
+   max-width: 1360px;
+   display: flex;
+    padding: 24px 0px 60px 0px !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 36px;
+    align-self: stretch;
+    margin:0 auto;
+}
+.cpdp-marquee .cfeature-icon-item-mf span {
+  font-weight: 500;
+}
+
+/* Seamless infinite scroll animation */
+@keyframes scroll-seamless {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-33.333%);
+    }
+}
+
+@media (max-width: 768px) {
+
+
+    .cpdp-marquee .cfeature-icon-item-mf span {
+       font-size: 16px;
+    }
+    .cfeature-scroll-container-mf {
+        padding:  0;
+    }
+
+    .cfeature-icon-item-mf {
+        margin-right: 36px !important;
+    }
+    .cfeature-icon-item-mf {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+   }
+   .cfeature-scroll-track-mf.cmob 
+    .cfeature-icon-item-mf.cmob:nth-child(5n) {
+      display: none;
+  }
+  .cfeature-scroll-track-mf.cmob {
+    width: max-content;
+  }
+
+  .cfeature-icon-item-mf.cmob {
+    min-width: max-content;
+    white-space: nowrap;
+  }
+  .cweight-parent {
+    
+    padding: 14px 0px;
+    padding-left:20px;
+}
+.cweight-parent.page-width {
+    padding: 12px 0 12px 12px !important;
+}
+
+
+   
+}
+
+
+/* newstyle */
+.cleft-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 0 24px;
+}
+.cshop-footer .cicon {
+    display: inline-block;
+    width: var(--icon-size, 20px);
+    height: var(--icon-size, 20px);
+    vertical-align: middle;
+    fill: none;
+    stroke: white;
+}
+.czz-footer-link.cleft-con-richtext {
+   padding: 8px 0 0;
+}
+.cleft-col .czz-footer-title {
+  margin-bottom: 10px;
+}
+.cleft-col .ctext-button-large {
+      font-family: "Source Code Pro" !important;
+}
+
+.ccs-marquee .cfeature-icon-item-mf.cdesktop {
+  display: flex;
+}
+.ccs-marquee .cfeature-scroll-track-mf.cmob {
+  display: none;
+}
+@media (max-width: 768px) {
+   .cleft-col .czz-footer-title {
+     font-size: 18px !important; 
+     padding:0px;
+     border: 0px;
+    margin:0 0 10px !important;
+  }
+  .cleft-col {
+    flex-direction: column;
+    margin:0 0 32px;
+  }
+  .ctext-button-large {
+     font-size:14px !important;
+  }
+  .czz-footer-link.cleft-con-richtext {
+     font-size:14px;
+  }
+  .czz-footer-link.cleft-con-richtext {
+    padding: 0px;
+  }
+  .cpdp-marquee .cfeature-scroll-container-mf {
+     padding: 16px 0 !important;
+  }
+  .ccs-marquee .cfeature-icon-item-mf.cdesktop {
+  display: none;
+}
+.ccs-marquee .cfeature-scroll-track-mf.cmob {
+  display: flex;
+  gap:0px !important;
+}
+.ccs-marquee {
+ padding: 20px 0 !important;
+}
+.ccs-marquee.cpdp-marquee {
+      display: flex;
+      padding: 10px 0 30px!important;
+}
+.cpdp-marquee .cfeature-icon-item-mf img {
+         width: 42px !important;
+         height: 42px !important;
+}
+
+
+
+}
+
+
+{% endstylesheet %}
+
+<div class="cweight-parent page-width">
+
+<div class="cweight-svg">
+           {%  render 'trustpilot-svg' %}
+</div>
+
+
+<div class="cfeature-scroll-container-mf sec-{{ section.id }} {% if section.settings.pdp %}cpdp-marquee{% endif %} {% if section.settings.hide %}ccs-marquee{% endif %} {% if section.settings.pdp-styling %}cpdp-marquee{% endif %}">          
+        <div class="cfeature-scroll-track-mf cmob">
+          {% comment %} Original set {% endcomment %}
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              <div class="cfeature-icon-item-mf cmob">
+                {% if block.settings.icon %}
+                  <img src="{{  block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="50" height="39" loading="eager" fetchpriority="high">
+                {% endif %}
+                <span>{{ block.settings.title }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          {% comment %} Duplicate set 1 {% endcomment %}
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              <div class="cfeature-icon-item-mf mob">
+                {% if block.settings.icon %}
+                  <img src="{{  block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="50" height="39" loading="lazy" fetchpriority="high">
+                {% endif %}
+                <span>{{ block.settings.title }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          {% comment %} Duplicate set 2 {% endcomment %}
+          {% for block in section.blocks %}
+            {% if block.type == 'feature' %}
+              <div class="cfeature-icon-item-mf mob">
+                {% if block.settings.icon %}
+                  <img src="{{  block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="50" height="39" loading="lazy" fetchpriority="high">
+                {% endif %}
+                <span>{{ block.settings.title }}</span>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      </div>
+
+{% schema %}
+{
+  "name": "Custom Review Marquee",
+  "tag": "section",
+  "class": "scrolling-feature-icons",
+  "settings": [
+    {
+          "type": "checkbox",
+          "id": "hide",
+          "label": "Hide Desktop"
+    },
+    
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "label": "enter titel",
+          "id":"title",
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Review Marquee",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

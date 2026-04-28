@@ -1,0 +1,434 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_adva_text_img_main{
+    display: flex;
+    gap: 40px;
+}
+.cs_adva_text_side{
+    width: 49%;
+}
+.cs_adva_img_side{
+    width: 51%;
+}
+.cs_adantage_heading p{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_adantage_heading p strong{
+    margin: 0;
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_adavntage_richtext p{
+    margin: 0;
+    color: var(--Gray, #545454);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    padding: 12px 0 36px 0;
+    letter-spacing: 0;
+}
+
+
+.cs_adva_faq_heading_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cs_adva_faq_main{
+        border-bottom: 1px solid #E3E2E6;
+    padding: 20px 12px 20px 0;
+    cursor: pointer;
+}
+.cs_adva_faq_quastion{
+    margin: 0;
+    color: var(--Black, #111);
+font-family: var(--custom-fonts);
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.42px;
+}
+.cs_adva_faq_ans p{
+    margin: 0;
+    color: var(--Black, #111);
+font-family: var(--custom-fonts);
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 130%; /* 20.8px */
+letter-spacing: 0px;
+}
+.cs_advantage-main-image{
+    border-radius: 4px;
+    width: 100%;
+    height:auto;
+    display: block;
+    object-fit: cover;
+}
+.cs_advantage_mobile_img{
+    display: none;
+}
+/* -------faq----- */
+.cs_adva_faq_ans {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  transition: all 0.5s ease-in-out; 
+}
+
+.cs_adva_faq_main.active .cs_adva_faq_ans {
+  max-height: 500px; 
+  opacity: 1;
+  padding-top: 15px; 
+}
+
+.cs_adva_faq_icon .faq-icon {
+  transition: transform 0.3s ease;
+}
+.cs_adva_faq_main.active .cs_adva_faq_icon .faq-icon {
+  transform: rotate(180deg); 
+}
+.cs_advantage-mbl-image{
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+} 
+.cs_adva_faq_icon_min{
+    width: 30px;
+    height: 30px;
+    border-radius: 97.127px;
+     background: linear-gradient(101deg, #F4EFFD -56.39%, #FFF5BF 100%);
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cs_adve_faq_button{
+    display: flex;
+    padding: 16px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 75px;
+    background: var(--Yellow, #FFD902);
+    border: 1px solid #FFD902;
+    width: fit-content;
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    margin-top: 36px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.cs_adve_faq_button:hover{
+      background: transparent;
+      border: 1px solid #4C3E79;
+}
+ .cs_adva_faq_icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+
+.cs_adva_faq_icon .cs_adva_line {
+  position: absolute;
+  background:#422B22;
+  transition: all 0.3s ease;
+}
+
+.cs_adva_line1 {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.cs_adva_line2 {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+/* When active → convert PLUS to MINUS */
+.cs_adva_faq_main.active .cs_adva_line2 {
+  opacity: 0;
+  transform: translateX(-50%) scaleY(0);
+}
+/* ------ */
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+   
+
+.cs_adva_text_img_main{
+    flex-direction: column-reverse;
+    gap: 24px;
+}
+.cs_advantage-main-image {
+    height: 400px;
+    border-radius: 12px;
+}
+.cs_adva_text_side{
+    width: 100%;
+}
+.cs_adva_img_side{
+    width: 100%;
+}
+.cs_adantage_heading p{
+    font-size: 30px;
+   line-height: 36px;
+} 
+.cs_adantage_heading p strong{
+    font-size: 30px;
+   line-height: 36px;
+}
+.cs_adavntage_richtext p{
+    font-size: 14px;
+    line-height: 19.6px; 
+    padding: 12px 0 20px 0; 
+    letter-spacing: -0.5px;
+}
+
+
+
+
+.cs_adva_faq_main{
+            padding: 14px 10px 14px 0;
+}
+
+
+.cs_adva_faq_quastion{
+    
+    font-size: 14px;
+        letter-spacing: -0.42px;
+}
+.cs_adva_faq_main.active .cs_adva_faq_ans {
+    padding-top: 10px;
+}
+.cs_adva_faq_ans p{
+    font-size: 13px;
+}
+.cs_adva_faq_icon_min {
+    width: 24px;
+    height: 24px;
+}
+.cs_adva_faq_icon {
+    width: 12px;
+    height: 12px;
+}
+.cs_adve_faq_button{
+    margin-top: 20px;
+}
+  }
+  /* ----- */
+ 
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding cs_advantage_main_parent">
+  <div class="page-width">
+    <div class="cs_adva_text_img_main">
+        <div class="cs_adva_text_side">
+    <div class="cs_adantage_heading">{{ section.settings.heading }}</div>
+    <div class="cs_adavntage_richtext">{{ section.settings.richtext }}</div>
+     
+    <div class="cs_advantage_faq_block_main">
+        {% for block in section.blocks %}
+            {% if block.type == 'Faq' %}
+             <div class="cs_adva_faq_main">
+  <div class="cs_adva_faq_heading_main">
+    <div class="cs_adva_faq_quastion">{{ block.settings.heading_faq }}</div>
+    <div class="cs_adva_faq_icon_min">
+    <div class="cs_adva_faq_icon">
+      <!-- PLUS Icon -->
+       <span class="cs_adva_line cs_adva_line1"></span>
+      <span class="cs_adva_line cs_adva_line2"></span>
+    </div>
+</div>
+  </div>
+  <div class="cs_adva_faq_ans">
+    {{ block.settings.heading_ans }}
+  </div>
+</div>
+
+
+
+            {% endif %}
+        {% endfor %} 
+    </div>
+    <a class="cs_adve_faq_button" href="{{ section.settings.butt_url }}">{{ section.settings.butt_text }}</a>
+</div>
+<div class="cs_adva_img_side">
+    {{ section.settings.img | image_url: width: 1440 | image_tag:
+                class: 'cs_advantage-main-image',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lezy"
+              }}
+</div>
+  </div>
+</div>
+</section>
+{% schema %}
+{
+    "name": "Image Text Section",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Richtext"
+        },
+        {
+            "type": "text",
+            "id": "butt_text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "butt_url",
+            "label": "Button Url"
+        },
+        {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Min Imgae"
+        },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        }
+    ],
+  "blocks": [
+      {
+        "type": "Faq",
+        "name": "Add Tab",
+         "settings": [
+            {
+            "type": "text",
+            "id": "heading_faq",
+            "label": "Question",
+        },
+        {
+            "type": "richtext",
+            "id": "heading_ans",
+            "label": "Answar",
+        },
+         ]
+        },
+    ],
+    "presets": [
+        { "name": "Image Text Section" }
+    ]
+}
+{% endschema %}
+
+{% comment %} <script>
+document.querySelectorAll('.cs_adva_faq_heading_main').forEach(function(heading) {
+  heading.addEventListener('click', function() {
+    // Pehle sare parent se "active" hatao
+    document.querySelectorAll('.cs_adva_faq_main.active').forEach(function(activeItem) {
+      activeItem.classList.remove('active');
+    });
+
+    // Ab clicked wale parent ko active lagao
+    this.parentElement.classList.add('active');
+  });
+});
+</script> {% endcomment %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  let firstItem = document.querySelector('.cs_adva_faq_main');
+  if (firstItem) {
+    firstItem.classList.add('active');
+  }
+
+  document.querySelectorAll('.cs_adva_faq_heading_main').forEach(function(heading) {
+    heading.addEventListener('click', function() {
+      let parent = this.parentElement;
+
+      if (parent.classList.contains('active')) {
+        parent.classList.remove('active');
+      } else {
+        document.querySelectorAll('.cs_adva_faq_main.active').forEach(function(activeItem) {
+          activeItem.classList.remove('active');
+        });
+        parent.classList.add('active');
+      }
+    });
+  });
+});
+</script>
+

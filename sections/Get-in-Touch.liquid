@@ -1,0 +1,274 @@
+ {% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_touch_tag{
+    border-radius: 66.67px;
+    background: var(--Yellow, #FFD902);
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    color: var(--Black, #111);
+    leading-trim: both;
+    text-edge: cap;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 16.8px */
+    text-transform: capitalize;
+    width: fit-content;
+    margin: 0 auto;
+}
+.cs_touch_title p{
+    margin: 0;
+    color: var(--Black, #111);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+    padding: 20px 0 40px 0;
+}
+.cs_touch_title p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_touch_block_main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px;
+}
+.cs_touch_block_image{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-width: 60px;
+    max-height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+}
+.cs_touch_block_title{
+    margin: 0;
+    color: #000;
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 26.4px */
+    padding: 16px 0 8px 0;
+}
+.cs_touch_block_richtxt p{
+    margin: 0;
+    color: #000;
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    text-align: center;
+    letter-spacing: 0; 
+}
+.cs_touch_block_richtxt p a{
+    margin: 0;
+    color: #000;
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0; 
+}
+.cs_touch_block{
+    border-radius: 6px;
+    padding: 16px 24px 16px 24px;
+    background: rgb(251, 243, 198);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.cs_touch_block:hover{
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .cs_touch_title p {
+    font-size: 36px;
+    line-height: 36px;
+    padding: 16px 0 24px 0;
+}
+ .cs_touch_title p strong{
+    font-size: 36px;
+    line-height: 36px;
+}
+.cs_touch_block_main{
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+.cs_touch_block{
+    padding: 16px;
+}
+.cs_touch_block_richtxt p {
+    font-size: 16px;
+}
+.cs_touch_block_richtxt p a{
+    font-size: 16px;
+}
+  }
+  /* ----- */ 
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <h4 class="cs_touch_tag">{{ section.settings.tag_text }}</h4>
+    <div class="cs_touch_title">{{ section.settings.heading }}</div>
+    <div class="cs_touch_block_main">
+        {% for block in section.blocks %}
+            <div class="cs_touch_block block-{{ block.id }}">
+                <div class="cs_touch_block_img">
+                {{ block.settings.cart-icon
+                | image_url: width: 1200
+                | image_tag:
+                class: 'cs_touch_block_image',
+                loading: 'eager',
+                alt: 'csc'
+            }}
+        </div>
+        <h3 class="cs_touch_block_title">{{ block.settings.title }}</h3>
+        <div class="cs_touch_block_richtxt">{{ block.settings.rich-text }}</div>
+            </div>
+            {% style %}
+              .block-{{ block.id }} .cs_touch_block_richtxt p{
+                 max-width: {{ block.settings.max-width-des }}px;
+              }
+              @media (max-width: 768px){
+                .block-{{ block.id }} .cs_touch_block_richtxt p{
+                 max-width: {{ block.settings.max-width-mbl }}px;
+              }
+              }
+            {% endstyle %}
+        {% endfor %}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+    "name": "Get in Touch",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "tag_text",
+            "label": "Tage"
+        },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        }
+    ],
+  "blocks": [
+      {
+        "type": "best-sellers",
+        "name": "Add Tab",
+         "settings": [
+        {
+            "type": "image_picker",
+            "id": "cart-icon",
+            "label": "Card Image"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Ttitle",
+        },
+        {
+            "type": "richtext",
+            "id": "rich-text",
+            "label": "Rich Text",
+        },
+        { 
+          "type": "range",
+          "id": "max-width-des",
+          "label": "Max Width Desktop",
+          "min": 0,
+          "max": 500,
+          "step": 5,
+          "default": 40 
+        },
+         { 
+          "type": "range",
+          "id": "max-width-mbl",
+          "label": "Max Width Mobile",
+          "min": 0,
+          "max": 500,
+          "step": 5,
+          "default": 40 
+        },
+      ]
+      },
+    ],
+    "presets": [
+        { "name": "Get in Touch" }
+    ]
+}
+{% endschema %}

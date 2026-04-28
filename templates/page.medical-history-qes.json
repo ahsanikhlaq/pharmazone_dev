@@ -1,0 +1,988 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 52
+      }
+    },
+    "general_enquiry_Tb89Xh": {
+      "type": "general-enquiry",
+      "disabled": true,
+      "name": "General enquiry",
+      "settings": {
+        "custom_heading_form": "SIGN UP YOUR USER ACCOUNT",
+        "custom_subhead_form": "",
+        "details_progress": "Details",
+        "finish_progress": "Finish",
+        "heading1_block": "ABOUT YOU",
+        "question1_block": "Q1: Are you male?",
+        "alert1_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "question2_block": "Q2: Are you under 18 years of age?",
+        "alert2_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "question3_block": "Q3: Are you a smoker and do you consume more than 2 cigarettes a day?",
+        "heading2_block": "INDICATION",
+        "question4_block": "Q1: Are you having difficulty in getting and/or maintaining an erection satisfactory for sexual performance",
+        "alert4_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "question5_block": "Q2: Have you used any medication for erectile dysfunction before?",
+        "quesinner1_block": "Q1: Did it work",
+        "quesinner2_block": "Q2: Did you experience any side effects?",
+        "question6_block": "Q3: Do you have any allergy to Sildenafil, tadalafil and vardenafil or any of its ingredients?",
+        "alert6q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "question7_block": "Q4: Are you allergic to any medicines or other substances, for example peanuts or soya?",
+        "heading3_block": "PATIENT HEALTH",
+        "questpatient1_block": "Q1: Has your doctor advised that you are not fit enough for any physical and/or sexual activity?",
+        "alert7q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient2_block": "Q2: Do you feel very breathless or experience chest pain with light or moderate physical activity, such as walking briskly for 20 minutes or climbing two flights of stairs?",
+        "alert8q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient3_block": "Q3: Have you had a heart attack or stroke within the last 6 months?",
+        "alert9q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient4_block": "Q4: Do you suffer from low blood pressure (i.e. less than 90/50mmHg), and/or are prone to faints or collapses? If you are unsure, check with your GP or local pharmacy.",
+        "alert10q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient5_block": "Q5: Do you have high blood pressure (i.e. above 150/90mmHg)? If you are unsure, check with your GP or local pharmacy?",
+        "alert11q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "paragraph_list_question": "Q6: Do you have any other heart problems or are you under a doctor’s care for any of the following:",
+        "paragraph_list_text": "",
+        "alert12q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient7_block": "Q7: Do you have Peyronie's disease, angulation or any other deformation of the penis?",
+        "alert13q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient8_block": "Q8: Have ever had loss of vision because of damage to the optic nerve (such as non-arteritic anterior ischaemic optic neuropathy [NAION]) or have an inherited eye disease?",
+        "alert14q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient9_block": "Q9: Do you have galactose intolerance, Lapp lactase deficiency or glucose-galactose malabsorption?",
+        "alert15q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient10_block": "Q10: Do you have previously diagnosed liver, kidney or urinary problems?",
+        "alert16q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient11_block": "Q11: Do you currently suffer from diabetes or abnormal sugar levels?",
+        "alert17q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient12_block": "Q12: Do you have any of the following health conditions:",
+        "paragraph_list2_text": "",
+        "alert18q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "questpatient13_block": "Q13: Are you currently using any other medication, even if you’re not taking it regularly? Select from list below:",
+        "question_1checkbox": "Nicorandil",
+        "question_2checkbox": "Nitrate medication such as Glyceryl Trinitrate (GTN), Isosorbide Mononitrate and Dinitrate.  (including sprays, patches, gels or creams)",
+        "question_3checkbox": "Existing erectile dysfunction treatment",
+        "question_4checkbox": "Alpha-blockers: Alfuzosin, Doxazosin, Indoramin, Prazosin, Tamsulosin, Terazosin",
+        "question_5checkbox": "Antibacterials: Rifampicin, Erythromycin, Clarithromycin, Telithromycin, Gatifloxacin",
+        "question_6checkbox": "Antivirals: Atanzavir, Indinavir, Ritonavir, Saquinavir, Telaprevir, Fosamprenavir, Tipranavir, Nelfinavir, Aprinovir or Etravirine",
+        "question_7checkbox": "Oral Antifungals: Ketoconazole, Itraconazole, Voriconazole, Fluconazole",
+        "question_8checkbox": "Cobicistat",
+        "question_9checkbox": "Disopyramide",
+        "question_10checkbox": "Dapoxetine (Priligy)",
+        "question_11checkbox": "Cimetidine",
+        "question_12checkbox": "Bosentan",
+        "question_13checkbox": "Riociguat",
+        "question_14checkbox": "Please list any other prescription medicines you are taking",
+        "alert22q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "question_15checkbox": "Q14: Do you take any recreational drug such as Amyl Nitrate (poppers) or cocaine?",
+        "alert23q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "heading10_block": "CONSENT AND ACKNOWLEDGEMENT",
+        "questconsent1_block": "Q1: Please confirm that you are aware of the following:",
+        "paragraph_list3_text": "",
+        "alert24q_text": "We are unable to supply you with medication for erectile dysfunction. Please consult your GP.",
+        "inline_custom_terms": "",
+        "alert25q_text": "You must agree to continue.",
+        "alert26q_text": "Question answer is pending",
+        "next_btn": "Next",
+        "prev_btn": "Previous",
+        "check_my_btn": "Check My Eligibility",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "questionaire_header_8TKhGV": {
+      "type": "questionaire-header",
+      "name": "new header",
+      "settings": {
+        "btm_spacing": 30,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "back-img": "shopify://shop_images/Background_Shadow.svg",
+        "logo": "shopify://shop_images/Mask_group.png"
+      }
+    },
+    "progress_bar_mJzWWW": {
+      "type": "progress-bar",
+      "name": "progress bar",
+      "settings": {
+        "btm_spacing": 30,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 16,
+        "padding_bottom": 16,
+        "show-2-p": false
+      }
+    },
+    "questionaire_step1_6qixRc": {
+      "type": "questionaire-step1",
+      "blocks": {
+        "question_ERLfa3": {
+          "type": "question",
+          "settings": {
+            "side-img": "shopify://shop_images/Group_1707479889.svg",
+            "step-heading": "Medical History",
+            "step-des": "We’ll ask a few questions about your weight and health to assist our consultant in recommending a safe and effective treatment plan for you."
+          }
+        },
+        "question_d9xT3C": {
+          "type": "question",
+          "settings": {
+            "side-img": "shopify://shop_images/Ellipse_549.svg",
+            "step-heading": "Consultation With Expert",
+            "step-des": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_ERLfa3",
+        "question_d9xT3C"
+      ],
+      "name": "questionaire step 1",
+      "settings": {
+        "btm_spacing": 30,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "heading": "Please provide your medical history prior to meeting with our consultant.",
+        "button-text": "Next",
+        "step-name": "step-start",
+        "next-step": "pl-step"
+      }
+    },
+    "gp_info_gB4eeA": {
+      "type": "Gp-info",
+      "blocks": {
+        "field_CfQN6F": {
+          "type": "field",
+          "settings": {
+            "placeholder": "Full Name",
+            "field_type": "text"
+          }
+        },
+        "field_Qr7xHL": {
+          "type": "field",
+          "settings": {
+            "placeholder": "Email",
+            "field_type": "email"
+          }
+        },
+        "field_iYxrFD": {
+          "type": "field",
+          "disabled": true,
+          "settings": {
+            "placeholder": "Phone Number",
+            "field_type": "tel"
+          }
+        },
+        "field_mxV7RY": {
+          "type": "field",
+          "disabled": true,
+          "settings": {
+            "placeholder": "Address",
+            "field_type": "text"
+          }
+        },
+        "field_yLgHcj": {
+          "type": "field",
+          "disabled": true,
+          "settings": {
+            "placeholder": "Town",
+            "field_type": "text"
+          }
+        },
+        "field_rxphF9": {
+          "type": "field",
+          "disabled": true,
+          "settings": {
+            "placeholder": "Postcode",
+            "field_type": "text"
+          }
+        }
+      },
+      "block_order": [
+        "field_CfQN6F",
+        "field_Qr7xHL",
+        "field_iYxrFD",
+        "field_mxV7RY",
+        "field_yLgHcj",
+        "field_rxphF9"
+      ],
+      "name": "GP Information Form",
+      "settings": {
+        "badge_text": "",
+        "heading": "Enter Your Name and Email",
+        "card_title": "",
+        "show_upload": false,
+        "upload_title": "Upload A Valid Photo ID To Verify Your Identity.",
+        "tab1_text": "Passport",
+        "tab2_text": "UK Driving License",
+        "upload_size_text": "Maximum file size: 5MB.",
+        "upload_btn_text": "Upload File",
+        "note_text": "Please make sure your Photo ID is clear and shows your face, name, and date of birth for verification.",
+        "button_text": "SUBMIT DETAILS",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "step-name": "pl-step",
+        "next-step": "first-step",
+        "new-class": true
+      }
+    },
+    "checkbox_qes_yJijVw": {
+      "type": "checkbox-qes",
+      "blocks": {
+        "question_hQ9VxJ": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Diabetes",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_HQLYx8": {
+          "type": "question",
+          "settings": {
+            "qes-text": "High blood pressure",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_Ckr9KK": {
+          "type": "question",
+          "settings": {
+            "qes-text": "High cholesterol",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_eJqjtK": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Heart or blood vessel disease (including previous heart attack)",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_bzNKgw": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Previous stroke",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_GWDbGR": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Obstructive sleep apnoea",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_kqkHm4": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Acid reflux or GORD (and taking regular medication)",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_pAAGT7": {
+          "type": "question",
+          "settings": {
+            "qes-text": "MASLD (previously NAFLD)",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_TACep7": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Osteoarthritis",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_hcr8rN": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Depression (and taking regular medication)",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_crRrPb": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Erectile dysfunction",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_V3U4xY": {
+          "type": "question",
+          "settings": {
+            "qes-text": "PCOS",
+            "next-step": "",
+            "popup-name": "popup"
+          }
+        },
+        "question_gx7mnd": {
+          "type": "question",
+          "settings": {
+            "qes-text": "None of the above",
+            "next-step": "2-nd step",
+            "popup-name": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_hQ9VxJ",
+        "question_HQLYx8",
+        "question_Ckr9KK",
+        "question_eJqjtK",
+        "question_bzNKgw",
+        "question_GWDbGR",
+        "question_kqkHm4",
+        "question_pAAGT7",
+        "question_TACep7",
+        "question_hcr8rN",
+        "question_crRrPb",
+        "question_V3U4xY",
+        "question_gx7mnd"
+      ],
+      "name": "Question checkbox Section",
+      "settings": {
+        "qes-headong": "Have you been diagnosed with any of the following conditions?",
+        "wl-text": "Medical History",
+        "des": "",
+        "step-name": "first-step",
+        "next-step": "2-nd step",
+        "show-section": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "enable-popup": true,
+        "popup-name": "popup",
+        "popup-next-step": "",
+        "popup-heading": "Thank you for being honest with Pharmazon.",
+        "popup-description": "Could you please provide more details about the medication you're taking, including the dosage and how long you’ve been using it?",
+        "show-textarea": true,
+        "popup-placeholder": "Specified here...",
+        "popup-btn-text": "Continue",
+        "button-text": "Submit"
+      }
+    },
+    "checkbox_qes_qgrCR9": {
+      "type": "checkbox-qes",
+      "blocks": {
+        "question_E9pMEw": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Pancreatitis",
+            "next-step": "",
+            "popup-name": "popup1"
+          }
+        },
+        "question_THGxeH": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Eating disorder",
+            "next-step": "",
+            "popup-name": "popup1"
+          }
+        },
+        "question_LnVa7M": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Weight loss surgery in last 12 months",
+            "next-step": "",
+            "popup-name": "popup1"
+          }
+        },
+        "question_wbLMWT": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Medullary thyroid cancer or MEN2",
+            "next-step": "",
+            "popup-name": "popup1"
+          }
+        },
+        "question_hrc3Wa": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Cancer currently under treatment",
+            "next-step": "",
+            "popup-name": "popup1"
+          }
+        },
+        "question_Cpgpf4": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Active retinopathy",
+            "next-step": "",
+            "popup-name": "popup1"
+          }
+        },
+        "question_xqJwqj": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Heart failure with SOB at rest",
+            "next-step": "",
+            "popup-name": "popup1"
+          }
+        },
+        "question_jgBfeM": {
+          "type": "question",
+          "settings": {
+            "qes-text": "None of the above",
+            "next-step": "3rd-step",
+            "popup-name": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_E9pMEw",
+        "question_THGxeH",
+        "question_LnVa7M",
+        "question_wbLMWT",
+        "question_hrc3Wa",
+        "question_Cpgpf4",
+        "question_xqJwqj",
+        "question_jgBfeM"
+      ],
+      "name": "Question checkbox Section",
+      "settings": {
+        "qes-headong": "Do you have, or have you ever had, any of the following?",
+        "wl-text": "Medical History",
+        "des": "",
+        "step-name": "2-nd step",
+        "next-step": "3rd-step",
+        "show-section": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "enable-popup": true,
+        "popup-name": "popup1",
+        "popup-next-step": "",
+        "popup-heading": "Thank you for being honest with Pharmazon.",
+        "popup-description": "Could you please provide more details about the medication you're taking, including the dosage and how long you’ve been using it?",
+        "show-textarea": true,
+        "popup-placeholder": "Specified here...",
+        "popup-btn-text": "Continue",
+        "button-text": "Submit"
+      }
+    },
+    "journey_qes_4KdTd7": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_qqUMMf": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Prediabetes",
+            "next-step": "",
+            "popup-name": "popup2",
+            "url-step": ""
+          }
+        },
+        "question_jUkDJN": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Type 1 diabetes",
+            "next-step": "",
+            "popup-name": "popup2",
+            "url-step": ""
+          }
+        },
+        "question_MxayAR": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Type 2 diabetes",
+            "next-step": "",
+            "popup-name": "popup2",
+            "url-step": ""
+          }
+        },
+        "question_9iG3GX": {
+          "type": "question",
+          "settings": {
+            "qes-text": "None of above",
+            "next-step": "4-th step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_qqUMMf",
+        "question_jUkDJN",
+        "question_MxayAR",
+        "question_9iG3GX"
+      ],
+      "name": "Question Section",
+      "settings": {
+        "qes-headong": "What type of diabetes of you have?",
+        "wl-text": "Medical History",
+        "des": "",
+        "step-name": "3rd-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "enable-popup": true,
+        "popup-name": "popup2",
+        "popup-next-step": "4-th step",
+        "popup-heading": "Thank you for being honest with Pharmazon.",
+        "popup-description": "Could you please provide more details about the medication  you're taking, including the dosage and how long you’ve been using it?",
+        "show-textarea": true,
+        "popup-placeholder": "Specified here...",
+        "popup-btn-text": "Continue"
+      }
+    },
+    "checkbox_qes_xatnMe": {
+      "type": "checkbox-qes",
+      "blocks": {
+        "question_R7GCDc": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Gallstones",
+            "next-step": "",
+            "popup-name": "popup3"
+          }
+        },
+        "question_Nt6zgg": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Blocked bile flow",
+            "next-step": "",
+            "popup-name": "popup3"
+          }
+        },
+        "question_qcTrWG": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Cholecystitis",
+            "next-step": "",
+            "popup-name": "popup3"
+          }
+        },
+        "question_ULdew9": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Gallbladder surgery in last 12 months",
+            "next-step": "",
+            "popup-name": "popup3"
+          }
+        },
+        "question_PBCqU8": {
+          "type": "question",
+          "settings": {
+            "qes-text": "None of the above",
+            "next-step": "5th-step",
+            "popup-name": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_R7GCDc",
+        "question_Nt6zgg",
+        "question_qcTrWG",
+        "question_ULdew9",
+        "question_PBCqU8"
+      ],
+      "name": "Question checkbox Section",
+      "settings": {
+        "qes-headong": "Do you have any gallbladder issues?",
+        "wl-text": "Medical History",
+        "des": "",
+        "step-name": "4-th step",
+        "next-step": "5th-step",
+        "show-section": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "enable-popup": true,
+        "popup-name": "popup3",
+        "popup-next-step": "",
+        "popup-heading": "Thank you for being honest with Pharmazon.",
+        "popup-description": "Could you please provide more details about the medication you're taking, including the dosage and how long you’ve been using it?",
+        "show-textarea": true,
+        "popup-placeholder": "Specified here...",
+        "popup-btn-text": "Continue",
+        "button-text": "Submit"
+      }
+    },
+    "checkbox_qes_RehKEt": {
+      "type": "checkbox-qes",
+      "blocks": {
+        "question_peWYfc": {
+          "type": "question",
+          "settings": {
+            "qes-text": "CKD (eGFR <30)",
+            "next-step": "",
+            "popup-name": "popup4"
+          }
+        },
+        "question_GkwpQ4": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Severe GI disease",
+            "next-step": "",
+            "popup-name": "popup4"
+          }
+        },
+        "question_r6ANMT": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Malabsorption",
+            "next-step": "",
+            "popup-name": "popup4"
+          }
+        },
+        "question_gq3gFi": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Liver cirrhosis or transplant",
+            "next-step": "",
+            "popup-name": "popup4"
+          }
+        },
+        "question_ezj7ib": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Endocrine disorder",
+            "next-step": "",
+            "popup-name": "popup4"
+          }
+        },
+        "question_WtPY3z": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Alcohol rehabilitation",
+            "next-step": "",
+            "popup-name": "popup4"
+          }
+        },
+        "question_dxUW3P": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Cognitive impairment",
+            "next-step": "",
+            "popup-name": "popup4"
+          }
+        },
+        "question_8hiDQD": {
+          "type": "question",
+          "settings": {
+            "qes-text": "None of the above",
+            "next-step": "6th-step",
+            "popup-name": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_peWYfc",
+        "question_GkwpQ4",
+        "question_r6ANMT",
+        "question_gq3gFi",
+        "question_ezj7ib",
+        "question_WtPY3z",
+        "question_dxUW3P",
+        "question_8hiDQD"
+      ],
+      "name": "Question checkbox Section",
+      "settings": {
+        "qes-headong": "Do you have, or have you ever had, any of these conditions?",
+        "wl-text": "Medical History",
+        "des": "",
+        "step-name": "5th-step",
+        "next-step": "6th-step",
+        "show-section": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "enable-popup": true,
+        "popup-name": "popup4",
+        "popup-next-step": "",
+        "popup-heading": "Thank you for being honest with Pharmazon.",
+        "popup-description": "Could you please provide more details about the medication you're taking, including the dosage and how long you’ve been using it?",
+        "show-textarea": true,
+        "popup-placeholder": "Specified here...",
+        "popup-btn-text": "Continue",
+        "button-text": "Submit"
+      }
+    },
+    "checkbox_qes_Xj3X8m": {
+      "type": "checkbox-qes",
+      "blocks": {
+        "question_hgzGjM": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Amiodarone",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_gzzTUE": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Carbamazepine",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_Pr7kkG": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Ciclosporin",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_TKHWC7": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Clozapine",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_4AahPH": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Digoxin",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_B9kUnk": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Fenfluramine",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_nbyVnG": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Lithium",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_JmTjMX": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Mycophenolate mofetil",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_j9trty": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Oral methotrexate",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_aKAmxd": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Phenobarbital",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_6z6C6N": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Phenytoin",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_RbFxw6": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Somatrogon",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_kRkr7A": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Tacrolimus",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_jaRWXa": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Theophylline",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_E83jWz": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Warfarin",
+            "next-step": "",
+            "popup-name": "popup5"
+          }
+        },
+        "question_jzW9Br": {
+          "type": "question",
+          "settings": {
+            "qes-text": "None of the above",
+            "next-step": "7th-step",
+            "popup-name": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_hgzGjM",
+        "question_gzzTUE",
+        "question_Pr7kkG",
+        "question_TKHWC7",
+        "question_4AahPH",
+        "question_B9kUnk",
+        "question_nbyVnG",
+        "question_JmTjMX",
+        "question_j9trty",
+        "question_aKAmxd",
+        "question_6z6C6N",
+        "question_RbFxw6",
+        "question_kRkr7A",
+        "question_jaRWXa",
+        "question_E83jWz",
+        "question_jzW9Br"
+      ],
+      "name": "Question checkbox Section",
+      "settings": {
+        "qes-headong": "Are you currently taking any of the following medications?",
+        "wl-text": "Medical History",
+        "des": "",
+        "step-name": "6th-step",
+        "next-step": "7th-step",
+        "show-section": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "enable-popup": true,
+        "popup-name": "popup5",
+        "popup-next-step": "",
+        "popup-heading": "Thank you for being honest with Pharmazon.",
+        "popup-description": "Could you please provide more details about the medication you're taking, including the dosage and how long you’ve been using it?",
+        "show-textarea": true,
+        "popup-placeholder": "Specified here...",
+        "popup-btn-text": "Continue",
+        "button-text": "Submit"
+      }
+    },
+    "journey_qes_8XHXic": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_F8PPLA": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Yes",
+            "next-step": "8th-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_K37Uka": {
+          "type": "question",
+          "settings": {
+            "qes-text": "No",
+            "next-step": "9th-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_F8PPLA",
+        "question_K37Uka"
+      ],
+      "name": "Question Section",
+      "settings": {
+        "qes-headong": "Do you have previously received weight management treatment?",
+        "wl-text": "Medical History",
+        "des": "",
+        "step-name": "7th-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "enable-popup": false,
+        "popup-name": "",
+        "popup-next-step": "",
+        "popup-heading": "More Information",
+        "popup-description": "Please provide more details.",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "evidance_section_jxdWaJ": {
+      "type": "evidance-section",
+      "name": "Upload Evidence Section",
+      "settings": {
+        "heading": "Please Upload Evidence Of Previous Use",
+        "file_types": "PDF, JPG, PNG",
+        "note": "Ensure your prescription label, clinic letter, or pharmacy record confirms your dosage and usage instructions.",
+        "btn_text": "SUBMIT",
+        "step-name": "8th-step",
+        "next-step": "9th-step",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "not_eligible_KCg8pj": {
+      "type": "not-eligible",
+      "name": "Not Eligible Screen",
+      "settings": {
+        "doctor_image": "shopify://shop_images/Frame_2147241566.png",
+        "heading": "Your medical history has been submitted.",
+        "description": "Book a consultation with our expert and take the next step with confidence.",
+        "warning_text": "",
+        "button_text": "book your consultation",
+        "contact_url": "https://meetings.hubspot.com/johnny-szeto",
+        "review_link_text": "",
+        "review_url": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "step-name": "9th-step",
+        "next-step": "",
+        "show-order": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "general_enquiry_Tb89Xh",
+    "questionaire_header_8TKhGV",
+    "progress_bar_mJzWWW",
+    "questionaire_step1_6qixRc",
+    "gp_info_gB4eeA",
+    "checkbox_qes_yJijVw",
+    "checkbox_qes_qgrCR9",
+    "journey_qes_4KdTd7",
+    "checkbox_qes_xatnMe",
+    "checkbox_qes_RehKEt",
+    "checkbox_qes_Xj3X8m",
+    "journey_qes_8XHXic",
+    "evidance_section_jxdWaJ",
+    "not_eligible_KCg8pj"
+  ]
+}

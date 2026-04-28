@@ -1,0 +1,1058 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "questionaire_header_H9MNTj": {
+      "type": "questionaire-header",
+      "name": "new header",
+      "settings": {
+        "btm_spacing": 0,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "back-img": "shopify://shop_images/Background_Shadow.svg",
+        "logo": "shopify://shop_images/Mask_group.png"
+      }
+    },
+    "progress_bar_kxCYEh": {
+      "type": "progress-bar",
+      "name": "progress bar",
+      "settings": {
+        "btm_spacing": 30,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 32,
+        "padding_bottom": 24,
+        "show-2-p": true
+      }
+    },
+    "journey_qes_egWnn9": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_nbw4RX": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Yes, I have (from Pharmazon Express)",
+            "next-step": "p-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_RWYAYX": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Yes, I have (from another provider)",
+            "next-step": "evi-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_pWBfiy": {
+          "type": "question",
+          "settings": {
+            "qes-text": "No, I’m new to GLP-1 medications",
+            "next-step": "per-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_nbw4RX",
+        "question_RWYAYX",
+        "question_pWBfiy"
+      ],
+      "name": "question section",
+      "settings": {
+        "qes-headong": "Have you previously received GLP-1  Medication?",
+        "wl-text": "",
+        "des": "",
+        "step-name": "n-1st-step",
+        "next-step": "",
+        "show-section": true,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable-popup": false,
+        "popup-name": "",
+        "popup-next-step": "",
+        "popup-heading": "More Information",
+        "popup-description": "Please provide more details.",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "placeholder_qes_QDDzCP": {
+      "type": "placeholder-qes",
+      "blocks": {
+        "question_aGrQBR": {
+          "type": "question",
+          "settings": {
+            "label": "Your name",
+            "placeholder": "name",
+            "input-type": "text",
+            "min-age": "18",
+            "max-age": "75",
+            "not-el-name": "not-eligible"
+          }
+        },
+        "question_Hja7gc": {
+          "type": "question",
+          "settings": {
+            "label": "Email",
+            "placeholder": "E-mail address",
+            "input-type": "text",
+            "min-age": "18",
+            "max-age": "75",
+            "not-el-name": "not-eligible"
+          }
+        }
+      },
+      "block_order": [
+        "question_aGrQBR",
+        "question_Hja7gc"
+      ],
+      "name": "placeholder question",
+      "settings": {
+        "btm_spacing": 30,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "qes-headong": "What’s your name & email address?",
+        "button-text": "Next",
+        "wl-text": "",
+        "step-name": "per-step",
+        "next-step": "step-start"
+      }
+    },
+    "questionaire_step1_m3fEbW": {
+      "type": "questionaire-step1",
+      "blocks": {
+        "question_i8RxfV": {
+          "type": "question",
+          "settings": {
+            "side-img": "shopify://shop_images/Group_1707479889.svg",
+            "step-heading": "Create Weight Loss Profile",
+            "step-des": "We’ll ask a few questions about your weight and health to help our clinicians tailor a safe and effective treatment plan."
+          }
+        },
+        "question_zyY3De": {
+          "type": "question",
+          "settings": {
+            "side-img": "shopify://shop_images/Ellipse_549.svg",
+            "step-heading": "Eligibility Questions",
+            "step-des": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_i8RxfV",
+        "question_zyY3De"
+      ],
+      "name": "questionaire step 1",
+      "settings": {
+        "btm_spacing": 30,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "heading": "Complete your weight loss profile",
+        "button-text": "Next",
+        "step-name": "step-start",
+        "next-step": "first-step"
+      }
+    },
+    "placeholder_qes_3D7GTU": {
+      "type": "placeholder-qes",
+      "blocks": {
+        "question_w6VBLQ": {
+          "type": "question",
+          "settings": {
+            "label": "",
+            "placeholder": "mm/dd/yyyy",
+            "input-type": "date",
+            "min-age": "18",
+            "max-age": "75",
+            "not-el-name": "not-eligible"
+          }
+        }
+      },
+      "block_order": [
+        "question_w6VBLQ"
+      ],
+      "name": "placeholder question",
+      "settings": {
+        "btm_spacing": 30,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "qes-headong": "What’s your DOB?",
+        "button-text": "Next",
+        "wl-text": "Weight loss profile",
+        "step-name": "first-step",
+        "next-step": "sec-step"
+      }
+    },
+    "multi_unit_GWcXXt": {
+      "type": "multi-unit",
+      "name": "Weight Unit Toggle",
+      "settings": {
+        "wl_text": "Weight Loss Profile",
+        "heading": "What's your Weight?",
+        "tab1_label": "st/lb",
+        "tab1_label1": "Stone (st)",
+        "tab1_placeholder1": "Type here...",
+        "tab1_show_second": true,
+        "tab1_label2": "Pounds (lbs)",
+        "tab1_placeholder2": "Type here...",
+        "tab2_label": "kg",
+        "tab2_label1": "Kilograms (kg)",
+        "tab2_placeholder1": "Type here...",
+        "tab2_show_second": false,
+        "tab2_label2": "1",
+        "tab2_placeholder2": "2",
+        "button_text": "NEXT",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "step-name": "sec-step",
+        "next-step": "thir-step"
+      }
+    },
+    "multi_unit_XBrxKP": {
+      "type": "multi-unit",
+      "name": "Weight Unit Toggle",
+      "settings": {
+        "wl_text": "Weight Loss Profile",
+        "heading": "What's your height?",
+        "tab1_label": "cm",
+        "tab1_label1": "Centimeters (cm)",
+        "tab1_placeholder1": "Type here...",
+        "tab1_show_second": false,
+        "tab1_label2": "Pounds (lbs)",
+        "tab1_placeholder2": "Type here...",
+        "tab2_label": "ft/in",
+        "tab2_label1": "feet (ft)",
+        "tab2_placeholder1": "Type here...",
+        "tab2_show_second": true,
+        "tab2_label2": "Inches (in)",
+        "tab2_placeholder2": "Type here...",
+        "button_text": "NEXT",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "step-name": "thir-step",
+        "next-step": "four-step"
+      }
+    },
+    "bmi_result_pRRW8r": {
+      "type": "bmi-result",
+      "name": "BMI Result Chart",
+      "settings": {
+        "topbar_label": "Your BMI Calculated",
+        "current_weight": 103,
+        "loss_amount": 41,
+        "weight_unit": "lb",
+        "card_title": "You could lose",
+        "subtitle": "in 12 months with Pharmazon",
+        "button_text": "CONTINUE",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "step-name": "four-step",
+        "next-step": "fiv-step",
+        "e-step": "not-eligible",
+        "min-bmi": "27",
+        "max-bmi": "100000000000000"
+      }
+    },
+    "not_eligible_rHEMaX": {
+      "type": "not-eligible",
+      "name": "Not Eligible Screen",
+      "settings": {
+        "doctor_image": "shopify://shop_images/Frame_2147241775.png",
+        "heading": "You aren't eligible",
+        "description": "Based on your answers there is no treatment suitable for you. If you think you have made an error in your responses, please click below to review your answers.",
+        "warning_text": "Giving in accurate information in a clinical consultion, could put your health at risk.",
+        "button_text": "CONTACT",
+        "contact_url": "/pages/contact",
+        "review_link_text": "Review your answer",
+        "review_url": "",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "step-name": "not-eligible",
+        "next-step": "",
+        "show-order": false
+      }
+    },
+    "journey_qes_9phzxw": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_NJc8Af": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Black, African, Caribbean or Black British",
+            "next-step": "six-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_RwPe3e": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Asian or Asian British",
+            "next-step": "six-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_Wf9yFe": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Mixed or multiple ethnicities (including Asian, Black, or Middle Eastern",
+            "next-step": "six-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_JR39YR": {
+          "type": "question",
+          "settings": {
+            "qes-text": "White (including White British, White Irish, and other White backgrounds) Other ethnic group",
+            "next-step": "six-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_6mNJyf": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Prefer not to say",
+            "next-step": "six-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_NJc8Af",
+        "question_RwPe3e",
+        "question_Wf9yFe",
+        "question_JR39YR",
+        "question_6mNJyf"
+      ],
+      "name": "question section",
+      "settings": {
+        "qes-headong": "What is your ethnicity?",
+        "wl-text": "Weight loss profile",
+        "des": "",
+        "step-name": "fiv-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable-popup": false,
+        "popup-name": "",
+        "popup-next-step": "",
+        "popup-heading": "More Information",
+        "popup-description": "Please provide more details.",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "journey_qes_hwa73e": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_qh7yjD": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Yes",
+            "next-step": "sev-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_9jhWxz": {
+          "type": "question",
+          "settings": {
+            "qes-text": "No",
+            "next-step": "sev-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_qh7yjD",
+        "question_9jhWxz"
+      ],
+      "name": "question section",
+      "settings": {
+        "qes-headong": "Are you currently a smoker?",
+        "wl-text": "Weight loss profile",
+        "des": "",
+        "step-name": "six-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable-popup": false,
+        "popup-name": "",
+        "popup-next-step": "",
+        "popup-heading": "More Information",
+        "popup-description": "Please provide more details.",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "gp_info_CMzB3c": {
+      "type": "Gp-info",
+      "blocks": {
+        "field_a9mDqw": {
+          "type": "field",
+          "settings": {
+            "placeholder": "Full Name",
+            "field_type": "text"
+          }
+        },
+        "field_GN8z3U": {
+          "type": "field",
+          "settings": {
+            "placeholder": "NHS Number",
+            "field_type": "text"
+          }
+        },
+        "field_r7zEEM": {
+          "type": "field",
+          "settings": {
+            "placeholder": "Phone Number",
+            "field_type": "tel"
+          }
+        },
+        "field_E7eMxp": {
+          "type": "field",
+          "settings": {
+            "placeholder": "Address",
+            "field_type": "text"
+          }
+        },
+        "field_8B8DYW": {
+          "type": "field",
+          "settings": {
+            "placeholder": "Town",
+            "field_type": "text"
+          }
+        },
+        "field_nJAwek": {
+          "type": "field",
+          "settings": {
+            "placeholder": "Postcode",
+            "field_type": "text"
+          }
+        }
+      },
+      "block_order": [
+        "field_a9mDqw",
+        "field_GN8z3U",
+        "field_r7zEEM",
+        "field_E7eMxp",
+        "field_8B8DYW",
+        "field_nJAwek"
+      ],
+      "name": "GP Information Form",
+      "settings": {
+        "badge_text": "Weight Loss Profile",
+        "heading": "Enter Your GP Information",
+        "card_title": "Enter Your Detail",
+        "show_upload": true,
+        "upload_title": "Upload A Valid Photo ID To Verify Your Identity.",
+        "tab1_text": "Passport",
+        "tab2_text": "UK Driving License",
+        "upload_size_text": "Maximum file size: 5MB.",
+        "upload_btn_text": "Upload File",
+        "note_text": "Please make sure your Photo ID is clear and shows your face, name, and date of birth for verification.",
+        "button_text": "SUBMIT DETAILS",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "step-name": "sev-step",
+        "next-step": "2-start-step",
+        "new-class": false
+      }
+    },
+    "questionaire_step1_YVeBaW": {
+      "type": "questionaire-step1",
+      "blocks": {
+        "question_Qc7g4D": {
+          "type": "question",
+          "settings": {
+            "side-img": "shopify://shop_images/Vector.svg",
+            "step-heading": "Weight loss profile",
+            "step-des": ""
+          }
+        },
+        "question_RmbVWY": {
+          "type": "question",
+          "settings": {
+            "side-img": "shopify://shop_images/Group_1707479889.svg",
+            "step-heading": "Eligibility Questions",
+            "step-des": "A licensed medical provider will review this to build a treatment plan tailored to your goals."
+          }
+        }
+      },
+      "block_order": [
+        "question_Qc7g4D",
+        "question_RmbVWY"
+      ],
+      "name": "questionaire step 1",
+      "settings": {
+        "btm_spacing": 30,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "heading": "Complete your eligibility",
+        "button-text": "Next",
+        "step-name": "2-start-step",
+        "next-step": "eig-step"
+      }
+    },
+    "journey_qes_7bHxLX": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_M66LhY": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Male",
+            "next-step": "ten-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_yDbKbk": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Female",
+            "next-step": "nin-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_M66LhY",
+        "question_yDbKbk"
+      ],
+      "name": "question section",
+      "settings": {
+        "qes-headong": "What is your Gender at Birth?",
+        "wl-text": "Eligibility Questions",
+        "des": "",
+        "step-name": "eig-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable-popup": false,
+        "popup-name": "",
+        "popup-next-step": "",
+        "popup-heading": "More Information",
+        "popup-description": "Please provide more details.",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "journey_qes_WC89Xt": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_7Bfg3h": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Yes",
+            "next-step": "not-eligible",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_7X7JQn": {
+          "type": "question",
+          "settings": {
+            "qes-text": "No",
+            "next-step": "ten-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_7Bfg3h",
+        "question_7X7JQn"
+      ],
+      "name": "question section",
+      "settings": {
+        "qes-headong": "Are you currently pregnant, breastfeeding, or planning a pregnancy in the next 3 months?",
+        "wl-text": "Eligibility Questions",
+        "des": "GLP-1 medications (such as Mounjaro, Wegovy and Nevolat) should not be used during pregnancy or while breastfeeding. If you are planning a pregnancy, you must stop using Mounjaro and Wegovy at least 3 months before. You must stop Nevolat at least one month before attempting to conceive.",
+        "step-name": "nin-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable-popup": false,
+        "popup-name": "",
+        "popup-next-step": "",
+        "popup-heading": "More Information",
+        "popup-description": "Please provide more details.",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "journey_qes_AcUUfY": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_WBw6ie": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Yes",
+            "next-step": "",
+            "popup-name": "w-popup",
+            "url-step": ""
+          }
+        },
+        "question_TaJrGQ": {
+          "type": "question",
+          "settings": {
+            "qes-text": "No",
+            "next-step": "ele-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_WBw6ie",
+        "question_TaJrGQ"
+      ],
+      "name": "question section",
+      "settings": {
+        "qes-headong": "Have you taken injectable weight loss medication in the last 6 months?",
+        "wl-text": "Eligibility Questions",
+        "des": "",
+        "step-name": "ten-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable-popup": true,
+        "popup-name": "w-popup",
+        "popup-next-step": "ele-step",
+        "popup-heading": "Medication Information",
+        "popup-description": "Could you please share a bit more detail about the medication you’re taking, such as the dosage and how long you’ve been using it",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "journey_qes_i7Na4C": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_UXMHyY": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Wegovy / Ozempic (semaglutide)",
+            "next-step": "not-eligible",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_34daUA": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Mounjaro (tirzepatide)",
+            "next-step": "not-eligible",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_3xqF3P": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Saxenda / Nevolat / Victoza (liraglutide)",
+            "next-step": "not-eligible",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_tU4Eam": {
+          "type": "question",
+          "settings": {
+            "qes-text": "I have other allergies",
+            "next-step": "",
+            "popup-name": "m-popup",
+            "url-step": ""
+          }
+        },
+        "question_rKFkig": {
+          "type": "question",
+          "settings": {
+            "qes-text": "None of the above",
+            "next-step": "twe-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_UXMHyY",
+        "question_34daUA",
+        "question_3xqF3P",
+        "question_tU4Eam",
+        "question_rKFkig"
+      ],
+      "name": "question section",
+      "settings": {
+        "qes-headong": "Have you ever experienced an allergic reaction to any of the following medications?",
+        "wl-text": "Eligibility Questions",
+        "des": "",
+        "step-name": "ele-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable-popup": true,
+        "popup-name": "m-popup",
+        "popup-next-step": "twe-step",
+        "popup-heading": "Allergic Reaction Information",
+        "popup-description": "Could you please provide more details about the allergic reaction you experienced, including which medication triggered it?",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "journey_qes_L6CVkm": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_PbMryz": {
+          "type": "question",
+          "settings": {
+            "qes-text": "I agree",
+            "next-step": "consent-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        },
+        "question_NffRJ4": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Disagree",
+            "next-step": "not-eligible",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_PbMryz",
+        "question_NffRJ4"
+      ],
+      "name": "question section",
+      "settings": {
+        "qes-headong": "If you are sexually active, note that Mounjaro may reduce the effectiveness of the oral contraceptive pill.",
+        "wl-text": "Eligibility Questions",
+        "des": "",
+        "step-name": "twe-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable-popup": false,
+        "popup-name": "",
+        "popup-next-step": "",
+        "popup-heading": "More Information",
+        "popup-description": "Please provide more details.",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "patient_consent_BkKepV": {
+      "type": "patient-consent",
+      "blocks": {
+        "consent_card_LyjCUG": {
+          "type": "consent_card",
+          "settings": {
+            "card_title": "Do You Agree To The Following?",
+            "item_1": "The information I have provided is true and accurate to the best of my knowledge",
+            "item_2": "The information I have provided will be used by the prescribers to decide whether it is appropriate to supply medication",
+            "item_3": "I understand that failure to give accurate information may result in a refusal to supply medication, or the supply of medication that is not suitable",
+            "item_4": "",
+            "item_5": "",
+            "item_6": "",
+            "item_7": "",
+            "item_8": "",
+            "checkbox_label": "I confirm that I understand and agree to the above."
+          }
+        },
+        "consent_card_GFtnyU": {
+          "type": "consent_card",
+          "settings": {
+            "card_title": "Treatment Information & Risks",
+            "item_1": "I understand that rapid weight loss and injectable weight loss treatments like Mounjaro, Wegovy and  Orlistat can raise the risk of pancreatitis and gallbladder issues",
+            "item_2": "I understand that severe diarrhoea or vomiting may reduce contraceptive effectiveness",
+            "item_3": "I understand that rapid weight loss and injectable weight loss treatments should not be combined with other weight loss medications",
+            "item_4": "I recognise that these treatments may affect my mood and mental health",
+            "item_5": "",
+            "item_6": "",
+            "item_7": "",
+            "item_8": "",
+            "checkbox_label": "I confirm that I understand and agree to the above."
+          }
+        },
+        "consent_card_LBAkbg": {
+          "type": "consent_card",
+          "settings": {
+            "card_title": "Final Consent",
+            "item_1": "The treatment is solely for my own use and I understand that I cannot supply medication prescribed for me to anyone else",
+            "item_2": "I will read the patient information leaflet supplied with the medication",
+            "item_3": "I will contact Pharmazon and inform my GP if I experience any side effects from treatment, begin any new medication, or if my medical conditions change during the course of treatment",
+            "item_4": "I agree to Pharmazon notifying my GP that I am taking GLP-1 weight loss medication and to allow my GP to share information with Pharmazon if they have any concerns",
+            "item_5": "I give my permission for Pharmazon to request further medical information from my GP if necessary",
+            "item_6": "I give my consent for Pharmazon to access my Summary Care Record (SCR) where clinically necessary to support safe prescribing",
+            "item_7": "I understand that my personal and sensitive health data is collected, processed, shared, and stored as described in the privacy policy.",
+            "item_8": "",
+            "checkbox_label": "I confirm that I understand and agree to the above."
+          }
+        }
+      },
+      "block_order": [
+        "consent_card_LyjCUG",
+        "consent_card_GFtnyU",
+        "consent_card_LBAkbg"
+      ],
+      "name": "Patient Consent",
+      "settings": {
+        "step_name": "consent-step",
+        "next_step": "thrteen-step",
+        "wp_heading": "To verify your weight kindly provide clear photos that display your weight measurement.",
+        "guide_title": "Follow the photo guide:",
+        "guide_text": "Tight clothing, clear background, good light, full body (front & side). Showing your face and upper body and waist. Wearing tight body hugging clothes (not loose fitting) so the clinician can verify your weight.",
+        "example_good_1": "shopify://shop_images/Frame_2147241860_2.png",
+        "caption_good_1": "Full body, tight fitted clothing.",
+        "example_bad_1": "shopify://shop_images/Frame_2147241862.png",
+        "caption_bad_1": "Close up of face, no body shown.",
+        "example_good_2": "shopify://shop_images/Frame_2147241864.png",
+        "caption_good_2": "Full body, tight fitted clothing.",
+        "example_bad_2": "shopify://shop_images/Frame_2147241865.png",
+        "caption_bad_2": "Dark clothing hides body shape.",
+        "upload_heading": "Upload Proof of Weight Here",
+        "front_label": "Upload your full Front Image*",
+        "side_label": "Upload your full Side Image*",
+        "video_label": "Take a Short Video",
+        "wp_note": "Used only by our clinical team to process your order quickly.",
+        "wp_button_text": "SUBMIT",
+        "badge_text": "Patient Consent",
+        "page_heading": "Patient Consent",
+        "button_text": "YES I AGREE",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "skip_photos": false
+      }
+    },
+    "building_plan_tkYtiA": {
+      "type": "building-plan",
+      "blocks": {
+        "step_hyXGzn": {
+          "type": "step",
+          "settings": {
+            "step_text": "Analyzing your profile info",
+            "state": "done"
+          }
+        },
+        "step_YLHqHc": {
+          "type": "step",
+          "settings": {
+            "step_text": "Checking your eligibility",
+            "state": "loading"
+          }
+        },
+        "step_ycfCYQ": {
+          "type": "step",
+          "disabled": true,
+          "settings": {
+            "step_text": "Preparing your plan",
+            "state": "pending"
+          }
+        }
+      },
+      "block_order": [
+        "step_hyXGzn",
+        "step_YLHqHc",
+        "step_ycfCYQ"
+      ],
+      "name": "Building Plan Screen",
+      "settings": {
+        "heading": "We're building you a personalized plan",
+        "doctor_image": "shopify://shop_images/Frame_2147241775.svg",
+        "doctor_name": "Our Clinical Team",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "step-name": "thrteen-step",
+        "next-step": "person-plan",
+        "auto": "true"
+      }
+    },
+    "journey_qes_wxrT9w": {
+      "type": "journey-qes",
+      "blocks": {
+        "question_de9UQK": {
+          "type": "question",
+          "settings": {
+            "qes-text": "Within the last 3 months",
+            "next-step": "",
+            "popup-name": "",
+            "url-step": "/pages/new-journey"
+          }
+        },
+        "question_LeYBBr": {
+          "type": "question",
+          "settings": {
+            "qes-text": "More than 3 months ago",
+            "next-step": "per-step",
+            "popup-name": "",
+            "url-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_de9UQK",
+        "question_LeYBBr"
+      ],
+      "name": "question section",
+      "settings": {
+        "qes-headong": "How long has it been since your last GLP-1 supply from Pharmazon Express?",
+        "wl-text": "",
+        "des": "",
+        "step-name": "p-step",
+        "next-step": "",
+        "show-section": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "enable-popup": false,
+        "popup-name": "",
+        "popup-next-step": "",
+        "popup-heading": "More Information",
+        "popup-description": "Please provide more details.",
+        "show-textarea": true,
+        "popup-placeholder": "Specify here...",
+        "popup-btn-text": "NEXT"
+      }
+    },
+    "evidance_section_PFJn9R": {
+      "type": "evidance-section",
+      "name": "Upload Evidence Section",
+      "settings": {
+        "heading": "Please Upload Evidence Of Previous Use",
+        "file_types": "PDF, JPG, PNG",
+        "note": "Please upload your previous prescription or Doctor’s letter that confirms your previous use of GLP-1 medications. You can request a copy from your prescribing doctor if you don’t have it in your possession.",
+        "btn_text": "SUBMIT DETAILS",
+        "step-name": "evi-step",
+        "next-step": "per-step",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "personalized_plan_6Y6wUa": {
+      "type": "personalized-plan",
+      "blocks": {
+        "plan_CYzgKB": {
+          "type": "plan",
+          "settings": {
+            "product": "mounjaro-pen-tirzepatide-2-5mg",
+            "custom_image": "shopify://shop_images/image_2819.png",
+            "plan_name": "Mounjaro",
+            "price_label": "First Month price",
+            "price": "",
+            "row1_label": "Injection Frequency",
+            "row1_value": "Weekly",
+            "row2_label": "Weight loss progress",
+            "row2_value": "Faster & more noticeable",
+            "row3_label": "Additional benefits",
+            "row3_value": "Reduces the risk of heart disease",
+            "btn_text": "Continue With Mounjaro",
+            "btn_url": "",
+            "next-step": ""
+          }
+        },
+        "plan_9XrW6T": {
+          "type": "plan",
+          "settings": {
+            "product": "wegovy-injectable-pen-1-7mg",
+            "custom_image": "shopify://shop_images/image_2818.png",
+            "plan_name": "Wegovy",
+            "price_label": "First Month price",
+            "price": "",
+            "row1_label": "Injection Frequency",
+            "row1_value": "Weekly",
+            "row2_label": "Weight loss progress",
+            "row2_value": "Gradual & steady",
+            "row3_label": "Additional benefits",
+            "row3_value": "Reduces the risk of heart disease",
+            "btn_text": "Continue With Wegovy",
+            "btn_url": "",
+            "next-step": ""
+          }
+        }
+      },
+      "block_order": [
+        "plan_CYzgKB",
+        "plan_9XrW6T"
+      ],
+      "name": "Personalized Plans",
+      "settings": {
+        "heading": "Base on your answers\nhere is your personalized Plans",
+        "step-name": "person-plan",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "questionaire_header_H9MNTj",
+    "progress_bar_kxCYEh",
+    "journey_qes_egWnn9",
+    "placeholder_qes_QDDzCP",
+    "questionaire_step1_m3fEbW",
+    "placeholder_qes_3D7GTU",
+    "multi_unit_GWcXXt",
+    "multi_unit_XBrxKP",
+    "bmi_result_pRRW8r",
+    "not_eligible_rHEMaX",
+    "journey_qes_9phzxw",
+    "journey_qes_hwa73e",
+    "gp_info_CMzB3c",
+    "questionaire_step1_YVeBaW",
+    "journey_qes_7bHxLX",
+    "journey_qes_WC89Xt",
+    "journey_qes_AcUUfY",
+    "journey_qes_i7Na4C",
+    "journey_qes_L6CVkm",
+    "patient_consent_BkKepV",
+    "building_plan_tkYtiA",
+    "journey_qes_wxrT9w",
+    "evidance_section_PFJn9R",
+    "personalized_plan_6Y6wUa"
+  ]
+}

@@ -1,0 +1,980 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_bage_gfRHac": {
+          "type": "custom-bage",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_JKhcwC": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "custom_reviews_LUQe4n": {
+          "type": "custom-reviews",
+          "settings": {
+            "content": "<p><strong>Achieve sustainable weight loss with Wegovy.</strong><br/>Control hunger, support weight loss, and improve overall health with Wegovy injection prescribed following a clinical review for safe, responsible treatment.</p>"
+          }
+        },
+        "icon_text_NFfamz": {
+          "type": "icon-text",
+          "settings": {
+            "icon1": "shopify://shop_images/Frame_31.svg",
+            "icon-text1": "Clinically Studied",
+            "icon2": "shopify://shop_images/Line.svg",
+            "icon-text2": "Weight Loss",
+            "icon3": "shopify://shop_images/Capa_1_6.svg",
+            "icon-text3": "Weekly Dosing",
+            "icon4": "shopify://shop_images/Capa_1_7.svg",
+            "icon-text4": "Appetite Control"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "title": "Choose your dosage:",
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "custom_variants_BAb4pL": {
+          "type": "custom-variants",
+          "settings": {}
+        },
+        "doctor_comments_AtT6P6": {
+          "type": "doctor-comments",
+          "settings": {
+            "img": "shopify://shop_images/65f45f41cca7664d43290e73_dr_20avatar_20medium_20opt_png.png",
+            "richtext": "<p>\"Only patients who are currently on the medication or have recently been on it can start on a higher dose\"</p>",
+            "name": "Dr. Ruth Cohen"
+          }
+        },
+        "get_started_BkUF8q": {
+          "type": "Get-Started",
+          "settings": {
+            "butt-text": "Get Started",
+            "butt-url": "https://pharmazonexpress.com/pages/questionaire-journey",
+            "icon1": "shopify://shop_images/65f45f41cca7664d43290e8d_renew-icon_svg.svg",
+            "icon-text1": "Lowest price",
+            "icon2": "shopify://shop_images/SVG_2.svg",
+            "icon-text2": "Standard UK Delivery",
+            "icon3": "shopify://shop_images/SVG_3.svg",
+            "icon-text3": "Safe Payment"
+          }
+        },
+        "collapse_R94r4B": {
+          "type": "collapse",
+          "settings": {
+            "heading_faq": "What results can you expect with Wegovy?",
+            "heading_ans": "<p>Clinical studies show that Wegovy® can help people achieve significant weight loss when combined with a reduced-calorie diet and increased physical activity, with average reductions of up to 15% of body weight.</p>"
+          }
+        },
+        "collapse_Heg8mL": {
+          "type": "collapse",
+          "settings": {
+            "heading_faq": "How does Wegovy work in the body?",
+            "heading_ans": "<p>Wegovy contains semaglutide, a GLP-1 receptor agonist that mimics a natural hormone responsible for regulating appetite and slowing stomach emptying, helping you feel full sooner and eat less.</p>"
+          }
+        },
+        "collapse_HwF6Wb": {
+          "type": "collapse",
+          "settings": {
+            "heading_faq": "Is Mounjaro licensed and prescribed in the UK?",
+            "heading_ans": "<p>Around 4% weight loss by week 4, ~6% by week 8, ~9% by week 12, with long-term clinical studies showing up to 20%+ weight loss with continued use.</p>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "btn_custom_link": ""
+          }
+        },
+        "swishlist_simple_wishlist_wishlist_product_button_YpqN7P": {
+          "type": "shopify://apps/swishlist-simple-wishlist/blocks/wishlist_product_button/bfcb80f2-f00d-42ae-909a-9f00c726327b",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": ""
+          }
+        },
+        "order_text_MQAaUP": {
+          "type": "order_text",
+          "disabled": true,
+          "settings": {
+            "order_bg_box_full": "#e7f7f6",
+            "order_text_color": "#000000",
+            "image_1_order": "shopify://shop_images/tracking_1_2.png",
+            "heading_1_order": "Standard delivery get order in 2-4 working days.",
+            "heading_2_order": "Express delivery get order in 1-3 working days"
+          }
+        },
+        "icon_with_text_qwpcxb": {
+          "type": "icon-with-text",
+          "disabled": true,
+          "settings": {
+            "layout": "vertical",
+            "bg_box_full": "#f5f5f5",
+            "box_text_color": "#000000",
+            "ctm_changes": true,
+            "icon_1": "heart",
+            "image_1": "shopify://shop_images/security_1.png",
+            "heading_1": "Safe Payment",
+            "icon_2": "return",
+            "image_2": "shopify://shop_images/fast-delivery_2_1.png",
+            "heading_2": "Standard UK Delivery",
+            "icon_3": "truck",
+            "image_3": "shopify://shop_images/reduce-cost_1_d061122b-5fa0-442b-b4e0-a248ee490193.png",
+            "heading_3": "Lowest Price"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "custom_bage_gfRHac",
+        "title",
+        "judge_me_reviews_preview_badge_JKhcwC",
+        "custom_reviews_LUQe4n",
+        "icon_text_NFfamz",
+        "variant_picker",
+        "custom_variants_BAb4pL",
+        "doctor_comments_AtT6P6",
+        "get_started_BkUF8q",
+        "collapse_R94r4B",
+        "collapse_Heg8mL",
+        "collapse_HwF6Wb",
+        "price",
+        "quantity_selector",
+        "buy_buttons",
+        "swishlist_simple_wishlist_wishlist_product_button_YpqN7P",
+        "order_text_MQAaUP",
+        "icon_with_text_qwpcxb",
+        "description",
+        "share"
+      ],
+      "settings": {
+        "custom-main-calss": true,
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-be9c90ba-dd79-41a9-9d5e-aab32db15a21",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "vertical_thumb": false,
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "hide",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    },
+    "tab_product_GD8UeE": {
+      "type": "tab--product",
+      "disabled": true,
+      "name": "Product Tabs",
+      "settings": {
+        "show_product_description": "Product Details"
+      }
+    },
+    "custom_marquee_LFV9Jy": {
+      "type": "custom-marquee",
+      "blocks": {
+        "feature_LpxWPz": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160914.png",
+            "title": "Cancel anytime subscription"
+          }
+        },
+        "feature_bNGLCq": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160915.png",
+            "title": "Free next-day delivery"
+          }
+        },
+        "feature_EpGm9h": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160913.png",
+            "title": "UK Licensed medication"
+          }
+        },
+        "feature_h3mCmJ": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160914.png",
+            "title": "Cancel anytime subscription"
+          }
+        },
+        "feature_U89hLA": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160913.png",
+            "title": "UK Licensed medication"
+          }
+        }
+      },
+      "block_order": [
+        "feature_LpxWPz",
+        "feature_bNGLCq",
+        "feature_EpGm9h",
+        "feature_h3mCmJ",
+        "feature_U89hLA"
+      ],
+      "custom_css": [],
+      "name": "Custom Marquee",
+      "settings": {
+        "hide": false,
+        "background_color": "#faf8ed"
+      }
+    },
+    "custom_manjor_p7kf97": {
+      "type": "custom-manjor",
+      "blocks": {
+        "benefit_6r9aCK": {
+          "type": "benefit",
+          "settings": {
+            "text": "Long-term weight management",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z\" stroke=\"#26295D\" stroke-width=\"1.44\"></path>\n  <path d=\"M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873\" stroke=\"#26295D\" stroke-width=\"1.44\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>"
+          }
+        },
+        "benefit_bNg8hF": {
+          "type": "benefit",
+          "settings": {
+            "text": "Helps reduce calorie intake",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z\" stroke=\"#26295D\" stroke-width=\"1.44\"></path>\n  <path d=\"M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873\" stroke=\"#26295D\" stroke-width=\"1.44\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>"
+          }
+        },
+        "benefit_p8hXjn": {
+          "type": "benefit",
+          "settings": {
+            "text": "Supports healthy appetite control",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z\" stroke=\"#26295D\" stroke-width=\"1.44\"></path>\n  <path d=\"M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873\" stroke=\"#26295D\" stroke-width=\"1.44\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>"
+          }
+        },
+        "benefit_HjtHEN": {
+          "type": "benefit",
+          "settings": {
+            "text": "Clinically tested treatment",
+            "icon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\">\n  <path d=\"M11.9972 20.8811C16.9015 20.8811 20.8772 16.9054 20.8772 12.0011C20.8772 7.09681 16.9015 3.12109 11.9972 3.12109C7.0929 3.12109 3.11719 7.09681 3.11719 12.0011C3.11719 16.9054 7.0929 20.8811 11.9972 20.8811Z\" stroke=\"#26295D\" stroke-width=\"1.44\"></path>\n  <path d=\"M15.1969 9.60156L10.3969 14.4016L8.79688 12.6873\" stroke=\"#26295D\" stroke-width=\"1.44\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path>\n</svg>"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_6r9aCK",
+        "benefit_bNg8hF",
+        "benefit_p8hXjn",
+        "benefit_HjtHEN"
+      ],
+      "name": "Mounjaro Section",
+      "settings": {
+        "padding_top_desktop": 80,
+        "padding_bottom_desktop": 80,
+        "padding_top_mobile": 25,
+        "padding_bottom_mobile": 40,
+        "bg_color": "#f5f5f5",
+        "heading": "<p>What is <strong>Wegovy?</strong></p>",
+        "description": "<p>Wegovy® is a once-weekly injectable weight loss treatment that contains semaglutide, a GLP-1 receptor agonist that helps regulate appetite and food intake. By helping you feel fuller for longer, it supports sustainable weight management when used alongside healthy lifestyle changes.</p>",
+        "percentage": 84,
+        "percentage_text": "<p>of users lost more than 5% of their body weight during treatment.</p>",
+        "button_text": "Get Started",
+        "button_link": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "graf-img": "shopify://shop_images/Toggle_You_Could_Lose.png",
+        "graf-img-mbl": "shopify://shop_images/Toggle_You_Could_Lose_1.png"
+      }
+    },
+    "clinically_proven_eNW3gy": {
+      "type": "Clinically-Proven",
+      "blocks": {
+        "clinical_block_wWk7NT": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241667.svg",
+            "text": "Clinically proven to support weight loss and type 2 diabetes management"
+          }
+        },
+        "clinical_block_DH9b3C": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668.svg",
+            "text": "GLP-1 receptor agonist that regulates appetite"
+          }
+        },
+        "clinical_block_PB48HR": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668_1.svg",
+            "text": "Reduces appetite and promotes a feeling of fullness"
+          }
+        },
+        "clinical_block_yGAjGW": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668_2.svg",
+            "text": "Helps lower blood sugar and supports heart health"
+          }
+        },
+        "clinical_block_G7BaFP": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668_3.svg",
+            "text": "Convenient once-weekly self-injection"
+          }
+        },
+        "clinical_block_MJhc84": {
+          "type": "clinical_block",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_2147241668_4.svg",
+            "text": "Proven results in clinical trials with significant weight reduction"
+          }
+        }
+      },
+      "block_order": [
+        "clinical_block_wWk7NT",
+        "clinical_block_DH9b3C",
+        "clinical_block_PB48HR",
+        "clinical_block_yGAjGW",
+        "clinical_block_G7BaFP",
+        "clinical_block_MJhc84"
+      ],
+      "name": "Clinical Section",
+      "settings": {
+        "title": "Clinically Proven<strong> Benefits Backed by Science</strong>",
+        "block_heading": "Key Benefits",
+        "desktop_image": "shopify://shop_images/Component_185.png",
+        "mobile_image": "shopify://shop_images/Component_184_4.png",
+        "button_label": "Started your free assessment",
+        "button_link": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "bg_color": "var(--Gradient, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, rgba(244, 239, 253, 0.60) 0.38%, rgba(255, 245, 191, 0.60) 100%), #FFF)",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 12,
+        "padding_bottom_mobile": 28
+      }
+    },
+    "mounjaro_price_CMTEnh": {
+      "type": "Mounjaro-price",
+      "blocks": {
+        "block_7p6yJQ": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Pharmazon Express",
+            "bar_width_des": 215,
+            "bar_width_mbl": 190,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffd902",
+            "bar_price": "<p><strong>~£2,660 </strong>Annual Cost  😮</p>",
+            "bar_price_color": "#ffd902"
+          }
+        },
+        "block_CzXyCW": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Oxford Online Pharmacy",
+            "bar_width_des": 320,
+            "bar_width_mbl": 225,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,160 </strong>Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_RqahjC": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Medicspot",
+            "bar_width_des": 340,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,240</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_xMeRaH": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Numan",
+            "bar_width_des": 360,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,200-£3,840</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_dzUfWd": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Med Express",
+            "bar_width_des": 380,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,500+</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_4ePpNk": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Simple Online Pharmacy",
+            "bar_width_des": 400,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,560+</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_BeJ3af": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Boots Inline Doctor",
+            "bar_width_des": 420,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£4,050+</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_7p6yJQ",
+        "block_CzXyCW",
+        "block_RqahjC",
+        "block_xMeRaH",
+        "block_dzUfWd",
+        "block_4ePpNk",
+        "block_BeJ3af"
+      ],
+      "name": "Mounjaro price",
+      "settings": {
+        "heading": "<p><strong>Wegovy </strong>price Comparison</p>",
+        "image": "shopify://shop_images/Frame_2147241831.png",
+        "sub-heading": "<p>Includes programme costs.</p><p>Example only - individual treatment plans vary.</p>",
+        "bg_color": "#ffffff",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "cs_smarter_pU6d49": {
+      "type": "cs-smarter",
+      "name": "Smarter Section",
+      "settings": {
+        "back-image": "shopify://shop_images/Background_Border_Shadow_OverlayBlur.png",
+        "back-image_mbl": "shopify://shop_images/Background_Border_Shadow_OverlayBlur_3.png",
+        "image": "shopify://shop_images/Frame_2147241935.png",
+        "title": "<strong>A smarter,</strong> more affordable way to start your weight-loss journey. <strong>Go ahead, Hit the damn button below.</strong>",
+        "button_text": "Start Your Weight Loss Journey",
+        "button_link": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "bg_image": "shopify://shop_images/Ellipse_549_6.png",
+        "bg_color": "linear-gradient(135deg, rgba(NaN, NaN, NaN, 1), rgba(250, 244, 212, 1) 50%, rgba(250, 242, 192, 1) 100%)",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 30,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "custom_image_text_qETiEn": {
+      "type": "custom-image-text",
+      "blocks": {
+        "faq_r6MJCD": {
+          "type": "Faq",
+          "settings": {
+            "heading_faq": "Is Wegovy Safe?",
+            "heading_ans": "<p>Wegovy incorporates both the recommended starting safety profile through extensive clinical trials and professional medical review. It is approved by regulatory agencies worldwide, including the FDA and MHRA. While generally well-tolerated, common side effects include nausea, diarrhea, and constipation, which typically improve over time.<br/><br/>The most common side effects are usually mild and may include nausea, vomiting, diarrhea, constipation, and abdominal pain. These side effects tend to be temporary and decrease over time as your body adjusts to the medication. To minimize side effects, it's recommended to start with a low dose and gradually increase it as directed by your healthcare provider.<br/><br/></p>"
+          }
+        },
+        "faq_q3GFJi": {
+          "type": "Faq",
+          "settings": {
+            "heading_faq": "Possible Side Effects",
+            "heading_ans": "<p>Common side effects may include:</p><ul><li>Nausea</li><li>Diarrhoea</li><li>Vomiting</li></ul><p>These effects are usually temporary and improve as your body adjusts to treatment.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_r6MJCD",
+        "faq_q3GFJi"
+      ],
+      "name": "Image Text Section",
+      "settings": {
+        "heading": "<p>Is Wegovy <strong>safe?</strong></p>",
+        "richtext": "<p>Wegovy® has been extensively studied in clinical trials and approved for use in weight management for eligible adults. It should only be used under the supervision of a healthcare professional following a proper medical consultation.</p>",
+        "butt_text": "Check Your Eligibility",
+        "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "img": "shopify://shop_images/8_816779db-9ac5-4ef2-ab5f-5270ab7dbbfa.png",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "proven_n9TfJz": {
+      "type": "Proven",
+      "blocks": {
+        "faq_LdarAE": {
+          "type": "Faq",
+          "settings": {
+            "block_richtext": "<p>Treatment Type<br/><strong>Once-weekly injectable medicine</strong></p>"
+          }
+        },
+        "faq_rLG3WG": {
+          "type": "Faq",
+          "settings": {
+            "block_richtext": "<p>Typical Result<br/><strong>Average of 15% body weight reduction</strong></p>"
+          }
+        },
+        "faq_bjQWwG": {
+          "type": "Faq",
+          "settings": {
+            "block_richtext": "<p>Success Rate<br/><strong>84% of users lost &gt;5% of their weight</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_LdarAE",
+        "faq_rLG3WG",
+        "faq_bjQWwG"
+      ],
+      "name": "Mounjaro®  Proven",
+      "settings": {
+        "des-img": "shopify://shop_images/Frame_2147241664.png",
+        "mbl-img": "shopify://shop_images/Frame_2147241478.png",
+        "heading": "<p>Wegovy®  Proven Results, Clear Facts</p>",
+        "loss_text": "Weight Loss up-to",
+        "loss_number": 15,
+        "butt_text": "Check Your Eligibility",
+        "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "Treatment-type": "<p>Active ingredient<br/><strong>Semaglutide (a GLP-1 receptor agonist)</strong></p>",
+        "Active-ingredient": "",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "transforming_EtjiGV": {
+      "type": "transforming",
+      "blocks": {
+        "faq_pY6HCi": {
+          "type": "Faq",
+          "settings": {
+            "slider_img": "shopify://shop_images/Frame_2147239715_2.png",
+            "slider_text": "Before",
+            "slider_img1": "shopify://shop_images/Frame_2147239716_2_d9a79e73-9762-4dfe-b1be-ce15e3066d42.png",
+            "slider_text1": "After"
+          }
+        },
+        "faq_9tXzxh": {
+          "type": "Faq",
+          "settings": {
+            "slider_img": "shopify://shop_images/Frame_2147239715_1.png",
+            "slider_text": "After",
+            "slider_img1": "shopify://shop_images/Frame_2147239716_1_ac73bf99-0daf-49cc-b3e8-2122fd7023bd.png",
+            "slider_text1": "After"
+          }
+        }
+      },
+      "block_order": [
+        "faq_pY6HCi",
+        "faq_9tXzxh"
+      ],
+      "name": "transforming people",
+      "settings": {
+        "title": "<p><strong>Pharmazon</strong> is transforming people's lives</p>",
+        "reviews_img": "shopify://shop_images/Container_35.png",
+        "reviews_text": "TrustScore 4.7/5",
+        "weight_number": 22,
+        "weight_unit": "kg",
+        "loss-text": "Lost in 12 months",
+        "rich-text": "<p> “With Pharmazoon, everything felt different. The medication, the app, the support — it gave me the structure I needed to finally make it stick. I’ve lost 35kg, feel stronger, more energised, and for the first time in years, genuinely proud of myself “</p>",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 60,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 40
+      }
+    },
+    "steps_GicTDM": {
+      "type": "steps",
+      "blocks": {
+        "faq_UJqT8f": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147241418_2.png",
+            "tag_text": "First Step",
+            "title_text": "Start With a Few Questions",
+            "sub-title_text": "Answer a few easy questions and let us understand your body, lifestyle, and weight-loss goals."
+          }
+        },
+        "faq_PDrQfw": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147241418_3.png",
+            "tag_text": "Second Step",
+            "title_text": "Reviewed by Medical Experts",
+            "sub-title_text": "A licensed prescriber checks everything to make sure your plan is safe & suitable."
+          }
+        },
+        "faq_6bqe8d": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147241418_4.png",
+            "tag_text": "Third Step",
+            "title_text": "Straight to Your Door",
+            "sub-title_text": "Once approved, your treatment is delivered discreetly to your home no clinics, no hassle, just convenience."
+          }
+        }
+      },
+      "block_order": [
+        "faq_UJqT8f",
+        "faq_PDrQfw",
+        "faq_6bqe8d"
+      ],
+      "name": "three-step method",
+      "settings": {
+        "title": "<p>Our three-step method <strong>helps you weight loss</strong></p>",
+        "back_color": "#faf8ed",
+        "desktop-padding-top": 60,
+        "desktop-padding-bottom": 60,
+        "padding-top-mbl": 40,
+        "padding-bottom-mbl": 40
+      }
+    },
+    "cs_faq_sec_igVimy": {
+      "type": "cs_faq_sec",
+      "blocks": {
+        "best_sellers_mnnnaL": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How many doses of Wegovy are in a pen?",
+            "heading_ans": "<p>Each Wegovy FlexTouch pen contains 4 doses. Since Wegovy is injected once per week, one pen usually lasts 4 weeks when used as prescribed.</p>"
+          }
+        },
+        "best_sellers_inzVJg": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How much weight can I lose in 1 month with Wegovy?",
+            "heading_ans": "<p>Weight loss varies from person to person. During the first month, most people are taking the starting dose (0.25 mg), which is mainly used to help the body adjust to the medication. Because of this, weight loss may be modest at first.</p><p>More noticeable weight loss often occurs after the dose is gradually increased over several months.</p>"
+          }
+        },
+        "best_sellers_yxYHwe": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Does Wegovy come in an injectable pen?",
+            "heading_ans": "<p>Yes. Wegovy is supplied as a pre-filled FlexTouch injection pen designed for easy self-administration at home.</p><p>It is injected once weekly under the skin (subcutaneous injection), usually in the:</p><ul><li>Abdomen</li><li>Thigh</li><li>Upper arm</li></ul><p>A <strong>new needle should be used for each injection</strong>.</p>"
+          }
+        },
+        "best_sellers_TUqz7R": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How much is Wegovy in the UK per month?",
+            "heading_ans": "<p>In the UK, Wegovy typically costs around £150–£300 per month, depending on:</p><ul><li>The dose prescribed</li><li>The pharmacy or clinic provider</li><li>Whether consultation or monitoring services are included</li></ul><p>Prices can vary between providers.</p>"
+          }
+        },
+        "best_sellers_RXK9RA": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Which is better, Mounjaro or Wegovy?",
+            "heading_ans": "<p>Both Wegovy and Mounjaro are medications used to support weight loss.</p><ul><li>Wegovy (semaglutide) works by reducing appetite and helping you feel fuller for longer.</li><li>Mounjaro (tirzepatide) works on two hormone pathways involved in appetite and blood sugar regulation.</li></ul><p>Some studies suggest Mounjaro may lead to greater average weight loss, but the best option depends on your medical history and your prescriber’s advice.</p>"
+          }
+        },
+        "best_sellers_i4hViX": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Can you lose 20 pounds in 2 months on Wegovy?",
+            "heading_ans": "<p>Some people may experience significant weight loss, but losing 20 pounds (about 9 kg) in 2 months is not typical for most patients.</p><p>Healthy weight loss with Wegovy is usually gradual and steady, especially when combined with:</p><ul><li>Healthy eating</li><li>Regular physical activity</li><li>Consistent medication use</li></ul>"
+          }
+        },
+        "best_sellers_WChzh3": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "What foods should you avoid on Wegovy?",
+            "heading_ans": "<p>To help minimise side effects, try to limit:</p><ul><li>Fatty or fried foods</li><li>Very sugary foods</li><li>Large meals</li><li>Highly processed foods</li><li>Excess alcohol</li></ul><p>Many people find it helpful to focus on:</p><ul><li>Lean protein</li><li>High-fibre foods</li><li>Smaller balanced meals</li><li>Drinking plenty of water</li></ul>"
+          }
+        },
+        "best_sellers_AfB4Cz": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "What are the worst side effects of Wegovy?",
+            "heading_ans": "<p>Common side effects include:</p><ul><li>Nausea</li><li>Vomiting</li><li>Diarrhoea</li><li>Constipation</li><li>Stomach discomfort</li></ul><p>These symptoms are <strong>usually mild and improve as your body adjusts</strong>.</p><p>Rare but serious side effects can include:</p><ul><li>Pancreatitis</li><li>Gallbladder problems</li><li>Severe abdominal pain</li></ul><p>If symptoms are severe or persistent, <strong>seek medical advice</strong>.<br/><br/></p>"
+          }
+        },
+        "best_sellers_Hckcr6": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Can you drink alcohol while on Wegovy?",
+            "heading_ans": "<p>Alcohol can usually be consumed in moderation, but it may:</p><ul><li>Increase nausea or stomach upset</li><li>Reduce weight-loss progress for some people</li></ul><p>Many people find they naturally drink less alcohol while taking Wegovy.</p>"
+          }
+        },
+        "best_sellers_49PkfM": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Who cannot take Wegovy?",
+            "heading_ans": "<p>Wegovy may not be suitable if you:</p><ul><li>Are pregnant or breastfeeding</li><li>Have a personal or family history of medullary thyroid cancer</li><li>Have multiple endocrine neoplasia syndrome type 2 (MEN2)</li><li>Are allergic to semaglutide</li><li>Have certain severe gastrointestinal conditions</li></ul><p>Always speak with a doctor, pharmacist, or prescriber before starting treatment.</p>"
+          }
+        },
+        "best_sellers_pFDenH": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Why does Wegovy make you not want to drink?",
+            "heading_ans": "<p>Wegovy can affect the areas of the brain that control appetite and reward, which may reduce cravings not only for food but also for alcohol in some people.</p><p>It also slows stomach emptying, which can make alcoholic drinks feel heavier or less enjoyable. Because of this, some people find they naturally drink less alcohol while taking Wegovy.</p>"
+          }
+        },
+        "best_sellers_zYpLha": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "What vitamins should I take on Wegovy?",
+            "heading_ans": "<p>Wegovy does not usually require routine vitamin supplements.</p><p>However, some people may benefit from:</p><ul><li>A general multivitamin</li><li>Vitamin D (commonly recommended in the UK)</li></ul><p>Always check with a healthcare professional before starting supplements.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_mnnnaL",
+        "best_sellers_inzVJg",
+        "best_sellers_yxYHwe",
+        "best_sellers_TUqz7R",
+        "best_sellers_RXK9RA",
+        "best_sellers_i4hViX",
+        "best_sellers_WChzh3",
+        "best_sellers_AfB4Cz",
+        "best_sellers_Hckcr6",
+        "best_sellers_49PkfM",
+        "best_sellers_pFDenH",
+        "best_sellers_zYpLha"
+      ],
+      "name": "Custom Faq Section",
+      "settings": {
+        "heading": "<p>Still Got <strong>Questions?</strong></p>",
+        "butt-text": "Contact Us",
+        "butt_url": "shopify://pages/contact",
+        "back_color": "",
+        "desktop-padding-top": 60,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 40,
+        "padding-bottom-mbl": 20,
+        "section_color": "rgba(0,0,0,0)"
+      }
+    },
+    "weight_loss_3ehqcf": {
+      "type": "Weight-loss",
+      "blocks": {
+        "faq_6HzLbp": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240424.png",
+            "max_width": 180,
+            "max-height": 160,
+            "title": "Mounjaro",
+            "type": "Type",
+            "Weekly": "Weekly Injection",
+            "Benefits": "Benefits",
+            "Helps-control": "Helps control appetite",
+            "Common": "Common Side Effects",
+            "Nausea": "Nausea, Vomiting, Diarrhea",
+            "Recommended": "Recommended For",
+            "Support": "Support for overweight or obesity"
+          }
+        },
+        "faq_ykGHjm": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240418.png",
+            "max_width": 250,
+            "max-height": 160,
+            "title": "Wegovy",
+            "type": "Type",
+            "Weekly": "Weekly Injection",
+            "Benefits": "Benefits",
+            "Helps-control": "Helps control appetite",
+            "Common": "Common Side Effects",
+            "Nausea": "Nausea, Vomiting, Diarrhea",
+            "Recommended": "Recommended For",
+            "Support": "BMI 30 or higher (obesity)"
+          }
+        },
+        "faq_BWYhkz": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240419.png",
+            "max_width": 200,
+            "max-height": 160,
+            "title": "Saxenda",
+            "type": "Type",
+            "Weekly": "Daily Injection",
+            "Benefits": "Benefits",
+            "Helps-control": "Helps control appetite",
+            "Common": "Common Side Effects",
+            "Nausea": "Headache, fatigue, dizziness",
+            "Recommended": "Recommended For",
+            "Support": "Adults with BMI 30+ or 27+ with health risks"
+          }
+        },
+        "faq_yD4YPj": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240419_1.png",
+            "max_width": 170,
+            "max-height": 160,
+            "title": "Orlistat",
+            "type": "Type",
+            "Weekly": "Capsule",
+            "Benefits": "Benefits",
+            "Helps-control": "Supports reduced fat absorption",
+            "Common": "Common Side Effects",
+            "Nausea": "May cause gastrointestinal side effects",
+            "Recommended": "Recommended For",
+            "Support": "Adults 18+ with BMI 30+, or 28+ with health risks"
+          }
+        }
+      },
+      "block_order": [
+        "faq_6HzLbp",
+        "faq_ykGHjm",
+        "faq_BWYhkz",
+        "faq_yD4YPj"
+      ],
+      "name": "Weight loss",
+      "settings": {
+        "title": "<p>Weight loss <strong>treatment</strong></p>",
+        "rich-text": "<p>Based on your health history, BMI and personal goals, we’ll recommend the one that’s right for you.</p>",
+        "butt-text": "Check Your Eligibility",
+        "butt-url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "cs_back_img_3bL9mC": {
+      "type": "cs_back_img",
+      "name": "Loss Journey",
+      "settings": {
+        "back-img": "shopify://shop_images/Frame_2147241468_1.png",
+        "back-img-mbl": "shopify://shop_images/Frame_2147241468_2.png",
+        "heading": "<p>Start Your Weight Loss Journey Today!</p>",
+        "boot-text": "Boost Confidence",
+        "butt-text": "Get Started now",
+        "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 20,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "<strong>You may also like...</strong>",
+        "heading_size": "h2",
+        "section_subheading": "You’ll Love These Too",
+        "btm_spacing": 52,
+        "description_style": "body",
+        "products_to_show": 8,
+        "quick_add": "standard",
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "1",
+        "padding_top": 52,
+        "padding_bottom": 72
+      }
+    },
+    "slider_related_product_qjUKJA": {
+      "type": "slider-related-product",
+      "disabled": true,
+      "name": "Slider related product",
+      "settings": {
+        "heading": "<strong>You may also like...</strong>",
+        "heading_size": "h1",
+        "section_subheading": "You’ll Love These Too",
+        "btm_spacing": 52,
+        "description_style": "body",
+        "products_to_show": 8,
+        "quick_add": "none",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 52,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "tab_product_GD8UeE",
+    "custom_marquee_LFV9Jy",
+    "custom_manjor_p7kf97",
+    "clinically_proven_eNW3gy",
+    "mounjaro_price_CMTEnh",
+    "cs_smarter_pU6d49",
+    "custom_image_text_qETiEn",
+    "proven_n9TfJz",
+    "transforming_EtjiGV",
+    "steps_GicTDM",
+    "cs_faq_sec_igVimy",
+    "weight_loss_3ehqcf",
+    "cs_back_img_3bL9mC",
+    "related-products",
+    "slider_related_product_qjUKJA"
+  ]
+}

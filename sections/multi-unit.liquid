@@ -1,0 +1,408 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background: var(--Gradient, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, rgba(244, 239, 253, 0.60) 0.38%, rgba(255, 245, 191, 0.60) 100%), #FFF);
+  }
+
+  .wt-content-{{ section.id }} {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .wt-badge-{{ section.id }} {
+    border-radius: 66.67px;
+    border: 0.5px solid #4C3E79;
+    background: #FFF;
+    max-width: 133px;
+    width: 100%;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4C3E79;
+    font-family: "SF Pro", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+  }
+
+  .wt-heading-{{ section.id }} {
+    margin: 0;
+    color: #111;
+    font-family: "SF Pro", sans-serif;
+    font-size: 24px;
+    font-weight: 510;
+    line-height: 120%;
+    letter-spacing: -0.24px;
+    padding-bottom: 32px;
+  }
+
+  .wt-unit-toggle-{{ section.id }} {
+    display: flex;
+    border-radius: 60px;
+    background: linear-gradient(0deg, #FDFDFD 0%, #FDFDFD 100%), #FFF;
+    height: 56px;
+    padding: 8px;
+    gap: 4px;
+    margin-bottom: 24px;
+  }
+
+  .wt-unit-tab-{{ section.id }} {
+    flex: 1;
+    padding: 10px;
+    color: var(--Purple, #4C3E79);
+    font-family: "SF Pro", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 36px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .wt-unit-tab-{{ section.id }}.active {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, #F4EFFD 0.38%, #FFF5BF 100%), #111;
+    color: #111;
+    font-weight: 510;
+  }
+
+  .wt-inputs-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .wt-tab-inputs-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .wt-tab-inputs-{{ section.id }}.hidden {
+    display: none;
+  }
+
+  .wt-single-inp-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .wt-single-inp-{{ section.id }}.hidden {
+    display: none;
+  }
+
+  .wt-single-inp-{{ section.id }} label {
+    color: #111;
+    font-family: "SF Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  input.wt-inp-{{ section.id }} {
+    color: #8D8D8D;
+    font-family: "SF Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 14px;
+    background: #FFF;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input.wt-inp-{{ section.id }}:focus-visible {
+    outline: none;
+    box-shadow: none;
+  }
+
+  button.wt-submit-btn-{{ section.id }} {
+    border-radius: 45px;
+    background: #4C3E79;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    color: #FFF;
+    font-family: "SF Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-top: 24px;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .wt-heading-{{ section.id }} {
+      font-size: 20px;
+    }
+    input.wt-inp-{{ section.id }} {
+      padding: 16px;
+    }
+    .wt-inputs-{{ section.id }},
+    .wt-tab-inputs-{{ section.id }} {
+      gap: 20px;
+    }
+    .wt-badge-{{ section.id }} {
+      margin-bottom: 12px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="new-qes-section wt-section-{{ section.id }} section-{{ section.id }}-padding" data-step = '{{ section.settings.step-name }}' next-step = '{{ section.settings.next-step }}'>
+  <div class="page-width">
+    <div class="wt-content-{{ section.id }}">
+
+      {% if section.settings.wl_text != blank %}
+        <div class="wt-badge-{{ section.id }}">{{ section.settings.wl_text }}</div>
+      {% endif %}
+
+      <h3 class="wt-heading-{{ section.id }}">{{ section.settings.heading }}</h3>
+
+      <!-- Unit Toggle Tabs -->
+      <div class="wt-unit-toggle-{{ section.id }}">
+        <div class="wt-unit-tab-{{ section.id }} active" data-target="tab1-{{ section.id }}">
+          {{ section.settings.tab1_label }}
+        </div>
+        <div class="wt-unit-tab-{{ section.id }}" data-target="tab2-{{ section.id }}">
+          {{ section.settings.tab2_label }}
+        </div>
+      </div>
+
+      <!-- Tab 1 Inputs -->
+      <div class="wt-tab-inputs-{{ section.id }}" id="tab1-{{ section.id }}">
+
+        <!-- Input 1 (always shown) -->
+        <div class="wt-single-inp-{{ section.id }}">
+          {% if section.settings.tab1_label1 != blank %}
+            <label>{{ section.settings.tab1_label1 }}</label>
+          {% endif %}
+          <input type="number" placeholder="{{ section.settings.tab1_placeholder1 }}" class="wt-inp-{{ section.id }}">
+        </div>
+
+        <!-- Input 2 (optional) -->
+        {% if section.settings.tab1_show_second %}
+          <div class="wt-single-inp-{{ section.id }}">
+            {% if section.settings.tab1_label2 != blank %}
+              <label>{{ section.settings.tab1_label2 }}</label>
+            {% endif %}
+            <input type="number" placeholder="{{ section.settings.tab1_placeholder2 }}" class="wt-inp-{{ section.id }}">
+          </div>
+        {% endif %}
+
+      </div>
+
+      <!-- Tab 2 Inputs -->
+      <div class="wt-tab-inputs-{{ section.id }} hidden" id="tab2-{{ section.id }}">
+
+        <!-- Input 1 (always shown) -->
+        <div class="wt-single-inp-{{ section.id }}">
+          {% if section.settings.tab2_label1 != blank %}
+            <label>{{ section.settings.tab2_label1 }}</label>
+          {% endif %}
+          <input type="number" placeholder="{{ section.settings.tab2_placeholder1 }}" class="wt-inp-{{ section.id }}">
+        </div>
+
+        <!-- Input 2 (optional) -->
+        {% if section.settings.tab2_show_second %}
+          <div class="wt-single-inp-{{ section.id }}">
+            {% if section.settings.tab2_label2 != blank %}
+              <label>{{ section.settings.tab2_label2 }}</label>
+            {% endif %}
+            <input type="number" placeholder="{{ section.settings.tab2_placeholder2 }}" class="wt-inp-{{ section.id }}">
+          </div>
+        {% endif %}
+
+      </div>
+
+      <button class="wt-submit-btn-{{ section.id }}">{{ section.settings.button_text }}</button>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var section = document.querySelector('.wt-section-{{ section.id }}');
+    if (!section) return;
+
+    var tabs = section.querySelectorAll('.wt-unit-tab-{{ section.id }}');
+    var tabPanels = section.querySelectorAll('.wt-tab-inputs-{{ section.id }}');
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var targetId = this.getAttribute('data-target');
+
+        // Update active tab
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        this.classList.add('active');
+
+        // Show/hide panels
+        tabPanels.forEach(function (panel) {
+          if (panel.id === targetId) {
+            panel.classList.remove('hidden');
+          } else {
+            panel.classList.add('hidden');
+          }
+        });
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Weight Unit Toggle",
+  "settings": [
+    {
+      "type": "text",
+      "id": "wl_text",
+      "label": "Badge Text",
+      "default": "Weight Loss Profile"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What's your Weight?"
+    },
+    {
+      "type": "header",
+      "content": "Tab 1 Settings"
+    },
+    {
+      "type": "text",
+      "id": "tab1_label",
+      "label": "Tab 1 Name",
+      "default": "st/lb"
+    },
+    {
+      "type": "text",
+      "id": "tab1_label1",
+      "label": "Tab 1 — Input 1 Label",
+      "default": "Stone (st)"
+    },
+    {
+      "type": "text",
+      "id": "tab1_placeholder1",
+      "label": "Tab 1 — Input 1 Placeholder",
+      "default": "Type here..."
+    },
+    {
+      "type": "checkbox",
+      "id": "tab1_show_second",
+      "label": "Tab 1 — Show Second Input?",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "tab1_label2",
+      "label": "Tab 1 — Input 2 Label",
+      "default": "Pounds (lbs)"
+    },
+    {
+      "type": "text",
+      "id": "tab1_placeholder2",
+      "label": "Tab 1 — Input 2 Placeholder",
+      "default": "Type here..."
+    },
+    {
+      "type": "header",
+      "content": "Tab 2 Settings"
+    },
+    {
+      "type": "text",
+      "id": "tab2_label",
+      "label": "Tab 2 Name",
+      "default": "kg"
+    },
+    {
+      "type": "text",
+      "id": "tab2_label1",
+      "label": "Tab 2 — Input 1 Label",
+      "default": "Kilograms (kg)"
+    },
+    {
+      "type": "text",
+      "id": "tab2_placeholder1",
+      "label": "Tab 2 — Input 1 Placeholder",
+      "default": "Type here..."
+    },
+    {
+      "type": "checkbox",
+      "id": "tab2_show_second",
+      "label": "Tab 2 — Show Second Input?",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "tab2_label2",
+      "label": "Tab 2 — Input 2 Label",
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "tab2_placeholder2",
+      "label": "Tab 2 — Input 2 Placeholder",
+      "default": "2"
+    },
+    {
+      "type": "header",
+      "content": "Button & Spacing"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "NEXT"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+     {
+      "type": "text",
+      "id": "step-name",
+      "label": "step name"
+    },
+    {
+      "type": "text",
+      "id": "next-step",
+      "label": "next step"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Weight Unit Toggle"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,382 @@
+{% style %}
+/* .latest-news-section{
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.latest-news-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.latest-news-header h2 {
+  color: var(--Dark-Blue, #045670);
+text-align: center;
+font-family: "Playfair Display";
+font-size: 48px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: capitalize;
+margin:0px;
+}
+
+.show-all-btn {
+  font-size: 0.9rem;
+  color: #003333;
+  border: 1px solid #003333;
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.show-all-btn:hover {
+  background-color: #003333;
+  color: #fff;
+}
+
+.news-card{
+    position: relative;
+}
+.news-content_parent{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 0.00) 0%,
+  rgba(0, 0, 0, 0.80) 100%
+);
+border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 12px 12px 19px 12px;
+        box-sizing: border-box;
+}
+.news-image img {
+      width: 100%;
+    height: auto;
+    object-fit: cover;
+    min-height: 510px;
+    display: block;
+    border-radius: 16px;
+}
+
+.news-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.cs_slide-btn {
+    display: flex;
+    align-items: center;
+    gap: 14.211px;
+}
+.news-description{
+        line-height: 22px;
+}
+.news-date {
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; 
+    letter-spacing: -0.5px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(20px);
+    padding: 3px 12px;
+    width: fit-content;
+ 
+}
+.news-description .read-more{
+    color: var(--Yellow, #FFD902);
+    font-family: var(--custom-fonts);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; 
+    letter-spacing: -0.48px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+
+.news-title {
+   margin: 0;
+   color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; 
+    letter-spacing: -0.64px;
+    text-transform: capitalize;
+    padding: 12px 0;
+}
+
+.read-more-btn {
+    color: var(--Dark-Blue, #045670);
+    text-align: center;
+    font-family: "Playfair Display";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: 1px solid var(--Dark-Blue, #045670);
+    background: var(--White, #FFF);
+    box-shadow: 0 4px 0 0 #045670;
+    display: flex;
+    padding: 16px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+  background-color: #003333;
+  color: #fff;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #003333;
+}
+.cs_slide-btn-mobl {
+    display: none;
+}
+.news-tag {
+    color: #FFF;
+    font-family: "Neue Haas Grotesk Display Pro";
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 10px;
+    letter-spacing: 0.4px;
+    border-radius: 40px;
+    background: var(--black-color, #000);
+    display: flex;
+    padding: 6px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: max-content;
+    margin: 0 0 12px;
+}
+.news_content_weight_less{
+    color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+    text-transform: capitalize;
+    display: flex;
+    padding: 6px 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(0, 0, 0, 0.30);
+    backdrop-filter: blur(2.5px);
+    width: fit-content;
+}
+.css-main-heading p{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; 
+    letter-spacing: -1.24px;
+}
+.css-main-heading p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+}
+.news-description{
+    text-decoration: none;
+    margin: 0;
+    color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; 
+    letter-spacing: -0.5px;
+}
+.news-image-link{
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+  .latest-news-section{
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .latest-news-section .page-width{
+                padding-right: 0 !important;
+    }
+    .css-main-heading p{
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .css-main-heading p strong{
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .latest-news-header {
+       margin-bottom: 24px;
+   }
+} */
+ .css-main-heading p{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 62px !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120% !important; 
+    letter-spacing: -1.24px;
+}
+.css-main-heading p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px !important;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+}
+ .latest-news-section{
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+ @media (max-width: 768px) {
+  .latest-news-section{
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .css-main-heading p{
+        font-size: 30px !important;
+        line-height: 36px !important;
+    }
+    .css-main-heading p strong{
+        font-size: 30px !important;
+        line-height: 36px;
+    }
+} 
+{% endstyle %}
+
+<section class="latest-news-section pdp-section">
+  <div class="page-width">
+    <div class="latest-news-header">
+      <div class="css-main-heading">{{ section.settings.heading }}</div>
+    </div>
+
+    <div class="swiper latest-news-swiper">
+      {%render 'cs_blog_card_snn', blog: section.settings.blog %}
+         
+
+
+    </div>
+  </div>
+</section>
+<script>
+  var swiper = new Swiper('.latest-news-swiper', {
+    slidesPerView: 4,
+    spaceBetween: 12,
+    breakpoints: {
+      0: { slidesPerView: 1.2,spaceBetween: 8, },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 4 },
+    }
+  });
+</script>
+
+
+
+{% schema %}
+{
+  "name": "Blogs Section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Section Heading",
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Select Blog"
+    },
+     {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+  ],
+  "presets": [
+    {
+      "name": "Blogs Section"
+    }
+  ]
+}
+{% endschema %}
+
+
+

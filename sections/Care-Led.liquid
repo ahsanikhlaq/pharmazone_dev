@@ -1,0 +1,996 @@
+{% style %}
+.section-{{ section.id }} {
+  background: {{ section.settings.bg_color }};
+  padding-top: {{ section.settings.padding_top_desktop }}px;
+  padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+}
+@media (max-width: 768px) {
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+}
+.section-{{ section.id }} * {
+    margin:0px;
+}
+.section-{{ section.id }} .page-width {
+  margin:0 auto;
+}
+
+   .main-header  {
+    max-width:660px;
+    margin:0 auto 50px;
+  
+ }
+   .main-header  p {
+        color: #111;
+        text-align: center;
+        font-family: var(--custom-fonts);
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%; /* 68.2px */
+        letter-spacing: -1.24px;
+        margin:0px;
+  }
+   .main-header strong {
+        color: var(--Purple, #4C3E79);
+        font-family: var(--custom-fonts);
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -1.24px;
+  }
+.clinical-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .clinical-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.left-media {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.left-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-height: 850px;
+}
+.abs-content {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.26);
+    position: absolute;
+    bottom: 20px;
+    right: 22px;
+    left: 22px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.left-overlay-text p {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 31.2px */
+    letter-spacing: -0.65px;
+    text-transform: capitalize;
+    z-index: 2;
+    margin:0px;
+}
+
+.left-overlay-number {
+  color: #FFF;
+text-align: center;
+font-family: var(--custom-fonts);
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 33.6px */
+letter-spacing: -0.56px;
+margin:0px;
+}
+
+.right-clinical {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.clinical-card {
+    border-radius: 12px;
+    background: var(--Warm-color, #FAF8ED);
+    display: flex;
+    padding: 30px;
+    display: flex;
+    align-items: stretch;
+    gap: 32px;
+    align-self: stretch;
+    position:relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+    
+}
+.clinical-card:hover{
+  transform: scale(1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.section-{{ section.id }} .bas-image {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  height:100%;
+   z-index: -1;
+  
+}
+.section-{{ section.id }} .bas-image-mob {
+  display:none;
+}
+
+.clinical-avatar {
+    width: 150px;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.clinical-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.clinical-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+.clinical-content .proff-name {
+    margin:0px;
+}
+
+.clinical-content .proff-name p {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 32.4px */
+    letter-spacing: -0.54px;
+    margin:0px;
+}
+.clinical-content .proff-name strong {
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.54px;
+    margin:0px;
+}
+.proff-desc {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: -0.5px;
+    margin:0px;
+
+    /* Clamp to 2 lines */
+    /* display: -webkit-box; */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.proff-position p {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: -0.5px;
+    margin:0px;
+}
+.proff-position strong {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: -0.5px;
+    margin:0px;
+}
+.section-btn {
+  margin-top: 24px;
+}
+
+.section-btn a {
+   color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: -1.08px;
+    text-transform: capitalize;
+    display: flex;
+    padding: 16px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 75px;
+    background: var(--Yellow, #FFD902);
+    text-decoration:none;
+    max-width:max-content;
+    border: 1px solid #FFD902;
+    cursor: pointer;
+    
+}
+.proff-name.mob {
+    display:none;
+}
+
+/* ── Read More link ── */
+.read-more-btnnn {
+  display: inline-block;
+  color: var(--Purple, #4C3E79);
+  font-family: var(--custom-fonts);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 4px;
+}
+.read-more-btnnn:hover {
+  opacity: 0.75;
+}
+
+/* ── Modal overlay ── */
+.cp-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.cp-modal-overlay.active {
+  display: flex;
+}
+
+/* ── Modal box ── */
+.cp-modal-box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 690px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  animation: cpModalIn 0.25s ease;
+  border-radius: 12px;
+background: var(--Warm-color, #FAF8ED);
+}
+@keyframes cpModalIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* ── Modal close button ── */
+.cp-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  color: #333;
+  transition: background 0.2s;
+}
+.cp-modal-close:hover { background: #e0e0e0; }
+
+/* ── Modal header ── */
+.cp-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.cp-modal-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cp-modal-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cp-modal-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cp-modal-name {
+  font-family: var(--custom-fonts);
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+.cp-modal-name strong {
+  color: var(--Purple, #4C3E79);
+}
+.cp-modal-position {
+  font-family: var(--custom-fonts);
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+  margin: 0;
+}
+.cp-modal-position strong {
+  font-weight: 700;
+  color: #111;
+}
+.cp-modal-position p{
+  margin: 0;
+}
+
+/* ── Divider ── */
+.cp-modal-divider {
+  height: 1px;
+  background: #eee;
+  margin: 0 0 20px;
+}
+
+/* ── Modal body text ── */
+.cp-modal-body {
+  color: #000;
+font-family: "SF Pro";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 25.2px */
+letter-spacing: -0.5px;
+border-top: 1px solid #E0E0E0;
+padding-top: 7px;
+}
+.clinical-avatar a{
+  display: flex;
+    gap: 19px;
+        align-items: center;
+}
+
+@media (max-width:786px) {
+    .proff-name.des {
+    display:none;
+}
+.left-media img {
+  max-height: 350px;
+}
+.clinical-content {
+      flex-direction: column-reverse;
+}
+.cp-modal-header{
+  flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+        gap: 10px;
+}
+.left-media{
+width: 100%;
+}
+.proff-name.mob {
+   display:block;
+}
+.section-{{ section.id }} .bas-image {
+  display:none;
+}
+.section-{{ section.id }} .bas-image-mob {
+  display:block;
+  position:absolute;
+  left:0px;
+  height:100%;
+  width:100%;
+  border-radius: 12px;
+  z-index: -1;
+}
+.proff-name p {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 27.6px */
+    letter-spacing: -0.46px;
+}
+.proff-name strong {
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.46px;
+}
+         .main-header {
+       max-width:365px;
+       margin:0 auto 24px;
+    }
+     .main-header p {
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 36px */
+        letter-spacing: -0.6px;
+        margin:0px;
+}
+ .main-header strong {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -0.6px;
+}
+    .clinical-wrapper {
+           display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            align-self: stretch;
+    }
+    .clinical-card {
+        padding: 24px;
+        flex-direction:column;
+        gap:16px;
+    }
+    .proff-desc {
+        
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 19.2px */
+        letter-spacing: -0.5px;
+    }
+    .proff-position p {
+        color: var(--Black, #111);
+        font-family: var(--custom-fonts);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -0.5px;
+    }
+    .proff-position strong {
+        color: var(--Black, #111);
+        font-family: var(--custom-fonts);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 24px */
+        letter-spacing: -0.5px;
+    }
+    .section-btn a {
+        max-width:100%;
+        color: var(--Purple, #4C3E79);
+        font-family: var(--custom-fonts);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 21.6px */
+        letter-spacing: -0.72px;
+        padding: 14px 24px;
+    }
+    .right-clinical {
+       gap:8px;
+    }
+    .section-btn {
+        margin:16px 0 0;
+    }
+    .abs-content {
+        display: flex;
+        padding: 20px;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        flex: 1 0 0;
+    }
+    .left-overlay-text p {
+        color: var(--White, #FFF);
+        text-align: center;
+        font-family: var(--custom-fonts);
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 25.2px */
+        letter-spacing: -0.525px;
+        text-transform: capitalize;
+    }
+    .left-overlay-number {
+        
+        text-align: center;
+        font-family: var(--custom-fonts);
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 33.6px */
+        letter-spacing: -0.56px;
+    }
+
+  /* Mobile modal adjustments */
+  .cp-modal-box {
+    padding: 24px 20px;
+    max-height: 90vh;
+  }
+  .cp-modal-name { font-size: 18px; }
+  .cp-modal-body { font-size: 15px; }
+
+}
+.cp-modal-name p{
+  margin: 0;
+}
+
+.avatar-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .avatar-desktop {
+    display: none;
+  }
+
+  .avatar-mobile {
+    display: block;
+    width: 40%;
+  }
+  .clinical-avatar {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 19px;
+        border-radius:0px;
+    }
+    .clinical-avatar img {
+       width:40%;
+       max-width: 93px;
+    }
+}
+
+{% endstyle %}
+
+<section class="section-{{ section.id }}">
+  <div class="{% if section.settings.page_width %}page-width{% endif %}">
+
+    {% if section.settings.heading != blank %}
+      <div class="main-header">
+        {{ section.settings.heading }}
+      </div>
+    {% endif %}
+
+    <div class="clinical-wrapper">
+
+     <!-- LEFT SIDE -->
+      <div class="left-media">
+
+        {% if section.settings.image_desktop != blank %}
+          <picture>
+            {% if section.settings.image_mobile != blank %}
+              <source media="(max-width:768px)" srcset="{{ section.settings.image_mobile | image_url }}">
+            {% endif %}
+            <img src="{{ section.settings.image_desktop | image_url }}" alt="">
+          </picture>
+        {% endif %}
+
+        <div class="abs-content">
+
+        {% if section.settings.overlay_text != blank %}
+          <div class="left-overlay-text">
+            {{ section.settings.overlay_text }}
+          </div>
+        {% endif %}
+
+        {% if section.settings.overlay_number != blank %}
+          <div class="left-overlay-number">
+            {{ section.settings.overlay_number }}
+          </div>
+        {% endif %}
+
+      </div>
+      </div>
+
+
+      <!-- RIGHT SIDE -->
+      <div class="right-clinical">
+
+        {% for block in section.blocks %}
+          <div class="clinical-card" {{ block.shopify_attributes }}>
+
+            {% if block.settings.avatar != blank or block.settings.avatar_mobile != blank %}
+          <div class="clinical-avatar">
+           <a href="{{ block.settings.link }}">
+            {% if block.settings.avatar != blank %}
+                    <img 
+                        src="{{ block.settings.avatar | image_url }}" 
+                        alt=""
+                        class="avatar-desktop"
+                    >
+                    {% endif %}
+
+                    {% if block.settings.avatar_mobile != blank %}
+                    <img 
+                        src="{{ block.settings.avatar_mobile | image_url }}" 
+                        alt=""
+                        class="avatar-mobile"
+                    >
+                    {% endif %}
+
+                    <h4 class="proff-name mob">{{ block.settings.name }}</h4>
+                  </a>
+                </div>
+            {% endif %}
+
+
+            <div class="clinical-content">
+              <h4 class="proff-name des">{{ block.settings.name }}</h4>
+              <p class="proff-desc"><span>{{ block.settings.description }}</span><span>{% if block.settings.full_bio != blank %}
+                <sapn 
+                  class="read-more-btnnn"
+                  data-modal-id="cp-modal-{{ block.id }}"
+                >Read more</span>
+              {% endif %}</span></p>
+              <div class="proff-position">{{ block.settings.position }}</div>
+
+              
+            </div>
+
+            {% if block.settings.icon != blank %}
+                    <img src="{{ block.settings.icon | image_url }}" alt="" class="bas-image">
+            {% endif %}
+              {% if block.settings.icon_mob != blank %}
+                            <img src="{{ block.settings.icon_mob | image_url }}" alt="" class="bas-image-mob">
+            {% endif %}
+
+          </div>
+        {% endfor %}
+
+        {% if section.settings.button_label != blank %}
+          <div class="section-btn">
+            <a class="cs_faq_sec_button_des_hover" href="{{ section.settings.button_link }}">
+              {{ section.settings.button_label }}
+            </a>
+          </div>
+        {% endif %}
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════
+     MODALS — one per block
+══════════════════════════════════════ -->
+{% for block in section.blocks %}
+  {% if block.settings.full_bio != blank %}
+  <div class="cp-modal-overlay" id="cp-modal-{{ block.id }}" role="dialog" aria-modal="true">
+    <div class="cp-modal-box">
+
+      <!-- Close -->
+      <button class="cp-modal-close" aria-label="Close">&#x2715;</button>
+
+      <!-- Header -->
+      <div class="cp-modal-header">
+        {% if block.settings.avatar != blank %}
+        <div class="cp-modal-avatar">
+          <img src="{{ block.settings.avatar | image_url }}" alt="">
+        </div>
+        {% endif %}
+        <div class="cp-modal-title">
+          <div class="cp-modal-name">{{ block.settings.name }}</div>
+          <div class="cp-modal-position">{{ block.settings.position }}</div>
+        </div>
+      </div>
+
+      <div class="cp-modal-divider"></div>
+
+      <!-- Full bio -->
+      <div class="cp-modal-body">
+        {{ block.settings.full_bio }}
+      </div>
+
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+
+
+<script>
+(function() {
+  // Open modal
+  document.querySelectorAll('.read-more-btnnn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      var id = btn.getAttribute('data-modal-id');
+      var overlay = document.getElementById(id);
+      if (overlay) {
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  // Close on overlay click or close button
+  document.querySelectorAll('.cp-modal-overlay').forEach(function(overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeModal(overlay);
+    });
+    var closeBtn = overlay.querySelector('.cp-modal-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        closeModal(overlay);
+      });
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.cp-modal-overlay.active').forEach(closeModal);
+    }
+  });
+
+  function closeModal(overlay) {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+})();
+</script>
+
+
+{% schema %}
+{
+  "name": "Clinical Professionals",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "page_width",
+      "label": "Enable Page Width",
+      "default": true
+    },
+
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f7f7f7"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile Image"
+    },
+
+    {
+      "type": "richtext",
+      "id": "overlay_text",
+      "label": "Overlay Text"
+    },
+    {
+      "type": "range",
+      "id": "text_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Overlay Text Top Position",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "text_left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Overlay Text Left Position",
+      "default": 10
+    },
+
+    {
+      "type": "text",
+      "id": "overlay_number",
+      "label": "Overlay Number Text"
+    },
+    {
+      "type": "range",
+      "id": "number_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Number Bottom Position",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "number_left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Number Left Position",
+      "default": 10
+    },
+
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Book A Free Consultation"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40
+    }
+  ],
+
+  "blocks": [
+    {
+      "type": "person",
+      "name": "Clinical Person",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar"
+        },
+        {
+            "type": "image_picker",
+            "id": "avatar_mobile",
+            "label": "Mobile Avatar"
+        },
+        {
+          "type": "richtext",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Short Description (shown on card)"
+        },
+        {
+          "type": "richtext",
+          "id": "full_bio",
+          "label": "Full Bio (shown in popup)"
+        },
+        {
+          "type": "richtext",
+          "id": "position",
+          "label": "Position"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Absolute Gradient"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_mob",
+          "label": "Absolute Gradient Mobile"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Clinical Professionals"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,239 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_back_img_main-image-des{
+        display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    max-height: 80vh;
+    object-fit: cover;
+    object-position: top;
+}
+.cs_back_img_main-image-mbl{
+    display: none;
+    width: 100%;
+    height: auto; 
+    border-radius: 20px;
+}
+.cs_back_img_content_title p{
+    margin: 0;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%; /* 72px */
+    letter-spacing: -2px;
+}
+.cs_back_img_button_main{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 84px;
+    padding: 28px;
+    border: 1px solid #FFF;
+    background: linear-gradient(123deg, rgba(255, 255, 255, 0.16) 10.52%, rgba(255, 255, 255, 0.04) 89.48%);
+}
+.cs_back_img_boost-text{
+    margin: 0;
+    color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%; /* 30.8px */
+    text-transform: capitalize;
+}
+.cs_back_img_button{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: -1.08px;
+    text-transform: capitalize;
+    display: flex;
+    padding: 16px 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 75px;
+    background: var(--Yellow, #FFD902);
+    border: 1px solid  #FFD902;
+    text-decoration: none;
+    cursor: pointer;
+}
+.cs_back_img_main_content{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 650px;
+    margin: 0 auto;
+}
+.cs_back_img_main_parent {
+    position: relative;
+}
+.cs_back_img_content_title{
+    margin: 0;
+}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .cs_back_img_main-image-des{
+    display: none;
+}
+.cs_back_img_main-image-mbl{
+    display: block;
+}
+.cs_back_img_content_title p{
+    font-size: 34px;
+    line-height: 37px;
+}
+.cs_back_img_button_main {
+    margin-top: 0;
+    border-radius: none;
+    padding: 0px;
+    border: none;
+    background: transparent;
+            justify-content: center;
+}
+.cs_back_img_boost-text{
+    display: none;
+}
+.cs_back_img_button{
+    font-size: 16px;
+    line-height: 18px;
+    padding: 11px 68px;
+    margin-top: 24px;
+}
+.cs_back_img_main_content{
+    padding: 20px 16px;
+    border-radius: 16px;
+    border: 1px solid var(--White, #FFF);
+    background: linear-gradient(123deg, rgba(255, 255, 255, 0.16) 10.52%, rgba(255, 255, 255, 0.04) 89.48%);
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    transform: unset;
+}
+  }
+  /* ----- */ 
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_back_img_main_parent">
+        <div class="cs_back_img_main_img">
+             {{ section.settings.back-img | image_url: width: 1440 | image_tag:
+                                class: 'cs_back_img_main-image-des',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }}
+                            {{ section.settings.back-img-mbl | image_url: width: 1440 | image_tag:
+                                class: 'cs_back_img_main-image-mbl',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }}
+        </div>
+        <div class="cs_back_img_main_content">
+            <h3 class="cs_back_img_content_title">{{ section.settings.heading }}</h3>
+            <div class="cs_back_img_button_main">
+                <h4 class="cs_back_img_boost-text">{{ section.settings.boot-text }}</h4>
+                <a class="cs_back_img_button cs_button_hover" href="{{ section.settings.butt_url }}">{{ section.settings.butt-text }}</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+    "name": "Loss Journey",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "back-img",
+            "label": "Desktop Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "back-img-mbl",
+            "label": "Mobile Image"
+        },
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "boot-text",
+            "label": "Boost Confidence "
+        },
+        {
+            "type": "text",
+            "id": "butt-text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "butt_url",
+            "label": "Button Url"
+        },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+    ],
+    "presets": [
+        { "name": "Loss Journey" }
+    ]
+}
+{% endschema %}

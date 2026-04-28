@@ -1,0 +1,1242 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background: linear-gradient(0deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%), linear-gradient(107deg, rgba(244,239,253,0.60) 0.38%, rgba(255,245,191,0.60) 100%), #FFF;
+    min-height: 100vh;
+  }
+
+  .pc-wrap-{{ section.id }} {
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    padding-bottom: 40px;
+  }
+
+  /* ═══════════════════════════════════════
+     WEIGHT PHOTO UPLOAD STYLES
+  ═══════════════════════════════════════ */
+
+  .wp-heading-{{ section.id }} {
+    color: var(--Black, #111);
+    font-family: "SF Pro";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 120%;
+    letter-spacing: -0.24px;
+    text-align: start;
+    margin: 0 0 32px;
+  }
+
+  .wp-guide-card-{{ section.id }} {
+   border-radius: 16px;
+background: linear-gradient(0deg, #E1DEE9 0%, #E1DEE9 100%), #FFF;
+padding: 20px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .wp-guide-icon-{{ section.id }} {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+  }
+
+  .wp-guide-title-{{ section.id }} {
+   color: var(--Black, #111);
+leading-trim: both;
+text-edge: cap;
+font-family: "SF Pro";
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.5px;
+    margin: 0 0 16px;
+  }
+
+  .wp-guide-text-{{ section.id }} {
+   color: var(--Black, #111);
+text-align: center;
+leading-trim: both;
+text-edge: cap;
+font-family: "SF Pro";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.5px;
+margin: 0;
+  }
+
+  .wp-examples-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .wp-example-item-{{ section.id }} {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #FFF;
+    padding: 6px;
+  }
+
+  .wp-example-item-{{ section.id }} img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+
+  .wp-example-placeholder-{{ section.id }} {
+    width: 100%;
+    height: 160px;
+    background: #E8E8E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wp-example-badge-{{ section.id }} {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    color: #FFF;
+    display: none;
+  }
+
+  .wp-example-badge-{{ section.id }}.good { background: #4CAF50; }
+  .wp-example-badge-{{ section.id }}.bad  { background: #F44336; }
+
+  .wp-example-caption-{{ section.id }} {
+    color: #000;
+text-align: center;
+leading-trim: both;
+text-edge: cap;
+font-family: "SF Pro";
+font-size: 14px;
+font-style: normal;
+font-weight: 510;
+line-height: normal;
+letter-spacing: -0.5px;
+padding-top: 4px;
+margin: 0;
+text-align: center;
+  }
+
+  .wp-upload-heading-{{ section.id }} {
+    color: var(--Black, #111);
+leading-trim: both;
+text-edge: cap;
+font-family: "SF Pro";
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: -0.5px;
+    margin: 0 0 24px;
+  }
+
+  .wp-upload-row-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .wp-upload-box-{{ section.id }} {
+    border-radius: 12px;
+    background: #FFF;
+    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 8px;
+background: #FEFBF0;
+min-height: 225px;
+justify-content: center;
+  }
+
+  .wp-upload-box-{{ section.id }}:hover { border-color: #4C3E79; }
+
+  .wp-upload-box-{{ section.id }}.has-file {
+    border-color: #4C3E79;
+    background: linear-gradient(107deg, rgba(244,239,253,0.2) 0.38%, rgba(255,245,191,0.2) 100%), #FFF;
+  }
+
+  .wp-upload-label-{{ section.id }} {
+    color: var(--Purple, #4C3E79);
+text-align: center;
+font-family: "SF Pro";
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 19.2px */
+letter-spacing: -0.32px;
+text-decoration-line: underline;
+text-decoration-style: solid;
+text-decoration-skip-ink: none;
+text-decoration-thickness: auto;
+text-underline-offset: auto;
+text-underline-position: from-font;
+margin: 0;
+max-width: 125px;
+  }
+
+  .wp-upload-preview-{{ section.id }} {
+    display: none;
+    max-width: 100%;
+    max-height: 80px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .wp-upload-filename-{{ section.id }} {
+    display: none;
+    font-size: 11px;
+    color: #4C3E79;
+    word-break: break-all;
+    text-align: center;
+    margin: 0;
+  }
+
+  .wp-upload-remove-{{ section.id }} {
+    display: none;
+    background: none;
+    border: 1px solid #DDD;
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: #888;
+    cursor: pointer;
+    font-family: "SF Pro", sans-serif;
+  }
+
+  .wp-note-{{ section.id }} {
+    color: var(--Gray, #545454);
+text-align: center;
+leading-trim: both;
+text-edge: cap;
+font-family: "SF Pro";
+font-size: 16px;
+font-style: normal;
+font-weight: 510;
+line-height: normal;
+letter-spacing: -1px;
+margin: 0;
+  }
+
+  /* ═══════════════════════════════════════
+     CONSENT STYLES
+  ═══════════════════════════════════════ */
+
+  .wl-profile-{{ section.id }} {
+    border-radius: 66.67px;
+    border: 0.5px solid #4C3E79;
+    background: #FFF;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 14px;
+    color: #4C3E79;
+    font-family: "SF Pro";
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+  }
+
+  .pc-page-heading-{{ section.id }} {
+    color: #111;
+    font-family: "SF Pro";
+    font-size: 24px;
+    font-weight: 510;
+    line-height: 120%;
+    letter-spacing: -0.24px;
+    margin: 0;
+    padding-bottom: 24px;
+  }
+
+  .pc-card-{{ section.id }} {
+    background: #FFF;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  .pc-card-title-{{ section.id }} {
+    color: #111;
+    font-family: "SF Pro";
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.18px;
+    text-transform: capitalize;
+    margin: 0;
+    padding-bottom: 28px;
+  }
+
+  .pc-list-{{ section.id }} {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pc-list-{{ section.id }} li {
+    display: flex;
+    gap: 10px;
+    color: #111;
+    font-family: "SF Pro";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .pc-list-{{ section.id }} li::before {
+    content: "•";
+    color: #4C3E79;
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: -1px;
+  }
+
+  .pc-checkbox-row-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    background: #FFFADE;
+    gap: 8px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .pc-checkbox-{{ section.id }} {
+    min-width: 18px;
+    height: 18px;
+    border: 1.5px solid #BDBDBD;
+    border-radius: 4px;
+    background: #FFF;
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .pc-checkbox-{{ section.id }}:checked {
+    background: #4C3E79;
+    border-color: #4C3E79;
+  }
+
+  .pc-checkbox-{{ section.id }}:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid #FFF;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+
+  .pc-checkbox-label-{{ section.id }} {
+    color: #111;
+    font-size: 13.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    cursor: pointer;
+  }
+
+  /* ═══════════════════════════════════════
+     SHARED BUTTON
+  ═══════════════════════════════════════ */
+  .pc-btn-fixeddd{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: linear-gradient(to top, rgba(255,255,255,1) 60%, rgba(255,255,255,0));
+    padding: 16px 20px 24px;
+    text-align: center;
+  }
+
+  .pc-btn-fixed-inner-{{ section.id }} {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .pc-btn-fixed-inner-{{ section.id }} button {
+    display: block;
+    width: 100%;
+    border-radius: 45px;
+    background: #4C3E79;
+    border: none;
+    padding: 17px;
+    color: #FFF;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: opacity 0.15s ease;
+  }
+
+  .pc-btn-fixed-inner-{{ section.id }} button:disabled {
+    background: #B0A8CC;
+    cursor: not-allowed;
+  }
+
+  /* .pc-btn-mobile-{{ section.id }} { display: none; } */
+.new-uplaod-wrapper{
+  border-radius: 16px;
+background: #FFF;
+padding: 20px;
+    margin-bottom: 30px;
+}
+  @media screen and (max-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .pc-page-heading-{{ section.id }} { font-size: 20px; padding-bottom: 20px; }
+    .pc-card-{{ section.id }} { padding: 16px; margin-bottom: 20px; }
+    .pc-card-title-{{ section.id }} { padding-bottom: 20px; }
+    .pc-list-{{ section.id }} { gap: 16px; }
+    .pc-checkbox-label-{{ section.id }} { font-size: 12px; }
+    .wp-example-placeholder-{{ section.id }} { height: 130px; }
+
+    .pc-btn-mobile-{{ section.id }} {
+      display: block;
+      width: 100%;
+      border-radius: 45px;
+      background: #4C3E79;
+      border: none;
+      padding: 17px;
+      color: #FFF;
+      font-family: "SF Pro", -apple-system, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-sizing: border-box;
+      margin-top: 8px;
+      transition: opacity 0.15s ease;
+    }
+    .pc-btn-mobile-{{ section.id }}:disabled {
+      background: #B0A8CC;
+      cursor: not-allowed;
+    }
+    .pc-btn-fixed-{{ section.id }} { display: block; }
+    .wp-heading-{{ section.id }} {
+      font-size: 20px;
+      margin: 0 0 12px;
+      letter-spacing: -0.2px;
+    }
+    .wp-guide-title-{{ section.id }} {
+      font-size: 13px;
+    }
+     .wp-example-caption-{{ section.id }} {
+      text-align: start;
+     }
+      .wp-upload-heading-{{ section.id }} {
+        font-size: 18px;
+      }
+      .wp-upload-box-{{ section.id }} {
+        border-radius: 8px;
+    border: 1px solid var(--light-gray-20, #E0E0E0);
+    background: #FEFBF0;
+        min-height: 170px;
+      }
+      .wp-upload-label-{{ section.id }}{
+        font-size: 14px;
+      }
+      .wp-note-{{ section.id }}{
+        font-size: 14px;
+        letter-spacing: -0.5px;
+    margin: 0;
+    text-align: start;
+      }
+  }
+{%- endstyle -%}
+
+<section
+  class="new-qes-section section-{{ section.id }}-padding"
+  data-step="{{ section.settings.step_name }}"
+  next-step="{{ section.settings.next_step }}"
+>
+  <div class="page-width">
+    <div class="pc-wrap-{{ section.id }}">
+
+      <!-- ══════════════════════════════════
+           PHASE 1: WEIGHT PHOTO UPLOAD
+      ══════════════════════════════════ -->
+<div id="wp-phase-{{ section.id }}" {% if section.settings.skip_photos %}style="display:none;"{% endif %}>
+        {% if section.settings.badge_text != blank %}
+          <div class="wl-profile-{{ section.id }}">Eligibility Questions</div>
+        {% endif %}
+
+        <p class="wp-heading-{{ section.id }}">{{ section.settings.wp_heading }}</p>
+
+        <!-- Photo guide card -->
+        <div class="wp-guide-card-{{ section.id }}">
+          <div class="wp-guide-icon-{{ section.id }}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+          <path d="M20 26.25C22.7614 26.25 25 24.0114 25 21.25C25 18.4886 22.7614 16.25 20 16.25C17.2386 16.25 15 18.4886 15 21.25C15 24.0114 17.2386 26.25 20 26.25Z" fill="#FFD902"/>
+           <path d="M33.75 10H30.295C30.0627 10.0009 29.8348 9.93659 29.6373 9.81439C29.4397 9.69219 29.2804 9.51701 29.1775 9.30877L28.0588 7.07252C27.749 6.44838 27.2707 5.92345 26.6779 5.55716C26.0852 5.19088 25.4018 4.99788 24.705 5.00002H15.295C14.5982 4.99788 13.9148 5.19088 13.3221 5.55716C12.7293 5.92345 12.251 6.44838 11.9413 7.07252L10.8162 9.30877C10.7138 9.51606 10.5555 9.69061 10.3591 9.81274C10.1628 9.93488 9.93623 9.99974 9.705 10H6.25C5.25544 10 4.30161 10.3951 3.59835 11.0984C2.89509 11.8016 2.5 12.7555 2.5 13.75V31.25C2.5 32.2446 2.89509 33.1984 3.59835 33.9017C4.30161 34.6049 5.25544 35 6.25 35H33.75C34.7446 35 35.6984 34.6049 36.4016 33.9017C37.1049 33.1984 37.5 32.2446 37.5 31.25V13.75C37.5 12.7555 37.1049 11.8016 36.4016 11.0984C35.6984 10.3951 34.7446 10 33.75 10ZM20 28.75C18.5166 28.75 17.0666 28.3101 15.8332 27.486C14.5999 26.6619 13.6386 25.4906 13.0709 24.1201C12.5032 22.7497 12.3547 21.2417 12.6441 19.7868C12.9335 18.332 13.6478 16.9956 14.6967 15.9467C15.7456 14.8978 17.082 14.1835 18.5368 13.8941C19.9917 13.6047 21.4997 13.7533 22.8701 14.3209C24.2406 14.8886 25.4119 15.8499 26.236 17.0832C27.0601 18.3166 27.5 19.7667 27.5 21.25C27.498 23.2385 26.7072 25.145 25.3011 26.5511C23.895 27.9572 21.9885 28.748 20 28.75Z" fill="#4C3E79"/>
+              </svg>
+          </div>
+          <p class="wp-guide-title-{{ section.id }}">{{ section.settings.guide_title }}</p>
+          <p class="wp-guide-text-{{ section.id }}">{{ section.settings.guide_text }}</p>
+        </div>
+
+        <!-- 2x2 example grid -->
+        <div class="wp-examples-{{ section.id }}">
+
+          <div class="wp-example-item-{{ section.id }}">
+            {% if section.settings.example_good_1 != blank %}
+              <img src="{{ section.settings.example_good_1 | image_url: width: 400 }}" alt="Good example front">
+            {% else %}
+              <div class="wp-example-placeholder-{{ section.id }}">
+                <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#CCC"/><path d="M8 17l3-3 2 2 3-4 4 5H4l4-5z" fill="#999"/></svg>
+              </div>
+            {% endif %}
+            <span class="wp-example-badge-{{ section.id }} good">Good</span>
+            <p class="wp-example-caption-{{ section.id }}">{{ section.settings.caption_good_1 | default: 'Full body, tight fitted clothing.' }}</p>
+          </div>
+
+          <div class="wp-example-item-{{ section.id }}">
+            {% if section.settings.example_bad_1 != blank %}
+              <img src="{{ section.settings.example_bad_1 | image_url: width: 400 }}" alt="Bad example">
+            {% else %}
+              <div class="wp-example-placeholder-{{ section.id }}">
+                <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#CCC"/><path d="M8 17l3-3 2 2 3-4 4 5H4l4-5z" fill="#999"/></svg>
+              </div>
+            {% endif %}
+            <span class="wp-example-badge-{{ section.id }} bad">Bad</span>
+            <p class="wp-example-caption-{{ section.id }}">{{ section.settings.caption_bad_1 | default: 'Close up of face, no body shown.' }}</p>
+          </div>
+
+          <div class="wp-example-item-{{ section.id }}">
+            {% if section.settings.example_good_2 != blank %}
+              <img src="{{ section.settings.example_good_2 | image_url: width: 400 }}" alt="Good example side">
+            {% else %}
+              <div class="wp-example-placeholder-{{ section.id }}">
+                <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#CCC"/><path d="M8 17l3-3 2 2 3-4 4 5H4l4-5z" fill="#999"/></svg>
+              </div>
+            {% endif %}
+            <span class="wp-example-badge-{{ section.id }} good">Good</span>
+            <p class="wp-example-caption-{{ section.id }}">{{ section.settings.caption_good_2 | default: 'Full body, tight fitted clothing.' }}</p>
+          </div>
+
+          <div class="wp-example-item-{{ section.id }}">
+            {% if section.settings.example_bad_2 != blank %}
+              <img src="{{ section.settings.example_bad_2 | image_url: width: 400 }}" alt="Bad example side">
+            {% else %}
+              <div class="wp-example-placeholder-{{ section.id }}">
+                <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#CCC"/><path d="M8 17l3-3 2 2 3-4 4 5H4l4-5z" fill="#999"/></svg>
+              </div>
+            {% endif %}
+            <span class="wp-example-badge-{{ section.id }} bad">Bad</span>
+            <p class="wp-example-caption-{{ section.id }}">{{ section.settings.caption_bad_2 | default: 'Dark clothing hides body shape.' }}</p>
+          </div>
+
+        </div>
+
+        <!-- Upload boxes -->
+        <div class='new-uplaod-wrapper'>
+        <p class="wp-upload-heading-{{ section.id }}">{{ section.settings.upload_heading }}</p>
+
+        <div class="wp-upload-row-{{ section.id }}">
+
+<div class="wp-upload-box-{{ section.id }}" id="wp-box-front-{{ section.id }}" onclick="document.getElementById('wp-input-front-{{ section.id }}').click()">
+    <input type="file" accept="image/*,.pdf" id="wp-input-front-{{ section.id }}" style="display:none;">             
+            <div id="wp-icon-front-{{ section.id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+  <g clip-path="url(#clip0_2303_11585)">
+    <path d="M10.4167 32.5001C7.74833 32.5001 5.375 30.7917 4.51333 28.2484L4.455 28.0567C4.25166 27.3834 4.16666 26.8167 4.16666 26.2501V14.8867L0.123329 28.3834C-0.396671 30.3684 0.788329 32.4267 2.77666 32.9751L28.5483 39.8767C28.87 39.9601 29.1917 40.0001 29.5083 40.0001C31.1683 40.0001 32.685 38.8984 33.11 37.2751L34.6117 32.5001H10.4167Z" fill="#4C3E79"/>
+    <path d="M15.0003 15.0007C16.8387 15.0007 18.3337 13.5057 18.3337 11.6673C18.3337 9.82898 16.8387 8.33398 15.0003 8.33398C13.162 8.33398 11.667 9.82898 11.667 11.6673C11.667 13.5057 13.162 15.0007 15.0003 15.0007Z" fill="#4C3E79"/>
+    <path d="M35.8337 3.33398H10.8337C8.53699 3.33398 6.66699 5.20398 6.66699 7.50065V25.834C6.66699 28.1307 8.53699 30.0007 10.8337 30.0007H35.8337C38.1303 30.0007 40.0003 28.1307 40.0003 25.834V7.50065C40.0003 5.20398 38.1303 3.33398 35.8337 3.33398ZM10.8337 6.66732H35.8337C36.2937 6.66732 36.667 7.04065 36.667 7.50065V19.3323L31.402 13.189C30.8437 12.534 30.0353 12.184 29.167 12.164C28.3037 12.169 27.4937 12.5523 26.9403 13.2157L20.7503 20.6457L18.7337 18.634C17.5937 17.494 15.7387 17.494 14.6003 18.634L10.0003 23.2323V7.50065C10.0003 7.04065 10.3737 6.66732 10.8337 6.66732Z" fill="#4C3E79"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_2303_11585">
+      <rect width="40" height="40" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+            </div>
+            <img class="wp-upload-preview-{{ section.id }}" id="wp-preview-front-{{ section.id }}" src="" alt="">
+            <p class="wp-upload-label-{{ section.id }}" id="wp-label-front-{{ section.id }}">{{ section.settings.front_label | default: 'Upload your full Front Image' }}</p>
+            <p class="wp-upload-filename-{{ section.id }}" id="wp-filename-front-{{ section.id }}"></p>
+            <button class="wp-upload-remove-{{ section.id }}" id="wp-remove-front-{{ section.id }}" onclick="event.stopPropagation()">✕ Remove</button>
+          </div>
+
+          <div class="wp-upload-box-{{ section.id }}" id="wp-box-side-{{ section.id }}" onclick="document.getElementById('wp-input-side-{{ section.id }}').click()">
+            <input type="file" accept="image/*,.pdf" id="wp-input-side-{{ section.id }}" style="display:none;">
+            <div id="wp-icon-side-{{ section.id }}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+  <g clip-path="url(#clip0_2303_11585)">
+    <path d="M10.4167 32.5001C7.74833 32.5001 5.375 30.7917 4.51333 28.2484L4.455 28.0567C4.25166 27.3834 4.16666 26.8167 4.16666 26.2501V14.8867L0.123329 28.3834C-0.396671 30.3684 0.788329 32.4267 2.77666 32.9751L28.5483 39.8767C28.87 39.9601 29.1917 40.0001 29.5083 40.0001C31.1683 40.0001 32.685 38.8984 33.11 37.2751L34.6117 32.5001H10.4167Z" fill="#4C3E79"/>
+    <path d="M15.0003 15.0007C16.8387 15.0007 18.3337 13.5057 18.3337 11.6673C18.3337 9.82898 16.8387 8.33398 15.0003 8.33398C13.162 8.33398 11.667 9.82898 11.667 11.6673C11.667 13.5057 13.162 15.0007 15.0003 15.0007Z" fill="#4C3E79"/>
+    <path d="M35.8337 3.33398H10.8337C8.53699 3.33398 6.66699 5.20398 6.66699 7.50065V25.834C6.66699 28.1307 8.53699 30.0007 10.8337 30.0007H35.8337C38.1303 30.0007 40.0003 28.1307 40.0003 25.834V7.50065C40.0003 5.20398 38.1303 3.33398 35.8337 3.33398ZM10.8337 6.66732H35.8337C36.2937 6.66732 36.667 7.04065 36.667 7.50065V19.3323L31.402 13.189C30.8437 12.534 30.0353 12.184 29.167 12.164C28.3037 12.169 27.4937 12.5523 26.9403 13.2157L20.7503 20.6457L18.7337 18.634C17.5937 17.494 15.7387 17.494 14.6003 18.634L10.0003 23.2323V7.50065C10.0003 7.04065 10.3737 6.66732 10.8337 6.66732Z" fill="#4C3E79"/>
+  </g>
+  <defs>
+    <clipPath id="clip0_2303_11585">
+      <rect width="40" height="40" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>
+            </div>
+            <img class="wp-upload-preview-{{ section.id }}" id="wp-preview-side-{{ section.id }}" src="" alt="">
+            <p class="wp-upload-label-{{ section.id }}" id="wp-label-side-{{ section.id }}">{{ section.settings.side_label | default: 'Upload your full Side Image' }}</p>
+            <p class="wp-upload-filename-{{ section.id }}" id="wp-filename-side-{{ section.id }}"></p>
+            <button class="wp-upload-remove-{{ section.id }}" id="wp-remove-side-{{ section.id }}" onclick="event.stopPropagation()">✕ Remove</button>
+          </div>
+
+        </div>
+
+
+
+       <!-- Video Record Box -->
+<div class="wp-upload-box-{{ section.id }}" id="wp-box-video-{{ section.id }}" onclick="window['startVideoRecorder_{{ section.id }}']();">
+  <!-- Default state — click to start camera -->
+  <div id="wp-video-default-{{ section.id }}">
+    <div id="wp-icon-video-{{ section.id }}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <path d="M36.667 12.5L27.5 18.333V13.333C27.5 11.958 26.375 10.833 25 10.833H6.667C5.292 10.833 4.167 11.958 4.167 13.333V26.667C4.167 28.042 5.292 29.167 6.667 29.167H25C26.375 29.167 27.5 28.042 27.5 26.667V21.667L36.667 27.5V12.5Z" fill="#4C3E79"/>
+      </svg>
+    </div>
+    <p class="wp-upload-label-{{ section.id }}" id="wp-label-video-{{ section.id }}">{{ section.settings.video_label | default: 'Record a short video' }}</p>
+   
+  </div>
+
+  <!-- Camera / recording UI (hidden until camera opened) -->
+  <div id="wp-video-recorder-{{ section.id }}" style="display:none; flex-direction:column; align-items:center; gap:10px; width:100%;">
+    <video id="wp-camera-preview-{{ section.id }}" autoplay playsinline muted
+      style="width:100%; max-height:300px; border-radius:8px; background:#000; object-fit:cover;"></video>
+    <div style="display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+      <div id="wp-btn-start-rec-{{ section.id }}"
+        onclick="event.stopPropagation(); window['startRecording_{{ section.id }}']();"
+        style="background:#E53935; border:none; border-radius:20px; padding:8px 18px; font-size:13px; color:#FFF; cursor:pointer; font-family:'SF Pro',sans-serif; font-weight:600;">
+        ⏺ Start Recording
+      </div>
+      <div id="wp-btn-stop-rec-{{ section.id }}" disabled
+        onclick="event.stopPropagation(); window['stopRecording_{{ section.id }}']();"
+        style="background:#555; border:none; border-radius:20px; padding:8px 18px; font-size:13px; color:#FFF; cursor:pointer; font-family:'SF Pro',sans-serif; font-weight:600; opacity:0.45;">
+        ⏹ Stop
+      </div>
+      <div id="wp-btn-cancel-cam-{{ section.id }}"
+        onclick="event.stopPropagation(); window['cancelCamera_{{ section.id }}']();"
+        style="background:none; border:1.5px solid #ccc; border-radius:20px; padding:8px 18px; font-size:13px; color:#888; cursor:pointer; font-family:'SF Pro',sans-serif;">
+        Cancel
+      </div>
+    </div>
+    <p id="wp-rec-timer-{{ section.id }}" style="font-size:12px; color:#E53935; font-family:'SF Pro',sans-serif; margin:0; display:none;">⏺ Recording: 0s</p>
+  </div>
+
+  <!-- Preview after recording -->
+  <div id="wp-video-done-{{ section.id }}" style="display:none; flex-direction:column; align-items:center; gap:8px; width:100%;">
+    <video id="wp-preview-video-{{ section.id }}" controls
+      style="width:100%; max-height:auto; border-radius:8px; object-fit:cover;"></video>
+    <p class="wp-upload-filename-{{ section.id }}" id="wp-filename-video-{{ section.id }}" style="font-size:11px; color:#4C3E79; text-align:center; margin:0;"></p>
+    <button id="wp-remove-video-{{ section.id }}"
+onclick="event.stopPropagation(); window['removeRecording_{{ section.id }}']();"
+      style="background:none; border:1px solid #DDD; border-radius:20px; padding:4px 14px; font-size:12px; color:#888; cursor:pointer; font-family:'SF Pro',sans-serif;">
+      ✕ Re-record
+    </button>
+  </div>
+
+</div>
+
+      
+
+        {% if section.settings.wp_note != blank %}
+          <p class="wp-note-{{ section.id }}">{{ section.settings.wp_note }}</p>
+        {% endif %}
+        </div>
+
+        <!-- Mobile submit for phase 1 -->
+       <div class="pc-btnn-fixed-{{ section.id }}" id="pc-btn-fixedd-wrap-{{ section.id }}" >
+    <div class="pc-btnn-fixed-inner-{{ section.id }} pc-btn-fixed-inner-{{ section.id }}">
+      <button id="pcc-submit-fixed-{{ section.id }}">
+        {{ section.settings.wp_button_text | default: 'SUBMIT' }}
+      </button>
+    </div>
+  </div>
+
+      </div><!-- /wp-phase -->
+
+      <!-- ══════════════════════════════════
+           PHASE 2: CONSENT (hidden initially)
+      ══════════════════════════════════ -->
+<div id="consent-phase-{{ section.id }}" {% unless section.settings.skip_photos %}style="display:none;"{% endunless %}>
+        {% if section.settings.badge_text != blank %}
+          <div class="wl-profile-{{ section.id }}">{{ section.settings.badge_text }}</div>
+        {% endif %}
+
+        <h2 class="pc-page-heading-{{ section.id }}">{{ section.settings.page_heading }}</h2>
+
+        {% for block in section.blocks %}
+          {% if block.type == 'consent_card' %}
+            <div class="pc-card-{{ section.id }}" {{ block.shopify_attributes }}>
+              {% if block.settings.card_title != blank %}
+                <p class="pc-card-title-{{ section.id }}">{{ block.settings.card_title }}</p>
+              {% endif %}
+              <ul class="pc-list-{{ section.id }}">
+                {% if block.settings.item_1 != blank %}<li>{{ block.settings.item_1 }}</li>{% endif %}
+                {% if block.settings.item_2 != blank %}<li>{{ block.settings.item_2 }}</li>{% endif %}
+                {% if block.settings.item_3 != blank %}<li>{{ block.settings.item_3 }}</li>{% endif %}
+                {% if block.settings.item_4 != blank %}<li>{{ block.settings.item_4 }}</li>{% endif %}
+                {% if block.settings.item_5 != blank %}<li>{{ block.settings.item_5 }}</li>{% endif %}
+                {% if block.settings.item_6 != blank %}<li>{{ block.settings.item_6 }}</li>{% endif %}
+                {% if block.settings.item_7 != blank %}<li>{{ block.settings.item_7 }}</li>{% endif %}
+                {% if block.settings.item_8 != blank %}<li>{{ block.settings.item_8 }}</li>{% endif %}
+              </ul>
+              {% if block.settings.checkbox_label != blank %}
+                <label class="pc-checkbox-row-{{ section.id }}">
+                  <input type="checkbox" class="pc-checkbox-{{ section.id }} pc-card-check" data-section="{{ section.id }}">
+                  <span class="pc-checkbox-label-{{ section.id }}">{{ block.settings.checkbox_label }}</span>
+                </label>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <!-- Mobile agree button for phase 2 -->
+       <div class="pc-btn-fixed-{{ section.id }}">
+    <div class="pc-btn-fixeddd pc-btn-fixed-inner-{{ section.id }}">
+      <button id="pc-submit-new-{{ section.id }}"  disabled>
+        {{ section.settings.wp_button_text | default: 'yes i agree' }}
+      </button>
+    </div>
+  </div>
+
+      </div><!-- /consent-phase -->
+
+    </div>
+  </div>
+
+  <!-- Fixed bottom button (desktop) — label swaps between phases -->
+  {% comment %} <div class="pc-btn-fixed-{{ section.id }}" id="pc-btn-fixed-wrap-{{ section.id }}">
+    <div class="pc-btn-fixed-inner-{{ section.id }}">
+      <button id="pc-submit-fixed-{{ section.id }}">
+        {{ section.settings.wp_button_text | default: 'SUBMIT' }}
+      </button>
+    </div>
+  </div> {% endcomment %}
+
+</section>
+
+<script>
+(function() {
+  var sId = '{{ section.id }}';
+
+  /* ── Elements ── */
+  var wpPhase        = document.getElementById('wp-phase-'           + sId);
+  var consentPhase   = document.getElementById('consent-phase-'      + sId);
+  var phase1Btn      = document.getElementById('pcc-submit-fixed-'   + sId);
+  var phase1Wrap     = document.getElementById('pc-btn-fixedd-wrap-' + sId);
+  var consentBtn     = document.getElementById('pc-submit-new-'      + sId);
+  var mobileWpBtn    = document.getElementById('wp-submit-mobile-'   + sId);
+  var mobileAgreeBtn = document.getElementById('pc-submit-mobile-'   + sId);
+
+  /* ══════════════════════════════════════════
+     PHASE 1: upload previews
+  ══════════════════════════════════════════ */
+  function setupUpload(inputId, previewId, filenameId, removeId, iconId, boxId, labelId) {
+    var input     = document.getElementById(inputId);
+    var preview   = document.getElementById(previewId);
+    var filename  = document.getElementById(filenameId);
+    var removeBtn = document.getElementById(removeId);
+    var icon      = document.getElementById(iconId);
+    var box       = document.getElementById(boxId);
+    var label     = document.getElementById(labelId);
+    if (!input) return;
+
+    input.addEventListener('change', function() {
+      var file = this.files && this.files[0];
+      if (!file) return;
+      filename.textContent    = file.name;
+      filename.style.display  = 'block';
+      removeBtn.style.display = 'inline-block';
+      box.classList.add('has-file');
+      label.style.display = 'none';
+      icon.style.display  = 'none';
+      if (file.type.startsWith('image/')) {
+        var reader = new FileReader();
+        reader.onload = function(e) { preview.src = e.target.result; preview.style.display = 'block'; };
+        reader.readAsDataURL(file);
+      }
+      checkPhase1Ready();
+    });
+
+    removeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      input.value = '';
+      preview.src = ''; preview.style.display = 'none';
+      filename.style.display = 'none'; filename.textContent = '';
+      removeBtn.style.display = 'none';
+      box.classList.remove('has-file');
+      label.style.display = 'block';
+      icon.style.display  = 'block';
+      setTimeout(checkPhase1Ready, 50);
+    });
+  }
+
+  setupUpload('wp-input-front-' + sId, 'wp-preview-front-' + sId, 'wp-filename-front-' + sId, 'wp-remove-front-' + sId, 'wp-icon-front-' + sId, 'wp-box-front-' + sId, 'wp-label-front-' + sId);
+  setupUpload('wp-input-side-'  + sId, 'wp-preview-side-'  + sId, 'wp-filename-side-'  + sId, 'wp-remove-side-'  + sId, 'wp-icon-side-'  + sId, 'wp-box-side-'  + sId, 'wp-label-side-'  + sId);
+
+ /* ── MediaRecorder video capture ── */
+(function() {
+  var stream      = null;
+  var recorder    = null;
+  var chunks      = [];
+  var timerInt    = null;
+  var seconds     = 0;
+  var recordedFile = null;
+
+  var cameraPreview = document.getElementById('wp-camera-preview-' + sId);
+  var previewVideo  = document.getElementById('wp-preview-video-'  + sId);
+  var filenameEl    = document.getElementById('wp-filename-video-' + sId);
+  var defaultUI     = document.getElementById('wp-video-default-'  + sId);
+  var recorderUI    = document.getElementById('wp-video-recorder-' + sId);
+  var doneUI        = document.getElementById('wp-video-done-'     + sId);
+  var startBtn      = document.getElementById('wp-btn-start-rec-'  + sId);
+  var stopBtn       = document.getElementById('wp-btn-stop-rec-'   + sId);
+  var timerEl       = document.getElementById('wp-rec-timer-'      + sId);
+  var box           = document.getElementById('wp-box-video-'      + sId);
+
+  /* Open camera */
+ window['startVideoRecorder_' + sId] = function() {
+    if (stream) return; // already open
+    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+      .then(function(s) {
+        stream = s;
+        cameraPreview.srcObject = s;
+        defaultUI.style.display  = 'none';
+        recorderUI.style.display = 'flex';
+      })
+      .catch(function(err) {
+        alert('Camera access denied or not available: ' + err.message);
+      });
+  };
+
+  /* Start recording */
+  window['startRecording_' + sId] = function() {
+    if (!stream) return;
+    chunks = []; seconds = 0;
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = function(e) { if (e.data.size > 0) chunks.push(e.data); };
+    recorder.onstop = function() {
+      var blob = new Blob(chunks, { type: 'video/webm' });
+      recordedFile = new File([blob], 'recorded_video_' + Date.now() + '.webm', { type: 'video/webm' });
+
+      /* Stop camera stream */
+      stream.getTracks().forEach(function(t) { t.stop(); });
+      stream = null;
+
+      /* Show preview */
+      var url = URL.createObjectURL(blob);
+      previewVideo.src = url;
+      filenameEl.textContent   = recordedFile.name;
+      recorderUI.style.display = 'none';
+      doneUI.style.display     = 'flex';
+      box.classList.add('has-file');
+
+      /* Feed into quiz-flow checkPhotoForm */
+      window['_videoFile_' + sId] = recordedFile;
+      checkPhase1Ready();
+    };
+
+    recorder.start();
+    startBtn.style.opacity        = '0.45';
+startBtn.style.pointerEvents  = 'none';
+stopBtn.style.opacity         = '1';
+stopBtn.style.pointerEvents   = '';
+    timerEl.style.display  = 'block';
+
+    timerInt = setInterval(function() {
+      seconds++;
+      timerEl.textContent = '⏺ Recording: ' + seconds + 's';
+    }, 1000);
+  };
+
+  /* Stop recording */
+  window['stopRecording_' + sId] = function() {
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+    clearInterval(timerInt);
+    timerEl.style.display  = 'none';
+  startBtn.style.opacity        = '1';
+startBtn.style.pointerEvents  = '';
+stopBtn.style.opacity         = '0.45';
+stopBtn.style.pointerEvents   = 'none';
+  };
+
+  /* Cancel camera */
+  window['cancelCamera_' + sId] = function() {
+    if (recorder && recorder.state !== 'inactive') recorder.stop();
+    if (stream) { stream.getTracks().forEach(function(t) { t.stop(); }); stream = null; }
+    clearInterval(timerInt);
+    recorderUI.style.display = 'none';
+    defaultUI.style.display  = 'block';
+  };
+
+  /* Re-record */
+  window['removeRecording_' + sId] = function() {
+    recordedFile = null;
+    window['_videoFile_' + sId] = null;
+    if (previewVideo.src) URL.revokeObjectURL(previewVideo.src);
+    previewVideo.src = '';
+    filenameEl.textContent   = '';
+    doneUI.style.display     = 'none';
+    defaultUI.style.display  = 'block';
+    box.classList.remove('has-file');
+    checkPhase1Ready();
+  };
+})();
+
+  /* ══════════════════════════════════════════
+     PHASE 1: require all 3 files before submit
+  ══════════════════════════════════════════ */
+ function checkPhase1Ready() {
+    var frontInput = document.getElementById('wp-input-front-' + sId);
+    var sideInput  = document.getElementById('wp-input-side-'  + sId);
+
+    var hasAll = (frontInput && frontInput.files && frontInput.files.length > 0) &&
+                 (sideInput  && sideInput.files  && sideInput.files.length  > 0) &&
+                 !!window['_videoFile_' + sId];
+
+    if (phase1Btn) {
+      phase1Btn.style.opacity       = hasAll ? '1'       : '0.45';
+      phase1Btn.style.cursor        = hasAll ? 'pointer' : 'not-allowed';
+      phase1Btn.style.pointerEvents = hasAll ? ''        : 'none';
+      phase1Btn.style.background    = hasAll ? '#4C3E79' : '#B0A8CC';
+    }
+  }
+
+  /* Disable on load */
+  checkPhase1Ready();
+
+  /* ══════════════════════════════════════════
+     PHASE 1 → PHASE 2: switch to consent
+  ══════════════════════════════════════════ */
+  function showConsent() {
+    if (wpPhase)      wpPhase.style.display      = 'none';
+    if (consentPhase) consentPhase.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    updateConsentBtn();
+  }
+
+  var skipPhotos = {{ section.settings.skip_photos | json }};
+
+  if (skipPhotos) {
+    if (mobileWpBtn) mobileWpBtn.style.display = 'none';
+    updateConsentBtn();
+  } else {
+    if (phase1Btn) {
+      phase1Btn.addEventListener('click', function() {
+        showConsent();
+      });
+    }
+    if (mobileWpBtn) mobileWpBtn.addEventListener('click', showConsent);
+  }
+
+  /* ══════════════════════════════════════════
+     PHASE 2: checkboxes enable consent button
+  ══════════════════════════════════════════ */
+  function updateConsentBtn() {
+    var checkboxes = document.querySelectorAll('.pc-card-check[data-section="' + sId + '"]');
+    var allChecked = true;
+    checkboxes.forEach(function(cb) { if (!cb.checked) allChecked = false; });
+
+    if (consentBtn) {
+      consentBtn.disabled            = !allChecked;
+      consentBtn.style.opacity       = allChecked ? '1'       : '0.45';
+      consentBtn.style.cursor        = allChecked ? 'pointer' : 'not-allowed';
+    }
+    if (mobileAgreeBtn) {
+      mobileAgreeBtn.disabled  = !allChecked;
+    }
+  }
+
+  /* Run on load */
+  updateConsentBtn();
+
+  document.querySelectorAll('.pc-card-check[data-section="' + sId + '"]').forEach(function(cb) {
+    cb.addEventListener('change', updateConsentBtn);
+  });
+
+})();
+</script>
+
+
+{% schema %}
+{
+  "name": "Weight Photos & Consent",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Step Navigation"
+    },
+    {
+      "type": "text",
+      "id": "step_name",
+      "label": "data-step",
+      "info": "e.g. weight-photo-step"
+    },
+    {
+      "type": "text",
+      "id": "next_step",
+      "label": "next-step",
+      "info": "e.g. per-step"
+    },
+    {
+      "type": "header",
+      "content": "── PHASE 1: Weight Photo Upload ──"
+    },
+    {
+      "type": "textarea",
+      "id": "wp_heading",
+      "label": "Top Heading",
+      "default": "To verify your weight kindly provide clear photos that display your weight measurement."
+    },
+    {
+      "type": "text",
+      "id": "guide_title",
+      "label": "Guide Card Title",
+      "default": "Follow the photo guide:"
+    },
+    {
+      "type": "textarea",
+      "id": "guide_text",
+      "label": "Guide Card Text",
+      "default": "Tight clothing, clear background, good light, full body (front & side). Showing your face and upper body and waist. Wearing tight body hugging clothes (not loose fitting) so the clinician can verify your weight."
+    },
+    {
+      "type": "image_picker",
+      "id": "example_good_1",
+      "label": "Good Example Photo 1 (front)"
+    },
+    {
+      "type": "text",
+      "id": "caption_good_1",
+      "label": "Caption Good 1",
+      "default": "Full body, tight fitted clothing."
+    },
+    {
+      "type": "image_picker",
+      "id": "example_bad_1",
+      "label": "Bad Example Photo 1"
+    },
+    {
+      "type": "text",
+      "id": "caption_bad_1",
+      "label": "Caption Bad 1",
+      "default": "Close up of face, no body shown."
+    },
+    {
+      "type": "image_picker",
+      "id": "example_good_2",
+      "label": "Good Example Photo 2 (side)"
+    },
+    {
+      "type": "text",
+      "id": "caption_good_2",
+      "label": "Caption Good 2",
+      "default": "Full body, tight fitted clothing."
+    },
+    {
+      "type": "image_picker",
+      "id": "example_bad_2",
+      "label": "Bad Example Photo 2"
+    },
+    {
+      "type": "text",
+      "id": "caption_bad_2",
+      "label": "Caption Bad 2",
+      "default": "Dark clothing hides body shape."
+    },
+    {
+      "type": "text",
+      "id": "upload_heading",
+      "label": "Upload Section Heading",
+      "default": "Upload Proof of Weight Here"
+    },
+    {
+      "type": "text",
+      "id": "front_label",
+      "label": "Front Box Label",
+      "default": "Upload your full Front Image"
+    },
+    {
+      "type": "text",
+      "id": "side_label",
+      "label": "Side Box Label",
+      "default": "Upload your full Side Image"
+    },
+    {
+      "type": "text",
+      "id": "video_label",
+      "label": "Video Box Label",
+      "default": "Upload a short video"
+    },
+    {
+      "type": "text",
+      "id": "wp_note",
+      "label": "Note Text",
+      "default": "Used only by our clinical team to process your order quickly."
+    },
+    {
+      "type": "text",
+      "id": "wp_button_text",
+      "label": "Phase 1 Button Text",
+      "default": "SUBMIT"
+    },
+    {
+      "type": "header",
+      "content": "── PHASE 2: Patient Consent ──"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Consent Badge Text",
+      "default": "Patient Consent"
+    },
+    {
+      "type": "text",
+      "id": "page_heading",
+      "label": "Consent Page Heading",
+      "default": "Patient Consent"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Phase 2 Button Text",
+      "default": "YES I AGREE"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+  "type": "checkbox",
+  "id": "skip_photos",
+  "label": "Skip photo upload — show consent form directly",
+  "default": false
+}
+  ],
+  "blocks": [
+    {
+      "type": "consent_card",
+      "name": "Consent Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "card_title",
+          "label": "Card Title",
+          "default": "Do You Agree To The Following?"
+        },
+        {
+          "type": "header",
+          "content": "Bullet Items (up to 8)"
+        },
+        { "type": "textarea", "id": "item_1", "label": "Item 1", "default": "." },
+        { "type": "textarea", "id": "item_2", "label": "Item 2", "default": "." },
+        { "type": "textarea", "id": "item_3", "label": "Item 3", "default": "." },
+        { "type": "textarea", "id": "item_4", "label": "Item 4", "default": "." },
+        { "type": "textarea", "id": "item_5", "label": "Item 5", "default": "." },
+        { "type": "textarea", "id": "item_6", "label": "Item 6", "default": "." },
+        { "type": "textarea", "id": "item_7", "label": "Item 7", "default": "." },
+        { "type": "textarea", "id": "item_8", "label": "Item 8", "default": "." },
+        {
+          "type": "text",
+          "id": "checkbox_label",
+          "label": "Checkbox Label",
+          "default": "I confirm that I understand and agree to the above."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Weight Photos & Consent",
+      "blocks": [
+        {
+          "type": "consent_card",
+          "settings": {
+            "card_title": "Do You Agree To The Following?",
+            "item_1": "The information I have provided is true and accurate to the best of my knowledge",
+            "item_2": "The information I have provided will be used by the prescribers to decide whether it is appropriate to supply medication",
+            "item_3": "I understand that failure to give accurate information may result in a refusal to supply medication",
+            "checkbox_label": "I confirm that I understand and agree to the above."
+          }
+        },
+        {
+          "type": "consent_card",
+          "settings": {
+            "card_title": "Treatment Information & Risks",
+            "item_1": "I understand that rapid weight loss and injectable treatments can raise the risk of pancreatitis and gallbladder issues",
+            "item_2": "I understand that severe diarrhoea or vomiting may reduce contraceptive effectiveness",
+            "checkbox_label": "I confirm that I understand and agree to the above."
+          }
+        },
+        {
+          "type": "consent_card",
+          "settings": {
+            "card_title": "Final Consent",
+            "item_1": "The treatment is solely for my own use",
+            "item_2": "I will read the patient information leaflet supplied with the medication",
+            "checkbox_label": "I confirm that I understand and agree to the above."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

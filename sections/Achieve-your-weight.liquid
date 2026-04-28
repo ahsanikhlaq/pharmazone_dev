@@ -1,0 +1,644 @@
+ <style>
+    .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    
+}
+.Achieve_cs_weight_bar_main{
+    display: flex;
+    gap: 60px;
+    background: {{ section.settings.back_color }};
+    border-radius: 20px;
+    padding: 40px;
+}
+.Achieve_cs_weight_bar_text{
+    width: 48%;
+}
+.Achieve_cs-weight-section{
+ width: 52%;
+}
+.Achieve_cs-weight-section {
+    padding: 8px 26px 26px 26px;
+    border-radius: 26px;
+   background: #645690;
+       display: flex;
+    flex-direction: column;
+    gap: 39px;
+
+}
+.Achieve_cs-weight-display{
+text-align: center;
+}
+.Achieve_cs-unit-toggle {
+    display: flex;
+    background: #fff;
+    border-radius: 30px;
+    margin: 12px auto;
+    border: 1px solid #eee;
+}
+.Achieve_cs-unit-btn {
+    flex: 1;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 34px;
+    color: rgba(12, 36, 33, 0.80);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.Achieve_cs-unit-btn.active { 
+    border-radius: 17px;
+     background: var(--Purple, #4C3E79);
+     color: #fff;
+     }
+
+.Achieve_cs-result-card {
+    max-width: 498px;
+    margin: 0 auto;
+    padding: 40px 28px 16px 28px;
+    border-radius: 12px;
+   background: #4C3E79;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.Achieve_cs-loss-amount {
+    color: var(--Yellow, #FFD902);
+    font-family: var(--custom-fonts);
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 60px */
+    letter-spacing: -2px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    background: #645690;
+}
+.Achieve_cs_bar_side_loss_weight_text p{
+    margin: 0;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    padding:12px 0px;
+    letter-spacing: -0.5px;
+}
+.Achieve_cs_bar_side_loss_weight_text p strong{
+    color: var(--White, #FFF);
+font-family: var(--custom-fonts);
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%;
+letter-spacing: -0.5px;
+}
+#Achieve_cs-weightSlider {
+    width: 100%;
+    margin-top: 20px;
+    accent-color: #4b3f72;
+}
+{% comment %} - {% endcomment %}
+ .Achieve_cs_weight_bar_text_title p{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 590;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+        max-width: 630px;
+}
+.Achieve_cs_weight_bar_text_title p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+}
+
+.Achieve_cs_weight_bar_arrow{
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Achieve_cs_weight_bar_arrow svg{
+    width: 51px;
+    height: 51px;
+}
+.Achieve_cs_weight_bar_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Achieve_cs_weight_bar_richtext p{
+   margin: 0;
+   color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%; /* 24px */
+    text-transform: capitalize;
+    letter-spacing: 0px;
+    }
+    .Achieve_cs_weight_bar_richtext p strong{
+        color: var(--White, #FFF);
+        font-family: var(--custom-fonts);
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%;
+        text-transform: capitalize;
+        letter-spacing: 0px;
+    }
+    .Achieve_cs_weight_bar_numbre{
+        color: var(--Yellow, #FFD902);
+        leading-trim: both;
+        text-edge: cap;
+        font-family: var(--custom-fonts);
+        font-size: 130px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 156px */
+        letter-spacing: -2px;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+    .Achieve_cs-weightValue-text{
+    color: var(--White, #FFF);
+leading-trim: both;
+text-edge: cap;
+font-family: var(--custom-fonts);
+font-size: 42px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 50.4px */
+letter-spacing: -2px;
+}
+.Achieve_cs_bar_side_curr_rich p{
+    margin: 0;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0px;
+    padding-top: 12px;
+}
+.Achieve_cs_bar_side_curr_rich p strong{
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0px;
+}
+#Achieve_cs-weightSlider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px; /* Line ki thickness */
+    background: #f1f1f1; /* Khali track ka color */
+    border-radius: 5px;
+    outline: none;
+    margin: 20px 0;
+    /* Is se yellow line banti hai */
+    background-image: linear-gradient(#FFD700, #FFD700);
+    background-size: var(--progress, 50%) 100%;
+    background-repeat: no-repeat;
+}
+
+/* Chrome, Safari, Edge aur Opera ke liye thumb (Purple Button) */
+#Achieve_cs-weightSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px; /* Purple pill ki width */
+    height: 18px; /* Purple pill ki height */
+    background: #4C3E79;
+    border-radius: 25px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    /* Andar ke arrows < > */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E"), 
+                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+    background-position: left 12px center, right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Firefox ke liye thumb */
+#Achieve_cs-weightSlider::-moz-range-thumb {
+    width: 47px !important;
+    height: 18px !important;
+    background: #4C3E79;
+    border-radius: 25px;
+    cursor: pointer;
+    border: 2px solid #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='15 18 9 12 15 6'%3E%3C/polyline%3E%3C/svg%3E"), 
+                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+    background-position: left 12px center, right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+.Achieve_cs-unit-toggle {
+    border-radius: 30px;
+    margin: 80px 0 12px auto;
+    padding: 6px;
+}
+.Achieve_cs_weight_loss-up{
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 31.2px */
+    padding-bottom: 30px;
+}
+.cs_ach_bar_img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.cs_ach_bar_img_mbl{
+    display: none;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .cs_ach_bar_img{
+    display: none;
+}
+.cs_ach_bar_img_mbl{
+    display: block;
+}
+    .Achieve_cs_weight_bar_main{
+   flex-direction: column;
+       gap: 24px;
+       border-radius: 12px;
+        padding: 16px;
+}
+.Achieve_cs_weight_bar_numbre svg{
+    width: 40px;
+    height: 40px; 
+}
+.Achieve_cs_weight_bar_text{
+    width: 100%;
+    gap: 20px;
+}
+.Achieve_cs-weight-section{
+ width: 100%;
+    padding: 16px 0px 16px 0px;
+    border-radius: 16px;
+    gap: 24px;
+}
+.Achieve_cs_weight_bar_text_title p{
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.6px;
+}
+.Achieve_cs_weight_bar_text_title p strong{
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.Achieve_cs_weight_bar_arrow svg {
+    width: 17px;
+    height: 17px;
+}
+.Achieve_cs_weight_bar_arrow {
+    width: 32px;
+    height: 32px;
+}
+.Achieve_cs_weight_bar_numbre{
+    font-size: 58px;
+    line-height: 60px;
+    margin-top: 8px;
+}
+.Achieve_cs_weight_bar_richtext p {
+    font-size: 14px;
+    line-height: 18px;
+}
+.Achieve_cs_weight_bar_richtext p strong{
+    font-size: 14px;
+    line-height: 18px;
+}
+.Achieve_cs-weightValue-text{
+    font-size: 36px;
+    line-height: 43px;
+}
+#Achieve_cs-weightSlider {
+    height: 4px;
+    margin: 32px 0 25px 0;
+}
+.Achieve_cs_bar_side_curr_rich p{
+    padding-top: 5px;
+    font-size: 18px;
+    line-height: 19px;
+}
+.Achieve_cs_bar_side_curr_rich p{
+    font-size: 18px;
+    line-height: 19px;
+}
+.Achieve_cs-unit-toggle {
+    border-radius: 30px;
+    margin: 80px 0 12px auto;
+    padding: 6px;
+}
+.Achieve_cs-loss-amount {
+    font-size: 36px;
+    line-height: 43px;
+    padding: 12px 16px;
+
+}
+.Achieve_cs_bar_side_loss_weight_text p{
+    font-size: 14px;
+    line-height: 19px;
+}
+.Achieve_cs_bar_side_loss_weight_text p strong{
+    font-size: 14px;
+    line-height: 19px;
+}
+.Achieve_cs-result-card{
+    padding: 18px;
+    margin: 0 16px;
+}
+.Achieve_cs_weight_loss-up {
+    font-size: 16px;
+    line-height: 19px;
+    padding-bottom: 20px;
+}
+}
+
+</style>
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="Achieve_cs_weight_bar_main">
+    <div class="Achieve_cs_weight_bar_text">
+        
+        <div class="Achieve_cs_weight_bar_text_title">{{ section.settings.main-heading }}</div>
+        <div class="Achieve_cs_weight_bar_text_par_num">
+            <span class="Achieve_cs_weight_loss-up">{{ section.settings.loss-up }}</span>
+            <span class="Achieve_cs_weight_bar_numbre">{{ section.settings.number }} {% render 'cs_arrow' %}</span>
+        </div>
+    
+    <div class="Achieve_cs_weight_bar_richtext">{{ section.settings.richtext }}</div>
+    </div>
+<div class="Achieve_cs-weight-section">
+  <div class="cs_achieve_bar_img">
+    {{ section.settings.bar-img | image_url: width: 1440 | image_tag:
+                class: 'cs_ach_bar_img',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lezy"
+              }}
+              {{ section.settings.bar-img-mbl | image_url: width: 1440 | image_tag:
+                class: 'cs_ach_bar_img_mbl',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lezy"
+              }}
+  </div>
+
+  <div class="Achieve_cs-weight-display">
+    <span class="Achieve_cs-weightValue-text" id="Achieve_cs-weightValue"></span><span class="Achieve_cs-weightValue-text" id="Achieve_cs-weightUnitDisplay">kg</span>
+    <div class="Achieve_cs_bar_side_curr_rich">{{ section.settings.richtext1 }}</div>
+  </div>
+<div>
+  {% comment %} <div class="Achieve_cs-unit-toggle">
+    <button class="Achieve_cs-unit-btn active" data-unit="kg">kg</button>
+    <button class="Achieve_cs-unit-btn" data-unit="lb">lb</button>
+  </div> {% endcomment %}
+
+  <div class="Achieve_cs-result-card cs_card_scale_animations">
+    <div class="Achieve_cs-loss-amount">
+      -<span id="Achieve_cs-lossValue"></span><span id="Achieve_cs-lossUnit">kg</span>
+    </div>
+    <div class="Achieve_cs_bar_side_loss_weight_text">{{ section.settings.loss-text }}</div>
+    
+    <input type="range" id="Achieve_cs-weightSlider" 
+           min="{{ section.settings.min_weight }}" 
+           max="{{ section.settings.max_weight }}" 
+           value="{{ section.settings.default_weight }}">
+  </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  const KG_TO_LB = 2.20462;
+  const LOSS_PERCENTAGE = 0.2155; 
+
+  const slider = document.getElementById("Achieve_cs-weightSlider");
+  const weightValue = document.getElementById("Achieve_cs-weightValue");
+  const lossValue = document.getElementById("Achieve_cs-lossValue");
+  const weightUnitDisplay = document.getElementById("Achieve_cs-weightUnitDisplay");
+  const lossUnit = document.getElementById("Achieve_cs-lossUnit");
+  const buttons = document.querySelectorAll(".Achieve_cs-unit-btn");
+
+  function updateValues() {
+    let val = parseFloat(slider.value);
+    weightValue.innerText = Math.round(val);
+    
+    // Yellow Progress Bar Update logic
+    const min = slider.min || 0;
+    const max = slider.max || 100;
+    const percent = ((val - min) / (max - min)) * 100;
+    slider.style.setProperty('--progress', percent + '%');
+
+    // Calculate potential loss
+    let loss = val * LOSS_PERCENTAGE;
+    lossValue.innerText = Math.round(loss);
+  }
+
+  slider.addEventListener("input", updateValues);
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", function() {
+      if (this.classList.contains("active")) return;
+
+      const newUnit = this.dataset.unit;
+      let val = parseFloat(slider.value);
+
+      buttons.forEach(b => b.classList.remove("active"));
+      this.classList.add("active");
+
+      // Slider range conversion
+      if (newUnit === "lb") {
+        slider.min = Math.round(slider.min * KG_TO_LB);
+        slider.max = Math.round(slider.max * KG_TO_LB);
+        slider.value = Math.round(val * KG_TO_LB);
+        weightUnitDisplay.innerText = "lb";
+        lossUnit.innerText = "lb";
+      } else {
+        slider.min = Math.round(slider.min / KG_TO_LB);
+        slider.max = Math.round(slider.max / KG_TO_LB);
+        slider.value = Math.round(val / KG_TO_LB);
+        weightUnitDisplay.innerText = "kg";
+        lossUnit.innerText = "kg";
+      }
+
+      updateValues();
+    });
+  });
+
+  updateValues(); // Initial trigger
+});
+
+</script>
+
+{% schema %}
+{
+  "name": "Achieve your weight",
+  "settings": [
+    {
+            "type": "image_picker",
+            "id": "bar-img",
+            "label": "Desktop Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "bar-img-mbl",
+            "label": "Mobile Image"
+        },
+    {  
+      "type": "richtext",
+      "id": "main-heading",
+      "label": "Heading",
+    },
+    {  
+      "type": "text",
+      "id": "loss-up",
+      "label": "Loss Up",
+    },
+    {  
+      "type": "text",
+      "id": "number",
+      "label": "Numer",
+    },
+    {  
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Rich Text",
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "sub-Heading",
+      "default": "See How Much Weight You Could Lose"
+    },
+    {  
+      "type": "richtext",
+      "id": "richtext1",
+      "label": "Current Weight",
+    },
+    {
+      "type": "richtext",
+      "id": "loss-text",
+      "label": "Loss Weight Text"
+    },
+    {
+      "type": "range",
+      "id": "min_weight",
+      "min": 40,
+      "max": 100,
+      "step": 1,
+      "label": "Minimum Weight (kg)",
+      "default": 50
+    },
+   {
+  "type": "range",
+  "id": "max_weight",
+  "min": 100,
+  "max": 250,
+  "step": 1.5,
+  "label": "Maximum Weight (kg)",
+  "default": 151
+},
+    {
+      "type": "range",
+      "id": "default_weight",
+      "min": 50,
+      "max": 150,
+      "step": 1,
+      "label": "Default Starting Weight",
+      "default": 103
+    },
+    {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+  ],
+  "presets": [
+    {
+      "name": "Achieve your weight"
+    }
+  ]
+}
+{% endschema %}

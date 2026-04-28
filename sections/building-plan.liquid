@@ -1,0 +1,347 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background: linear-gradient(0deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%), linear-gradient(107deg, rgba(244,239,253,0.60) 0.38%, rgba(255,245,191,0.60) 100%), #FFF;
+    min-height: 60vh;
+  }
+
+  .bp-wrap-{{ section.id }} {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    width: 100%;
+  }
+
+  /* Heading */
+  .bp-heading-{{ section.id }} {
+    color: #111;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.4px;
+    margin: 0 0 32px;
+  }
+
+  /* Doctor row */
+  .bp-doctor-{{ section.id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .bp-doctor-avatar-{{ section.id }} {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #E8E0F5;
+    flex-shrink: 0;
+  }
+
+  .bp-doctor-avatar-{{ section.id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bp-doctor-name-{{ section.id }} {
+       font-family: 'SF Pro';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  /* Steps list */
+  .bp-steps-{{ section.id }} {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 18px;
+    text-align: left;
+  }
+
+  .bp-step-{{ section.id }} {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bp-step-{{ section.id }}.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .bp-step-icon-{{ section.id }} {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Done checkmark */
+  .bp-icon-done-{{ section.id }} {
+    color: #4C3E79;
+  }
+
+  @keyframes bp-spin-{{ section.id }} {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Pending dot */
+  .bp-icon-pending-{{ section.id }} {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #DDD;
+    border-radius: 50%;
+  }
+
+  .bp-step-text-{{ section.id }} {
+    color: var(--Black, #111);
+leading-trim: both;
+text-edge: cap;
+font-family: "SF Pro";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  }
+
+  .bp-step-text-{{ section.id }}.done {
+    color: #111;
+  }
+
+  .bp-step-text-{{ section.id }}.active {
+    color: #4C3E79;
+    font-weight: 500;
+  }
+  .points-wrapper-new {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+  @media screen and (max-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .bp-heading-{{ section.id }} {
+     font-size: 24px;
+        margin-bottom: 24px;
+    }
+    .bp-doctor-name-template--26994682102126__building_plan_tkYtiA{
+        max-width: 148px;
+    letter-spacing: 0px;
+    color: var(--Black, #111);
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "SF Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    }
+    .bp-doctor-template--26994682102126__building_plan_tkYtiA {
+            flex-direction: column;
+    }
+    .bp-doctor-template--26994682102126__building_plan_tkYtiA {
+        margin-bottom: 80px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="new-qes-section  section-{{ section.id }}-padding" data-step = '{{ section.settings.step-name }}' next-step = '{{ section.settings.next-step }}' auto-plan = '{{ section.settings.auto }}'>
+  <div class="page-width" style="width:100%;">
+    <div class="bp-wrap-{{ section.id }}">
+
+      <!-- Heading -->
+      <h2 class="bp-heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+       <div class='points-wrapper-new'>
+      <!-- Doctor -->
+      <div class="bp-doctor-{{ section.id }}">
+        {% if section.settings.doctor_image != blank %}
+          <div class="bp-doctor-avatar-{{ section.id }}">
+            <img src="{{ section.settings.doctor_image | img_url: '80x80', crop: 'center' }}" alt="Doctor">
+          </div>
+        {% else %}
+          <div class="bp-doctor-avatar-{{ section.id }}">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+              <circle cx="18" cy="18" r="18" fill="#E8E0F5"/>
+              <circle cx="18" cy="14" r="6" fill="#C4B5E8"/>
+              <path d="M6 30c0-6.627 5.373-10 12-10s12 3.373 12 10" fill="#C4B5E8"/>
+            </svg>
+          </div>
+        {% endif %}
+        <span class="bp-doctor-name-{{ section.id }}">{{ section.settings.doctor_name }}</span>
+      </div>
+
+      <!-- Steps -->
+      <div class="bp-steps-{{ section.id }}" id="bp-steps-{{ section.id }}">
+        {% for block in section.blocks %}
+          {% if block.type == 'step' %}
+            <div
+              class="bp-step-{{ section.id }}"
+              data-delay="{{ forloop.index | times: 600 }}"
+              data-state="{{ block.settings.state }}"
+              {{ block.shopify_attributes }}
+            >
+              <div class="bp-step-icon-{{ section.id }}">
+                {% if block.settings.state == 'done' %}
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<circle cx="12" cy="12" r="12" fill="white"/>
+<path d="M7.50195 12.4219L10.0332 14.9531L15.9395 9.04688" stroke="#4C3E79" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                {% elsif block.settings.state == 'loading' %}
+                  <div class="bp-icon-spin-{{ section.id }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<circle cx="12" cy="12" r="12" fill="white"/>
+<path d="M1.95908 7.15207C2.91791 5.16616 4.4441 3.50918 6.34465 2.39066C8.2452 1.27213 10.4347 0.742307 12.6364 0.868177C14.8381 0.994048 16.953 1.76996 18.7137 3.0978C20.4744 4.42564 21.8018 6.24576 22.528 8.32801C23.2543 10.4102 23.3467 12.6611 22.7938 14.7959C22.2408 16.9307 21.0672 18.8536 19.4214 20.3214C17.7756 21.7892 15.7314 22.736 13.5475 23.0421C11.3636 23.3482 9.13797 22.9997 7.15207 22.0409" stroke="#4C3E79" stroke-width="1.7" stroke-linecap="round"/>
+<path d="M7.50195 12.4219L10.0332 14.9531L15.9395 9.04688" stroke="#4C3E79" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                  </div>
+                {% else %}
+                  <div class="bp-icon-pending-{{ section.id }}"></div>
+                {% endif %}
+              </div>
+              <span class="bp-step-text-{{ section.id }} {{ block.settings.state }}">{{ block.settings.step_text }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %} <script>
+(function() {
+  var steps = document.querySelectorAll('#bp-steps-{{ section.id }} .bp-step-{{ section.id }}');
+  steps.forEach(function(step) {
+    var delay = parseInt(step.getAttribute('data-delay')) || 0;
+    setTimeout(function() {
+      step.classList.add('visible');
+    }, delay);
+  });
+})();
+</script> {% endcomment %}
+
+{% schema %}
+{
+  "name": "Building Plan Screen",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "We're building you a personalized plan"
+    },
+    {
+      "type": "image_picker",
+      "id": "doctor_image",
+      "label": "Doctor Avatar Image"
+    },
+    {
+      "type": "text",
+      "id": "doctor_name",
+      "label": "Doctor Name & Title",
+      "default": "Dr. Earim Chaudry, Clinical Professionals"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 60
+    },
+    {
+      "type": "text",
+      "id": "step-name",
+      "label": "step name"
+    },
+    {
+      "type": "text",
+      "id": "next-step",
+      "label": "next step"
+    },
+    {
+      "type": "text",
+      "id": "auto",
+      "label": "auto",
+      "default": "true"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_text",
+          "label": "Step Text",
+          "default": "Analyzing your profile info"
+        },
+        {
+          "type": "select",
+          "id": "state",
+          "label": "Step State",
+          "options": [
+            { "value": "done", "label": "✓ Done (checkmark)" },
+            { "value": "loading", "label": "⟳ Loading (spinner)" },
+            { "value": "pending", "label": "○ Pending (circle)" }
+          ],
+          "default": "done"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Building Plan Screen",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "step_text": "Analyzing your profile info",
+            "state": "done"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_text": "Checking your eligibility",
+            "state": "loading"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "step_text": "Preparing your plan",
+            "state": "pending"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

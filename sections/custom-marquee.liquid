@@ -1,0 +1,144 @@
+<style>
+.csym-container-mf {
+    overflow: hidden;
+    background-color: {{section.settings.background_color}};
+    padding: 25px 0;
+}
+
+.csym-track-mf {
+    display: flex;
+      animation: scroll-left 30s linear infinite; /* fast */
+    width: max-content;
+    will-change: transform; /* Helps with smooth rendering */
+}
+
+.feature-icon-item-mf {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    white-space: nowrap;
+}
+
+.feature-icon-item-mf img {
+    max-width: 118px;
+    max-height: 61px;
+    flex-shrink: 0;
+    margin-right: 12px;
+    width: 100%;
+    height: 100%;
+}
+
+.feature-icon-item-mf span {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.64px;
+    padding: 16px;
+    border-radius: 70px;
+    background: #FFF;
+}
+
+
+/* Keyframes for continuous scroll */
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+@media (max-width: 768px){
+    .csym-container-mf{
+        padding: 20px 0;
+    }
+    .feature-icon-item-mf span {
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 30px;
+}
+.feature-icon-item-mf img {
+    max-width: 86px;
+    max-height: 43px;
+}
+}
+</style>
+
+{% if section.settings.hide %}
+{% comment %} <style>
+    @media (min-width: 768px) {
+        .sec-{{ section.id }} {
+            display: none;
+        }
+    }
+</style> {% endcomment %}
+{% endif %}
+
+<div class="csym-container-mf sec-{{ section.id }}" style="background-color: {{section.settings.background_color}};">
+    <div class="csym-track-mf">
+        {% for block in section.blocks %}
+            <div class="feature-icon-item-mf">
+                {% if block.settings.icon %}
+                    <img src="{{ block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="auto" height="auto" loading="eager" fetchpriority="high">
+                {% endif %}
+                <span>{{ block.settings.title }}</span>
+            </div>
+        {% endfor %}
+
+        <!-- Duplicate the content once for seamless looping -->
+        {% for block in section.blocks %}
+            <div class="feature-icon-item-mf">
+                {% if block.settings.icon %}
+                    <img src="{{ block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="auto" height="auto" loading="eager" fetchpriority="high">
+                {% endif %}
+                <span>{{ block.settings.title }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Custom Marquee",
+    "tag": "section",
+    "class": "scrolling-feature-icons",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "hide",
+            "label": "Hide Desktop"
+        },
+        {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#E2F1C4",
+            "info": "Choose a background color for the section"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "feature",
+            "name": "Feature",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Icon"
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Feature Title",
+                    "default": "Feature"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Custom Marquee",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}

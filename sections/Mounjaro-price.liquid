@@ -1,0 +1,357 @@
+{% style %}
+.section-{{ section.id }}{
+    background: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+}
+.cs_m_p_title p{ 
+    margin: 0;
+    color: var(--Black, #111);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_m_p_title p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_m_p_cards{
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+.cs_m_p_cards_img{
+    width: 50%;
+}
+.cs_m_p_cards_content{
+    width: 50%;
+}
+.cs_m_p_cards_image{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.cs_m_p_cards_content{
+    border-radius: 20px;
+    background: var(--Purple, #4C3E79);
+    padding: 40px 0 40px 40px;
+}
+.cs_m_p_content_title p{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 33.6px */
+    letter-spacing: -2px;
+        text-transform: capitalize;
+}
+.cs_m_p_prices_blck{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+}
+.cs_m_p_price_block{
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+.cs_m_p_text{
+    margin: 0;
+    font-family: var(--custom-fonts);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.68px;
+    text-transform: capitalize; 
+    padding: 23px 0 23px 16px;
+    border-radius: 8px 30px 30px 8px;
+}
+.cs_m_p_prices_text p{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.56px;
+}
+.cs_m_p_prices_text p strong{
+    font-family: var(--custom-fonts);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -0.96px;
+}
+@media screen and (max-width: 768px) {
+    .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px !important;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+    }
+    .cs_m_p_cards {
+    gap: 0px;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.cs_m_p_cards_img{
+    display: none;
+}
+.cs_m_p_cards_content{
+    width: 100%;
+}
+.cs_m_p_title p{
+    font-size: 30px;
+    line-height: 36px;
+}.cs_m_p_title p strong{
+    font-size: 30px;
+    line-height: 36px;
+}
+.cs_m_p_cards_content {
+    border-radius: 12px;
+    padding: 12px;
+}   
+.cs_m_p_content_title p{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 300;
+    letter-spacing: 0px;
+}
+.cs_m_p_prices_blck {
+    margin-top: 16px;
+    gap: 12px;
+}
+.cs_m_p_text {
+    font-size: 16px;
+    text-transform: capitalize;
+    padding: 16px 0 16px 16px;
+    border-radius: 0px 30px 30px 0px;
+}
+.cs_m_p_price_block {
+    justify-content: space-between;
+}
+.cs_m_p_prices_text p{
+    font-size: 13px;
+    text-align: end;
+            max-width: 104px;
+}
+.cs_m_p_prices_text p strong{
+    font-size: 13px;
+}
+}
+.cs_m_p_text{
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease;
+    font-weight: 500;
+}
+
+.cs_m_p_text.in-view{
+    transform: scaleX(1);
+}
+
+{% endstyle %}
+<section class="section-{{ section.id }}" >
+  <div class="page-width">
+    <h3 class="cs_m_p_title">{{ section.settings.heading }}</h3>
+    <div class="cs_m_p_cards">
+        <div class="cs_m_p_cards_img">
+            {{ section.settings.image | image_url: width: 1600 | image_tag:
+                widths: '50, 100, 150, 200, 250, 300, 400, 500,600,1440',
+                 class: 'cs_m_p_cards_image',
+                alt: "image",
+                loading: "lazy"
+            }}
+        </div>
+        <div class="cs_m_p_cards_content">
+            <div class="cs_m_p_content_title">{{ section.settings.sub-heading }}</div>
+            <div class="cs_m_p_prices_blck">
+                {% for block in section.blocks %}
+                <div class="cs_m_p_price_block block-{{ block.id }}">
+                    <div class="cs_m_p_text">{{ block.settings.bar_text }}</div>
+                    <div class="cs_m_p_prices_text">{{ block.settings.bar_price }}</div>
+                </div>
+                {% style %}
+                  .block-{{ block.id }} .cs_m_p_text{
+                    background: {{ block.settings.bar_back_color }};
+                    color: {{ block.settings.bar_text_color }};
+                    min-width: {{  block.settings.bar_width_des }}px;
+                  }
+                  .block-{{ block.id }} .cs_m_p_prices_text p strong{
+                    color: {{ block.settings.bar_price_color }};
+                  }
+                  @media (max-width: 768px){
+                  .block-{{ block.id }} .cs_m_p_text{
+                    min-width: {{  block.settings.bar_width_mbl }}px;
+                  }
+                }
+                {% endstyle %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".cs_m_p_text");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+      }
+    });
+  }, { threshold: 0.4 });
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+
+
+{% schema %}
+{
+  "name": "Mounjaro price",
+  "settings": [
+    {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+    },
+    {
+        "type": "richtext",
+        "id": "sub-heading",
+        "label": "text"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "block",
+      "settings": [
+       {
+        "type": "text",
+        "id": "bar_text",
+        "label": "Bar Text"
+    },
+    {
+      "type": "range",
+      "id": "bar_width_des",
+      "label": "Bar Width Desktop",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "bar_width_mbl",
+      "label": "Bar Width Mobile",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "default": 200
+    },
+    {
+        "type": "color",
+        "id": "bar_text_color",
+        "label": "Bar Text Color",
+        "default": "#000"
+    },
+    {
+        "type": "color",
+        "id": "bar_back_color",
+        "label": "Bar Back Color",
+        "default": "#fff"
+    },
+     {
+        "type": "richtext",
+        "id": "bar_price",
+        "label": "Bar Price"
+    },
+    {
+        "type": "color",
+        "id": "bar_price_color",
+        "label": "Price Color"
+    },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mounjaro price",
+      "category": "Custom",
+    }
+  ]
+}
+{% endschema %}

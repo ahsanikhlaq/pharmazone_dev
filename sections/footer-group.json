@@ -1,0 +1,193 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "custom_footer_DyLYwY": {
+      "type": "custom-footer",
+      "blocks": {
+        "best_sellers_ajqitK": {
+          "type": "best-sellers",
+          "settings": {
+            "footer-menu-heading": "Treatment",
+            "menu": "treatment"
+          }
+        },
+        "best_sellers_nhVqgi": {
+          "type": "best-sellers",
+          "settings": {
+            "footer-menu-heading": "Useful Links",
+            "menu": "usefull-links"
+          }
+        },
+        "best_sellers_UJeC3i": {
+          "type": "best-sellers",
+          "settings": {
+            "footer-menu-heading": "Customer Service",
+            "menu": "customer-service"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_ajqitK",
+        "best_sellers_nhVqgi",
+        "best_sellers_UJeC3i"
+      ],
+      "name": "Custom Footer Section",
+      "settings": {
+        "logo": "shopify://shop_images/Mask_group_12.png",
+        "rich-text": "<p>At Pharmazon Express, we offer a wide range of treatments through our free online prescription service.</p>",
+        "content_title": "Have a question?",
+        "phone-Text": "<p><strong>Phone:  </strong><a href=\"tel:+ 44(0)1494 424 435\" title=\"tel:+ 44(0)1494 424 435\">+ 44(0)1494 424 435</a></p>",
+        "email": "<p><strong>Email:  </strong><a href=\"mailto:pharmacy@pharmazon.ltd\" title=\"mailto:pharmacy@pharmazon.ltd\">pharmacy@pharmazon.ltd</a></p>",
+        "adress-Text1": "<p><strong>Address:  </strong> 8 Devonshire Place, London W1G 6HP</p>",
+        "adress-Text2": "<p><strong>Dispensing address:</strong>  Unit 4, 40-40 Link, 30-34 Mill End Rd, High Wycombe HP12 4AX</p>",
+        "linkden_url": "https://www.linkedin.com/company/pharmazondirect",
+        "tiktok_url": "#",
+        "facebook_url": "https://www.facebook.com/pharmazonUK",
+        "instagram_url": "https://www.instagram.com/pharmazon_uk/",
+        "Newsletter": "Sign Up For Our Newsletter",
+        "Newsletter_text": "Stay up to date on our news, education and offers",
+        "bottom-text": "<p>©Pharmazon Express 2026. All Rights Reserved</p>",
+        "fotter_icon1": "shopify://shop_images/WhatsApp_Image_2026-03-18_at_5.46.02_AM_8c451ec0-992b-42bd-9b31-97ab6b748614.jpg",
+        "fotter-icon-link1": "https://www.pharmacyregulation.org/registers/pharmacy/9012756",
+        "fotter_icon2": "shopify://shop_images/image_2795.png",
+        "fotter-icon-link2": "",
+        "fotter_icon3": "shopify://shop_images/CPD_1.png",
+        "fotter-icon-link3": "",
+        "back_color": "#4c3e79",
+        "desktop-padding-top": 16,
+        "desktop-padding-bottom": 16,
+        "padding-top-mbl": 10,
+        "padding-bottom-mbl": 16,
+        "richtext": "<p>EXCELSIOR HEALTH LTD, Unit 4 40-40 Link, 30-34 Mill End Road, High Wycombe, Buckinghamshire, England, HP12 4AX</p><p>VAT NO - 314779875 | Company Registered No - <a href=\"https://find-and-update.company-information.service.gov.uk/company/10257312\" target=\"_blank\" title=\"https://find-and-update.company-information.service.gov.uk/company/10257312\">10257312</a><br/>Registered with and regulated by the General Pharmaceutical Council.</p><p>Superintendent Pharmacist - Mohammed Abou Daya (Reg No: <a href=\"https://www.pharmacyregulation.org/registers/pharmacist/registrationnumber/2083143\" target=\"_blank\" title=\"https://www.pharmacyregulation.org/registers/pharmacist/registrationnumber/2083143\">2083143</a>)</p><p>GPhC Registered No. <a href=\"https://www.pharmacyregulation.org/registers/pharmacy/9012756\" target=\"_blank\" title=\"https://www.pharmacyregulation.org/registers/pharmacy/9012756\">9012756</a></p>"
+      }
+    },
+    "custom_newsletter_form_QbjY93": {
+      "type": "custom-newsletter-form",
+      "blocks": {
+        "heading_wFkNkP": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Join Our Newsletter</strong>",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph_Apahbj": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Sign up to our email newsletter to get personalised offers, vouchers, health advice, new product launch news and more!</p>"
+          }
+        },
+        "email_form_xJNPUJ": {
+          "type": "email_form",
+          "settings": {
+            "ctm_name": "First Name",
+            "ctm_email_text": "Email Address"
+          }
+        }
+      },
+      "block_order": [
+        "heading_wFkNkP",
+        "paragraph_Apahbj",
+        "email_form_xJNPUJ"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 52
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "link_list_riktEK": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>Useful Links</strong>",
+            "menu": "all-categories"
+          }
+        },
+        "link_list_tH9BXT": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>Customer Service</strong>",
+            "menu": "footer-menu2"
+          }
+        },
+        "company_detail_qyw733": {
+          "type": "company_detail",
+          "settings": {
+            "heading": "<strong>get in touch</strong>",
+            "icon_ctm_one": "shopify://shop_images/Group_166_1.svg",
+            "custom_phone_text": "<p><strong>Head Office Phone</strong><br/>01494 424 435</p>",
+            "icon_ctm_two": "shopify://shop_images/Group_167.svg",
+            "custom_text_no": "",
+            "icon_ctm_three": "shopify://shop_images/Group_168.svg",
+            "custom_email_text": "<p><strong>Email</strong><br/><a href=\"mailto:weborders@pharmazon.ltd\" target=\"_blank\">pharmacy@pharmazon.ltd</a></p>",
+            "icon_ctm_four": "shopify://shop_images/Group_169.svg",
+            "custom_address_text": "<p><strong>Address</strong><br/><a href=\"https://www.google.co.in/maps/place/8+Devonshire+Pl,+Greater,+London+W1G+6HP,+UK/@51.5219624,-0.1522545,16z/data=!4m6!3m5!1s0x48761ad108649df9:0x8d2261131279b6ef!8m2!3d51.5220783!4d-0.1497175!16s%2Fg%2F11bw3h5x1t?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D\" target=\"_blank\" title=\"https://www.google.co.in/maps/place/8+Devonshire+Pl,+Greater,+London+W1G+6HP,+UK/@51.5219624,-0.1522545,16z/data=!4m6!3m5!1s0x48761ad108649df9:0x8d2261131279b6ef!8m2!3d51.5220783!4d-0.1497175!16s%2Fg%2F11bw3h5x1t?entry=ttu&g_ep=EgoyMDI1MDUyMS4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D\">8 Devonshire Pl, London W1G 6HP</a><br/></p><p><strong>Dispensing address - </strong><br/><a href=\"https://share.google/mKUwXAILS8IKZmZB3\" target=\"_blank\" title=\"https://share.google/mKUwXAILS8IKZmZB3\">Unit 4, 40-40 Link, 30-34 Mill End Rd, High Wycombe HP12 4AX</a><br/></p>"
+          }
+        },
+        "text_t6yEqD": {
+          "type": "text",
+          "settings": {
+            "heading": "<strong>Sign up</strong>",
+            "subtext": "<p>Get 10% off your first order when you sign up to the newsletter</p>",
+            "social_media_heading": "<strong>Follow Us</strong>",
+            "show_social": true
+          }
+        },
+        "image_rW9WzR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Awards_1.png",
+            "image_width": 550,
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "link_list_riktEK",
+        "link_list_tH9BXT",
+        "company_detail_qyw733",
+        "text_t6yEqD",
+        "image_rW9WzR"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "scheme-2d4498c6-ea66-4f7b-80ad-f55f1ebda9b8",
+        "ctm_copyright": "©<a href=\"https://pharmazonexpress.com/\" title=\"https://pharmazonexpress.com/\">Pharmazon Express </a>2026. All Rights Reserved",
+        "ctm_url_image": "https://www.pharmacyregulation.org/registers/pharmacy/9012756",
+        "ctm_company_text": "<p>EXCELSIOR HEALTH LTD, Unit 4 40-40 Link, 30-34 Mill End Road, High Wycombe, Buckinghamshire, England, HP12 4AX</p><p>VAT NO - 314779875 | Company Registered No - <a href=\"https://find-and-update.company-information.service.gov.uk/company/10257312\" target=\"_blank\" title=\"https://find-and-update.company-information.service.gov.uk/company/10257312\">10257312</a><br/>Registered with and regulated by the General Pharmaceutical Council. </p><p>Superintendent Pharmacist - Mohammed Abou Daya (Reg No: <a href=\"https://www.pharmacyregulation.org/registers/pharmacist/registrationnumber/2083143\" target=\"_blank\" title=\"https://www.pharmacyregulation.org/registers/pharmacist/registrationnumber/2083143\">2083143</a>)</p><p>GPhC Registered No. <a href=\"https://www.pharmacyregulation.org/registers/pharmacy/9012756\" target=\"_blank\" title=\"https://www.pharmacyregulation.org/registers/pharmacy/9012756\">9012756</a></p>",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 40,
+        "padding_bottom": 24
+      }
+    }
+  },
+  "order": [
+    "custom_footer_DyLYwY",
+    "custom_newsletter_form_QbjY93",
+    "footer"
+  ]
+}

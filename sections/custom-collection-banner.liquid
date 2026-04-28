@@ -1,0 +1,197 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  @media screen and (max-width: 749px) {
+    .collection-hero--with-image .collection-hero__inner {
+      padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
+    }
+  }
+{%- endstyle -%}
+
+{% style %}
+  .custom--{{ section.id }}-overlay{
+    /* background-image: url("{{ collection.metafields.custom.collection_banner | img_url: 'master'}}"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: 100% 100%; */
+      /* padding: 101px 0px; */
+      /* background-attachment: inherit; */
+      /* text-align: center; */
+      /* min-height: 367px; */
+      /* display: flex; */
+      /* align-items: center; */
+  }
+  @media screen and (max-width: 990px){
+    .custom--{{ section.id }}-overlay{
+       /* min-height: 223px; */
+    }
+  }
+{% endstyle %}
+
+{% if collection.metafields.custom.collec_mobile_banner == blank %}
+  {% style %}
+    .custom--banner-collection .collection-hero__inner{
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  {% endstyle %}
+{% endif %}
+
+{% if collection.metafields.custom.collec_mobile_banner != blank %}
+  {% style %}
+    .custom--right--set .collection-hero__inner{
+     width: 100%;
+    text-align: right;
+    }
+    .custom--right--set  .collection-hero__inner .collection-hero__text-wrapper{
+      width: 100%;
+    }
+
+
+    @media screen and (max-width: 750px){
+      .custom--{{ section.id }}-overlay{
+      /* background-image: url("{{ collection.metafields.custom.collec_mobile_banner | img_url: 'master'}}"); */
+      /* background-repeat: no-repeat; */
+        /* background-size: 100%; */
+        /* padding: 101px 0px; */
+        /* background-attachment: inherit; */
+        /* text-align: center; */
+        /* min-height: 540px; */
+        /* display: flex; */
+        /* align-items: center; */
+    }
+    }
+  {% endstyle %}
+{% endif %}
+
+<style>
+  .desktop_view img,
+  .mobile_view img{
+   width:100%;
+    display: block;
+  }
+
+  .mobile_view{
+    display:none;
+  }
+
+  @media screen and (max-width: 750px){
+    .desktop_view{
+      display:none;
+    }
+
+    .mobile_view{
+      display:block;
+    }
+  }
+</style>
+
+<div class="">
+  <div class="collection-hero custom--{{ collection.metafields.custom.text_alignment }}--set  custom--banner-collection {% if collection.metafields.custom.collection_banner != blank %} custom--{{ section.id }}-overlay {% endif %} {% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+    {% assign coll_ctm_bann = collection.metafields.custom.collection_banner.value %}
+    {% assign mobile_ctm_bann = collection.metafields.custom.collec_mobile_banner.value %}
+    {% if coll_ctm_bann != blank %}
+      <div class="desktop_view">
+        <img src="{{ coll_ctm_bann | img_url: 'master' }}">
+      </div>
+      <div class="mobile_view">
+        <img src="{{ mobile_ctm_bann | img_url: 'master' }}">
+      </div>
+    {% else %}
+      <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+        {% if section.settings.show_overlay_title %}
+          <div class="collection-hero__text-wrapper">
+            <h1 class="collection-hero__title">
+              <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+              {{- collection.title | escape -}}
+            </h1>
+
+            {%- if section.settings.show_collection_description -%}
+              <div class="collection-hero__description rte">{{ collection.description }}</div>
+            {%- endif -%}
+          </div>
+        {% endif %}
+
+        {%- if section.settings.show_collection_image and collection.image -%}
+          <div class="collection-hero__image-container media gradient">
+            <img
+              srcset="
+                {%- if collection.image.width >= 165 -%}{{ collection.image | image_url: width: 165 }} 165w,{%- endif -%}
+                {%- if collection.image.width >= 360 -%}{{ collection.image | image_url: width: 360 }} 360w,{%- endif -%}
+                {%- if collection.image.width >= 535 -%}{{ collection.image | image_url: width: 535 }} 535w,{%- endif -%}
+                {%- if collection.image.width >= 750 -%}{{ collection.image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if collection.image.width >= 1070 -%}{{ collection.image | image_url: width: 1070 }} 1070w,{%- endif -%}
+                {%- if collection.image.width >= 1500 -%}{{ collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {{ collection.image | image_url }} {{ collection.image.width }}w
+              "
+              src="{{ collection.image | image_url: width: 750 }}"
+              sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+              alt="{{ collection.image.alt | escape }}"
+              width="{{ collection.image.width }}"
+              height="{{ collection.image.height }}"
+            >
+          </div>
+        {%- endif -%}
+      </div>
+    {% endif %}
+  </div>
+
+  {% if section.settings.show_title_below %}
+    <div class="ctm--coll--tit collection-hero__text-wrapper page-width">
+      <h1 class="collection-hero__title">
+        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+        {{- collection.title | escape -}}
+      </h1>
+
+      {%- if section.settings.show_collection_description -%}
+        <div class="collection-hero__description rte">{{ collection.description }}</div>
+      {%- endif -%}
+    </div>
+  {% endif %}
+</div>
+{% schema %}
+{
+  "name": "Overlay collection banner",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay_title",
+      "label": "Show Overlay title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title_below",
+      "label": "Show title below image"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Overlay collection banner"
+    }
+  ]
+}
+{% endschema %}

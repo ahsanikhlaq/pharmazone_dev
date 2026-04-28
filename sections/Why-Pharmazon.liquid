@@ -1,0 +1,404 @@
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+   
+}   
+.cs_why_main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+     background: {{ section.settings.back_color }};
+     border-radius: 24px;
+    padding: 40px;
+    position: relative;
+}
+.cs_why_main_heading{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+}
+.sc_why_main_richtext p strong{
+    margin: 0;
+    color: var(--white, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: -0.32px;
+}
+.sc_why_main_richtext p{
+    color: var(--white, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.32px;
+}
+.cs_why_main_left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+.cs_why_main_fea{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.6px;
+    text-transform: uppercase;
+    padding: 21px 20px;
+}
+.cs_cheak_block_img{
+    display: block;
+    object-fit: cover;
+    max-width: 126px;
+    max-height: 42px; 
+}
+.cs_why_main_other{
+    margin: 0;
+    color: var(--white, #FFF);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.6px;
+    text-transform: uppercase;
+    padding: 21px 0;
+}
+.cs_why_main_right_header{
+    display: grid;
+    grid-template-columns: auto 23% 23%;
+}
+.cs_why_main_logo{
+  background: var(--Yellow, #FFD902);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cs_why_main_right_block{
+    display: grid;
+    grid-template-columns: auto 23% 23%;
+  align-items: center;
+  height: 67px;
+  {% comment %} border-top: 1px solid var(--light-gray-20, #E0E0E0); {% endcomment %}
+}
+.cs_why_main_right_block_text{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0px 0 0px 20px;
+    border-top: 0.56px solid var(--light-gray-20, #E0E0E0);
+    height: 100%;
+    align-items: center;
+    display: flex;
+    letter-spacing: -0.64px;
+}
+.cs_why_main_right_block_cheak {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.56px solid var(--Purple, #4C3E79);
+background: var(--Yellow, #FFD902);
+}
+.cs_why_main_right_block_thum{
+width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.558px solid var(--light-gray-20, #E0E0E0);
+}
+.cs_cheak_block_img{
+    display: block;
+    object-fit: cover;
+    width: 24px;
+    height: 24px;
+}
+.cs_why_main_logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--Yellow, #FFD902);
+}
+.cs_tumb_block_img{
+    display: block;
+    object-fit: cover;
+    width: 24px;
+    height: 24px;
+}
+.cs_cheak_block_img-logo{
+    display: block;
+    object-fit: contain;
+    width: 126px;
+    height: 42px;
+}
+.cs_why_main_right_block_thum{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cs_why_main_right{
+    border-radius: 24px;
+    background: #645690;
+    backdrop-filter: blur(62px);
+}
+.cs_why_main_back-image{
+    display: block;
+        max-width: 730px;
+    max-height: 500px;
+    min-width: 730px;
+    min-height: 500px; 
+}
+.cs_why_main_back-img{
+    bottom: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+ @media screen and (max-width:768px){
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.mbl_padding_top }}px;
+    padding-bottom: {{ section.settings.mbl_padding_bottom }}px;
+  }
+  .cs_why_main{
+    grid-template-columns: 1fr;
+    gap: 24px;
+     border-radius: 16px;   
+    padding: 16px 12px;
+}
+.sc_why_main_richtext{
+    display: none;
+}
+.cs_why_main_heading{
+    font-size: 30px;
+    line-height: 120%; /* 36px */
+    text-align: center;
+    max-width: 331px;
+        margin: 0 auto;
+}
+.cs_why_main_back-img{
+    display: none;
+}
+.cs_why_main_right {
+    border-radius: 16px;
+}
+.cs_cheak_block_img-logo {
+    width: 68px;
+    height: 34px;
+}
+.cs_why_main_fea {
+    font-size: 16px;
+}
+.cs_why_main_right_block_text {
+    font-size: 16px;
+    padding: 0px 10px 0px 12px;
+}
+.cs_why_main_other {
+    font-size: 16px;
+}
+.cs_cheak_block_img {
+    width: 20px;
+    height: 20px;
+}
+.cs_tumb_block_img {
+    width: 20px;
+    height: 20px;
+}
+  } 
+</style>
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_why_main">
+        <div class="cs_why_main_back-img">
+                    {{ section.settings.back-img | image_url: width: 1440 | image_tag:
+                                class: 'cs_why_main_back-image',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }}
+                </div>
+        <div class="cs_why_main_left">
+            <h3 class="cs_why_main_heading">{{ section.settings.heading }}</h3>
+            <div class="sc_why_main_richtext">{{ section.settings.sub-heading }}</div>
+        </div>
+        <div class="cs_why_main_right">
+            <div class="cs_why_main_right_header">
+                <h3 class="cs_why_main_fea">{{ section.settings.title }}</h3>
+                <div class="cs_why_main_logo">
+                    {{ section.settings.logo | image_url: width: 1440 | image_tag:
+                                class: 'cs_cheak_block_img-logo',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }}
+                </div>
+                <h3 class="cs_why_main_other">{{ section.settings.other }}</h3>
+            </div>
+            <div class="cs_why_main_right_body">
+                {% for block in section.blocks %}
+                    <div class="cs_why_main_right_block">
+                        <h3 class="cs_why_main_right_block_text">{{ block.settings.text }}</h3>
+                        <div class="cs_why_main_right_block_cheak">
+                            {{ block.settings.cheak | image_url: width: 1440 | image_tag:
+                                class: 'cs_cheak_block_img',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }}
+                        </div>
+                        <div class="cs_why_main_right_block_thum">
+                            {{ block.settings.thum | image_url: width: 1440 | image_tag:
+                                class: 'cs_tumb_block_img',
+                                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                                height: 100,
+                                width: 100,
+                                alt: logo_alt,
+                                loading: "lazy"
+                            }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+{% schema %}
+{
+  "name": "Why Pharmazon",
+  "settings": [
+    {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+    },
+    {
+        "type": "richtext",
+        "id": "sub-heading",
+        "label": "Rich Text"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Features"
+    },
+    {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "logo Image"
+    },
+    {
+        "type": "image_picker",
+        "id": "back-img",
+        "label": "Background Image"
+    },
+    {
+        "type": "text",
+        "id": "other",
+        "label": "Others"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Top Padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Bottom Padding",
+      "default": 10
+    },
+    {
+       "type": "color_background",
+        "id": "back_color",
+        "label": "Background Color"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "best-sellers",
+        "name": "Add Tab",
+         "settings": [
+            {
+                "type": "text",
+                "id": "text",
+                "label": "Text"
+            },
+            {
+                "type": "image_picker",
+                "id": "cheak",
+                "label": "Cheak Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "thum",
+                "label": "Thum Image"
+            },
+         ]
+         }
+        ],
+  "presets": [
+    {
+      "name": "Why Pharmazon",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

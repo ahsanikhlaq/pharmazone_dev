@@ -1,0 +1,362 @@
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.back_color }};
+}   
+.cs_cli_main_parent{
+    position: relative;
+}
+.cs_app_block_img_des{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.cs_app_block_img_mbl{
+    display: none;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.cs_cli_main_content{
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+}
+.cs_cli_content_heading{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 24px */
+    letter-spacing: 0px;
+    display: none;
+}
+.cs_cli_content_richtext p{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: -0.5px;
+    padding-top: 16px;
+}
+.cs_cli_content_images_main{
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+        gap: 16px;
+}
+.cs_cli_content_block_img{
+    display: block;
+    object-fit: cover;
+    max-width: 80px;
+    max-height: 80px;
+    
+}
+.cs_cli_content_img_text{
+    border-radius: 100px;
+    border: 2px solid var(--White, #FFF);
+    background: rgba(255, 255, 255, 0.24);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+}
+.cs_cli_content_block_tex{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
+    letter-spacing: -1px;
+}
+.cs_cli_content_bar{
+    width: 55px;
+   border: 1.6px dotted #fff;
+}
+.cs_cli_content_heading_des p{
+    display: block;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 33.6px */
+    letter-spacing: -0.28px;
+    text-transform: capitalize;
+    margin: 0;
+}
+.cs_cli_content_images_main-b{
+     display: flex;
+    align-items: center;
+    gap: 0px;
+    margin-top: 20px;
+        justify-content: space-between;
+}
+ @media screen and (max-width:768px){
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.mbl_padding_top }}px;
+    padding-bottom: {{ section.settings.mbl_padding_bottom }}px;
+  }
+  .cs_cli_content_images_main-b {
+    gap: 44px;
+  }
+  .cs_app_block_img_des{
+    display: none;
+}
+.cs_app_block_img_mbl{
+    display: block;
+}
+.cs_cli_content_heading_des p{
+    display: none;
+}
+.cs_cli_content_heading{
+    display: block;
+    max-width: 200px;
+}
+.cs_cli_content_bar {
+    width: 28px;
+    border: 1px dotted #fff;
+}
+.cs_cli_content_images_main {
+    margin-top: 0px;
+    gap: 7px;
+}
+.cs_cli_content_block_img {
+    max-width: 50px;
+    max-height: 50px;
+}
+.cs_cli_content_img_text {
+    padding: 18px;
+}
+.cs_cli_main_content {
+        top: 0;
+        left: 14px;
+        transform: unset;
+        right: 14px;
+        bottom: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 22px 0 16px;
+}
+.cs_cli_content_block_tex {
+    font-size: 15px;
+    letter-spacing: 0px;
+            max-width: 80px;
+        margin: 0 auto;
+        text-align: center;
+}
+.cs_cli_content_richtext p{
+    padding-top: 8px;
+    font-size: 14px;
+    max-width: 205px;
+}
+
+  }
+  
+</style>
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_cli_main_parent">
+        <div class="cs_cli_block_image">
+            {{ section.settings.image | image_url: width: 1440 | image_tag:
+                class: 'cs_app_block_img_des',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lazy"
+              }}
+              {{ section.settings.image_mbl | image_url: width: 1440 | image_tag:
+                class: 'cs_app_block_img_mbl',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lazy"
+              }}
+         </div>
+         <div class="cs_cli_main_content">
+            <div class="cs_cli_main_conten_title_richtext">
+            <div class="cs_cli_content_heading_des">{{ section.settings.ms-title }}</div>
+            <h3 class="cs_cli_content_heading">{{ section.settings.title }}</h3>
+            <div class="cs_cli_content_richtext">{{ section.settings.rich_title }}</div>
+            </div>
+        <div>
+            <div class="cs_cli_content_images_main">
+                <div class="cs_cli_content_img_text">
+            {{ section.settings.image1 | image_url: width: 1440 | image_tag:
+                class: 'cs_cli_content_block_img',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lazy"
+              }}
+                </div>
+                <div class="cs_cli_content_bar"> </div>
+                <div class="cs_cli_content_img_text">
+            {{ section.settings.image2 | image_url: width: 1440 | image_tag:
+                class: 'cs_cli_content_block_img',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lazy"
+              }}
+                </div>
+                <div class="cs_cli_content_bar"> </div>
+                <div class="cs_cli_content_img_text">
+            {{ section.settings.image3 | image_url: width: 1440 | image_tag:
+                class: 'cs_cli_content_block_img',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lazy"
+              }}
+                </div>
+            </div>
+            <div class="cs_cli_content_images_main-b">
+                <h4 class="cs_cli_content_block_tex">{{ section.settings.text1 }}</h4>
+                <h4 class="cs_cli_content_block_tex">{{ section.settings.text2 }}</h4>
+                <h4 class="cs_cli_content_block_tex">{{ section.settings.text3 }}</h4>
+            </div>
+        </div>
+         </div>
+    </div>
+</div>
+</section>
+
+{% schema %}
+{
+  "name": "Clinician-Led Approach",
+  "settings": [
+   {
+    "type": "text",
+    "id": "title",
+    "label": "Title"
+    },
+    {
+    "type": "richtext",
+    "id": "ms-title",
+    "label": "Title"
+    },
+    {
+    "type": "richtext",
+    "id": "rich_title",
+    "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image Desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mbl",
+      "label": "Image Mobile"
+    },
+    {
+        "type": "text",
+        "id": "text1",
+        "label": "Qualified Review"
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Qualified Image"
+    },
+    {
+        "type": "text",
+        "id": "text2",
+        "label": "Careful Approval"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Approval Image"
+    },
+    {
+        "type": "text",
+        "id": "text3",
+        "label": "Private Delivery"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Private Image"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Top Padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Bottom Padding",
+      "default": 10
+    },
+    {
+       "type": "color_background",
+        "id": "back_color",
+        "label": "Background Color"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "best-sellers",
+        "name": "Add Tab",
+         "settings": [
+                   
+         ]
+         }
+        ],
+  "presets": [
+    {
+      "name": "Clinician-Led Approach",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

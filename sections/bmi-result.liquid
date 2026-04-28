@@ -1,0 +1,444 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background: linear-gradient(0deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.50) 100%), linear-gradient(107deg, rgba(244,239,253,0.60) 0.38%, rgba(255,245,191,0.60) 100%), #FFF;
+  }
+
+  .bmi-wrap-{{ section.id }} {
+    max-width: 500px;
+    margin: 0 auto;
+    font-family: "SF Pro", -apple-system, sans-serif;
+  }
+
+  /* Top bar */
+  .bmi-topbar-{{ section.id }} {
+   display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-radius: 16px;
+    background: #FFF;
+    padding: 16px 28px;
+    margin-bottom: 12px;
+  }
+
+  .bmi-topbar-label-{{ section.id }} {
+   color: var(--Black, #111);
+font-family: "SF Pro";
+font-size: 20px;
+font-style: normal;
+font-weight: 510;
+line-height: 120%; /* 24px */
+letter-spacing: -0.2px;
+  }
+
+  .bmi-topbar-value-{{ section.id }} {
+   color: #4C3E79;
+text-align: center;
+font-family: "SF Pro";
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 48px */
+letter-spacing: -2px;
+  }
+
+
+  /* Card */
+  .bmi-card-{{ section.id }} {
+    background: #FFF;
+    border-radius: 20px;
+    padding: 28px 24px 20px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+  }
+
+  .bmi-card-title-{{ section.id }} {
+    color: var(--Black, #111);
+text-align: center;
+font-family: 'SF PRO';
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 28.8px */
+letter-spacing: -0.24px;
+margin-bottom: 16px;
+  }
+
+  .bmi-loss-badge-{{ section.id }} {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .bmi-loss-pill-{{ section.id }} {
+   border-radius: 8px;
+background: rgba(255, 245, 191, 0.66);
+    padding: 8px 12px;
+  color: #4C3E79;
+text-align: center;
+font-family: 'SF Pro';
+font-size: 28px;
+font-style: normal;
+font-weight: 500;
+line-height: 120%; /* 33.6px */
+letter-spacing: -0.28px;
+  }
+
+  .bmi-subtitle-{{ section.id }} {
+   text-align: center;
+    color: #888;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: var(--Black, #111);
+    text-align: center;
+    font-family: "SF Pro";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.14px;
+    margin-top: 16px;
+  }
+
+  /* Chart */
+  .bmi-chart-wrap-{{ section.id }} {
+    position: relative;
+    width: 100%;
+    height: 200px;
+  }
+
+  .bmi-chart-wrap-{{ section.id }} canvas {
+    width: 100% !important;
+  }
+
+  .bmi-chart-labels-{{ section.id }} {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding: 0 2px;
+    
+  }
+
+  .bmi-chart-labels-{{ section.id }} span {
+   color: #111;
+    text-align: center;
+    font-family: "SF Pro";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+
+  /* Button */
+  .bmi-btn-{{ section.id }} {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    border-radius: 45px;
+    background: #4C3E79;
+    border: none;
+    padding: 16px;
+    color: #FFF;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .bmi-topbar-value-template--26994682102126__bmi_result_pRRW8r{
+        font-size: 34px;
+    }
+    .bmi-topbar-label-template--26994682102126__bmi_result_pRRW8r{
+       font-size: 16px;
+    }
+}
+
+{%- endstyle -%}
+
+<section class="new-qes-section section-{{ section.id }}-padding" min-bmi = '{{  section.settings.min-bmi }}' max-bmi = '{{ section.settings.max-bmi }}' cal-bmi = '' eligible-step = '{{ section.settings.e-step }}' data-step = '{{ section.settings.step-name }}' next-step = '{{ section.settings.next-step }}'>
+  <div class="page-width">
+    <div class="bmi-wrap-{{ section.id }}">
+
+      <!-- Top Bar -->
+      <div class="bmi-topbar-{{ section.id }}">
+        <div class="bmi-topbar-label-{{ section.id }}">{{ section.settings.topbar_label }}</div>
+        <div class="bmi-topbar-value-{{ section.id }}">
+          {{ section.settings.current_weight }}<span>{{ section.settings.weight_unit }}</span>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="bmi-card-{{ section.id }}">
+        <p class="bmi-card-title-{{ section.id }}">{{ section.settings.card_title }}</p>
+
+        <div class="bmi-loss-badge-{{ section.id }}">
+          <div class="bmi-loss-pill-{{ section.id }}">
+            {{ section.settings.loss_amount }}{{ section.settings.weight_unit }}
+          </div>
+        </div>
+
+        <p class="bmi-subtitle-{{ section.id }}">{{ section.settings.subtitle }}</p>
+
+        <!-- Chart -->
+        <div class="bmi-chart-wrap-{{ section.id }}">
+          <canvas id="bmiChart-{{ section.id }}"></canvas>
+        </div>
+
+        <div class="bmi-chart-labels-{{ section.id }}">
+           <span>Start</span>
+  <span>Month 2</span>
+  <span>Month 4</span>
+  <span>Month 8</span>
+  <span>Month 12</span>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <button class="bmi-btn-{{ section.id }}">{{ section.settings.button_text }}</button>
+
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+(function() {
+  var canvas = document.getElementById('bmiChart-{{ section.id }}');
+  if (!canvas) return;
+
+  var startWeight = {{ section.settings.current_weight | default: 90 }};
+  var endWeight = startWeight - {{ section.settings.loss_amount | default: 18 }};
+
+  // 12-month labels
+  var labels = ['Start', 'Month 2', 'Month 4', 'Month 8', 'Month 12'];
+
+  // Curve: slow start, picks up mid, plateaus near end
+  var data = [
+    startWeight,                                               // Start
+    startWeight - (startWeight - endWeight) * 0.08,           // Month 2  — just beginning
+    startWeight - (startWeight - endWeight) * 0.30,           // Month 4  — picking up
+    startWeight - (startWeight - endWeight) * 0.75,           // Month 8  — most loss done
+    endWeight                                                  // Month 12 — full 20% lost
+  ];
+
+  var startIdx = 0;
+  var midIdx   = 3; // Month 8 marker (shows mid-point tooltip)
+
+  var ctx = canvas.getContext('2d');
+
+  var gradient = ctx.createLinearGradient(0, 0, 0, 200);
+  gradient.addColorStop(0,   'rgba(140, 120, 180, 0.6)');
+  gradient.addColorStop(0.5, 'rgba(180, 160, 140, 0.4)');
+  gradient.addColorStop(1,   'rgba(255, 230, 100, 0.7)');
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        data: data,
+        fill: true,
+        backgroundColor: gradient,
+        borderColor: 'transparent',
+        tension: 0.5,
+        pointRadius: function(context) {
+          var i = context.dataIndex;
+          return (i === startIdx || i === midIdx) ? 5 : 0;
+        },
+        pointBackgroundColor: '#FFF',
+        pointBorderColor: '#4C3E79',
+        pointBorderWidth: 2
+      }]
+    },
+    plugins: [
+      {
+        id: 'customTooltipBoxes',
+        afterDatasetsDraw: function(chart) {
+          var ctx2 = chart.ctx;
+          var meta = chart.getDatasetMeta(0);
+
+          var drawBox = function(pointIndex, labelText) {
+            var point = meta.data[pointIndex];
+            if (!point) return;
+
+            var x    = point.x;
+            var y    = point.y;
+            var boxW = 52;
+            var boxH = 24;
+            var boxX = x - boxW / 2;
+            var boxY = y - boxH - 10;
+
+            ctx2.save();
+
+            // Box
+            ctx2.fillStyle = '#4C3E79';
+            ctx2.beginPath();
+            if (ctx2.roundRect) {
+              ctx2.roundRect(boxX, boxY, boxW, boxH, 6);
+            } else {
+              ctx2.rect(boxX, boxY, boxW, boxH);
+            }
+            ctx2.fill();
+
+            // Arrow
+            ctx2.beginPath();
+            ctx2.moveTo(x - 5, boxY + boxH);
+            ctx2.lineTo(x + 5, boxY + boxH);
+            ctx2.lineTo(x,     boxY + boxH + 6);
+            ctx2.closePath();
+            ctx2.fill();
+
+            // Text
+            ctx2.fillStyle     = '#FFF';
+            ctx2.font          = 'bold 11px SF Pro, -apple-system, sans-serif';
+            ctx2.textAlign     = 'center';
+            ctx2.textBaseline  = 'middle';
+            ctx2.fillText(labelText, x, boxY + boxH / 2);
+
+            ctx2.restore();
+          };
+
+          // Start tooltip + Month 8 mid tooltip
+          drawBox(startIdx, startWeight + '{{ section.settings.weight_unit }}');
+          drawBox(midIdx,   Math.round(data[midIdx]) + '{{ section.settings.weight_unit }}');
+        }
+      }
+    ],
+    options: {
+      responsive:          true,
+      maintainAspectRatio: false,
+      layout: { padding: { top: 40, left: 4, right: 4, bottom: 0 } },
+      scales: {
+        x: { display: false },
+        y: {
+          display: true,
+          grid:    { color: 'rgba(0,0,0,0.06)', drawBorder: false },
+          ticks:   { display: false },
+          border:  { display: false }
+        }
+      },
+      plugins: {
+        legend:  { display: false },
+        tooltip: { enabled: false }
+      },
+      elements: {
+        line: { borderWidth: 0 }
+      }
+    }
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "BMI Result Chart",
+  "settings": [
+    {
+      "type": "text",
+      "id": "topbar_label",
+      "label": "Top Bar Label",
+      "default": "Your BMI Calculated"
+    },
+    {
+      "type": "number",
+      "id": "current_weight",
+      "label": "Current Weight (number only)",
+      "default": 103
+    },
+    {
+      "type": "number",
+      "id": "loss_amount",
+      "label": "Weight Loss Amount (number only)",
+      "default": 41
+    },
+    {
+      "type": "text",
+      "id": "weight_unit",
+      "label": "Weight Unit (lb / kg / st)",
+      "default": "lb"
+    },
+    {
+      "type": "text",
+      "id": "card_title",
+      "label": "Card Title",
+      "default": "You could lose"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "in 10 months with Pharmazon"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "CONTINUE"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "text",
+      "id": "step-name",
+      "label": "step name"
+    },
+    {
+      "type": "text",
+      "id": "next-step",
+      "label": "next step"
+    },
+    {
+      "type": "text",
+      "id": "e-step",
+      "label": "eligible step",
+      "default": "not-eligible"
+    },
+    {
+      "type": "text",
+      "id": "min-bmi",
+      "label": "min bmi",
+      "default": "27"
+    },
+    {
+      "type": "text",
+      "id": "max-bmi",
+      "label": "max bmi",
+      "default": "30"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BMI Result Chart"
+    }
+  ]
+}
+{% endschema %}

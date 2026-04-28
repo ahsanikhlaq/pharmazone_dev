@@ -1,0 +1,962 @@
+<style>
+  /* General Styles */
+  
+
+  /* Container for the form */
+  .ctm--popup--mob .content {
+      max-width: 900px;
+      margin: 30px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Form Title */
+  .ctm--popup--mob .form-head {
+      font-size: 24px;
+      color: #1e3d58;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+
+  /* Fieldset and Legend */
+  .ctm--popup--mob fieldset {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fafafa;
+  }
+
+  .ctm--popup--mob legend {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1e3d58;
+      margin-bottom: 20px;
+      display: contents;
+  }
+
+  /* Question labels */
+  .ctm--popup--mob label {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+      display: block;
+    font-weight: 600;
+  }
+
+  /* Radio buttons and checkboxes */
+  .ctm--popup--mob input[type="radio"], 
+  .ctm--popup--mob input[type="checkbox"] {
+      margin-right: 10px;
+  }
+
+  /* Input and Textarea Fields */
+  .ctm--popup--mob input[type="radio"],
+  .ctm--popup--mob input[type="checkbox"] {
+      accent-color: #4ad6c9; /* Orange accent for checkboxes and radio buttons */
+      cursor: pointer;
+  }
+
+  /* Styling for hidden alert messages */
+  .ctm--popup--mob .alert {
+      display: block;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 14px;
+  }
+
+  .ctm--popup--mob .alert-danger, 
+  .ctm--popup--mob .button_block_ctm {
+      background-color: #f8d7da;
+      color: #721c24;
+  }
+
+  .ctm--popup--mob .alert-warning {
+      background-color: #fff3cd;
+      color: #856404;
+  }
+
+  .ctm--popup--mob .hidden {
+      display: none;
+  }
+
+  /* Button styles */
+ /* .ctm--popup--mob button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #ff9900;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  } */
+
+  
+  /* Input group for radio buttons and checkboxes */
+  .ctm--popup--mob input[type="radio"]:checked, 
+  .ctm--popup--mob input[type="checkbox"]:checked {
+      accent-color: #4ad6c9;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+      .ctm--popup--mob .content {
+          padding: 15px;
+      }
+
+      .ctm--popup--mob .form-head {
+          font-size: 20px;
+      }
+
+      .ctm--popup--mob label {
+          font-size: 14px;
+      }
+
+      .ctm--popup--mob input[type="radio"], 
+    .ctm--popup--mob input[type="checkbox"] {
+          margin-right: 8px;
+      }
+  }
+
+  /* Style for the checkbox for final consent */
+  .ctm--popup--mob #confirm_terms {
+      margin-right: 10px;
+  }
+
+  /* Style for the Terms and Conditions error message */
+  .ctm--popup--mob #terms-error {
+      font-size: 14px;
+      color: #721c24;
+      margin-top: 10px;
+  }
+
+  /* Styling for the medication list */
+  .ctm--popup--mob #medication-list {
+      margin-top: 15px;
+      padding-left: 20px;
+  }
+
+  .ctm--popup--mob #medication-list p {
+      font-size: 14px;
+      margin-bottom: 10px;
+  }
+
+  .ctm--popup--mob #medication-list input[type="checkbox"] {
+      margin-right: 10px;
+  }
+
+  /* Alert styling for "You must agree..." messages */
+  .ctm--popup--mob #q1-error,  
+  .ctm--popup--mob #q2-warning, 
+  .ctm--popup--mob #q3-error,
+  .ctm--popup--mob #q4-error, 
+  .ctm--popup--mob #q6-error, 
+  .ctm--popup--mob #q7-error, 
+  .ctm--popup--mob #q8-error, 
+  .ctm--popup--mob #q9-error,
+  .ctm--popup--mob #q11-error, 
+  .ctm--popup--mob #q12-error, 
+  .ctm--popup--mob #q13-error, 
+  .ctm--popup--mob #q14-error {
+      margin-top: 10px;
+  }
+
+  .ctm--popup--mob hr {
+    margin: 29px 0;
+}
+
+  .ctm--popup--mob  .product-images img{
+    width: 100%;
+  }
+   .ctm--popup--mob  .product-images{
+  flex: 0 0 150px;
+    margin-right: 20px;
+    max-width: 150px;
+   }  
+
+
+
+  /* Custom style for submit button */
+  .ctm--popup--mob #submitBtn {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      height:auto;
+  }
+
+ .ctm--popup--mob #submitBtn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+  }
+
+  .ctm--popup--mob .show_checkboxes{
+    display: block;
+  }
+
+  .ctm--popup--mob .ctm--inner--options{
+    padding-left:15px;
+  }
+
+  @media screen and (max-width:700px){
+    .custom_overlay  .ctm--popup--mob.popup{
+      width: 90%;
+      padding: 30px 15px;
+      margin: 12px auto;
+    }
+    .custom_overlay  .ctm--popup--mob .content{
+      padding: 0px;
+      margin: unset;
+      box-shadow: unset;
+      background-color: unset;
+    }
+  }
+</style>
+
+<div class="popup ctm--popup--mob">
+  <a id="close-btn" class="close" href="#">&times;</a>
+  <h2 class="form-head text-center">Questions from our Pharmacist</h2>
+  <div class="form-title text-center">
+    <h2>
+      As this is a Pharmacy Medicine, we need to ask you a few questions. These will help our Pharmacist ensure the
+      product is right for you.
+    </h2>
+  </div>
+  <div class="product-details">
+    <div class="product-images">
+      {% assign featured_image = product.selected_variant.featured_image | default: product.featured_image %}
+      <img alt="pharmazondirect" src="{{ featured_image | img_url: "medium" }}">
+    </div>
+    <div class="product-titles">
+      {{ product.title }}
+    </div>
+  </div>
+
+  <div class="content">
+    <hr>
+    <h2 class="form-head text-center">Erectile Dysfunction Screening</h2>
+
+    <form id="edForm" >
+      <!-- About You Section -->
+      <fieldset>
+        <legend>ABOUT YOU</legend>
+
+        <!-- Question 1 -->
+        <p class="question-block">
+          <label>Q1: Are you male?</label>
+          <input type="radio" name="properties[Gender]" value="Yes" class="non_change_error" > Yes
+          <input type="radio" name="properties[Gender]" value="No" class="non_change_error" > No
+          <!-- if no -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+        <!-- Question 2 -->
+
+        <p class="question-block">
+          <label>Q2: Are you under 18 years of age?</label>
+          <input type="radio" name="properties[Age]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Age]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+        <!-- Question 3 -->
+        <p class="question-block">
+          <label>Q3: Are you a smoker and do you consume more than 2 cigarettes a day?</label>
+          <input type="radio" name="properties[Smoke drink]" value="Yes" > Yes
+          <input type="radio" name="properties[Smoke drink]" value="No" > No
+          
+          <!-- if yes -->
+          <!-- <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span> -->
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>INDICATION</legend>
+        
+        <!-- Question 1 -->
+        <p class="question-block">
+          <label>Q1: Are you having difficulty in getting and/or maintaining an erection satisfactory for sexual performance</label>
+          <input type="radio" name="properties[Sexual performance]" value="Yes" class="non_change_error" > Yes
+          <input type="radio" name="properties[Sexual performance]" value="No" class="non_change_error" > No
+
+          <!-- if no -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+          <!-- Question 2 -->
+
+        <p class="question-block">
+          <label>Q2: Have you used any medication for erectile dysfunction before?</label>
+          <input type="radio" name="properties[Medication for erectile]" value="Yes" class="below_checkbox_enable" > Yes
+          <input type="radio" name="properties[Medication for erectile]" value="No" class="below_checkbox_enable" > No
+
+          <!-- if yes -->
+          <span class="hidden ctm--inner--options">
+            <!-- <input type="checkbox" name="properties[Erectile dysfunction]" value="Did it work"><br> -->
+            <label>Q1: Did it work</label>
+                  <input type="radio" name="properties[Did it work]" value="Yes"> Yes
+                  <input type="radio" name="properties[Did it work]" value="No"> No 
+             <br>
+            <!-- <input type="checkbox" name="properties[Erectile dysfunction]" value="Did you experience any side effects?">Did you experience any side effects?<br> -->
+            <label>Q2: Did you experience any side effects?</label>      
+                  <input type="radio" name="properties[Did you experience]" value="Yes"> Yes
+                  <input type="radio" name="properties[Did you experience]" value="No"> No
+          </span>
+        </p>
+
+      <!-- Question 3 -->
+         <p class="question-block">
+          <label>Q3: Do you have any allergy to Sildenafil, tadalafil and vardenafil or any of its ingredients?</label>
+          <input type="radio" name="properties[Ingredients]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Ingredients]" value="No" class="input_yes_change_error" > No
+           
+           <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+        <!-- Question 4 -->
+         <p class="question-block">
+          <label>Q4: Are you allergic to any medicines or other substances, for example peanuts or soya?</label>
+          <input type="radio" name="properties[Allergic to any medicines]" value="Yes" > Yes
+          <input type="radio" name="properties[Allergic to any medicines]" value="No" > No
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>PATIENT HEALTH</legend>
+
+        <!-- Question 1 -->
+        <p class="question-block">
+          <label>Q1: Has your doctor advised that you are not fit enough for any physical and/or sexual activity?</label>
+          <input type="radio" name="properties[Sexual activity]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Sexual activity]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+          </p>
+
+        <!-- Question 2 -->
+        
+         <p class="question-block">
+          <label>Q2: Do you feel very breathless or experience chest pain with light or moderate physical activity, such as walking briskly for 20 minutes or climbing two flights of stairs?</label>
+          <input type="radio" name="properties[Breathless or chest pain]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Breathless or chest pain]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+          </p>
+
+          <!-- Question 3 -->
+        
+         <p class="question-block">
+          <label>Q3: Have you had a heart attack or stroke within the last 6 months? </label>
+          <input type="radio" name="properties[Heart attack or stroke]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Heart attack or stroke]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+        <!-- Question 4 -->
+        <p class="question-block">
+          <label>Q4: Do you suffer from low blood pressure (i.e. less than 90/50mmHg), and/or are prone to faints or collapses? If you are unsure, check with your GP or local pharmacy.</label>
+          <input type="radio" name="properties[Suffer from low blood pressure]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Suffer from low blood pressure]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+        <!-- Question 5 -->
+        <p class="question-block">
+          <label>Q5: Do you have high blood pressure (i.e. above 150/90mmHg)? If you are unsure, check with your GP or local pharmacy?</label>
+          <input type="radio" name="properties[High blood pressure]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[High blood pressure]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+        
+        <!-- Question 6 -->
+         <p class="question-block">
+          <label>Q6: Do you have any other heart problems or are you under a doctor’s care for any of the following: </label>
+           1. Low blood pressure or uncontrolled high blood pressure<br>
+           2. Unstable angina (chest pain), irregular heart beat or palpitations (arrhythmia)<br>
+           3. A problem with one of the valves in your heart (valvular heart disease)<br>
+           4. A problem where the heart muscle becomes inflamed and does not work as well as it should (cardiomyopathy)<br>
+           5. Heart problems causing blood flow issues (e.g. left ventricular outflow obstruction, aortic narrowing) or severe cardiac failure<br>
+          <input type="radio" name="properties[Other heart problems]" value="Yes" class="input_yes_change_error" > Yes 
+          <input type="radio" name="properties[Other heart problems]" value="No" class="input_yes_change_error" > No
+        
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+        <!-- Question 7 -->
+        <p class="question-block">
+          <label>Q7: Do you have Peyronie's disease, angulation or any other deformation of the penis?</label>
+          <input type="radio" name="properties[Peyronies disease]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Peyronies disease]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+        <!-- Question 8 -->
+        <p class="question-block">
+          <label>Q8: Have ever had loss of vision because of damage to the optic nerve (such as non-arteritic anterior ischaemic optic neuropathy [NAION]) or have an inherited eye disease?</label>
+          <input type="radio" name="properties[Inherited eye disease]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Inherited eye disease]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if no -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+
+        <!-- Question 9 -->
+        <p class="question-block">
+          <label>Q9: Do you have galactose intolerance, Lapp lactase deficiency or glucose-galactose malabsorption?</label>
+          <input type="radio" name="properties[Galactose intolerance]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Galactose intolerance]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+        <!-- Question 10 -->
+        <p class="question-block">
+          <label>Q10: Do you have previously diagnosed liver, kidney or urinary problems?</label>
+          <input type="radio" name="properties[Diagnosed liver, kidney or urinary problems]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Diagnosed liver, kidney or urinary problems]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if no -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p >
+
+        <!-- Question 11 -->
+        <p class="question-block">
+          <label>Q11: Do you currently suffer from diabetes or abnormal sugar levels?</label>
+          <input type="radio" name="properties[Abnormal sugar levels]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Abnormal sugar levels]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if no -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+       <!-- Question 12 -->
+        <p class="question-block">
+          <label>Q12: Do you have any of the following health conditions:</label>
+                a) Sickle cell anaemia<br>
+                b) Multiple myeloma <br>
+                c) Leukaemia<br>
+                d) Bleeding issues (e.g. haemophilia)<br>
+                e) Active stomach ulcers<br>
+          <input type="radio" name="properties[Health conditions]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Health conditions]" value="No" class="input_yes_change_error" > No
+          
+          <!-- if yes -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+       <!-- Question 13 -->
+        <p class="multiple_checkboxes question-block">
+          <label>Q13: Are you currently using any other medication, even if you’re not taking it regularly? Select from list below:</label>
+          
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Nicorandil" class="reg_option_more">Nicorandil 
+          
+           <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Nitrate medication such as Glyceryl Trinitrate (GTN), Isosorbide Mononitrate and Dinitrate.  (including sprays, patches, gels or creams)" class="reg_option_more">Nitrate medication such as Glyceryl Trinitrate (GTN), Isosorbide Mononitrate and Dinitrate.  (including sprays, patches, gels or creams)
+          
+          <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Existing erectile dysfunction treatment" class="reg_option_more">Existing erectile dysfunction treatment
+          
+          <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Alpha-blockers: Alfuzosin, Doxazosin, Indoramin, Prazosin, Tamsulosin, Terazosin" class="reg_option_more">Alpha-blockers: Alfuzosin, Doxazosin, Indoramin, Prazosin, Tamsulosin, Terazosin
+          
+           <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Antibacterials: Rifampicin, Erythromycin, Clarithromycin, Telithromycin, Gatifloxacin">Antibacterials: Rifampicin, Erythromycin, Clarithromycin, Telithromycin, Gatifloxacin
+          
+           <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Antivirals: Atanzavir, Indinavir, Ritonavir, Saquinavir, Telaprevir, Fosamprenavir, Tipranavir, Nelfinavir, Aprinovir or Etravirine">Antivirals: Atanzavir, Indinavir, Ritonavir, Saquinavir, Telaprevir, Fosamprenavir, Tipranavir, Nelfinavir, Aprinovir or Etravirine
+          
+          <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Oral Antifungals: Ketoconazole, Itraconazole, Voriconazole, Fluconazole">Oral Antifungals: Ketoconazole, Itraconazole, Voriconazole, Fluconazole
+          
+           <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Cobicistat">Cobicistat
+          
+          <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Disopyramide">Disopyramide
+          
+          <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Dapoxetine (Priligy)">Dapoxetine (Priligy)
+          
+          <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Cimetidine">Cimetidine
+          
+      	  <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Bosentan">Bosentan
+          
+          <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Riociguat">Riociguat
+          
+          <br>
+            <input type="checkbox" name="properties[Currently using any other medication]"  value="Please list any other prescription medicines you are taking">Please list any other prescription medicines you are taking
+          <br>
+
+           <!-- if 1, 2, 3, 4 checked -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+         <!-- Question 14 -->
+         <p class="question-block">
+          <label>Q14: Do you take any recreational drug such as Amyl Nitrate (poppers) or cocaine?</label>
+          <input type="radio" name="properties[Recreational drug]" value="Yes" class="input_yes_change_error" > Yes
+          <input type="radio" name="properties[Recreational drug]" value="No" class="input_yes_change_error" > No
+
+           <!-- if no -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+          
+      </fieldset>
+      
+
+      <fieldset>
+        <legend>CONSENT AND ACKNOWLEDGEMENT</legend>
+
+        <!-- Question 1 -->
+        <p  class="question-block">
+          <label>Q1: Please confirm that you are aware of the following:</label>
+           a. You should not take any combination of erectile dysfunction medications on the same day<br>
+           b. You should only take the higher strength treatments (sildenafil/Viagra 100mg, tadalafil/Cialis 20mg, vardenafil/Levitra 20mg or Spedra 200mg) if you have used the intermediate strengths before on at least 4 occasions without any side effects.<br>
+           c. You should avoid taking grapefruit juice or alcohol whilst using any erectile dysfunction treatment<br>
+           d. Being overweight or smoking or drinking alcohol regularly can make erection problems worse. Therefore, it is important to lead a healthy lifestyle by losing weight, only drinking alcohol in moderation and quitting smoking. Please refer to our website for further healthy lifestyle support.<br>
+           e. You are recommended to have regular blood tests for high cholesterol, blood sugar (diabetes) and hormone imbalances (such as thyroid, testosterone or prolactin), as these conditions may contribute to erection difficulties<br>
+           f. You should seek immediate medical attention if you have a continuous erection for 2 hours or more.<br>
+
+          <input type="radio" name="properties[Aware of the following]" value="Yes" class="non_change_error" > Yes 
+          <input type="radio" name="properties[Aware of the following]" value="No" class="non_change_error" > No
+          
+          <!-- if no -->
+          <span class="hidden alert alert-danger">We are unable to supply you with medication for erectile dysfunction. Please consult your GP.</span>
+        </p>
+
+         <p class="question-block">
+          <input type="checkbox" id="confirm_terms" name="confirm_terms" value="Yes" >
+          I agree to the <a href="#">Terms and Conditions</a> and confirm that I am over 18.
+          <span id="terms-error" class="alert alert-danger">You must agree to continue.</span>
+        </p>
+
+        <button
+          type="submit"
+          id="submitBtn"
+          data_id_attr="{{ product.selected_or_first_available_variant.id }}"
+          class="buy_btn custom_add_to_cart_button new--form--ppup"
+          disabled
+        >
+          Check My Eligibility
+        </button>
+        <span class="hidden alert button_block_ctm">Question answer is pending</span>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<script>
+  
+$('input.input_yes_change_error').change(function () {
+  if ($(this).val() == "Yes") {
+    $(this).siblings('.alert-danger').removeClass('hidden');
+  } else {
+    $(this).siblings('.alert-danger').addClass('hidden');
+  }
+
+
+  checkFormErrors();
+});
+  
+
+  
+$('input.non_change_error').change(function () {
+  if ($(this).val() == "No") {
+    $(this).siblings('.alert-danger').removeClass('hidden');
+  } else {
+    $(this).siblings('.alert-danger').addClass('hidden');
+  }
+
+  checkFormErrors();
+});
+
+  
+
+$('input.below_checkbox_enable').change(function () {
+  if ($(this).val() == "Yes") {
+    $(this).siblings('.ctm--inner--options').removeClass('hidden');
+    $(this).siblings('.ctm--inner--options').addClass('show_checkboxes');
+    $(this).siblings('.ctm--inner--options').find('input').attr('required', 'true');
+  } else {
+    $(this).siblings('.ctm--inner--options').addClass('hidden');
+    $(this).siblings('.ctm--inner--options').removeClass('show_checkboxes');
+    $(this).siblings('.ctm--inner--options').find('input').removeAttr('required');
+  }
+
+  checkFormErrors();
+});
+
+
+  
+$('.multiple_checkboxes input').on('change', function () {
+ 
+  $('.multiple_checkboxes input').not(this).prop('checked', false);
+
+  $(this).find('.alert-danger').addClass('hidden');
+
+  const isSpecial = $(this).hasClass('reg_option_more');
+  const index = $('input.reg_option_more').index(this);
+
+  if (isSpecial && $(this).is(':checked') && index >= 0 && index <= 3) {
+    $(this).siblings('.alert-danger').removeClass('hidden');
+  }else{
+    $(this).siblings('.alert-danger').addClass('hidden');
+  }
+
+
+  checkFormErrors();
+});
+
+
+$('#confirm_terms').on('change', function () {
+  if ($(this).is(':checked')) {
+    $('#terms-error').addClass('hidden');
+  } else {
+    $('#terms-error').removeClass('hidden');
+  }
+
+  checkFormErrors(); 
+});
+  
+
+function checkFormErrors() {
+  let hasError = false;
+
+  $('form .alert-danger').each(function () {
+    if (!$(this).hasClass('hidden')) {
+      hasError = true;
+      return false; 
+    }
+  });
+
+  if (!$('#confirm_terms').is(':checked')) {
+    hasError = true;
+    $('#terms-error').removeClass('hidden');
+  } else {
+    $('#terms-error').addClass('hidden');
+  }
+
+  $('#submitBtn').prop('disabled', hasError);
+}
+
+document.querySelector('.new--form--ppup').addEventListener('click', function () {
+
+    var isValid = true;
+    var checkedRadioGroups = new Set();
+    var checkedCheckboxGroups = new Set();
+
+    $("input:radio:visible").each(function () {
+        var name = $(this).attr("name");
+        // if (!$this.is(":visible")) return;
+        if (!checkedRadioGroups.has(name)) {
+            if ($("input:radio[name='" + name + "']:visible:checked").length === 0) {
+                isValid = false;
+            }
+            checkedRadioGroups.add(name);
+        }
+    });
+
+    $("input:checkbox").each(function () {
+        var name = $(this).attr("name");
+        if (!checkedCheckboxGroups.has(name)) {
+            if ($("input:checkbox[name='" + name + "']:checked").length === 0) {
+                isValid = false;
+            }
+            checkedCheckboxGroups.add(name);
+        }
+    });
+
+    const $button = $('.new--form--ppup');
+
+    if (isValid) {
+        // $button.prop('disabled', false);
+
+    $button.siblings('.button_block_ctm').addClass('hidden');
+
+      
+    var input = document.querySelector('.quantity__input');
+    var quantity = input ? parseInt(input.value, 10) : 0;
+  
+    var elementAttr = event.target.getAttribute('data_id_attr');
+
+    let properties = {};
+
+   var genderAnswer = document.querySelector('input[name="properties[Gender]"]:checked');
+   var ageAnswer = document.querySelector('input[name="properties[Age]"]:checked');
+   var Smoke_drink = document.querySelector('input[name="properties[Smoke drink]"]:checked');
+   var sexual_performance = document.querySelector('input[name="properties[Sexual performance]"]:checked');
+   var medication_for_erectile = document.querySelector('input[name="properties[Medication for erectile]"]:checked'); 
+   var DidItWork = document.querySelector('input[name="properties[Did it work]"]:checked'); 
+   var Did_you_experience = document.querySelector('input[name="properties[Did you experience]"]:checked'); 
+   var ingredients = document.querySelector('input[name="properties[Ingredients]"]:checked');  
+   var aalergic_medicines = document.querySelector('input[name="properties[Allergic to any medicines]"]:checked'); 
+   var sexual_activity = document.querySelector('input[name="properties[Sexual activity]"]:checked'); 
+   var breathless_chestPain = document.querySelector('input[name="properties[Breathless or chest pain]"]:checked'); 
+   var heart_attack = document.querySelector('input[name="properties[Heart attack or stroke]"]:checked'); 
+   var low_blood_pressure = document.querySelector('input[name="properties[Suffer from low blood pressure]"]:checked'); 
+   var high_blood_pressure = document.querySelector('input[name="properties[High blood pressure]"]:checked'); 
+   var OtherHeartProblems = document.querySelector('input[name="properties[Other heart problems]"]:checked'); 
+   var Peyronies_disease = document.querySelector('input[name="properties[Peyronies disease]"]:checked'); 
+   var Inherited_eye_disease = document.querySelector('input[name="properties[Inherited eye disease]"]:checked'); 
+   var GalactoseIntolerance = document.querySelector('input[name="properties[Galactose intolerance]"]:checked'); 
+   var DiagnosedLiver = document.querySelector('input[name="properties[Diagnosed liver, kidney or urinary problems]"]:checked'); 
+   var AbnormalSugarLevels = document.querySelector('input[name="properties[Abnormal sugar levels]"]:checked'); 
+   var HealthConditions = document.querySelector('input[name="properties[Health conditions]"]:checked'); 
+   var currently_medication = document.querySelector('input[name="properties[Currently using any other medication]"]:checked'); 
+   var RecreationalDrug = document.querySelector('input[name="properties[Recreational drug]"]:checked'); 
+   var awarefollow = document.querySelector('input[name="properties[Aware of the following]"]:checked'); 
+
+
+  
+    if (genderAnswer) {
+      properties['Are you male?'] = genderAnswer.value;
+    }
+
+    if (ageAnswer) {
+      properties['Are you under 18 years of age?'] = ageAnswer.value;
+    }
+
+    if (Smoke_drink) {
+      properties['Are you a smoker and do you consume more than 2 cigarettes a day?'] = Smoke_drink.value;
+    }
+
+    if (sexual_performance) {
+      properties['Are you having difficulty in getting and/or maintaining an erection satisfactory for sexual performance'] = sexual_performance.value;
+    }
+
+    if (medication_for_erectile) {
+      properties['Have you used any medication for erectile dysfunction before?'] = medication_for_erectile.value;
+    }
+
+    if (DidItWork) {
+      properties['Did It Work'] = DidItWork.value;
+    }
+
+    if (Did_you_experience) {
+      properties['Did you experience any side effects?'] = Did_you_experience.value;
+    }
+
+    if (ingredients) {
+      properties['Do you have any allergy to Sildenafil, tadalafil and vardenafil or any of its ingredients?'] = ingredients.value;
+    }
+
+    if (aalergic_medicines) {
+      properties['Are you allergic to any medicines or other substances, for example peanuts or soya?'] = aalergic_medicines.value;
+    }
+
+    if (sexual_activity) {
+      properties['Has your doctor advised that you are not fit enough for any physical and/or sexual activity?'] = sexual_activity.value;
+    }
+
+     if (breathless_chestPain) {
+      properties['Do you feel very breathless or experience chest pain with light or moderate physical activity, such as walking briskly for 20 minutes or climbing two flights of stairs?'] = breathless_chestPain.value;
+    }
+
+   if (heart_attack) {
+      properties['Have you had a heart attack or stroke within the last 6 months?'] = heart_attack.value;
+    }
+
+    if (low_blood_pressure) {
+      properties['Do you suffer from low blood pressure (i.e. less than 90/50mmHg), and/or are prone to faints or collapses? If you are unsure, check with your GP or local pharmacy'] = low_blood_pressure.value;
+    }
+
+    if (high_blood_pressure) {
+      properties['Do you have high blood pressure (i.e. above 150/90mmHg)? If you are unsure, check with your GP or local pharmacy?'] = high_blood_pressure.value;
+    }
+  
+    if (OtherHeartProblems) {
+      properties['Do you have any other heart problems or are you under a doctor’s care for any of the following'] = OtherHeartProblems.value;
+    }
+
+    if (Peyronies_disease) {
+      properties['Do you have Peyronies disease, angulation or any other deformation of the penis?'] = Peyronies_disease.value;
+    }
+  
+    if (Inherited_eye_disease) {
+      properties['Have ever had loss of vision because of damage to the optic nerve (such as non-arteritic anterior ischaemic optic neuropathy [NAION]) or have an inherited eye disease?'] = Inherited_eye_disease.value;
+    }
+
+    if (GalactoseIntolerance) {
+      properties['Do you have galactose intolerance, Lapp lactase deficiency or glucose-galactose malabsorption?'] = GalactoseIntolerance.value;
+    }
+
+   if (DiagnosedLiver) {
+      properties['Do you have previously diagnosed liver, kidney or urinary problems?'] = DiagnosedLiver.value;
+   }
+
+   if (AbnormalSugarLevels) {
+      properties['Do you currently suffer from diabetes or abnormal sugar levels?'] = AbnormalSugarLevels.value;
+   }
+
+  if (HealthConditions) {
+      properties['Do you have any of the following health conditions'] = HealthConditions.value;
+   }
+
+  if (currently_medication) {
+      properties['Are you currently using any other medication, even if you’re not taking it regularly? Select from list below'] = currently_medication.value;
+   }
+
+   if (RecreationalDrug) {
+      properties['Do you take any recreational drug such as Amyl Nitrate (poppers) or cocaine?'] = RecreationalDrug.value;
+   }
+
+    if (awarefollow) {
+      properties['Please confirm that you are aware of the following'] = awarefollow.value;
+   }
+  
+  
+
+    if (Object.keys(properties).length === 0) {
+      return;
+    }
+
+      let formData = {
+      'items': [{
+        'id': elementAttr,
+        'quantity': quantity,
+        'properties': properties
+      }]
+    };
+
+    fetch(window.Shopify.routes.root + 'cart/add.js', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      window.location.href = '/cart';
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+    } else {
+        // $button.prop('disabled', true);
+      $button.siblings('.button_block_ctm').removeClass('hidden');
+    }
+
+   
+  });
+</script>
+
+<!-- Custom mandasa code start popup -->
+
+<style>
+  .custom_overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+  .custom_overlay.active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+    height: 100%;
+    overflow: scroll;
+}
+  
+  .custom_overlay  .popup .close {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+  .custom_overlay .popup {
+    margin: 70px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+    position: relative;
+    transition: all 5s ease-in-out;
+    max-width: 600px;
+    margin: 0 auto;
+}
+ .custom_overlay  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+  .custom_overlay  .form-title.text-center {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color_topheader_border);
+    margin-bottom: 10px;
+}
+  .custom_overlay .form-title.text-center h2 {
+    line-height: 28px;
+    font-size: 18px;
+}
+.custom_overlay  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+.custom_overlay  .product-details {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+  .custom_overlay  .popup .content {
+    max-height: 30%;
+}
+</style>
+
+
+
+<script>
+  $(document).ready(function(){
+    $("#custom-btn").click(function(){
+      $("#popup1").addClass("active");
+      //alert("The paragraph was clicked.");
+    });
+      $("#close-btn").click(function(){
+      $("#popup1").removeClass("active");
+      //alert("The paragraph was clicked.");
+    });
+});
+</script>  
+
+
+<!-- Custom mandasa code end popup -->

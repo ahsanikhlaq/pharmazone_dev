@@ -1,0 +1,427 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_proven_main_img_des{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.cs_proven_main_img_mbl{
+    display: none;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
+.cs_proven_title p{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+    max-width: 543px;
+    padding-bottom: 60px;
+}
+.cs_proen_loss_text{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 31.2px */
+}
+.cs_prove_loss_number{
+    margin: 0;
+    color: var(--Yellow, #FFD902);
+    font-family: var(--custom-fonts);
+    font-size: 130px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 156px */
+    letter-spacing: -2px;
+    min-width: 246px;
+}
+.cs_proven_loss_number_main{
+    display: flex;
+    align-items: center;
+}
+.cs_proven_button{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    display: flex;
+    padding: 16px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 75px;
+    background: var(--Yellow, #FFD902);
+    border: 1px solid #FFD902;
+    text-decoration: none;
+    margin-top: 60px;
+    width: fit-content;
+    cursor: pointer;
+}
+.cs_proven_block_main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cs_proven_block{
+    display: flex;
+    padding: 14px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 51.357px;
+    border: 1px solid #FFF;
+    background: rgba(95, 82, 135, 0.60);
+    backdrop-filter: blur(22px);
+}
+.cs_proven_block p{
+    margin: 0;
+    color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 16.8px */
+    letter-spacing: 0px;
+    text-align: center;
+}
+.cs_proven_block p strong{
+    color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 24px */
+    letter-spacing: 0px;
+}
+.cs_prove_block_bottom_buttons{
+    display: flex;
+    align-items: center;
+    gap: 14px; 
+    margin-top: 20px;
+}
+.cs_block_bottom_button p{
+    color: #3F3F3F;
+    font-family: var(--custom-fonts);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 14.4px */
+    letter-spacing: 0px;
+        margin: 0;
+    text-align: center;
+}
+.cs_block_bottom_button p strong{
+    color: #000;
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: 0px;
+}
+.cs_block_bottom_button{
+    display: flex;
+    padding: 12px 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 0 0;
+    border-radius: 46.811px;
+    background: var(--White, #FFF);
+}
+.cs_proven_main{
+    position: relative;
+}
+.cs_proven_main_content{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    padding: 0 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cs_proven_content_right {
+    width: 29%;
+}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .cs_proven_main_img_des{
+    display: none;
+}
+.cs_proven_main_img_mbl{
+    display: block;
+}
+.cs_proven_main_content{
+        flex-direction: column;
+}
+.cs_proven_main_content {
+    padding: 20px 12px;
+    top: 0;
+    transform: unset;
+    align-items: center;
+}
+.cs_proven_title p{
+            font-size: 30px;
+        line-height: 36px;
+        padding-bottom: 30px;
+        text-align: center;
+        max-width: 256px;
+}
+.cs_proen_loss_text{
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    padding-bottom: 12px;
+}
+.cs_prove_loss_number{
+    font-size: 70px;
+    line-height: 67px;
+    min-width: 133px;
+}
+.cs_proven_button{
+    margin: 30px auto 0 auto;
+}
+.cs_proven_block p strong {
+    font-size: 16px;
+    line-height: 23px;
+}
+.cs_proven_block_main {
+    gap: 16px;
+}
+.cs_prove_block_bottom_buttons {
+    gap: 10px;
+    margin-top: 16px;
+}
+.cs_prove_nuber_arrow svg{
+    width: 40px;
+    height: 40px;
+}
+.cs_proven_content_right {
+    width: 100%;
+}
+.cs_proven_loss_number_main{
+    justify-content: center;
+}
+  }
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_proven_main">
+        <div class="cs_proven_main_img">
+            {{ section.settings.des-img | image_url: width: 1440 | image_tag:
+                class: 'cs_proven_main_img_des',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lezy"
+              }}
+              {{ section.settings.mbl-img | image_url: width: 1440 | image_tag:
+                class: 'cs_proven_main_img_mbl',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lezy"
+              }}
+        </div>
+        <div class="cs_proven_main_content">
+            <div class="cs_proven_content_left">
+                <div class="cs_proven_title">{{ section.settings.heading }}</div>
+                <h4 class="cs_proen_loss_text">{{section.settings.loss_text }}</h4>
+                <div class="cs_proven_loss_number_main">
+                    <h4 class="cs_prove_loss_number percentage-numberss">{{ section.settings.loss_number }}%</h4>
+                    <span class="cs_prove_nuber_arrow">{% render 'cs_arrow' %}</span>
+                </div>
+                <a class="cs_proven_button cs_button_hover" href="{{ section.settings.butt_url }}">{{ section.settings.butt_text }}</a>
+            </div>
+            <div class="cs_proven_content_right">
+                <div class="cs_proven_block_main">
+                    {% for block in section.blocks %}
+                        <div class="cs_proven_block">{{ block.settings.block_richtext }}</div>
+                    {% endfor %}
+                </div>
+                <div class="cs_prove_block_bottom_buttons">
+                    <div class="cs_block_bottom_button">{{ section.settings.Treatment-type }}</div>
+                    <div class="cs_block_bottom_button">{{ section.settings.Active-ingredient }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('.percentage-numberss');
+
+  const animateCounter = (counter) => {
+    const target = parseInt(counter.innerText.replace('%', ''));
+    let start = 0;
+    const duration = 1500;
+    let startTime = null;
+
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+    const update = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percent = Math.min(progress / duration, 1);
+      const eased = easeOutCubic(percent);
+
+      counter.innerText = Math.floor(eased * target) + "%";
+
+      if (progress < duration) {
+        requestAnimationFrame(update);
+      } else {
+        counter.innerText = target + "%";
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => observer.observe(counter));
+});
+</script>
+{% schema %}
+{
+    "name": "Mounjaro®  Proven",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "des-img",
+            "label": "Desktop Imgae"
+        },
+        {
+            "type": "image_picker",
+            "id": "mbl-img",
+            "label": "Mobile Imgae"
+        },
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "loss_text",
+            "label": "Weight Loss"
+        },
+        {
+            "type": "number",
+            "id": "loss_number",
+            "label": "Weight Loss Number"
+        },
+        {
+            "type": "text",
+            "id": "butt_text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "butt_url",
+            "label": "Button Url"
+        },
+        {
+            "type": "richtext",
+            "id": "Treatment-type",
+            "label": "Treatment type"
+        },
+        {
+            "type": "richtext",
+            "id": "Active-ingredient",
+            "label": "Active ingredient"
+        },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        }
+    ],
+  "blocks": [
+      {
+        "type": "Faq",
+        "name": "Add Tab",
+         "settings": [
+           {
+            "type": "richtext",
+            "id": "block_richtext",
+            "label": "Block Richtext"
+        }
+         ]
+        },
+    ],
+    "presets": [
+        { "name": "Mounjaro®  Proven" }
+    ]
+}
+{% endschema %}

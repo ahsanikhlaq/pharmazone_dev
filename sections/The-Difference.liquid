@@ -1,0 +1,565 @@
+{% style %}
+.section-{{ section.id }} {
+  padding-top: {{ section.settings.padding_top_desktop }}px;
+  padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  
+}
+
+@media (max-width: 768px) {
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+}
+.diff-content {
+  padding-top: {{ section.settings.padding_top_desktop }}px;
+  padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  border-radius: 20px;
+  background: var(--Purple, #4C3E79);
+}
+
+@media (max-width: 768px) {
+  .diff-content {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+}
+
+.care-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width:1090px;
+  margin:0 auto;
+}
+
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  position:relative;
+}
+
+.care-grid .full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .care-grid {
+      gap:8px;
+  }
+}
+.care-card {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 38px;
+    border-radius: 20px;
+    background: #2E1F5E;
+    z-index:1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.care-card:hover{
+  transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.care-card-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width:100%;
+}
+
+.care-card h4 {
+  margin: 0;
+  color: var(--White, #FFF);
+  font-family: var(--custom-fonts);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 48px */
+  letter-spacing: -0.8px;
+}
+
+.care-card p {
+  margin: 0;
+  color: var(--light-gray-20, #E0E0E0);
+  font-family: var(--custom-fonts);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%; /* 21.6px */
+  letter-spacing: -0.5px;
+}
+
+.care-icon {
+ width: 63px;
+height: 56px;
+  
+}
+
+.care-icon img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+
+/* Center Image */
+.center-media {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.center-media img {
+  width: 100%;
+  display: block;
+}
+
+.center-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  bottom:32px;
+  left:50%;
+  transform:translateX(-50%);
+  max-width:440px;
+}
+.center-overlay .head {
+  margin:0px;
+}
+.center-overlay .head p {
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: var(--custom-fonts);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%; /* 48px */
+  letter-spacing: -2px;
+  margin:0px;
+}
+
+.center-overlay a {
+  color: #FFF;
+  font-family: var(--custom-fonts);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 22px */
+  text-transform: capitalize;
+  display: flex;
+  width: 268px;
+  padding: 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 84px;
+  border: 1px solid #FFF;
+  background: linear-gradient(123deg, rgba(255, 255, 255, 0.16) 10.52%, rgba(255, 255, 255, 0.04) 89.48%);
+  text-decoration:none;
+  text-align:left;
+  background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.section-heading p {
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: var(--custom-fonts);
+  font-size: 62px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%; /* 74.4px */
+  letter-spacing: -1.24px;
+  margin:0 0  40px;
+}
+.center-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  align-self: stretch;
+}
+
+
+#card-1 h4, #card-bottom-4 h4 {
+  max-width:170px;
+}
+#card-2 h4, #card-bottom-5 h4 {
+  max-width:256px;
+}
+#card-3 h4, #card-bottom-6 h4 {
+  max-width: 280px;
+}
+#card-bottom-6 p  {
+  max-width:260px;
+}
+#card-3 p  {
+  max-width:300px;
+}
+.section-{{ section.id }} .bas-image {
+   position:absolute;
+   top: -111px;
+}
+.section-{{ section.id }} .bas-image-mob {
+  display:none;
+   position:absolute;
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);
+   width:100%;
+}
+
+@media (max-width:786px) {
+  .section-heading p {
+     color: var(--White, #FFF);
+      text-align: center;
+
+      /* 30px - Title - Semi bold */
+      font-family: var(--custom-fonts);
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 36px */
+      letter-spacing: -0.6px;
+      text-transform: capitalize;
+      max-width:195px;
+      margin:0 auto  24px;
+  }
+  .care-card h4 {
+      color: var(--White, #FFF);
+      font-family: var(--custom-fonts);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 26.4px */
+      letter-spacing: -0.44px;
+              width: 68%;
+  }
+  .care-card p {
+      color: var(--light-gray-20, #E0E0E0);
+      font-family: var(--custom-fonts);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 16.8px */
+      letter-spacing: -0.56px;
+  }
+  .care-card {
+      display: flex;
+      padding: 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 28px;
+      flex: 1 0 0;
+      align-self: stretch;
+      border-radius: 16px;
+      justify-content: space-between;
+  }
+  .care-wrapper {
+    max-width:100%;
+    margin:0 12px;
+    gap:8px;
+  }
+  #card-3 p {
+    max-width: 210px;
+  }
+  .care-icon {
+    width: 34px;
+    height: 38px;
+  }
+  .care-icon-mbl{
+    display: none;
+  }
+  .center-wrap {
+     display:none;
+  }
+  #card-3 h4, #card-bottom-6 h4 {
+    max-width: 170px;
+  }
+
+}
+{% endstyle %}
+
+
+<section class="section-{{ section.id }}">
+  <div class="{% if section.settings.page_width %}page-width{% endif %}">
+
+    <div class="diff-content">
+
+    {% if section.settings.heading != blank %}
+      <div class="section-heading">
+        {{ section.settings.heading }}
+      </div>
+    {% endif %}
+
+
+    <div class="care-wrapper">
+
+      <!-- TOP BLOCKS -->
+      <div class="care-grid top">
+        {% for block in section.blocks %}
+          {% if block.type == 'top' %}
+            <div class="care-card {% if block.settings.full_width %}full{% endif %}" {{ block.shopify_attributes }} id="card-{{ forloop.index }}">
+
+              <div class="care-card-header">
+                <h4>{{ block.settings.title }}</h4>
+
+                {% if block.settings.icon != blank %}
+                  <div class="care-icon">
+                    <img src="{{ block.settings.icon | image_url }}" alt="">
+                  </div>
+                {% endif %}
+              </div>
+
+              <p>{{ block.settings.desc }}</p>
+
+            </div>
+          {% endif %}
+          
+        {% endfor %}
+        {% if section.settings.icon != blank %}
+                  <div class="care-icon care-icon-mbl">
+                          <img src="{{ section.settings.icon | image_url }}" alt="" class="bas-image">
+                        </div>
+          {% endif %}
+            {% if section.settings.icon_mob != blank %}
+                        <div class="care-icon care-icon-mbl">
+                          <img src="{{ section.settings.icon_mob | image_url }}" alt="" class="bas-image-mob">
+                        </div>
+          {% endif %}
+      </div>
+
+<div class="center-wrap">
+
+   {%  render 'dots-vertical' %}
+
+      <div class="center-media">
+
+        {% if section.settings.center_image != blank %}
+          <img src="{{ section.settings.center_image | image_url }}" alt="">
+        {% endif %}
+
+        <div class="center-overlay">
+          {% if section.settings.center_heading != blank %}
+            <h3 class="head">{{ section.settings.center_heading }}</h3>
+          {% endif %}
+
+          {% if section.settings.button_label != blank %}
+            <a href="{{ section.settings.button_link }}">
+              {{ section.settings.button_label }}
+            </a>
+          {% endif %}
+        </div>
+
+      </div>
+
+         {%  render 'dots-vertical' %}
+
+      </div>
+
+
+      <!-- BOTTOM BLOCKS -->
+      <div class="care-grid bottom">
+        {% for block in section.blocks %}
+          {% if block.type == 'bottom' %}
+            <div class="care-card {% if block.settings.full_width %}full{% endif %}" {{ block.shopify_attributes }} id="card-bottom-{{ forloop.index }}">
+
+              <div class="care-card-header">
+                <h4>{{ block.settings.title }}</h4>
+
+                {% if block.settings.icon != blank %}
+                  <div class="care-icon">
+                    <img src="{{ block.settings.icon | image_url }}" alt="">
+                  </div>
+                {% endif %}
+              </div>
+
+              <p>{{ block.settings.desc }}</p>
+
+            </div>
+
+            
+
+
+
+          {% endif %}
+        {% endfor %}
+        {% if section.settings.icon != blank %}
+                  <div class="care-icon care-icon-mbl">
+                    <img src="{{ section.settings.icon | image_url }}" alt="" class="bas-image">
+                  </div>
+    {% endif %}
+      {% if section.settings.icon_mob != blank %}
+                  <div class="care-icon care-icon-mbl">
+                    <img src="{{ section.settings.icon_mob | image_url }}" alt="" class="bas-image-mob">
+                  </div>
+    {% endif %}
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Care Difference",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Section Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "page_width",
+      "label": "Enable Page Width",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "center_image",
+      "label": "Center Image"
+    },
+    {
+      "type": "richtext",
+      "id": "center_heading",
+      "label": "Center Heading"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 60,
+      "label": "Padding Top Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 60,
+      "label": "Padding Bottom Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40,
+      "label": "Padding Top Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40,
+      "label": "Padding Bottom Mobile"
+    },
+    {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Absolute Gradient"
+        },
+        {
+              "type": "image_picker",
+              "id": "icon_mob",
+              "label": "Absolute Gradient"
+        },
+  ],
+
+  "blocks": [
+    {
+      "type": "top",
+      "name": "Top Feature",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full Width (100%)",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    },
+
+    {
+      "type": "bottom",
+      "name": "Bottom Feature",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full Width (100%)",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        
+
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Care Difference"
+    }
+  ]
+}
+{% endschema %}

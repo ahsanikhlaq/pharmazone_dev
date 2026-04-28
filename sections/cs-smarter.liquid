@@ -1,0 +1,300 @@
+{% style %}
+
+.section-{{ section.id }}{
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-{{ section.id }} .smarter-wrapper {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: {{ section.settings.bg_color }};
+     border-radius: 16px;
+     padding: 40px 0;
+}
+
+.section-{{ section.id }} .page-width{
+    position: relative;
+}
+
+.smarter-image {
+    max-width: 110px;
+    width: 100%;
+    height: auto;
+}
+
+.smarter-image img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+h2.smarter-title {
+    font-family: SF Pro;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: -1px;
+    text-align: center;
+    vertical-align: middle;
+    color: #111111;
+    margin: 24px 0;
+        margin: 24px 0;
+    max-width: 528px;
+}
+.smarter-title strong{
+    color: var(--Black, #111);
+text-align: center;
+font-family: var(--custom-fonts);
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: -1px;
+}
+a.smarter-btn {
+    padding: 16px 30px;
+    background-color: #FFD902;
+    border: 1px solid #FFD902;
+    border-radius: 75px;
+    display: inline-flex;
+    max-width: fit-content;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: SF Pro;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    color: #4C3E79;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+a.smarter-btn:hover{
+   background: transparent;
+   border: 1px solid #4C3E79;
+}
+.cs_smart_back_image_des{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.cs_smart_back_image_mbl{
+    display: none;
+    width: 100%;
+    height: auto;
+}
+.smarter-wrapper{
+    position: relative;
+}
+.smarter-image_main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media screen and (max-width: 768px) {
+    .section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px !important;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px !important;
+        border-radius: 20px;
+    }
+    .section-{{ section.id }} .smarter-wrapper {
+      padding: 25px 0 0 0;
+    }
+    .cs_smart_back_image_des{
+        display: none;
+    }
+    .cs_smart_back_image_mbl{
+        display: block;
+        min-height: 320px;
+    }
+    .smarter-image {
+        max-width: 80px;
+        width: 100%;
+        height: auto;
+    }
+
+    h2.smarter-title {
+        font-size: 23px;
+        letter-spacing: -0.5px;
+        margin: 20px 0;
+        line-height: 120%;
+    }
+
+    a.smarter-btn {
+        max-width: 100%;
+        padding: 14px 30px;
+    }
+.smarter-image img{
+    max-width: 80px;
+    max-height: 80px;
+}
+
+        .smarter-image_main {
+        left: 12px;
+        right: 12px;
+        top: 54%;
+        transform: translate(0, -50%);
+}
+.smarter-title strong{
+    font-size: 23px;
+        letter-spacing: -0.5px;
+}
+}
+
+{% endstyle %}
+
+<section class="smarter-section section-{{ section.id }}">
+  <div class="page-width">
+    <div class="smarter-wrapper">
+<div class="cs_smart_back_image">
+    {{ section.settings.back-image | image_url: width: 1600 | image_tag:
+                widths: '50, 100, 150, 200, 250, 300, 400, 500,600,1440',
+                 class: 'cs_smart_back_image_des',
+                alt: "image",
+                loading: "lazy"
+            }}
+            {{ section.settings.back-image_mbl | image_url: width: 1600 | image_tag:
+                widths: '50, 100, 150, 200, 250, 300, 400, 500,600,1440',
+                class: 'cs_smart_back_image_mbl',
+                alt: "image",
+                loading: "lazy"
+            }}
+</div>
+<div class="smarter-image_main">
+      {% if section.settings.image != blank %}
+        <div class="smarter-image">
+            {{ section.settings.image | image_url: width: 1600 | image_tag:
+                widths: '50, 100, 150, 200, 250, 300, 400, 500,600,1440',
+                alt: "image",
+                loading: "lazy"
+            }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.title != blank %}
+        <h2 class="smarter-title">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+
+      {% if section.settings.button_text != blank %}
+        <a href="{{ section.settings.button_link }}" class="smarter-btn">
+          {{ section.settings.button_text }}
+        </a>
+      {% endif %}
+    </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Smarter Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "back-image",
+      "label": "Desktop Back Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "back-image_mbl",
+      "label": "Mobile Back Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Doctor Image"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Section BG Image"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom (Desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom (Mobile)",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Smarter Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

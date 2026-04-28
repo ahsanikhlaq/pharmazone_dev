@@ -1,0 +1,211 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_blog_post_title p{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+    margin: 0 auto;
+}
+.cs_blog_post_title p strong{
+    color: var(--Purple, #4C3E79);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_blog_post_richtext p{
+    margin: 0;
+    color: var(--Gray, #545454);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 122.222% */
+    max-width: 680px;
+    padding: 10px 0 30px 0;
+}
+.cs_blog_button_main{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+.cs_blog_post_button{
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 19.2px */
+    padding: 10px 16px;
+    max-width: fit-content;
+    border-radius: 56px;
+    border: 1px solid var(--Gray, #545454);
+    text-decoration: none;
+    cursor: pointer;
+}
+.cs_blog_post_button.active {
+  background: var(--Yellow, #FFD902);
+  border: 1px solid #FFD902;
+}
+
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .section-{{ section.id }}-padding .page-width{
+        padding-right: 0 !important;
+    }
+    .cs_blog_post_title p {
+    font-size: 30px;
+    line-height: 36px;
+    padding-right: 12px;
+    }
+    .cs_blog_post_title p strong{
+    font-size: 30px;
+    line-height: 36px;
+    }
+    .cs_blog_post_richtext p {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 10px 0 24px 0;
+    padding-right: 12px;
+}
+.cs_blog_post_button {
+    font-size: 14px;
+            min-width: fit-content;
+
+}
+.cs_blog_button_main{
+        gap: 8px;
+    overflow: auto;
+
+}
+  }
+  /* ----- */ 
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_blog_post_title_main">
+        <div class="cs_blog_post_title">{{ section.settings.heading }}</div>
+        <div class="cs_blog_post_richtext">{{ section.settings.richtext }}</div>
+    </div>
+    <div class="cs_blog_button_main">
+  {% for block in section.blocks %}
+    <a 
+      class="cs_blog_post_button 
+      {% if forloop.first %}active{% endif %}"
+      href="{{ block.settings.butt-url }}">
+      {{ block.settings.butt-text }}
+    </a>
+  {% endfor %}
+</div>
+
+  </div>
+</section>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".cs_blog_post_button");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", function () {
+
+        buttons.forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+    "name": "Recent blog posts",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Rich Text"
+        },
+        
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        }
+    ],
+    "blocks": [
+    {
+      "type": "add",
+      "name": "add",
+      "settings": [
+{
+            "type": "text",
+            "id": "butt-text",
+            "label": "Button Text"
+        },
+        {
+            "type": "url",
+            "id": "butt-url",
+            "label": "Button Url"
+        }
+      ]
+    }
+    ],
+    "presets": [
+        { "name": "Recent blog posts" }
+    ]
+}
+{% endschema %}

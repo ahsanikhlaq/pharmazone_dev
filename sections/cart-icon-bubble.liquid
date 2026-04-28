@@ -1,0 +1,30 @@
+{% if cart == empty %}
+  <span class="svg-wrapper">
+ 
+  {% comment %}{{ 'icon-cart-empty.svg' | inline_asset_content }}{% endcomment %}
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-cart-empty" width="19" height="21" viewBox="0 0 19 21" fill="none">
+<path d="M6.37736 7.15H4.06475C3.53964 7.15 3.09149 7.5417 3.00516 8.07612L1.21483 19.1595C1.10571 19.835 1.61062 20.45 2.27441 20.45H16.9255C17.5893 20.45 18.0942 19.835 17.9851 19.1595L16.1948 8.07612C16.1084 7.5417 15.6603 7.15 15.1352 7.15H12.8226M6.37736 7.15H12.8226M6.37736 7.15C6.0193 5.67223 5.30316 0.5 9.59997 0.5C13.8968 0.5 13.1806 5.67223 12.8226 7.15" stroke="black" stroke-linejoin="round"/>
+</svg>
+  </span>
+{% else %}
+  <span class="svg-wrapper">
+ 
+    {% comment %}{{ 'icon-cart.svg' | inline_asset_content }}{% endcomment %}
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-cart" width="19" height="21" viewBox="0 0 19 21" fill="none">
+<path d="M6.37736 7.15H4.06475C3.53964 7.15 3.09149 7.5417 3.00516 8.07612L1.21483 19.1595C1.10571 19.835 1.61062 20.45 2.27441 20.45H16.9255C17.5893 20.45 18.0942 19.835 17.9851 19.1595L16.1948 8.07612C16.1084 7.5417 15.6603 7.15 15.1352 7.15H12.8226M6.37736 7.15H12.8226M6.37736 7.15C6.0193 5.67223 5.30316 0.5 9.59997 0.5C13.8968 0.5 13.1806 5.67223 12.8226 7.15" stroke="black" stroke-linejoin="round"/>
+</svg>
+  
+  </span>
+{% endif %}
+
+<span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+{%- if cart != empty -%}
+  <div class="cart-count-bubble">
+    {%- if cart.item_count < 100 -%}
+      <span aria-hidden="true">{{ cart.item_count }}</span>
+    {%- endif -%}
+    <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+  </div>
+{%- endif -%}

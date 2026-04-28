@@ -1,0 +1,929 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_banner_UNwTTj": {
+      "type": "custom-banner",
+      "name": "Custom Banner",
+      "settings": {
+        "image": "shopify://shop_images/image_2835.png",
+        "review-image": "shopify://shop_images/Group_1707479919.png",
+        "review-image-mbl": "shopify://shop_images/Container_32.png",
+        "review-text": "<p><strong>1,085</strong> Reviews </p>",
+        "title-text": "Get your weight loss medication from the uk most trusted pharmacy",
+        "weight-sub-title": "In just 6 months",
+        "weight-text": "<p><strong>You could lose weight <br/><br/></strong>& feel healthier</p>",
+        "weight1": "120",
+        "weight-unit1": "kg",
+        "weight2": "93",
+        "weight-unit2": "kg",
+        "weight-image": "shopify://shop_images/Rectangle_160927.png",
+        "weight-des": "<p>Personalized online care with clinically approved treatments you can trust.</p>",
+        "butt-text": "Check Your Eligibility",
+        "butt-url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "padding_top": 16,
+        "padding_bottom": 0,
+        "mbl_padding_top": 16,
+        "mbl_padding_bottom": 0,
+        "back_color": "#4c3e79"
+      }
+    },
+    "custom_liquid_rCbiJj": {
+      "type": "custom-liquid",
+      "custom_css": [
+        ".label-text {color: #6c6c85 !important;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!-- TrustBox script --> <script type=\"text/javascript\" src=\"//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js\" async></script> <!-- End TrustBox script --><!-- TrustBox widget - Slider --> <div class=\"trustpilot-widget\" data-locale=\"en-US\" data-template-id=\"54ad5defc6454f065c28af8b\" data-businessunit-id=\"61ea901e3b2fe47d1d21fc7e\" data-style-height=\"240px\" data-style-width=\"100%\" data-token=\"d006bea2-303f-49df-b8dd-adf0b79af585\" data-stars=\"4,5\" data-review-languages=\"en\">   <a href=\"https://www.trustpilot.com/review/pharmazondirect.com\" target=\"_blank\" rel=\"noopener\">Trustpilot</a> </div> <!-- End TrustBox widget -->",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 20
+      }
+    },
+    "ccs_treatment_GGF9w6": {
+      "type": "ccs-Treatment",
+      "blocks": {
+        "best_sellers_r46cxD": {
+          "type": "best-sellers",
+          "settings": {
+            "block-back_color": "linear-gradient(282deg, rgba(76, 62, 121, 0.1) 7.39%, rgba(76, 62, 121, 0.7) 80.47%)",
+            "image": "shopify://shop_images/People_posing.png",
+            "image-mbl": "shopify://shop_images/People_posing_2.png",
+            "title": "Weight loss injections",
+            "rich_title": "<ul><li>Control hunger </li><li>Improve blood sugar</li><li>Sustainable weight loss.</li></ul>",
+            "svg": "shopify://shop_images/tick-circle_1.svg",
+            "butt_text": "Get Started",
+            "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey"
+          }
+        },
+        "best_sellers_xfhTxw": {
+          "type": "best-sellers",
+          "settings": {
+            "block-back_color": "linear-gradient(90deg, rgba(127, 160, 184, 1), rgba(207, 232, 243, 1) 100%)",
+            "image": "shopify://shop_images/image_2817_2.png",
+            "image-mbl": "shopify://shop_images/image_2817_3.png",
+            "title": "Weight Loss Pill",
+            "rich_title": "<ul><li>Reduce fat absorption</li><li>Supports gradual weight loss</li><li>Aids in weight maintenance</li></ul>",
+            "svg": "shopify://shop_images/tick-circle.svg",
+            "butt_text": "Get Started",
+            "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_r46cxD",
+        "best_sellers_xfhTxw"
+      ],
+      "custom_css": [],
+      "name": "Trusted Treatment",
+      "settings": {
+        "heading": "<p>Achieve Lasting <strong>Weight Loss</strong> With <strong>Trusted & Proven Treatments</strong></p>",
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "mbl_padding_top": 12,
+        "mbl_padding_bottom": 20,
+        "back_color": ""
+      }
+    },
+    "success_stories_mwNPBg": {
+      "type": "Success-stories",
+      "blocks": {
+        "best_sellers_gbAUGP": {
+          "type": "best-sellers",
+          "settings": {
+            "top_text": "Amanda,28",
+            "lbstext": "38 LBS",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_3_ddeb4342-9b01-497f-9d24-a3d27ca2e564.png",
+            "after-img": "shopify://shop_images/Frame_2147239716_3_b83e965a-87de-4e36-b6ef-42224f873858.png",
+            "rich-text": "<p>“I lost over <strong>38 pounds in four months.</strong> The clear process and professional oversight made the experience easier to follow.”</p>",
+            "verifired": "Verified review"
+          }
+        },
+        "best_sellers_MkXQcg": {
+          "type": "best-sellers",
+          "settings": {
+            "top_text": "Christina, 22",
+            "lbstext": "33 LBS",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_4_cf822e31-9667-43fc-8a9b-6f5c62a9efe3.png",
+            "after-img": "shopify://shop_images/Frame_2147239716_4_2d602ed6-d3a7-4f38-adbe-41fcfbcf174c.png",
+            "rich-text": "<p>It was so simple to begin just a short form and I was quickly guided through. I’m already <strong>seeing real progress!</strong></p>",
+            "verifired": "Verified review"
+          }
+        },
+        "best_sellers_aYkzpg": {
+          "type": "best-sellers",
+          "settings": {
+            "top_text": "Kimberly, 51",
+            "lbstext": "30 LBS",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_5_c4b450ce-9143-427e-a336-75980f4e48f2.png",
+            "after-img": "shopify://shop_images/Frame_2147239716_5_525a77d2-87b7-448c-9652-9e166671253f.png",
+            "rich-text": "<p>\"I've been using Mounjaro for just over four weeks, and I've already lost a little more than <strong>18 pounds</strong>. I feel much healthier now.\"</p>",
+            "verifired": "Verified review"
+          }
+        },
+        "best_sellers_8PLCj6": {
+          "type": "best-sellers",
+          "settings": {
+            "top_text": "Amanda, 28",
+            "lbstext": "35 LBS",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_3_ddeb4342-9b01-497f-9d24-a3d27ca2e564.png",
+            "after-img": "shopify://shop_images/Frame_2147239716_3_b83e965a-87de-4e36-b6ef-42224f873858.png",
+            "rich-text": "<p>“<strong>I lost over 38 pounds in four months.</strong> The clear process and professional oversight made the experience easier to follow.”</p>",
+            "verifired": "Verified review"
+          }
+        },
+        "best_sellers_RDNtGd": {
+          "type": "best-sellers",
+          "disabled": true,
+          "settings": {
+            "top_text": "Amanda, 43",
+            "lbstext": "38 LBS",
+            "brofr-img": "shopify://shop_images/Frame_2147239715.png",
+            "after-img": "shopify://shop_images/Frame_2147239716.png",
+            "rich-text": "<p>“<strong>I lost over 38 pounds in four months.</strong> The clear process and professional oversight made the experience easier to follow.”</p>",
+            "verifired": "Verified review"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_gbAUGP",
+        "best_sellers_MkXQcg",
+        "best_sellers_aYkzpg",
+        "best_sellers_8PLCj6",
+        "best_sellers_RDNtGd"
+      ],
+      "disabled": true,
+      "name": "Success stories",
+      "settings": {
+        "heading": "<p>Be Our next <strong>success story</strong><br/>we're with you every step of the way</p>",
+        "back_color": "",
+        "desktop-padding-top": 40,
+        "desktop-padding-bottom": 40,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 40
+      }
+    },
+    "success_stories_yNWECD": {
+      "type": "Success-stories",
+      "blocks": {
+        "best_sellers_KzycF9": {
+          "type": "best-sellers",
+          "settings": {
+            "top_text": "Amanda, 34",
+            "lbstext": "32 Kg",
+            "brofr-img": "shopify://shop_images/Frame_2147239715.png",
+            "after-img": "shopify://shop_images/Frame_2147239716.png",
+            "rich-text": "<p>“<strong>I lost over 20kg in 6 months</strong>.<strong>.</strong> The clear process and professional oversight made the experience easier to follow.”</p>",
+            "verifired": "Verified review"
+          }
+        },
+        "best_sellers_qrM9FD": {
+          "type": "best-sellers",
+          "settings": {
+            "top_text": "Daniel, 43",
+            "lbstext": "32 Kg",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_1_2256b477-bd3b-4a91-b012-27b2022e0cf5.png",
+            "after-img": "shopify://shop_images/Frame_2147239717_1.png",
+            "rich-text": "<p><strong>I lost more than 25kg in 4 months</strong>.The structured approach  made it simple to stay consistent and see real progress.</p>",
+            "verifired": "Verified review"
+          }
+        },
+        "best_sellers_4DVPVn": {
+          "type": "best-sellers",
+          "settings": {
+            "top_text": "Christina, 22",
+            "lbstext": "15 Kg",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_1.png",
+            "after-img": "shopify://shop_images/Frame_2147239716_1.png",
+            "rich-text": "<p>It was so simple to begin just a short form and I was quickly guided through. I’m already <strong>seeing real progress!</strong></p>",
+            "verifired": "Verified review"
+          }
+        },
+        "best_sellers_bGzwxL": {
+          "type": "best-sellers",
+          "disabled": true,
+          "settings": {
+            "top_text": "Michael, 28",
+            "lbstext": "37 LBS",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_700b874b-b65e-40d3-b5c5-2d46c6e1849e.png",
+            "after-img": "shopify://shop_images/Frame_2147239717.png",
+            "rich-text": "<p><strong>I shed more than 37 pounds</strong> in four months. Having a well-defined plan and ongoing guidance kept me on track</p>",
+            "verifired": "Verified review"
+          }
+        },
+        "best_sellers_tnhq6r": {
+          "type": "best-sellers",
+          "settings": {
+            "top_text": "Kimberly, 51",
+            "lbstext": "20 Kg",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_2.png",
+            "after-img": "shopify://shop_images/Frame_2147239716_2.png",
+            "rich-text": "<p><strong>I've been using Mounjaro for over 6 months and lost 16kg</strong>. The clear and guided plan helped me stay on track.</p>",
+            "verifired": "Verified review"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_KzycF9",
+        "best_sellers_qrM9FD",
+        "best_sellers_4DVPVn",
+        "best_sellers_bGzwxL",
+        "best_sellers_tnhq6r"
+      ],
+      "name": "Success stories",
+      "settings": {
+        "heading": "<p>Be Our next <strong>success story</strong><br/>we're with you every step of the way</p>",
+        "back_color": "",
+        "desktop-padding-top": 40,
+        "desktop-padding-bottom": 40,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "cs_text_icon_slider_Pt7VrW": {
+      "type": "cs_text-icon_slider",
+      "blocks": {
+        "best_sellers_WnGdWy": {
+          "type": "best-sellers",
+          "settings": {
+            "image": "shopify://shop_images/Registered_1.png",
+            "img-width": 70,
+            "img-height": 70,
+            "img-width-mbl": 60,
+            "img-height-mbl": 60,
+            "rich_title": "<p>Legit Script certification</p>",
+            "url-new": "https://www.legitscript.com/websites/?checker_keywords=pharmazonexpress.com"
+          }
+        },
+        "best_sellers_XmjQDC": {
+          "type": "best-sellers",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2026-03-18_at_5.46.02_AM.jpg",
+            "img-width": 125,
+            "img-height": 50,
+            "img-width-mbl": 100,
+            "img-height-mbl": 40,
+            "rich_title": "<p>General Pharmaceutical Council</p>",
+            "url-new": "https://www.pharmacyregulation.org/registers/pharmacy/9012756"
+          }
+        },
+        "best_sellers_EpzzyH": {
+          "type": "best-sellers",
+          "settings": {
+            "image": "shopify://shop_images/CPD.png",
+            "img-width": 75,
+            "img-height": 70,
+            "img-width-mbl": 70,
+            "img-height-mbl": 60,
+            "rich_title": "<p>The CPD Certification Service</p>",
+            "url-new": ""
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_WnGdWy",
+        "best_sellers_XmjQDC",
+        "best_sellers_EpzzyH"
+      ],
+      "name": "Icon Text Slider",
+      "settings": {
+        "imag": "shopify://shop_images/Frame_2147241929_1.png",
+        "imag-mbl": "shopify://shop_images/Blog_3.png",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mbl_padding_top": 0,
+        "mbl_padding_bottom": 0,
+        "back_color": ""
+      }
+    },
+    "cs_weight_bar_Gxhpmz": {
+      "type": "cs-weight-bar",
+      "name": "Weight Loss Calculator",
+      "settings": {
+        "main-heading": "<p>Pharmazon Members <strong>Average Weight Loss</strong></p>",
+        "number": "21.55%",
+        "richtext": "<p>Results vary from person to person.<strong> Weight loss</strong> outcomes depend on individual factors such as <strong>starting weight, lifestyle, </strong>and adherence to the programme.</p>",
+        "heading": "See how much weight you could lose",
+        "richtext1": "<p>Your<strong> Current</strong> Weight</p>",
+        "loss-text": "<p>With <strong>Pharmazon</strong> program, you could lose</p>",
+        "min_weight": 60,
+        "max_weight": 250,
+        "default_weight": 100,
+        "back_color": "",
+        "desktop-padding-top": 60,
+        "desktop-padding-bottom": 20,
+        "padding-top-mbl": 30,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "cs_approach_kxGn3T": {
+      "type": "cs_Approach",
+      "blocks": {
+        "best_sellers_9UMMrk": {
+          "type": "best-sellers",
+          "settings": {
+            "mobile-max-width": 282,
+            "image": "shopify://shop_images/Frame_2147241418_5.png",
+            "tite": "Clinically Proven Medications Evidence Based Treatments",
+            "rich_text-top": "",
+            "butt_text": "Check Your Eligibility",
+            "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+            "loss_up": "",
+            "unit": "",
+            "rich_text": "<p>Evidence-based treatments support effective weight loss.</p>",
+            "richtext_padding_top": 24,
+            "bar-weight-text1": "",
+            "bar-weight-text2": "",
+            "bar-weight-text3": "",
+            "bar-weight-text4": "",
+            "bar-weight-text5": ""
+          }
+        },
+        "best_sellers_NzkeUh": {
+          "type": "best-sellers",
+          "settings": {
+            "mobile-max-width": 198,
+            "image": "shopify://shop_images/Frame_2147241418_6.png",
+            "tite": "Personalised lifestyle plan",
+            "rich_text-top": "<p>Making sure you are moving in the right direction by tracking your progress</p>",
+            "butt_text": "",
+            "butt_url": "",
+            "loss_up": "lose up to",
+            "wieght": 20,
+            "unit": "kg",
+            "rich_text": "",
+            "richtext_padding_top": 10,
+            "bar-weight-text1": "140kg",
+            "bar-weight-text2": "130kg",
+            "bar-weight-text3": "120kg",
+            "bar-weight-text4": "110kg",
+            "bar-weight-text5": "100kg"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_9UMMrk",
+        "best_sellers_NzkeUh"
+      ],
+      "name": "Our Smarter",
+      "settings": {
+        "title": "<p>Our Smarter Approach <strong>To Weight Loss </strong></p>",
+        "padding_top": 40,
+        "padding_bottom": 12,
+        "mbl_padding_top": 20,
+        "mbl_padding_bottom": 6,
+        "back_color": ""
+      }
+    },
+    "custom_step_section_YYFkDa": {
+      "type": "custom-step-section",
+      "name": "Clinician-Led Approach",
+      "settings": {
+        "title": "A Smarter, Clinician-Led Approach",
+        "ms-title": "<p>A Smarter,</p><p>Clinician-Led Approach</p>",
+        "rich_title": "<p>Weight loss guided by medical review not guesswork.</p>",
+        "image": "shopify://shop_images/Frame_2147241424_1.png",
+        "image_mbl": "shopify://shop_images/Frame_2147241425.png",
+        "text1": "Qualified Review",
+        "image1": "shopify://shop_images/Ellipse_556_2.png",
+        "text2": "Careful Approval",
+        "image2": "shopify://shop_images/Ellipse_556_3.png",
+        "text3": "Private Delivery",
+        "image3": "shopify://shop_images/Ellipse_556_4.png",
+        "padding_top": 12,
+        "padding_bottom": 20,
+        "mbl_padding_top": 6,
+        "mbl_padding_bottom": 20,
+        "back_color": ""
+      }
+    },
+    "why_pharmazon_QBiPry": {
+      "type": "Why-Pharmazon",
+      "blocks": {
+        "best_sellers_k9gYFd": {
+          "type": "best-sellers",
+          "settings": {
+            "text": "Reviewed by Clinical Experts",
+            "cheak": "shopify://shop_images/CheckCircle.svg",
+            "thum": "shopify://shop_images/ThumbsDown.svg"
+          }
+        },
+        "best_sellers_Gezxnd": {
+          "type": "best-sellers",
+          "settings": {
+            "text": "Personalized, Tailored Plans",
+            "cheak": "shopify://shop_images/CheckCircle.svg",
+            "thum": "shopify://shop_images/ThumbsDown.svg"
+          }
+        },
+        "best_sellers_eAc6DH": {
+          "type": "best-sellers",
+          "settings": {
+            "text": "Discreet Fast Delivery",
+            "cheak": "shopify://shop_images/CheckCircle.svg",
+            "thum": "shopify://shop_images/ThumbsDown.svg"
+          }
+        },
+        "best_sellers_TNNPYk": {
+          "type": "best-sellers",
+          "settings": {
+            "text": "Clear Transparent Pricing",
+            "cheak": "shopify://shop_images/CheckCircle.svg",
+            "thum": "shopify://shop_images/ThumbsDown.svg"
+          }
+        },
+        "best_sellers_PNE87h": {
+          "type": "best-sellers",
+          "settings": {
+            "text": "Medical Oversight at Every Step",
+            "cheak": "shopify://shop_images/CheckCircle.svg",
+            "thum": "shopify://shop_images/ThumbsDown.svg"
+          }
+        },
+        "best_sellers_NwxJHy": {
+          "type": "best-sellers",
+          "settings": {
+            "text": "Proven Weight Loss Support",
+            "cheak": "shopify://shop_images/CheckCircle.svg",
+            "thum": "shopify://shop_images/ThumbsDown.svg"
+          }
+        },
+        "best_sellers_9bNa8w": {
+          "type": "best-sellers",
+          "settings": {
+            "text": "Compliant with UK Standards",
+            "cheak": "shopify://shop_images/CheckCircle.svg",
+            "thum": "shopify://shop_images/ThumbsDown.svg"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_k9gYFd",
+        "best_sellers_Gezxnd",
+        "best_sellers_eAc6DH",
+        "best_sellers_TNNPYk",
+        "best_sellers_PNE87h",
+        "best_sellers_NwxJHy",
+        "best_sellers_9bNa8w"
+      ],
+      "name": "Why Pharmazon",
+      "settings": {
+        "heading": "Why Pharmazon Is Different From Others",
+        "sub-heading": "<p><strong>Pharmazon</strong> provides safe, effective, and <strong>responsible weight-loss solutions</strong> with <strong>full transparency, clinical oversight, </strong>and <strong>personalized care</strong> offering more than just weight loss, but <strong>sustainable, real results.</strong></p>",
+        "title": "Features",
+        "logo": "shopify://shop_images/Mask_group_11.png",
+        "back-img": "shopify://shop_images/Ellipse_549_3.png",
+        "other": "Others",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "mbl_padding_top": 20,
+        "mbl_padding_bottom": 20,
+        "back_color": "#4C3E79"
+      }
+    },
+    "cs_awards_A8HwUC": {
+      "type": "cs_Awards",
+      "blocks": {
+        "best_sellers_WYyPRa": {
+          "type": "best-sellers",
+          "settings": {
+            "card-url": "https://pharmazonexpress.com/blogs/blogs/winners-of-innovation-entrepreneur-of-the-year-at-the-great-british-entrepreneur-awards-2025",
+            "image": "shopify://shop_images/image_2822.png",
+            "max-width-img": 130,
+            "text": "Winner 2025 & Finalist 2023",
+            "rich-text": "Entrepreneur Awards"
+          }
+        },
+        "best_sellers_ierNEY": {
+          "type": "best-sellers",
+          "settings": {
+            "card-url": "",
+            "image": "shopify://shop_images/image_2828.png",
+            "max-width-img": 100,
+            "text": "Finalist 2023",
+            "rich-text": "Small & Growth Business of the Year Award"
+          }
+        },
+        "best_sellers_Rh8tt6": {
+          "type": "best-sellers",
+          "settings": {
+            "card-url": "",
+            "image": "shopify://shop_images/image_2829.png",
+            "max-width-img": 58,
+            "text": "Winner 2025",
+            "rich-text": "Innovative Business of the Year Award"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_WYyPRa",
+        "best_sellers_ierNEY",
+        "best_sellers_Rh8tt6"
+      ],
+      "name": "Awards & Recognition",
+      "settings": {
+        "heading": "<p><strong>Awards</strong> <em>& </em>Recognition</p>",
+        "sub-heading": "<p><strong>Award nominated for healthcare innovation</strong> and impact, recognised for improving access to <strong>safe, modern healthcare services </strong>across the UK.</p>",
+        "back-img": "shopify://shop_images/Ellipse_549_5.png",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "mbl_padding_top": 20,
+        "mbl_padding_bottom": 20,
+        "back_color": "#FAF8ED"
+      }
+    },
+    "cs_faq_sec_KbnFmy": {
+      "type": "cs_faq_sec",
+      "blocks": {
+        "best_sellers_Yqt4Tj": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "What is Pharmazon Express?",
+            "heading_ans": "<p>Pharmazon Express is a GPhC-registered online pharmacy in the UK dedicated to providing fast, high-quality, and discreet pharmacy delivery services. We deliver treatments like Weight Loss, ED, Hair Care, & other treatments to the patients across the UK, offering a seamless online pharmacy delivery service with same-day delivery in London and next-day delivery across the UK.</p>"
+          }
+        },
+        "best_sellers_tKPrWf": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Is my information safe?",
+            "heading_ans": "<p>Your medical records and order history are 100% confidential. Only our secure pharmacy staff, Pharmacists and prescribers can view this information.</p>"
+          }
+        },
+        "best_sellers_yaJbCG": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Is the delivery packaging discreet?",
+            "heading_ans": "<p>Yes, 100%. We prioritize your privacy by shipping all orders in plain, unbranded boxes or envelopes. There are no external markings that indicate the contents or our company name (\"Pharmazon Express\")</p>"
+          }
+        },
+        "best_sellers_gxT3pD": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How does the weight loss process work?",
+            "heading_ans": "<p>Start by choosing your weight loss treatment and completing our quick 2-minute online consultation. Our prescriber will review all your answers, and once your treatment is approved, your medicine will be dispatched and delivered quickly and discreetly to your doorstep via Royal Mail.</p>"
+          }
+        },
+        "best_sellers_3fwGrx": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How much weight can you lose in a month?",
+            "heading_ans": "<p>With 2.5 mg starting dose: You can expect to lose about 2–5 lbs (1–2.5 kg) in the first month depending on individual health, diet, and the use of medications.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_Yqt4Tj",
+        "best_sellers_tKPrWf",
+        "best_sellers_yaJbCG",
+        "best_sellers_gxT3pD",
+        "best_sellers_3fwGrx"
+      ],
+      "name": "Custom Faq Section",
+      "settings": {
+        "heading": "<p>Still Got <strong>Questions?</strong></p>",
+        "butt-text": "Contact Us",
+        "butt_url": "shopify://pages/contact",
+        "back_color": "",
+        "desktop-padding-top": 50,
+        "desktop-padding-bottom": 40,
+        "padding-top-mbl": 40,
+        "padding-bottom-mbl": 25,
+        "section_color": "rgba(0,0,0,0)"
+      }
+    },
+    "cs_blogs_section_wJbiE6": {
+      "type": "cs-blogs-section",
+      "name": "Blogs Section",
+      "settings": {
+        "heading": "<p>Discover <strong>Expert-backed</strong> Wellness Resources.</p>",
+        "blog": "blogs",
+        "back_color": "",
+        "desktop-padding-top": 20,
+        "desktop-padding-bottom": 20,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "cs_back_img_i7iahg": {
+      "type": "cs_back_img",
+      "name": "Loss Journey",
+      "settings": {
+        "back-img": "shopify://shop_images/Frame_2147241468_9.png",
+        "back-img-mbl": "shopify://shop_images/Frame_2147241468_10.png",
+        "heading": "<p>Start Your Weight Loss Journey Today!</p>",
+        "boot-text": "Boost Confidence",
+        "butt-text": "Get Started now",
+        "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "back_color": "",
+        "desktop-padding-top": 20,
+        "desktop-padding-bottom": 20,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 10
+      }
+    },
+    "product_promo_cards_dnFWtV": {
+      "type": "product-promo-cards",
+      "blocks": {
+        "card_jcNGCK": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/mounjaro_1.png",
+            "title": "Mounjaro pen",
+            "subheading": "With Up To 30% Off",
+            "image_link": "shopify://collections/weight-loss-treatment"
+          }
+        },
+        "card_nR8dYg": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/7.png",
+            "title": "Wegovy 2.4 Mg",
+            "subheading": "With Up To 30% Off",
+            "image_link": "shopify://products/wegovy-injectable-pen-2-4mg"
+          }
+        },
+        "card_xM9kKt": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/Regainemonoxidil_4.png",
+            "title": "Regain 5% Minoxidil",
+            "subheading": "With Up To 30% Off",
+            "image_link": "shopify://products/regaine-for-men-extra-strength-foam-5-minoxidil-hair-regrowth-treatment"
+          }
+        }
+      },
+      "block_order": [
+        "card_jcNGCK",
+        "card_nR8dYg",
+        "card_xM9kKt"
+      ],
+      "disabled": true,
+      "settings": {
+        "main_heading": "<strong>What Do You Need Today?</strong>",
+        "heading_size": "h1",
+        "btm_spacing": 72,
+        "section_subheading": "Check Our Featured Products And Deals",
+        "padding_top": 72,
+        "padding_bottom": 16
+      }
+    },
+    "slider_collection_list_ApV4fA": {
+      "type": "slider-collection-list",
+      "blocks": {
+        "featured_collection_YecBqe": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "health-care",
+            "collection_image": "shopify://shop_images/fdaa1ccd25e6f75f4e0454eb0d97911e6a4c66e9.png",
+            "collection_title": "Weight Management",
+            "collection_subheading": "Help Hit Your Health Goals"
+          }
+        },
+        "featured_collection_Uk9t3k": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "skincare-antiseptics",
+            "collection_image": "shopify://shop_images/bda70d3b523a1bb04e91eed68830353d513460cf.png",
+            "collection_title": "Summer Skincare",
+            "collection_subheading": "Premium Skincare From Favourite"
+          }
+        },
+        "featured_collection_Tpr8Fy": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "vitamins-supplements",
+            "collection_image": "shopify://shop_images/1ae826508a93a9bc05710f7d45c898ebe7797385.png",
+            "collection_title": "Vitamins",
+            "collection_subheading": "Help Boost Your Immunity"
+          }
+        },
+        "featured_collection_mrmtFa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cough-cold-and-sore-throat-1",
+            "collection_image": "shopify://shop_images/0c30a339e43a3bca09ccb3d476f8b5322fbc802d.png",
+            "collection_title": "Cold And Flu",
+            "collection_subheading": "Power Up Your Defence With Seasonal"
+          }
+        },
+        "featured_collection_fnrzGM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "foot-care",
+            "collection_title": "",
+            "collection_subheading": ""
+          }
+        },
+        "featured_collection_CkBckP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hair-scalp",
+            "collection_title": "",
+            "collection_subheading": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_YecBqe",
+        "featured_collection_Uk9t3k",
+        "featured_collection_Tpr8Fy",
+        "featured_collection_mrmtFa",
+        "featured_collection_fnrzGM",
+        "featured_collection_CkBckP"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "<strong>Our Top Collection</strong>",
+        "heading_size": "h2",
+        "btm_spacing": 52,
+        "section_subheading": "Pick from our collection",
+        "image_ratio": "square",
+        "enable_desktop_slider": true,
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 72,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "<strong>Discover Our Products</strong>",
+        "heading_size": "h2",
+        "btm_spacing": 52,
+        "description": "<p>Trusted Products, Exceptional Quality</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "vitamins-supplements",
+        "products_to_show": 15,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_RdYcNr": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "btm_spacing": 30,
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "cough-cold-and-sore-throat-1",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "bulk",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_blog_pB9eYT": {
+      "type": "featured-blog",
+      "disabled": true,
+      "settings": {
+        "heading": "<strong>Our Blog </strong>",
+        "heading_size": "h2",
+        "btm_spacing": 30,
+        "section_subheading": "Welcome to our Pharma Blog — your reliable source for the latest in healthcare, wellness, and medication guidance. From expert tips on managing health conditions to updates on new treatments and lifestyle advice, we’re here to keep you informed and empowered. Stay healthy. Stay informed. Stay ahead with us..",
+        "description_style": "body",
+        "blog": "blogs",
+        "btn_text_more": "Read more",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-be9c90ba-dd79-41a9-9d5e-aab32db15a21",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": false,
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "review_section_dGJ79q": {
+      "type": "review-section",
+      "blocks": {
+        "review_y7ErNW": {
+          "type": "review",
+          "disabled": true,
+          "settings": {
+            "review_image": "shopify://shop_images/2aa6c8c2ea475abb89993637851c39d473e3a58a.png",
+            "review_url": ""
+          }
+        },
+        "review_3EReAV": {
+          "type": "review",
+          "settings": {
+            "review_image": "shopify://shop_images/b0569802b6e9af91c15996ce7309796068c8ee0c.png",
+            "review_url": "https://www.trustpilot.com/review/pharmazonhomecare.com"
+          }
+        }
+      },
+      "block_order": [
+        "review_y7ErNW",
+        "review_3EReAV"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "<strong>Your Reviews, Our Pride</strong>",
+        "heading_size": "h1",
+        "btm_spacing": 52,
+        "subheading": "Step-by-Step Overview",
+        "description_style": "body",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "featured_collection_xxKgw7": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "btm_spacing": 30,
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "women-and-baby-care",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "bulk",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "custom_banner_UNwTTj",
+    "custom_liquid_rCbiJj",
+    "ccs_treatment_GGF9w6",
+    "success_stories_mwNPBg",
+    "success_stories_yNWECD",
+    "cs_text_icon_slider_Pt7VrW",
+    "cs_weight_bar_Gxhpmz",
+    "cs_approach_kxGn3T",
+    "custom_step_section_YYFkDa",
+    "why_pharmazon_QBiPry",
+    "cs_awards_A8HwUC",
+    "cs_faq_sec_KbnFmy",
+    "cs_blogs_section_wJbiE6",
+    "cs_back_img_i7iahg",
+    "product_promo_cards_dnFWtV",
+    "slider_collection_list_ApV4fA",
+    "featured_collection",
+    "featured_collection_RdYcNr",
+    "featured_blog_pB9eYT",
+    "review_section_dGJ79q",
+    "featured_collection_xxKgw7"
+  ]
+}

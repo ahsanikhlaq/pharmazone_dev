@@ -1,0 +1,577 @@
+<style>
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.back_color }};
+     position: relative;
+}   
+.cs_app_title p{
+    margin: 0; 
+    color: var(--Black, #111);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+    max-width: 610px;
+    margin: 0 auto;
+}
+.cs_app_title p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+}
+.cs_app_blocks_main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+}
+.cs_app_block_img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+.cs_app_block_on_title{
+    margin: 0;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 33.6px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    max-width: 340px;
+}
+.cs_app_block_on_butt{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    border-radius: 75px;
+    background: var(--Yellow, #FFD902);
+    border: 1px solid #FFD902;
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    min-width: fit-content;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.cs_app_block_text_loss{
+    color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 19.2px */
+}
+.cs-app_block_loss_weight{
+    display: flex;
+    align-items: end;
+    gap: 4px;
+}
+.cs-app_block_loss_weight_num{
+    color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 37px; /* 48px */
+    letter-spacing: 1px;
+}
+.cs-app_block_loss_weight_unit{
+    color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 1px;
+}
+.cs-app_block_on_text_richtext{
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    padding-top: 24px;
+}
+.cs-app_block_on_text_richtext p{
+ margin: 0;
+}
+.cs_app_block_in{
+    position: relative;
+}
+.cs_app_block_on_text{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px; 
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.13);
+    backdrop-filter: blur(20px);
+    {% comment %} display: flex; {% endcomment %}
+    height: 204px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+.cs_block_on_title_butt {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+        width: 100%;
+}
+.cs_app_block_title_rictext p{
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: -0.64px;
+    text-transform: math-auto;
+    padding-top: 10px;
+        max-width: 340px;
+        margin: 0;
+        text-transform: capitalize;
+}
+.cs-app_progress-container {
+  width: 100%;
+      margin-top: 29px;
+}
+.cs-app_progress-track {
+  width: 100%;
+  height: 20px;
+  border-radius: 60px;
+  background: var(--Warm-color, #FAF8ED);
+  overflow: hidden;
+  position: relative;
+}
+.cs-app_progress-fill {
+  width: 0%;
+  height: 100%;
+  border-radius: 60px;
+  background: var(--Yellow, #FFD902);
+  transition: width 1.5s ease-in-out;
+}
+
+.cs-app_labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.cs-app_labels_text{
+    color: #FFF;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 16.8px */
+    letter-spacing: -0.5px;
+}
+.cs_app_block_on_butt_mbl{
+    display: none;
+}
+.cs_app_block_on_butt_des{
+   display: block;
+}
+ @media screen and (max-width:768px){
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.mbl_padding_top }}px;
+    padding-bottom: {{ section.settings.mbl_padding_bottom }}px;
+  }
+  .cs_app_blocks_main{
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+}
+.cs_app_block_on_title{
+    font-size: 20px;
+    line-height: 120%; /* 24px */
+    letter-spacing: 0px;
+    font-weight: 600;
+}
+.cs_app_block_title_rictext p{
+    font-size: 14px;
+    line-height: 120%; /* 16.8px */
+    letter-spacing: 0px;
+    font-weight: 300;
+}
+.cs-app_progress-container {
+      margin-top: 24px;
+}
+.cs_app_block_text_loss{
+    font-size: 14px;9
+}
+.cs-app_block_loss_weight_num{
+font-size: 32px;
+line-height: 28px;
+}
+.cs-app_block_loss_weight_unit{
+    font-size: 14px;
+}
+.cs_app_title p{
+font-size: 30px;
+line-height: 120%; /* 36px */
+max-width: 300px;
+}
+.cs_app_title p strong{
+font-size: 30px;
+line-height: 120%; /* 36px */
+} 
+
+.cs_app_block_on_text {
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    border-radius: 16px;
+    height: auto;
+    padding: 16px;
+}
+.cs_app_block_on_butt_mbl{
+    display: block;
+    margin: 24px auto 0 auto;
+    padding: 16px;
+    font-size: 16px;
+}
+.cs_app_block_on_butt_des{
+   display: none;
+}
+.cs-app_block_on_text_richtext{
+    font-size: 14px;
+    line-height: 120%; /* 16.8px */
+    letter-spacing: 0px;
+    padding-top: 8px;
+    font-weight: 300;
+}
+.cs-app_labels_text{
+    font-size: 12px;
+}
+.cs-app_progress-track {
+    height: 13px;
+}
+.cs_app_block_img {
+    border-radius: 16px;
+    height: 400px;
+}
+
+  }
+  
+</style>
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_app_title">{{ section.settings.title }}</div>
+    <div class="cs_app_blocks_main">
+        {% for block in section.blocks %}
+            <div class="cs_app_block_in block-{{ block.id }}">
+                <div class="cs_app_block_image">
+                    {{ block.settings.image | image_url: width: 1440 | image_tag:
+                class: 'cs_app_block_img',
+                widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                height: 100,
+                width: 100,
+                alt: logo_alt,
+                loading: "lazy"
+              }}
+                </div>
+                <div class="cs_app_block_on_text cs_card_scale_animation">
+                    <div class="cs_block_on_title_butt">
+                        <div class="cs_app_block_title_richtext">
+                        {% if block.settings.tite != blank %}
+                        <h3 class="cs_app_block_on_title">{{ block.settings.tite }}</h3>
+                        {% endif %}
+                        {% if block.settings.rich_text-top !=blank %}
+                        <div class="cs_app_block_title_rictext">{{ block.settings.rich_text-top }}</div>
+                        {% endif %}
+                        
+                    </div>
+                        {% if block.settings.butt_text != blank %}
+                        <a class="cs_app_block_on_butt cs_app_block_on_butt_des cs_button_hover" href="{{ block.settings.butt_url }}">{{ block.settings.butt_text }}</a>
+                        {% endif %}
+                        {% if block.settings.loss_up != blank %}
+                        <div class="cs_app_block_on_text_up">
+                            <span class="cs_app_block_text_loss">{{ block.settings.loss_up }}</span>
+                            <div class="cs-app_block_loss_weight">
+                                <span class="cs-app_block_loss_weight_num">{{ block.settings.wieght }}</span>
+                                <span class="cs-app_block_loss_weight_unit">{{ block.settings.unit }}</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                    </div>
+                    {% if block.settings.rich_text !=blank %}
+                    <div class="cs-app_block_on_text_richtext">{{ block.settings.rich_text }}</div>
+                    {% endif %}
+                    {% if block.settings.butt_text != blank %}
+                        <a class="cs_app_block_on_butt cs_app_block_on_butt_mbl cs_button_hover" href="{{ block.settings.butt_url }}">{{ block.settings.butt_text }}</a>
+                        {% endif %}
+                    {% if block.settings.bar-weight-text1 !=blank %}
+                <div class="cs-app_progress-container">
+                <div class="cs-app_progress-track">
+                    <div class="cs-app_progress-fill" data-width="50%"> </div>
+                </div>
+                <div class="cs-app_labels">
+                    <span class="cs-app_labels_text">{{ block.settings.bar-weight-text1 }}</span>
+                    <span class="cs-app_labels_text">{{ block.settings.bar-weight-text2 }}</span>
+                    <span class="cs-app_labels_text">{{ block.settings.bar-weight-text3 }}</span>
+                    <span class="cs-app_labels_text">{{ block.settings.bar-weight-text4 }}</span>
+                    <span class="cs-app_labels_text">{{ block.settings.bar-weight-text5 }}</span>
+                </div>
+                </div>
+            {%  endif %}
+                </div>
+            </div>
+            {% style %}
+            @media screen and (max-width:768px){
+              .block-{{ block.id }} .cs_app_block_title_richtext {
+                  max-width: {{ block.settings.mobile-max-width }}px;
+               }
+            }  
+            {% endstyle %}
+        {% endfor %}
+    </div>
+</div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const counters = document.querySelectorAll(".cs-app_block_loss_weight_num");
+
+  const startCounter = (counter) => {
+    const target = +counter.innerText;
+    let count = 0;
+
+    const updateCounter = () => {
+      const increment = target / 100;
+
+      if (count < target) {
+        count += increment;
+        counter.innerText = Math.ceil(count);
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCounter();
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        startCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+
+});
+</script>
+
+<script>
+    const progressBars = document.querySelectorAll(".cs-app_progress-fill");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const targetWidth = entry.target.getAttribute("data-width");
+      entry.target.style.width = targetWidth;
+    }
+  });
+}, { threshold: 0.5 });
+
+progressBars.forEach(bar => observer.observe(bar));
+
+</script>
+{% schema %}
+{
+  "name": "Our Smarter",
+  "settings": [
+   {
+    "type": "richtext",
+    "id": "title",
+    "label": "Title"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Top Padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "mbl_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Mobile Bottom Padding",
+      "default": 10
+    },
+    {
+       "type": "color_background",
+        "id": "back_color",
+        "label": "Background Color"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "best-sellers",
+        "name": "Add Tab",
+         "settings": [
+                 {
+                    "type": "range",
+                    "id": "mobile-max-width",
+                    "min": 0,
+                    "max": 300,
+                    "step": 3,
+                    "unit": "px",
+                    "label": "Mobile Max Width",
+                    "default": 198
+                }, 
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image Desktop"
+                },
+                {
+                    "type": "text",
+                    "id": "tite",
+                    "label": "Title"
+                }, 
+                {
+                    "type": "richtext",
+                    "id": "rich_text-top",
+                    "label": "Rich Text Top"
+                }, 
+                {
+                    "type": "text",
+                    "id": "butt_text",
+                    "label": "Button Text"
+                }, 
+                {
+                    "type": "url",
+                    "id": "butt_url",
+                    "label": "Button Url"
+                },
+                {
+                    "type": "text",
+                    "id": "loss_up",
+                    "label": "Loss Up"
+                },   
+                {
+                    "type": "number",
+                    "id": "wieght",
+                    "label": "Weight"
+                }, 
+                {
+                    "type": "text",
+                    "id": "unit",
+                    "label": "Unit"
+                }, 
+                {
+                    "type": "richtext",
+                    "id": "rich_text",
+                    "label": "Rich Text"
+                },  
+                {
+                    "type": "range",
+                    "id": "richtext_padding_top",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "px",
+                    "label": "Rich Text Top Padding",
+                    "default": 10
+                },  
+                {
+                    "type": "text",
+                    "id": "bar-weight-text1",
+                    "label": "Bar Weight Number1",
+                    "default": "140kg"
+                }, 
+                {
+                    "type": "text",
+                    "id": "bar-weight-text2",
+                    "label": "Bar Weight Number2",
+                    "default": "130kg"
+                }, 
+                {
+                    "type": "text",
+                    "id": "bar-weight-text3",
+                    "label": "Bar Weight Number3",
+                    "default": "120kg"
+                }, 
+                {
+                    "type": "text",
+                    "id": "bar-weight-text4",
+                    "label": "Bar Weight Number4",
+                    "default": "110kg"
+                }, 
+                {
+                    "type": "text",
+                    "id": "bar-weight-text5",
+                    "label": "Bar Weight Number5",
+                    "default": "100kg"
+                },   
+         ]
+         }
+        ],
+  "presets": [
+    {
+      "name": "Our Smarter",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,541 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    background: var(--Gradient, linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%), linear-gradient(107deg, rgba(244, 239, 253, 0.60) 0.38%, rgba(255, 245, 191, 0.60) 100%), #FFF);
+  }
+
+  .pp-wrap-{{ section.id }} {
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: "SF Pro", -apple-system, sans-serif;
+  }
+
+  /* ── Page heading ── */
+  .pp-heading-{{ section.id }} {
+    color: var(--Black, #111);
+text-align: center;
+font-family: "SF Pro";
+font-size: 42px;
+font-style: normal;
+font-weight: 510;
+line-height: 120%; /* 50.4px */
+letter-spacing: -0.42px;
+margin: 0;
+padding-bottom: 40px;
+  }
+
+  /* ── Cards grid ── */
+  .pp-grid-{{ section.id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* ── Single plan card ── */
+  .pp-card-{{ section.id }} {
+    background: #FFF;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  /* Product image area */
+  .pp-img-wrap-{{ section.id }} {
+    width: 100%;
+    aspect-ratio: 1 / 0.85;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #F5EFE6;
+    flex-shrink: 0;
+  }
+
+  .pp-img-wrap-{{ section.id }} img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Card body */
+  .pp-body-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  /* Product name */
+  .pp-name-{{ section.id }} {
+   color: #111;
+text-align: center;
+font-family: "SF Pro";
+font-size: 26px;
+font-style: normal;
+font-weight: 510;
+line-height: 140%; /* 36.4px */
+letter-spacing: -1.04px;
+    margin: 14px 0px 12px;
+  }
+
+  /* Rows */
+  .pp-rows-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .pp-row-{{ section.id }} {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-bottom: 1px solid rgba(17, 17, 17, 0.10);
+    padding: 0px 0px 12px;
+  }
+
+  .pp-row-label-{{ section.id }} {
+    color: #111;
+text-align: center;
+font-family: "SF Pro";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 19.6px */
+padding-bottom: 8px;
+  }
+
+  .pp-row-value-{{ section.id }} {
+   color: #111;
+text-align: center;
+font-family: "SF Pro";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 140%; /* 22.4px */
+letter-spacing: -0.64px;
+  }
+
+  .pp-row-value-{{ section.id }}.price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.44px;
+  }
+
+  /* X icon for benefits (no benefit) */
+  .pp-no-benefit-{{ section.id }} {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pp-no-benefit-{{ section.id }} svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Divider between rows */
+  .pp-divider-{{ section.id }} {
+    height: 1px;
+    background: #F0F0F0;
+    margin: 0;
+  }
+
+  /* CTA button */
+  .pp-btn-{{ section.id }} {
+    display: block;
+    width: 100%;
+    border-radius: 45px;
+    border: 1.5px solid #111;
+    background: transparent;
+    padding: 12px 16px;
+    color: #111;
+    font-family: "SF Pro", -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease;
+    letter-spacing: -0.1px;
+  }
+
+  .pp-btn-{{ section.id }}:hover {
+    background: #111;
+    color: #FFF;
+  }
+  .submitt-btnn{
+    border-radius: 45px;
+border: 1px solid var(--Purple, #4C3E79);
+color: var(--Purple, #4C3E79);
+leading-trim: both;
+text-edge: cap;
+font-family: "SF Pro";
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 19.2px */
+text-transform: capitalize;
+max-width: 338px;
+height: 56px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 14px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    .pp-heading-{{ section.id }} {
+      font-size: 26px;
+      padding-bottom: 24px;
+    }
+    .pp-card-{{ section.id }} {
+      padding: 16px;
+    }
+     .new-product-last .page-width{
+      padding-right: 0px !important;
+     }
+     .pp-grid-{{ section.id }} {
+    display: flex;
+    gap: 16px;
+    overflow: auto;
+        width: 570px;
+  }
+  }
+{%- endstyle -%}
+
+<section
+  class="new-qes-section section-{{ section.id }}-padding new-product-last"
+  data-step="{{ section.settings.step-name }}"
+  next-step=""
+>
+  <div class="page-width">
+    <div class="pp-wrap-{{ section.id }}">
+
+      <!-- Page Heading -->
+      <h2 class="pp-heading-{{ section.id }}">{{ section.settings.heading }}</h2>
+
+      <!-- Cards Grid -->
+      <div class="pp-grid-{{ section.id }}">
+
+        {% for block in section.blocks %}
+          {% if block.type == 'plan' %}
+
+            {%- liquid
+              assign product_obj = block.settings.product
+              assign custom_img  = block.settings.custom_image
+
+              if custom_img != blank
+                assign show_img = custom_img
+                assign img_src  = custom_img | image_url: width: 600
+                assign img_alt  = custom_img.alt | default: block.settings.plan_name
+              elsif product_obj != blank
+                assign show_img = product_obj.featured_image
+                assign img_src  = product_obj.featured_image | image_url: width: 600
+                assign img_alt  = product_obj.title
+              else
+                assign show_img = null
+                assign img_src  = null
+                assign img_alt  = block.settings.plan_name
+              endif
+
+              if block.settings.price != blank
+                assign display_price = block.settings.price
+              elsif product_obj != blank
+                assign display_price = product_obj.price | money
+              else
+                assign display_price = ''
+              endif
+            -%}
+
+            <div class="pp-card-{{ section.id }}" {{ block.shopify_attributes }}>
+
+              <!-- Image -->
+              <div class="pp-img-wrap-{{ section.id }}">
+                {% if img_src != null %}
+                  <img
+                    src="{{ img_src }}"
+                    alt="{{ img_alt }}"
+                    loading="lazy"
+                    width="600"
+                    height="510"
+                  >
+                {% else %}
+                  {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+              </div>
+
+              <!-- Body -->
+              <div class="pp-body-{{ section.id }}">
+
+                <!-- Name -->
+                <p class="pp-name-{{ section.id }}">{{ block.settings.plan_name }}</p>
+
+                <div class="pp-rows-{{ section.id }}">
+
+                  <!-- Price -->
+                  <div class="pp-row-{{ section.id }}">
+                    <span class="pp-row-label-{{ section.id }}">{{ block.settings.price_label | default: 'First Month price' }}</span>
+                    <span class="pp-row-value-{{ section.id }} price">{{ display_price }}</span>
+                  </div>
+
+                  <div class="pp-divider-{{ section.id }}"></div>
+
+                  <!-- Row 1 -->
+                  {% if block.settings.row1_label != blank %}
+                    <div class="pp-row-{{ section.id }}">
+                      <span class="pp-row-label-{{ section.id }}">{{ block.settings.row1_label }}</span>
+                      <span class="pp-row-value-{{ section.id }}">{{ block.settings.row1_value }}</span>
+                    </div>
+                    <div class="pp-divider-{{ section.id }}"></div>
+                  {% endif %}
+
+                  <!-- Row 2 -->
+                  {% if block.settings.row2_label != blank %}
+                    <div class="pp-row-{{ section.id }}">
+                      <span class="pp-row-label-{{ section.id }}">{{ block.settings.row2_label }}</span>
+                      <span class="pp-row-value-{{ section.id }}">{{ block.settings.row2_value }}</span>
+                    </div>
+                    <div class="pp-divider-{{ section.id }}"></div>
+                  {% endif %}
+
+                  <!-- Row 3 / Additional benefits -->
+                  <div class="pp-row-{{ section.id }}">
+                    <span class="pp-row-label-{{ section.id }}">{{ block.settings.row3_label | default: 'Additional benefits' }}</span>
+                    {% if block.settings.row3_value != blank %}
+                      <span class="pp-row-value-{{ section.id }}">{{ block.settings.row3_value }}</span>
+                    {% else %}
+                      <div class="pp-no-benefit-{{ section.id }}">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="12" cy="12" r="10" stroke="#BDBDBD" stroke-width="1.5"/>
+                          <path d="M9 9L15 15M15 9L9 15" stroke="#BDBDBD" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                      </div>
+                    {% endif %}
+                  </div>
+
+                </div>
+
+                <!-- CTA Button -->
+                {% if block.settings.btn_url != blank %}
+                  <a href="{{ block.settings.btn_url }}" class="pp-btn-{{ section.id }}">
+                    {{ block.settings.btn_text | default: 'Continue' }}
+                  </a>
+                {% else %}
+                  <button
+  class="pp-btn-{{ section.id }} submitt-btnn"
+  data-next="{{ block.settings.next-step }}"
+  data-variant="{{ product_obj.selected_or_first_available_variant.id }}"
+  data-product="{{ product_obj.id }}"
+  onclick="
+    var vid = this.getAttribute('data-variant');
+    var pid = this.getAttribute('data-product');
+    window.location.href = 'https://pharmazonexpress.com/pages/weight-plan?product_id=' + pid + '&variant_id=' + vid;
+  "
+>
+                    {{ block.settings.btn_text | default: 'Continue' }}
+                  </button>
+                {% endif %}
+
+              </div>
+            </div>
+
+          {% endif %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Personalized Plans",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Page Heading",
+      "default": "Base on your answers\nhere is your personalized Plans"
+    },
+    {
+      "type": "text",
+      "id": "step-name",
+      "label": "Step Name (data-step)",
+      "info": "e.g. plan-step"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 28
+    }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Plan Card",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Product & Image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "Select a product — its featured image and price will be used automatically"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Image (optional)",
+          "info": "If uploaded, this overrides the product image"
+        },
+        {
+          "type": "header",
+          "content": "Plan Details"
+        },
+        {
+          "type": "text",
+          "id": "plan_name",
+          "label": "Plan Name",
+          "default": "Mounjaro"
+        },
+        {
+          "type": "text",
+          "id": "price_label",
+          "label": "Price Row Label",
+          "default": "First Month price"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price (overrides product price)",
+          "info": "e.g. £169 — leave blank to use product price"
+        },
+        {
+          "type": "header",
+          "content": "Info Rows"
+        },
+        {
+          "type": "text",
+          "id": "row1_label",
+          "label": "Row 1 Label",
+          "default": "Injection Frequency"
+        },
+        {
+          "type": "text",
+          "id": "row1_value",
+          "label": "Row 1 Value",
+          "default": "Weekly"
+        },
+        {
+          "type": "text",
+          "id": "row2_label",
+          "label": "Row 2 Label",
+          "default": "Weight loss progress"
+        },
+        {
+          "type": "text",
+          "id": "row2_value",
+          "label": "Row 2 Value",
+          "default": "Faster & more noticeable"
+        },
+        {
+          "type": "text",
+          "id": "row3_label",
+          "label": "Row 3 Label",
+          "default": "Additional benefits"
+        },
+        {
+          "type": "text",
+          "id": "row3_value",
+          "label": "Row 3 Value",
+          "info": "Leave blank to show ✕ icon (no benefit)"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Continue With Mounjaro"
+        },
+        {
+          "type": "url",
+          "id": "btn_url",
+          "label": "Button URL (optional)",
+          "info": "If set, button links here. Leave blank to use quiz Next Step below."
+        },
+        {
+          "type": "text",
+          "id": "next-step",
+          "label": "Next Step (quiz flow)",
+          "info": "e.g. thrteen-step — used only when no URL is set above"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Personalized Plans",
+      "blocks": [
+        {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Mounjaro",
+            "price": "£169",
+            "row1_label": "Injection Frequency",
+            "row1_value": "Weekly",
+            "row2_label": "Weight loss progress",
+            "row2_value": "Faster & more noticeable",
+            "row3_label": "Additional benefits",
+            "row3_value": "",
+            "btn_text": "Continue With Mounjaro"
+          }
+        },
+        {
+          "type": "plan",
+          "settings": {
+            "plan_name": "Wegovy",
+            "price": "£88",
+            "row1_label": "Injection Frequency",
+            "row1_value": "Weekly",
+            "row2_label": "Weight loss progress",
+            "row2_value": "Gradual & steady",
+            "row3_label": "Additional benefits",
+            "row3_value": "Reduces the risk of heart disease",
+            "btn_text": "Continue With Wegovy"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

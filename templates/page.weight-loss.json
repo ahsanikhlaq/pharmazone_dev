@@ -1,0 +1,699 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
+    },
+    "custom_img_video_Vbr7p9": {
+      "type": "custom-img-video",
+      "name": "Image Video Banner",
+      "settings": {
+        "desktop_banner": "shopify://shop_images/Frame_2147242172_1.png",
+        "mobile_banner": "shopify://shop_images/Frame_2147241468_11.png",
+        "content_vertical_desktop": "bottom",
+        "content_horizontal_desktop": "center",
+        "content_vertical_mobile": "top",
+        "content_horizontal_mobile": "left",
+        "mobile_top": 20,
+        "mobile_bottom": 30,
+        "mobile_left": 12,
+        "desktop_top": 0,
+        "desktop_bottom": 60,
+        "desktop_left": 0,
+        "heading": "<p>Weight loss built for your health</p>",
+        "heading-color": "#ffffff",
+        "strong-heading-color": "#ffffff",
+        "mbl-heading-color": "#ffffff",
+        "mbl-strong-heading-color": "#ffffff",
+        "cs-class-cheak": false,
+        "cs-class-work": false,
+        "heading-align": "center",
+        "heading-align-mbl": "center",
+        "description": "At Pharmazon, we believe your health journey is uniquely yours. That's why we craft a tailored treatment plan designed to help you.",
+        "description-color": "#ffffff",
+        "mbl-description-color": "#ffffff",
+        "des-max-widthh": 560,
+        "primary_button_label": "Is This Treatment Right For Your?",
+        "primary_button_link": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "padding_top_desktop": 20,
+        "padding_bottom_desktop": 12,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "custom_review_marquee_kNhd4D": {
+      "type": "custom-review-marquee",
+      "blocks": {
+        "feature_q4hYta": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/usp_clinicians_colour_svg.svg",
+            "title": "UK Licensed medication"
+          }
+        },
+        "feature_DQzdJf": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Frame.svg",
+            "title": "Clinically proven medication"
+          }
+        },
+        "feature_FLVL4t": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/CheckCircle_59e383a5-fe7e-4e90-b333-f0bd0409fd50.svg",
+            "title": "Trusted by 100k customers"
+          }
+        },
+        "feature_XntAwh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/usp_time_colour_svg.svg",
+            "title": "Cancel anytime subscription"
+          }
+        }
+      },
+      "block_order": [
+        "feature_q4hYta",
+        "feature_DQzdJf",
+        "feature_FLVL4t",
+        "feature_XntAwh"
+      ],
+      "name": "Custom Review Marquee",
+      "settings": {
+        "hide": false
+      }
+    },
+    "weight_loss_y3CqpQ": {
+      "type": "Weight-loss",
+      "blocks": {
+        "faq_qLemjE": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240424.png",
+            "max_width": 180,
+            "max-height": 160,
+            "title": "Mounjaro",
+            "type": "Type",
+            "Weekly": "Weekly Injection",
+            "Benefits": "Benefits",
+            "Helps-control": "Helps control appetite",
+            "Common": "Common Side Effects",
+            "Nausea": "Nausea, Vomiting, Diarrhea",
+            "Recommended": "Recommended For",
+            "Support": "Support for overweight or obesity"
+          }
+        },
+        "faq_fG8xjY": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240418.png",
+            "max_width": 250,
+            "max-height": 160,
+            "title": "Wegovy",
+            "type": "Type",
+            "Weekly": "Weekly Injection",
+            "Benefits": "Benefits",
+            "Helps-control": "Helps control appetite",
+            "Common": "Common Side Effects",
+            "Nausea": "Nausea, Vomiting, Diarrhea",
+            "Recommended": "Recommended For",
+            "Support": "BMI 30 or higher (obesity)"
+          }
+        },
+        "faq_R63wrz": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240419.png",
+            "max_width": 200,
+            "max-height": 160,
+            "title": "Saxenda",
+            "type": "Type",
+            "Weekly": "Daily Injection",
+            "Benefits": "Benefits",
+            "Helps-control": "Helps control appetite",
+            "Common": "Common Side Effects",
+            "Nausea": "Headache, fatigue, dizziness",
+            "Recommended": "Recommended For",
+            "Support": "Adults with BMI 30+ or 27+ with health risks"
+          }
+        },
+        "faq_QCBFyG": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147240419_1.png",
+            "max_width": 170,
+            "max-height": 160,
+            "title": "Orlistat",
+            "type": "Type",
+            "Weekly": "Capsule",
+            "Benefits": "Benefits",
+            "Helps-control": "Supports reduced fat absorption",
+            "Common": "Common Side Effects",
+            "Nausea": "May cause gastrointestinal side effects",
+            "Recommended": "Recommended For",
+            "Support": "Adults 18+ with BMI 30+, or 28+ with health risks"
+          }
+        }
+      },
+      "block_order": [
+        "faq_qLemjE",
+        "faq_fG8xjY",
+        "faq_R63wrz",
+        "faq_QCBFyG"
+      ],
+      "name": "Weight loss",
+      "settings": {
+        "title": "<p>Weight loss <strong>treatment</strong></p>",
+        "rich-text": "<p>Based on your health history, BMI and personal goals, we’ll recommend the one that’s right for you.</p>",
+        "butt-text": "Check Your Eligibility",
+        "butt-url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "back_color": "",
+        "desktop-padding-top": 50,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "steps_CDhgik": {
+      "type": "steps",
+      "blocks": {
+        "faq_zrmGeL": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147241418_2.png",
+            "tag_text": "First Step",
+            "title_text": "Start With a Few Questions",
+            "sub-title_text": "Answer a few easy questions and let us understand your body, lifestyle, and weight-loss goals."
+          }
+        },
+        "faq_hDEWzd": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147241418_7.png",
+            "tag_text": "Second Step",
+            "title_text": "Reviewed by Medical Experts",
+            "sub-title_text": "A licensed prescriber checks everything to make sure your plan is safe & suitable."
+          }
+        },
+        "faq_gxFLjg": {
+          "type": "Faq",
+          "settings": {
+            "img": "shopify://shop_images/Frame_2147241418_8.png",
+            "tag_text": "Third Step",
+            "title_text": "Straight to Your Door",
+            "sub-title_text": "Once approved, your treatment is delivered discreetly to your home—no clinics, no hassle, just convenience."
+          }
+        }
+      },
+      "block_order": [
+        "faq_zrmGeL",
+        "faq_hDEWzd",
+        "faq_gxFLjg"
+      ],
+      "name": "three-step method",
+      "settings": {
+        "title": "<p>Our three-step method</p><p><strong>helps you weight loss</strong></p>",
+        "back_color": "#ffffff",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 60,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 40
+      }
+    },
+    "custom_marquee_e8cWNp": {
+      "type": "custom-marquee",
+      "blocks": {
+        "feature_JXyxpm": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160914.png",
+            "title": "Free next-day delivery"
+          }
+        },
+        "feature_PfGUJh": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160913.png",
+            "title": "UK Licensed medication"
+          }
+        },
+        "feature_fpeeE9": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160914.png",
+            "title": "Free next-day delivery"
+          }
+        },
+        "feature_TqQrJr": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160913.png",
+            "title": "UK Licensed medication"
+          }
+        },
+        "feature_NQti4q": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160914.png",
+            "title": "Free next-day delivery"
+          }
+        },
+        "feature_fdCRK9": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Rectangle_160913.png",
+            "title": "UK Licensed medication"
+          }
+        }
+      },
+      "block_order": [
+        "feature_JXyxpm",
+        "feature_PfGUJh",
+        "feature_fpeeE9",
+        "feature_TqQrJr",
+        "feature_NQti4q",
+        "feature_fdCRK9"
+      ],
+      "custom_css": [],
+      "name": "Custom Marquee",
+      "settings": {
+        "hide": false,
+        "background_color": "#faf8ed"
+      }
+    },
+    "custom_already_on_V8E9pp": {
+      "type": "custom-Already-on",
+      "blocks": {
+        "benefit_RPdAxW": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/Layer_1.svg",
+            "title": "Switch to an equivalent dose",
+            "text": "Switch to Wegovy at an equivalent dose no restart or break needed."
+          }
+        },
+        "benefit_4BLkGn": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1.svg",
+            "title": "Immediate side effect relief",
+            "text": "Side-effect support and prescriber access included at no extra cost."
+          }
+        },
+        "benefit_gztnmn": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shopify://shop_images/Capa_1.svg",
+            "title": "Commit and save",
+            "text": "Commit to a longer plan to save up to £20 every month."
+          }
+        }
+      },
+      "block_order": [
+        "benefit_RPdAxW",
+        "benefit_4BLkGn",
+        "benefit_gztnmn"
+      ],
+      "name": "Switch to Pharmazon",
+      "settings": {
+        "heading": "<p>Already on treatment?</p><p><strong>Switch with Pharmazon</strong></p>",
+        "description": "Mounjaro prices have increased. Switch to Wegovy with Pharmazon to stay on track for less.",
+        "main_image": "shopify://shop_images/image_2833.png",
+        "mob_image": "shopify://shop_images/image_2833.png",
+        "button_label": "Switch To Pharmazon",
+        "button_link": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 30,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "mounjaro_price_tAjKcn": {
+      "type": "Mounjaro-price",
+      "blocks": {
+        "block_Htn4Ei": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Pharmazon Express",
+            "bar_width_des": 215,
+            "bar_width_mbl": 190,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffd902",
+            "bar_price": "<p><strong>~£2,660 </strong>Annual Cost  😮</p>",
+            "bar_price_color": "#ffd902"
+          }
+        },
+        "block_h4AjW4": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Oxford Online Pharmacy",
+            "bar_width_des": 320,
+            "bar_width_mbl": 225,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,160 </strong>Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_xy8GDH": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Medicspot",
+            "bar_width_des": 340,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,240</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_CMtAgd": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Numan",
+            "bar_width_des": 360,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,200-£3,840</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_yCArXe": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Med Express",
+            "bar_width_des": 380,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,500+</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_7aLzhm": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Simple Online Pharmacy",
+            "bar_width_des": 400,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£3,560+</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        },
+        "block_CWiWWY": {
+          "type": "block",
+          "settings": {
+            "bar_text": "Boots online Doctor",
+            "bar_width_des": 420,
+            "bar_width_mbl": 230,
+            "bar_text_color": "#000000",
+            "bar_back_color": "#ffffff",
+            "bar_price": "<p><strong>~£4,050+</strong> Annual Cost</p>",
+            "bar_price_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_Htn4Ei",
+        "block_h4AjW4",
+        "block_xy8GDH",
+        "block_CMtAgd",
+        "block_yCArXe",
+        "block_7aLzhm",
+        "block_CWiWWY"
+      ],
+      "name": "Mounjaro price",
+      "settings": {
+        "heading": "<p><strong>Mounjaro </strong>price Comparison</p>",
+        "image": "shopify://shop_images/Frame_2147241831_1.png",
+        "sub-heading": "<p>Includes programme costs.</p><p>Example only - individual treatment plans vary.</p>",
+        "bg_color": "#ffffff",
+        "padding_top_desktop": 30,
+        "padding_bottom_desktop": 0,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "cs_smarter_MirAa4": {
+      "type": "cs-smarter",
+      "name": "Smarter Section",
+      "settings": {
+        "back-image": "shopify://shop_images/Background_Border_Shadow_OverlayBlur.png",
+        "back-image_mbl": "shopify://shop_images/Background_Border_Shadow_OverlayBlur_3.png",
+        "image": "shopify://shop_images/Frame_2147241935.png",
+        "title": "<strong>A smarter,</strong> more affordable way to start your weight-loss journey. <strong>Go ahead, Hit the  button below.</strong>",
+        "button_text": "Start Your Weight Loss Journey",
+        "button_link": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "bg_image": "shopify://shop_images/Ellipse_549_6.png",
+        "bg_color": "linear-gradient(135deg, rgba(NaN, NaN, NaN, 1), rgba(250, 244, 212, 1) 50%, rgba(250, 242, 192, 1) 100%)",
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 30,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "achieve_your_weight_Ymkb49": {
+      "type": "Achieve-your-weight",
+      "name": "Achieve your weight",
+      "settings": {
+        "bar-img": "shopify://shop_images/Group_1707479897.png",
+        "bar-img-mbl": "shopify://shop_images/Group_1707479897_1_7f048497-6372-4658-977c-021e7cf4cd28.png",
+        "main-heading": "<p>Achieve your weight loss goals with Pharmazon</p>",
+        "loss-up": "Weight Loss up-to",
+        "number": "21%",
+        "richtext": "<p>Results vary from person to person. <strong>Weight loss</strong> outcomes depend on individual factors such as <strong>starting weight, lifestyle, </strong>and adherence to the programme.</p>",
+        "heading": "See How Much Weight You Could Lose",
+        "richtext1": "<p>Your <strong>Current</strong> Weight</p>",
+        "loss-text": "<p>On the <strong>Pharmazon</strong> program you could lose</p>",
+        "min_weight": 50,
+        "max_weight": 151,
+        "default_weight": 103,
+        "back_color": "#4c3e79",
+        "desktop-padding-top": 20,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 10,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "cs_awards_J6Q7QF": {
+      "type": "cs_Awards",
+      "blocks": {
+        "best_sellers_7YAUCk": {
+          "type": "best-sellers",
+          "settings": {
+            "card-url": "",
+            "image": "shopify://shop_images/image_2822.png",
+            "max-width-img": 130,
+            "text": "Winner 2023 & finalist 2023",
+            "rich-text": "Entrepreneur Awards"
+          }
+        },
+        "best_sellers_CHctEK": {
+          "type": "best-sellers",
+          "settings": {
+            "card-url": "",
+            "image": "shopify://shop_images/image_2828.png",
+            "max-width-img": 100,
+            "text": "Finalist 2023",
+            "rich-text": "Small & growth bussiness of the year award"
+          }
+        },
+        "best_sellers_dFtVDi": {
+          "type": "best-sellers",
+          "settings": {
+            "card-url": "",
+            "image": "shopify://shop_images/image_2829.png",
+            "max-width-img": 58,
+            "text": "Winner 2023",
+            "rich-text": "Innovative bussiness of the year award"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_7YAUCk",
+        "best_sellers_CHctEK",
+        "best_sellers_dFtVDi"
+      ],
+      "name": "Awards & Recognition",
+      "settings": {
+        "heading": "<p><strong>Awards</strong> <em>& </em>Recognition</p>",
+        "sub-heading": "<p><strong>Award nominated for healthcare innovation</strong> and impact, recognized for improving access to <strong>safe, modern healthcare services </strong>across the UK.</p>",
+        "back-img": "shopify://shop_images/Ellipse_549_5.png",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "mbl_padding_top": 20,
+        "mbl_padding_bottom": 20,
+        "back_color": "#FAF8ED"
+      }
+    },
+    "transforming_RYDKhw": {
+      "type": "transforming",
+      "blocks": {
+        "slide_E8wVnV": {
+          "type": "slide",
+          "settings": {
+            "slider_img": "shopify://shop_images/Frame_2147239715_5_c4b450ce-9143-427e-a336-75980f4e48f2.png",
+            "slider_text": "before",
+            "slider_img1": "shopify://shop_images/Frame_2147239716_5.png",
+            "slider_text1": "after",
+            "weight_number": 35,
+            "weight_unit": "kg",
+            "loss_text": "Lost in 12 months",
+            "rich_text": "<p>“With Pharmazoon, everything felt different. The medication, the app, the support — it gave me the structure I needed to finally make it stick. I’ve lost 35kg, feel stronger, more energised, and for the first time in years, genuinely proud of myself “</p>"
+          }
+        },
+        "slide_AKnU6k": {
+          "type": "slide",
+          "settings": {
+            "slider_img": "shopify://shop_images/Frame_2147239715_4.png",
+            "slider_text": "before",
+            "slider_img1": "shopify://shop_images/Frame_2147239716_4_2d602ed6-d3a7-4f38-adbe-41fcfbcf174c.png",
+            "slider_text1": "after",
+            "weight_number": 28,
+            "weight_unit": "kg",
+            "loss_text": "Lost in 12 months",
+            "rich_text": "<p>Before Pharmazoon, I struggled to stay consistent. But their medication, app, and guidance made all the difference. I’ve lost 28kg, feel stronger every day, and for the first time in years, I’m truly proud of my progress.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_E8wVnV",
+        "slide_AKnU6k"
+      ],
+      "name": "transforming people",
+      "settings": {
+        "title": "<p><strong>Pharmazon</strong> is transforming people's lives</p>",
+        "reviews_img": "shopify://shop_images/Container_35.png",
+        "reviews_text": "TrustScore 4.7/5",
+        "back_color": "",
+        "desktop-padding-top": 30,
+        "desktop-padding-bottom": 60,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20
+      }
+    },
+    "cs_faq_sec_7VG8iJ": {
+      "type": "cs_faq_sec",
+      "blocks": {
+        "best_sellers_aDDhrW": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "What is Pharmazon Express?",
+            "heading_ans": "<p>Pharmazon Express is a GPhC-registered online pharmacy in the UK dedicated to providing fast, high-quality, and discreet pharmacy delivery services. We deliver treatments like Weight Loss, ED, Hair Care, & other treatments to the patients across the UK, offering a seamless online pharmacy delivery service with same-day delivery in London and next-day delivery across the UK.</p>"
+          }
+        },
+        "best_sellers_U7U6Dz": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Is my information safe?",
+            "heading_ans": "<p>Your medical records and order history are 100% confidential. Only our secure pharmacy staff, Pharmacists and prescribers can view this information.</p>"
+          }
+        },
+        "best_sellers_wcVTLF": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "Is the delivery packaging discreet?",
+            "heading_ans": "<p>Yes, 100%. We prioritize your privacy by shipping all orders in plain, unbranded boxes or envelopes. There are no external markings that indicate the contents or our company name (\"Pharmazon Express\")</p>"
+          }
+        },
+        "best_sellers_DMerVQ": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How does the weight loss process work?",
+            "heading_ans": "<p>Start by choosing your weight loss treatment and completing our quick 2-minute online consultation. Our prescriber will review all your answers, and once your treatment is approved, your medicine will be dispatched and delivered quickly and discreetly to your doorstep via Royal Mail.</p>"
+          }
+        },
+        "best_sellers_GDzbEP": {
+          "type": "best-sellers",
+          "settings": {
+            "heading_faq": "How much weight can you lose in a month?",
+            "heading_ans": "<p>With 2.5 mg starting dose: You can expect to lose about 2–5 lbs (1–2.5 kg) in the first month depending on individual health, diet, and the use of medications.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "best_sellers_aDDhrW",
+        "best_sellers_U7U6Dz",
+        "best_sellers_wcVTLF",
+        "best_sellers_DMerVQ",
+        "best_sellers_GDzbEP"
+      ],
+      "name": "Custom Faq Section",
+      "settings": {
+        "heading": "<p>Still Got <strong>Questions?</strong></p>",
+        "butt-text": "Contact Us",
+        "butt_url": "shopify://pages/contact",
+        "back_color": "",
+        "desktop-padding-top": 60,
+        "desktop-padding-bottom": 30,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 20,
+        "section_color": "rgba(0,0,0,0)"
+      }
+    },
+    "cs_blogs_section_8VFidA": {
+      "type": "cs-blogs-section",
+      "name": "Blogs Section",
+      "settings": {
+        "heading": "<p>Discover <strong>Expert-backed</strong> Wellness Resources.</p>",
+        "blog": "blogs",
+        "back_color": "",
+        "desktop-padding-top": 20,
+        "desktop-padding-bottom": 20,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 0
+      }
+    },
+    "cs_back_img_hjDbgE": {
+      "type": "cs_back_img",
+      "name": "Loss Journey",
+      "settings": {
+        "back-img": "shopify://shop_images/Frame_2147241468_9.png",
+        "back-img-mbl": "shopify://shop_images/Frame_2147241468_10.png",
+        "heading": "<p>Start Your Weight Loss Journey Today!</p>",
+        "boot-text": "Boost Confidence",
+        "butt-text": "Get Started now",
+        "butt_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+        "back_color": "",
+        "desktop-padding-top": 20,
+        "desktop-padding-bottom": 20,
+        "padding-top-mbl": 20,
+        "padding-bottom-mbl": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_img_video_Vbr7p9",
+    "custom_review_marquee_kNhd4D",
+    "weight_loss_y3CqpQ",
+    "steps_CDhgik",
+    "custom_marquee_e8cWNp",
+    "custom_already_on_V8E9pp",
+    "mounjaro_price_tAjKcn",
+    "cs_smarter_MirAa4",
+    "achieve_your_weight_Ymkb49",
+    "cs_awards_J6Q7QF",
+    "transforming_RYDKhw",
+    "cs_faq_sec_7VG8iJ",
+    "cs_blogs_section_8VFidA",
+    "cs_back_img_hjDbgE"
+  ]
+}

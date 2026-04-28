@@ -1,0 +1,227 @@
+{% style %}
+.section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.desktop-padding-top }}px;
+    padding-bottom: {{ section.settings.desktop-padding-bottom }}px;
+    background: {{ section.settings.back_color }};
+}
+.cs_step_title p{
+    margin: 0;
+    color: var(--Black, #111);
+    text-align: center;
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 74.4px */
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+    max-width: 660px;
+    margin: 0 auto;
+}
+.cs_step_title p strong{
+    color: var(--Purple, #4C3E79);
+    font-family: var(--custom-fonts);
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1.24px;
+    text-transform: capitalize;
+}
+.cs_step_block_img_tag{
+    position: relative;
+}
+.cs_step_tag{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 14px 30px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    background: rgba(0, 0, 0, 0.20);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 125%; /* 20px */
+    letter-spacing: -0.16px;
+    color: #fff;
+}
+.cs_step_blocks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 40px;
+}
+.cs_step_block_img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    max-height: 500px;
+}
+.cs_step_block_title{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 33.6px */
+    letter-spacing: -0.28px;
+    padding: 20px 0 12px 0;
+}
+.cs_step_block_sub_title{
+    margin: 0;
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 23.4px */
+    letter-spacing: -0.72px;
+    max-width: 406px;
+}
+  @media screen and (max-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding-top-mbl }}px;
+        padding-bottom: {{ section.settings.padding-bottom-mbl }}px;
+    }
+    .cs_step_tag{
+        letter-spacing: 0;
+    }
+    .cs_step_title p{
+    font-size: 30px;
+    line-height: 36px; /* 74.4px */
+    letter-spacing: -1.24px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.cs_step_title p strong{
+    font-size: 30px;
+    line-height: 36px;
+}
+.cs_step_blocks{
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+.cs_step_block_title{
+    font-size: 24px;
+    line-height: 28px; /* 33.6px */
+    padding: 16px 0 8px 0;
+    font-weight: 500;
+    letter-spacing: -0.54px;
+}
+.cs_step_block_sub_title{
+    font-size: 16px;
+    line-height: 19px; /* 23.4px */
+}
+  }
+  {% endstyle %}
+<section class="section-{{ section.id }}-padding">
+  <div class="page-width">
+    <div class="cs_step_title">{{ section.settings.title }}</div>
+    <div class="cs_step_blocks">
+        {% for block in section.blocks %}
+        <div class="cs_step_block">
+            <div class="cs_step_block_img_tag">
+                {{ block.settings.img | image_url: width: 1440 | image_tag:
+                        class: 'cs_step_block_img',
+                        widths: '50, 100, 150, 200, 250, 300, 400, 500, 1440',
+                        height: 100,
+                        width: 100,
+                        alt: logo_alt,
+                        loading: "lezy"
+                    }}
+                    <span class="cs_step_tag">{{ block.settings.tag_text }}</span>
+            </div>
+            <h3 class="cs_step_block_title">{{ block.settings.title_text }}</h3>
+            <h4 class="cs_step_block_sub_title">{{ block.settings.sub-title_text }}</h4>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+{% schema %}
+{
+    "name": "three-step method",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "title",
+            "label": "Title"
+        },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Background Color"
+      },
+        { 
+          "type": "range",
+          "id": "desktop-padding-top",
+          "label": "Desktop Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16 
+        },
+        { "type": "range",
+          "id": "desktop-padding-bottom",
+          "label": "Desktop Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-top-mbl",
+          "label": "Mobile Padding Top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        },
+        { "type": "range",
+          "id": "padding-bottom-mbl",
+          "label": "Mobile Padding Bottom",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 16
+        }
+    ],
+  "blocks": [
+      {
+        "type": "Faq",
+        "name": "Add Tab",
+         "settings": [
+            {
+            "type": "image_picker",
+            "id": "img",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "tag_text",
+            "label": "Tag Text"
+        },
+        {
+            "type": "text",
+            "id": "title_text",
+            "label": "Heading"
+        },
+        {
+            "type": "text",
+            "id": "sub-title_text",
+            "label": "Sub Heading"
+        }
+         ]
+        },
+    ],
+    "presets": [
+        { "name": "three-step method" }
+    ]
+}
+{% endschema %}

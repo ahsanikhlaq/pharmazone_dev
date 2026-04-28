@@ -1,0 +1,174 @@
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+
+{% style %} 
+.custom--{{ section.id }}--promo-section .custom_title-wrapper{
+  margin-bottom: {{ section.settings.btm_spacing }}px;
+}  
+
+{% endstyle %}  
+
+{% schema %}
+{
+  "name": "Product Promo Cards",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "main_heading",
+      "default": "t:sections.video.settings.heading.default",
+      "label": "t:sections.video.settings.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "hxl",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "hxxl",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "range",
+      "id": "btm_spacing",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Header Bottom space",
+      "default": 30
+    },
+    {
+      "type": "text",
+      "id": "section_subheading",
+      "label": "Subheading",
+      "default": "Check Our Featured Products And Deals"
+    },
+      {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Product Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Simple & Comfortable Shave"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Subheading",
+          "default": "With Up To 30% Off"
+        },
+        {
+        "type": "url",
+        "id": "image_link",
+        "label": "link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Promo Cards",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="promo-section page-width custom--promo-section section-{{ section.id }}-padding custom--{{ section.id }}--promo-section">
+  <div class="promo-header">
+  
+    {%- unless section.settings.main_heading == blank -%}
+        <div class="custom_title-wrapper  title-wrapper title-wrapper--no-top-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          <h2 class="custom_title_center custom--section--heading title inline-richtext {{ section.settings.heading_size }}">{{ section.settings.main_heading }}</h2>
+
+          {% if section.settings.section_subheading != blank %}
+    <div class="collection__description custom_title_center ctm-section-subheading {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          {{ section.settings.section_subheading }}
+        </div>
+    {% endif %}
+        </div>
+      {%- endunless -%}
+    
+  </div>
+  <div class="promo-grid page-width">
+    {% for block in section.blocks %}
+       {% if block.settings.image %}
+      {% if block.settings.image_link != blank %}<a href="{{ block.settings.image_link }}" aria-disabled="true" class="full-unstyled-link promo-card">{% endif %}   
+      <div class="{% if block.settings.image_link == blank %}promo-card {% else %} custom_fullwidth_image{% endif %}">    
+        <div class="promo-image">
+            <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}" loading="lazy">
+        </div>
+        <div class="promo-text custom_product_text">
+         
+          <p class="promo-title">{{ block.settings.title }}</p>
+          <p class="promo-subheading">{{ block.settings.subheading }}</p>
+          
+        </div>
+         
+      </div>
+     {% if block.settings.image_link != blank %}</a>{% endif %}     
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+

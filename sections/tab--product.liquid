@@ -1,0 +1,83 @@
+
+
+<div class="product-tabs custom--product-tabs page-width">
+  <div class="tab-buttons">
+    {% assign tab_index = 0 %}
+
+    {% if section.settings.show_product_description and product.description != blank %}
+      <button class="tab-btn active" data-tab="description">{{ section.settings.show_product_description }}</button>
+      {% assign tab_index = tab_index | plus: 1 %}
+    {% endif %}
+
+    {% for tab_block in product.metafields.custom.tab_products.value %}
+      {% assign product_tab = tab_block | metaobject %}
+      <button class="tab-btn {% if tab_index == 0 %}active{% endif %}" data-tab="block-{{ forloop.index }}">
+        {{ product_tab.tab_title }}
+      </button>
+      {% assign tab_index = tab_index | plus: 1 %}
+    {% endfor %}
+  </div>
+
+  <div class="tab-contents">
+    {% assign tab_index = 0 %}
+
+    {% if section.settings.show_product_description and product.description != blank %}
+      <div class="tab-content active" data-tab-content="description">
+        {{ product.description }}
+      </div>
+      {% assign tab_index = tab_index | plus: 1 %}
+    {% endif %}
+
+    {% for tab_block in product.metafields.custom.tab_products.value %}
+      {% assign product_tab = tab_block | metaobject %}
+      <div class="tab-content {% if tab_index == 0 %}active{% endif %}" data-tab-content="block-{{ forloop.index }}">
+        {{ product_tab.tab_content | metafield_tag }}
+      </div>
+      {% assign tab_index = tab_index | plus: 1 %}
+    {% endfor %}
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Product Tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "show_product_description",
+      "label": "Show Product Description as First Tab",
+      "default": "Product Details"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Tabs",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const buttons = document.querySelectorAll(".tab-btn");
+  const contents = document.querySelectorAll(".tab-content");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const tab = this.dataset.tab;
+
+      buttons.forEach((b) => b.classList.remove("active"));
+      contents.forEach((c) => c.classList.remove("active"));
+
+      this.classList.add("active");
+      const activeContent = document.querySelector(`[data-tab-content="${tab}"]`);
+      if (activeContent) {
+        activeContent.classList.add("active");
+      }
+    });
+  });
+});
+</script>

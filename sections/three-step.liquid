@@ -1,0 +1,811 @@
+{% style %}
+@media (min-width: 1442px) {
+     
+.step-tabs:has(.step-tab:nth-child(4)) .step-tab:not(:first-child) {
+  flex: 1 1 calc((100% - 125px) / 3);
+  max-width: calc((100% - 125px) / 3);
+  
+}
+}
+.three-step-section-{{ section.id }} {
+    margin-top: {{ section.settings.margin_top_desktop }}px;
+    margin-bottom: {{ section.settings.margin_bottom_desktop }}px;
+}
+.main-wrapper-content {
+    position:relative;
+     padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+    background: {{ section.settings.bg_color }};
+    border-radius: 20px;
+    z-index: 1;
+}
+.abs-image {
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    border-radius: 20px;
+}
+.abs-image-mob {
+    display:none;
+}
+
+@media (max-width: 768px) {
+  .three-step-section-{{ section.id }} {
+ 
+      margin-top: {{ section.settings.margin_top_mobile }}px;
+      margin-bottom: {{ section.settings.margin_bottom_mobile }}px;
+  }
+  .main-wrapper-content {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+}
+
+   .three-step-heading  {
+    max-width:642px;
+    margin:0 auto 0px;
+  
+ }
+   .three-step-heading  p {
+        color: #111;
+        text-align: center;
+        font-family: var(--custom-fonts);
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%; /* 68.2px */
+        letter-spacing: -1.24px;
+        margin:0px;
+            text-transform: capitalize;
+  }
+   .three-step-heading strong {
+        color: var(--Purple, #4C3E79);
+        font-family: var(--custom-fonts);
+        font-size: 62px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -1.24px;
+  }
+
+
+.step-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.step-left { flex: 1; }
+.step-right {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.step-tag {
+    color: var(--Black, #111);
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 16.8px */
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 66.67px;
+    background: var(--Yellow, #FFD902);
+    max-width:max-content;
+    margin:0 0 10px;
+}
+
+.step-title { 
+    display:none;
+    color: var(--Black, #111);
+    /* 20px - Card Tittle */
+    font-family: var(--custom-fonts);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 24px */
+    letter-spacing: -0.8px;
+    margin:0px;
+}
+.step-title p { 
+      margin:0 0 8px;  
+}
+.step-desc  strong { 
+    color: var(--Black, #111);
+font-family: var(--custom-fonts);
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%; /* 33.6px */
+letter-spacing: -0.56px;
+ }
+.step-desc  p {
+        color: var(--Black, #111);
+        font-family: var(--custom-fonts);
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        letter-spacing: -0.56px;
+        margin:0px;
+}
+
+.step-image {
+    padding: 3px 0 0;
+    width:440px;
+    height:440px;
+    position:relative;
+        transform: rotate(-10deg);
+}
+
+
+.step-image .step-image-img {
+    width: 100%;
+    height: 100%;
+    min-height: 440px;
+    border-radius: 20px;
+    object-fit: cover;
+    padding: 0px;
+    display: block;
+}
+span.step-tab--image {
+    width: 26.014px;
+    height: 26.014px;
+}
+.step-tab--image  img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+}
+.three-step-section-{{ section.id }} .swiper-slide.swiper-slide-active {
+    padding: 50px 40px 40px 40px;
+}
+.step-tab.step-tab-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7.013px;
+    flex-direction: row-reverse;
+}
+span.step-tab-text {
+    color: var(--Light-Gray, #F9F9F9);
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.5px;
+    max-width: 203px;
+}
+/* TOP STEP BADGE */
+.step-badge {
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    background: rgba(255, 255, 255, 0.20);
+    position: absolute;
+    left: 17.358px;
+    top: 14.956px;
+    transform: rotate(-0.043deg);
+    padding: 16px 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--White, #FFF);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; /* 20px */
+    letter-spacing: 0px;
+}
+
+/* BOTTOM TABS */
+.step-tabs {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.step-tab {
+    color: var(--Light-Gray, #F9F9F9);
+    font-family: var(--custom-fonts);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 19.2px */
+    letter-spacing: -0.32px;
+    border-radius: 70px;
+    border: 0.5px solid #FFF;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(20px);
+    padding: 16px;
+}
+/* ===== ONE TAB → CENTER ===== */
+.step-tabs:has(.step-tab:only-child) {
+  justify-content: center;
+}
+
+
+.step-tabs:has(.step-tab:nth-child(4)) .step-tab:first-child {
+    max-width:100%;
+  width:100%;
+  text-align: center;
+}
+.step-tabs:has(.step-tab:nth-child(4)) .step-tab:not(:first-child) {
+  flex: 0 0 calc(33.333% - 7px);
+  max-width: calc(33.333% - 7px);
+  text-align: center;
+}
+
+
+
+.step-tabs:has(.step-tab:nth-child(4)) .step-tab:not(:first-child) {
+  flex: 0 0 auto;
+}
+
+.step-tabs:has(.step-tab:nth-child(4)) .step-tab:not(:first-child) {
+  flex: 1 1 calc((100% - 120px) / 3);
+  max-width: calc((100% - 125px) / 3);
+}
+
+#slide-3 .step-tab.step-tab-5 {
+    border-radius: 49.091px;
+    border: 0.351px solid #FFF;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14.02597427368164px);
+}
+
+
+.step-desc.mob, .step-tag.mob {
+  display: none;
+}
+
+.step-desc.des, .step-tag.des {
+  display: block;
+}
+.cs-pag .swiper-pagination-bullet {
+    border-radius: 10px;
+    background: var(--White, #FFF);
+    width: 34px;
+    height: 6px;
+    opacity:1;
+}
+.three-step-section-{{ section.id }} .swiper-pagination-bullet-active {
+    width: 65px;
+    height: 6px;
+    border-radius: 10px;
+    background: var(--Purple, #4C3E79);
+}
+
+.three-step-section-{{ section.id }} .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    left:0px !important;
+}
+.swiper-pagination.cs-pag.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: flex;
+    padding-left: 40px;
+}
+#slide-3 span.step-tab--image {
+    width: 34px;
+    height: 34px;
+}
+/* Mobile */
+@media (max-width: 768px) {
+  
+  .step-desc.mob, .step-tag.mob  {
+    display: block;
+    
+  }
+  .step-desc p {
+        color: var(--Gray, #545454);
+        /* 14px - Body text - Regulsr */
+        font-family: var(--custom-fonts);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 16.8px */
+        letter-spacing: -0.5px;
+  }
+
+  .step-desc.des, .step-tag.des {
+    display: none;
+  }
+  
+
+  .step-card {
+    flex-direction:column-reverse;
+    padding:0 12px;
+    gap:12px;
+  }
+  .step-right {
+         flex-direction: column;
+  }
+
+  .threeStepSwiper-{{ section.id }} .swiper-wrapper {
+    display: block;
+  }
+
+  .threeStepSwiper-{{ section.id }} .swiper-slide {
+    width: 100% !important;
+    margin-bottom: 24px;
+  }
+
+    .three-step-heading  {
+        max-width:340px;
+        margin:0 0px 24px;
+        text-align:left;
+        padding:0 12px;
+    
+    }
+   .three-step-heading  p {
+      
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%; /* 68.2px */
+        letter-spacing: -1.24px;
+        margin:0px;
+        text-align:left;
+  }
+   .three-step-heading strong {
+        
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%;
+        letter-spacing: -1.24px;
+  }
+  .step-tag {
+     color: #000;
+    font-family: var(--custom-fonts);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%; /* 14.4px */
+    padding:10px;
+    margin:0 0 24px 12px;
+  }
+  .step-image {
+    padding: 3px 0 0;
+    width: 100%;
+    height: auto;
+    position: relative;
+    transform: unset;
+}
+.step-image .step-image-img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    
+}
+.step-title {
+    display: block;
+}
+.step-tab {
+    font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 16.8px */
+letter-spacing: -0.5px;
+padding:12px;
+}
+.step-tabs {
+    gap:8px;
+    left: 12px;
+    right: 12px;
+}
+
+
+.step-badge {
+    padding: 10px 16px;
+    color: var(--White, #FFF);
+    /* 14px - Body text - Regulsr */
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 16.8px */
+    letter-spacing: -0.5px;
+    top:13px;
+    left:12px;
+}
+
+.abs-image-mob {
+    position:absolute;
+    right:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    display:block;
+    z-index: -1;
+    border-radius: 20px;
+}
+.abs-image, .cs-pag {
+    display:none;
+}
+.step-tabs:has(.step-tab:nth-child(4)) .step-tab:not(:first-child) {
+  flex: 1 1 calc((100% - 100px) / 3); 
+  max-width: calc((100% - 100px) / 3);
+}
+}
+{% endstyle %}
+
+
+<section class="three-step-section-{{ section.id }}">
+
+  <div class="page-width">
+    <div class="main-wrapper-content">
+
+    {% if section.settings.heading != blank %}
+      <div class="three-step-heading">
+        {{ section.settings.heading }}
+      </div>
+    {% endif %}
+     {% if section.settings.tag != blank %}
+                  <div class="step-tag mob">{{ section.settings.tag }}</div>
+                {% endif %}
+
+    <div class="swiper threeStepSwiper-{{ section.id }}">
+      <div class="swiper-wrapper">
+
+        {% for block in section.blocks %}
+          <div class="swiper-slide" {{ block.shopify_attributes }} id="slide-{{ forloop.index }}">
+            <div class="step-card">
+
+              <div class="step-left">
+                {% if block.settings.tag != blank %}
+                  <div class="step-tag des">{{ block.settings.tag }}</div>
+                {% endif %}
+
+                <div class="step-title">
+                  {{ block.settings.title }}
+                </div>
+
+                <div class="step-desc des">
+                  {{ block.settings.description }}
+                </div>
+
+                <div class="step-desc mob">
+                  {{ block.settings.description_mob }}
+                </div>
+              </div>
+
+              <div class="step-right">
+               
+
+                {% if block.settings.image != blank %}
+                    <div class="step-image cs_card_scale_animation">
+                        {{
+                            block.settings.image
+                            | image_url: width: 800
+                            | image_tag: class: 'step-image-img'
+                        }}
+
+                        {% if block.settings.step_label != blank %}
+                    <div class="step-badge">
+                        {{ block.settings.step_label }}
+                    </div>
+                {% endif %} 
+
+                <div class="step-tabs">
+                  {% if block.settings.tab1 != blank %}
+                    <div class="step-tab">{{ block.settings.tab1 }}</div>
+                  {% endif %}
+                  {% if block.settings.tab2 != blank %}
+                    <div class="step-tab">{{ block.settings.tab2 }}</div>
+                  {% endif %}
+                  {% if block.settings.tab3 != blank %}
+                    <div class="step-tab">{{ block.settings.tab3 }}</div>
+                  {% endif %}
+                  {% if block.settings.tab4 != blank %}
+                    <div class="step-tab">{{ block.settings.tab4 }}</div>
+                  {% endif %}
+                  {% if block.settings.tab5 != blank or  block.settings.image_5 != blank%}
+                    <div class="step-tab step-tab-5">
+
+                        <span class="step-tab-text">
+                        {{ block.settings.tab5 }}
+                        </span>
+
+                        {% if block.settings.image_5 != blank %}
+                        <span class="step-tab--image">
+                            {{
+                            block.settings.image_5
+                            | image_url: width: 60
+                            | image_tag: alt: block.settings.tab5
+                            }}
+                        </span>
+                        {% endif %}
+
+                    </div>
+                    {% endif %}
+
+                </div>
+
+
+                  </div>
+                {% endif %}
+
+                
+
+              </div>
+
+            </div>
+          </div>
+        {% endfor %}
+
+      </div>
+      <div class="swiper-pagination cs-pag"></div>
+    </div>
+
+     {% if section.settings.icon != blank %}
+                    <img src="{{ section.settings.icon | image_url }}" alt="" class="abs-image">
+    {% endif %}
+      {% if section.settings.icon_mob != blank %}
+                    <img src="{{ section.settings.icon_mob | image_url }}" alt="" class="abs-image-mob">
+    {% endif %}
+    
+</div>
+
+
+</div>
+
+ 
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const sectionId = "{{ section.id }}";
+  const swiperSelector = ".threeStepSwiper-" + sectionId;
+  const paginationSelector = ".threeStepPagination";
+
+  function initSwiper() {
+
+    const el = document.querySelector(swiperSelector);
+    if (!el) return;
+
+    if (window.innerWidth > 768) {
+
+      if (!el.classList.contains("swiper-initialized")) {
+        new Swiper(swiperSelector, {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          loop: false,
+
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+
+        });
+      }
+
+    } else {
+
+      if (el.swiper) {
+        el.swiper.destroy(true, true);
+      }
+
+    }
+  }
+
+  initSwiper();
+  window.addEventListener("resize", initSwiper);
+
+});
+
+</script>
+{% schema %}
+{
+  "name": "Three Step Slider",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Section Heading"
+    },
+    {
+          "type": "text",
+          "id": "tag",
+          "label": "Yellow Tag Text",
+          "default": "Start With a Few Questions"
+        },
+    {
+      "type": "range",
+      "id": "page_width",
+      "label": "Page Width",
+      "min": 900,
+      "max": 1600,
+      "step": 20,
+      "default": 1200
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#f5f2e9"
+    },
+    {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Absolute Gradient"
+    },
+    {
+          "type": "image_picker",
+          "id": "icon_mob",
+          "label": "Absolute Gradient"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile",
+      "min": 0,
+      "max": 150,
+      "step": 5,
+      "default": 40
+    },
+    {
+  "type": "range",
+  "id": "margin_top_desktop",
+  "label": "Margin Top Desktop",
+  "min": 0,
+  "max": 150,
+  "step": 5,
+  "default": 60
+},
+{
+  "type": "range",
+  "id": "margin_bottom_desktop",
+  "label": "Margin Bottom Desktop",
+  "min": 0,
+  "max": 150,
+  "step": 5,
+  "default": 60
+},
+{
+  "type": "range",
+  "id": "margin_top_mobile",
+  "label": "Margin Top Mobile",
+  "min": 0,
+  "max": 150,
+  "step": 5,
+  "default": 40
+},
+{
+  "type": "range",
+  "id": "margin_bottom_mobile",
+  "label": "Margin Bottom Mobile",
+  "min": 0,
+  "max": 150,
+  "step": 5,
+  "default": 40
+}
+
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Yellow Tag Text",
+          "default": "Start With a Few Questions"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title Mobile"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "richtext",
+          "id": "description_mob",
+          "label": "Description Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "step_label",
+          "label": "Step Label (Top Badge)",
+          "default": "First Step"
+        },
+        {
+          "type": "text",
+          "id": "tab1",
+          "label": "Tab 1",
+          "default": "Option 1"
+        },
+        {
+          "type": "text",
+          "id": "tab2",
+          "label": "Tab 2",
+          "default": "Option 2"
+        },
+        {
+          "type": "text",
+          "id": "tab3",
+          "label": "Tab 3",
+          "default": "Option 3"
+        },
+        {
+          "type": "text",
+          "id": "tab4",
+          "label": "Tab 4",
+          "default": "Option 4"
+        },
+        {
+          "type": "text",
+          "id": "tab5",
+          "label": "Tab 5",
+          "default": "Option 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Option 5 Image"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Three Step Slider",
+      "blocks": [
+        { "type": "step" },
+        { "type": "step" },
+        { "type": "step" }
+      ]
+    }
+  ]
+}
+{% endschema %}
