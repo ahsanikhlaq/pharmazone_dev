@@ -21,11 +21,8 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-
-    <!--
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    -->
+    <link rel="dns-prefetch" href="https://cdn.voiceflow.com">
+    <link rel="dns-prefetch" href="https://widget.trustpilot.com">
 
     <title>
       {{ page_title }}
@@ -481,44 +478,46 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        // Bail out entirely on pages that don't render the related-products carousel.
+        // The previous code attached a body-wide MutationObserver on every page,
+        // which kept firing for the whole session and hurt INP/TBT.
+        var relatedContainer = document.querySelector('.custom--swiper-related');
+        if (!relatedContainer) return;
+
         function initRelatedSwiper() {
-          setTimeout(function () {
-            new Swiper('.custom--swiper-related', {
-              slidesPerView: 'auto',
-              spaceBetween: 16,
-              navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-              },
-            });
-          }, 300); // Delay in ms; adjust if needed
+          if (typeof Swiper === 'undefined') return;
+          new Swiper('.custom--swiper-related', {
+            slidesPerView: 'auto',
+            spaceBetween: 16,
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+          });
         }
 
-        // Run immediately if content is already there
-        if (document.querySelector('.custom--swiper-related .swiper-wrapper')) {
+        if (relatedContainer.querySelector('.swiper-wrapper')) {
           initRelatedSwiper();
+          return;
         }
 
-        // Watch for dynamic insertion of recommended products
-        const observer = new MutationObserver(function (mutationsList, observer) {
-          for (const mutation of mutationsList) {
-            if (mutation.type === 'childList' && document.querySelector('.custom--swiper-related .swiper-wrapper')) {
-              initRelatedSwiper();
-              observer.disconnect(); // Stop observing after initialization
-              break;
-            }
+        // Recommended products are injected async — observe only the carousel
+        // container, not the whole document body, and disconnect after init.
+        var observer = new MutationObserver(function () {
+          if (relatedContainer.querySelector('.swiper-wrapper')) {
+            observer.disconnect();
+            initRelatedSwiper();
           }
         });
+        observer.observe(relatedContainer, { childList: true, subtree: true });
 
-        observer.observe(document.body, {
-          childList: true,
-          subtree: true,
-        });
+        // Safety net: stop observing after 10s even if content never arrives.
+        setTimeout(function () { observer.disconnect(); }, 10000);
       });
     </script>
     
     <!-- Load cart handler -->
-    <script src="{{ 'cart-from-chat.js' | asset_url }}" defer="defer"></script>`
+    <script src="{{ 'cart-from-chat.js' | asset_url }}" defer="defer"></script>
     <!-- Load Voiceflow Extensions -->
     <script src="{{ 'voiceflow-extensions.js' | asset_url }}" defer="defer"></script>
     

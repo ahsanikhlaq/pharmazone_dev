@@ -34,48 +34,63 @@
 
   // Load widget if on allowed page OR if user has previously interacted
   if (isAllowedPage || hasInteracted) {
-    
-    (function(d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+    var loadVoiceflow = function () {
+      (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
 
-      v.onload = function() {
-        window.voiceflow.chat.load({
-          verify: { projectID: '695c0b9d87d1d8987eb7c6f1' },
-          url: 'https://general-runtime.voiceflow.com',
-          versionID: 'production',
-          voice: {
-            url: "https://runtime-api.voiceflow.com"
-          },
-          assistant: {
-            persistence: 'localStorage', // Preserves conversation across pages
-            extensions: [
-              window.VoiceflowExtensions.multiselect,
-              window.VoiceflowExtensions.addToCart,
-              window.VoiceflowExtensions.bmiCalculator
-            ]
-          }
-        }).then(() => {
-          // Listen for when user opens the chat
-          window.addEventListener('message', (event) => {
-            if (event.data && typeof event.data === 'string') {
-              try {
-                const message = JSON.parse(event.data);
-                // Only set flag when user actually opens the widget
-                if (message.type === 'voiceflow:open') {
-                  localStorage.setItem('vf_chat_started', 'true');
-                }
-              } catch (e) {
-                // Not a Voiceflow message, ignore
-              }
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: '695c0b9d87d1d8987eb7c6f1' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            voice: {
+              url: "https://runtime-api.voiceflow.com"
+            },
+            assistant: {
+              persistence: 'localStorage', // Preserves conversation across pages
+              extensions: [
+                window.VoiceflowExtensions.multiselect,
+                window.VoiceflowExtensions.addToCart,
+                window.VoiceflowExtensions.bmiCalculator
+              ]
             }
+          }).then(() => {
+            // Listen for when user opens the chat
+            window.addEventListener('message', (event) => {
+              if (event.data && typeof event.data === 'string') {
+                try {
+                  const message = JSON.parse(event.data);
+                  // Only set flag when user actually opens the widget
+                  if (message.type === 'voiceflow:open') {
+                    localStorage.setItem('vf_chat_started', 'true');
+                  }
+                } catch (e) {
+                  // Not a Voiceflow message, ignore
+                }
+              }
+            });
           });
-        });
-      };
+        };
 
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
-      v.type = "text/javascript";
-      s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-    
+        v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+        v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    };
+
+    // Defer chat load until the page is idle so it doesn't compete with LCP/TBT.
+    var scheduleVoiceflow = function () {
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(loadVoiceflow, { timeout: 4000 });
+      } else {
+        setTimeout(loadVoiceflow, 2500);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      scheduleVoiceflow();
+    } else {
+      window.addEventListener('load', scheduleVoiceflow, { once: true });
+    }
   }
 </script>
