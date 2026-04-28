@@ -272,9 +272,7 @@
 {% render 'font-family' %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'custom.css' | asset_url | stylesheet_tag }}
-    {%- if template.name == 'article' or template.name == 'blog' -%}
-      {{ 'custom-blog.css' | asset_url | stylesheet_tag }}
-    {%- endif -%}
+    {{ 'custom-blog.css' | asset_url | stylesheet_tag }}
     {{ 'custom-style.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -319,8 +317,7 @@
 
     <script src="{{ 'jquery-3.7.1.min.js' | asset_url }}"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   </head>
 
