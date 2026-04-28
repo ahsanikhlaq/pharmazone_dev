@@ -316,22 +316,15 @@ a.cert-button {
 }
 {% endschema %}
 <script>
-  var swiper = new Swiper(".cs_succcc_swiper", {
-    slidesPerView: 3,
-    spaceBetween: 12,
-    breakpoints: {
-      0: {
-        slidesPerView: 2.1,
-        spaceBetween: 8,
-      },
-      600: {
-        slidesPerView: 2,
-        spaceBetween: 12,
-      },
-      900: {
-        slidesPerView: 3,
-        spaceBetween: 12,
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper(".cs_succcc_swiper", {
+      slidesPerView: 3,
+      spaceBetween: 12,
+      breakpoints: {
+        0: { slidesPerView: 2.1, spaceBetween: 8 },
+        600: { slidesPerView: 2, spaceBetween: 12 },
+        900: { slidesPerView: 3, spaceBetween: 12 }
       }
-    }
+    });
   });
 </script>

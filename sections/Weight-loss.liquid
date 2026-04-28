@@ -264,32 +264,18 @@
 </div>
 </section>
 <script>
-  var swiper = new Swiper(".my_loss_slider_Swiper", {
-     spaceBetween: 16,
-     slidesPerView: 4,
-     navigation: {
-      nextEl: ".cs_tra_next_button",
-      prevEl: ".cs_tra_prev_button",
-    },
-    pagination: {
-      el: ".custom_loss_swiper-pagination",
-      type: "progressbar",
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1.5,
-         spaceBetween: 12,
-      },
-      640: {
-        slidesPerView: 2,
-         spaceBetween: 12,
-      },
-      1024: {
-        slidesPerView: 4,
-         spaceBetween: 16,
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper(".my_loss_slider_Swiper", {
+      spaceBetween: 16,
+      slidesPerView: 4,
+      navigation: { nextEl: ".cs_tra_next_button", prevEl: ".cs_tra_prev_button" },
+      pagination: { el: ".custom_loss_swiper-pagination", type: "progressbar" },
+      breakpoints: {
+        0: { slidesPerView: 1.5, spaceBetween: 12 },
+        640: { slidesPerView: 2, spaceBetween: 12 },
+        1024: { slidesPerView: 4, spaceBetween: 16 }
       }
-    }
-    
+    });
   });
 </script>
 {% schema %}

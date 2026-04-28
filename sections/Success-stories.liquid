@@ -217,19 +217,18 @@
   </div>
 </section>
 <script>
-  var swiper = new Swiper('.cs_succ_swiper', {
-    slidesPerView: 3,
-    spaceBetween: 12,
-    speed: 1000,
-     pagination: {
-    el: ".custom_swiper-pagination",
-    clickable: true,
-  },
-    breakpoints: {
-      0: { slidesPerView: 1,spaceBetween: 12, },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.cs_succ_swiper', {
+      slidesPerView: 3,
+      spaceBetween: 12,
+      speed: 1000,
+      pagination: { el: ".custom_swiper-pagination", clickable: true },
+      breakpoints: {
+        0: { slidesPerView: 1, spaceBetween: 12 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }
+    });
   });
 </script>
 {% schema %}

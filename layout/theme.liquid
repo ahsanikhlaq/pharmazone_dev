@@ -17,11 +17,11 @@
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
     <!--
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -272,7 +272,9 @@
 {% render 'font-family' %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'custom.css' | asset_url | stylesheet_tag }}
-     {{ 'custom-blog.css' | asset_url | stylesheet_tag }}
+    {%- if template.name == 'article' or template.name == 'blog' -%}
+      {{ 'custom-blog.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
     {{ 'custom-style.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -317,8 +319,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -397,77 +400,85 @@
     {%- endif -%}
 
     <script>
-      $(document).ready(function () {
-        $('.category-toggle').on('click', function (e) {
-          e.stopPropagation();
-          $('.category-dropdown').addClass('active');
-          $('.drawer-overlay').addClass('active');
-          $('body').addClass('custom_overflow');
+      document.addEventListener('DOMContentLoaded', function () {
+        var categoryDropdown = document.querySelector('.category-dropdown');
+        var drawerOverlay = document.querySelector('.drawer-overlay');
+
+        document.querySelectorAll('.category-toggle').forEach(function (el) {
+          el.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (categoryDropdown) categoryDropdown.classList.add('active');
+            if (drawerOverlay) drawerOverlay.classList.add('active');
+            document.body.classList.add('custom_overflow');
+          });
         });
 
-        $('.category_drawer_btn, .category-overlay').on('click', function (e) {
-          e.stopPropagation();
-          $('.category-dropdown').removeClass('active');
-          $('.drawer-overlay').removeClass('active');
-          $('body').removeClass('custom_overflow');
+        document.querySelectorAll('.category_drawer_btn, .category-overlay').forEach(function (el) {
+          el.addEventListener('click', function (e) {
+            e.stopPropagation();
+            if (categoryDropdown) categoryDropdown.classList.remove('active');
+            if (drawerOverlay) drawerOverlay.classList.remove('active');
+            document.body.classList.remove('custom_overflow');
+          });
         });
 
-        // Optional: click outside to close
-        $(document).on('click', function (e) {
-          if (!$(e.target).closest('.category-dropdown, .category-toggle').length) {
-            $('.category-dropdown').removeClass('active');
-            $('.drawer-overlay').removeClass('active');
-            $('body').removeClass('custom_overflow');
+        document.addEventListener('click', function (e) {
+          if (!e.target.closest('.category-dropdown, .category-toggle')) {
+            if (categoryDropdown) categoryDropdown.classList.remove('active');
+            if (drawerOverlay) drawerOverlay.classList.remove('active');
+            document.body.classList.remove('custom_overflow');
           }
         });
       });
     </script>
 
     <script>
-      $(document).ready(function () {
+      document.addEventListener('DOMContentLoaded', function () {
         function handleAccordion() {
-          // Combine both selectors without line break
-          var $menus = $(
+          var menus = document.querySelectorAll(
             '.customize--footer-section .grid__item.footer-block--menu, .customize--footer-section .grid__item.footer-block-company'
           );
 
-          if ($(window).width() <= 750) {
-            // Hide all details initially
-            $menus.find('.footer-block__details-content').hide();
-            $menus.find('.footer-block__heading').removeClass('open');
+          if (window.innerWidth <= 750) {
+            menus.forEach(function (menu) {
+              var content = menu.querySelector('.footer-block__details-content');
+              var heading = menu.querySelector('.footer-block__heading');
+              if (content) content.style.display = 'none';
+              if (heading) heading.classList.remove('open');
+            });
 
-            // Unbind any old handlers, then bind click on each heading
-            $menus
-              .find('.footer-block__heading')
-              .off('click')
-              .on('click', function () {
-                var $heading = $(this);
-                var $container = $heading.closest('.grid__item'); // updated to match both types
-                var $content = $heading.next('.footer-block__details-content');
-
-                // Toggle this one
-                $heading.toggleClass('open');
-                $content.stop(true, true).slideToggle();
-
-                // Close all other menus
-                $menus
-                  .not($container)
-                  .find('.footer-block__heading.open')
-                  .removeClass('open')
-                  .next('.footer-block__details-content')
-                  .stop(true, true)
-                  .slideUp();
+            menus.forEach(function (menu) {
+              var heading = menu.querySelector('.footer-block__heading');
+              if (!heading) return;
+              var fresh = heading.cloneNode(true);
+              heading.parentNode.replaceChild(fresh, heading);
+              fresh.addEventListener('click', function () {
+                var container = fresh.closest('.grid__item');
+                var content = fresh.nextElementSibling;
+                var isOpen = fresh.classList.contains('open');
+                fresh.classList.toggle('open');
+                if (content) content.style.display = isOpen ? 'none' : 'block';
+                menus.forEach(function (other) {
+                  if (other === container) return;
+                  var otherHeading = other.querySelector('.footer-block__heading');
+                  var otherContent = other.querySelector('.footer-block__details-content');
+                  if (otherHeading) otherHeading.classList.remove('open');
+                  if (otherContent) otherContent.style.display = 'none';
+                });
               });
+            });
           } else {
-            // Wider screens: show everything
-            $('.footer-block__details-content').show();
-            $('.footer-block__heading').removeClass('open');
+            document.querySelectorAll('.footer-block__details-content').forEach(function (el) {
+              el.style.display = '';
+            });
+            document.querySelectorAll('.footer-block__heading').forEach(function (el) {
+              el.classList.remove('open');
+            });
           }
         }
 
-        // Run on load + resize
         handleAccordion();
-        $(window).resize(handleAccordion);
+        window.addEventListener('resize', handleAccordion);
       });
     </script>
 

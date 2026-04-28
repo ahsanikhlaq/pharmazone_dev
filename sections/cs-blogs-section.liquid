@@ -304,14 +304,16 @@ border-radius: 16px;
   </div>
 </section>
 <script>
-  var swiper = new Swiper('.latest-news-swiper', {
-    slidesPerView: 4,
-    spaceBetween: 12,
-    breakpoints: {
-      0: { slidesPerView: 1.2,spaceBetween: 8, },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 4 },
-    }
+  document.addEventListener('DOMContentLoaded', function () {
+    new Swiper('.latest-news-swiper', {
+      slidesPerView: 4,
+      spaceBetween: 12,
+      breakpoints: {
+        0: { slidesPerView: 1.2, spaceBetween: 8 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 4 },
+      }
+    });
   });
 </script>
 
