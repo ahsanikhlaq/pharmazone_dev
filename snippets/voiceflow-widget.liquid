@@ -35,11 +35,36 @@
   // Load widget if on allowed page OR if user has previously interacted
   if (isAllowedPage || hasInteracted) {
     var voiceflowLoaded = false;
+
+    // Load helper/extension scripts only when chat is actually about to load,
+    // keeping them off the critical path for non-engaging visitors. Returns a
+    // promise so the widget bundle waits for extensions to register.
+    var loadCompanionScripts = function () {
+      var loadScript = function (src) {
+        return new Promise(function (resolve) {
+          if (!src) return resolve();
+          var existing = document.querySelector('script[data-vf-companion="' + src + '"]');
+          if (existing) return resolve();
+          var s = document.createElement('script');
+          s.src = src;
+          s.async = true;
+          s.setAttribute('data-vf-companion', src);
+          s.onload = s.onerror = function () { resolve(); };
+          document.head.appendChild(s);
+        });
+      };
+      return Promise.all([
+        loadScript(window.cartFromChatSrc),
+        loadScript(window.voiceflowExtensionsSrc),
+      ]);
+    };
+
     var loadVoiceflow = function () {
       if (voiceflowLoaded) return;
       voiceflowLoaded = true;
       cleanupListeners();
 
+      loadCompanionScripts().then(function () {
       (function(d, t) {
         var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
 
@@ -81,6 +106,7 @@
         v.type = "text/javascript";
         s.parentNode.insertBefore(v, s);
       })(document, 'script');
+      });
     };
 
     // Defer the chat bundle (~hundreds of KB) until the user actually engages

@@ -10,12 +10,15 @@
   <div class="page-width">
   <div class="cs-content-wrapper">
   {% if section.settings.desktop_banner != blank %}
-    
+
      {{ section.settings.desktop_banner
-        | image_url: width: 1200
+        | image_url: width: 1600
         | image_tag:
           class: 'hero-bg hero-bg-image hero-bg-desktop',
+          widths: '600, 800, 1000, 1200, 1400, 1600',
+          sizes: '100vw',
           loading: 'eager',
+          fetchpriority: 'high',
           alt: section.settings.mobile_banner.alt
       }}
     {% else %}
@@ -45,10 +48,13 @@
   {% if section.settings.mobile_banner != blank %}
     <div class="hero-bg hero-bg-mobile">
       {{ section.settings.mobile_banner
-        | image_url: width: 1200
+        | image_url: width: 900
         | image_tag:
           class: 'hero-bg-image ',
+          widths: '300, 400, 500, 600, 750, 900',
+          sizes: '100vw',
           loading: 'eager',
+          fetchpriority: 'high',
           alt: section.settings.mobile_banner.alt
       }}
     </div>

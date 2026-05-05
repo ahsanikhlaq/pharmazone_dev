@@ -269,8 +269,15 @@
 {% render 'font-family' %}
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'custom.css' | asset_url | stylesheet_tag }}
-    {{ 'custom-blog.css' | asset_url | stylesheet_tag }}
-    {{ 'custom-style.css' | asset_url | stylesheet_tag }}
+    {%- comment -%} Below-the-fold styles loaded asynchronously to avoid blocking FCP/LCP {%- endcomment -%}
+    <link rel="stylesheet" href="{{ 'custom-style.css' | asset_url }}" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="{{ 'custom-style.css' | asset_url }}"></noscript>
+    {%- if template contains 'blog' or template contains 'article' -%}
+      {{ 'custom-blog.css' | asset_url | stylesheet_tag }}
+    {%- else -%}
+      <link rel="stylesheet" href="{{ 'custom-blog.css' | asset_url }}" media="print" onload="this.media='all'">
+      <noscript><link rel="stylesheet" href="{{ 'custom-blog.css' | asset_url }}"></noscript>
+    {%- endif -%}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
@@ -312,7 +319,9 @@
       }
     </script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    {%- comment -%} Swiper is below-the-fold on every page; load CSS async and JS deferred to avoid blocking render {%- endcomment -%}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"></noscript>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   </head>
 
@@ -514,11 +523,17 @@
       });
     </script>
     
-    <!-- Load cart handler -->
-    <script src="{{ 'cart-from-chat.js' | asset_url }}" defer="defer"></script>
-    <!-- Load Voiceflow Extensions -->
-    <script src="{{ 'voiceflow-extensions.js' | asset_url }}" defer="defer"></script>
-    
+    {%- comment -%}
+      Voiceflow chat handler + extensions are only useful when the chat widget
+      itself loads. The widget is interaction-gated inside voiceflow-widget,
+      so we expose the asset URLs and let that snippet pull them in alongside
+      the chat bundle. This removes ~22KB of JS parse/exec from initial load.
+    {%- endcomment -%}
+    <script>
+      window.cartFromChatSrc = "{{ 'cart-from-chat.js' | asset_url }}";
+      window.voiceflowExtensionsSrc = "{{ 'voiceflow-extensions.js' | asset_url }}";
+    </script>
+
     {% render 'voiceflow-widget' %}
 
 
