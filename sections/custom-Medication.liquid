@@ -60,10 +60,10 @@
 
       </div>
 {% if section.settings.icon != blank %}
-                    <img src="{{ section.settings.icon | image_url }}" alt="" class="bas-image">
+                    <img src="{{ section.settings.icon | image_url: width: 600 }}" alt="" class="bas-image" loading="lazy" decoding="async">
     {% endif %}
       {% if section.settings.icon_mob != blank %}
-                    <img src="{{ section.settings.icon_mob | image_url }}" alt="" class="bas-image-mob">
+                    <img src="{{ section.settings.icon_mob | image_url: width: 600 }}" alt="" class="bas-image-mob" loading="lazy" decoding="async">
     {% endif %}
     </div>
   </div>

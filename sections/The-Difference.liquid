@@ -316,7 +316,7 @@ height: 56px;
 
                 {% if block.settings.icon != blank %}
                   <div class="care-icon">
-                    <img src="{{ block.settings.icon | image_url }}" alt="">
+                    <img src="{{ block.settings.icon | image_url: width: 200 }}" alt="" loading="lazy" decoding="async">
                   </div>
                 {% endif %}
               </div>
@@ -329,12 +329,12 @@ height: 56px;
         {% endfor %}
         {% if section.settings.icon != blank %}
                   <div class="care-icon care-icon-mbl">
-                          <img src="{{ section.settings.icon | image_url }}" alt="" class="bas-image">
+                          <img src="{{ section.settings.icon | image_url: width: 200 }}" alt="" class="bas-image" loading="lazy" decoding="async">
                         </div>
           {% endif %}
             {% if section.settings.icon_mob != blank %}
                         <div class="care-icon care-icon-mbl">
-                          <img src="{{ section.settings.icon_mob | image_url }}" alt="" class="bas-image-mob">
+                          <img src="{{ section.settings.icon_mob | image_url: width: 200 }}" alt="" class="bas-image-mob" loading="lazy" decoding="async">
                         </div>
           {% endif %}
       </div>
@@ -346,7 +346,7 @@ height: 56px;
       <div class="center-media">
 
         {% if section.settings.center_image != blank %}
-          <img src="{{ section.settings.center_image | image_url }}" alt="">
+          <img src="{{ section.settings.center_image | image_url: width: 1000 }}" alt="" loading="lazy" decoding="async">
         {% endif %}
 
         <div class="center-overlay">
@@ -379,7 +379,7 @@ height: 56px;
 
                 {% if block.settings.icon != blank %}
                   <div class="care-icon">
-                    <img src="{{ block.settings.icon | image_url }}" alt="">
+                    <img src="{{ block.settings.icon | image_url: width: 200 }}" alt="" loading="lazy" decoding="async">
                   </div>
                 {% endif %}
               </div>
@@ -396,12 +396,12 @@ height: 56px;
         {% endfor %}
         {% if section.settings.icon != blank %}
                   <div class="care-icon care-icon-mbl">
-                    <img src="{{ section.settings.icon | image_url }}" alt="" class="bas-image">
+                    <img src="{{ section.settings.icon | image_url: width: 200 }}" alt="" class="bas-image" loading="lazy" decoding="async">
                   </div>
     {% endif %}
       {% if section.settings.icon_mob != blank %}
                   <div class="care-icon care-icon-mbl">
-                    <img src="{{ section.settings.icon_mob | image_url }}" alt="" class="bas-image-mob">
+                    <img src="{{ section.settings.icon_mob | image_url: width: 200 }}" alt="" class="bas-image-mob" loading="lazy" decoding="async">
                   </div>
     {% endif %}
       </div>

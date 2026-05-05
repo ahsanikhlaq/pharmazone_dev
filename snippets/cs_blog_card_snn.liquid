@@ -6,14 +6,14 @@
                 <div class="news-image-link">
                   <div class="news-image">
                     {% if blog.metafields.custom.blog_post_image !=blank %}
-                    {{ blog.metafields.custom.blog_post_image 
-                      | image_url: width: article.image.width, height: article.image.height 
-                      | image_tag: alt: article.title 
+                    {{ blog.metafields.custom.blog_post_image
+                      | image_url: width: 800
+                      | image_tag: alt: article.title, loading: 'lazy', widths: '300, 500, 700, 800', sizes: '(max-width: 750px) 90vw, 33vw'
                     }}
                     {% else %}
-                    {{ article.image 
-                      | image_url: width: article.image.width, height: article.image.height 
-                      | image_tag: alt: article.title 
+                    {{ article.image
+                      | image_url: width: 800
+                      | image_tag: alt: article.title, loading: 'lazy', widths: '300, 500, 700, 800', sizes: '(max-width: 750px) 90vw, 33vw'
                     }}
                   {% endif %}
                   </div>
