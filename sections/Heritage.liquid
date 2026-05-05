@@ -191,7 +191,7 @@
           {% for block in section.blocks %}
             <div class="item-card">
               {% if block.settings.f_img %}
-                <img class="f-img" src="{{ block.settings.f_img | image_url }}" width="auto" height="auto" alt="feature">
+                <img class="f-img" src="{{ block.settings.f_img | image_url: width: 400 }}" width="auto" height="auto" alt="feature" loading="lazy" decoding="async">
               {% endif %}
               {% if block.settings.f_text %}
                 <div class="f-text">{{ block.settings.f_text }}</div>

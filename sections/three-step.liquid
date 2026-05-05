@@ -489,7 +489,7 @@ padding:12px;
                         {{
                             block.settings.image
                             | image_url: width: 800
-                            | image_tag: class: 'step-image-img'
+                            | image_tag: class: 'step-image-img', loading: 'lazy'
                         }}
 
                         {% if block.settings.step_label != blank %}
@@ -523,7 +523,7 @@ padding:12px;
                             {{
                             block.settings.image_5
                             | image_url: width: 60
-                            | image_tag: alt: block.settings.tab5
+                            | image_tag: alt: block.settings.tab5, loading: 'lazy'
                             }}
                         </span>
                         {% endif %}
@@ -550,10 +550,10 @@ padding:12px;
     </div>
 
      {% if section.settings.icon != blank %}
-                    <img src="{{ section.settings.icon | image_url }}" alt="" class="abs-image">
+                    <img src="{{ section.settings.icon | image_url: width: 200 }}" alt="" class="abs-image" loading="lazy" decoding="async">
     {% endif %}
       {% if section.settings.icon_mob != blank %}
-                    <img src="{{ section.settings.icon_mob | image_url }}" alt="" class="abs-image-mob">
+                    <img src="{{ section.settings.icon_mob | image_url: width: 200 }}" alt="" class="abs-image-mob" loading="lazy" decoding="async">
     {% endif %}
     
 </div>

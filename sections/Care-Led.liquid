@@ -623,9 +623,9 @@ width: 100%;
         {% if section.settings.image_desktop != blank %}
           <picture>
             {% if section.settings.image_mobile != blank %}
-              <source media="(max-width:768px)" srcset="{{ section.settings.image_mobile | image_url }}">
+              <source media="(max-width:768px)" srcset="{{ section.settings.image_mobile | image_url: width: 800 }}">
             {% endif %}
-            <img src="{{ section.settings.image_desktop | image_url }}" alt="">
+            <img src="{{ section.settings.image_desktop | image_url: width: 1200 }}" alt="" loading="lazy" decoding="async">
           </picture>
         {% endif %}
 
@@ -657,18 +657,22 @@ width: 100%;
           <div class="clinical-avatar">
            <a href="{{ block.settings.link }}">
             {% if block.settings.avatar != blank %}
-                    <img 
-                        src="{{ block.settings.avatar | image_url }}" 
+                    <img
+                        src="{{ block.settings.avatar | image_url: width: 600 }}"
                         alt=""
                         class="avatar-desktop"
+                        loading="lazy"
+                        decoding="async"
                     >
                     {% endif %}
 
                     {% if block.settings.avatar_mobile != blank %}
-                    <img 
-                        src="{{ block.settings.avatar_mobile | image_url }}" 
+                    <img
+                        src="{{ block.settings.avatar_mobile | image_url: width: 400 }}"
                         alt=""
                         class="avatar-mobile"
+                        loading="lazy"
+                        decoding="async"
                     >
                     {% endif %}
 
@@ -692,10 +696,10 @@ width: 100%;
             </div>
 
             {% if block.settings.icon != blank %}
-                    <img src="{{ block.settings.icon | image_url }}" alt="" class="bas-image">
+                    <img src="{{ block.settings.icon | image_url: width: 200 }}" alt="" class="bas-image" loading="lazy" decoding="async">
             {% endif %}
               {% if block.settings.icon_mob != blank %}
-                            <img src="{{ block.settings.icon_mob | image_url }}" alt="" class="bas-image-mob">
+                            <img src="{{ block.settings.icon_mob | image_url: width: 200 }}" alt="" class="bas-image-mob" loading="lazy" decoding="async">
             {% endif %}
 
           </div>
@@ -731,7 +735,7 @@ width: 100%;
       <div class="cp-modal-header">
         {% if block.settings.avatar != blank %}
         <div class="cp-modal-avatar">
-          <img src="{{ block.settings.avatar | image_url }}" alt="">
+          <img src="{{ block.settings.avatar | image_url: width: 600 }}" alt="" loading="lazy" decoding="async">
         </div>
         {% endif %}
         <div class="cp-modal-title">
