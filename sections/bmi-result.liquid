@@ -211,9 +211,9 @@ letter-spacing: -0.28px;
   </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
 <script>
-(function() {
+document.addEventListener('DOMContentLoaded', function () {
   var canvas = document.getElementById('bmiChart-{{ section.id }}');
   if (!canvas) return;
 
@@ -337,7 +337,7 @@ letter-spacing: -0.28px;
       }
     }
   });
-})();
+});
 </script>
 
 {% schema %}

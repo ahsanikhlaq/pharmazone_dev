@@ -147,7 +147,7 @@
             >
               <div class="custom_icon_text_left">
                 {% if card_icon_image != blank -%}
-                  <span class="icon_card_image"><img src="{{ card_icon_image | img_url: 'master'}}"></span>
+                  <span class="icon_card_image"><img src="{{ card_icon_image | image_url: width: 100 }}" alt="" loading="lazy" decoding="async"></span>
                 {%- endif %}
 
                 {% if card_collection_title != blank %}

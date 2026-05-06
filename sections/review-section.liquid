@@ -30,7 +30,7 @@
       <div class="review-block">
        {% if block.settings.review_url != blank %} <a href="{{ block.settings.review_url }}" target="_blank"> {% endif %}
           {% if block.settings.review_image %}
-            <img src="{{ block.settings.review_image | img_url: 'master' }}" alt="Review Image">
+            <img src="{{ block.settings.review_image | image_url: width: 800 }}" alt="Review Image" loading="lazy" decoding="async">
           {% endif %}
        {% if block.settings.review_url != blank %}  </a>   {% endif %}
       </div>

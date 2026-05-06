@@ -61,7 +61,7 @@
             <span>
             {% if section.blocks.first.settings.ctm_icon != blank %}
               <span class="img_icon_set">
-              <img src="{{ section.blocks.first.settings.ctm_icon | img_url: 'master'}}">
+              <img src="{{ section.blocks.first.settings.ctm_icon | image_url: width: 64 }}" alt="" width="20" height="20" decoding="async">
             </span>{% endif %}    
           {{ section.blocks.first.settings.text | escape }}</span>
             {%- if section.blocks.first.settings.link != blank -%}
@@ -125,7 +125,7 @@
                     {%- endif -%}
                     <p class="announcement-bar__message h5">
                       <span> 
-                       {% if block.settings.ctm_icon != blank %} <span class="img_icon_set"><img src="{{ block.settings.ctm_icon | img_url: 'master'}}"></span> {% endif %} { {{ block.settings.text | escape }}</span>
+                       {% if block.settings.ctm_icon != blank %} <span class="img_icon_set"><img src="{{ block.settings.ctm_icon | image_url: width: 64 }}" alt="" width="20" height="20" decoding="async"></span> {% endif %} { {{ block.settings.text | escape }}</span>
                       {%- if block.settings.link != blank -%}
                         {{- 'icon-arrow.svg' | inline_asset_content -}}
                       {%- endif -%}

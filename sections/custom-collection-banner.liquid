@@ -92,10 +92,10 @@
     {% assign mobile_ctm_bann = collection.metafields.custom.collec_mobile_banner.value %}
     {% if coll_ctm_bann != blank %}
       <div class="desktop_view">
-        <img src="{{ coll_ctm_bann | img_url: 'master' }}">
+        <img src="{{ coll_ctm_bann | image_url: width: 1600 }}" alt="{{ collection.title | escape }}" fetchpriority="high" decoding="async">
       </div>
       <div class="mobile_view">
-        <img src="{{ mobile_ctm_bann | img_url: 'master' }}">
+        <img src="{{ mobile_ctm_bann | image_url: width: 900 }}" alt="{{ collection.title | escape }}" fetchpriority="high" decoding="async">
       </div>
     {% else %}
       <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">

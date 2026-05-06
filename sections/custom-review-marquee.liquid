@@ -217,7 +217,7 @@
             {% if block.type == 'feature' %}
               <div class="cfeature-icon-item-mf cmob">
                 {% if block.settings.icon %}
-                  <img src="{{  block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="50" height="39" loading="eager" fetchpriority="high">
+                  <img src="{{  block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="50" height="39" loading="lazy" decoding="async">
                 {% endif %}
                 <span>{{ block.settings.title }}</span>
               </div>
@@ -229,7 +229,7 @@
             {% if block.type == 'feature' %}
               <div class="cfeature-icon-item-mf mob">
                 {% if block.settings.icon %}
-                  <img src="{{  block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="50" height="39" loading="lazy" fetchpriority="high">
+                  <img src="{{  block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="50" height="39" loading="lazy" decoding="async">
                 {% endif %}
                 <span>{{ block.settings.title }}</span>
               </div>
@@ -241,7 +241,7 @@
             {% if block.type == 'feature' %}
               <div class="cfeature-icon-item-mf mob">
                 {% if block.settings.icon %}
-                  <img src="{{  block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="50" height="39" loading="lazy" fetchpriority="high">
+                  <img src="{{  block.settings.icon | image_url }}" alt="{{ block.settings.icon.alt }}" width="50" height="39" loading="lazy" decoding="async">
                 {% endif %}
                 <span>{{ block.settings.title }}</span>
               </div>

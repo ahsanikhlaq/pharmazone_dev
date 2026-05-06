@@ -128,7 +128,7 @@
               {%- endif -%}
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
-                  <h3 class="inline-richtext">{{ block.settings.title }} {% if block.settings.trust_pilot != blank %}<span><img src="{{ block.settings.trust_pilot | img_url: 'master'}}"></span>{% endif %} </h3>
+                  <h3 class="inline-richtext">{{ block.settings.title }} {% if block.settings.trust_pilot != blank %}<span><img src="{{ block.settings.trust_pilot | image_url: width: 200 }}" alt="" loading="lazy" decoding="async"></span>{% endif %} </h3>
                 {%- endif -%}
               </div>
             </div>

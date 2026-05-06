@@ -200,7 +200,7 @@
                             <div class="customize-box-inner">
                               {% if block.settings.icon_ctm_one != blank %}
                                 <span>
-                                  <img src="{{ block.settings.icon_ctm_one | img_url: 'master'}}">
+                                  <img src="{{ block.settings.icon_ctm_one | image_url: width: 64 }}" alt="" loading="lazy" decoding="async">
                                 </span>
                               {% endif %}
                               {{ block.settings.custom_phone_text }}
@@ -211,7 +211,7 @@
                             <div class="customize-box-inner">
                               {% if block.settings.icon_ctm_two != blank %}
                                 <span>
-                                  <img src="{{ block.settings.icon_ctm_two | img_url: 'master'}}">
+                                  <img src="{{ block.settings.icon_ctm_two | image_url: width: 64 }}" alt="" loading="lazy" decoding="async">
                                 </span>
                               {% endif %}
                               {{ block.settings.custom_text_no }}
@@ -222,7 +222,7 @@
                             <div class="customize-box-inner">
                               {% if block.settings.icon_ctm_three != blank %}
                                 <span>
-                                  <img src="{{ block.settings.icon_ctm_three | img_url: 'master'}}">
+                                  <img src="{{ block.settings.icon_ctm_three | image_url: width: 64 }}" alt="" loading="lazy" decoding="async">
                                 </span>
                               {% endif %}
                               {{ block.settings.custom_email_text }}
@@ -233,7 +233,7 @@
                             <div class="customize-box-inner">
                               {% if block.settings.icon_ctm_four != blank %}
                                 <span>
-                                  <img src="{{ block.settings.icon_ctm_four | img_url: 'master'}}">
+                                  <img src="{{ block.settings.icon_ctm_four | image_url: width: 64 }}" alt="" loading="lazy" decoding="async">
                                 </span>
                               {% endif %}
 
@@ -431,7 +431,7 @@
           {% if section.settings.ctm_url_image != blank -%}
             <a href="{{ section.settings.ctm_url_image }}" target="_blank">
           {%- endif %}
-          <div><img src="{{ section.settings.registered_image | img_url: 'master'}}"></div>
+          <div><img src="{{ section.settings.registered_image | image_url: width: 600 }}" alt="" loading="lazy" decoding="async"></div>
           {% if section.settings.ctm_url_image != blank %}</a>{% endif %}
         </div>
       {% endif %}
