@@ -1,3 +1,17 @@
+{%- if section.settings.image != blank -%}
+  {%- comment -%} Preload hero image so the LCP fetch starts before the parser reaches the <img>. {%- endcomment -%}
+  <link rel="preload" as="image"
+    href="{{ section.settings.image | image_url: width: 800 }}"
+    imagesrcset="
+      {{ section.settings.image | image_url: width: 400 }} 400w,
+      {{ section.settings.image | image_url: width: 600 }} 600w,
+      {{ section.settings.image | image_url: width: 800 }} 800w,
+      {{ section.settings.image | image_url: width: 1000 }} 1000w,
+      {{ section.settings.image | image_url: width: 1200 }} 1200w,
+      {{ section.settings.image | image_url: width: 1440 }} 1440w"
+    imagesizes="(max-width: 768px) 100vw, 60vw"
+    fetchpriority="high">
+{%- endif -%}
 <style>
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top }}px;
