@@ -274,8 +274,7 @@ justify-content: center;
                 height: 23,
                 width: 236,
                 alt: logo_alt,
-                loading: "eager",
-                fetchpriority: "high"
+                loading: "eager"
               }}
               {{ section.settings.review-image-mbl | image_url: width: 200 | image_tag:
                 class: 'cs_banner_rev-image_mbl',
@@ -314,8 +313,7 @@ justify-content: center;
                 height: nil,
                 width: nil,
                 alt: logo_alt,
-                loading: "eager",
-                fetchpriority: "high"
+                loading: "lazy"
               }}
         </div>
     </div>
@@ -339,37 +337,35 @@ justify-content: center;
 </div>
 </section>
 <script>
-    document.querySelectorAll(".cs_banner_wight_num").forEach((el) => {
-  let target = parseInt(el.innerText);
-  el.innerText = "0";
-
-  let observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCount(el, target);
-        observer.unobserve(el);
-      }
+  document.querySelectorAll(".cs_banner_wight_num").forEach((el) => {
+    var target = parseInt(el.innerText, 10);
+    el.innerText = "0";
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(el, target);
+          observer.unobserve(el);
+        }
+      });
     });
+    observer.observe(el);
   });
 
-  observer.observe(el);
-});
-
-function animateCount(element, target) {
-  let current = 0;
-  let speed = target / 100; // animation smoothness
-
-  let interval = setInterval(() => {
-    current += speed;
-    if (current >= target) {
-      element.innerText = target;
-      clearInterval(interval);
-    } else {
-      element.innerText = Math.floor(current);
+  function animateCount(element, target) {
+    var duration = 2000;
+    var start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      element.innerText = Math.floor(progress * target);
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        element.innerText = target;
+      }
     }
-  }, 20);
-}
-
+    requestAnimationFrame(step);
+  }
 </script>
 {% schema %}
 {
