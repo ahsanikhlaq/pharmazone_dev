@@ -13,7 +13,7 @@
       "type": "custom-banner",
       "name": "Custom Banner",
       "settings": {
-        "image": "shopify://shop_images/image_2835.png",
+        "image": "shopify://shop_images/image_2835_1.webp",
         "review-image": "shopify://shop_images/Group_1707479919.png",
         "review-image-mbl": "shopify://shop_images/Container_32.png",
         "review-text": "<p><strong>1,085</strong> Reviews </p>",
@@ -55,8 +55,8 @@
           "type": "best-sellers",
           "settings": {
             "block-back_color": "linear-gradient(282deg, rgba(76, 62, 121, 0.1) 7.39%, rgba(76, 62, 121, 0.7) 80.47%)",
-            "image": "shopify://shop_images/People_posing.png",
-            "image-mbl": "shopify://shop_images/People_posing_2.png",
+            "image": "shopify://shop_images/People_posing_1.webp",
+            "image-mbl": "shopify://shop_images/People_posing_1.webp",
             "title": "Weight loss injections",
             "rich_title": "<ul><li>Control hunger </li><li>Improve blood sugar</li><li>Sustainable weight loss.</li></ul>",
             "svg": "shopify://shop_images/tick-circle_1.svg",
@@ -68,8 +68,8 @@
           "type": "best-sellers",
           "settings": {
             "block-back_color": "linear-gradient(90deg, rgba(127, 160, 184, 1), rgba(207, 232, 243, 1) 100%)",
-            "image": "shopify://shop_images/image_2817_2.png",
-            "image-mbl": "shopify://shop_images/image_2817_3.png",
+            "image": "shopify://shop_images/image_2817_2_1.webp",
+            "image-mbl": "shopify://shop_images/image_2817_2_1.webp",
             "title": "Weight Loss Pill",
             "rich_title": "<ul><li>Reduce fat absorption</li><li>Supports gradual weight loss</li><li>Aids in weight maintenance</li></ul>",
             "svg": "shopify://shop_images/tick-circle.svg",
@@ -179,8 +179,8 @@
           "settings": {
             "top_text": "Amanda, 34",
             "lbstext": "32 Kg",
-            "brofr-img": "shopify://shop_images/Frame_2147239715.png",
-            "after-img": "shopify://shop_images/Frame_2147239716.png",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_1.webp",
+            "after-img": "shopify://shop_images/Frame_2147239716.webp",
             "rich-text": "<p>“<strong>I lost over 20kg in 6 months</strong>.<strong>.</strong> The clear process and professional oversight made the experience easier to follow.”</p>",
             "verifired": "Verified review"
           }
@@ -224,8 +224,8 @@
           "settings": {
             "top_text": "Kimberly, 51",
             "lbstext": "20 Kg",
-            "brofr-img": "shopify://shop_images/Frame_2147239715_2.png",
-            "after-img": "shopify://shop_images/Frame_2147239716_2.png",
+            "brofr-img": "shopify://shop_images/Frame_2147239715_2.webp",
+            "after-img": "shopify://shop_images/Frame_2147239716_2.webp",
             "rich-text": "<p><strong>I've been using Mounjaro for over 6 months and lost 16kg</strong>. The clear and guided plan helped me stay on track.</p>",
             "verifired": "Verified review"
           }
@@ -331,7 +331,7 @@
           "type": "best-sellers",
           "settings": {
             "mobile-max-width": 282,
-            "image": "shopify://shop_images/Frame_2147241418_5.png",
+            "image": "shopify://shop_images/Frame_2147241418_5_1.webp",
             "tite": "Clinically Proven Medications Evidence Based Treatments",
             "rich_text-top": "",
             "butt_text": "Check Your Eligibility",
@@ -351,7 +351,7 @@
           "type": "best-sellers",
           "settings": {
             "mobile-max-width": 198,
-            "image": "shopify://shop_images/Frame_2147241418_6.png",
+            "image": "shopify://shop_images/Frame_2147241418_6_1.webp",
             "tite": "Personalised lifestyle plan",
             "rich_text-top": "<p>Making sure you are moving in the right direction by tracking your progress</p>",
             "butt_text": "",
