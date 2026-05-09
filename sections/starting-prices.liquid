@@ -1,0 +1,615 @@
+{% style %}
+  .starting-prices-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  }
+  .starting-prices-{{ section.id }} .sp__heading {
+    text-align: center;
+    margin: 0 0 36px;
+    color: #111;
+    font-family: var(--custom-fonts);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.88px;
+  }
+  .starting-prices-{{ section.id }} .sp__heading .sp__heading--accent {
+    color: #4C3E79;
+  }
+  .starting-prices-{{ section.id }} .sp__cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .starting-prices-{{ section.id }} .sp__card {
+    background: {{ section.settings.card_bg_color }};
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+    overflow: hidden;
+    position: relative;
+    min-height: 240px;
+  }
+  .starting-prices-{{ section.id }} .sp__card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 60%;
+    min-width: 0;
+  }
+  .starting-prices-{{ section.id }} .sp__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .starting-prices-{{ section.id }} .sp__tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px solid rgba(76, 62, 121, 0.2);
+    color: #4C3E79;
+    font-family: var(--custom-fonts);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .starting-prices-{{ section.id }} .sp__title {
+    margin: 0;
+    color: #111;
+    font-family: var(--custom-fonts);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+  }
+  .starting-prices-{{ section.id }} .sp__lead {
+    margin: 4px 0 0;
+    color: #5b5b6e;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  .starting-prices-{{ section.id }} .sp__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .starting-prices-{{ section.id }} .sp__price {
+    color: #4C3E79;
+    font-family: var(--custom-fonts);
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.8px;
+  }
+  .starting-prices-{{ section.id }} .sp__period {
+    color: #5b5b6e;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .starting-prices-{{ section.id }} .sp__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+  }
+  .starting-prices-{{ section.id }} .sp__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .starting-prices-{{ section.id }} .sp__btn:hover { opacity: .9; }
+  .starting-prices-{{ section.id }} .sp__btn--primary {
+    background: #F8E94B;
+    color: #111;
+  }
+  .starting-prices-{{ section.id }} .sp__btn--secondary {
+    background: transparent;
+    color: #111;
+    border-color: rgba(17, 17, 17, 0.2);
+  }
+  .starting-prices-{{ section.id }} .sp__note {
+    margin: 6px 0 0;
+    color: #6b6b7d;
+    font-family: var(--custom-fonts);
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .starting-prices-{{ section.id }} .sp__card-image {
+    flex: 0 0 auto;
+    width: 200px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .starting-prices-{{ section.id }} .sp__card-image img {
+    max-width: 100%;
+    max-height: 260px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .starting-prices-{{ section.id }} .sp__trust {
+    margin-top: 24px;
+    background: {{ section.settings.trust_bg_color }};
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .starting-prices-{{ section.id }} .sp__trust-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .starting-prices-{{ section.id }} .sp__trust-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .starting-prices-{{ section.id }} .sp__trust-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .starting-prices-{{ section.id }} .sp__trust-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .starting-prices-{{ section.id }} .sp__trust-star {
+    width: 18px;
+    height: 18px;
+    background: #00B67A;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border-radius: 2px;
+  }
+  .starting-prices-{{ section.id }} .sp__trust-reviews-base {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+  }
+  .starting-prices-{{ section.id }} .sp__trust-avatars {
+    display: inline-flex;
+  }
+  .starting-prices-{{ section.id }} .sp__trust-avatars img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #4C3E79;
+    object-fit: cover;
+    background: #fff;
+    margin-left: -10px;
+  }
+  .starting-prices-{{ section.id }} .sp__trust-avatars img:first-child { margin-left: 0; }
+
+  @media (max-width: 749px) {
+    .starting-prices-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+    .starting-prices-{{ section.id }} .sp__heading {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .starting-prices-{{ section.id }} .sp__heading .sp__heading--accent {
+      display: block;
+    }
+    .starting-prices-{{ section.id }} .sp__cards {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .starting-prices-{{ section.id }} .sp__card {
+      padding: 18px 18px;
+      min-height: 0;
+    }
+    .starting-prices-{{ section.id }} .sp__title { font-size: 22px; }
+    .starting-prices-{{ section.id }} .sp__price { font-size: 32px; }
+    .starting-prices-{{ section.id }} .sp__card-image {
+      width: 110px;
+    }
+    .starting-prices-{{ section.id }} .sp__card-image img { max-height: 200px; }
+    .starting-prices-{{ section.id }} .sp__trust {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 18px;
+    }
+    .starting-prices-{{ section.id }} .sp__trust-left { justify-content: center; }
+  }
+{% endstyle %}
+
+<section class="starting-prices-{{ section.id }} starting-prices">
+  <div class="page-width">
+    {%- if section.settings.heading_main != blank or section.settings.heading_accent != blank -%}
+      <h2 class="sp__heading">
+        {%- if section.settings.heading_main != blank -%}
+          <span class="sp__heading--main">{{ section.settings.heading_main }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading_accent != blank -%}
+          {% if section.settings.heading_main != blank %} {% endif %}<span class="sp__heading--accent">{{ section.settings.heading_accent }}</span>
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
+
+    <div class="sp__cards">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'card' -%}
+          {%- assign card_product = block.settings.product -%}
+          {%- assign card_image = block.settings.image -%}
+          {%- if card_image == blank and card_product != blank -%}
+            {%- assign card_image = card_product.featured_image -%}
+          {%- endif -%}
+          {%- assign card_title = block.settings.title -%}
+          {%- if card_title == blank and card_product != blank -%}
+            {%- assign card_title = card_product.title -%}
+          {%- endif -%}
+          {%- assign card_price = block.settings.price_text -%}
+          {%- if card_price == blank and card_product != blank -%}
+            {%- assign card_price = card_product.price | money_without_trailing_zeros -%}
+          {%- endif -%}
+          {%- assign details_url = block.settings.cta2_url -%}
+          {%- if details_url == blank and card_product != blank -%}
+            {%- assign details_url = card_product.url -%}
+          {%- endif -%}
+
+          <div class="sp__card" {{ block.shopify_attributes }}>
+            <div class="sp__card-content">
+              {%- if block.settings.tag1 != blank or block.settings.tag2 != blank -%}
+                <div class="sp__tags">
+                  {%- if block.settings.tag1 != blank -%}
+                    <span class="sp__tag">{{ block.settings.tag1 }}</span>
+                  {%- endif -%}
+                  {%- if block.settings.tag2 != blank -%}
+                    <span class="sp__tag">{{ block.settings.tag2 }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {%- if card_title != blank -%}
+                <h3 class="sp__title">{{ card_title }}</h3>
+              {%- endif -%}
+
+              {%- if block.settings.price_label != blank -%}
+                <p class="sp__lead">{{ block.settings.price_label }}</p>
+              {%- endif -%}
+
+              {%- if card_price != blank or block.settings.price_period != blank -%}
+                <div class="sp__price-row">
+                  {%- if card_price != blank -%}
+                    <span class="sp__price">{{ card_price }}</span>
+                  {%- endif -%}
+                  {%- if block.settings.price_period != blank -%}
+                    <span class="sp__period">{{ block.settings.price_period }}</span>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              <div class="sp__buttons">
+                {%- if block.settings.cta1_text != blank -%}
+                  <a href="{{ block.settings.cta1_url | default: '#' }}" class="sp__btn sp__btn--primary">{{ block.settings.cta1_text }}</a>
+                {%- endif -%}
+                {%- if block.settings.cta2_text != blank -%}
+                  <a href="{{ details_url | default: '#' }}" class="sp__btn sp__btn--secondary">{{ block.settings.cta2_text }}</a>
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.note != blank -%}
+                <p class="sp__note">{{ block.settings.note }}</p>
+              {%- endif -%}
+            </div>
+
+            {%- if card_image != blank -%}
+              <div class="sp__card-image">
+                {{ card_image | image_url: width: 600 | image_tag:
+                  alt: card_title,
+                  loading: 'lazy',
+                  widths: '200, 400, 600',
+                  sizes: '(max-width: 749px) 110px, 200px'
+                }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.show_trust_bar -%}
+      <div class="sp__trust">
+        <div class="sp__trust-left">
+          <div class="sp__trust-stars" aria-label="Trustpilot rating">
+            {%- assign stars = section.settings.trust_stars | default: 5 -%}
+            {%- for i in (1..stars) -%}
+              <span class="sp__trust-star">★</span>
+            {%- endfor -%}
+          </div>
+          <div class="sp__trust-text">
+            {%- if section.settings.trust_reviews_text != blank -%}
+              <span class="sp__trust-line">{{ section.settings.trust_reviews_text }}</span>
+            {%- endif -%}
+            {%- if section.settings.trust_base_text != blank -%}
+              <span class="sp__trust-reviews-base">{{ section.settings.trust_base_text }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+        <div class="sp__trust-avatars">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'avatar' and block.settings.avatar != blank -%}
+              {{ block.settings.avatar | image_url: width: 88 | image_tag: alt: 'Verified reviewer', loading: 'lazy' }}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Starting Prices",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_main",
+      "label": "Heading (dark)",
+      "default": "Starting Prices"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading (purple accent)",
+      "default": "you can trust."
+    },
+    {
+      "type": "header",
+      "content": "Trust bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_bar",
+      "label": "Show Trustpilot bar",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "trust_stars",
+      "label": "Number of stars",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "richtext",
+      "id": "trust_reviews_text",
+      "label": "Reviews text",
+      "default": "<p><strong>1,085</strong> Reviews</p>"
+    },
+    {
+      "type": "text",
+      "id": "trust_base_text",
+      "label": "Base text",
+      "default": "Based on 12,400+ verified reviews."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#FAF8ED"
+    },
+    {
+      "type": "color",
+      "id": "trust_bg_color",
+      "label": "Trust bar background",
+      "default": "#4C3E79"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top (desktop)",
+      "min": 0, "max": 200, "step": 5, "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom (desktop)",
+      "min": 0, "max": 200, "step": 5, "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0, "max": 100, "step": 1, "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0, "max": 100, "step": 1, "unit": "px",
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Price card",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product",
+          "info": "Selected product's image, title and price will be used by default. Leave the override fields below blank to use the product values."
+        },
+        {
+          "type": "header",
+          "content": "Tags"
+        },
+        {
+          "type": "text",
+          "id": "tag1",
+          "label": "Tag 1",
+          "default": "Tirzepatide"
+        },
+        {
+          "type": "text",
+          "id": "tag2",
+          "label": "Tag 2",
+          "default": "Personalized"
+        },
+        {
+          "type": "header",
+          "content": "Overrides (optional)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title override",
+          "info": "Leave blank to use the product title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image override",
+          "info": "Leave blank to use the product featured image"
+        },
+        {
+          "type": "header",
+          "content": "Price"
+        },
+        {
+          "type": "text",
+          "id": "price_label",
+          "label": "Price lead-in",
+          "default": "Get started for"
+        },
+        {
+          "type": "text",
+          "id": "price_text",
+          "label": "Price override",
+          "info": "Leave blank to use product price (e.g. £129)"
+        },
+        {
+          "type": "text",
+          "id": "price_period",
+          "label": "Price period",
+          "default": "3 months"
+        },
+        {
+          "type": "header",
+          "content": "Buttons"
+        },
+        {
+          "type": "text",
+          "id": "cta1_text",
+          "label": "Primary button text",
+          "default": "Check Eligibility"
+        },
+        {
+          "type": "url",
+          "id": "cta1_url",
+          "label": "Primary button URL"
+        },
+        {
+          "type": "text",
+          "id": "cta2_text",
+          "label": "Secondary button text",
+          "default": "Product Details"
+        },
+        {
+          "type": "url",
+          "id": "cta2_url",
+          "label": "Secondary button URL",
+          "info": "Leave blank to link to the selected product"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "label": "Footer note",
+          "default": "Product Delivered after consultation."
+        }
+      ]
+    },
+    {
+      "type": "avatar",
+      "name": "Trust bar avatar",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Starting Prices",
+      "category": "Custom",
+      "blocks": [
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "avatar" },
+        { "type": "avatar" },
+        { "type": "avatar" }
+      ]
+    }
+  ]
+}
+{% endschema %}
