@@ -268,13 +268,11 @@
               {%- endif -%}
 
               <ul class="cl__creds">
-                {%- assign creds = '' | split: '' -%}
-                {%- if block.settings.cred_1 != blank -%}{%- assign creds = creds | concat: block.settings.cred_1 | split: '|||' -%}{%- endif -%}
                 {%- if block.settings.cred_1 != blank -%}
                   <li class="cl__cred">
                     <span class="cl__cred-icon">
-                      {%- if block.settings.cred_icon != blank -%}
-                        {{ block.settings.cred_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                      {%- if block.settings.cred_icon_1 != blank -%}
+                        {{ block.settings.cred_icon_1 | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
                       {%- else -%}
                         {{ default_check_svg }}
                       {%- endif -%}
@@ -285,8 +283,8 @@
                 {%- if block.settings.cred_2 != blank -%}
                   <li class="cl__cred">
                     <span class="cl__cred-icon">
-                      {%- if block.settings.cred_icon != blank -%}
-                        {{ block.settings.cred_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                      {%- if block.settings.cred_icon_2 != blank -%}
+                        {{ block.settings.cred_icon_2 | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
                       {%- else -%}
                         {{ default_check_svg }}
                       {%- endif -%}
@@ -297,8 +295,8 @@
                 {%- if block.settings.cred_3 != blank -%}
                   <li class="cl__cred">
                     <span class="cl__cred-icon">
-                      {%- if block.settings.cred_icon != blank -%}
-                        {{ block.settings.cred_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                      {%- if block.settings.cred_icon_3 != blank -%}
+                        {{ block.settings.cred_icon_3 | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
                       {%- else -%}
                         {{ default_check_svg }}
                       {%- endif -%}
@@ -309,8 +307,8 @@
                 {%- if block.settings.cred_4 != blank -%}
                   <li class="cl__cred">
                     <span class="cl__cred-icon">
-                      {%- if block.settings.cred_icon != blank -%}
-                        {{ block.settings.cred_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                      {%- if block.settings.cred_icon_4 != blank -%}
+                        {{ block.settings.cred_icon_4 | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
                       {%- else -%}
                         {{ default_check_svg }}
                       {%- endif -%}
@@ -508,13 +506,13 @@
         },
         {
           "type": "header",
-          "content": "Credentials"
+          "content": "Credentials",
+          "info": "Each credential can have its own icon. Leave an icon blank to use the default purple checkmark."
         },
         {
           "type": "image_picker",
-          "id": "cred_icon",
-          "label": "Credential icon (optional)",
-          "info": "Leave empty to use default purple checkmark"
+          "id": "cred_icon_1",
+          "label": "Credential 1 icon (optional)"
         },
         {
           "type": "text",
@@ -523,16 +521,31 @@
           "default": "UK Registered Clinician"
         },
         {
+          "type": "image_picker",
+          "id": "cred_icon_2",
+          "label": "Credential 2 icon (optional)"
+        },
+        {
           "type": "text",
           "id": "cred_2",
           "label": "Credential 2",
           "default": "Specialist in diagnosis and treatment"
         },
         {
+          "type": "image_picker",
+          "id": "cred_icon_3",
+          "label": "Credential 3 icon (optional)"
+        },
+        {
           "type": "text",
           "id": "cred_3",
           "label": "Credential 3",
           "default": "Patient-focused care"
+        },
+        {
+          "type": "image_picker",
+          "id": "cred_icon_4",
+          "label": "Credential 4 icon (optional)"
         },
         {
           "type": "text",
