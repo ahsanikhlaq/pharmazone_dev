@@ -1,0 +1,637 @@
+{% style %}
+  .care-led-{{ section.id }} {
+    background: {{ section.settings.bg_color }};
+    padding-top: {{ section.settings.padding_top_desktop }}px;
+    padding-bottom: {{ section.settings.padding_bottom_desktop }}px;
+  }
+  .care-led-{{ section.id }} .cl__heading {
+    text-align: center;
+    margin: 0 0 36px;
+    color: #111;
+    font-family: var(--custom-fonts);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+  }
+  .care-led-{{ section.id }} .cl__heading--accent {
+    color: #4C3E79;
+  }
+  .care-led-{{ section.id }} .cl__list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .care-led-{{ section.id }} .cl__row {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 18px;
+    align-items: stretch;
+  }
+  .care-led-{{ section.id }} .cl__profile {
+    background: {{ section.settings.card_bg_color }};
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .care-led-{{ section.id }} .cl__avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .care-led-{{ section.id }} .cl__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .care-led-{{ section.id }} .cl__name {
+    margin: 0;
+    color: #4C3E79;
+    font-family: var(--custom-fonts);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .care-led-{{ section.id }} .cl__role {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #F8E94B;
+    color: #111;
+    font-family: var(--custom-fonts);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  .care-led-{{ section.id }} .cl__creds {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .care-led-{{ section.id }} .cl__cred {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #2b2b3a;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+  .care-led-{{ section.id }} .cl__cred-icon {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    color: #4C3E79;
+  }
+  .care-led-{{ section.id }} .cl__cred-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .care-led-{{ section.id }} .cl__cred-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .care-led-{{ section.id }} .cl__details {
+    background: {{ section.settings.card_bg_color }};
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .care-led-{{ section.id }} .cl__about-title {
+    margin: 0 0 4px;
+    color: #111;
+    font-family: var(--custom-fonts);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .care-led-{{ section.id }} .cl__bio {
+    color: #3b3b4a;
+    font-family: var(--custom-fonts);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .care-led-{{ section.id }} .cl__bio p { margin: 0 0 10px; }
+  .care-led-{{ section.id }} .cl__bio p:last-child { margin-bottom: 0; }
+  .care-led-{{ section.id }} .cl__attributes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .care-led-{{ section.id }} .cl__attr {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .care-led-{{ section.id }} .cl__attr-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4C3E79;
+    font-family: var(--custom-fonts);
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .care-led-{{ section.id }} .cl__attr-icon {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .care-led-{{ section.id }} .cl__attr-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  .care-led-{{ section.id }} .cl__attr-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .care-led-{{ section.id }} .cl__attr-text {
+    margin: 0;
+    color: #4a4a5a;
+    font-family: var(--custom-fonts);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .care-led-{{ section.id }} .cl__cta-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+  }
+  .care-led-{{ section.id }} .cl__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: #F8E94B;
+    color: #111;
+    font-family: var(--custom-fonts);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: opacity .2s ease;
+  }
+  .care-led-{{ section.id }} .cl__cta:hover { opacity: .9; }
+
+  @media (max-width: 989px) {
+    .care-led-{{ section.id }} .cl__row {
+      grid-template-columns: 1fr;
+    }
+    .care-led-{{ section.id }} .cl__attributes {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 749px) {
+    .care-led-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+    .care-led-{{ section.id }} .cl__heading {
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+    .care-led-{{ section.id }} .cl__heading--accent { display: block; }
+    .care-led-{{ section.id }} .cl__profile,
+    .care-led-{{ section.id }} .cl__details {
+      padding: 18px;
+    }
+    .care-led-{{ section.id }} .cl__avatar { width: 64px; height: 64px; }
+    .care-led-{{ section.id }} .cl__name { font-size: 18px; }
+  }
+{% endstyle %}
+
+{%- liquid
+  assign default_check_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4C3E79" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>'
+  assign default_exp_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4C3E79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>'
+  assign default_spec_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4C3E79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><polyline points="8.21 13.89 7 22 12 19 17 22 15.79 13.88"/></svg>'
+  assign default_app_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#4C3E79" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>'
+-%}
+
+<section class="care-led-{{ section.id }} care-led">
+  <div class="page-width">
+    {%- if section.settings.heading_main != blank or section.settings.heading_accent != blank -%}
+      <h2 class="cl__heading">
+        {%- if section.settings.heading_main != blank -%}
+          <span class="cl__heading--main">{{ section.settings.heading_main }}</span>
+        {%- endif -%}
+        {%- if section.settings.heading_accent != blank -%}
+          {% if section.settings.heading_main != blank %} {% endif %}<span class="cl__heading--accent">{{ section.settings.heading_accent }}</span>
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
+
+    <div class="cl__list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'professional' -%}
+          <div class="cl__row" {{ block.shopify_attributes }}>
+            <div class="cl__profile">
+              {%- if block.settings.photo != blank -%}
+                <div class="cl__avatar">
+                  {{ block.settings.photo | image_url: width: 200 | image_tag: alt: block.settings.name, loading: 'lazy', widths: '88, 176' }}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.name != blank -%}
+                <h3 class="cl__name">{{ block.settings.name }}</h3>
+              {%- endif -%}
+
+              {%- if block.settings.role != blank -%}
+                <span class="cl__role">{{ block.settings.role }}</span>
+              {%- endif -%}
+
+              <ul class="cl__creds">
+                {%- assign creds = '' | split: '' -%}
+                {%- if block.settings.cred_1 != blank -%}{%- assign creds = creds | concat: block.settings.cred_1 | split: '|||' -%}{%- endif -%}
+                {%- if block.settings.cred_1 != blank -%}
+                  <li class="cl__cred">
+                    <span class="cl__cred-icon">
+                      {%- if block.settings.cred_icon != blank -%}
+                        {{ block.settings.cred_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                      {%- else -%}
+                        {{ default_check_svg }}
+                      {%- endif -%}
+                    </span>
+                    <span>{{ block.settings.cred_1 }}</span>
+                  </li>
+                {%- endif -%}
+                {%- if block.settings.cred_2 != blank -%}
+                  <li class="cl__cred">
+                    <span class="cl__cred-icon">
+                      {%- if block.settings.cred_icon != blank -%}
+                        {{ block.settings.cred_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                      {%- else -%}
+                        {{ default_check_svg }}
+                      {%- endif -%}
+                    </span>
+                    <span>{{ block.settings.cred_2 }}</span>
+                  </li>
+                {%- endif -%}
+                {%- if block.settings.cred_3 != blank -%}
+                  <li class="cl__cred">
+                    <span class="cl__cred-icon">
+                      {%- if block.settings.cred_icon != blank -%}
+                        {{ block.settings.cred_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                      {%- else -%}
+                        {{ default_check_svg }}
+                      {%- endif -%}
+                    </span>
+                    <span>{{ block.settings.cred_3 }}</span>
+                  </li>
+                {%- endif -%}
+                {%- if block.settings.cred_4 != blank -%}
+                  <li class="cl__cred">
+                    <span class="cl__cred-icon">
+                      {%- if block.settings.cred_icon != blank -%}
+                        {{ block.settings.cred_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                      {%- else -%}
+                        {{ default_check_svg }}
+                      {%- endif -%}
+                    </span>
+                    <span>{{ block.settings.cred_4 }}</span>
+                  </li>
+                {%- endif -%}
+              </ul>
+            </div>
+
+            <div class="cl__details">
+              {%- if block.settings.about_title != blank -%}
+                <h4 class="cl__about-title">{{ block.settings.about_title }}</h4>
+              {%- endif -%}
+
+              {%- if block.settings.bio != blank -%}
+                <div class="cl__bio">{{ block.settings.bio }}</div>
+              {%- endif -%}
+
+              {%- if block.settings.exp_text != blank or block.settings.spec_text != blank or block.settings.app_text != blank -%}
+                <div class="cl__attributes">
+                  {%- if block.settings.exp_text != blank -%}
+                    <div class="cl__attr">
+                      <div class="cl__attr-head">
+                        <span class="cl__attr-icon">
+                          {%- if block.settings.exp_icon != blank -%}
+                            {{ block.settings.exp_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                          {%- else -%}
+                            {{ default_exp_svg }}
+                          {%- endif -%}
+                        </span>
+                        {{ block.settings.exp_label | default: 'Experience' }}
+                      </div>
+                      <p class="cl__attr-text">{{ block.settings.exp_text }}</p>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.spec_text != blank -%}
+                    <div class="cl__attr">
+                      <div class="cl__attr-head">
+                        <span class="cl__attr-icon">
+                          {%- if block.settings.spec_icon != blank -%}
+                            {{ block.settings.spec_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                          {%- else -%}
+                            {{ default_spec_svg }}
+                          {%- endif -%}
+                        </span>
+                        {{ block.settings.spec_label | default: 'Specialisations' }}
+                      </div>
+                      <p class="cl__attr-text">{{ block.settings.spec_text }}</p>
+                    </div>
+                  {%- endif -%}
+                  {%- if block.settings.app_text != blank -%}
+                    <div class="cl__attr">
+                      <div class="cl__attr-head">
+                        <span class="cl__attr-icon">
+                          {%- if block.settings.app_icon != blank -%}
+                            {{ block.settings.app_icon | image_url: width: 36 | image_tag: alt: '', loading: 'lazy' }}
+                          {%- else -%}
+                            {{ default_app_svg }}
+                          {%- endif -%}
+                        </span>
+                        {{ block.settings.app_label | default: 'Approach' }}
+                      </div>
+                      <p class="cl__attr-text">{{ block.settings.app_text }}</p>
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_text != blank -%}
+      <div class="cl__cta-wrapper">
+        <a href="{{ section.settings.cta_url | default: '#' }}" class="cl__cta">{{ section.settings.cta_text }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Care Led Professionals",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_main",
+      "label": "Heading (dark)",
+      "default": "Care Led by Qualified"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading (purple accent)",
+      "default": "Clinical Professionals"
+    },
+    {
+      "type": "header",
+      "content": "Bottom CTA"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Book A Free Consultation"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background",
+      "default": "#FAF8ED"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_desktop",
+      "label": "Padding top (desktop)",
+      "min": 0, "max": 200, "step": 5, "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_desktop",
+      "label": "Padding bottom (desktop)",
+      "min": 0, "max": 200, "step": 5, "unit": "px",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0, "max": 100, "step": 1, "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0, "max": 100, "step": 1, "unit": "px",
+      "default": 30
+    }
+  ],
+  "blocks": [
+    {
+      "type": "professional",
+      "name": "Professional",
+      "limit": 12,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Profile"
+        },
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Profile photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Mohammed Abou Daya"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role badge",
+          "default": "Superintendent Pharmacist"
+        },
+        {
+          "type": "header",
+          "content": "Credentials"
+        },
+        {
+          "type": "image_picker",
+          "id": "cred_icon",
+          "label": "Credential icon (optional)",
+          "info": "Leave empty to use default purple checkmark"
+        },
+        {
+          "type": "text",
+          "id": "cred_1",
+          "label": "Credential 1",
+          "default": "UK Registered Clinician"
+        },
+        {
+          "type": "text",
+          "id": "cred_2",
+          "label": "Credential 2",
+          "default": "Specialist in diagnosis and treatment"
+        },
+        {
+          "type": "text",
+          "id": "cred_3",
+          "label": "Credential 3",
+          "default": "Patient-focused care"
+        },
+        {
+          "type": "text",
+          "id": "cred_4",
+          "label": "Credential 4",
+          "default": "Evidence-based prescribing"
+        },
+        {
+          "type": "header",
+          "content": "About"
+        },
+        {
+          "type": "text",
+          "id": "about_title",
+          "label": "About heading",
+          "info": "Optional small heading above bio"
+        },
+        {
+          "type": "richtext",
+          "id": "bio",
+          "label": "Bio",
+          "default": "<p>Mohammed Abou Daya is the Superintendent Pharmacist for Pharmazon Express, bringing over a decade of senior clinical, governance, and regulatory experience across NHS and independent healthcare settings.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Experience"
+        },
+        {
+          "type": "image_picker",
+          "id": "exp_icon",
+          "label": "Experience icon (optional)"
+        },
+        {
+          "type": "text",
+          "id": "exp_label",
+          "label": "Experience label",
+          "default": "Experience"
+        },
+        {
+          "type": "text",
+          "id": "exp_text",
+          "label": "Experience text",
+          "default": "Over 15 years in community and clinical pharmacy leadership."
+        },
+        {
+          "type": "header",
+          "content": "Specialisations"
+        },
+        {
+          "type": "image_picker",
+          "id": "spec_icon",
+          "label": "Specialisations icon (optional)"
+        },
+        {
+          "type": "text",
+          "id": "spec_label",
+          "label": "Specialisations label",
+          "default": "Specialisations"
+        },
+        {
+          "type": "text",
+          "id": "spec_text",
+          "label": "Specialisations text",
+          "default": "Medication safety, clinical governance, audit and service improvement."
+        },
+        {
+          "type": "header",
+          "content": "Approach"
+        },
+        {
+          "type": "image_picker",
+          "id": "app_icon",
+          "label": "Approach icon (optional)"
+        },
+        {
+          "type": "text",
+          "id": "app_label",
+          "label": "Approach label",
+          "default": "Approach"
+        },
+        {
+          "type": "text",
+          "id": "app_text",
+          "label": "Approach text",
+          "default": "Committed to safe, efficient care and continuous quality improvement."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Care Led Professionals",
+      "category": "Custom",
+      "blocks": [
+        { "type": "professional" },
+        { "type": "professional" },
+        { "type": "professional" }
+      ]
+    }
+  ]
+}
+{% endschema %}
