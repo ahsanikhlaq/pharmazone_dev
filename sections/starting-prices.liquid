@@ -234,13 +234,14 @@
     .starting-prices-{{ section.id }} .sp__card {
       padding: 18px 18px;
       min-height: 0;
+      flex-direction: column;
     }
     .starting-prices-{{ section.id }} .sp__title { font-size: 22px; }
     .starting-prices-{{ section.id }} .sp__price { font-size: 32px; }
     .starting-prices-{{ section.id }} .sp__card-image {
-      width: 110px;
+      width: 100%;
     }
-    .starting-prices-{{ section.id }} .sp__card-image img { max-height: 200px; }
+    .starting-prices-{{ section.id }} .sp__card-image img { width: 100% }
     .starting-prices-{{ section.id }} .sp__trust {
       flex-direction: column;
       align-items: center;
