@@ -1100,71 +1100,95 @@
         "padding_bottom_mobile": 20
       }
     },
-    "care_led_professionals_Pg9fUz": {
+    "care_led_professionals_nbgLB6": {
       "type": "care-led-professionals",
       "blocks": {
-        "professional_mVnzxN": {
+        "professional_KakGHT": {
           "type": "professional",
           "settings": {
+            "photo": "shopify://shop_images/Frame_2147241935_e3e372b6-b00a-401a-806c-e0afeb19a1b3.png",
             "name": "Mohammed Abou Daya",
             "role": "Superintendent Pharmacist",
+            "cred_icon_1": "shopify://shop_images/Layer_1.png",
             "cred_1": "UK Registered Clinician",
+            "cred_icon_2": "shopify://shop_images/Capa_1.png",
             "cred_2": "Specialist in diagnosis and treatment",
+            "cred_icon_3": "shopify://shop_images/Capa_1_1.png",
             "cred_3": "Patient-focused care",
+            "cred_icon_4": "shopify://shop_images/Frame.png",
             "cred_4": "Evidence-based prescribing",
             "about_title": "",
             "bio": "<p>Mohammed Abou Daya is the Superintendent Pharmacist for Pharmazon Express, bringing over a decade of senior clinical, governance, and regulatory experience across NHS and independent healthcare settings.</p><p>A UCL graduate and current Lead Pharmacist for Women and Children at the Royal London Hospital, he is widely recognised for his expertise in medicines optimisation, patient safety, and prescribing governance.</p>",
+            "exp_icon": "shopify://shop_images/Layer_1_1.png",
             "exp_label": "Experience",
             "exp_text": "Over 15 years in community and clinical pharmacy leadership.",
+            "spec_icon": "shopify://shop_images/Layer_1.png",
             "spec_label": "Specialisations",
             "spec_text": "Medication safety, clinical governance, audit, and service improvement.",
+            "app_icon": "shopify://shop_images/Layer_1_3.png",
             "app_label": "Approach",
             "app_text": "Committed to safe, efficient care and continuous quality improvement."
           }
         },
-        "professional_KipLqx": {
+        "professional_FRL69b": {
           "type": "professional",
           "settings": {
+            "photo": "shopify://shop_images/Frame_2147241935_e3e372b6-b00a-401a-806c-e0afeb19a1b3.png",
             "name": "Johnny Chung Szeto",
             "role": "Prescriber",
+            "cred_icon_1": "shopify://shop_images/Layer_1.png",
             "cred_1": "UK Registered Clinician",
+            "cred_icon_2": "shopify://shop_images/Capa_1.png",
             "cred_2": "Specialist in diagnosis and treatment",
+            "cred_icon_3": "shopify://shop_images/Capa_1_1.png",
             "cred_3": "Patient-focused care",
+            "cred_icon_4": "shopify://shop_images/Frame.png",
             "cred_4": "Evidence-based prescribing",
             "about_title": "",
             "bio": "<p>Johnny Chung Szeto is an experienced independent prescriber dedicated to providing safe, accessible, and patient-centred care. With a strong background in primary and community healthcare, he focuses on building trusted relationships and supporting patients through every step of their treatment journey.</p><p>At Pharmazon Express, Johnny leads clinical reviews and prescribing decisions, ensuring every treatment plan is tailored to the individual and aligned with the latest evidence-based guidelines.</p>",
+            "exp_icon": "shopify://shop_images/Layer_1_1.png",
             "exp_label": "Experience",
             "exp_text": "Over 7 years in community and clinical pharmacy.",
+            "spec_icon": "shopify://shop_images/Layer_1.png",
             "spec_label": "Specialisations",
             "spec_text": "ADHD assessment, mental health, and treatment planning.",
+            "app_icon": "shopify://shop_images/Layer_1_3.png",
             "app_label": "Approach",
             "app_text": "Compassionate, inclusive, and tailored to each patient's needs."
           }
         },
-        "professional_8xzqND": {
+        "professional_Yzw3bc": {
           "type": "professional",
           "settings": {
+            "photo": "shopify://shop_images/Frame_2147241935_e3e372b6-b00a-401a-806c-e0afeb19a1b3.png",
             "name": "Archna Gudka",
             "role": "Pharmacist",
+            "cred_icon_1": "shopify://shop_images/Layer_1.png",
             "cred_1": "UK Registered Clinician",
+            "cred_icon_2": "shopify://shop_images/Capa_1.png",
             "cred_2": "Specialist in diagnosis and treatment",
+            "cred_icon_3": "shopify://shop_images/Capa_1_1.png",
             "cred_3": "Patient-focused care",
+            "cred_icon_4": "shopify://shop_images/Frame.png",
             "cred_4": "Evidence-based prescribing",
             "about_title": "",
             "bio": "<p>Archna Gudka is a highly experienced pharmacist with over two decades in the profession, including 18 years in community pharmacy delivering front-line patient care. She is recognised for her strong commitment to accessible, patient-centred services and her ability to build trusted relationships within diverse communities.</p><p>At Pharmazon Homecare, an ADHD specialist pharmacy, Archna has spent the past three years advancing her clinical expertise in the management of neurodevelopmental conditions. She has undertaken additional specialist training with the UK Adult ADHD Network (UKAAN), strengthening her capabilities in delivering safe, evidence-based, and guideline-compliant care for patients with ADHD.</p>",
+            "exp_icon": "shopify://shop_images/Layer_1_1.png",
             "exp_label": "Experience",
             "exp_text": "20+ years in pharmacy, including 18 years in community pharmacy.",
+            "spec_icon": "shopify://shop_images/Layer_1.png",
             "spec_label": "Specialisations",
             "spec_text": "ADHD care, neurodevelopmental support, and weight management medications.",
+            "app_icon": "shopify://shop_images/Layer_1_3.png",
             "app_label": "Approach",
             "app_text": "Patient-centred, evidence-based, and committed to long-term wellbeing."
           }
         }
       },
       "block_order": [
-        "professional_mVnzxN",
-        "professional_KipLqx",
-        "professional_8xzqND"
+        "professional_KakGHT",
+        "professional_FRL69b",
+        "professional_Yzw3bc"
       ],
       "name": "Care Led Professionals",
       "settings": {
@@ -1651,7 +1675,7 @@
     "general_enquiry_Tb89Xh",
     "ctm_quiries_LfCWmt",
     "custom_img_video_y4hCnE",
-    "care_led_professionals_Pg9fUz",
+    "care_led_professionals_nbgLB6",
     "heritage_pYAfzm",
     "cs_approach_NYiDTF",
     "custom_step_section_kbRagQ",
