@@ -48,6 +48,86 @@
         "padding_bottom": 20
       }
     },
+    "starting_prices_pm3yg3": {
+      "type": "starting-prices",
+      "blocks": {
+        "card_BgbYzM": {
+          "type": "card",
+          "settings": {
+            "product": "mounjaro-pen-tirzepatide-2-5mg",
+            "tag1": "Tirzepatide",
+            "tag2": "Personalized",
+            "title": "",
+            "price_label": "Get started for",
+            "price_text": "",
+            "price_period": "3 months",
+            "cta1_text": "Check Eligibility",
+            "cta1_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+            "cta2_text": "Product Details",
+            "cta2_url": "",
+            "note": "Product Delivered after consultation."
+          }
+        },
+        "card_JWAWUg": {
+          "type": "card",
+          "settings": {
+            "product": "wegovy-injectable-pen-0-25mg",
+            "tag1": "Tirzepatide",
+            "tag2": "Personalized",
+            "title": "",
+            "price_label": "Get started for",
+            "price_text": "",
+            "price_period": "3 months",
+            "cta1_text": "Check Eligibility",
+            "cta1_url": "https://pharmazonexpress.com/pages/questionaire-journey",
+            "cta2_text": "Product Details",
+            "cta2_url": "",
+            "note": "Product Delivered after consultation."
+          }
+        },
+        "avatar_k7JJJr": {
+          "type": "avatar",
+          "settings": {
+            "avatar": "shopify://shop_images/Frame_2147239716.webp"
+          }
+        },
+        "avatar_GWUG79": {
+          "type": "avatar",
+          "settings": {
+            "avatar": "shopify://shop_images/Frame_2147239716_2.webp"
+          }
+        },
+        "avatar_m9qDkr": {
+          "type": "avatar",
+          "settings": {
+            "avatar": "shopify://shop_images/Frame_2147239715_1_2256b477-bd3b-4a91-b012-27b2022e0cf5.png"
+          }
+        }
+      },
+      "block_order": [
+        "card_BgbYzM",
+        "card_JWAWUg",
+        "avatar_k7JJJr",
+        "avatar_GWUG79",
+        "avatar_m9qDkr"
+      ],
+      "name": "Starting Prices",
+      "settings": {
+        "heading_main": "Starting Prices",
+        "heading_accent": "you can trust.",
+        "show_trust_bar": true,
+        "trust_stars": 5,
+        "trust_reviews_text": "<p><strong>1,085</strong> Reviews</p>",
+        "trust_base_text": "Based on 12,400+ verified reviews.",
+        "bg_color": "#ffffff",
+        "card_bg_color": "#FAF8ED",
+        "trust_bg_color": "#4C3E79",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
+      }
+    },
     "ccs_treatment_GGF9w6": {
       "type": "ccs-Treatment",
       "blocks": {
@@ -906,6 +986,7 @@
   "order": [
     "custom_banner_UNwTTj",
     "custom_liquid_rCbiJj",
+    "starting_prices_pm3yg3",
     "ccs_treatment_GGF9w6",
     "success_stories_mwNPBg",
     "success_stories_yNWECD",
