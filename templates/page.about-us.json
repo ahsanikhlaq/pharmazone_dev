@@ -1100,6 +1100,86 @@
         "padding_bottom_mobile": 20
       }
     },
+    "care_led_professionals_f8hLcm": {
+      "type": "care-led-professionals",
+      "blocks": {
+        "professional_pkMqVT": {
+          "type": "professional",
+          "settings": {
+            "name": "Mohammed Abou Daya",
+            "role": "Superintendent Pharmacist",
+            "cred_1": "UK Registered Clinician",
+            "cred_2": "Specialist in diagnosis and treatment",
+            "cred_3": "Patient-focused care",
+            "cred_4": "Evidence-based prescribing",
+            "about_title": "",
+            "bio": "<p>Mohammed Abou Daya is the Superintendent Pharmacist for Pharmazon Express, bringing over a decade of senior clinical, governance, and regulatory experience across NHS and independent healthcare settings.</p>",
+            "exp_label": "Experience",
+            "exp_text": "Over 15 years in community and clinical pharmacy leadership.",
+            "spec_label": "Specialisations",
+            "spec_text": "Medication safety, clinical governance, audit and service improvement.",
+            "app_label": "Approach",
+            "app_text": "Committed to safe, efficient care and continuous quality improvement."
+          }
+        },
+        "professional_ezXd78": {
+          "type": "professional",
+          "settings": {
+            "name": "Mohammed Abou Daya",
+            "role": "Superintendent Pharmacist",
+            "cred_1": "UK Registered Clinician",
+            "cred_2": "Specialist in diagnosis and treatment",
+            "cred_3": "Patient-focused care",
+            "cred_4": "Evidence-based prescribing",
+            "about_title": "",
+            "bio": "<p>Mohammed Abou Daya is the Superintendent Pharmacist for Pharmazon Express, bringing over a decade of senior clinical, governance, and regulatory experience across NHS and independent healthcare settings.</p>",
+            "exp_label": "Experience",
+            "exp_text": "Over 15 years in community and clinical pharmacy leadership.",
+            "spec_label": "Specialisations",
+            "spec_text": "Medication safety, clinical governance, audit and service improvement.",
+            "app_label": "Approach",
+            "app_text": "Committed to safe, efficient care and continuous quality improvement."
+          }
+        },
+        "professional_UWGfEz": {
+          "type": "professional",
+          "settings": {
+            "name": "Mohammed Abou Daya",
+            "role": "Superintendent Pharmacist",
+            "cred_1": "UK Registered Clinician",
+            "cred_2": "Specialist in diagnosis and treatment",
+            "cred_3": "Patient-focused care",
+            "cred_4": "Evidence-based prescribing",
+            "about_title": "",
+            "bio": "<p>Mohammed Abou Daya is the Superintendent Pharmacist for Pharmazon Express, bringing over a decade of senior clinical, governance, and regulatory experience across NHS and independent healthcare settings.</p>",
+            "exp_label": "Experience",
+            "exp_text": "Over 15 years in community and clinical pharmacy leadership.",
+            "spec_label": "Specialisations",
+            "spec_text": "Medication safety, clinical governance, audit and service improvement.",
+            "app_label": "Approach",
+            "app_text": "Committed to safe, efficient care and continuous quality improvement."
+          }
+        }
+      },
+      "block_order": [
+        "professional_pkMqVT",
+        "professional_ezXd78",
+        "professional_UWGfEz"
+      ],
+      "name": "Care Led Professionals",
+      "settings": {
+        "heading_main": "Care Led by Qualified",
+        "heading_accent": "Clinical Professionals",
+        "cta_text": "Book A Free Consultation",
+        "cta_url": "",
+        "bg_color": "#ffffff",
+        "card_bg_color": "#FAF8ED",
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60,
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30
+      }
+    },
     "heritage_pYAfzm": {
       "type": "Heritage",
       "blocks": {
@@ -1571,6 +1651,7 @@
     "general_enquiry_Tb89Xh",
     "ctm_quiries_LfCWmt",
     "custom_img_video_y4hCnE",
+    "care_led_professionals_f8hLcm",
     "heritage_pYAfzm",
     "cs_approach_NYiDTF",
     "custom_step_section_kbRagQ",
