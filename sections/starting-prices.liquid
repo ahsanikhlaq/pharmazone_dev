@@ -241,7 +241,7 @@
     .starting-prices-{{ section.id }} .sp__card-image {
       width: 100%;
     }
-    .starting-prices-{{ section.id }} .sp__card-image img { width: 100% }
+    .starting-prices-{{ section.id }} .sp__card-image img { width: 100%; max-height: 100%; }
     .starting-prices-{{ section.id }} .sp__trust {
       flex-direction: column;
       align-items: center;
@@ -350,16 +350,18 @@
     {%- if section.settings.show_trust_bar -%}
       <div class="sp__trust">
         <div class="sp__trust-left">
+          <div class = 'main-trust-wrapper'>
           <div class="sp__trust-stars" aria-label="Trustpilot rating">
             {%- assign stars = section.settings.trust_stars | default: 5 -%}
             {%- for i in (1..stars) -%}
               <span class="sp__trust-star">★</span>
             {%- endfor -%}
           </div>
-          <div class="sp__trust-text">
-            {%- if section.settings.trust_reviews_text != blank -%}
+          {%- if section.settings.trust_reviews_text != blank -%}
               <span class="sp__trust-line">{{ section.settings.trust_reviews_text }}</span>
             {%- endif -%}
+          </div>
+          <div class="sp__trust-text">
             {%- if section.settings.trust_base_text != blank -%}
               <span class="sp__trust-reviews-base">{{ section.settings.trust_base_text }}</span>
             {%- endif -%}
