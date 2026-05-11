@@ -353,14 +353,14 @@
             </div>
 
             {%- if card_image != blank -%}
-              <div class="sp__card-image">
+              {% comment %} <div class="sp__card-image">
                 {{ card_image | image_url: width: 600 | image_tag:
                   alt: card_title,
                   loading: 'lazy',
                   widths: '200, 400, 600',
                   sizes: '(max-width: 749px) 110px, 200px'
                 }}
-              </div>
+              </div> {% endcomment %}
             {%- endif -%}
           </div>
         {%- endif -%}
