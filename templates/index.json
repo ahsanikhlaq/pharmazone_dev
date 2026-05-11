@@ -128,6 +128,48 @@
         "padding_bottom_mobile": 30
       }
     },
+    "1778489451d6f3ee7b": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_cards_carousel_LkQCEK": {
+          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "all",
+            "products": [],
+            "star_rating": "all",
+            "show_review_media": true,
+            "display_order": "media_first",
+            "no_image_fallback": "review_text_only",
+            "max_reviews": 20,
+            "review_length": "medium",
+            "text_size": "medium",
+            "image_ratio": "1",
+            "reviews_shown": 4,
+            "show_reviewer_name": true,
+            "show_product_name": true,
+            "hide_arrows_mobile": true,
+            "arrows_position": "sides",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "header_text_color": "#000000",
+            "text_color": "#000000",
+            "card_color": "#F9F9F9",
+            "stars_color": "",
+            "arrows_color": "#000000",
+            "transition_speed": 5,
+            "header_text": "Customers are saying",
+            "show_average_rating": true
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_cards_carousel_LkQCEK"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "ccs_treatment_GGF9w6": {
       "type": "ccs-Treatment",
       "blocks": {
@@ -987,6 +1029,7 @@
     "custom_banner_UNwTTj",
     "custom_liquid_rCbiJj",
     "starting_prices_pm3yg3",
+    "1778489451d6f3ee7b",
     "ccs_treatment_GGF9w6",
     "success_stories_mwNPBg",
     "success_stories_yNWECD",
