@@ -1106,7 +1106,7 @@
         "professional_KakGHT": {
           "type": "professional",
           "settings": {
-            "photo": "shopify://shop_images/Frame_2147241935_e3e372b6-b00a-401a-806c-e0afeb19a1b3.png",
+            "photo": "shopify://shop_images/Mohammed_1.webp",
             "name": "Mohammed Abou Daya",
             "role": "Superintendent Pharmacist",
             "cred_icon_1": "shopify://shop_images/Layer_1.png",
@@ -1160,7 +1160,7 @@
         "professional_Yzw3bc": {
           "type": "professional",
           "settings": {
-            "photo": "shopify://shop_images/Frame_2147241935_e3e372b6-b00a-401a-806c-e0afeb19a1b3.png",
+            "photo": "shopify://shop_images/Archana_a964e86a-81f4-4522-b21f-d57815384ce8.jpg",
             "name": "Archna Gudka",
             "role": "Pharmacist",
             "cred_icon_1": "shopify://shop_images/Layer_1.png",
@@ -1197,7 +1197,7 @@
         "cta_text": "Check Your Eligibility",
         "cta_url": "https://pharmazonexpress.com/pages/questionaire-journey",
         "bg_color": "#ffffff",
-        "card_bg_color": "#FAF8ED",
+        "card_bg_color": "#faf8ed",
         "padding_top_desktop": 60,
         "padding_bottom_desktop": 60,
         "padding_top_mobile": 30,
