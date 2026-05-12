@@ -1477,6 +1477,7 @@
         "person_rDGXNw",
         "person_bR6DPY"
       ],
+      "disabled": true,
       "name": "Clinical Professionals",
       "settings": {
         "heading": "<p>Care Led by Qualified <strong>Clinical Professionals</strong></p>",
